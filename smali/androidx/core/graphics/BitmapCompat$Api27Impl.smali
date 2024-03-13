@@ -26,7 +26,7 @@
 .end method
 
 .method static copyBitmapIfHardware(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-    .locals 3
+    .locals 2
     .param p0, "bm"    # Landroid/graphics/Bitmap;
 
     .line 397
@@ -36,18 +36,14 @@
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_0
 
     .line 398
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 399
     .local v0, "newConfig":Landroid/graphics/Bitmap$Config;
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x1f
-
-    if-lt v1, v2, :cond_0
+    nop
 
     .line 400
     invoke-static {p0}, Landroidx/core/graphics/BitmapCompat$Api31Impl;->getHardwareBitmapConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;
@@ -55,7 +51,6 @@
     move-result-object v0
 
     .line 402
-    :cond_0
     const/4 v1, 0x1
 
     invoke-virtual {p0, v0, v1}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
@@ -66,7 +61,7 @@
 
     .line 404
     .end local v0    # "newConfig":Landroid/graphics/Bitmap$Config;
-    :cond_1
+    :cond_0
     return-object p0
 .end method
 
@@ -132,11 +127,7 @@
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 382
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v4, 0x1f
-
-    if-lt v3, v4, :cond_1
+    nop
 
     .line 383
     invoke-static {p2}, Landroidx/core/graphics/BitmapCompat$Api31Impl;->getHardwareBitmapConfig(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$Config;

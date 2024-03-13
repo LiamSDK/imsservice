@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 545
+    .line 544
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 547
+    .line 546
     return-void
 .end method
 
@@ -34,10 +34,10 @@
     .param p4, "matchFilter"    # Landroid/text/util/Linkify$MatchFilter;
     .param p5, "transformFilter"    # Landroid/text/util/Linkify$TransformFilter;
 
-    .line 552
+    .line 551
     invoke-static/range {p0 .. p5}, Landroid/text/util/Linkify;->addLinks(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
-    .line 553
+    .line 552
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .param p4, "matchFilter"    # Landroid/text/util/Linkify$MatchFilter;
     .param p5, "transformFilter"    # Landroid/text/util/Linkify$TransformFilter;
 
-    .line 558
+    .line 557
     invoke-static/range {p0 .. p5}, Landroid/text/util/Linkify;->addLinks(Landroid/text/Spannable;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)Z
 
     move-result v0

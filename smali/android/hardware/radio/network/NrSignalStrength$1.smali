@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 17
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,23 +42,23 @@
     .locals 1
     .param p1, "_aidl_source"    # Landroid/os/Parcel;
 
-    .line 20
+    .line 21
     new-instance v0, Landroid/hardware/radio/network/NrSignalStrength;
 
     invoke-direct {v0}, Landroid/hardware/radio/network/NrSignalStrength;-><init>()V
 
-    .line 21
+    .line 22
     .local v0, "_aidl_out":Landroid/hardware/radio/network/NrSignalStrength;
     invoke-virtual {v0, p1}, Landroid/hardware/radio/network/NrSignalStrength;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 22
+    .line 23
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 17
+    .line 18
     invoke-virtual {p0, p1}, Landroid/hardware/radio/network/NrSignalStrength$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/radio/network/NrSignalStrength;
 
     move-result-object p1
@@ -70,7 +70,7 @@
     .locals 1
     .param p1, "_aidl_size"    # I
 
-    .line 26
+    .line 27
     new-array v0, p1, [Landroid/hardware/radio/network/NrSignalStrength;
 
     return-object v0
@@ -79,7 +79,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 17
+    .line 18
     invoke-virtual {p0, p1}, Landroid/hardware/radio/network/NrSignalStrength$1;->newArray(I)[Landroid/hardware/radio/network/NrSignalStrength;
 
     move-result-object p1

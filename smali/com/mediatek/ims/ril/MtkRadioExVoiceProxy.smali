@@ -3,6 +3,10 @@
 .source "MtkRadioExVoiceProxy.java"
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String; = "MtkRadioExVoiceProxy"
+
+
 # instance fields
 .field private volatile mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
@@ -11,10 +15,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 35
+    .line 36
     invoke-direct {p0}, Lcom/mediatek/ims/ril/MtkRadioExServiceProxy;-><init>()V
 
-    .line 36
+    .line 38
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
@@ -27,22 +31,22 @@
 .method public clear()V
     .locals 1
 
-    .line 64
+    .line 84
     invoke-super {p0}, Lcom/mediatek/ims/ril/MtkRadioExServiceProxy;->clear()V
 
-    .line 65
+    .line 85
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
-    .line 66
+    .line 86
     return-void
 .end method
 
 .method public getAidl()Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
     .locals 1
 
-    .line 56
+    .line 76
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     return-object v0
@@ -57,7 +61,7 @@
         }
     .end annotation
 
-    .line 121
+    .line 141
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
 
     move-result v0
@@ -66,7 +70,7 @@
 
     return-void
 
-    .line 122
+    .line 142
     :cond_0
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
 
@@ -74,7 +78,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 123
+    .line 143
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     const/4 v1, 0x1
@@ -83,7 +87,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 144
     :cond_1
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
 
@@ -95,26 +99,26 @@
 
     if-eqz v0, :cond_2
 
-    .line 125
+    .line 145
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
-    .line 126
+    .line 146
     invoke-interface {v0, p1}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->getColp(I)V
 
     goto :goto_0
 
-    .line 128
+    .line 148
     :cond_2
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
-    .line 129
+    .line 149
     invoke-interface {v0, p1}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->getColp(I)V
 
-    .line 131
+    .line 151
     :goto_0
     return-void
 .end method
@@ -128,7 +132,7 @@
         }
     .end annotation
 
-    .line 140
+    .line 160
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
 
     move-result v0
@@ -137,7 +141,7 @@
 
     return-void
 
-    .line 141
+    .line 161
     :cond_0
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
 
@@ -145,7 +149,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 142
+    .line 162
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     const/4 v1, 0x1
@@ -154,7 +158,7 @@
 
     goto :goto_0
 
-    .line 143
+    .line 163
     :cond_1
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
 
@@ -166,26 +170,26 @@
 
     if-eqz v0, :cond_2
 
-    .line 144
+    .line 164
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
-    .line 145
+    .line 165
     invoke-interface {v0, p1}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->getColr(I)V
 
     goto :goto_0
 
-    .line 147
+    .line 167
     :cond_2
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
-    .line 148
+    .line 168
     invoke-interface {v0, p1}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->getColr(I)V
 
-    .line 150
+    .line 170
     :goto_0
     return-void
 .end method
@@ -199,7 +203,7 @@
         }
     .end annotation
 
-    .line 399
+    .line 419
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
 
     move-result v0
@@ -208,7 +212,7 @@
 
     return-void
 
-    .line 400
+    .line 420
     :cond_0
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
 
@@ -216,7 +220,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 401
+    .line 421
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     const/4 v1, 0x1
@@ -225,7 +229,7 @@
 
     goto :goto_0
 
-    .line 402
+    .line 422
     :cond_1
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
 
@@ -237,26 +241,26 @@
 
     if-eqz v0, :cond_2
 
-    .line 403
+    .line 423
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
-    .line 404
+    .line 424
     invoke-interface {v0, p1}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->hangupAll(I)V
 
     goto :goto_0
 
-    .line 406
+    .line 426
     :cond_2
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
-    .line 407
+    .line 427
     invoke-interface {v0, p1}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->hangupAll(I)V
 
-    .line 409
+    .line 429
     :goto_0
     return-void
 .end method
@@ -272,7 +276,7 @@
         }
     .end annotation
 
-    .line 355
+    .line 375
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
 
     move-result v0
@@ -281,7 +285,7 @@
 
     return-void
 
-    .line 356
+    .line 376
     :cond_0
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
 
@@ -289,7 +293,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 357
+    .line 377
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     const/4 v1, 0x1
@@ -298,7 +302,7 @@
 
     goto :goto_0
 
-    .line 359
+    .line 379
     :cond_1
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
 
@@ -310,26 +314,26 @@
 
     if-eqz v0, :cond_2
 
-    .line 360
+    .line 380
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
-    .line 361
+    .line 381
     invoke-interface {v0, p1, p2, p3}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->hangupWithReason(III)V
 
     goto :goto_0
 
-    .line 363
+    .line 383
     :cond_2
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
-    .line 364
+    .line 384
     invoke-interface {v0, p1, p2, p3}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->hangupWithReason(III)V
 
-    .line 366
+    .line 386
     :goto_0
     return-void
 .end method
@@ -337,7 +341,7 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 74
+    .line 94
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     if-nez v0, :cond_0
@@ -368,18 +372,18 @@
         }
     .end annotation
 
-    .line 162
+    .line 182
     const-string v0, ""
 
-    .line 163
+    .line 183
     .local v0, "number":Ljava/lang/String;
     const-string v1, ""
 
-    .line 164
+    .line 184
     .local v1, "timeSlotBegin":Ljava/lang/String;
     const-string v2, ""
 
-    .line 166
+    .line 186
     .local v2, "timeSlotEnd":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
 
@@ -389,7 +393,7 @@
 
     return-void
 
-    .line 167
+    .line 187
     :cond_0
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
 
@@ -399,57 +403,57 @@
 
     if-eqz v3, :cond_1
 
-    .line 168
+    .line 188
     new-instance v3, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;
 
     invoke-direct {v3}, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;-><init>()V
 
-    .line 170
+    .line 190
     .local v3, "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;
     iput p2, v3, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->reason:I
 
-    .line 171
+    .line 191
     iput p3, v3, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->serviceClass:I
 
-    .line 172
+    .line 192
     invoke-static {v0}, Landroid/telephony/PhoneNumberUtils;->toaFromString(Ljava/lang/String;)I
 
     move-result v5
 
     iput v5, v3, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->toa:I
 
-    .line 173
+    .line 193
     invoke-static {v0}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, v3, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->number:Ljava/lang/String;
 
-    .line 174
+    .line 194
     iput v4, v3, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->timeSeconds:I
 
-    .line 175
+    .line 195
     invoke-static {v1}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v3, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->timeSlotBegin:Ljava/lang/String;
 
-    .line 176
+    .line 196
     invoke-static {v2}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v3, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->timeSlotEnd:Ljava/lang/String;
 
-    .line 178
+    .line 198
     iget-object v4, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     const/4 v5, 0x1
 
     invoke-interface {v4, p1, v3, v5}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->queryCallForwardInTimeSlotStatus(ILvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;I)V
 
-    .line 180
+    .line 200
     .end local v3    # "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;
     goto :goto_0
 
@@ -464,114 +468,114 @@
 
     if-eqz v3, :cond_2
 
-    .line 181
+    .line 201
     new-instance v3, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;
 
     invoke-direct {v3}, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;-><init>()V
 
-    .line 183
+    .line 203
     .local v3, "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;
     iput p2, v3, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->reason:I
 
-    .line 184
+    .line 204
     iput p3, v3, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->serviceClass:I
 
-    .line 185
+    .line 205
     invoke-static {v0}, Landroid/telephony/PhoneNumberUtils;->toaFromString(Ljava/lang/String;)I
 
     move-result v5
 
     iput v5, v3, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->toa:I
 
-    .line 186
+    .line 206
     invoke-static {v0}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, v3, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->number:Ljava/lang/String;
 
-    .line 187
+    .line 207
     iput v4, v3, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->timeSeconds:I
 
-    .line 188
+    .line 208
     invoke-static {v1}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v3, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->timeSlotBegin:Ljava/lang/String;
 
-    .line 189
+    .line 209
     invoke-static {v2}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v3, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->timeSlotEnd:Ljava/lang/String;
 
-    .line 191
+    .line 211
     iget-object v4, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v4, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
-    .line 192
+    .line 212
     invoke-interface {v4, p1, v3}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->queryCallForwardInTimeSlotStatus(ILvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;)V
 
-    .line 193
+    .line 213
     .end local v3    # "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;
     goto :goto_0
 
-    .line 194
+    .line 214
     :cond_2
     new-instance v3, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;
 
     invoke-direct {v3}, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;-><init>()V
 
-    .line 196
+    .line 216
     .local v3, "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;
     iput p2, v3, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->reason:I
 
-    .line 197
+    .line 217
     iput p3, v3, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->serviceClass:I
 
-    .line 198
+    .line 218
     invoke-static {v0}, Landroid/telephony/PhoneNumberUtils;->toaFromString(Ljava/lang/String;)I
 
     move-result v5
 
     iput v5, v3, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->toa:I
 
-    .line 199
+    .line 219
     invoke-static {v0}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, v3, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->number:Ljava/lang/String;
 
-    .line 200
+    .line 220
     iput v4, v3, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->timeSeconds:I
 
-    .line 201
+    .line 221
     invoke-static {v1}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v3, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->timeSlotBegin:Ljava/lang/String;
 
-    .line 202
+    .line 222
     invoke-static {v2}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, v3, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->timeSlotEnd:Ljava/lang/String;
 
-    .line 204
+    .line 224
     iget-object v4, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v4, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
-    .line 205
+    .line 225
     invoke-interface {v4, p1, v3}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->queryCallForwardInTimeSlotStatus(ILvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;)V
 
-    .line 207
+    .line 227
     .end local v3    # "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;
     :goto_0
     return-void
@@ -586,7 +590,7 @@
         }
     .end annotation
 
-    .line 102
+    .line 122
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
 
     move-result v0
@@ -595,7 +599,7 @@
 
     return-void
 
-    .line 103
+    .line 123
     :cond_0
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
 
@@ -603,7 +607,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 104
+    .line 124
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     const/4 v1, 0x1
@@ -612,7 +616,7 @@
 
     goto :goto_0
 
-    .line 105
+    .line 125
     :cond_1
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
 
@@ -624,26 +628,26 @@
 
     if-eqz v0, :cond_2
 
-    .line 106
+    .line 126
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
-    .line 107
+    .line 127
     invoke-interface {v0, p1}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->resetSuppServ(I)V
 
     goto :goto_0
 
-    .line 109
+    .line 129
     :cond_2
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
-    .line 110
+    .line 130
     invoke-interface {v0, p1}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->resetSuppServ(I)V
 
-    .line 112
+    .line 132
     :goto_0
     return-void
 .end method
@@ -656,7 +660,7 @@
         }
     .end annotation
 
-    .line 83
+    .line 103
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
 
     move-result v0
@@ -665,7 +669,7 @@
 
     return-void
 
-    .line 84
+    .line 104
     :cond_0
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
 
@@ -673,14 +677,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 85
+    .line 105
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     invoke-interface {v0}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->responseAcknowledgementMtk()V
 
     goto :goto_0
 
-    .line 86
+    .line 106
     :cond_1
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
 
@@ -692,48 +696,145 @@
 
     if-eqz v0, :cond_2
 
-    .line 87
+    .line 107
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
-    .line 88
+    .line 108
     invoke-interface {v0}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->responseAcknowledgementMtk()V
 
     goto :goto_0
 
-    .line 90
+    .line 110
     :cond_2
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
-    .line 91
+    .line 111
     invoke-interface {v0}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->responseAcknowledgementMtk()V
 
-    .line 93
+    .line 113
     :goto_0
     return-void
 .end method
 
-.method public setAidl(Lcom/android/internal/telephony/HalVersion;Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;)V
-    .locals 1
+.method public setAidl(Lcom/android/internal/telephony/HalVersion;Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;)Lcom/android/internal/telephony/HalVersion;
+    .locals 5
     .param p1, "halVersion"    # Lcom/android/internal/telephony/HalVersion;
     .param p2, "voice"    # Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
-    .line 46
+    .line 50
+    const-string v0, "MtkRadioExVoiceProxy"
+
     iput-object p1, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
 
-    .line 47
+    .line 51
     iput-object p2, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
-    .line 48
-    const/4 v0, 0x1
+    .line 52
+    const/4 v1, 0x1
 
-    iput-boolean v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mIsAidl:Z
+    iput-boolean v1, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mIsAidl:Z
 
-    .line 49
-    return-void
+    .line 55
+    :try_start_0
+    invoke-interface {p2}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->getInterfaceVersion()I
+
+    move-result v1
+
+    .line 56
+    .local v1, "version":I
+    nop
+
+    .line 58
+    sget-object v2, Lcom/mediatek/ims/ril/ImsRILAdapter;->MTK_RADIO_HAL_VERSION_4_0:Lcom/android/internal/telephony/HalVersion;
+
+    .line 61
+    .local v2, "newHalVersion":Lcom/android/internal/telephony/HalVersion;
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "AIDL version="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", halVersion="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 62
+    iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
+
+    invoke-virtual {v3, v2}, Lcom/android/internal/telephony/HalVersion;->less(Lcom/android/internal/telephony/HalVersion;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 63
+    iput-object v2, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 67
+    .end local v1    # "version":I
+    .end local v2    # "newHalVersion":Lcom/android/internal/telephony/HalVersion;
+    :cond_0
+    goto :goto_0
+
+    .line 65
+    :catch_0
+    move-exception v1
+
+    .line 66
+    .local v1, "e":Landroid/os/RemoteException;
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "setAidl: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 68
+    .end local v1    # "e":Landroid/os/RemoteException;
+    :goto_0
+    iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
+
+    return-object v0
 .end method
 
 .method public setCallForwardInTimeSlot(IIIILjava/lang/String;I[J)V
@@ -751,14 +852,14 @@
         }
     .end annotation
 
-    .line 223
+    .line 243
     const-string v0, ""
 
-    .line 224
+    .line 244
     .local v0, "timeSlotBegin":Ljava/lang/String;
     const-string v1, ""
 
-    .line 227
+    .line 247
     .local v1, "timeSlotEnd":Ljava/lang/String;
     if-eqz p7, :cond_1
 
@@ -768,7 +869,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 228
+    .line 248
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -777,14 +878,14 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 229
+    .line 249
     new-instance v3, Ljava/util/Date;
 
     aget-wide v4, p7, v2
 
     invoke-direct {v3, v4, v5}, Ljava/util/Date;-><init>(J)V
 
-    .line 230
+    .line 250
     .local v3, "date":Ljava/util/Date;
     new-instance v4, Ljava/text/SimpleDateFormat;
 
@@ -792,7 +893,7 @@
 
     invoke-direct {v4, v5}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 231
+    .line 251
     .local v4, "dateFormat":Ljava/text/SimpleDateFormat;
     const-string v5, "GMT+8"
 
@@ -802,23 +903,23 @@
 
     invoke-virtual {v4, v5}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    .line 233
+    .line 253
     if-nez v2, :cond_0
 
-    .line 234
+    .line 254
     invoke-virtual {v4, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_1
 
-    .line 236
+    .line 256
     :cond_0
     invoke-virtual {v4, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 228
+    .line 248
     .end local v3    # "date":Ljava/util/Date;
     .end local v4    # "dateFormat":Ljava/text/SimpleDateFormat;
     :goto_1
@@ -826,7 +927,7 @@
 
     goto :goto_0
 
-    .line 241
+    .line 261
     .end local v2    # "i":I
     :cond_1
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
@@ -837,7 +938,7 @@
 
     return-void
 
-    .line 242
+    .line 262
     :cond_2
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
 
@@ -845,60 +946,60 @@
 
     if-eqz v2, :cond_3
 
-    .line 243
+    .line 263
     new-instance v2, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;
 
     invoke-direct {v2}, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;-><init>()V
 
-    .line 245
+    .line 265
     .local v2, "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;
     iput p2, v2, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->status:I
 
-    .line 246
+    .line 266
     iput p3, v2, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->reason:I
 
-    .line 247
+    .line 267
     iput p4, v2, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->serviceClass:I
 
-    .line 248
+    .line 268
     invoke-static {p5}, Landroid/telephony/PhoneNumberUtils;->toaFromString(Ljava/lang/String;)I
 
     move-result v3
 
     iput v3, v2, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->toa:I
 
-    .line 249
+    .line 269
     invoke-static {p5}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->number:Ljava/lang/String;
 
-    .line 250
+    .line 270
     iput p6, v2, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->timeSeconds:I
 
-    .line 251
+    .line 271
     invoke-static {v0}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->timeSlotBegin:Ljava/lang/String;
 
-    .line 252
+    .line 272
     invoke-static {v1}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;->timeSlotEnd:Ljava/lang/String;
 
-    .line 254
+    .line 274
     iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     const/4 v4, 0x1
 
     invoke-interface {v3, p1, v2, v4}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->setCallForwardInTimeSlot(ILvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;I)V
 
-    .line 256
+    .line 276
     .end local v2    # "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/voice/CallForwardInfoEx;
     goto :goto_2
 
@@ -913,120 +1014,120 @@
 
     if-eqz v2, :cond_4
 
-    .line 257
+    .line 277
     new-instance v2, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;
 
     invoke-direct {v2}, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;-><init>()V
 
-    .line 259
+    .line 279
     .local v2, "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;
     iput p2, v2, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->status:I
 
-    .line 260
+    .line 280
     iput p3, v2, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->reason:I
 
-    .line 261
+    .line 281
     iput p4, v2, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->serviceClass:I
 
-    .line 262
+    .line 282
     invoke-static {p5}, Landroid/telephony/PhoneNumberUtils;->toaFromString(Ljava/lang/String;)I
 
     move-result v3
 
     iput v3, v2, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->toa:I
 
-    .line 263
+    .line 283
     invoke-static {p5}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->number:Ljava/lang/String;
 
-    .line 264
+    .line 284
     iput p6, v2, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->timeSeconds:I
 
-    .line 265
+    .line 285
     invoke-static {v0}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->timeSlotBegin:Ljava/lang/String;
 
-    .line 266
+    .line 286
     invoke-static {v1}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;->timeSlotEnd:Ljava/lang/String;
 
-    .line 268
+    .line 288
     iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v3, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
-    .line 269
+    .line 289
     invoke-interface {v3, p1, v2}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->setCallForwardInTimeSlot(ILvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;)V
 
-    .line 270
+    .line 290
     .end local v2    # "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/V3_0/CallForwardInfoEx;
     goto :goto_2
 
-    .line 271
+    .line 291
     :cond_4
     new-instance v2, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;
 
     invoke-direct {v2}, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;-><init>()V
 
-    .line 273
+    .line 293
     .local v2, "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;
     iput p2, v2, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->status:I
 
-    .line 274
+    .line 294
     iput p3, v2, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->reason:I
 
-    .line 275
+    .line 295
     iput p4, v2, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->serviceClass:I
 
-    .line 276
+    .line 296
     invoke-static {p5}, Landroid/telephony/PhoneNumberUtils;->toaFromString(Ljava/lang/String;)I
 
     move-result v3
 
     iput v3, v2, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->toa:I
 
-    .line 277
+    .line 297
     invoke-static {p5}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->number:Ljava/lang/String;
 
-    .line 278
+    .line 298
     iput p6, v2, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->timeSeconds:I
 
-    .line 279
+    .line 299
     invoke-static {v0}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->timeSlotBegin:Ljava/lang/String;
 
-    .line 280
+    .line 300
     invoke-static {v1}, Lcom/android/internal/telephony/RILUtils;->convertNullToEmptyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, v2, Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;->timeSlotEnd:Ljava/lang/String;
 
-    .line 282
+    .line 302
     iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     check-cast v3, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
-    .line 283
+    .line 303
     invoke-interface {v3, p1, v2}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->setCallForwardInTimeSlot(ILvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;)V
 
-    .line 285
+    .line 305
     .end local v2    # "cfInfoEx":Lvendor/mediatek/hardware/mtkradioex/V2_0/CallForwardInfoEx;
     :goto_2
     return-void
@@ -1045,7 +1146,7 @@
         }
     .end annotation
 
-    .line 380
+    .line 400
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
 
     move-result v0
@@ -1054,7 +1155,7 @@
 
     return-void
 
-    .line 381
+    .line 401
     :cond_0
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
 
@@ -1062,7 +1163,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 382
+    .line 402
     iget-object v1, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
 
     const/4 v7, 0x1
@@ -1081,7 +1182,7 @@
 
     goto :goto_0
 
-    .line 384
+    .line 404
     :cond_1
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
 
@@ -1093,14 +1194,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 385
+    .line 405
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
     move-object v1, v0
 
     check-cast v1, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
-    .line 386
+    .line 406
     move v2, p1
 
     move v3, p2
@@ -1115,7 +1216,7 @@
 
     goto :goto_0
 
-    .line 388
+    .line 408
     :cond_2
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
 
@@ -1123,7 +1224,7 @@
 
     check-cast v1, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
-    .line 389
+    .line 409
     move v2, p1
 
     move v3, p2
@@ -1136,84 +1237,12 @@
 
     invoke-interface/range {v1 .. v6}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->setCallIndication(IIIII)V
 
-    .line 391
+    .line 411
     :goto_0
     return-void
 .end method
 
 .method public setClip(II)V
-    .locals 2
-    .param p1, "serial"    # I
-    .param p2, "enable"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 295
-    invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    .line 296
-    :cond_0
-    invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 297
-    iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, p1, p2, v1}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->setClip(III)V
-
-    goto :goto_0
-
-    .line 298
-    :cond_1
-    iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
-
-    sget-object v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->MTK_RADIO_HAL_VERSION_3_0:Lcom/android/internal/telephony/HalVersion;
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/HalVersion;->greaterOrEqual(Lcom/android/internal/telephony/HalVersion;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 299
-    iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
-
-    check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
-
-    .line 300
-    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->setClip(II)V
-
-    goto :goto_0
-
-    .line 302
-    :cond_2
-    iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
-
-    check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
-
-    .line 303
-    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->setClip(II)V
-
-    .line 305
-    :goto_0
-    return-void
-.end method
-
-.method public setColp(II)V
     .locals 2
     .param p1, "serial"    # I
     .param p2, "enable"    # I
@@ -1245,7 +1274,7 @@
 
     const/4 v1, 0x1
 
-    invoke-interface {v0, p1, p2, v1}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->setColp(III)V
+    invoke-interface {v0, p1, p2, v1}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->setClip(III)V
 
     goto :goto_0
 
@@ -1267,7 +1296,7 @@
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
     .line 320
-    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->setColp(II)V
+    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->setClip(II)V
 
     goto :goto_0
 
@@ -1278,14 +1307,14 @@
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
     .line 323
-    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->setColp(II)V
+    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->setClip(II)V
 
     .line 325
     :goto_0
     return-void
 .end method
 
-.method public setColr(II)V
+.method public setColp(II)V
     .locals 2
     .param p1, "serial"    # I
     .param p2, "enable"    # I
@@ -1317,7 +1346,7 @@
 
     const/4 v1, 0x1
 
-    invoke-interface {v0, p1, p2, v1}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->setColr(III)V
+    invoke-interface {v0, p1, p2, v1}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->setColp(III)V
 
     goto :goto_0
 
@@ -1339,7 +1368,7 @@
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
 
     .line 340
-    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->setColr(II)V
+    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->setColp(II)V
 
     goto :goto_0
 
@@ -1350,9 +1379,81 @@
     check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
 
     .line 343
-    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->setColr(II)V
+    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->setColp(II)V
 
     .line 345
+    :goto_0
+    return-void
+.end method
+
+.method public setColr(II)V
+    .locals 2
+    .param p1, "serial"    # I
+    .param p2, "enable"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 355
+    invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 356
+    :cond_0
+    invoke-virtual {p0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->isAidl()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 357
+    iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mVoiceProxyMtk:Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, p1, p2, v1}, Lvendor/mediatek/hardware/mtkradioex/voice/IMtkRadioExVoice;->setColr(III)V
+
+    goto :goto_0
+
+    .line 358
+    :cond_1
+    iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mHalVersion:Lcom/android/internal/telephony/HalVersion;
+
+    sget-object v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->MTK_RADIO_HAL_VERSION_3_0:Lcom/android/internal/telephony/HalVersion;
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/HalVersion;->greaterOrEqual(Lcom/android/internal/telephony/HalVersion;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 359
+    iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
+
+    check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;
+
+    .line 360
+    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V3_0/IMtkRadioEx;->setColr(II)V
+
+    goto :goto_0
+
+    .line 362
+    :cond_2
+    iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExVoiceProxy;->mRadioProxyMtk:Landroid/hidl/base/V1_0/IBase;
+
+    check-cast v0, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;
+
+    .line 363
+    invoke-interface {v0, p1, p2}, Lvendor/mediatek/hardware/mtkradioex/V2_0/IMtkRadioEx;->setColr(II)V
+
+    .line 365
     :goto_0
     return-void
 .end method

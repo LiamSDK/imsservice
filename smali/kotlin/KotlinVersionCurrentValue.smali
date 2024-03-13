@@ -19,7 +19,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -60,13 +60,13 @@
     .line 82
     new-instance v0, Lkotlin/KotlinVersion;
 
-    const/4 v1, 0x1
+    const/16 v1, 0x8
 
-    const/4 v2, 0x6
+    const/16 v2, 0xa
 
-    const/16 v3, 0xa
+    const/4 v3, 0x1
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/KotlinVersion;-><init>(III)V
+    invoke-direct {v0, v3, v1, v2}, Lkotlin/KotlinVersion;-><init>(III)V
 
     return-object v0
 .end method

@@ -45,7 +45,7 @@
 .end method
 
 .method public static requireViewById(Landroid/view/Window;I)Landroid/view/View;
-    .locals 3
+    .locals 1
     .param p0, "window"    # Landroid/view/Window;
     .param p1, "id"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -59,11 +59,7 @@
     .end annotation
 
     .line 89
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1c
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 90
     invoke-static {p0, p1}, Landroidx/core/view/WindowCompat$Api28Impl;->requireViewById(Landroid/view/Window;I)Ljava/lang/Object;
@@ -73,61 +69,19 @@
     check-cast v0, Landroid/view/View;
 
     return-object v0
-
-    .line 93
-    :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 94
-    .local v0, "view":Landroid/view/View;, "TT;"
-    if-eqz v0, :cond_1
-
-    .line 97
-    return-object v0
-
-    .line 95
-    :cond_1
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string v2, "ID does not reference a View inside this Window"
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public static setDecorFitsSystemWindows(Landroid/view/Window;Z)V
-    .locals 2
+    .locals 0
     .param p0, "window"    # Landroid/view/Window;
     .param p1, "decorFitsSystemWindows"    # Z
 
     .line 118
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1e
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 119
     invoke-static {p0, p1}, Landroidx/core/view/WindowCompat$Api30Impl;->setDecorFitsSystemWindows(Landroid/view/Window;Z)V
 
-    goto :goto_0
-
-    .line 120
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_1
-
-    .line 121
-    invoke-static {p0, p1}, Landroidx/core/view/WindowCompat$Api16Impl;->setDecorFitsSystemWindows(Landroid/view/Window;Z)V
-
     .line 123
-    :cond_1
-    :goto_0
     return-void
 .end method

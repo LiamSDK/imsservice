@@ -30,23 +30,23 @@
     .locals 1
     .param p1, "remote"    # Landroid/os/IBinder;
 
-    .line 290
+    .line 303
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 293
+    .line 306
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mCachedVersion:I
 
-    .line 294
+    .line 307
     const-string v0, "-1"
 
     iput-object v0, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mCachedHash:Ljava/lang/String;
 
-    .line 291
+    .line 304
     iput-object p1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 292
+    .line 305
     return-void
 .end method
 
@@ -55,7 +55,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    .line 297
+    .line 310
     iget-object v0, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -72,30 +72,34 @@
         }
     .end annotation
 
-    .line 305
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 318
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 307
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 320
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 308
+    .line 321
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 309
+    .line 322
     const/4 v1, 0x0
 
     invoke-virtual {v0, p2, v1}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
 
-    .line 310
+    .line 323
     invoke-virtual {v0, p3, v1}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 311
+    .line 324
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x0
@@ -108,21 +112,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 312
+    .line 325
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 317
+    .line 330
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 318
+    .line 331
     nop
 
-    .line 319
+    .line 332
     return-void
 
-    .line 313
+    .line 326
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -141,7 +145,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 317
+    .line 330
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -153,7 +157,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 318
+    .line 331
     throw v1
 .end method
 
@@ -167,54 +171,58 @@
         }
     .end annotation
 
-    .line 322
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 335
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 324
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 337
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 325
+    .line 338
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 326
+    .line 339
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 327
+    .line 340
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x2
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 328
+    .line 341
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 333
+    .line 346
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 334
+    .line 347
     nop
 
-    .line 335
+    .line 348
     return-void
 
-    .line 329
+    .line 342
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -232,7 +240,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 333
+    .line 346
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -243,7 +251,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 334
+    .line 347
     throw v1
 .end method
 
@@ -257,56 +265,60 @@
         }
     .end annotation
 
-    .line 338
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 351
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 340
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 353
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 341
+    .line 354
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 342
+    .line 355
     const/4 v1, 0x0
 
     invoke-virtual {v0, p2, v1}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 343
+    .line 356
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x3
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 344
+    .line 357
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 349
+    .line 362
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 350
+    .line 363
     nop
 
-    .line 351
+    .line 364
     return-void
 
-    .line 345
+    .line 358
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -324,7 +336,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 349
+    .line 362
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -335,7 +347,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 350
+    .line 363
     throw v1
 .end method
 
@@ -349,56 +361,60 @@
         }
     .end annotation
 
-    .line 354
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 367
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 356
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 369
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 357
+    .line 370
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 358
+    .line 371
     const/4 v1, 0x0
 
     invoke-virtual {v0, p2, v1}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
 
-    .line 359
+    .line 372
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x4
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x4
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 360
+    .line 373
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 365
+    .line 378
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 366
+    .line 379
     nop
 
-    .line 367
+    .line 380
     return-void
 
-    .line 361
+    .line 374
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -416,7 +432,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 365
+    .line 378
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -427,7 +443,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 366
+    .line 379
     throw v1
 .end method
 
@@ -441,56 +457,60 @@
         }
     .end annotation
 
-    .line 370
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 383
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 372
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 385
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 373
+    .line 386
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 374
+    .line 387
     const/4 v1, 0x0
 
     invoke-virtual {v0, p2, v1}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 375
+    .line 388
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x5
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x5
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 376
+    .line 389
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 381
+    .line 394
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 382
+    .line 395
     nop
 
-    .line 383
+    .line 396
     return-void
 
-    .line 377
+    .line 390
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -508,7 +528,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 381
+    .line 394
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -519,7 +539,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 382
+    .line 395
     throw v1
 .end method
 
@@ -533,56 +553,60 @@
         }
     .end annotation
 
-    .line 386
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 399
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 388
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 401
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 389
+    .line 402
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 390
+    .line 403
     const/4 v1, 0x0
 
     invoke-virtual {v0, p2, v1}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
 
-    .line 391
+    .line 404
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x6
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x6
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 392
+    .line 405
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 397
+    .line 410
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 398
+    .line 411
     nop
 
-    .line 399
+    .line 412
     return-void
 
-    .line 393
+    .line 406
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -600,7 +624,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 397
+    .line 410
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -611,14 +635,110 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 398
+    .line 411
+    throw v1
+.end method
+
+.method public emergencyNetworkScanResult(ILandroid/hardware/radio/network/EmergencyRegResult;)V
+    .locals 5
+    .param p1, "type"    # I
+    .param p2, "result"    # Landroid/hardware/radio/network/EmergencyRegResult;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 547
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 549
+    .local v0, "_data":Landroid/os/Parcel;
+    :try_start_0
+    sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 550
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 551
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p2, v1}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
+
+    .line 552
+    iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    const/16 v4, 0xf
+
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    move-result v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 553
+    .local v1, "_status":Z
+    if-eqz v1, :cond_0
+
+    .line 558
+    .end local v1    # "_status":Z
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 559
+    nop
+
+    .line 560
+    return-void
+
+    .line 554
+    .restart local v1    # "_status":Z
+    :cond_0
+    :try_start_1
+    new-instance v2, Landroid/os/RemoteException;
+
+    const-string v3, "Method emergencyNetworkScanResult is unimplemented."
+
+    invoke-direct {v2, v3}, Landroid/os/RemoteException;-><init>(Ljava/lang/String;)V
+
+    .end local v0    # "_data":Landroid/os/Parcel;
+    .end local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
+    .end local p1    # "type":I
+    .end local p2    # "result":Landroid/hardware/radio/network/EmergencyRegResult;
+    throw v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 558
+    .end local v1    # "_status":Z
+    .restart local v0    # "_data":Landroid/os/Parcel;
+    .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
+    .restart local p1    # "type":I
+    .restart local p2    # "result":Landroid/hardware/radio/network/EmergencyRegResult;
+    :catchall_0
+    move-exception v1
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 559
     throw v1
 .end method
 
 .method public getInterfaceDescriptor()Ljava/lang/String;
     .locals 1
 
-    .line 301
+    .line 314
     sget-object v0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     return-object v0
@@ -634,7 +754,7 @@
 
     monitor-enter p0
 
-    .line 551
+    .line 580
     :try_start_0
     const-string v0, "-1"
 
@@ -646,12 +766,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 552
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 581
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 553
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 582
     .local v0, "data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -659,14 +783,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 555
+    .line 584
     .local v1, "reply":Landroid/os/Parcel;
     :try_start_1
     sget-object v2, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 556
+    .line 585
     iget-object v2, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const v3, 0xfffffe
@@ -677,11 +801,11 @@
 
     move-result v2
 
-    .line 557
+    .line 586
     .local v2, "_status":Z
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 558
+    .line 587
     invoke-virtual {v1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v3
@@ -690,31 +814,31 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 560
+    .line 589
     .end local v2    # "_status":Z
     :try_start_2
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 561
+    .line 590
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 562
+    .line 591
     goto :goto_0
 
-    .line 560
+    .line 589
     .end local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 561
+    .line 590
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 562
+    .line 591
     throw v2
 
-    .line 564
+    .line 593
     .end local v0    # "data":Landroid/os/Parcel;
     .end local v1    # "reply":Landroid/os/Parcel;
     :cond_0
@@ -727,7 +851,7 @@
 
     return-object v0
 
-    .line 550
+    .line 579
     :catchall_1
     move-exception v0
 
@@ -744,32 +868,36 @@
         }
     .end annotation
 
-    .line 534
+    .line 563
     iget v0, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mCachedVersion:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 535
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 564
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 536
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 565
     .local v0, "data":Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 538
+    .line 567
     .local v1, "reply":Landroid/os/Parcel;
     :try_start_0
     sget-object v2, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 539
+    .line 568
     iget-object v2, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const v3, 0xffffff
@@ -780,11 +908,11 @@
 
     move-result v2
 
-    .line 540
+    .line 569
     .local v2, "_status":Z
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 541
+    .line 570
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
@@ -793,29 +921,29 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 543
+    .line 572
     .end local v2    # "_status":Z
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 544
+    .line 573
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 545
+    .line 574
     goto :goto_0
 
-    .line 543
+    .line 572
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 544
+    .line 573
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 545
+    .line 574
     throw v2
 
-    .line 547
+    .line 576
     .end local v0    # "data":Landroid/os/Parcel;
     .end local v1    # "reply":Landroid/os/Parcel;
     :cond_0
@@ -834,51 +962,55 @@
         }
     .end annotation
 
-    .line 402
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 415
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 404
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 417
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 405
+    .line 418
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 406
+    .line 419
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x7
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x7
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 407
+    .line 420
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 412
+    .line 425
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 413
+    .line 426
     nop
 
-    .line 414
+    .line 427
     return-void
 
-    .line 408
+    .line 421
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -895,7 +1027,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 412
+    .line 425
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -905,7 +1037,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 413
+    .line 426
     throw v1
 .end method
 
@@ -919,56 +1051,60 @@
         }
     .end annotation
 
-    .line 417
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 430
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 419
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 432
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 420
+    .line 433
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 421
+    .line 434
     const/4 v1, 0x0
 
     invoke-virtual {v0, p2, v1}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
 
-    .line 422
+    .line 435
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x8
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x8
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 423
+    .line 436
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 428
+    .line 441
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 429
+    .line 442
     nop
 
-    .line 430
+    .line 443
     return-void
 
-    .line 424
+    .line 437
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -986,7 +1122,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 428
+    .line 441
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -997,7 +1133,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 429
+    .line 442
     throw v1
 .end method
 
@@ -1010,51 +1146,55 @@
         }
     .end annotation
 
-    .line 433
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 446
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 435
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 448
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 436
+    .line 449
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 437
+    .line 450
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x9
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x9
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 438
+    .line 451
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 443
+    .line 456
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 444
+    .line 457
     nop
 
-    .line 445
+    .line 458
     return-void
 
-    .line 439
+    .line 452
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -1071,7 +1211,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 443
+    .line 456
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -1081,7 +1221,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 444
+    .line 457
     throw v1
 .end method
 
@@ -1097,60 +1237,64 @@
         }
     .end annotation
 
-    .line 448
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 461
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 450
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 463
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 451
+    .line 464
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 452
+    .line 465
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 453
+    .line 466
     invoke-virtual {v0, p3, p4}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 454
+    .line 467
     invoke-virtual {v0, p5, p6}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 455
+    .line 468
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xa
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xa
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 456
+    .line 469
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 461
+    .line 474
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 462
+    .line 475
     nop
 
-    .line 463
+    .line 476
     return-void
 
-    .line 457
+    .line 470
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -1170,7 +1314,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 461
+    .line 474
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -1183,7 +1327,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 462
+    .line 475
     throw v1
 .end method
 
@@ -1201,68 +1345,72 @@
         }
     .end annotation
 
-    .line 466
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 479
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 468
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 481
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 469
+    .line 482
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 470
+    .line 483
     const/4 v1, 0x0
 
     invoke-virtual {v0, p2, v1}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
 
-    .line 471
+    .line 484
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 472
+    .line 485
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 473
+    .line 486
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 474
+    .line 487
     invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 475
+    .line 488
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xb
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xb
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 476
+    .line 489
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 481
+    .line 494
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 482
+    .line 495
     nop
 
-    .line 483
+    .line 496
     return-void
 
-    .line 477
+    .line 490
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -1284,7 +1432,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 481
+    .line 494
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -1299,7 +1447,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 482
+    .line 495
     throw v1
 .end method
 
@@ -1313,54 +1461,58 @@
         }
     .end annotation
 
-    .line 486
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 499
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 488
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 501
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 489
+    .line 502
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 490
+    .line 503
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 491
+    .line 504
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xc
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xc
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 492
+    .line 505
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 497
+    .line 510
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 498
+    .line 511
     nop
 
-    .line 499
+    .line 512
     return-void
 
-    .line 493
+    .line 506
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -1378,7 +1530,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 497
+    .line 510
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -1389,7 +1541,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 498
+    .line 511
     throw v1
 .end method
 
@@ -1403,56 +1555,60 @@
         }
     .end annotation
 
-    .line 502
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 515
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 504
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 517
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 505
+    .line 518
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 506
+    .line 519
     const/4 v1, 0x0
 
     invoke-virtual {v0, p2, v1}, Landroid/os/Parcel;->writeTypedObject(Landroid/os/Parcelable;I)V
 
-    .line 507
+    .line 520
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xd
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xd
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 508
+    .line 521
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 513
+    .line 526
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 514
+    .line 527
     nop
 
-    .line 515
+    .line 528
     return-void
 
-    .line 509
+    .line 522
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -1470,7 +1626,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 513
+    .line 526
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -1481,7 +1637,7 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 514
+    .line 527
     throw v1
 .end method
 
@@ -1495,54 +1651,58 @@
         }
     .end annotation
 
-    .line 518
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 531
+    invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 520
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 533
     .local v0, "_data":Landroid/os/Parcel;
     :try_start_0
     sget-object v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 521
+    .line 534
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 522
+    .line 535
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 523
+    .line 536
     iget-object v1, p0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xe
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xe
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 524
+    .line 537
     .local v1, "_status":Z
     if-eqz v1, :cond_0
 
-    .line 529
+    .line 542
     .end local v1    # "_status":Z
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 530
+    .line 543
     nop
 
-    .line 531
+    .line 544
     return-void
 
-    .line 525
+    .line 538
     .restart local v1    # "_status":Z
     :cond_0
     :try_start_1
@@ -1560,7 +1720,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 529
+    .line 542
     .end local v1    # "_status":Z
     .restart local v0    # "_data":Landroid/os/Parcel;
     .restart local p0    # "this":Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
@@ -1571,6 +1731,6 @@
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 530
+    .line 543
     throw v1
 .end method

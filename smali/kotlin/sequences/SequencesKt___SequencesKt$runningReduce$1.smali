@@ -45,7 +45,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -63,8 +63,8 @@
         0x1
     }
     l = {
-        0x87d,
-        0x880
+        0x92c,
+        0x92f
     }
     m = "invokeSuspend"
     n = {
@@ -224,12 +224,11 @@
 
     move-result-object v0
 
-    .line 2169
+    .line 2344
     iget v1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$runningReduce$1;->label:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 2179
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -238,7 +237,6 @@
 
     throw p1
 
-    .line 2169
     :pswitch_0
     move-object v1, p0
 
@@ -306,7 +304,7 @@
 
     check-cast v4, Lkotlin/sequences/SequenceScope;
 
-    .line 2170
+    .line 2345
     .restart local v4    # "$this$sequence":Lkotlin/sequences/SequenceScope;
     iget-object v2, v1, Lkotlin/sequences/SequencesKt___SequencesKt$runningReduce$1;->$this_runningReduce:Lkotlin/sequences/Sequence;
 
@@ -314,7 +312,7 @@
 
     move-result-object v3
 
-    .line 2171
+    .line 2346
     .restart local v3    # "iterator":Ljava/util/Iterator;
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -322,12 +320,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 2172
+    .line 2347
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 2173
+    .line 2348
     .restart local v2    # "accumulator":Ljava/lang/Object;
     move-object v5, v1
 
@@ -349,10 +347,10 @@
 
     if-ne v5, v0, :cond_0
 
-    .line 2169
+    .line 2344
     return-object v0
 
-    .line 2174
+    .line 2349
     :cond_0
     :goto_0
     nop
@@ -364,7 +362,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 2175
+    .line 2350
     iget-object v5, v1, Lkotlin/sequences/SequencesKt___SequencesKt$runningReduce$1;->$operation:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -375,7 +373,7 @@
 
     move-result-object v2
 
-    .line 2176
+    .line 2351
     move-object v5, v1
 
     check-cast v5, Lkotlin/coroutines/Continuation;
@@ -396,16 +394,18 @@
 
     if-ne v5, v0, :cond_1
 
-    .line 2169
+    .line 2344
     return-object v0
 
-    .line 2176
+    .line 2351
     :cond_1
     :goto_2
     goto :goto_1
 
-    .line 2179
+    .line 2354
     .end local v2    # "accumulator":Ljava/lang/Object;
+    .end local v3    # "iterator":Ljava/util/Iterator;
+    .end local v4    # "$this$sequence":Lkotlin/sequences/SequenceScope;
     :cond_2
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

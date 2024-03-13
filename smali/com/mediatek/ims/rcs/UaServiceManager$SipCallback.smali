@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 395
+    .line 449
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,41 +26,46 @@
 
 
 # virtual methods
-.method public messageReceived([B)V
+.method public messageReceived(I[B)V
     .locals 0
-    .param p1, "message"    # [B
+    .param p1, "phoenId"    # I
+    .param p2, "message"    # [B
 
-    .line 397
+    .line 451
     return-void
 .end method
 
-.method public messageSendFailure(Ljava/lang/String;I)V
+.method public messageSendFailure(ILjava/lang/String;I)V
     .locals 0
-    .param p1, "tranactionId"    # Ljava/lang/String;
-    .param p2, "reason"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "tranactionId"    # Ljava/lang/String;
+    .param p3, "reason"    # I
 
-    .line 403
+    .line 457
     return-void
 .end method
 
-.method public messageSent(Ljava/lang/String;)V
+.method public messageSent(ILjava/lang/String;)V
     .locals 0
-    .param p1, "transactionId"    # Ljava/lang/String;
+    .param p1, "phoneId"    # I
+    .param p2, "transactionId"    # Ljava/lang/String;
 
-    .line 400
+    .line 454
     return-void
 .end method
 
-.method public onAvailable()V
+.method public onAvailable(I)V
     .locals 0
+    .param p1, "phoneId"    # I
 
-    .line 406
+    .line 460
     return-void
 .end method
 
-.method public onUnavailable()V
+.method public onUnavailable(I)V
     .locals 0
+    .param p1, "phoneId"    # I
 
-    .line 409
+    .line 463
     return-void
 .end method

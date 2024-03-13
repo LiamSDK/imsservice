@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 680
+    .line 676
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 682
+    .line 678
     return-void
 .end method
 
@@ -31,7 +31,7 @@
     .param p1, "id"    # I
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
-    .line 693
+    .line 689
     invoke-virtual {p0, p1, p2}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
     move-result v0
@@ -45,7 +45,7 @@
     .param p1, "id"    # I
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
-    .line 688
+    .line 684
     invoke-virtual {p0, p1, p2}, Landroid/content/res/Resources;->getColorStateList(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
     move-result-object v0

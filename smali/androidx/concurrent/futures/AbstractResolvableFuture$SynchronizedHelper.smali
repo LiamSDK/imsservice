@@ -58,17 +58,17 @@
     iput-object p3, p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->listeners:Landroidx/concurrent/futures/AbstractResolvableFuture$Listener;
 
     .line 1175
-    const/4 v0, 0x1
-
     monitor-exit p1
+
+    const/4 v0, 0x1
 
     return v0
 
     .line 1177
     :cond_0
-    const/4 v0, 0x0
-
     monitor-exit p1
+
+    const/4 v0, 0x0
 
     return v0
 
@@ -112,17 +112,17 @@
     iput-object p3, p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->value:Ljava/lang/Object;
 
     .line 1186
-    const/4 v0, 0x1
-
     monitor-exit p1
+
+    const/4 v0, 0x1
 
     return v0
 
     .line 1188
     :cond_0
-    const/4 v0, 0x0
-
     monitor-exit p1
+
+    const/4 v0, 0x0
 
     return v0
 
@@ -166,17 +166,17 @@
     iput-object p3, p1, Landroidx/concurrent/futures/AbstractResolvableFuture;->waiters:Landroidx/concurrent/futures/AbstractResolvableFuture$Waiter;
 
     .line 1164
-    const/4 v0, 0x1
-
     monitor-exit p1
+
+    const/4 v0, 0x1
 
     return v0
 
     .line 1166
     :cond_0
-    const/4 v0, 0x0
-
     monitor-exit p1
+
+    const/4 v0, 0x0
 
     return v0
 

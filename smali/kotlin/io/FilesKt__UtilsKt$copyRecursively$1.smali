@@ -32,7 +32,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -91,16 +91,15 @@
 
 .method public final invoke(Ljava/io/File;Ljava/io/IOException;)Ljava/lang/Void;
     .locals 1
-    .param p1, "$noName_0"    # Ljava/io/File;
     .param p2, "exception"    # Ljava/io/IOException;
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "exception"
+    const-string p1, "exception"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 291
     throw p2

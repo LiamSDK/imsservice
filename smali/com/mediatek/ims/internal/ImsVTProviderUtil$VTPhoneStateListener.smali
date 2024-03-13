@@ -27,13 +27,13 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
-    .line 320
+    .line 324
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$VTPhoneStateListener;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
-    .line 321
+    .line 325
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
 
-    .line 322
+    .line 326
     return-void
 .end method
 
@@ -43,12 +43,12 @@
     .locals 4
     .param p1, "serviceState"    # Landroid/telephony/ServiceState;
 
-    .line 335
+    .line 339
     const-string v0, "ImsVT Util"
 
     if-nez p1, :cond_0
 
-    .line 336
+    .line 340
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -77,10 +77,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 337
+    .line 341
     return-void
 
-    .line 340
+    .line 344
     :cond_0
     iget-object v1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$VTPhoneStateListener;->mSubId:Ljava/lang/Integer;
 
@@ -92,7 +92,7 @@
 
     move-result v1
 
-    .line 342
+    .line 346
     .local v1, "phondId":I
     invoke-static {v1}, Landroid/telephony/SubscriptionManager;->isValidPhoneId(I)Z
 
@@ -100,27 +100,27 @@
 
     if-nez v2, :cond_1
 
-    .line 343
+    .line 347
     const-string v2, "[onServiceStateChanged] : phondId is invalid"
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 344
+    .line 348
     return-void
 
-    .line 347
+    .line 351
     :cond_1
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getDataRoaming()Z
 
     move-result v0
 
-    .line 348
+    .line 352
     .local v0, "isDataRoaming":Z
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getVoiceRoaming()Z
 
     move-result v2
 
-    .line 353
+    .line 357
     .local v2, "isVoiceRoaming":Z
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
@@ -128,7 +128,7 @@
 
     invoke-virtual {v3}, Landroid/telephony/TelephonyManager;->getSimState()I
 
-    .line 356
+    .line 360
     return-void
 .end method
 
@@ -136,10 +136,10 @@
     .locals 0
     .param p1, "context"    # Landroid/content/Context;
 
-    .line 329
+    .line 333
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$VTPhoneStateListener;->mContext:Landroid/content/Context;
 
-    .line 330
+    .line 334
     return-void
 .end method
 
@@ -147,9 +147,9 @@
     .locals 0
     .param p1, "owner"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
-    .line 325
+    .line 329
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$VTPhoneStateListener;->mOwner:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
-    .line 326
+    .line 330
     return-void
 .end method

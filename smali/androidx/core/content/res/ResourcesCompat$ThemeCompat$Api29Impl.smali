@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 762
+    .line 758
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 764
+    .line 760
     return-void
 .end method
 
@@ -29,9 +29,9 @@
     .locals 0
     .param p0, "theme"    # Landroid/content/res/Resources$Theme;
 
-    .line 768
+    .line 764
     invoke-virtual {p0}, Landroid/content/res/Resources$Theme;->rebase()V
 
-    .line 769
+    .line 765
     return-void
 .end method

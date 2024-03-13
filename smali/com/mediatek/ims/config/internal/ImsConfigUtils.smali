@@ -107,45 +107,45 @@
     .locals 5
     .param p0, "array"    # [Ljava/lang/Object;
 
-    .line 299
+    .line 352
     const-string v0, "null"
 
     if-nez p0, :cond_0
 
-    .line 300
+    .line 353
     return-object v0
 
-    .line 302
+    .line 355
     :cond_0
     array-length v1, p0
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 304
+    .line 357
     .local v1, "maxLength":I
     const/4 v2, -0x1
 
     if-ne v1, v2, :cond_1
 
-    .line 305
+    .line 358
     return-object v0
 
-    .line 308
+    .line 361
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 309
+    .line 362
     .local v0, "b":Ljava/lang/StringBuilder;
     const/16 v2, 0x22
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 310
+    .line 363
     const/4 v3, 0x0
 
-    .line 311
+    .line 364
     .local v3, "i":I
     :goto_0
     aget-object v4, p0, v3
@@ -156,10 +156,10 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 312
+    .line 365
     if-ne v3, v1, :cond_2
 
-    .line 313
+    .line 366
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -170,13 +170,13 @@
 
     return-object v2
 
-    .line 315
+    .line 368
     :cond_2
     const-string v4, "\",\""
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 310
+    .line 363
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
@@ -186,7 +186,7 @@
     .locals 4
     .param p0, "phoneId"    # I
 
-    .line 208
+    .line 261
     invoke-static {}, Lcom/mediatek/ims/ImsCommonUtil;->supportMims()Z
 
     move-result v0
@@ -199,12 +199,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 209
+    .line 262
     if-gt p0, v3, :cond_0
 
     if-gez p0, :cond_3
 
-    .line 210
+    .line 263
     :cond_0
     sget-boolean v0, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->DEBUG:Z
 
@@ -230,11 +230,11 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
+    .line 265
     :cond_1
     return v2
 
-    .line 215
+    .line 268
     :cond_2
     if-gt p0, v3, :cond_4
 
@@ -242,13 +242,13 @@
 
     goto :goto_0
 
-    .line 221
+    .line 274
     :cond_3
     const/4 v0, 0x1
 
     return v0
 
-    .line 216
+    .line 269
     :cond_4
     :goto_0
     sget-boolean v0, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->DEBUG:Z
@@ -275,7 +275,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 218
+    .line 271
     :cond_5
     return v2
 .end method
@@ -286,7 +286,7 @@
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "phoneId"    # I
 
-    .line 233
+    .line 286
     const-string v0, "carrier_config"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -295,13 +295,13 @@
 
     check-cast v0, Landroid/telephony/CarrierConfigManager;
 
-    .line 235
+    .line 288
     .local v0, "configManager":Landroid/telephony/CarrierConfigManager;
     invoke-static {p2}, Lcom/mediatek/ims/common/SubscriptionManagerHelper;->getSubIdUsingPhoneId(I)I
 
     move-result v1
 
-    .line 236
+    .line 289
     .local v1, "subId":I
     sget-boolean v2, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->TELDBG:Z
 
@@ -339,31 +339,31 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
+    .line 291
     :cond_0
     const/4 v2, 0x0
 
-    .line 239
+    .line 292
     .local v2, "b":Landroid/os/PersistableBundle;
     if-eqz v0, :cond_1
 
-    .line 240
+    .line 293
     invoke-virtual {v0, v1}, Landroid/telephony/CarrierConfigManager;->getConfigForSubId(I)Landroid/os/PersistableBundle;
 
     move-result-object v2
 
-    .line 242
+    .line 295
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 243
+    .line 296
     invoke-virtual {v2, p1}, Landroid/os/PersistableBundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v3
 
     return v3
 
-    .line 246
+    .line 299
     :cond_2
     invoke-static {}, Landroid/telephony/CarrierConfigManager;->getDefaultConfig()Landroid/os/PersistableBundle;
 
@@ -532,7 +532,7 @@
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "phoneId"    # I
 
-    .line 259
+    .line 312
     const-string v0, "carrier_config"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -541,13 +541,13 @@
 
     check-cast v0, Landroid/telephony/CarrierConfigManager;
 
-    .line 261
+    .line 314
     .local v0, "configManager":Landroid/telephony/CarrierConfigManager;
     invoke-static {p2}, Lcom/mediatek/ims/common/SubscriptionManagerHelper;->getSubIdUsingPhoneId(I)I
 
     move-result v1
 
-    .line 262
+    .line 315
     .local v1, "subId":I
     sget-boolean v2, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->DEBUG:Z
 
@@ -585,31 +585,31 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 264
+    .line 317
     :cond_0
     const/4 v2, 0x0
 
-    .line 265
+    .line 318
     .local v2, "b":Landroid/os/PersistableBundle;
     if-eqz v0, :cond_1
 
-    .line 266
+    .line 319
     invoke-virtual {v0, v1}, Landroid/telephony/CarrierConfigManager;->getConfigForSubId(I)Landroid/os/PersistableBundle;
 
     move-result-object v2
 
-    .line 268
+    .line 321
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 269
+    .line 322
     invoke-virtual {v2, p1}, Landroid/os/PersistableBundle;->getInt(Ljava/lang/String;)I
 
     move-result v3
 
     return v3
 
-    .line 272
+    .line 325
     :cond_2
     invoke-static {}, Landroid/telephony/CarrierConfigManager;->getDefaultConfig()Landroid/os/PersistableBundle;
 
@@ -627,10 +627,10 @@
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "phoneId"    # I
 
-    .line 288
+    .line 341
     const/4 v0, 0x0
 
-    .line 290
+    .line 343
     .local v0, "wfcMode":I
     invoke-static {}, Lcom/mediatek/ims/ImsCommonUtil;->supportMims()Z
 
@@ -638,7 +638,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 291
+    .line 344
     invoke-static {p0, p1}, Lcom/android/ims/ImsManager;->getInstance(Landroid/content/Context;I)Lcom/android/ims/ImsManager;
 
     move-result-object v1
@@ -649,13 +649,13 @@
 
     goto :goto_0
 
-    .line 293
+    .line 346
     :cond_0
     invoke-static {p0}, Lcom/android/ims/ImsManager;->getWfcMode(Landroid/content/Context;)I
 
     move-result v0
 
-    .line 295
+    .line 348
     :goto_0
     return v0
 .end method
@@ -665,10 +665,10 @@
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "phoneId"    # I
 
-    .line 277
+    .line 330
     const/4 v0, 0x0
 
-    .line 279
+    .line 332
     .local v0, "wfcSetting":Z
     invoke-static {}, Lcom/mediatek/ims/ImsCommonUtil;->supportMims()Z
 
@@ -676,7 +676,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 280
+    .line 333
     invoke-static {p0, p1}, Lcom/android/ims/ImsManager;->getInstance(Landroid/content/Context;I)Lcom/android/ims/ImsManager;
 
     move-result-object v1
@@ -687,13 +687,13 @@
 
     goto :goto_0
 
-    .line 282
+    .line 335
     :cond_0
     invoke-static {p0}, Lcom/android/ims/ImsManager;->isWfcEnabledByUser(Landroid/content/Context;)Z
 
     move-result v0
 
-    .line 284
+    .line 337
     :goto_0
     return v0
 .end method
@@ -1112,7 +1112,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "After 93, send EIMS feature value volte:"
+    const-string v9, "triggerSendCfg, AT+EIMSCFG="
 
     invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1124,7 +1124,7 @@
 
     move-result-object v3
 
-    const-string v4, ", vilte:"
+    const-string v4, ", "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1136,37 +1136,43 @@
 
     move-result-object v2
 
-    const-string v3, ", vowifi:"
+    const-string v3, ","
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    aget v3, v0, v5
+    aget v4, v0, v5
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
-
-    const-string v3, ", viwifi:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    aget v3, v0, v6
+    aget v4, v0, v6
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
-
-    const-string v3, ", sms:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    aget v3, v0, v7
+    aget v4, v0, v7
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget v3, v0, v8
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1179,18 +1185,6 @@
     move-result-object v2
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", eims:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    aget v3, v0, v8
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -1212,12 +1206,293 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 181
+    .line 180
     const/4 v2, 0x0
 
     invoke-interface {p1, v0, p2, v2}, Lcom/mediatek/ims/ril/ImsCommandsInterface;->setImsCfg([IILandroid/os/Message;)V
 
-    .line 182
+    .line 181
+    return-void
+.end method
+
+.method public static triggerSendCfgForDisableIms(Landroid/content/Context;Lcom/mediatek/ims/ril/ImsCommandsInterface;I)V
+    .locals 16
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "imsRilAdapter"    # Lcom/mediatek/ims/ril/ImsCommandsInterface;
+    .param p2, "phoneId"    # I
+
+    .line 231
+    move/from16 v0, p2
+
+    move-object/from16 v1, p0
+
+    invoke-static {v1, v0}, Lcom/android/ims/ImsManager;->getInstance(Landroid/content/Context;I)Lcom/android/ims/ImsManager;
+
+    move-result-object v2
+
+    .line 232
+    .local v2, "imsMgr":Lcom/android/ims/ImsManager;
+    invoke-virtual {v2}, Lcom/android/ims/ImsManager;->isVolteEnabledByPlatform()Z
+
+    move-result v3
+
+    .line 233
+    .local v3, "volteCfg":Z
+    invoke-virtual {v2}, Lcom/android/ims/ImsManager;->isEnhanced4gLteModeSettingEnabledByUser()Z
+
+    move-result v4
+
+    .line 234
+    .local v4, "volteEnabled":Z
+    invoke-virtual {v2}, Lcom/android/ims/ImsManager;->isWfcEnabledByPlatform()Z
+
+    move-result v5
+
+    .line 235
+    .local v5, "wfcCfg":Z
+    invoke-virtual {v2}, Lcom/android/ims/ImsManager;->isWfcEnabledByUser()Z
+
+    move-result v6
+
+    .line 236
+    .local v6, "wfcEnabled":Z
+    const-string v7, "ImsConfigUtils"
+
+    if-eqz v3, :cond_0
+
+    if-nez v4, :cond_1
+
+    :cond_0
+    if-eqz v5, :cond_2
+
+    if-nez v6, :cond_1
+
+    move-object/from16 v9, p1
+
+    goto/16 :goto_0
+
+    .line 244
+    :cond_1
+    const/4 v8, 0x6
+
+    new-array v8, v8, [I
+
+    .line 246
+    .local v8, "params":[I
+    const-string v9, "persist.vendor.mtk.volte.enable"
+
+    invoke-static {v9, v0}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
+
+    move-result v9
+
+    const/4 v10, 0x0
+
+    aput v9, v8, v10
+
+    .line 247
+    const-string v9, "persist.vendor.mtk.vilte.enable"
+
+    invoke-static {v9, v0}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
+
+    move-result v9
+
+    const/4 v11, 0x1
+
+    aput v9, v8, v11
+
+    .line 248
+    const-string v9, "persist.vendor.mtk.wfc.enable"
+
+    invoke-static {v9, v0}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
+
+    move-result v9
+
+    const/4 v12, 0x2
+
+    aput v9, v8, v12
+
+    .line 249
+    const-string v9, "persist.vendor.mtk.viwifi.enable"
+
+    invoke-static {v9, v0}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
+
+    move-result v9
+
+    const/4 v13, 0x3
+
+    aput v9, v8, v13
+
+    .line 250
+    const-string v9, "persist.vendor.ims_support"
+
+    invoke-static {v9, v10}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v9
+
+    const/4 v14, 0x4
+
+    aput v9, v8, v14
+
+    .line 252
+    const/4 v9, 0x5
+
+    aput v10, v8, v9
+
+    .line 254
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "triggerSendCfgForDisableIms, AT+EIMSCFG="
+
+    invoke-virtual {v15, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    aget v10, v8, v10
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, ","
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    aget v11, v8, v11
+
+    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    aget v11, v8, v12
+
+    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    aget v11, v8, v13
+
+    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    aget v11, v8, v14
+
+    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const/4 v10, 0x5
+
+    aget v10, v8, v10
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, ", phoneId:"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v7, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 257
+    const/4 v7, 0x0
+
+    move-object/from16 v9, p1
+
+    invoke-interface {v9, v8, v0, v7}, Lcom/mediatek/ims/ril/ImsCommandsInterface;->setImsCfg([IILandroid/os/Message;)V
+
+    .line 258
+    return-void
+
+    .line 236
+    .end local v8    # "params":[I
+    :cond_2
+    move-object/from16 v9, p1
+
+    .line 238
+    :goto_0
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "triggerSendCfgForDisableIms, volteCfg:"
+
+    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v10, ", volteEnabled:"
+
+    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v10, ", wfcCfg:"
+
+    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v10, ", wfcEnabled:"
+
+    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 241
     return-void
 .end method
 
@@ -1228,12 +1503,12 @@
     .param p2, "phoneId"    # I
     .param p3, "volteOn"    # I
 
-    .line 186
+    .line 185
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    .line 187
+    .line 186
     .local v0, "params":[I
     const-string v1, "carrier_allow_turnoff_ims_bool"
 
@@ -1247,7 +1522,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 188
+    .line 187
     move v1, v2
 
     goto :goto_0
@@ -1255,12 +1530,12 @@
     :cond_0
     move v1, v3
 
-    .line 191
+    .line 190
     .local v1, "isAllowTurnOff":I
     :goto_0
     aput p3, v0, v3
 
-    .line 192
+    .line 191
     const-string v4, "persist.vendor.mtk.vilte.enable"
 
     invoke-static {v4, p2}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
@@ -1269,7 +1544,7 @@
 
     aput v4, v0, v2
 
-    .line 193
+    .line 192
     const-string v4, "persist.vendor.mtk.wfc.enable"
 
     invoke-static {v4, p2}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
@@ -1280,7 +1555,7 @@
 
     aput v4, v0, v5
 
-    .line 194
+    .line 193
     const-string v4, "persist.vendor.mtk.viwifi.enable"
 
     invoke-static {v4, p2}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
@@ -1291,7 +1566,7 @@
 
     aput v4, v0, v6
 
-    .line 195
+    .line 194
     const-string v4, "persist.vendor.ims_support"
 
     invoke-static {v4, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -1302,7 +1577,7 @@
 
     aput v4, v0, v7
 
-    .line 198
+    .line 197
     aget v4, v0, v3
 
     aget v8, v0, v2
@@ -1329,12 +1604,12 @@
 
     aput v4, v0, v8
 
-    .line 200
+    .line 199
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "After 93, send EIMS feature value volte:"
+    const-string v9, "triggerSendCfgForVolte, AT+EIMSCFG="
 
     invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1346,7 +1621,7 @@
 
     move-result-object v3
 
-    const-string v4, ", vilte:"
+    const-string v4, ", "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1358,37 +1633,43 @@
 
     move-result-object v2
 
-    const-string v3, ", vowifi:"
+    const-string v3, ","
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    aget v3, v0, v5
+    aget v4, v0, v5
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
-
-    const-string v3, ", viwifi:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    aget v3, v0, v6
+    aget v4, v0, v6
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
-
-    const-string v3, ", sms:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    aget v3, v0, v7
+    aget v4, v0, v7
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget v3, v0, v8
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1401,18 +1682,6 @@
     move-result-object v2
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", eims:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    aget v3, v0, v8
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -1434,11 +1703,222 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 204
+    .line 203
     const/4 v2, 0x0
 
     invoke-interface {p1, v0, p2, v2}, Lcom/mediatek/ims/ril/ImsCommandsInterface;->setImsCfg([IILandroid/os/Message;)V
 
-    .line 205
+    .line 204
+    return-void
+.end method
+
+.method public static triggerSendCfgForVowifi(Landroid/content/Context;Lcom/mediatek/ims/ril/ImsCommandsInterface;III)V
+    .locals 10
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "imsRilAdapter"    # Lcom/mediatek/ims/ril/ImsCommandsInterface;
+    .param p2, "phoneId"    # I
+    .param p3, "volteOn"    # I
+    .param p4, "vowifiOn"    # I
+
+    .line 208
+    const/4 v0, 0x6
+
+    new-array v0, v0, [I
+
+    .line 209
+    .local v0, "params":[I
+    const-string v1, "carrier_allow_turnoff_ims_bool"
+
+    invoke-static {p0, v1, p2}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getBooleanCarrierConfig(Landroid/content/Context;Ljava/lang/String;I)Z
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    if-eqz v1, :cond_0
+
+    .line 210
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_0
+    move v1, v3
+
+    .line 213
+    .local v1, "isAllowTurnOff":I
+    :goto_0
+    aput p3, v0, v3
+
+    .line 214
+    const-string v4, "persist.vendor.mtk.vilte.enable"
+
+    invoke-static {v4, p2}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
+
+    move-result v4
+
+    aput v4, v0, v2
+
+    .line 215
+    const/4 v4, 0x2
+
+    aput p4, v0, v4
+
+    .line 216
+    const-string v5, "persist.vendor.mtk.viwifi.enable"
+
+    invoke-static {v5, p2}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
+
+    move-result v5
+
+    const/4 v6, 0x3
+
+    aput v5, v0, v6
+
+    .line 217
+    const-string v5, "persist.vendor.ims_support"
+
+    invoke-static {v5, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v5
+
+    const/4 v7, 0x4
+
+    aput v5, v0, v7
+
+    .line 220
+    aget v5, v0, v3
+
+    aget v8, v0, v2
+
+    or-int/2addr v5, v8
+
+    aget v8, v0, v4
+
+    or-int/2addr v5, v8
+
+    aget v8, v0, v6
+
+    or-int/2addr v5, v8
+
+    aget v8, v0, v7
+
+    or-int/2addr v5, v8
+
+    xor-int/lit8 v8, v1, 0x1
+
+    or-int/2addr v5, v8
+
+    const/4 v8, 0x5
+
+    aput v5, v0, v8
+
+    .line 222
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "triggerSendCfgForVowifi, AT+EIMSCFG="
+
+    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    aget v3, v0, v3
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v5, ", "
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    aget v2, v0, v2
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ","
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget v4, v0, v4
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget v4, v0, v6
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget v4, v0, v7
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget v3, v0, v8
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", isAllowTurnOff:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", phoneId:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "ImsConfigUtils"
+
+    invoke-static {v3, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 226
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p2, v2}, Lcom/mediatek/ims/ril/ImsCommandsInterface;->setImsCfg([IILandroid/os/Message;)V
+
+    .line 227
     return-void
 .end method

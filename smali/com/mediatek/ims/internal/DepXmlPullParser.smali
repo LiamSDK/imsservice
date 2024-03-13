@@ -48,18 +48,18 @@
     .local v0, "local":Lcom/mediatek/ims/internal/DialogInfo$Local;
     sget-object v1, Lcom/mediatek/ims/internal/DepXmlPullParser;->namespace:Ljava/lang/String;
 
-    const/4 v2, 0x2
+    const-string v2, "dialog"
 
-    const-string v3, "dialog"
+    const/4 v3, 0x2
 
-    invoke-interface {p1, v2, v1, v3}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v3, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 70
     const/4 v1, 0x0
 
-    const-string v3, "id"
+    const-string v2, "id"
 
-    invoke-interface {p1, v1, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {p1, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -69,10 +69,10 @@
 
     .line 72
     .local v1, "dialogId":I
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     .line 73
-    .local v3, "exclusive":Z
+    .local v2, "exclusive":Z
     const-string v4, ""
 
     .line 75
@@ -91,7 +91,7 @@
 
     move-result v5
 
-    if-eq v5, v2, :cond_0
+    if-eq v5, v3, :cond_0
 
     .line 77
     goto :goto_0
@@ -125,7 +125,7 @@
 
     invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v3
+    move-result v2
 
     .line 83
     .end local v6    # "str":Ljava/lang/String;
@@ -175,11 +175,11 @@
 
     .line 91
     :cond_4
-    new-instance v2, Lcom/mediatek/ims/internal/DialogInfo$Dialog;
+    new-instance v3, Lcom/mediatek/ims/internal/DialogInfo$Dialog;
 
-    invoke-direct {v2, v1, v3, v4, v0}, Lcom/mediatek/ims/internal/DialogInfo$Dialog;-><init>(IZLjava/lang/String;Lcom/mediatek/ims/internal/DialogInfo$Local;)V
+    invoke-direct {v3, v1, v2, v4, v0}, Lcom/mediatek/ims/internal/DialogInfo$Dialog;-><init>(IZLjava/lang/String;Lcom/mediatek/ims/internal/DialogInfo$Local;)V
 
-    return-object v2
+    return-object v3
 .end method
 
 .method private readDialogInfo(Lorg/xmlpull/v1/XmlPullParser;)Lcom/mediatek/ims/internal/DialogInfo;
@@ -201,11 +201,11 @@
     .local v0, "dialogInfo":Lcom/mediatek/ims/internal/DialogInfo;
     sget-object v1, Lcom/mediatek/ims/internal/DepXmlPullParser;->namespace:Ljava/lang/String;
 
-    const/4 v2, 0x2
+    const-string v2, "dialog-info"
 
-    const-string v3, "dialog-info"
+    const/4 v3, 0x2
 
-    invoke-interface {p1, v2, v1, v3}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v3, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 51
     :goto_0
@@ -213,16 +213,16 @@
 
     move-result v1
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
-    if-eq v1, v3, :cond_2
+    if-eq v1, v2, :cond_2
 
     .line 52
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v1
 
-    if-eq v1, v2, :cond_0
+    if-eq v1, v3, :cond_0
 
     .line 53
     goto :goto_0
@@ -235,25 +235,25 @@
 
     .line 56
     .local v1, "name":Ljava/lang/String;
-    const-string v3, "dialog"
+    const-string v2, "dialog"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     .line 57
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/DepXmlPullParser;->readDialog(Lorg/xmlpull/v1/XmlPullParser;)Lcom/mediatek/ims/internal/DialogInfo$Dialog;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 58
-    .local v3, "dialog":Lcom/mediatek/ims/internal/DialogInfo$Dialog;
-    invoke-virtual {v0, v3}, Lcom/mediatek/ims/internal/DialogInfo;->addDialog(Lcom/mediatek/ims/internal/DialogInfo$Dialog;)Z
+    .local v2, "dialog":Lcom/mediatek/ims/internal/DialogInfo$Dialog;
+    invoke-virtual {v0, v2}, Lcom/mediatek/ims/internal/DialogInfo;->addDialog(Lcom/mediatek/ims/internal/DialogInfo$Dialog;)Z
 
     .line 59
-    .end local v3    # "dialog":Lcom/mediatek/ims/internal/DialogInfo$Dialog;
+    .end local v2    # "dialog":Lcom/mediatek/ims/internal/DialogInfo$Dialog;
     goto :goto_1
 
     .line 60
@@ -289,11 +289,11 @@
     .local v0, "local":Lcom/mediatek/ims/internal/DialogInfo$Local;
     sget-object v1, Lcom/mediatek/ims/internal/DepXmlPullParser;->namespace:Ljava/lang/String;
 
-    const/4 v2, 0x2
+    const-string v2, "local"
 
-    const-string v3, "local"
+    const/4 v3, 0x2
 
-    invoke-interface {p1, v2, v1, v3}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v3, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 98
     :goto_0
@@ -301,16 +301,16 @@
 
     move-result v1
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
-    if-eq v1, v3, :cond_5
+    if-eq v1, v2, :cond_5
 
     .line 99
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v1
 
-    if-eq v1, v2, :cond_0
+    if-eq v1, v3, :cond_0
 
     .line 100
     goto :goto_0
@@ -323,95 +323,95 @@
 
     .line 103
     .local v1, "name":Ljava/lang/String;
-    const-string v3, "identity"
+    const-string v2, "identity"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     .line 104
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/DepXmlPullParser;->readText(Lorg/xmlpull/v1/XmlPullParser;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 105
-    .local v3, "identity":Ljava/lang/String;
-    invoke-virtual {v0, v3}, Lcom/mediatek/ims/internal/DialogInfo$Local;->setIdentity(Ljava/lang/String;)V
+    .local v2, "identity":Ljava/lang/String;
+    invoke-virtual {v0, v2}, Lcom/mediatek/ims/internal/DialogInfo$Local;->setIdentity(Ljava/lang/String;)V
 
     .line 106
-    .end local v3    # "identity":Ljava/lang/String;
+    .end local v2    # "identity":Ljava/lang/String;
     goto :goto_1
 
     :cond_1
-    const-string v3, "target"
+    const-string v2, "target"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
     .line 107
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     const-string v4, "uri"
 
-    invoke-interface {p1, v3, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {p1, v2, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 108
-    .local v3, "targetUri":Ljava/lang/String;
-    invoke-virtual {v0, v3}, Lcom/mediatek/ims/internal/DialogInfo$Local;->setTargetUri(Ljava/lang/String;)V
+    .local v2, "targetUri":Ljava/lang/String;
+    invoke-virtual {v0, v2}, Lcom/mediatek/ims/internal/DialogInfo$Local;->setTargetUri(Ljava/lang/String;)V
 
     .line 110
     invoke-direct {p0, p1, v0}, Lcom/mediatek/ims/internal/DepXmlPullParser;->readTargetParamAttributesToLocal(Lorg/xmlpull/v1/XmlPullParser;Lcom/mediatek/ims/internal/DialogInfo$Local;)V
 
     .line 112
-    .end local v3    # "targetUri":Ljava/lang/String;
+    .end local v2    # "targetUri":Ljava/lang/String;
     goto :goto_1
 
     :cond_2
-    const-string v3, "mediaAttributes"
+    const-string v2, "mediaAttributes"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_3
+    if-eqz v2, :cond_3
 
     .line 113
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/DepXmlPullParser;->readMediaAttributes(Lorg/xmlpull/v1/XmlPullParser;)Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 114
-    .local v3, "mediaAttribute":Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;
-    invoke-virtual {v0, v3}, Lcom/mediatek/ims/internal/DialogInfo$Local;->addMediaAttribute(Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;)Z
+    .local v2, "mediaAttribute":Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;
+    invoke-virtual {v0, v2}, Lcom/mediatek/ims/internal/DialogInfo$Local;->addMediaAttribute(Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;)Z
 
     .line 115
-    .end local v3    # "mediaAttribute":Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;
+    .end local v2    # "mediaAttribute":Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;
     goto :goto_1
 
     :cond_3
-    const-string v3, "param"
+    const-string v2, "param"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
     .line 116
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/DepXmlPullParser;->readParam(Lorg/xmlpull/v1/XmlPullParser;)Lcom/mediatek/ims/internal/DialogInfo$Param;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 117
-    .local v3, "param":Lcom/mediatek/ims/internal/DialogInfo$Param;
-    invoke-virtual {v0, v3}, Lcom/mediatek/ims/internal/DialogInfo$Local;->setParam(Lcom/mediatek/ims/internal/DialogInfo$Param;)V
+    .local v2, "param":Lcom/mediatek/ims/internal/DialogInfo$Param;
+    invoke-virtual {v0, v2}, Lcom/mediatek/ims/internal/DialogInfo$Local;->setParam(Lcom/mediatek/ims/internal/DialogInfo$Param;)V
 
     .line 118
     const-string v4, "DEP Parser"
@@ -421,7 +421,7 @@
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 119
-    .end local v3    # "param":Lcom/mediatek/ims/internal/DialogInfo$Param;
+    .end local v2    # "param":Lcom/mediatek/ims/internal/DialogInfo$Param;
     goto :goto_1
 
     .line 120
@@ -463,11 +463,11 @@
     .local v2, "port0":Z
     sget-object v3, Lcom/mediatek/ims/internal/DepXmlPullParser;->namespace:Ljava/lang/String;
 
-    const/4 v4, 0x2
+    const-string v4, "mediaAttributes"
 
-    const-string v5, "mediaAttributes"
+    const/4 v5, 0x2
 
-    invoke-interface {p1, v4, v3, v5}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v5, v3, v4}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 150
     :goto_0
@@ -475,16 +475,16 @@
 
     move-result v3
 
-    const/4 v5, 0x3
+    const/4 v4, 0x3
 
-    if-eq v3, v5, :cond_4
+    if-eq v3, v4, :cond_4
 
     .line 151
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v3
 
-    if-eq v3, v4, :cond_0
+    if-eq v3, v5, :cond_0
 
     .line 152
     goto :goto_0
@@ -497,13 +497,13 @@
 
     .line 155
     .local v3, "name":Ljava/lang/String;
-    const-string v5, "mediaType"
+    const-string v4, "mediaType"
 
-    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_1
+    if-eqz v4, :cond_1
 
     .line 156
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/DepXmlPullParser;->readText(Lorg/xmlpull/v1/XmlPullParser;)Ljava/lang/String;
@@ -514,13 +514,13 @@
 
     .line 157
     :cond_1
-    const-string v5, "mediaDirection"
+    const-string v4, "mediaDirection"
 
-    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_2
+    if-eqz v4, :cond_2
 
     .line 158
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/DepXmlPullParser;->readText(Lorg/xmlpull/v1/XmlPullParser;)Ljava/lang/String;
@@ -531,13 +531,13 @@
 
     .line 159
     :cond_2
-    const-string v5, "port0"
+    const-string v4, "port0"
 
-    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_3
+    if-eqz v4, :cond_3
 
     .line 160
     const/4 v2, 0x1
@@ -578,37 +578,37 @@
     .line 171
     sget-object v0, Lcom/mediatek/ims/internal/DepXmlPullParser;->namespace:Ljava/lang/String;
 
-    const/4 v1, 0x2
+    const-string v1, "param"
 
-    const-string v2, "param"
+    const/4 v2, 0x2
 
-    invoke-interface {p1, v1, v0, v2}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 172
-    const/4 v0, 0x0
+    const-string v0, "pname"
 
-    const-string v1, "pname"
+    const/4 v1, 0x0
 
-    invoke-interface {p1, v0, v1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 173
-    .local v1, "pname":Ljava/lang/String;
-    const-string v2, "pval"
-
-    invoke-interface {p1, v0, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 173
+    .local v0, "pname":Ljava/lang/String;
+    const-string v2, "pval"
+
+    invoke-interface {p1, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
     .line 175
-    .local v0, "pval":Ljava/lang/String;
+    .local v1, "pval":Ljava/lang/String;
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/DepXmlPullParser;->skip(Lorg/xmlpull/v1/XmlPullParser;)V
 
     .line 176
     new-instance v2, Lcom/mediatek/ims/internal/DialogInfo$Param;
 
-    invoke-direct {v2, v1, v0}, Lcom/mediatek/ims/internal/DialogInfo$Param;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v0, v1}, Lcom/mediatek/ims/internal/DialogInfo$Param;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v2
 .end method
@@ -627,18 +627,18 @@
     .line 128
     sget-object v0, Lcom/mediatek/ims/internal/DepXmlPullParser;->namespace:Ljava/lang/String;
 
-    const/4 v1, 0x2
+    const-string v1, "target"
 
-    const-string v2, "target"
+    const/4 v2, 0x2
 
-    invoke-interface {p1, v1, v0, v2}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v2, v0, v1}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 129
     const-string v0, "DEP Parser"
 
-    const-string v2, "readTargetParamAttributesToLocal()"
+    const-string v1, "readTargetParamAttributesToLocal()"
 
-    invoke-static {v0, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 130
     :goto_0
@@ -646,16 +646,16 @@
 
     move-result v0
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    if-eq v0, v2, :cond_2
+    if-eq v0, v1, :cond_2
 
     .line 131
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v0
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v2, :cond_0
 
     .line 132
     goto :goto_0
@@ -668,25 +668,25 @@
 
     .line 135
     .local v0, "name":Ljava/lang/String;
-    const-string v2, "param"
+    const-string v1, "param"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
     .line 136
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/DepXmlPullParser;->readParam(Lorg/xmlpull/v1/XmlPullParser;)Lcom/mediatek/ims/internal/DialogInfo$Param;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 137
-    .local v2, "param":Lcom/mediatek/ims/internal/DialogInfo$Param;
-    invoke-virtual {p2, v2}, Lcom/mediatek/ims/internal/DialogInfo$Local;->setParam(Lcom/mediatek/ims/internal/DialogInfo$Param;)V
+    .local v1, "param":Lcom/mediatek/ims/internal/DialogInfo$Param;
+    invoke-virtual {p2, v1}, Lcom/mediatek/ims/internal/DialogInfo$Local;->setParam(Lcom/mediatek/ims/internal/DialogInfo$Param;)V
 
     .line 138
-    .end local v2    # "param":Lcom/mediatek/ims/internal/DialogInfo$Param;
+    .end local v1    # "param":Lcom/mediatek/ims/internal/DialogInfo$Param;
     goto :goto_1
 
     .line 139

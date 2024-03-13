@@ -150,7 +150,7 @@
     .locals 2
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 164
+    .line 173
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -185,17 +185,17 @@
 
     invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
+    .line 174
     return-void
 .end method
 
 .method private shouldEnterImsEcbm()Z
     .locals 6
 
-    .line 143
+    .line 152
     iget v0, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mPhoneId:I
 
-    invoke-static {v0}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
+    invoke-static {v0}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
 
     move-result v0
 
@@ -205,7 +205,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 144
+    .line 153
     move v0, v2
 
     goto :goto_0
@@ -213,12 +213,12 @@
     :cond_0
     move v0, v1
 
-    .line 145
+    .line 154
     .local v0, "isSimAbsent":Z
     :goto_0
     iget-object v3, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mContext:Landroid/content/Context;
 
-    .line 146
+    .line 155
     const-string v4, "phone"
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -227,7 +227,7 @@
 
     check-cast v3, Landroid/telephony/TelephonyManager;
 
-    .line 147
+    .line 156
     .local v3, "tm":Landroid/telephony/TelephonyManager;
     invoke-virtual {v3}, Landroid/telephony/TelephonyManager;->isVolteAvailable()Z
 
@@ -245,7 +245,7 @@
 
     goto :goto_1
 
-    .line 151
+    .line 160
     :cond_1
     const-string v4, "persist.vendor.operator.optr"
 
@@ -263,21 +263,21 @@
 
     if-eqz v4, :cond_2
 
-    .line 152
+    .line 161
     return v2
 
-    .line 155
+    .line 164
     :cond_2
     return v1
 
-    .line 148
+    .line 157
     :cond_3
     :goto_1
     return v2
 .end method
 
 .method private tryTurnOffVolteAfterE911()V
-    .locals 7
+    .locals 8
 
     .line 131
     iget-object v0, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mContext:Landroid/content/Context;
@@ -302,37 +302,80 @@
 
     .line 134
     .local v2, "volteEnabledByUser":Z
-    iget-object v3, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mImsServiceCT:Lcom/mediatek/ims/ImsServiceCallTracker;
+    const-string v3, "persist.vendor.mtk.volte.enable"
 
-    invoke-virtual {v3}, Lcom/mediatek/ims/ImsServiceCallTracker;->getEnableVolteForImsEcc()Z
+    iget v4, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mPhoneId:I
+
+    invoke-static {v3, v4}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->getFeaturePropValue(Ljava/lang/String;I)I
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    .line 137
+    .local v3, "volteOn":I
+    iget-object v4, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mImsServiceCT:Lcom/mediatek/ims/ImsServiceCallTracker;
+
+    invoke-virtual {v4}, Lcom/mediatek/ims/ImsServiceCallTracker;->getEnableVolteForImsEcc()Z
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    if-eqz v4, :cond_1
 
     if-eqz v1, :cond_0
 
     if-nez v2, :cond_1
 
-    .line 136
-    :cond_0
-    iget-object v3, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mContext:Landroid/content/Context;
-
-    iget-object v4, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mImsRILAdapter:Lcom/mediatek/ims/ril/ImsCommandsInterface;
-
-    iget v5, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mPhoneId:I
-
-    const/4 v6, 0x0
-
-    invoke-static {v3, v4, v5, v6}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->triggerSendCfgForVolte(Landroid/content/Context;Lcom/mediatek/ims/ril/ImsCommandsInterface;II)V
-
-    .line 137
-    iget-object v3, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mImsServiceCT:Lcom/mediatek/ims/ImsServiceCallTracker;
-
-    invoke-virtual {v3, v6}, Lcom/mediatek/ims/ImsServiceCallTracker;->setEnableVolteForImsEcc(Z)V
-
     .line 139
+    :cond_0
+    iget-object v4, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mContext:Landroid/content/Context;
+
+    iget-object v6, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mImsRILAdapter:Lcom/mediatek/ims/ril/ImsCommandsInterface;
+
+    iget v7, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mPhoneId:I
+
+    invoke-static {v4, v6, v7, v5}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->triggerSendCfgForVolte(Landroid/content/Context;Lcom/mediatek/ims/ril/ImsCommandsInterface;II)V
+
+    .line 140
+    iget-object v4, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mImsServiceCT:Lcom/mediatek/ims/ImsServiceCallTracker;
+
+    invoke-virtual {v4, v5}, Lcom/mediatek/ims/ImsServiceCallTracker;->setEnableVolteForImsEcc(Z)V
+
+    .line 141
+    const/4 v3, 0x0
+
+    .line 144
     :cond_1
+    iget-object v4, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mImsServiceCT:Lcom/mediatek/ims/ImsServiceCallTracker;
+
+    invoke-virtual {v4}, Lcom/mediatek/ims/ImsServiceCallTracker;->getEnableVowifiForImsEcc()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-virtual {v0}, Lcom/android/ims/ImsManager;->isWfcEnabledByUser()Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    .line 145
+    iget-object v4, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mContext:Landroid/content/Context;
+
+    iget-object v6, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mImsRILAdapter:Lcom/mediatek/ims/ril/ImsCommandsInterface;
+
+    iget v7, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mPhoneId:I
+
+    invoke-static {v4, v6, v7, v3, v5}, Lcom/mediatek/ims/config/internal/ImsConfigUtils;->triggerSendCfgForVowifi(Landroid/content/Context;Lcom/mediatek/ims/ril/ImsCommandsInterface;III)V
+
+    .line 146
+    iget-object v4, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mImsServiceCT:Lcom/mediatek/ims/ImsServiceCallTracker;
+
+    invoke-virtual {v4, v5}, Lcom/mediatek/ims/ImsServiceCallTracker;->setEnableVowifiForImsEcc(Z)V
+
+    .line 148
+    :cond_2
     return-void
 .end method
 
@@ -379,14 +422,14 @@
 .method public getImsOemCallUtil()Lcom/mediatek/ims/plugin/ImsCallOemPlugin;
     .locals 2
 
-    .line 159
+    .line 168
     iget-object v0, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/mediatek/ims/plugin/ExtensionFactory;->makeOemPluginFactory(Landroid/content/Context;)Lcom/mediatek/ims/plugin/OemPluginFactory;
 
     move-result-object v0
 
-    .line 160
+    .line 169
     .local v0, "facotry":Lcom/mediatek/ims/plugin/OemPluginFactory;
     iget-object v1, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mContext:Landroid/content/Context;
 

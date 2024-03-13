@@ -79,11 +79,20 @@
     return-void
 .end method
 
+.method public emergencyNetworkScanResult(ILandroid/hardware/radio/network/EmergencyRegResult;)V
+    .locals 0
+    .param p1, "indicationType"    # I
+    .param p2, "result"    # Landroid/hardware/radio/network/EmergencyRegResult;
+
+    .line 191
+    return-void
+.end method
+
 .method public getInterfaceHash()Ljava/lang/String;
     .locals 1
 
-    .line 191
-    const-string v0, "57e8e923513d80a26102e450d335e89b4346be66"
+    .line 198
+    const-string v0, "1b6608f238bd0b1c642df315621a7b605eafc883"
 
     return-object v0
 .end method
@@ -91,8 +100,8 @@
 .method public getInterfaceVersion()I
     .locals 1
 
-    .line 196
-    const/4 v0, 0x1
+    .line 203
+    const/4 v0, 0x2
 
     return v0
 .end method
@@ -130,6 +139,15 @@
     .param p5, "ageMs"    # J
 
     .line 131
+    return-void
+.end method
+
+.method public onNetworkInitiatedLocationResult(II)V
+    .locals 0
+    .param p1, "indicationType"    # I
+    .param p2, "locationResponseType"    # I
+
+    .line 194
     return-void
 .end method
 

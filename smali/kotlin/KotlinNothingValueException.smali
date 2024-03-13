@@ -25,7 +25,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -36,7 +36,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 118
+    .line 116
     invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
     .locals 0
     .param p1, "message"    # Ljava/lang/String;
 
-    .line 119
+    .line 117
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -57,7 +57,7 @@
     .param p1, "message"    # Ljava/lang/String;
     .param p2, "cause"    # Ljava/lang/Throwable;
 
-    .line 120
+    .line 118
     invoke-direct {p0, p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
@@ -67,7 +67,7 @@
     .locals 0
     .param p1, "cause"    # Ljava/lang/Throwable;
 
-    .line 121
+    .line 119
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     return-void

@@ -121,28 +121,16 @@
 .end method
 
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .locals 2
+    .locals 1
     .param p1, "res"    # Landroid/content/res/Resources;
 
     .line 53
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 54
     new-instance v0, Landroidx/core/graphics/drawable/WrappedDrawableApi21;
 
     invoke-direct {v0, p0, p1}, Landroidx/core/graphics/drawable/WrappedDrawableApi21;-><init>(Landroidx/core/graphics/drawable/WrappedDrawableState;Landroid/content/res/Resources;)V
-
-    return-object v0
-
-    .line 56
-    :cond_0
-    new-instance v0, Landroidx/core/graphics/drawable/WrappedDrawableApi14;
-
-    invoke-direct {v0, p0, p1}, Landroidx/core/graphics/drawable/WrappedDrawableApi14;-><init>(Landroidx/core/graphics/drawable/WrappedDrawableState;Landroid/content/res/Resources;)V
 
     return-object v0
 .end method

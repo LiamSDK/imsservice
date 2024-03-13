@@ -596,13 +596,13 @@
     .line 82
     new-instance v0, Ljava/util/StringJoiner;
 
-    const-string v1, ", "
+    const-string v1, "{"
 
-    const-string v2, "{"
+    const-string v2, "}"
 
-    const-string v3, "}"
+    const-string v3, ", "
 
-    invoke-direct {v0, v1, v2, v3}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
+    invoke-direct {v0, v3, v1, v2}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
     .line 83
     .local v0, "_aidl_sj":Ljava/util/StringJoiner;

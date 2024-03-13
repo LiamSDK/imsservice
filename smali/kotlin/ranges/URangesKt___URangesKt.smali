@@ -6,7 +6,7 @@
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u000e\n\u0002\u0018\u0002\n\u0002\u0008\t\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\u0008\t\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0010\u0008\n\u0002\u0010\t\n\u0002\u0008\n\u001a\u001e\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u001a\u001e\u0010\u0000\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u0005H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0006\u0010\u0007\u001a\u001e\u0010\u0000\u001a\u00020\u0008*\u00020\u00082\u0006\u0010\u0002\u001a\u00020\u0008H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\t\u0010\n\u001a\u001e\u0010\u0000\u001a\u00020\u000b*\u00020\u000b2\u0006\u0010\u0002\u001a\u00020\u000bH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u000c\u0010\r\u001a\u001e\u0010\u000e\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0010\u0010\u0004\u001a\u001e\u0010\u000e\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u0005H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0011\u0010\u0007\u001a\u001e\u0010\u000e\u001a\u00020\u0008*\u00020\u00082\u0006\u0010\u000f\u001a\u00020\u0008H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0012\u0010\n\u001a\u001e\u0010\u000e\u001a\u00020\u000b*\u00020\u000b2\u0006\u0010\u000f\u001a\u00020\u000bH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0013\u0010\r\u001a&\u0010\u0014\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0015\u0010\u0016\u001a&\u0010\u0014\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u0005H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0017\u0010\u0018\u001a$\u0010\u0014\u001a\u00020\u0005*\u00020\u00052\u000c\u0010\u0019\u001a\u0008\u0012\u0004\u0012\u00020\u00050\u001aH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u001b\u0010\u001c\u001a&\u0010\u0014\u001a\u00020\u0008*\u00020\u00082\u0006\u0010\u0002\u001a\u00020\u00082\u0006\u0010\u000f\u001a\u00020\u0008H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u001d\u0010\u001e\u001a$\u0010\u0014\u001a\u00020\u0008*\u00020\u00082\u000c\u0010\u0019\u001a\u0008\u0012\u0004\u0012\u00020\u00080\u001aH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u001f\u0010 \u001a&\u0010\u0014\u001a\u00020\u000b*\u00020\u000b2\u0006\u0010\u0002\u001a\u00020\u000b2\u0006\u0010\u000f\u001a\u00020\u000bH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008!\u0010\"\u001a\u001f\u0010#\u001a\u00020$*\u00020%2\u0006\u0010&\u001a\u00020\u0001H\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\'\u0010(\u001a\u001f\u0010#\u001a\u00020$*\u00020%2\u0008\u0010)\u001a\u0004\u0018\u00010\u0005H\u0087\n\u00f8\u0001\u0000\u00a2\u0006\u0002\u0008*\u001a\u001f\u0010#\u001a\u00020$*\u00020%2\u0006\u0010&\u001a\u00020\u0008H\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008+\u0010,\u001a\u001f\u0010#\u001a\u00020$*\u00020%2\u0006\u0010&\u001a\u00020\u000bH\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008-\u0010.\u001a\u001f\u0010#\u001a\u00020$*\u00020/2\u0006\u0010&\u001a\u00020\u0001H\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u00080\u00101\u001a\u001f\u0010#\u001a\u00020$*\u00020/2\u0006\u0010&\u001a\u00020\u0005H\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u00082\u00103\u001a\u001f\u0010#\u001a\u00020$*\u00020/2\u0008\u0010)\u001a\u0004\u0018\u00010\u0008H\u0087\n\u00f8\u0001\u0000\u00a2\u0006\u0002\u00084\u001a\u001f\u0010#\u001a\u00020$*\u00020/2\u0006\u0010&\u001a\u00020\u000bH\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u00085\u00106\u001a\u001f\u00107\u001a\u000208*\u00020\u00012\u0006\u00109\u001a\u00020\u0001H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008:\u0010;\u001a\u001f\u00107\u001a\u000208*\u00020\u00052\u0006\u00109\u001a\u00020\u0005H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008<\u0010=\u001a\u001f\u00107\u001a\u00020>*\u00020\u00082\u0006\u00109\u001a\u00020\u0008H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008?\u0010@\u001a\u001f\u00107\u001a\u000208*\u00020\u000b2\u0006\u00109\u001a\u00020\u000bH\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008A\u0010B\u001a\u0015\u0010C\u001a\u00020\u0005*\u00020%H\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010D\u001a\u001c\u0010C\u001a\u00020\u0005*\u00020%2\u0006\u0010C\u001a\u00020EH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010F\u001a\u0015\u0010C\u001a\u00020\u0008*\u00020/H\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010G\u001a\u001c\u0010C\u001a\u00020\u0008*\u00020/2\u0006\u0010C\u001a\u00020EH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010H\u001a\u0012\u0010I\u001a\u0004\u0018\u00010\u0005*\u00020%H\u0087\u0008\u00f8\u0001\u0000\u001a\u0019\u0010I\u001a\u0004\u0018\u00010\u0005*\u00020%2\u0006\u0010C\u001a\u00020EH\u0007\u00f8\u0001\u0000\u001a\u0012\u0010I\u001a\u0004\u0018\u00010\u0008*\u00020/H\u0087\u0008\u00f8\u0001\u0000\u001a\u0019\u0010I\u001a\u0004\u0018\u00010\u0008*\u00020/2\u0006\u0010C\u001a\u00020EH\u0007\u00f8\u0001\u0000\u001a\u000c\u0010J\u001a\u000208*\u000208H\u0007\u001a\u000c\u0010J\u001a\u00020>*\u00020>H\u0007\u001a\u0015\u0010K\u001a\u000208*\u0002082\u0006\u0010K\u001a\u00020LH\u0087\u0004\u001a\u0015\u0010K\u001a\u00020>*\u00020>2\u0006\u0010K\u001a\u00020MH\u0087\u0004\u001a\u001f\u0010N\u001a\u00020%*\u00020\u00012\u0006\u00109\u001a\u00020\u0001H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008O\u0010P\u001a\u001f\u0010N\u001a\u00020%*\u00020\u00052\u0006\u00109\u001a\u00020\u0005H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008Q\u0010R\u001a\u001f\u0010N\u001a\u00020/*\u00020\u00082\u0006\u00109\u001a\u00020\u0008H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008S\u0010T\u001a\u001f\u0010N\u001a\u00020%*\u00020\u000b2\u0006\u00109\u001a\u00020\u000bH\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008U\u0010V\u0082\u0002\u0004\n\u0002\u0008\u0019\u00a8\u0006W"
+        "\u0000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u000e\n\u0002\u0018\u0002\n\u0002\u0008\t\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\u0008\t\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u000c\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0010\u0008\n\u0002\u0010\t\n\u0002\u0008\n\u001a\u001e\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u001a\u001e\u0010\u0000\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u0005H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0006\u0010\u0007\u001a\u001e\u0010\u0000\u001a\u00020\u0008*\u00020\u00082\u0006\u0010\u0002\u001a\u00020\u0008H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\t\u0010\n\u001a\u001e\u0010\u0000\u001a\u00020\u000b*\u00020\u000b2\u0006\u0010\u0002\u001a\u00020\u000bH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u000c\u0010\r\u001a\u001e\u0010\u000e\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0010\u0010\u0004\u001a\u001e\u0010\u000e\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u0005H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0011\u0010\u0007\u001a\u001e\u0010\u000e\u001a\u00020\u0008*\u00020\u00082\u0006\u0010\u000f\u001a\u00020\u0008H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0012\u0010\n\u001a\u001e\u0010\u000e\u001a\u00020\u000b*\u00020\u000b2\u0006\u0010\u000f\u001a\u00020\u000bH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0013\u0010\r\u001a&\u0010\u0014\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0015\u0010\u0016\u001a&\u0010\u0014\u001a\u00020\u0005*\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u0005H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0017\u0010\u0018\u001a$\u0010\u0014\u001a\u00020\u0005*\u00020\u00052\u000c\u0010\u0019\u001a\u0008\u0012\u0004\u0012\u00020\u00050\u001aH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u001b\u0010\u001c\u001a&\u0010\u0014\u001a\u00020\u0008*\u00020\u00082\u0006\u0010\u0002\u001a\u00020\u00082\u0006\u0010\u000f\u001a\u00020\u0008H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u001d\u0010\u001e\u001a$\u0010\u0014\u001a\u00020\u0008*\u00020\u00082\u000c\u0010\u0019\u001a\u0008\u0012\u0004\u0012\u00020\u00080\u001aH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u001f\u0010 \u001a&\u0010\u0014\u001a\u00020\u000b*\u00020\u000b2\u0006\u0010\u0002\u001a\u00020\u000b2\u0006\u0010\u000f\u001a\u00020\u000bH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008!\u0010\"\u001a\u001f\u0010#\u001a\u00020$*\u00020%2\u0006\u0010&\u001a\u00020\u0001H\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\'\u0010(\u001a\u001f\u0010#\u001a\u00020$*\u00020%2\u0008\u0010)\u001a\u0004\u0018\u00010\u0005H\u0087\n\u00f8\u0001\u0000\u00a2\u0006\u0002\u0008*\u001a\u001f\u0010#\u001a\u00020$*\u00020%2\u0006\u0010&\u001a\u00020\u0008H\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008+\u0010,\u001a\u001f\u0010#\u001a\u00020$*\u00020%2\u0006\u0010&\u001a\u00020\u000bH\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008-\u0010.\u001a\u001f\u0010#\u001a\u00020$*\u00020/2\u0006\u0010&\u001a\u00020\u0001H\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u00080\u00101\u001a\u001f\u0010#\u001a\u00020$*\u00020/2\u0006\u0010&\u001a\u00020\u0005H\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u00082\u00103\u001a\u001f\u0010#\u001a\u00020$*\u00020/2\u0008\u0010)\u001a\u0004\u0018\u00010\u0008H\u0087\n\u00f8\u0001\u0000\u00a2\u0006\u0002\u00084\u001a\u001f\u0010#\u001a\u00020$*\u00020/2\u0006\u0010&\u001a\u00020\u000bH\u0087\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u00085\u00106\u001a\u001f\u00107\u001a\u000208*\u00020\u00012\u0006\u00109\u001a\u00020\u0001H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008:\u0010;\u001a\u001f\u00107\u001a\u000208*\u00020\u00052\u0006\u00109\u001a\u00020\u0005H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008<\u0010=\u001a\u001f\u00107\u001a\u00020>*\u00020\u00082\u0006\u00109\u001a\u00020\u0008H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008?\u0010@\u001a\u001f\u00107\u001a\u000208*\u00020\u000b2\u0006\u00109\u001a\u00020\u000bH\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008A\u0010B\u001a\u0014\u0010C\u001a\u00020\u0005*\u000208H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010D\u001a\u0014\u0010C\u001a\u00020\u0008*\u00020>H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010E\u001a\u0011\u0010F\u001a\u0004\u0018\u00010\u0005*\u000208H\u0007\u00f8\u0001\u0000\u001a\u0011\u0010F\u001a\u0004\u0018\u00010\u0008*\u00020>H\u0007\u00f8\u0001\u0000\u001a\u0014\u0010G\u001a\u00020\u0005*\u000208H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010D\u001a\u0014\u0010G\u001a\u00020\u0008*\u00020>H\u0007\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010E\u001a\u0011\u0010H\u001a\u0004\u0018\u00010\u0005*\u000208H\u0007\u00f8\u0001\u0000\u001a\u0011\u0010H\u001a\u0004\u0018\u00010\u0008*\u00020>H\u0007\u00f8\u0001\u0000\u001a\u0015\u0010I\u001a\u00020\u0005*\u00020%H\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010J\u001a\u001c\u0010I\u001a\u00020\u0005*\u00020%2\u0006\u0010I\u001a\u00020KH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010L\u001a\u0015\u0010I\u001a\u00020\u0008*\u00020/H\u0087\u0008\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010M\u001a\u001c\u0010I\u001a\u00020\u0008*\u00020/2\u0006\u0010I\u001a\u00020KH\u0007\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010N\u001a\u0012\u0010O\u001a\u0004\u0018\u00010\u0005*\u00020%H\u0087\u0008\u00f8\u0001\u0000\u001a\u0019\u0010O\u001a\u0004\u0018\u00010\u0005*\u00020%2\u0006\u0010I\u001a\u00020KH\u0007\u00f8\u0001\u0000\u001a\u0012\u0010O\u001a\u0004\u0018\u00010\u0008*\u00020/H\u0087\u0008\u00f8\u0001\u0000\u001a\u0019\u0010O\u001a\u0004\u0018\u00010\u0008*\u00020/2\u0006\u0010I\u001a\u00020KH\u0007\u00f8\u0001\u0000\u001a\u000c\u0010P\u001a\u000208*\u000208H\u0007\u001a\u000c\u0010P\u001a\u00020>*\u00020>H\u0007\u001a\u0015\u0010Q\u001a\u000208*\u0002082\u0006\u0010Q\u001a\u00020RH\u0087\u0004\u001a\u0015\u0010Q\u001a\u00020>*\u00020>2\u0006\u0010Q\u001a\u00020SH\u0087\u0004\u001a\u001f\u0010T\u001a\u00020%*\u00020\u00012\u0006\u00109\u001a\u00020\u0001H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008U\u0010V\u001a\u001f\u0010T\u001a\u00020%*\u00020\u00052\u0006\u00109\u001a\u00020\u0005H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008W\u0010X\u001a\u001f\u0010T\u001a\u00020/*\u00020\u00082\u0006\u00109\u001a\u00020\u0008H\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008Y\u0010Z\u001a\u001f\u0010T\u001a\u00020%*\u00020\u000b2\u0006\u00109\u001a\u00020\u000bH\u0087\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008[\u0010\\\u0082\u0002\u0004\n\u0002\u0008\u0019\u00a8\u0006]"
     }
     d2 = {
         "coerceAtLeast",
@@ -76,6 +76,12 @@
         "(JJ)Lkotlin/ranges/ULongProgression;",
         "downTo-5PvTz6A",
         "(SS)Lkotlin/ranges/UIntProgression;",
+        "first",
+        "(Lkotlin/ranges/UIntProgression;)I",
+        "(Lkotlin/ranges/ULongProgression;)J",
+        "firstOrNull",
+        "last",
+        "lastOrNull",
         "random",
         "(Lkotlin/ranges/UIntRange;)I",
         "Lkotlin/random/Random;",
@@ -101,7 +107,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -120,10 +126,10 @@
 
 .method public static final coerceAtLeast-5PvTz6A(SS)S
     .locals 2
-    .param p0, "$this$coerceAtLeast"    # S
+    .param p0, "$this$coerceAtLeast_u2d5PvTz6A"    # S
     .param p1, "minimumValue"    # S
 
-    .line 375
+    .line 463
     const v0, 0xffff
 
     and-int v1, p0, v0
@@ -149,11 +155,11 @@
 
 .method public static final coerceAtLeast-J1ME1BU(II)I
     .locals 1
-    .param p0, "$this$coerceAtLeast"    # I
+    .param p0, "$this$coerceAtLeast_u2dJ1ME1BU"    # I
     .param p1, "minimumValue"    # I
 
-    .line 336
-    invoke-static {p0, p1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    .line 424
+    invoke-static {p0, p1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -172,10 +178,10 @@
 
 .method public static final coerceAtLeast-Kr8caGY(BB)B
     .locals 2
-    .param p0, "$this$coerceAtLeast"    # B
+    .param p0, "$this$coerceAtLeast_u2dKr8caGY"    # B
     .param p1, "minimumValue"    # B
 
-    .line 362
+    .line 450
     and-int/lit16 v0, p0, 0xff
 
     and-int/lit16 v1, p1, 0xff
@@ -199,11 +205,11 @@
 
 .method public static final coerceAtLeast-eb3DHEI(JJ)J
     .locals 2
-    .param p0, "$this$coerceAtLeast"    # J
+    .param p0, "$this$coerceAtLeast_u2deb3DHEI"    # J
     .param p2, "minimumValue"    # J
 
-    .line 349
-    invoke-static {p0, p1, p2, p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    .line 437
+    invoke-static {p0, p1, p2, p3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -222,10 +228,10 @@
 
 .method public static final coerceAtMost-5PvTz6A(SS)S
     .locals 2
-    .param p0, "$this$coerceAtMost"    # S
+    .param p0, "$this$coerceAtMost_u2d5PvTz6A"    # S
     .param p1, "maximumValue"    # S
 
-    .line 427
+    .line 515
     const v0, 0xffff
 
     and-int v1, p0, v0
@@ -251,11 +257,11 @@
 
 .method public static final coerceAtMost-J1ME1BU(II)I
     .locals 1
-    .param p0, "$this$coerceAtMost"    # I
+    .param p0, "$this$coerceAtMost_u2dJ1ME1BU"    # I
     .param p1, "maximumValue"    # I
 
-    .line 388
-    invoke-static {p0, p1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    .line 476
+    invoke-static {p0, p1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -274,10 +280,10 @@
 
 .method public static final coerceAtMost-Kr8caGY(BB)B
     .locals 2
-    .param p0, "$this$coerceAtMost"    # B
+    .param p0, "$this$coerceAtMost_u2dKr8caGY"    # B
     .param p1, "maximumValue"    # B
 
-    .line 414
+    .line 502
     and-int/lit16 v0, p0, 0xff
 
     and-int/lit16 v1, p1, 0xff
@@ -301,11 +307,11 @@
 
 .method public static final coerceAtMost-eb3DHEI(JJ)J
     .locals 2
-    .param p0, "$this$coerceAtMost"    # J
+    .param p0, "$this$coerceAtMost_u2deb3DHEI"    # J
     .param p2, "maximumValue"    # J
 
-    .line 401
-    invoke-static {p0, p1, p2, p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    .line 489
+    invoke-static {p0, p1, p2, p3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -324,7 +330,7 @@
 
 .method public static final coerceIn-JPwROB0(JLkotlin/ranges/ClosedRange;)J
     .locals 3
-    .param p0, "$this$coerceIn"    # J
+    .param p0, "$this$coerceIn_u2dJPwROB0"    # J
     .param p2, "range"    # Lkotlin/ranges/ClosedRange;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -339,12 +345,12 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 525
+    .line 613
     instance-of v0, p2, Lkotlin/ranges/ClosedFloatingPointRange;
 
     if-eqz v0, :cond_0
 
-    .line 526
+    .line 614
     invoke-static {p0, p1}, Lkotlin/ULong;->box-impl(J)Lkotlin/ULong;
 
     move-result-object v0
@@ -365,7 +371,7 @@
 
     return-wide v0
 
-    .line 528
+    .line 616
     :cond_0
     invoke-interface {p2}, Lkotlin/ranges/ClosedRange;->isEmpty()Z
 
@@ -373,10 +379,10 @@
 
     if-nez v0, :cond_3
 
-    .line 529
+    .line 617
     nop
 
-    .line 530
+    .line 618
     invoke-interface {p2}, Lkotlin/ranges/ClosedRange;->getStart()Ljava/lang/Comparable;
 
     move-result-object v0
@@ -387,7 +393,7 @@
 
     move-result-wide v0
 
-    invoke-static {p0, p1, v0, v1}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p0, p1, v0, v1}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -405,7 +411,7 @@
 
     goto :goto_0
 
-    .line 531
+    .line 619
     :cond_1
     invoke-interface {p2}, Lkotlin/ranges/ClosedRange;->getEndInclusive()Ljava/lang/Comparable;
 
@@ -417,7 +423,7 @@
 
     move-result-wide v0
 
-    invoke-static {p0, p1, v0, v1}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p0, p1, v0, v1}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -435,15 +441,15 @@
 
     goto :goto_0
 
-    .line 532
+    .line 620
     :cond_2
     move-wide v0, p0
 
-    .line 529
+    .line 617
     :goto_0
     return-wide v0
 
-    .line 528
+    .line 616
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -478,11 +484,11 @@
 
 .method public static final coerceIn-VKSA0NQ(SSS)S
     .locals 3
-    .param p0, "$this$coerceIn"    # S
+    .param p0, "$this$coerceIn_u2dVKSA0NQ"    # S
     .param p1, "minimumValue"    # S
     .param p2, "maximumValue"    # S
 
-    .line 488
+    .line 576
     const v0, 0xffff
 
     and-int v1, p1, v0
@@ -495,7 +501,7 @@
 
     if-gtz v1, :cond_2
 
-    .line 489
+    .line 577
     and-int v1, p0, v0
 
     and-int v2, p1, v0
@@ -508,7 +514,7 @@
 
     return p1
 
-    .line 490
+    .line 578
     :cond_0
     and-int v1, p0, v0
 
@@ -522,11 +528,11 @@
 
     return p2
 
-    .line 491
+    .line 579
     :cond_1
     return p0
 
-    .line 488
+    .line 576
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -579,19 +585,19 @@
 
 .method public static final coerceIn-WZ9TVnA(III)I
     .locals 3
-    .param p0, "$this$coerceIn"    # I
+    .param p0, "$this$coerceIn_u2dWZ9TVnA"    # I
     .param p1, "minimumValue"    # I
     .param p2, "maximumValue"    # I
 
-    .line 440
-    invoke-static {p1, p2}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    .line 528
+    invoke-static {p1, p2}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
     if-gtz v0, :cond_2
 
-    .line 441
-    invoke-static {p0, p1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    .line 529
+    invoke-static {p0, p1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -599,9 +605,9 @@
 
     return p1
 
-    .line 442
+    .line 530
     :cond_0
-    invoke-static {p0, p2}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p0, p2}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -609,11 +615,11 @@
 
     return p2
 
-    .line 443
+    .line 531
     :cond_1
     return p0
 
-    .line 440
+    .line 528
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -666,11 +672,11 @@
 
 .method public static final coerceIn-b33U2AM(BBB)B
     .locals 3
-    .param p0, "$this$coerceIn"    # B
+    .param p0, "$this$coerceIn_u2db33U2AM"    # B
     .param p1, "minimumValue"    # B
     .param p2, "maximumValue"    # B
 
-    .line 472
+    .line 560
     and-int/lit16 v0, p1, 0xff
 
     and-int/lit16 v1, p2, 0xff
@@ -681,7 +687,7 @@
 
     if-gtz v0, :cond_2
 
-    .line 473
+    .line 561
     and-int/lit16 v0, p0, 0xff
 
     and-int/lit16 v1, p1, 0xff
@@ -694,7 +700,7 @@
 
     return p1
 
-    .line 474
+    .line 562
     :cond_0
     and-int/lit16 v0, p0, 0xff
 
@@ -708,11 +714,11 @@
 
     return p2
 
-    .line 475
+    .line 563
     :cond_1
     return p0
 
-    .line 472
+    .line 560
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -765,19 +771,19 @@
 
 .method public static final coerceIn-sambcqE(JJJ)J
     .locals 3
-    .param p0, "$this$coerceIn"    # J
+    .param p0, "$this$coerceIn_u2dsambcqE"    # J
     .param p2, "minimumValue"    # J
     .param p4, "maximumValue"    # J
 
-    .line 456
-    invoke-static {p2, p3, p4, p5}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    .line 544
+    invoke-static {p2, p3, p4, p5}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
     if-gtz v0, :cond_2
 
-    .line 457
-    invoke-static {p0, p1, p2, p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    .line 545
+    invoke-static {p0, p1, p2, p3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -785,9 +791,9 @@
 
     return-wide p2
 
-    .line 458
+    .line 546
     :cond_0
-    invoke-static {p0, p1, p4, p5}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p0, p1, p4, p5}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -795,11 +801,11 @@
 
     return-wide p4
 
-    .line 459
+    .line 547
     :cond_1
     return-wide p0
 
-    .line 456
+    .line 544
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -852,7 +858,7 @@
 
 .method public static final coerceIn-wuiCnnA(ILkotlin/ranges/ClosedRange;)I
     .locals 3
-    .param p0, "$this$coerceIn"    # I
+    .param p0, "$this$coerceIn_u2dwuiCnnA"    # I
     .param p1, "range"    # Lkotlin/ranges/ClosedRange;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -867,12 +873,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 504
+    .line 592
     instance-of v0, p1, Lkotlin/ranges/ClosedFloatingPointRange;
 
     if-eqz v0, :cond_0
 
-    .line 505
+    .line 593
     invoke-static {p0}, Lkotlin/UInt;->box-impl(I)Lkotlin/UInt;
 
     move-result-object v0
@@ -893,7 +899,7 @@
 
     return v0
 
-    .line 507
+    .line 595
     :cond_0
     invoke-interface {p1}, Lkotlin/ranges/ClosedRange;->isEmpty()Z
 
@@ -901,10 +907,10 @@
 
     if-nez v0, :cond_3
 
-    .line 508
+    .line 596
     nop
 
-    .line 509
+    .line 597
     invoke-interface {p1}, Lkotlin/ranges/ClosedRange;->getStart()Ljava/lang/Comparable;
 
     move-result-object v0
@@ -915,7 +921,7 @@
 
     move-result v0
 
-    invoke-static {p0, v0}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p0, v0}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -933,7 +939,7 @@
 
     goto :goto_0
 
-    .line 510
+    .line 598
     :cond_1
     invoke-interface {p1}, Lkotlin/ranges/ClosedRange;->getEndInclusive()Ljava/lang/Comparable;
 
@@ -945,7 +951,7 @@
 
     move-result v0
 
-    invoke-static {p0, v0}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p0, v0}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -963,15 +969,15 @@
 
     goto :goto_0
 
-    .line 511
+    .line 599
     :cond_2
     move v0, p0
 
-    .line 508
+    .line 596
     :goto_0
     return v0
 
-    .line 507
+    .line 595
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1006,14 +1012,14 @@
 
 .method public static final contains-68kG9v0(Lkotlin/ranges/UIntRange;B)Z
     .locals 1
-    .param p0, "$this$contains"    # Lkotlin/ranges/UIntRange;
+    .param p0, "$this$contains_u2d68kG9v0"    # Lkotlin/ranges/UIntRange;
     .param p1, "value"    # B
 
     const-string v0, "$this$contains"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 144
+    .line 232
     and-int/lit16 v0, p1, 0xff
 
     invoke-static {v0}, Lkotlin/UInt;->constructor-impl(I)I
@@ -1029,14 +1035,14 @@
 
 .method private static final contains-GYNo2lE(Lkotlin/ranges/ULongRange;Lkotlin/ULong;)Z
     .locals 2
-    .param p0, "$this$contains"    # Lkotlin/ranges/ULongRange;
+    .param p0, "$this$contains_u2dGYNo2lE"    # Lkotlin/ranges/ULongRange;
     .param p1, "element"    # Lkotlin/ULong;
 
     const-string v0, "$this$contains"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 135
+    .line 223
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Lkotlin/ULong;->unbox-impl()J
@@ -1062,14 +1068,14 @@
 
 .method public static final contains-Gab390E(Lkotlin/ranges/ULongRange;I)Z
     .locals 4
-    .param p0, "$this$contains"    # Lkotlin/ranges/ULongRange;
+    .param p0, "$this$contains_u2dGab390E"    # Lkotlin/ranges/ULongRange;
     .param p1, "value"    # I
 
     const-string v0, "$this$contains"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 162
+    .line 250
     int-to-long v0, p1
 
     const-wide v2, 0xffffffffL
@@ -1089,14 +1095,14 @@
 
 .method public static final contains-ULb-yJY(Lkotlin/ranges/ULongRange;B)Z
     .locals 4
-    .param p0, "$this$contains"    # Lkotlin/ranges/ULongRange;
+    .param p0, "$this$contains_u2dULb_u2dyJY"    # Lkotlin/ranges/ULongRange;
     .param p1, "value"    # B
 
     const-string v0, "$this$contains"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 153
+    .line 241
     int-to-long v0, p1
 
     const-wide/16 v2, 0xff
@@ -1116,14 +1122,14 @@
 
 .method public static final contains-ZsK3CEQ(Lkotlin/ranges/UIntRange;S)Z
     .locals 1
-    .param p0, "$this$contains"    # Lkotlin/ranges/UIntRange;
+    .param p0, "$this$contains_u2dZsK3CEQ"    # Lkotlin/ranges/UIntRange;
     .param p1, "value"    # S
 
     const-string v0, "$this$contains"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 180
+    .line 268
     const v0, 0xffff
 
     and-int/2addr v0, p1
@@ -1141,14 +1147,14 @@
 
 .method private static final contains-biwQdVI(Lkotlin/ranges/UIntRange;Lkotlin/UInt;)Z
     .locals 1
-    .param p0, "$this$contains"    # Lkotlin/ranges/UIntRange;
+    .param p0, "$this$contains_u2dbiwQdVI"    # Lkotlin/ranges/UIntRange;
     .param p1, "element"    # Lkotlin/UInt;
 
     const-string v0, "$this$contains"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 123
+    .line 211
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Lkotlin/UInt;->unbox-impl()I
@@ -1174,14 +1180,14 @@
 
 .method public static final contains-fz5IDCE(Lkotlin/ranges/UIntRange;J)Z
     .locals 4
-    .param p0, "$this$contains"    # Lkotlin/ranges/UIntRange;
+    .param p0, "$this$contains_u2dfz5IDCE"    # Lkotlin/ranges/UIntRange;
     .param p1, "value"    # J
 
     const-string v0, "$this$contains"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 171
+    .line 259
     const/16 v0, 0x20
 
     ushr-long v0, p1, v0
@@ -1221,14 +1227,14 @@
 
 .method public static final contains-uhHAxoY(Lkotlin/ranges/ULongRange;S)Z
     .locals 4
-    .param p0, "$this$contains"    # Lkotlin/ranges/ULongRange;
+    .param p0, "$this$contains_u2duhHAxoY"    # Lkotlin/ranges/ULongRange;
     .param p1, "value"    # S
 
     const-string v0, "$this$contains"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 189
+    .line 277
     int-to-long v0, p1
 
     const-wide/32 v2, 0xffff
@@ -1248,10 +1254,10 @@
 
 .method public static final downTo-5PvTz6A(SS)Lkotlin/ranges/UIntProgression;
     .locals 4
-    .param p0, "$this$downTo"    # S
+    .param p0, "$this$downTo_u2d5PvTz6A"    # S
     .param p1, "to"    # S
 
-    .line 237
+    .line 325
     sget-object v0, Lkotlin/ranges/UIntProgression;->Companion:Lkotlin/ranges/UIntProgression$Companion;
 
     const v1, 0xffff
@@ -1279,10 +1285,10 @@
 
 .method public static final downTo-J1ME1BU(II)Lkotlin/ranges/UIntProgression;
     .locals 2
-    .param p0, "$this$downTo"    # I
+    .param p0, "$this$downTo_u2dJ1ME1BU"    # I
     .param p1, "to"    # I
 
-    .line 213
+    .line 301
     sget-object v0, Lkotlin/ranges/UIntProgression;->Companion:Lkotlin/ranges/UIntProgression$Companion;
 
     const/4 v1, -0x1
@@ -1296,10 +1302,10 @@
 
 .method public static final downTo-Kr8caGY(BB)Lkotlin/ranges/UIntProgression;
     .locals 4
-    .param p0, "$this$downTo"    # B
+    .param p0, "$this$downTo_u2dKr8caGY"    # B
     .param p1, "to"    # B
 
-    .line 201
+    .line 289
     sget-object v0, Lkotlin/ranges/UIntProgression;->Companion:Lkotlin/ranges/UIntProgression$Companion;
 
     and-int/lit16 v1, p0, 0xff
@@ -1325,10 +1331,10 @@
 
 .method public static final downTo-eb3DHEI(JJ)Lkotlin/ranges/ULongProgression;
     .locals 7
-    .param p0, "$this$downTo"    # J
+    .param p0, "$this$downTo_u2deb3DHEI"    # J
     .param p2, "to"    # J
 
-    .line 225
+    .line 313
     sget-object v0, Lkotlin/ranges/ULongProgression;->Companion:Lkotlin/ranges/ULongProgression$Companion;
 
     const-wide/16 v5, -0x1
@@ -1344,6 +1350,354 @@
     return-object v0
 .end method
 
+.method public static final first(Lkotlin/ranges/UIntProgression;)I
+    .locals 3
+    .param p0, "$this$first"    # Lkotlin/ranges/UIntProgression;
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 25
+    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 27
+    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
+
+    move-result v0
+
+    return v0
+
+    .line 26
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Progression "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " is empty."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static final first(Lkotlin/ranges/ULongProgression;)J
+    .locals 3
+    .param p0, "$this$first"    # Lkotlin/ranges/ULongProgression;
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 37
+    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 39
+    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    .line 38
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Progression "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " is empty."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static final firstOrNull(Lkotlin/ranges/UIntProgression;)Lkotlin/UInt;
+    .locals 1
+    .param p0, "$this$firstOrNull"    # Lkotlin/ranges/UIntProgression;
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 47
+    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
+
+    move-result v0
+
+    invoke-static {v0}, Lkotlin/UInt;->box-impl(I)Lkotlin/UInt;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public static final firstOrNull(Lkotlin/ranges/ULongProgression;)Lkotlin/ULong;
+    .locals 2
+    .param p0, "$this$firstOrNull"    # Lkotlin/ranges/ULongProgression;
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 55
+    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Lkotlin/ULong;->box-impl(J)Lkotlin/ULong;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public static final last(Lkotlin/ranges/UIntProgression;)I
+    .locals 3
+    .param p0, "$this$last"    # Lkotlin/ranges/UIntProgression;
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 67
+    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 69
+    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
+
+    move-result v0
+
+    return v0
+
+    .line 68
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Progression "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " is empty."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static final last(Lkotlin/ranges/ULongProgression;)J
+    .locals 3
+    .param p0, "$this$last"    # Lkotlin/ranges/ULongProgression;
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 81
+    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 83
+    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    .line 82
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Progression "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " is empty."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static final lastOrNull(Lkotlin/ranges/UIntProgression;)Lkotlin/UInt;
+    .locals 1
+    .param p0, "$this$lastOrNull"    # Lkotlin/ranges/UIntProgression;
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 93
+    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
+
+    move-result v0
+
+    invoke-static {v0}, Lkotlin/UInt;->box-impl(I)Lkotlin/UInt;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public static final lastOrNull(Lkotlin/ranges/ULongProgression;)Lkotlin/ULong;
+    .locals 2
+    .param p0, "$this$lastOrNull"    # Lkotlin/ranges/ULongProgression;
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 103
+    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Lkotlin/ULong;->box-impl(J)Lkotlin/ULong;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+.end method
+
 .method private static final random(Lkotlin/ranges/UIntRange;)I
     .locals 1
     .param p0, "$this$random"    # Lkotlin/ranges/UIntRange;
@@ -1352,7 +1706,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 115
     sget-object v0, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
 
     check-cast v0, Lkotlin/random/Random;
@@ -1377,10 +1731,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 50
+    .line 138
     nop
 
-    .line 51
+    .line 139
     :try_start_0
     invoke-static {p1, p0}, Lkotlin/random/URandomKt;->nextUInt(Lkotlin/random/Random;Lkotlin/ranges/UIntRange;)I
 
@@ -1390,11 +1744,11 @@
 
     return v0
 
-    .line 52
+    .line 140
     :catch_0
     move-exception v0
 
-    .line 53
+    .line 141
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Ljava/util/NoSuchElementException;
 
@@ -1415,7 +1769,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 39
+    .line 127
     sget-object v0, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
 
     check-cast v0, Lkotlin/random/Random;
@@ -1440,10 +1794,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 153
     nop
 
-    .line 66
+    .line 154
     :try_start_0
     invoke-static {p1, p0}, Lkotlin/random/URandomKt;->nextULong(Lkotlin/random/Random;Lkotlin/ranges/ULongRange;)J
 
@@ -1453,11 +1807,11 @@
 
     return-wide v0
 
-    .line 67
+    .line 155
     :catch_0
     move-exception v0
 
-    .line 68
+    .line 156
     .local v0, "e":Ljava/lang/IllegalArgumentException;
     new-instance v1, Ljava/util/NoSuchElementException;
 
@@ -1478,7 +1832,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 79
+    .line 167
     sget-object v0, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
 
     check-cast v0, Lkotlin/random/Random;
@@ -1503,19 +1857,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 98
+    .line 186
     invoke-virtual {p0}, Lkotlin/ranges/UIntRange;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 99
+    .line 187
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 100
+    .line 188
     :cond_0
     invoke-static {p1, p0}, Lkotlin/random/URandomKt;->nextUInt(Lkotlin/random/Random;Lkotlin/ranges/UIntRange;)I
 
@@ -1536,7 +1890,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 89
+    .line 177
     sget-object v0, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
 
     check-cast v0, Lkotlin/random/Random;
@@ -1561,19 +1915,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 109
+    .line 197
     invoke-virtual {p0}, Lkotlin/ranges/ULongRange;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 110
+    .line 198
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 111
+    .line 199
     :cond_0
     invoke-static {p1, p0}, Lkotlin/random/URandomKt;->nextULong(Lkotlin/random/Random;Lkotlin/ranges/ULongRange;)J
 
@@ -1594,7 +1948,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 246
+    .line 334
     sget-object v0, Lkotlin/ranges/UIntProgression;->Companion:Lkotlin/ranges/UIntProgression$Companion;
 
     invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
@@ -1626,7 +1980,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 255
+    .line 343
     sget-object v1, Lkotlin/ranges/ULongProgression;->Companion:Lkotlin/ranges/ULongProgression$Companion;
 
     invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
@@ -1659,7 +2013,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 264
+    .line 352
     if-lez p1, :cond_0
 
     const/4 v0, 0x1
@@ -1678,7 +2032,7 @@
 
     invoke-static {v0, v1}, Lkotlin/ranges/RangesKt;->checkStepIsPositive(ZLjava/lang/Number;)V
 
-    .line 265
+    .line 353
     sget-object v0, Lkotlin/ranges/UIntProgression;->Companion:Lkotlin/ranges/UIntProgression$Companion;
 
     invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
@@ -1719,7 +2073,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 274
+    .line 362
     const-wide/16 v0, 0x0
 
     cmp-long v2, p1, v0
@@ -1742,7 +2096,7 @@
 
     invoke-static {v2, v3}, Lkotlin/ranges/RangesKt;->checkStepIsPositive(ZLjava/lang/Number;)V
 
-    .line 275
+    .line 363
     sget-object v4, Lkotlin/ranges/ULongProgression;->Companion:Lkotlin/ranges/ULongProgression$Companion;
 
     invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
@@ -1780,10 +2134,10 @@
 
 .method public static final until-5PvTz6A(SS)Lkotlin/ranges/UIntRange;
     .locals 4
-    .param p0, "$this$until"    # S
+    .param p0, "$this$until_u2d5PvTz6A"    # S
     .param p1, "to"    # S
 
-    .line 322
+    .line 410
     const v0, 0xffff
 
     and-int v1, p1, v0
@@ -1804,7 +2158,7 @@
 
     return-object v0
 
-    .line 323
+    .line 411
     :cond_0
     and-int v1, p0, v0
 
@@ -1835,13 +2189,13 @@
 
 .method public static final until-J1ME1BU(II)Lkotlin/ranges/UIntRange;
     .locals 3
-    .param p0, "$this$until"    # I
+    .param p0, "$this$until_u2dJ1ME1BU"    # I
     .param p1, "to"    # I
 
-    .line 298
+    .line 386
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p1, v0}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -1855,29 +2209,29 @@
 
     return-object v0
 
-    .line 299
+    .line 387
     :cond_0
-    add-int/lit8 v0, p1, -0x1
+    new-instance v0, Lkotlin/ranges/UIntRange;
 
-    invoke-static {v0}, Lkotlin/UInt;->constructor-impl(I)I
+    add-int/lit8 v1, p1, -0x1
 
-    move-result v0
+    invoke-static {v1}, Lkotlin/UInt;->constructor-impl(I)I
 
-    new-instance v1, Lkotlin/ranges/UIntRange;
+    move-result v1
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v0, v2}, Lkotlin/ranges/UIntRange;-><init>(IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v0, p0, v1, v2}, Lkotlin/ranges/UIntRange;-><init>(IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static final until-Kr8caGY(BB)Lkotlin/ranges/UIntRange;
     .locals 4
-    .param p0, "$this$until"    # B
+    .param p0, "$this$until_u2dKr8caGY"    # B
     .param p1, "to"    # B
 
-    .line 286
+    .line 374
     and-int/lit16 v0, p1, 0xff
 
     const/4 v1, 0x0
@@ -1896,7 +2250,7 @@
 
     return-object v0
 
-    .line 287
+    .line 375
     :cond_0
     and-int/lit16 v0, p0, 0xff
 
@@ -1927,13 +2281,13 @@
 
 .method public static final until-eb3DHEI(JJ)Lkotlin/ranges/ULongRange;
     .locals 8
-    .param p0, "$this$until"    # J
+    .param p0, "$this$until_u2deb3DHEI"    # J
     .param p2, "to"    # J
 
-    .line 310
+    .line 398
     const-wide/16 v0, 0x0
 
-    invoke-static {p2, p3, v0, v1}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p2, p3, v0, v1}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -1947,7 +2301,7 @@
 
     return-object v0
 
-    .line 311
+    .line 399
     :cond_0
     const/4 v0, 0x1
 

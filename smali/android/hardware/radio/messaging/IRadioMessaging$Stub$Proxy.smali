@@ -64,7 +64,11 @@
     .end annotation
 
     .line 405
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -157,7 +161,11 @@
     .end annotation
 
     .line 422
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -179,13 +187,13 @@
     .line 427
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x2
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -250,7 +258,11 @@
     .end annotation
 
     .line 438
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -273,13 +285,13 @@
     .line 444
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x3
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -354,7 +366,11 @@
     .end annotation
 
     .line 455
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -374,13 +390,13 @@
     .line 460
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x4
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x4
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -444,7 +460,11 @@
     .end annotation
 
     .line 471
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -464,13 +484,13 @@
     .line 476
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x5
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x5
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -533,7 +553,11 @@
     .end annotation
 
     .line 487
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -550,13 +574,13 @@
     .line 491
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x6
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x6
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -617,7 +641,11 @@
     .end annotation
 
     .line 502
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -634,13 +662,13 @@
     .line 506
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v2, 0x7
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x7
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -723,7 +751,11 @@
     if-eqz v0, :cond_0
 
     .line 788
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -828,7 +860,11 @@
     if-ne v0, v1, :cond_0
 
     .line 771
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -911,7 +947,11 @@
     .end annotation
 
     .line 517
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -928,13 +968,13 @@
     .line 521
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x8
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x8
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -996,7 +1036,11 @@
     .end annotation
 
     .line 532
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1016,13 +1060,13 @@
     .line 537
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x9
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x9
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1084,7 +1128,11 @@
     .end annotation
 
     .line 548
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1098,13 +1146,13 @@
     .line 551
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xa
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xa
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1164,7 +1212,11 @@
     .end annotation
 
     .line 562
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1186,13 +1238,13 @@
     .line 567
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xb
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xb
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1256,7 +1308,11 @@
     .end annotation
 
     .line 578
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1278,13 +1334,13 @@
     .line 583
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xc
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xc
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1348,7 +1404,11 @@
     .end annotation
 
     .line 594
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1370,13 +1430,13 @@
     .line 599
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xd
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xd
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1440,7 +1500,11 @@
     .end annotation
 
     .line 610
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1462,13 +1526,13 @@
     .line 615
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xe
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xe
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1532,7 +1596,11 @@
     .end annotation
 
     .line 626
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1554,13 +1622,13 @@
     .line 631
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0xf
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0xf
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1624,7 +1692,11 @@
     .end annotation
 
     .line 642
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1644,13 +1716,13 @@
     .line 647
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x10
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x10
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1714,7 +1786,11 @@
     .end annotation
 
     .line 658
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1736,13 +1812,13 @@
     .line 663
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x11
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x11
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1806,7 +1882,11 @@
     .end annotation
 
     .line 674
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1826,13 +1906,13 @@
     .line 679
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x12
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x12
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1896,7 +1976,11 @@
     .end annotation
 
     .line 690
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1918,13 +2002,13 @@
     .line 695
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x13
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x13
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -1988,7 +2072,11 @@
     .end annotation
 
     .line 706
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -2008,13 +2096,13 @@
     .line 711
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x14
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x14
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -2078,7 +2166,11 @@
     .end annotation
 
     .line 722
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -2098,13 +2190,13 @@
     .line 727
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x15
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x15
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -2168,7 +2260,11 @@
     .end annotation
 
     .line 738
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -2190,13 +2286,13 @@
     .line 743
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x16
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x16
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0
@@ -2260,7 +2356,11 @@
     .end annotation
 
     .line 754
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {p0}, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/Parcel;->obtain(Landroid/os/IBinder;)Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -2282,13 +2382,13 @@
     .line 759
     iget-object v1, p0, Landroid/hardware/radio/messaging/IRadioMessaging$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v2, 0x17
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/16 v4, 0x17
 
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v1, v4, v0, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
     :try_end_0

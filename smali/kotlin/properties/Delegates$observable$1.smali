@@ -43,7 +43,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0xb0
@@ -51,14 +51,6 @@
 
 
 # instance fields
-.field final synthetic $initialValue:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TT;"
-        }
-    .end annotation
-.end field
-
 .field final synthetic $onChange:Lkotlin/jvm/functions/Function3;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -88,8 +80,6 @@
             ">;)V"
         }
     .end annotation
-
-    iput-object p1, p0, Lkotlin/properties/Delegates$observable$1;->$initialValue:Ljava/lang/Object;
 
     iput-object p2, p0, Lkotlin/properties/Delegates$observable$1;->$onChange:Lkotlin/jvm/functions/Function3;
 

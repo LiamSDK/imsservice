@@ -24,6 +24,11 @@
 # direct methods
 .method constructor <init>(Landroidx/lifecycle/LifecycleEventObserver;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .line 57
     iput-object p1, p0, Landroidx/lifecycle/Lifecycling$1;->val$observer:Landroidx/lifecycle/LifecycleEventObserver;

@@ -29,7 +29,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCharDirectionality.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CharDirectionality.kt\nkotlin/text/CharDirectionality$Companion$directionalityMap$2\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,123:1\n8804#2,2:124\n9064#2,4:126\n*S KotlinDebug\n*F\n+ 1 CharDirectionality.kt\nkotlin/text/CharDirectionality$Companion$directionalityMap$2\n*L\n118#1:124,2\n118#1:126,4\n*E\n"
+    value = "SMAP\nCharDirectionality.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CharDirectionality.kt\nkotlin/text/CharDirectionality$Companion$directionalityMap$2\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,123:1\n8811#2,2:124\n9071#2,4:126\n*S KotlinDebug\n*F\n+ 1 CharDirectionality.kt\nkotlin/text/CharDirectionality$Companion$directionalityMap$2\n*L\n118#1:124,2\n118#1:126,4\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -46,7 +46,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -152,10 +152,8 @@
 
     aget-object v8, v4, v7
 
-    .local v8, "element$iv$iv":Ljava/lang/Object;
-    add-int/lit8 v7, v7, 0x1
-
     .line 127
+    .local v8, "element$iv$iv":Ljava/lang/Object;
     move-object v9, v8
 
     .local v9, "it":Lkotlin/text/CharDirectionality;
@@ -173,12 +171,16 @@
 
     move-result-object v9
 
+    .line 127
     invoke-interface {v3, v9, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 126
+    .end local v8    # "element$iv$iv":Ljava/lang/Object;
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
     .line 129
-    .end local v8    # "element$iv$iv":Ljava/lang/Object;
     :cond_0
     nop
 

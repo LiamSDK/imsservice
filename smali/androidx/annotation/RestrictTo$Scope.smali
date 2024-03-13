@@ -1,6 +1,6 @@
 .class public final enum Landroidx/annotation/RestrictTo$Scope;
 .super Ljava/lang/Enum;
-.source "RestrictTo.java"
+.source "RestrictTo.jvm.kt"
 
 
 # annotations
@@ -21,12 +21,38 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0008\u0008\u0008\u0086\u0001\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002j\u0002\u0008\u0003j\u0002\u0008\u0004j\u0002\u0008\u0005j\u0002\u0008\u0006j\u0002\u0008\u0007j\u0002\u0008\u0008\u00a8\u0006\t"
+    }
+    d2 = {
+        "Landroidx/annotation/RestrictTo$Scope;",
+        "",
+        "(Ljava/lang/String;I)V",
+        "LIBRARY",
+        "LIBRARY_GROUP",
+        "LIBRARY_GROUP_PREFIX",
+        "GROUP_ID",
+        "TESTS",
+        "SUBCLASSES",
+        "annotation"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x8,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
 
 # static fields
 .field private static final synthetic $VALUES:[Landroidx/annotation/RestrictTo$Scope;
 
 .field public static final enum GROUP_ID:Landroidx/annotation/RestrictTo$Scope;
-    .annotation runtime Ljava/lang/Deprecated;
+    .annotation runtime Lkotlin/Deprecated;
+        message = "Use LIBRARY_GROUP_PREFIX instead."
     .end annotation
 .end field
 
@@ -42,10 +68,32 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
+.method private static final synthetic $values()[Landroidx/annotation/RestrictTo$Scope;
+    .locals 6
 
-    .line 65
+    sget-object v0, Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
+
+    sget-object v1, Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+
+    sget-object v2, Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+
+    sget-object v3, Landroidx/annotation/RestrictTo$Scope;->GROUP_ID:Landroidx/annotation/RestrictTo$Scope;
+
+    sget-object v4, Landroidx/annotation/RestrictTo$Scope;->TESTS:Landroidx/annotation/RestrictTo$Scope;
+
+    sget-object v5, Landroidx/annotation/RestrictTo$Scope;->SUBCLASSES:Landroidx/annotation/RestrictTo$Scope;
+
+    filled-new-array/range {v0 .. v5}, [Landroidx/annotation/RestrictTo$Scope;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static constructor <clinit>()V
+    .locals 3
+
+    .line 77
     new-instance v0, Landroidx/annotation/RestrictTo$Scope;
 
     const-string v1, "LIBRARY"
@@ -56,92 +104,81 @@
 
     sput-object v0, Landroidx/annotation/RestrictTo$Scope;->LIBRARY:Landroidx/annotation/RestrictTo$Scope;
 
-    .line 71
-    new-instance v1, Landroidx/annotation/RestrictTo$Scope;
+    .line 83
+    new-instance v0, Landroidx/annotation/RestrictTo$Scope;
 
-    const-string v3, "LIBRARY_GROUP"
+    const-string v1, "LIBRARY_GROUP"
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v1, v3, v4}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
+    sput-object v0, Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroidx/annotation/RestrictTo$Scope;
 
-    .line 85
-    new-instance v3, Landroidx/annotation/RestrictTo$Scope;
+    .line 97
+    new-instance v0, Landroidx/annotation/RestrictTo$Scope;
 
-    const-string v5, "LIBRARY_GROUP_PREFIX"
+    const-string v1, "LIBRARY_GROUP_PREFIX"
 
-    const/4 v6, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v3, v5, v6}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v3, Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
+    sput-object v0, Landroidx/annotation/RestrictTo$Scope;->LIBRARY_GROUP_PREFIX:Landroidx/annotation/RestrictTo$Scope;
 
-    .line 93
-    new-instance v5, Landroidx/annotation/RestrictTo$Scope;
+    .line 105
+    new-instance v0, Landroidx/annotation/RestrictTo$Scope;
 
-    const-string v7, "GROUP_ID"
+    const-string v1, "GROUP_ID"
 
-    const/4 v8, 0x3
+    const/4 v2, 0x3
 
-    invoke-direct {v5, v7, v8}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v5, Landroidx/annotation/RestrictTo$Scope;->GROUP_ID:Landroidx/annotation/RestrictTo$Scope;
+    sput-object v0, Landroidx/annotation/RestrictTo$Scope;->GROUP_ID:Landroidx/annotation/RestrictTo$Scope;
 
-    .line 99
-    new-instance v7, Landroidx/annotation/RestrictTo$Scope;
+    .line 111
+    new-instance v0, Landroidx/annotation/RestrictTo$Scope;
 
-    const-string v9, "TESTS"
+    const-string v1, "TESTS"
 
-    const/4 v10, 0x4
+    const/4 v2, 0x4
 
-    invoke-direct {v7, v9, v10}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v7, Landroidx/annotation/RestrictTo$Scope;->TESTS:Landroidx/annotation/RestrictTo$Scope;
+    sput-object v0, Landroidx/annotation/RestrictTo$Scope;->TESTS:Landroidx/annotation/RestrictTo$Scope;
 
-    .line 107
-    new-instance v9, Landroidx/annotation/RestrictTo$Scope;
+    .line 119
+    new-instance v0, Landroidx/annotation/RestrictTo$Scope;
 
-    const-string v11, "SUBCLASSES"
+    const-string v1, "SUBCLASSES"
 
-    const/4 v12, 0x5
+    const/4 v2, 0x5
 
-    invoke-direct {v9, v11, v12}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Landroidx/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v9, Landroidx/annotation/RestrictTo$Scope;->SUBCLASSES:Landroidx/annotation/RestrictTo$Scope;
+    sput-object v0, Landroidx/annotation/RestrictTo$Scope;->SUBCLASSES:Landroidx/annotation/RestrictTo$Scope;
 
-    .line 60
-    const/4 v11, 0x6
+    invoke-static {}, Landroidx/annotation/RestrictTo$Scope;->$values()[Landroidx/annotation/RestrictTo$Scope;
 
-    new-array v11, v11, [Landroidx/annotation/RestrictTo$Scope;
+    move-result-object v0
 
-    aput-object v0, v11, v2
-
-    aput-object v1, v11, v4
-
-    aput-object v3, v11, v6
-
-    aput-object v5, v11, v8
-
-    aput-object v7, v11, v10
-
-    aput-object v9, v11, v12
-
-    sput-object v11, Landroidx/annotation/RestrictTo$Scope;->$VALUES:[Landroidx/annotation/RestrictTo$Scope;
+    sput-object v0, Landroidx/annotation/RestrictTo$Scope;->$VALUES:[Landroidx/annotation/RestrictTo$Scope;
 
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .param p1, "$enum$name"    # Ljava/lang/String;
+    .param p2, "$enum$ordinal"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
 
-    .line 60
+    .line 72
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -149,9 +186,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/annotation/RestrictTo$Scope;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 60
     const-class v0, Landroidx/annotation/RestrictTo$Scope;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -166,10 +201,9 @@
 .method public static values()[Landroidx/annotation/RestrictTo$Scope;
     .locals 1
 
-    .line 60
     sget-object v0, Landroidx/annotation/RestrictTo$Scope;->$VALUES:[Landroidx/annotation/RestrictTo$Scope;
 
-    invoke-virtual {v0}, [Landroidx/annotation/RestrictTo$Scope;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

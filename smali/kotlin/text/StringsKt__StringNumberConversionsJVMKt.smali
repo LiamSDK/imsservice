@@ -55,7 +55,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -223,10 +223,11 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-object v1, v4
-
+    .line 300
     .end local v2    # "it":Ljava/lang/String;
     .end local v3    # "$i$a$-screenFloatValue-StringsKt__StringNumberConversionsJVMKt$toBigDecimalOrNull$1":I
+    move-object v1, v4
+
     goto :goto_0
 
     .line 302
@@ -296,18 +297,19 @@
     .local v2, "it":Ljava/lang/String;
     const/4 v3, 0x0
 
-    .line 249
     .local v3, "$i$a$-screenFloatValue-StringsKt__StringNumberConversionsJVMKt$toBigDecimalOrNull$2":I
     new-instance v4, Ljava/math/BigDecimal;
 
+    .line 249
     invoke-direct {v4, v2, p1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;Ljava/math/MathContext;)V
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-object v1, v4
-
+    .line 307
     .end local v2    # "it":Ljava/lang/String;
     .end local v3    # "$i$a$-screenFloatValue-StringsKt__StringNumberConversionsJVMKt$toBigDecimalOrNull$2":I
+    move-object v1, v4
+
     goto :goto_0
 
     .line 309
@@ -391,7 +393,7 @@
 .end method
 
 .method public static final toBigIntegerOrNull(Ljava/lang/String;I)Ljava/math/BigInteger;
-    .locals 6
+    .locals 5
     .param p0, "$this$toBigIntegerOrNull"    # Ljava/lang/String;
     .param p1, "radix"    # I
 
@@ -452,34 +454,36 @@
     :goto_0
     move v3, v1
 
-    :cond_1
+    .local v3, "index":I
+    :goto_1
     if-ge v3, v0, :cond_2
 
-    move v4, v3
-
-    .local v4, "index":I
-    add-int/lit8 v3, v3, 0x1
-
     .line 202
-    invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p0, v3}, Ljava/lang/String;->charAt(I)C
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v5, p1}, Lkotlin/text/CharsKt;->digitOf(CI)I
+    invoke-static {v4, p1}, Lkotlin/text/CharsKt;->digitOf(CI)I
 
-    move-result v5
+    move-result v4
 
-    if-gez v5, :cond_1
+    if-gez v4, :cond_1
 
     .line 203
     return-object v2
 
-    .line 207
+    .line 201
+    :cond_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
     .end local v1    # "start":I
-    .end local v4    # "index":I
+    .end local v3    # "index":I
     :cond_2
     new-instance v1, Ljava/math/BigInteger;
 
+    .line 207
     invoke-static {p1}, Lkotlin/text/CharsKt;->checkRadix(I)I
 
     move-result v2
@@ -634,6 +638,7 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 293
     goto :goto_0
 
     .line 295
@@ -728,6 +733,7 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 286
     goto :goto_0
 
     .line 288

@@ -171,13 +171,13 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Landroid/telephony/ims/aidl/ICapabilityExchangeEventListener$Stub;->asInterface(Landroid/os/IBinder;)Landroid/telephony/ims/aidl/ICapabilityExchangeEventListener;
+    invoke-static {v3}, Lcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener$Stub;->asInterface(Landroid/os/IBinder;)Lcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;
 
     move-result-object v3
 
     .line 97
-    .local v3, "_arg1":Landroid/telephony/ims/aidl/ICapabilityExchangeEventListener;
-    invoke-virtual {p0, v2, v3}, Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService$Stub;->setRcsCapabilityExchangeAvailable(ZLandroid/telephony/ims/aidl/ICapabilityExchangeEventListener;)V
+    .local v3, "_arg1":Lcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;
+    invoke-virtual {p0, v2, v3}, Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService$Stub;->setRcsCapabilityExchangeAvailable(ZLcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;)V
 
     .line 98
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
@@ -187,7 +187,7 @@
 
     .line 82
     .end local v2    # "_arg0":Z
-    .end local v3    # "_arg1":Landroid/telephony/ims/aidl/ICapabilityExchangeEventListener;
+    .end local v3    # "_arg1":Lcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;
     :pswitch_2
     sget-object v2, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 

@@ -57,13 +57,13 @@
     .line 89
     if-eqz p0, :cond_0
 
+    const-string v0, "mailto"
+
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "mailto"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -255,11 +255,11 @@
 
     .line 137
     .local v9, "queryParameter":Ljava/lang/String;
-    const/4 v10, 0x2
+    const-string v10, "="
 
-    const-string v11, "="
+    const/4 v11, 0x2
 
-    invoke-virtual {v9, v11, v10}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    invoke-virtual {v9, v10, v11}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v10
 

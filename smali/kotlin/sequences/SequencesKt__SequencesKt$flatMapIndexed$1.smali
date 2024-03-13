@@ -46,7 +46,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -239,7 +239,6 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 334
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -248,7 +247,6 @@
 
     throw p1
 
-    .line 328
     :pswitch_0
     move-object v1, p0
 
@@ -323,9 +321,9 @@
     .local v5, "element":Ljava/lang/Object;
     iget-object v6, v1, Lkotlin/sequences/SequencesKt__SequencesKt$flatMapIndexed$1;->$transform:Lkotlin/jvm/functions/Function2;
 
-    .end local v2    # "index":I
     add-int/lit8 v7, v2, 0x1
 
+    .end local v2    # "index":I
     .local v7, "index":I
     if-gez v2, :cond_0
 

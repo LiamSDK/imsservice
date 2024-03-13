@@ -31,108 +31,100 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1100
+    .line 1294
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1102
+    .line 1296
     return-void
 .end method
 
 .method static tryRequestLocationUpdates(Landroid/location/LocationManager;Ljava/lang/String;Landroidx/core/location/LocationRequestCompat;Landroidx/core/location/LocationListenerCompat;Landroid/os/Looper;)Z
-    .locals 8
+    .locals 7
     .param p0, "locationManager"    # Landroid/location/LocationManager;
     .param p1, "provider"    # Ljava/lang/String;
     .param p2, "locationRequest"    # Landroidx/core/location/LocationRequestCompat;
     .param p3, "listener"    # Landroidx/core/location/LocationListenerCompat;
     .param p4, "looper"    # Landroid/os/Looper;
 
-    .line 1149
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1343
+    nop
 
-    const/4 v1, 0x0
+    .line 1345
+    const/4 v0, 0x0
 
-    const/16 v2, 0x13
-
-    if-lt v0, v2, :cond_3
-
-    .line 1151
     :try_start_0
-    sget-object v0, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
+    sget-object v1, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    .line 1152
-    const-string v0, "android.location.LocationRequest"
+    .line 1346
+    const-string v1, "android.location.LocationRequest"
 
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
+    sput-object v1, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
 
-    .line 1155
+    .line 1349
     :cond_0
-    sget-object v0, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
+    sget-object v1, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
 
-    const/4 v2, 0x2
+    const/4 v2, 0x1
 
-    const/4 v3, 0x3
+    if-nez v1, :cond_1
 
-    const/4 v4, 0x1
+    .line 1350
+    const-class v1, Landroid/location/LocationManager;
 
-    if-nez v0, :cond_1
+    const-string v3, "requestLocationUpdates"
 
-    .line 1156
-    const-class v0, Landroid/location/LocationManager;
+    const/4 v4, 0x3
 
-    const-string v5, "requestLocationUpdates"
+    new-array v4, v4, [Ljava/lang/Class;
 
-    new-array v6, v3, [Ljava/lang/Class;
+    sget-object v5, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
 
-    sget-object v7, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
+    aput-object v5, v4, v0
 
-    aput-object v7, v6, v1
+    const-class v5, Landroid/location/LocationListener;
 
-    const-class v7, Landroid/location/LocationListener;
+    aput-object v5, v4, v2
 
-    aput-object v7, v6, v4
+    const-class v5, Landroid/os/Looper;
 
-    const-class v7, Landroid/os/Looper;
+    const/4 v6, 0x2
 
-    aput-object v7, v6, v2
+    aput-object v5, v4, v6
 
-    .line 1157
-    invoke-virtual {v0, v5, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .line 1351
+    invoke-virtual {v1, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
+    sput-object v1, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
 
-    .line 1161
-    invoke-virtual {v0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    .line 1355
+    invoke-virtual {v1, v2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    .line 1164
+    .line 1358
     :cond_1
     invoke-virtual {p2, p1}, Landroidx/core/location/LocationRequestCompat;->toLocationRequest(Ljava/lang/String;)Landroid/location/LocationRequest;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 1165
-    .local v0, "request":Landroid/location/LocationRequest;
-    if-eqz v0, :cond_2
+    .line 1359
+    .local v1, "request":Landroid/location/LocationRequest;
+    if-eqz v1, :cond_2
 
-    .line 1166
-    sget-object v5, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
+    .line 1360
+    sget-object v3, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    filled-new-array {v1, p3, p4}, [Ljava/lang/Object;
 
-    aput-object v0, v3, v1
+    move-result-object v4
 
-    aput-object p3, v3, v4
-
-    aput-object p4, v3, v2
-
-    invoke-virtual {v5, p0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, p0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
@@ -140,22 +132,21 @@
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1168
-    return v4
+    .line 1362
+    return v2
 
-    .line 1176
-    .end local v0    # "request":Landroid/location/LocationRequest;
+    .line 1370
+    .end local v1    # "request":Landroid/location/LocationRequest;
     :cond_2
     goto :goto_0
 
-    .line 1170
+    .line 1364
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    .line 1178
-    :cond_3
+    .line 1372
     :goto_0
-    return v1
+    return v0
 .end method
 
 .method static tryRequestLocationUpdates(Landroid/location/LocationManager;Ljava/lang/String;Landroidx/core/location/LocationRequestCompat;Landroidx/core/location/LocationManagerCompat$LocationListenerTransport;)Z
@@ -165,33 +156,29 @@
     .param p2, "locationRequest"    # Landroidx/core/location/LocationRequestCompat;
     .param p3, "transport"    # Landroidx/core/location/LocationManagerCompat$LocationListenerTransport;
 
-    .line 1110
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1304
+    nop
 
-    const/4 v1, 0x0
+    .line 1306
+    const/4 v0, 0x0
 
-    const/16 v2, 0x13
-
-    if-lt v0, v2, :cond_3
-
-    .line 1112
     :try_start_0
-    sget-object v0, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
+    sget-object v1, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    .line 1113
-    const-string v0, "android.location.LocationRequest"
+    .line 1307
+    const-string v1, "android.location.LocationRequest"
 
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
+    sput-object v1, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
 
-    .line 1115
+    .line 1309
     :cond_0
-    sget-object v0, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
+    sget-object v1, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
 
     const/4 v2, 0x2
 
@@ -199,10 +186,10 @@
 
     const/4 v4, 0x1
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
-    .line 1116
-    const-class v0, Landroid/location/LocationManager;
+    .line 1310
+    const-class v1, Landroid/location/LocationManager;
 
     const-string v5, "requestLocationUpdates"
 
@@ -210,7 +197,7 @@
 
     sget-object v7, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sLocationRequestClass:Ljava/lang/Class;
 
-    aput-object v7, v6, v1
+    aput-object v7, v6, v0
 
     const-class v7, Landroid/location/LocationListener;
 
@@ -220,27 +207,27 @@
 
     aput-object v7, v6, v2
 
-    .line 1117
-    invoke-virtual {v0, v5, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .line 1311
+    invoke-virtual {v1, v5, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
+    sput-object v1, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
 
-    .line 1121
-    invoke-virtual {v0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    .line 1315
+    invoke-virtual {v1, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    .line 1124
+    .line 1318
     :cond_1
     invoke-virtual {p2, p1}, Landroidx/core/location/LocationRequestCompat;->toLocationRequest(Ljava/lang/String;)Landroid/location/LocationRequest;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 1125
-    .local v0, "request":Landroid/location/LocationRequest;
-    if-eqz v0, :cond_2
+    .line 1319
+    .local v1, "request":Landroid/location/LocationRequest;
+    if-eqz v1, :cond_2
 
-    .line 1126
+    .line 1320
     sget-object v5, Landroidx/core/location/LocationManagerCompat;->sLocationListeners:Ljava/util/WeakHashMap;
 
     monitor-enter v5
@@ -251,35 +238,35 @@
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1127
+    .line 1321
     :try_start_1
     sget-object v6, Landroidx/core/location/LocationManagerCompat$Api19Impl;->sRequestLocationUpdatesLooperMethod:Ljava/lang/reflect/Method;
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    aput-object v0, v3, v1
+    aput-object v1, v3, v0
 
     aput-object p3, v3, v4
 
-    .line 1128
+    .line 1322
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v7
 
     aput-object v7, v3, v2
 
-    .line 1127
+    .line 1321
     invoke-virtual {v6, p0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1129
+    .line 1323
     invoke-static {p0, p3}, Landroidx/core/location/LocationManagerCompat;->registerLocationListenerTransport(Landroid/location/LocationManager;Landroidx/core/location/LocationManagerCompat$LocationListenerTransport;)V
 
-    .line 1130
+    .line 1324
     monitor-exit v5
 
     return v4
 
-    .line 1131
+    .line 1325
     :catchall_0
     move-exception v2
 
@@ -300,8 +287,8 @@
     .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 1139
-    .end local v0    # "request":Landroid/location/LocationRequest;
+    .line 1333
+    .end local v1    # "request":Landroid/location/LocationRequest;
     .restart local p0    # "locationManager":Landroid/location/LocationManager;
     .restart local p1    # "provider":Ljava/lang/String;
     .restart local p2    # "locationRequest":Landroidx/core/location/LocationRequestCompat;
@@ -309,12 +296,11 @@
     :cond_2
     goto :goto_0
 
-    .line 1133
+    .line 1327
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    .line 1141
-    :cond_3
+    .line 1335
     :goto_0
-    return v1
+    return v0
 .end method

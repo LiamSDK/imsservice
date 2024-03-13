@@ -270,15 +270,11 @@
 .end method
 
 .method public static getCapabilities(Landroid/accessibilityservice/AccessibilityServiceInfo;)I
-    .locals 2
+    .locals 1
     .param p0, "info"    # Landroid/accessibilityservice/AccessibilityServiceInfo;
 
     .line 287
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 288
     invoke-virtual {p0}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getCapabilities()I
@@ -286,49 +282,18 @@
     move-result v0
 
     return v0
-
-    .line 290
-    :cond_0
-    invoke-virtual {p0}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getCanRetrieveWindowContent()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 291
-    const/4 v0, 0x1
-
-    return v0
-
-    .line 293
-    :cond_1
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public static loadDescription(Landroid/accessibilityservice/AccessibilityServiceInfo;Landroid/content/pm/PackageManager;)Ljava/lang/String;
-    .locals 2
+    .locals 1
     .param p0, "info"    # Landroid/accessibilityservice/AccessibilityServiceInfo;
     .param p1, "packageManager"    # Landroid/content/pm/PackageManager;
 
     .line 198
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 199
     invoke-virtual {p0, p1}, Landroid/accessibilityservice/AccessibilityServiceInfo;->loadDescription(Landroid/content/pm/PackageManager;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 201
-    :cond_0
-    invoke-virtual {p0}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getDescription()Ljava/lang/String;
 
     move-result-object v0
 

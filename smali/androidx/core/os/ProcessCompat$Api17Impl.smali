@@ -101,17 +101,17 @@
     if-eqz v1, :cond_2
 
     .line 104
-    const/4 v2, 0x0
-
-    new-array v4, v0, [Ljava/lang/Object;
+    new-array v2, v0, [Ljava/lang/Object;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v3
+    aput-object v4, v2, v3
 
-    invoke-virtual {v1, v2, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 

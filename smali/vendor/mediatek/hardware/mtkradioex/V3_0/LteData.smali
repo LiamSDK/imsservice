@@ -123,11 +123,11 @@
 
     move-result-wide v7
 
-    .line 129
     const-wide/16 v9, 0x0
 
     const/4 v11, 0x1
 
+    .line 129
     move-object v4, p0
 
     invoke-virtual/range {v4 .. v11}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;
@@ -444,240 +444,192 @@
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 13
 
     .line 71
-    const/16 v0, 0xc
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->state:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->state:I
 
     .line 72
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->mcc:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->mcc:I
 
     .line 73
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->mnc:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->mnc:I
 
     .line 74
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->cellId:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->cellId:I
 
     .line 75
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v4
 
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->band:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->band:I
 
     .line 76
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v5
 
-    const/4 v2, 0x4
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->bandwidth:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->bandwidth:I
 
     .line 77
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v6
 
-    const/4 v2, 0x5
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->ulChannel:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->ulChannel:I
 
     .line 78
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v7
 
-    const/4 v2, 0x6
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->dlChannel:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->dlChannel:I
 
     .line 79
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v8
 
-    const/4 v2, 0x7
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->rssi:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->rssi:I
 
     .line 80
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v9
 
-    const/16 v2, 0x8
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->rsrq:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->rsrq:I
 
     .line 81
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v10
 
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->rsrp:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->rsrp:I
 
     .line 82
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v11
 
-    const/16 v2, 0xa
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->txPower:I
+    iget v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/LteData;->txPower:I
 
     .line 83
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v12
 
-    const/16 v2, 0xb
+    filled-new-array/range {v1 .. v12}, [Ljava/lang/Object;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 71
     invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I

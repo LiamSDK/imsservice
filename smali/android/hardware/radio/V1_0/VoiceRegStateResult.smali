@@ -107,11 +107,11 @@
 
     move-result-wide v7
 
-    .line 101
     const-wide/16 v9, 0x0
 
     const/4 v11, 0x1
 
+    .line 101
     move-object v4, p0
 
     invoke-virtual/range {v4 .. v11}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;
@@ -388,160 +388,128 @@
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 9
 
     .line 55
-    const/16 v0, 0x8
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget v1, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->regState:I
+    iget v0, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->regState:I
 
     .line 56
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->rat:I
+    iget v0, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->rat:I
 
     .line 57
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    iget-boolean v1, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->cssSupported:Z
+    iget-boolean v0, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->cssSupported:Z
 
     .line 58
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->roamingIndicator:I
+    iget v0, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->roamingIndicator:I
 
     .line 59
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v4
 
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->systemIsInPrl:I
+    iget v0, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->systemIsInPrl:I
 
     .line 60
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v5
 
-    const/4 v2, 0x4
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->defaultRoamingIndicator:I
+    iget v0, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->defaultRoamingIndicator:I
 
     .line 61
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v6
 
-    const/4 v2, 0x5
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->reasonForDenial:I
+    iget v0, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->reasonForDenial:I
 
     .line 62
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v7
 
-    const/4 v2, 0x6
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->cellIdentity:Landroid/hardware/radio/V1_0/CellIdentity;
+    iget-object v0, p0, Landroid/hardware/radio/V1_0/VoiceRegStateResult;->cellIdentity:Landroid/hardware/radio/V1_0/CellIdentity;
 
     .line 63
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v8
 
-    const/4 v2, 0x7
+    filled-new-array/range {v1 .. v8}, [Ljava/lang/Object;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 55
     invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I

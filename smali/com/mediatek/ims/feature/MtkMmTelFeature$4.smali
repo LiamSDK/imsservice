@@ -30,7 +30,7 @@
     .param p3, "tech"    # I
     .param p4, "latch"    # Ljava/util/concurrent/CountDownLatch;
 
-    .line 531
+    .line 516
     iput-object p1, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$4;->this$0:Lcom/mediatek/ims/feature/MtkMmTelFeature;
 
     iput-object p5, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$4;->val$c:Landroid/telephony/ims/feature/ImsFeature$CapabilityCallbackProxy;
@@ -48,20 +48,20 @@
     .locals 4
     .param p1, "value"    # I
 
-    .line 534
+    .line 519
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_1
 
-    .line 535
+    .line 520
     iget-object v0, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$4;->val$c:Landroid/telephony/ims/feature/ImsFeature$CapabilityCallbackProxy;
 
     if-nez v0, :cond_0
 
-    .line 536
+    .line 521
     return-void
 
-    .line 538
+    .line 523
     :cond_0
     iget-object v1, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$4;->val$cap:Landroid/telephony/ims/feature/CapabilityChangeRequest$CapabilityPair;
 
@@ -71,17 +71,17 @@
 
     iget-object v2, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$4;->val$cap:Landroid/telephony/ims/feature/CapabilityChangeRequest$CapabilityPair;
 
-    .line 539
+    .line 524
     invoke-virtual {v2}, Landroid/telephony/ims/feature/CapabilityChangeRequest$CapabilityPair;->getRadioTech()I
 
     move-result v2
 
+    .line 523
     const/4 v3, -0x1
 
-    .line 538
     invoke-virtual {v0, v1, v2, v3}, Landroid/telephony/ims/feature/ImsFeature$CapabilityCallbackProxy;->onChangeCapabilityConfigurationError(III)V
 
-    .line 541
+    .line 526
     :cond_1
     invoke-static {}, Lcom/mediatek/ims/feature/MtkMmTelFeature;->access$200()Z
 
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 542
+    .line 527
     iget-object v0, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$4;->this$0:Lcom/mediatek/ims/feature/MtkMmTelFeature;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -112,7 +112,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/ims/feature/MtkMmTelFeature;->access$100(Lcom/mediatek/ims/feature/MtkMmTelFeature;Ljava/lang/String;)V
 
-    .line 545
+    .line 530
     :cond_2
     return-void
 .end method

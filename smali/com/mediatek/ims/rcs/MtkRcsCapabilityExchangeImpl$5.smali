@@ -127,26 +127,38 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_2
 
-    iget-object v2, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$5;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
+    .line 399
+    iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$5;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
-    invoke-static {v2}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$1200(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;)Landroid/telephony/ims/aidl/ICapabilityExchangeEventListener;
+    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$1100(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;)Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v0, v1, v2}, Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService;->setRcsCapabilityExchangeAvailable(ZLandroid/telephony/ims/aidl/ICapabilityExchangeEventListener;)V
+    iget-object v1, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$5;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
+
+    .line 400
+    invoke-static {v1}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$1200(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;)Lcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;
+
+    move-result-object v1
+
+    .line 399
+    const/4 v2, 0x1
+
+    invoke-interface {v0, v2, v1}, Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService;->setRcsCapabilityExchangeAvailable(ZLcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 401
+    .line 404
+    :cond_2
     goto :goto_0
 
-    .line 399
+    .line 402
     :catch_0
     move-exception v0
 
-    .line 400
+    .line 403
     .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$5;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
@@ -170,7 +182,7 @@
 
     invoke-static {v1, v2}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$200(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;Ljava/lang/String;)V
 
-    .line 402
+    .line 405
     .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
@@ -211,7 +223,7 @@
     .locals 3
     .param p1, "className"    # Landroid/content/ComponentName;
 
-    .line 405
+    .line 408
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$5;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -234,18 +246,18 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$000(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;Ljava/lang/String;)V
 
-    .line 406
+    .line 409
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$5;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$1102(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService;)Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService;
 
-    .line 407
+    .line 410
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$5;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
     invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$1300(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;)V
 
-    .line 408
+    .line 411
     return-void
 .end method

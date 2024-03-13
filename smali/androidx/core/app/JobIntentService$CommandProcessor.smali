@@ -61,6 +61,8 @@
     .param p1, "params"    # [Ljava/lang/Void;
 
     .line 394
+    nop
+
     :goto_0
     iget-object v0, p0, Landroidx/core/app/JobIntentService$CommandProcessor;->this$0:Landroidx/core/app/JobIntentService;
 

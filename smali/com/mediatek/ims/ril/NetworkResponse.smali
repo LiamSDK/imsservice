@@ -37,6 +37,22 @@
     return-void
 .end method
 
+.method public cancelEmergencyNetworkScanResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .locals 0
+    .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
+
+    .line 302
+    return-void
+.end method
+
+.method public exitEmergencyModeResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .locals 0
+    .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
+
+    .line 299
+    return-void
+.end method
+
 .method public getAllowedNetworkTypesBitmapResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
@@ -114,8 +130,8 @@
 .method public getInterfaceHash()Ljava/lang/String;
     .locals 1
 
-    .line 293
-    const-string v0, "57e8e923513d80a26102e450d335e89b4346be66"
+    .line 326
+    const-string v0, "1b6608f238bd0b1c642df315621a7b605eafc883"
 
     return-object v0
 .end method
@@ -123,10 +139,19 @@
 .method public getInterfaceVersion()I
     .locals 1
 
-    .line 298
-    const/4 v0, 0x1
+    .line 331
+    const/4 v0, 0x2
 
     return v0
+.end method
+
+.method public getLocationPrivacySettingResponse(Landroid/hardware/radio/RadioResponseInfo;Z)V
+    .locals 0
+    .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
+    .param p2, "shareLocation"    # Z
+
+    .line 322
+    return-void
 .end method
 
 .method public getNetworkSelectionModeResponse(Landroid/hardware/radio/RadioResponseInfo;Z)V
@@ -194,12 +219,30 @@
     return-void
 .end method
 
+.method public isN1ModeEnabledResponse(Landroid/hardware/radio/RadioResponseInfo;Z)V
+    .locals 0
+    .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
+    .param p2, "isEnabled"    # Z
+
+    .line 312
+    return-void
+.end method
+
 .method public isNrDualConnectivityEnabledResponse(Landroid/hardware/radio/RadioResponseInfo;Z)V
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "isEnabled"    # Z
 
     .line 163
+    return-void
+.end method
+
+.method public isNullCipherAndIntegrityEnabledResponse(Landroid/hardware/radio/RadioResponseInfo;Z)V
+    .locals 0
+    .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
+    .param p2, "isEnabled"    # Z
+
+    .line 309
     return-void
 .end method
 
@@ -252,6 +295,15 @@
     return-void
 .end method
 
+.method public setEmergencyModeResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/network/EmergencyRegResult;)V
+    .locals 0
+    .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
+    .param p2, "regState"    # Landroid/hardware/radio/network/EmergencyRegResult;
+
+    .line 293
+    return-void
+.end method
+
 .method public setIndicationFilterResponse(Landroid/hardware/radio/RadioResponseInfo;)V
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
@@ -268,11 +320,27 @@
     return-void
 .end method
 
+.method public setLocationPrivacySettingResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .locals 0
+    .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
+
+    .line 318
+    return-void
+.end method
+
 .method public setLocationUpdatesResponse(Landroid/hardware/radio/RadioResponseInfo;)V
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
     .line 219
+    return-void
+.end method
+
+.method public setN1ModeEnabledResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .locals 0
+    .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
+
+    .line 315
     return-void
 .end method
 
@@ -297,6 +365,14 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
     .line 237
+    return-void
+.end method
+
+.method public setNullCipherAndIntegrityEnabledResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .locals 0
+    .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
+
+    .line 305
     return-void
 .end method
 
@@ -354,5 +430,13 @@
     .param p2, "retriesRemaining"    # I
 
     .line 275
+    return-void
+.end method
+
+.method public triggerEmergencyNetworkScanResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .locals 0
+    .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
+
+    .line 296
     return-void
 .end method

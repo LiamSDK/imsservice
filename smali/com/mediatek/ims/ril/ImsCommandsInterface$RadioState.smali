@@ -33,8 +33,25 @@
 
 
 # direct methods
+.method private static synthetic $values()[Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+    .locals 3
+
+    .line 51
+    sget-object v0, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->RADIO_OFF:Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+
+    sget-object v1, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->RADIO_UNAVAILABLE:Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+
+    sget-object v2, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->RADIO_ON:Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+
+    filled-new-array {v0, v1, v2}, [Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
-    .locals 7
+    .locals 3
 
     .line 52
     new-instance v0, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
@@ -48,39 +65,33 @@
     sput-object v0, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->RADIO_OFF:Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
 
     .line 53
-    new-instance v1, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+    new-instance v0, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
 
-    const-string v3, "RADIO_UNAVAILABLE"
+    const-string v1, "RADIO_UNAVAILABLE"
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v1, v3, v4}, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->RADIO_UNAVAILABLE:Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+    sput-object v0, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->RADIO_UNAVAILABLE:Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
 
     .line 54
-    new-instance v3, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+    new-instance v0, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
 
-    const-string v5, "RADIO_ON"
+    const-string v1, "RADIO_ON"
 
-    const/4 v6, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v3, v5, v6}, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v3, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->RADIO_ON:Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+    sput-object v0, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->RADIO_ON:Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
 
     .line 51
-    const/4 v5, 0x3
+    invoke-static {}, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->$values()[Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
 
-    new-array v5, v5, [Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+    move-result-object v0
 
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->$VALUES:[Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
+    sput-object v0, Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;->$VALUES:[Lcom/mediatek/ims/ril/ImsCommandsInterface$RadioState;
 
     return-void
 .end method

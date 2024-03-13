@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 171
+    .line 170
     invoke-direct {p0}, Landroidx/core/view/accessibility/AccessibilityViewCommand$CommandArguments;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getProgress()F
     .locals 2
 
-    .line 177
+    .line 176
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityViewCommand$SetProgressArguments;->mBundle:Landroid/os/Bundle;
 
     const-string v1, "android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"

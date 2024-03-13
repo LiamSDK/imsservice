@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/mediatek/ims/config/Register$ArgsObserver;,
-        Lcom/mediatek/ims/config/Register$IArgsChangeListener;
+        Lcom/mediatek/ims/config/Register$IArgsChangeListener;,
+        Lcom/mediatek/ims/config/Register$ArgsObserver;
     }
 .end annotation
 

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPlatformImplementations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlatformImplementations.kt\nkotlin/internal/PlatformImplementations\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,115:1\n1#2:116\n*E\n"
+    value = "SMAP\nPlatformImplementations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlatformImplementations.kt\nkotlin/internal/PlatformImplementations\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,93:1\n1#2:94\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -43,7 +43,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 3
+    .locals 2
     .param p1, "cause"    # Ljava/lang/Throwable;
     .param p2, "exception"    # Ljava/lang/Throwable;
 
@@ -78,23 +78,16 @@
     .line 32
     sget-object v0, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->addSuppressed:Ljava/lang/reflect/Method;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
+    filled-new-array {p2}, [Ljava/lang/Object;
 
-    :cond_0
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v1, v2
+    move-result-object v1
 
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 33
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -155,13 +148,8 @@
     .line 37
     sget-object v0, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->getSuppressed:Ljava/lang/reflect/Method;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
     const/4 v1, 0x0
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -170,19 +158,10 @@
 
     move-result-object v0
 
-    :goto_0
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 38
-    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    .line 116
+    .line 94
     .local v0, "it":Ljava/lang/Object;
-    :cond_1
     const/4 v1, 0x0
 
     .line 37
@@ -197,6 +176,15 @@
 
     .end local v0    # "it":Ljava/lang/Object;
     .end local v1    # "$i$a$-let-PlatformImplementations$getSuppressed$1":I
-    :goto_1
+    if-nez v0, :cond_1
+
+    .line 38
+    :cond_0
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    .line 37
+    :cond_1
     return-object v0
 .end method

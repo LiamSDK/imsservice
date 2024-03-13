@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 110
+    .line 201
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 112
+    .line 203
     return-void
 .end method
 
@@ -30,9 +30,9 @@
     .param p0, "service"    # Landroid/app/Service;
     .param p1, "flags"    # I
 
-    .line 116
+    .line 207
     invoke-virtual {p0, p1}, Landroid/app/Service;->stopForeground(I)V
 
-    .line 117
+    .line 208
     return-void
 .end method

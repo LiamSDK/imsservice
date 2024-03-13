@@ -85,7 +85,7 @@
 .end method
 
 .method public final getHashChain()Ljava/util/ArrayList;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -97,27 +97,19 @@
     .line 1869
     new-instance v0, Ljava/util/ArrayList;
 
-    const/4 v1, 0x2
+    const/16 v1, 0x20
 
-    new-array v1, v1, [[B
+    new-array v2, v1, [B
 
-    const/16 v2, 0x20
+    fill-array-data v2, :array_0
 
-    new-array v3, v2, [B
+    new-array v1, v1, [B
 
-    fill-array-data v3, :array_0
+    fill-array-data v1, :array_1
 
-    const/4 v4, 0x0
+    filled-new-array {v2, v1}, [[B
 
-    aput-object v3, v1, v4
-
-    new-array v2, v2, [B
-
-    fill-array-data v2, :array_1
-
-    const/4 v3, 0x1
-
-    aput-object v2, v1, v3
+    move-result-object v1
 
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -126,8 +118,6 @@
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     return-object v0
-
-    nop
 
     :array_0
     .array-data 1

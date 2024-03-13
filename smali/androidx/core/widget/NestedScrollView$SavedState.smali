@@ -34,7 +34,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 2241
+    .line 2457
     new-instance v0, Landroidx/core/widget/NestedScrollView$SavedState$1;
 
     invoke-direct {v0}, Landroidx/core/widget/NestedScrollView$SavedState$1;-><init>()V
@@ -48,17 +48,17 @@
     .locals 1
     .param p1, "source"    # Landroid/os/Parcel;
 
-    .line 2223
+    .line 2439
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 2224
+    .line 2440
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroidx/core/widget/NestedScrollView$SavedState;->scrollPosition:I
 
-    .line 2225
+    .line 2441
     return-void
 .end method
 
@@ -66,10 +66,10 @@
     .locals 0
     .param p1, "superState"    # Landroid/os/Parcelable;
 
-    .line 2219
+    .line 2435
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 2220
+    .line 2436
     return-void
 .end method
 
@@ -78,7 +78,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 2236
+    .line 2452
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -89,7 +89,7 @@
 
     move-result-object v0
 
-    .line 2237
+    .line 2453
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    .line 2236
+    .line 2452
     return-object v0
 .end method
 
@@ -133,14 +133,14 @@
     .param p1, "dest"    # Landroid/os/Parcel;
     .param p2, "flags"    # I
 
-    .line 2229
+    .line 2445
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 2230
+    .line 2446
     iget v0, p0, Landroidx/core/widget/NestedScrollView$SavedState;->scrollPosition:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2231
+    .line 2447
     return-void
 .end method

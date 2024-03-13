@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nGroupingJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GroupingJVM.kt\nkotlin/collections/GroupingKt__GroupingJVMKt\n+ 2 Grouping.kt\nkotlin/collections/GroupingKt__GroupingKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,52:1\n143#2:53\n80#2,4:54\n85#2:59\n1#3:58\n1849#4,2:60\n*S KotlinDebug\n*F\n+ 1 GroupingJVM.kt\nkotlin/collections/GroupingKt__GroupingJVMKt\n*L\n22#1:53\n22#1:54,4\n22#1:59\n48#1:60,2\n*E\n"
+    value = "SMAP\nGroupingJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GroupingJVM.kt\nkotlin/collections/GroupingKt__GroupingJVMKt\n+ 2 Grouping.kt\nkotlin/collections/GroupingKt__GroupingKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,52:1\n143#2:53\n80#2,4:54\n85#2:59\n1#3:58\n1855#4,2:60\n*S KotlinDebug\n*F\n+ 1 GroupingJVM.kt\nkotlin/collections/GroupingKt__GroupingJVMKt\n*L\n22#1:53\n22#1:54,4\n22#1:59\n48#1:60,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -31,7 +31,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -49,7 +49,7 @@
 .end method
 
 .method public static final eachCount(Lkotlin/collections/Grouping;)Ljava/util/Map;
-    .locals 22
+    .locals 20
     .param p0, "$this$eachCount"    # Lkotlin/collections/Grouping;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -140,75 +140,62 @@
     const/4 v11, 0x0
 
     :goto_1
-    move-object v12, v8
+    move-object v12, v9
 
-    .local v12, "key$iv":Ljava/lang/Object;
-    move-object v13, v7
+    .local v12, "acc$iv":Ljava/lang/Object;
+    move-object v13, v8
 
-    .local v13, "e$iv":Ljava/lang/Object;
-    move-object v14, v9
+    .local v13, "key$iv":Ljava/lang/Object;
+    move-object v14, v7
 
     .local v11, "first$iv":Z
-    .local v14, "acc$iv":Ljava/lang/Object;
+    .local v14, "e$iv":Ljava/lang/Object;
     const/4 v15, 0x0
 
     .line 53
     .local v15, "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$1$iv":I
     if-eqz v11, :cond_1
 
-    move-object/from16 v16, v13
-
-    .local v16, "$noName_1":Ljava/lang/Object;
-    move-object/from16 v17, v12
-
-    .local v17, "$noName_0":Ljava/lang/Object;
-    const/16 v18, 0x0
+    const/16 v16, 0x0
 
     .line 23
-    .local v18, "$i$a$-foldTo-GroupingKt__GroupingJVMKt$eachCount$1":I
-    new-instance v19, Lkotlin/jvm/internal/Ref$IntRef;
+    .local v16, "$i$a$-foldTo-GroupingKt__GroupingJVMKt$eachCount$1":I
+    new-instance v17, Lkotlin/jvm/internal/Ref$IntRef;
 
-    invoke-direct/range {v19 .. v19}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
+    invoke-direct/range {v17 .. v17}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
 
-    .end local v16    # "$noName_1":Ljava/lang/Object;
-    .end local v17    # "$noName_0":Ljava/lang/Object;
-    .end local v18    # "$i$a$-foldTo-GroupingKt__GroupingJVMKt$eachCount$1":I
+    .line 53
+    .end local v16    # "$i$a$-foldTo-GroupingKt__GroupingJVMKt$eachCount$1":I
     goto :goto_2
 
     :cond_1
-    move-object/from16 v19, v14
+    move-object/from16 v17, v12
 
     :goto_2
-    move-object/from16 v10, v19
+    move-object/from16 v10, v17
 
     check-cast v10, Lkotlin/jvm/internal/Ref$IntRef;
 
     .local v10, "acc":Lkotlin/jvm/internal/Ref$IntRef;
-    move-object/from16 v17, v12
+    const/16 v17, 0x0
 
-    .restart local v17    # "$noName_0":Ljava/lang/Object;
-    move-object/from16 v18, v13
+    .line 24
+    .local v17, "$i$a$-foldTo-GroupingKt__GroupingJVMKt$eachCount$2":I
+    move-object/from16 v18, v10
 
-    .local v18, "$noName_2":Ljava/lang/Object;
+    .line 58
+    .local v18, "$this$eachCount_u24lambda_u242_u24lambda_u241":Lkotlin/jvm/internal/Ref$IntRef;
     const/16 v19, 0x0
 
     .line 24
-    .local v19, "$i$a$-foldTo-GroupingKt__GroupingJVMKt$eachCount$2":I
-    move-object/from16 v20, v10
+    .local v19, "$i$a$-apply-GroupingKt__GroupingJVMKt$eachCount$2$1":I
+    move-object/from16 v1, v18
 
-    .line 58
-    .local v20, "$this$eachCount_u24lambda_u2d2_u24lambda_u2d1":Lkotlin/jvm/internal/Ref$IntRef;
-    const/16 v21, 0x0
-
-    .line 24
-    .local v21, "$i$a$-apply-GroupingKt__GroupingJVMKt$eachCount$2$1":I
-    move-object/from16 v1, v20
-
-    move-object/from16 v20, v2
+    move-object/from16 v18, v2
 
     .end local v2    # "$this$foldTo$iv":Lkotlin/collections/Grouping;
-    .local v1, "$this$eachCount_u24lambda_u2d2_u24lambda_u2d1":Lkotlin/jvm/internal/Ref$IntRef;
-    .local v20, "$this$foldTo$iv":Lkotlin/collections/Grouping;
+    .local v1, "$this$eachCount_u24lambda_u242_u24lambda_u241":Lkotlin/jvm/internal/Ref$IntRef;
+    .local v18, "$this$foldTo$iv":Lkotlin/collections/Grouping;
     iget v2, v1, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     const/16 v16, 0x1
@@ -217,22 +204,24 @@
 
     iput v2, v1, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    .end local v1    # "$this$eachCount_u24lambda_u2d2_u24lambda_u2d1":Lkotlin/jvm/internal/Ref$IntRef;
+    .line 53
+    .end local v1    # "$this$eachCount_u24lambda_u242_u24lambda_u241":Lkotlin/jvm/internal/Ref$IntRef;
     .end local v10    # "acc":Lkotlin/jvm/internal/Ref$IntRef;
+    .end local v17    # "$i$a$-foldTo-GroupingKt__GroupingJVMKt$eachCount$2":I
+    .end local v19    # "$i$a$-apply-GroupingKt__GroupingJVMKt$eachCount$2$1":I
+    nop
+
+    .line 57
     .end local v11    # "first$iv":Z
-    .end local v12    # "key$iv":Ljava/lang/Object;
-    .end local v13    # "e$iv":Ljava/lang/Object;
-    .end local v14    # "acc$iv":Ljava/lang/Object;
+    .end local v12    # "acc$iv":Ljava/lang/Object;
+    .end local v13    # "key$iv":Ljava/lang/Object;
+    .end local v14    # "e$iv":Ljava/lang/Object;
     .end local v15    # "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$1$iv":I
-    .end local v17    # "$noName_0":Ljava/lang/Object;
-    .end local v18    # "$noName_2":Ljava/lang/Object;
-    .end local v19    # "$i$a$-foldTo-GroupingKt__GroupingJVMKt$eachCount$2":I
-    .end local v21    # "$i$a$-apply-GroupingKt__GroupingJVMKt$eachCount$2$1":I
     invoke-interface {v0, v8, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object/from16 v1, p0
 
-    move-object/from16 v2, v20
+    move-object/from16 v2, v18
 
     goto :goto_0
 
@@ -240,22 +229,22 @@
     .end local v7    # "e$iv$iv":Ljava/lang/Object;
     .end local v8    # "key$iv$iv":Ljava/lang/Object;
     .end local v9    # "accumulator$iv$iv":Ljava/lang/Object;
-    .end local v20    # "$this$foldTo$iv":Lkotlin/collections/Grouping;
+    .end local v18    # "$this$foldTo$iv":Lkotlin/collections/Grouping;
     .restart local v2    # "$this$foldTo$iv":Lkotlin/collections/Grouping;
     :cond_2
-    move-object/from16 v20, v2
+    move-object/from16 v18, v2
 
     .line 53
     .end local v2    # "$this$foldTo$iv":Lkotlin/collections/Grouping;
     .end local v4    # "$this$aggregateTo$iv$iv":Lkotlin/collections/Grouping;
     .end local v5    # "$i$f$aggregateTo":I
-    .restart local v20    # "$this$foldTo$iv":Lkotlin/collections/Grouping;
+    .restart local v18    # "$this$foldTo$iv":Lkotlin/collections/Grouping;
     nop
 
     .line 25
     .end local v0    # "destination$iv":Ljava/util/Map;
     .end local v3    # "$i$f$foldTo":I
-    .end local v20    # "$this$foldTo$iv":Lkotlin/collections/Grouping;
+    .end local v18    # "$this$foldTo$iv":Lkotlin/collections/Grouping;
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -279,38 +268,50 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 58
-    move-object v3, v2
+    const-string v3, "null cannot be cast to non-null type kotlin.collections.MutableMap.MutableEntry<K of kotlin.collections.GroupingKt__GroupingJVMKt.mapValuesInPlace$lambda$4, R of kotlin.collections.GroupingKt__GroupingJVMKt.mapValuesInPlace$lambda$4>"
 
-    .local v3, "it":Ljava/util/Map$Entry;
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/TypeIntrinsics;->asMutableMapEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object v3
+
+    .line 58
+    nop
+
+    .local v2, "it":Ljava/util/Map$Entry;
     const/4 v4, 0x0
 
     .line 25
     .local v4, "$i$a$-mapValuesInPlace-GroupingKt__GroupingJVMKt$eachCount$3":I
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lkotlin/jvm/internal/Ref$IntRef;
 
-    iget v3, v5, Lkotlin/jvm/internal/Ref$IntRef;->element:I
+    iget v2, v5, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    .end local v3    # "it":Ljava/util/Map$Entry;
+    .end local v2    # "it":Ljava/util/Map$Entry;
     .end local v4    # "$i$a$-mapValuesInPlace-GroupingKt__GroupingJVMKt$eachCount$3":I
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-interface {v2, v3}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v2}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3
 
     :cond_3
+    invoke-static {v0}, Lkotlin/jvm/internal/TypeIntrinsics;->asMutableMap(Ljava/lang/Object;)Ljava/util/Map;
+
+    move-result-object v0
+
     return-object v0
 .end method
 
 .method private static final mapValuesInPlace(Ljava/util/Map;Lkotlin/jvm/functions/Function1;)Ljava/util/Map;
-    .locals 7
+    .locals 8
     .param p0, "$this$mapValuesInPlace"    # Ljava/util/Map;
     .param p1, "f"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -378,18 +379,29 @@
 
     .line 49
     .local v5, "$i$a$-forEach-GroupingKt__GroupingJVMKt$mapValuesInPlace$1":I
-    invoke-interface {p1, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v6, "null cannot be cast to non-null type kotlin.collections.MutableMap.MutableEntry<K of kotlin.collections.GroupingKt__GroupingJVMKt.mapValuesInPlace$lambda$4, R of kotlin.collections.GroupingKt__GroupingJVMKt.mapValuesInPlace$lambda$4>"
+
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v4}, Lkotlin/jvm/internal/TypeIntrinsics;->asMutableMapEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object v6
 
-    invoke-interface {v4, v6}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    invoke-interface {v6, v7}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 50
     nop
 
-    .end local v3    # "element$iv":Ljava/lang/Object;
+    .line 60
     .end local v4    # "it":Ljava/util/Map$Entry;
     .end local v5    # "$i$a$-forEach-GroupingKt__GroupingJVMKt$mapValuesInPlace$1":I
+    nop
+
+    .end local v3    # "element$iv":Ljava/lang/Object;
     goto :goto_0
 
     .line 61
@@ -399,5 +411,9 @@
     .line 51
     .end local v0    # "$this$forEach$iv":Ljava/lang/Iterable;
     .end local v1    # "$i$f$forEach":I
-    return-object p0
+    invoke-static {p0}, Lkotlin/jvm/internal/TypeIntrinsics;->asMutableMap(Ljava/lang/Object;)Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
 .end method

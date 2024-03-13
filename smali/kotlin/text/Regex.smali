@@ -78,7 +78,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -527,12 +527,12 @@
 
     move-object v3, v2
 
-    .local v3, "$this$fromInt_u24lambda_u2d1$iv":Ljava/util/EnumSet;
+    .local v3, "$this$fromInt_u24lambda_u241$iv":Ljava/util/EnumSet;
     const/4 v4, 0x0
 
     .line 400
     .local v4, "$i$a$-apply-RegexKt$fromInt$1$iv":I
-    const-string v5, ""
+    const-string v5, "fromInt$lambda$1"
 
     invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -552,7 +552,7 @@
     nop
 
     .line 399
-    .end local v3    # "$this$fromInt_u24lambda_u2d1$iv":Ljava/util/EnumSet;
+    .end local v3    # "$this$fromInt_u24lambda_u241$iv":Ljava/util/EnumSet;
     .end local v4    # "$i$a$-apply-RegexKt$fromInt$1$iv":I
     check-cast v2, Ljava/util/Set;
 
@@ -639,7 +639,7 @@
 
     move-result-object v0
 
-    .local v0, "$this$matchAt_u24lambda_u2d1":Ljava/util/regex/Matcher;
+    .local v0, "$this$matchAt_u24lambda_u241":Ljava/util/regex/Matcher;
     const/4 v1, 0x0
 
     .line 150
@@ -664,7 +664,7 @@
     const/4 v2, 0x0
 
     .line 149
-    .end local v0    # "$this$matchAt_u24lambda_u2d1":Ljava/util/regex/Matcher;
+    .end local v0    # "$this$matchAt_u24lambda_u241":Ljava/util/regex/Matcher;
     .end local v1    # "$i$a$-run-Regex$matchAt$1":I
     :goto_0
     check-cast v2, Lkotlin/text/MatchResult;
@@ -822,13 +822,13 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 187
-    const/4 v0, 0x0
+    const/4 v0, 0x2
 
-    const/4 v1, 0x2
+    const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    invoke-static {p0, p1, v0, v1, v2}, Lkotlin/text/Regex;->find$default(Lkotlin/text/Regex;Ljava/lang/CharSequence;IILjava/lang/Object;)Lkotlin/text/MatchResult;
+    invoke-static {p0, p1, v2, v0, v1}, Lkotlin/text/Regex;->find$default(Lkotlin/text/Regex;Ljava/lang/CharSequence;IILjava/lang/Object;)Lkotlin/text/MatchResult;
 
     move-result-object v0
 
@@ -908,12 +908,12 @@
     move-result-object v0
 
     .line 198
+    .end local v4    # "foundMatch":Lkotlin/text/MatchResult;
     if-ge v1, v2, :cond_2
 
     if-nez v0, :cond_1
 
     .line 200
-    .end local v4    # "foundMatch":Lkotlin/text/MatchResult;
     :cond_2
     if-ge v1, v2, :cond_3
 
@@ -997,7 +997,7 @@
     .local v0, "matcher":Ljava/util/regex/Matcher;
     const/4 v1, 0x1
 
-    if-eq p2, v1, :cond_4
+    if-eq p2, v1, :cond_5
 
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
@@ -1005,7 +1005,7 @@
 
     if-nez v1, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 245
     :cond_0
@@ -1059,9 +1059,7 @@
 
     move-result v4
 
-    if-ne v4, v3, :cond_3
-
-    goto :goto_0
+    if-eq v4, v3, :cond_4
 
     .line 253
     :cond_3
@@ -1072,7 +1070,7 @@
     if-nez v4, :cond_2
 
     .line 255
-    :goto_0
+    :cond_4
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v4
@@ -1098,8 +1096,8 @@
     .end local v1    # "result":Ljava/util/ArrayList;
     .end local v2    # "lastStart":I
     .end local v3    # "lastSplit":I
-    :cond_4
-    :goto_1
+    :cond_5
+    :goto_0
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1

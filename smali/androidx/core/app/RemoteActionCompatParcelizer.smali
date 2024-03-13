@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 11
+    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -17,12 +17,12 @@
     .locals 3
     .param p0, "parcel"    # Landroidx/versionedparcelable/VersionedParcel;
 
-    .line 14
+    .line 11
     new-instance v0, Landroidx/core/app/RemoteActionCompat;
 
     invoke-direct {v0}, Landroidx/core/app/RemoteActionCompat;-><init>()V
 
-    .line 15
+    .line 12
     .local v0, "obj":Landroidx/core/app/RemoteActionCompat;
     iget-object v1, v0, Landroidx/core/app/RemoteActionCompat;->mIcon:Landroidx/core/graphics/drawable/IconCompat;
 
@@ -36,7 +36,7 @@
 
     iput-object v1, v0, Landroidx/core/app/RemoteActionCompat;->mIcon:Landroidx/core/graphics/drawable/IconCompat;
 
-    .line 16
+    .line 13
     iget-object v1, v0, Landroidx/core/app/RemoteActionCompat;->mTitle:Ljava/lang/CharSequence;
 
     const/4 v2, 0x2
@@ -47,7 +47,7 @@
 
     iput-object v1, v0, Landroidx/core/app/RemoteActionCompat;->mTitle:Ljava/lang/CharSequence;
 
-    .line 17
+    .line 14
     iget-object v1, v0, Landroidx/core/app/RemoteActionCompat;->mContentDescription:Ljava/lang/CharSequence;
 
     const/4 v2, 0x3
@@ -58,7 +58,7 @@
 
     iput-object v1, v0, Landroidx/core/app/RemoteActionCompat;->mContentDescription:Ljava/lang/CharSequence;
 
-    .line 18
+    .line 15
     iget-object v1, v0, Landroidx/core/app/RemoteActionCompat;->mActionIntent:Landroid/app/PendingIntent;
 
     const/4 v2, 0x4
@@ -71,7 +71,7 @@
 
     iput-object v1, v0, Landroidx/core/app/RemoteActionCompat;->mActionIntent:Landroid/app/PendingIntent;
 
-    .line 19
+    .line 16
     iget-boolean v1, v0, Landroidx/core/app/RemoteActionCompat;->mEnabled:Z
 
     const/4 v2, 0x5
@@ -82,7 +82,7 @@
 
     iput-boolean v1, v0, Landroidx/core/app/RemoteActionCompat;->mEnabled:Z
 
-    .line 20
+    .line 17
     iget-boolean v1, v0, Landroidx/core/app/RemoteActionCompat;->mShouldShowIcon:Z
 
     const/4 v2, 0x6
@@ -93,7 +93,7 @@
 
     iput-boolean v1, v0, Landroidx/core/app/RemoteActionCompat;->mShouldShowIcon:Z
 
-    .line 21
+    .line 18
     return-object v0
 .end method
 
@@ -102,53 +102,53 @@
     .param p0, "obj"    # Landroidx/core/app/RemoteActionCompat;
     .param p1, "parcel"    # Landroidx/versionedparcelable/VersionedParcel;
 
-    .line 26
+    .line 23
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0, v0}, Landroidx/versionedparcelable/VersionedParcel;->setSerializationFlags(ZZ)V
 
-    .line 27
+    .line 24
     iget-object v0, p0, Landroidx/core/app/RemoteActionCompat;->mIcon:Landroidx/core/graphics/drawable/IconCompat;
 
     const/4 v1, 0x1
 
     invoke-virtual {p1, v0, v1}, Landroidx/versionedparcelable/VersionedParcel;->writeVersionedParcelable(Landroidx/versionedparcelable/VersionedParcelable;I)V
 
-    .line 28
+    .line 25
     iget-object v0, p0, Landroidx/core/app/RemoteActionCompat;->mTitle:Ljava/lang/CharSequence;
 
     const/4 v1, 0x2
 
     invoke-virtual {p1, v0, v1}, Landroidx/versionedparcelable/VersionedParcel;->writeCharSequence(Ljava/lang/CharSequence;I)V
 
-    .line 29
+    .line 26
     iget-object v0, p0, Landroidx/core/app/RemoteActionCompat;->mContentDescription:Ljava/lang/CharSequence;
 
     const/4 v1, 0x3
 
     invoke-virtual {p1, v0, v1}, Landroidx/versionedparcelable/VersionedParcel;->writeCharSequence(Ljava/lang/CharSequence;I)V
 
-    .line 30
+    .line 27
     iget-object v0, p0, Landroidx/core/app/RemoteActionCompat;->mActionIntent:Landroid/app/PendingIntent;
 
     const/4 v1, 0x4
 
     invoke-virtual {p1, v0, v1}, Landroidx/versionedparcelable/VersionedParcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 31
+    .line 28
     iget-boolean v0, p0, Landroidx/core/app/RemoteActionCompat;->mEnabled:Z
 
     const/4 v1, 0x5
 
     invoke-virtual {p1, v0, v1}, Landroidx/versionedparcelable/VersionedParcel;->writeBoolean(ZI)V
 
-    .line 32
+    .line 29
     iget-boolean v0, p0, Landroidx/core/app/RemoteActionCompat;->mShouldShowIcon:Z
 
     const/4 v1, 0x6
 
     invoke-virtual {p1, v0, v1}, Landroidx/versionedparcelable/VersionedParcel;->writeBoolean(ZI)V
 
-    .line 33
+    .line 30
     return-void
 .end method

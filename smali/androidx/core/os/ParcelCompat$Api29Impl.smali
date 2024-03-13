@@ -18,14 +18,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 278
+    .line 422
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 280
+    .line 424
     return-void
 .end method
 
-.method static final readParcelableList(Landroid/os/Parcel;Ljava/util/List;Ljava/lang/ClassLoader;)Ljava/util/List;
+.method static readParcelableList(Landroid/os/Parcel;Ljava/util/List;Ljava/lang/ClassLoader;)Ljava/util/List;
     .locals 1
     .param p0, "in"    # Landroid/os/Parcel;
     .param p2, "cl"    # Ljava/lang/ClassLoader;
@@ -44,7 +44,7 @@
         }
     .end annotation
 
-    .line 285
+    .line 429
     .local p1, "list":Ljava/util/List;, "Ljava/util/List<TT;>;"
     invoke-virtual {p0, p1, p2}, Landroid/os/Parcel;->readParcelableList(Ljava/util/List;Ljava/lang/ClassLoader;)Ljava/util/List;
 

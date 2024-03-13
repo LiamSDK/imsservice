@@ -45,7 +45,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -60,8 +60,8 @@
         0x1
     }
     l = {
-        0x843,
-        0x847
+        0x8f2,
+        0x8f6
     }
     m = "invokeSuspend"
     n = {
@@ -227,12 +227,11 @@
 
     move-result-object v0
 
-    .line 2114
+    .line 2289
     iget v1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$runningFold$1;->label:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 2121
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -241,7 +240,6 @@
 
     throw p1
 
-    .line 2114
     :pswitch_0
     move-object v1, p0
 
@@ -295,7 +293,7 @@
 
     check-cast v2, Lkotlin/sequences/SequenceScope;
 
-    .line 2115
+    .line 2290
     .restart local v2    # "$this$sequence":Lkotlin/sequences/SequenceScope;
     iget-object v3, v1, Lkotlin/sequences/SequencesKt___SequencesKt$runningFold$1;->$initial:Ljava/lang/Object;
 
@@ -315,15 +313,15 @@
 
     if-ne v3, v0, :cond_0
 
-    .line 2114
+    .line 2289
     return-object v0
 
-    .line 2116
+    .line 2291
     :cond_0
     :goto_0
     iget-object v3, v1, Lkotlin/sequences/SequencesKt___SequencesKt$runningFold$1;->$initial:Ljava/lang/Object;
 
-    .line 2117
+    .line 2292
     .restart local v3    # "accumulator":Ljava/lang/Object;
     iget-object v4, v1, Lkotlin/sequences/SequencesKt___SequencesKt$runningFold$1;->$this_runningFold:Lkotlin/sequences/Sequence;
 
@@ -350,7 +348,7 @@
 
     move-result-object v5
 
-    .line 2118
+    .line 2293
     .local v5, "element":Ljava/lang/Object;
     iget-object v6, v1, Lkotlin/sequences/SequencesKt___SequencesKt$runningFold$1;->$operation:Lkotlin/jvm/functions/Function2;
 
@@ -358,7 +356,7 @@
 
     move-result-object v3
 
-    .line 2119
+    .line 2294
     .end local v5    # "element":Ljava/lang/Object;
     move-object v5, v1
 
@@ -380,15 +378,15 @@
 
     if-ne v5, v0, :cond_1
 
-    .line 2114
+    .line 2289
     return-object v0
 
-    .line 2119
+    .line 2294
     :cond_1
     :goto_2
     goto :goto_1
 
-    .line 2121
+    .line 2296
     :cond_2
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -132,7 +132,6 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -150,10 +149,10 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 38
+    .end local v1    # "element":Ljava/lang/Object;
     goto :goto_0
 
-    .end local v0    # "i$":Ljava/util/Iterator;
-    .end local v1    # "element":Ljava/lang/Object;
     :cond_4
     goto :goto_2
 

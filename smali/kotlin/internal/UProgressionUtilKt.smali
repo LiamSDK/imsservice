@@ -32,7 +32,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -47,19 +47,19 @@
     .param p2, "c"    # I
 
     .line 10
-    invoke-static {p0, p2}, Lkotlin/UnsignedKt;->uintRemainder-J1ME1BU(II)I
+    invoke-static {p0, p2}, Ljava/lang/Integer;->remainderUnsigned(II)I
 
     move-result v0
 
     .line 11
     .local v0, "ac":I
-    invoke-static {p1, p2}, Lkotlin/UnsignedKt;->uintRemainder-J1ME1BU(II)I
+    invoke-static {p1, p2}, Ljava/lang/Integer;->remainderUnsigned(II)I
 
     move-result v1
 
     .line 12
     .local v1, "bc":I
-    invoke-static {v0, v1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v2
 
@@ -93,19 +93,19 @@
     .param p4, "c"    # J
 
     .line 16
-    invoke-static {p0, p1, p4, p5}, Lkotlin/UnsignedKt;->ulongRemainder-eb3DHEI(JJ)J
+    invoke-static {p0, p1, p4, p5}, Ljava/lang/Long;->remainderUnsigned(JJ)J
 
     move-result-wide v0
 
     .line 17
     .local v0, "ac":J
-    invoke-static {p2, p3, p4, p5}, Lkotlin/UnsignedKt;->ulongRemainder-eb3DHEI(JJ)J
+    invoke-static {p2, p3, p4, p5}, Ljava/lang/Long;->remainderUnsigned(JJ)J
 
     move-result-wide v2
 
     .line 18
     .local v2, "bc":J
-    invoke-static {v0, v1, v2, v3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v4
 
@@ -148,7 +148,7 @@
 
     if-lez v2, :cond_1
 
-    invoke-static {p0, p1, p2, p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p0, p1, p2, p3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -183,7 +183,7 @@
 
     if-gez v0, :cond_3
 
-    invoke-static {p0, p1, p2, p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p0, p1, p2, p3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -244,7 +244,7 @@
     .line 40
     if-lez p2, :cond_1
 
-    invoke-static {p0, p1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p0, p1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -273,7 +273,7 @@
     :cond_1
     if-gez p2, :cond_3
 
-    invoke-static {p0, p1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p0, p1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 

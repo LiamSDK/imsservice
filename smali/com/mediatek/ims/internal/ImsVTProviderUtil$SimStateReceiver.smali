@@ -24,7 +24,7 @@
 .method private constructor <init>(Lcom/mediatek/ims/internal/ImsVTProviderUtil;)V
     .locals 0
 
-    .line 361
+    .line 365
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$SimStateReceiver;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -37,7 +37,7 @@
     .param p1, "x0"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil;
     .param p2, "x1"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil$1;
 
-    .line 361
+    .line 365
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/ImsVTProviderUtil$SimStateReceiver;-><init>(Lcom/mediatek/ims/internal/ImsVTProviderUtil;)V
 
     return-void
@@ -50,12 +50,12 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 371
+    .line 375
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 372
+    .line 376
     .local v0, "action":Ljava/lang/String;
     const-string v1, "phone"
 
@@ -65,7 +65,7 @@
 
     move-result v1
 
-    .line 374
+    .line 378
     .local v1, "slotId":I
     const-string v3, "android.telephony.extra.SIM_STATE"
 
@@ -75,14 +75,14 @@
 
     move-result v3
 
-    .line 377
+    .line 381
     .local v3, "simState":I
     if-ne v1, v2, :cond_0
 
-    .line 378
+    .line 382
     return-void
 
-    .line 381
+    .line 385
     :cond_0
     const-string v2, "android.telephony.action.SIM_CARD_STATE_CHANGED"
 
@@ -96,7 +96,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 382
+    .line 386
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -125,14 +125,14 @@
 
     invoke-static {v5, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 385
+    .line 389
     iget-object v2, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$SimStateReceiver;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-virtual {v2, v1, v3}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->setSimCardState(II)V
 
     goto :goto_0
 
-    .line 389
+    .line 393
     :cond_1
     const-string v2, "android.telephony.action.SIM_APPLICATION_STATE_CHANGED"
 
@@ -142,7 +142,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 390
+    .line 394
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -171,12 +171,12 @@
 
     invoke-static {v5, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 393
+    .line 397
     iget-object v2, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$SimStateReceiver;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-virtual {v2, v1, v3}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->setSimAppState(II)V
 
-    .line 397
+    .line 401
     :cond_2
     :goto_0
     iget-object v2, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$SimStateReceiver;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
@@ -187,7 +187,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 398
+    .line 402
     iget-object v2, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$SimStateReceiver;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-static {v2}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->access$100(Lcom/mediatek/ims/internal/ImsVTProviderUtil;)[Landroid/os/ConditionVariable;
@@ -198,7 +198,7 @@
 
     invoke-virtual {v2}, Landroid/os/ConditionVariable;->open()V
 
-    .line 400
+    .line 404
     :cond_3
     return-void
 .end method
@@ -207,9 +207,9 @@
     .locals 0
     .param p1, "owner"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
-    .line 366
+    .line 370
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$SimStateReceiver;->mOwner:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
-    .line 367
+    .line 371
     return-void
 .end method

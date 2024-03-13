@@ -29,12 +29,14 @@
 
     check-cast v0, Lkotlin/jvm/internal/ClassBasedDeclarationContainer;
 
+    .line 16
     invoke-interface {v0}, Lkotlin/jvm/internal/ClassBasedDeclarationContainer;->getJClass()Ljava/lang/Class;
 
     move-result-object v0
 
     instance-of v1, p1, Lkotlin/reflect/KClass;
 
+    .line 15
     xor-int/lit8 v1, v1, 0x1
 
     invoke-direct {p0, v0, p2, p3, v1}, Lkotlin/jvm/internal/PropertyReference2;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
@@ -46,7 +48,7 @@
 
 # virtual methods
 .method public get(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .param p1, "receiver1"    # Ljava/lang/Object;
     .param p2, "receiver2"    # Ljava/lang/Object;
 
@@ -55,17 +57,9 @@
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const/4 v2, 0x1
-
-    aput-object p2, v1, v2
+    move-result-object v1
 
     invoke-interface {v0, v1}, Lkotlin/reflect/KProperty2$Getter;->call([Ljava/lang/Object;)Ljava/lang/Object;
 

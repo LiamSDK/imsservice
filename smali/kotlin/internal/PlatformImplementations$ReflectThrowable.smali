@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPlatformImplementations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlatformImplementations.kt\nkotlin/internal/PlatformImplementations$ReflectThrowable\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,115:1\n1#2:116\n*E\n"
+    value = "SMAP\nPlatformImplementations.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlatformImplementations.kt\nkotlin/internal/PlatformImplementations$ReflectThrowable\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,93:1\n1#2:94\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -33,7 +33,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -82,14 +82,12 @@
 
     move v4, v3
 
-    :cond_0
+    :goto_0
     const/4 v5, 0x0
 
     if-ge v4, v2, :cond_2
 
     aget-object v6, v1, v4
-
-    add-int/lit8 v4, v4, 0x1
 
     move-object v7, v6
 
@@ -108,7 +106,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_1
+    if-eqz v9, :cond_0
 
     invoke-virtual {v7}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
 
@@ -128,42 +126,45 @@
 
     move-result v9
 
-    if-eqz v9, :cond_1
+    if-eqz v9, :cond_0
 
     const/4 v9, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_0
     move v9, v3
 
     .line 24
     .end local v7    # "it":Ljava/lang/reflect/Method;
     .end local v8    # "$i$a$-find-PlatformImplementations$ReflectThrowable$1":I
-    :goto_0
-    if-eqz v9, :cond_0
+    :goto_1
+    if-eqz v9, :cond_1
 
-    goto :goto_1
+    goto :goto_2
+
+    :cond_1
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
 
     :cond_2
     move-object v6, v5
 
-    :goto_1
+    :goto_2
     sput-object v6, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->addSuppressed:Ljava/lang/reflect/Method;
 
     .line 27
     array-length v2, v1
 
-    :cond_3
+    :goto_3
     if-ge v3, v2, :cond_4
 
     aget-object v4, v1, v3
 
-    add-int/lit8 v3, v3, 0x1
-
     move-object v6, v4
 
-    .line 116
+    .line 94
     .local v6, "it":Ljava/lang/reflect/Method;
     const/4 v7, 0x0
 
@@ -185,7 +186,15 @@
 
     move-object v5, v4
 
+    goto :goto_4
+
+    :cond_3
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_3
+
     :cond_4
+    :goto_4
     sput-object v5, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->getSuppressed:Ljava/lang/reflect/Method;
 
     .line 28

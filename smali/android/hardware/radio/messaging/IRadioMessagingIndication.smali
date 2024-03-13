@@ -18,9 +18,9 @@
 # static fields
 .field public static final DESCRIPTOR:Ljava/lang/String;
 
-.field public static final HASH:Ljava/lang/String; = "5237ec5f500627b6b844b155e356e603157f9ba6"
+.field public static final HASH:Ljava/lang/String; = "50aefda34c9dd40090c8d5925e71d5b84530c3d0"
 
-.field public static final VERSION:I = 0x1
+.field public static final VERSION:I = 0x2
 
 
 # direct methods
@@ -28,13 +28,13 @@
     .locals 3
 
     .line 353
-    const-string v0, "android$hardware$radio$messaging$IRadioMessagingIndication"
+    const/16 v0, 0x24
 
-    const/16 v1, 0x24
+    const/16 v1, 0x2e
 
-    const/16 v2, 0x2e
+    const-string v2, "android$hardware$radio$messaging$IRadioMessagingIndication"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v0
 

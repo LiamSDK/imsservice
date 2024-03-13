@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 193
+    .line 192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 195
+    .line 194
     return-void
 .end method
 
@@ -31,7 +31,7 @@
     .param p1, "hotSpotX"    # F
     .param p2, "hotSpotY"    # F
 
-    .line 204
+    .line 203
     invoke-static {p0, p1, p2}, Landroid/view/PointerIcon;->create(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;
 
     move-result-object v0
@@ -44,7 +44,7 @@
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "type"    # I
 
-    .line 199
+    .line 198
     invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
 
     move-result-object v0
@@ -57,7 +57,7 @@
     .param p0, "resources"    # Landroid/content/res/Resources;
     .param p1, "resourceId"    # I
 
-    .line 209
+    .line 208
     invoke-static {p0, p1}, Landroid/view/PointerIcon;->load(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;
 
     move-result-object v0

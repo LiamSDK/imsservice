@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;,
+        Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;,
         Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$WfcKeepAliveCallback;,
-        Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;
+        Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
     }
 .end annotation
 
@@ -144,22 +144,22 @@
     .locals 4
     .param p1, "network"    # Landroid/net/Network;
 
-    .line 372
+    .line 384
     const-string v0, "PacketKeepAliveProcessor"
 
     const/4 v1, 0x0
 
     if-nez p1, :cond_0
 
-    .line 373
+    .line 385
     const-string v2, "isActiveWifiNetwork: network null"
 
     invoke-static {v0, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 374
+    .line 386
     return v1
 
-    .line 376
+    .line 388
     :cond_0
     iget-object v2, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
@@ -167,19 +167,19 @@
 
     move-result-object v2
 
-    .line 377
+    .line 389
     .local v2, "networkInfo":Landroid/net/NetworkInfo;
     if-nez v2, :cond_1
 
-    .line 378
+    .line 390
     const-string v3, "isActiveWifiNetwork: network info null"
 
     invoke-static {v0, v3}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 379
+    .line 391
     return v1
 
-    .line 381
+    .line 393
     :cond_1
     invoke-virtual {v2}, Landroid/net/NetworkInfo;->getType()I
 
@@ -218,12 +218,12 @@
     .locals 4
     .param p1, "s"    # Ljava/lang/String;
 
-    .line 410
+    .line 422
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 411
+    .line 423
     .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -231,10 +231,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 412
+    .line 424
     return-object p1
 
-    .line 414
+    .line 426
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -242,7 +242,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 415
+    .line 427
     .local v1, "maskLength":I
     const-string v2, "*"
 
@@ -250,17 +250,17 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 416
+    .line 428
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 417
+    .line 429
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 419
+    .line 431
     :cond_1
     const/4 v3, 0x0
 
@@ -268,15 +268,15 @@
     :goto_0
     if-ge v3, v1, :cond_2
 
-    .line 420
+    .line 432
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 419
+    .line 431
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 422
+    .line 434
     .end local v3    # "i":I
     :cond_2
     new-instance v2, Ljava/lang/StringBuilder;
@@ -480,7 +480,7 @@
     .locals 3
     .param p1, "config"    # Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;
 
-    .line 395
+    .line 407
     iget-object v0, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mKeepAlives:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -500,7 +500,7 @@
 
     check-cast v1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
 
-    .line 396
+    .line 408
     .local v1, "kai":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
     invoke-virtual {v1}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;->getConfig()Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;
 
@@ -512,7 +512,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 397
+    .line 409
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -535,15 +535,15 @@
 
     invoke-static {v2, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 398
+    .line 410
     return-object v1
 
-    .line 400
+    .line 412
     .end local v1    # "kai":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
     :cond_0
     goto :goto_0
 
-    .line 401
+    .line 413
     :cond_1
     const/4 v0, 0x0
 
@@ -627,55 +627,59 @@
 .end method
 
 .method startPacketKeepAlive(Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;)V
-    .locals 11
+    .locals 14
     .param p1, "config"    # Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;
 
     .line 318
-    iget-object v0, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mConnectivityManager:Landroid/net/ConnectivityManager;
+    const-string v0, "startPacketKeepAlive: finally close socket"
 
-    const-string v1, "PacketKeepAliveProcessor"
+    const-string v1, "startPacketKeepAlive finally exception: "
 
-    if-nez v0, :cond_0
+    iget-object v2, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mConnectivityManager:Landroid/net/ConnectivityManager;
+
+    const-string v3, "PacketKeepAliveProcessor"
+
+    if-nez v2, :cond_0
 
     .line 319
     const-string v0, "ConnectivityManager is null"
 
-    invoke-static {v1, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 320
     return-void
 
     .line 323
     :cond_0
-    iget-object v0, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mKeepAlives:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mKeepAlives:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v2
 
-    const/4 v2, 0x3
+    const/4 v4, 0x3
 
-    if-lt v0, v2, :cond_1
+    if-lt v2, v4, :cond_1
 
     .line 324
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "startNattKeepalive cannot start! Due to mKeepAlives.size() >=3, size: "
+    const-string v1, "startNattKeepalive cannot start! Due to mKeepAlives.size() >=3, size: "
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mKeepAlives:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mKeepAlives:Ljava/util/ArrayList;
 
     .line 325
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -684,193 +688,377 @@
     move-result-object v0
 
     .line 324
-    invoke-static {v1, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 326
     return-void
 
     .line 329
     :cond_1
-    new-instance v0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$WfcKeepAliveCallback;
+    new-instance v2, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$WfcKeepAliveCallback;
 
-    invoke-direct {v0, p0, p1}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$WfcKeepAliveCallback;-><init>(Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;)V
+    invoke-direct {v2, p0, p1}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$WfcKeepAliveCallback;-><init>(Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;)V
 
     .line 330
-    .local v0, "callback":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$WfcKeepAliveCallback;
-    iget-object v2, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mConnectivityManager:Landroid/net/ConnectivityManager;
+    .local v2, "callback":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$WfcKeepAliveCallback;
+    iget-object v4, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
-    invoke-virtual {v2}, Landroid/net/ConnectivityManager;->getActiveNetwork()Landroid/net/Network;
+    invoke-virtual {v4}, Landroid/net/ConnectivityManager;->getActiveNetwork()Landroid/net/Network;
+
+    move-result-object v11
+
+    .line 331
+    .local v11, "network":Landroid/net/Network;
+    invoke-direct {p0, v11}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->isActiveWifiNetwork(Landroid/net/Network;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    .line 332
+    new-instance v4, Ljava/net/Socket;
+
+    invoke-direct {v4}, Ljava/net/Socket;-><init>()V
+
+    move-object v12, v4
+
+    .line 333
+    .local v12, "socket":Ljava/net/Socket;
+    const/4 v4, 0x0
+
+    .line 335
+    .local v4, "isSocketClosed":Z
+    const/4 v5, 0x1
+
+    :try_start_0
+    invoke-virtual {v12, v5}, Ljava/net/Socket;->setReuseAddress(Z)V
+
+    .line 336
+    new-instance v5, Ljava/net/InetSocketAddress;
+
+    iget-object v6, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->srcIp:Ljava/net/InetAddress;
+
+    iget v7, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->srcPort:I
+
+    invoke-direct {v5, v6, v7}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
+
+    invoke-virtual {v12, v5}, Ljava/net/Socket;->bind(Ljava/net/SocketAddress;)V
+
+    .line 337
+    invoke-static {v12}, Landroid/os/ParcelFileDescriptor;->fromSocket(Ljava/net/Socket;)Landroid/os/ParcelFileDescriptor;
+
+    move-result-object v6
+
+    .line 338
+    .local v6, "fd":Landroid/os/ParcelFileDescriptor;
+    invoke-virtual {v12}, Ljava/net/Socket;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 339
+    const/4 v13, 0x1
+
+    .line 342
+    .end local v4    # "isSocketClosed":Z
+    .local v13, "isSocketClosed":Z
+    :try_start_1
+    iget-object v4, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mConnectivityManager:Landroid/net/ConnectivityManager;
+
+    iget-object v7, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->srcIp:Ljava/net/InetAddress;
+
+    iget-object v8, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->dstIp:Ljava/net/InetAddress;
+
+    .line 344
+    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v9
 
-    .line 331
-    .local v9, "network":Landroid/net/Network;
-    invoke-direct {p0, v9}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->isActiveWifiNetwork(Landroid/net/Network;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 333
-    :try_start_0
-    new-instance v2, Ljava/net/Socket;
-
-    invoke-direct {v2}, Ljava/net/Socket;-><init>()V
+    .line 342
+    move-object v5, v11
 
     move-object v10, v2
 
-    .line 334
-    .local v10, "socket":Ljava/net/Socket;
-    new-instance v2, Ljava/net/InetSocketAddress;
-
-    iget-object v3, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->srcIp:Ljava/net/InetAddress;
-
-    iget v4, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->srcPort:I
-
-    invoke-direct {v2, v3, v4}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
-
-    invoke-virtual {v10, v2}, Ljava/net/Socket;->bind(Ljava/net/SocketAddress;)V
-
-    .line 335
-    invoke-static {v10}, Landroid/os/ParcelFileDescriptor;->fromSocket(Ljava/net/Socket;)Landroid/os/ParcelFileDescriptor;
+    invoke-virtual/range {v4 .. v10}, Landroid/net/ConnectivityManager;->createNattKeepalive(Landroid/net/Network;Landroid/os/ParcelFileDescriptor;Ljava/net/InetAddress;Ljava/net/InetAddress;Ljava/util/concurrent/Executor;Landroid/net/SocketKeepalive$Callback;)Landroid/net/SocketKeepalive;
 
     move-result-object v4
-
-    .line 336
-    .local v4, "fd":Landroid/os/ParcelFileDescriptor;
-    invoke-virtual {v10}, Ljava/net/Socket;->close()V
-
-    .line 339
-    iget-object v2, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mConnectivityManager:Landroid/net/ConnectivityManager;
-
-    iget-object v5, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->srcIp:Ljava/net/InetAddress;
-
-    iget-object v6, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->dstIp:Ljava/net/InetAddress;
-
-    .line 341
-    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v7
-
-    .line 339
-    move-object v3, v9
-
-    move-object v8, v0
-
-    invoke-virtual/range {v2 .. v8}, Landroid/net/ConnectivityManager;->createNattKeepalive(Landroid/net/Network;Landroid/os/ParcelFileDescriptor;Ljava/net/InetAddress;Ljava/net/InetAddress;Ljava/util/concurrent/Executor;Landroid/net/SocketKeepalive$Callback;)Landroid/net/SocketKeepalive;
-
-    move-result-object v2
-
-    .line 342
-    .local v2, "ka":Landroid/net/SocketKeepalive;
-    iget v3, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->interval:I
-
-    invoke-virtual {v2, v3}, Landroid/net/SocketKeepalive;->start(I)V
-
-    .line 343
-    new-instance v3, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
-
-    invoke-direct {v3, p0, v2, p1, v0}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;-><init>(Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;Landroid/net/SocketKeepalive;Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$WfcKeepAliveCallback;)V
-
-    .line 344
-    .local v3, "kai":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
-    iget-object v5, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mKeepAlives:Ljava/util/ArrayList;
-
-    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 347
-    nop
-
-    .end local v2    # "ka":Landroid/net/SocketKeepalive;
-    .end local v3    # "kai":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
-    .end local v4    # "fd":Landroid/os/ParcelFileDescriptor;
-    .end local v10    # "socket":Ljava/net/Socket;
-    goto :goto_0
 
     .line 345
-    :catch_0
-    move-exception v2
+    .local v4, "ka":Landroid/net/SocketKeepalive;
+    iget v5, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->interval:I
+
+    invoke-virtual {v4, v5}, Landroid/net/SocketKeepalive;->start(I)V
 
     .line 346
-    .local v2, "e":Ljava/io/IOException;
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v5, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5, p0, v4, p1, v2}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;-><init>(Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;Landroid/net/SocketKeepalive;Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$WfcKeepAliveCallback;)V
 
-    const-string v4, "startPacketKeepAlive exception: "
+    .line 347
+    .local v5, "kai":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
+    iget-object v7, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mKeepAlives:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    move-result-object v3
+    .line 352
+    .end local v4    # "ka":Landroid/net/SocketKeepalive;
+    .end local v5    # "kai":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
+    .end local v6    # "fd":Landroid/os/ParcelFileDescriptor;
+    if-nez v13, :cond_2
 
-    invoke-virtual {v2}, Ljava/io/IOException;->toString()Ljava/lang/String;
+    .line 353
+    :try_start_2
+    invoke-virtual {v12}, Ljava/net/Socket;->close()V
+
+    .line 354
+    invoke-static {v3, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_2
+
+    .line 356
+    :catch_0
+    move-exception v0
+
+    .line 357
+    .local v0, "e":Ljava/io/IOException;
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    goto :goto_1
+
+    .line 348
+    .end local v0    # "e":Ljava/io/IOException;
+    :catch_1
+    move-exception v4
+
+    goto :goto_0
+
+    .line 351
+    .end local v13    # "isSocketClosed":Z
+    .local v4, "isSocketClosed":Z
+    :catchall_0
+    move-exception v5
+
+    move v13, v4
+
+    move-object v4, v5
+
+    goto :goto_4
+
+    .line 348
+    :catch_2
+    move-exception v5
+
+    move v13, v4
+
+    move-object v4, v5
+
+    .line 349
+    .local v4, "e":Ljava/io/IOException;
+    .restart local v13    # "isSocketClosed":Z
+    :goto_0
+    :try_start_3
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "startPacketKeepAlive exception: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Ljava/io/IOException;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v3, v5}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    .line 352
+    .end local v4    # "e":Ljava/io/IOException;
+    if-nez v13, :cond_2
+
+    .line 353
+    :try_start_4
+    invoke-virtual {v12}, Ljava/net/Socket;->close()V
+
+    .line 354
+    invoke-static {v3, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
+
+    goto :goto_2
+
+    .line 356
+    :catch_3
+    move-exception v0
+
+    .line 357
+    .restart local v0    # "e":Ljava/io/IOException;
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    :goto_1
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/io/IOException;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-static {v1, v3}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 347
-    .end local v2    # "e":Ljava/io/IOException;
+    .line 359
+    .end local v0    # "e":Ljava/io/IOException;
+    goto :goto_3
+
+    .line 358
+    :cond_2
+    :goto_2
     nop
 
-    .line 352
-    :goto_0
+    .line 360
+    .end local v12    # "socket":Ljava/net/Socket;
+    .end local v13    # "isSocketClosed":Z
+    :goto_3
+    nop
+
+    .line 364
     return-void
 
-    .line 349
-    :cond_2
-    new-instance v2, Ljava/lang/StringBuilder;
+    .line 351
+    .restart local v12    # "socket":Ljava/net/Socket;
+    .restart local v13    # "isSocketClosed":Z
+    :catchall_1
+    move-exception v4
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 352
+    :goto_4
+    if-nez v13, :cond_3
 
-    const-string v3, "It\'s not a active wifi network, network: "
+    .line 353
+    :try_start_5
+    invoke-virtual {v12}, Ljava/net/Socket;->close()V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 354
+    invoke-static {v3, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_4
 
-    move-result-object v2
+    goto :goto_5
 
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 356
+    :catch_4
+    move-exception v0
 
-    move-result-object v2
+    .line 357
+    .restart local v0    # "e":Ljava/io/IOException;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v2
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v1
 
-    .line 350
+    invoke-virtual {v0}, Ljava/io/IOException;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v3, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_6
+
+    .line 358
+    .end local v0    # "e":Ljava/io/IOException;
+    :cond_3
+    :goto_5
+    nop
+
+    .line 359
+    :goto_6
+    throw v4
+
+    .line 361
+    .end local v12    # "socket":Ljava/net/Socket;
+    .end local v13    # "isSocketClosed":Z
+    :cond_4
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "It\'s not a active wifi network, network: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v3, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 362
     return-void
 .end method
 
 .method stopAllPacketKeepAlive()V
     .locals 2
 
-    .line 385
+    .line 397
     const-string v0, "PacketKeepAliveProcessor"
 
     const-string v1, "stopAllPacketKeepAlive"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 386
+    .line 398
     iget-object v0, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mKeepAlives:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 387
+    .line 399
     .local v0, "iter":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;>;"
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -879,25 +1067,25 @@
 
     if-eqz v1, :cond_0
 
-    .line 388
+    .line 400
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
 
-    .line 389
+    .line 401
     .local v1, "kai":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
     invoke-virtual {v1}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;->stop()V
 
-    .line 390
+    .line 402
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 391
+    .line 403
     .end local v1    # "kai":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
     goto :goto_0
 
-    .line 392
+    .line 404
     :cond_0
     return-void
 .end method
@@ -906,15 +1094,15 @@
     .locals 1
     .param p1, "kai"    # Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
 
-    .line 405
+    .line 417
     invoke-virtual {p1}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;->stop()V
 
-    .line 406
+    .line 418
     iget-object v0, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mKeepAlives:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 407
+    .line 419
     return-void
 .end method
 
@@ -922,48 +1110,48 @@
     .locals 4
     .param p1, "config"    # Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;
 
-    .line 355
-    const-string v0, "PacketKeepAliveProcessor"
+    .line 367
+    const-string v0, "stopPacketKeepAlive"
 
-    const-string v1, "stopPacketKeepAlive"
+    const-string v1, "PacketKeepAliveProcessor"
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 356
-    iget-object v1, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mConnectivityManager:Landroid/net/ConnectivityManager;
+    .line 368
+    iget-object v0, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    .line 357
-    const-string v1, "ConnectivityManager is null"
+    .line 369
+    const-string v0, "ConnectivityManager is null"
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 358
+    .line 370
     return-void
 
-    .line 360
+    .line 372
     :cond_0
     invoke-virtual {p0, p1}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->findConfigInList(Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;)Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
 
     move-result-object v0
 
-    .line 361
+    .line 373
     .local v0, "foundKai":Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;
     if-eqz v0, :cond_1
 
-    .line 362
+    .line 374
     invoke-virtual {p0, v0}, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->stopAndRemoveKeepAlive(Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveInfo;)V
 
     goto :goto_0
 
-    .line 365
+    .line 377
     :cond_1
     const/4 v1, 0x0
 
     iput-boolean v1, p1, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor$KeepAliveConfig;->enable:Z
 
-    .line 366
+    .line 378
     iget-object v2, p0, Lcom/mediatek/wfo/util/PacketKeepAliveProcessor;->mWifiPdnHandler:Landroid/os/Handler;
 
     const/16 v3, 0x3ef
@@ -974,7 +1162,7 @@
 
     invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 369
+    .line 381
     :goto_0
     return-void
 .end method

@@ -19,12 +19,12 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTypesJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/TypeVariableImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 ArrayIntrinsics.kt\nkotlin/ArrayIntrinsicsKt\n*L\n1#1,229:1\n1547#2:230\n1618#2,3:231\n37#3:234\n36#3,3:235\n26#4:238\n26#4:239\n26#4:240\n*S KotlinDebug\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/TypeVariableImpl\n*L\n116#1:230\n116#1:231,3\n116#1:234\n116#1:235,3\n134#1:238\n137#1:239\n140#1:240\n*E\n"
+    value = "SMAP\nTypesJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/TypeVariableImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 ArrayIntrinsics.kt\nkotlin/ArrayIntrinsicsKt\n*L\n1#1,230:1\n1549#2:231\n1620#2,3:232\n37#3,2:235\n26#4:237\n26#4:238\n*S KotlinDebug\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/TypeVariableImpl\n*L\n116#1:231\n116#1:232,3\n116#1:235,2\n134#1:237\n137#1:238\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0011\n\u0002\u0010\u001b\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u000e\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0002\u0008\u0003\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00020\u00012\u00020\u0003B\r\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\u0013\u0010\u0007\u001a\u00020\u00082\u0008\u0010\t\u001a\u0004\u0018\u00010\nH\u0096\u0002J\u0011\u0010\u000b\u001a\u0008\u0012\u0004\u0012\u00020\r0\u000c\u00a2\u0006\u0002\u0010\u000eJ%\u0010\u000f\u001a\u0004\u0018\u0001H\u0010\"\u0008\u0008\u0000\u0010\u0010*\u00020\r2\u000c\u0010\u0011\u001a\u0008\u0012\u0004\u0012\u0002H\u00100\u0012\u00a2\u0006\u0002\u0010\u0013J\u0011\u0010\u0014\u001a\u0008\u0012\u0004\u0012\u00020\r0\u000c\u00a2\u0006\u0002\u0010\u000eJ\u0013\u0010\u0015\u001a\u0008\u0012\u0004\u0012\u00020\u00160\u000cH\u0016\u00a2\u0006\u0002\u0010\u0017J\u0011\u0010\u0018\u001a\u0008\u0012\u0004\u0012\u00020\r0\u000c\u00a2\u0006\u0002\u0010\u000eJ\u0008\u0010\u0019\u001a\u00020\u0002H\u0016J\u0008\u0010\u001a\u001a\u00020\u001bH\u0016J\u0008\u0010\u001c\u001a\u00020\u001bH\u0016J\u0008\u0010\u001d\u001a\u00020\u001eH\u0016J\u0008\u0010\u001f\u001a\u00020\u001bH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006 "
+        "\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0011\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u000e\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0002\u0008\u0003\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00020\u00012\u00020\u0003B\r\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\u0013\u0010\u0007\u001a\u00020\u00082\u0008\u0010\t\u001a\u0004\u0018\u00010\nH\u0096\u0002J%\u0010\u000b\u001a\u0004\u0018\u0001H\u000c\"\u0008\u0008\u0000\u0010\u000c*\u00020\r2\u000c\u0010\u000e\u001a\u0008\u0012\u0004\u0012\u0002H\u000c0\u000f\u00a2\u0006\u0002\u0010\u0010J\u0011\u0010\u0011\u001a\u0008\u0012\u0004\u0012\u00020\r0\u0012\u00a2\u0006\u0002\u0010\u0013J\u0013\u0010\u0014\u001a\u0008\u0012\u0004\u0012\u00020\u00150\u0012H\u0016\u00a2\u0006\u0002\u0010\u0016J\u0011\u0010\u0017\u001a\u0008\u0012\u0004\u0012\u00020\r0\u0012\u00a2\u0006\u0002\u0010\u0013J\u0008\u0010\u0018\u001a\u00020\u0002H\u0016J\u0008\u0010\u0019\u001a\u00020\u001aH\u0016J\u0008\u0010\u001b\u001a\u00020\u001aH\u0016J\u0008\u0010\u001c\u001a\u00020\u001dH\u0016J\u0008\u0010\u001e\u001a\u00020\u001aH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u001f"
     }
     d2 = {
         "Lkotlin/reflect/TypeVariableImpl;",
@@ -38,16 +38,15 @@
         "",
         "other",
         "",
-        "getAnnotatedBounds",
-        "",
-        "",
-        "()[Ljava/lang/annotation/Annotation;",
         "getAnnotation",
         "T",
+        "",
         "annotationClass",
         "Ljava/lang/Class;",
         "(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
         "getAnnotations",
+        "",
+        "()[Ljava/lang/annotation/Annotation;",
         "getBounds",
         "Ljava/lang/reflect/Type;",
         "()[Ljava/lang/reflect/Type;",
@@ -64,7 +63,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -151,23 +150,6 @@
     return v0
 .end method
 
-.method public final getAnnotatedBounds()[Ljava/lang/annotation/Annotation;
-    .locals 2
-
-    .line 140
-    const/4 v0, 0x0
-
-    .line 240
-    .local v0, "$i$f$emptyArray":I
-    const/4 v1, 0x0
-
-    new-array v0, v1, [Ljava/lang/annotation/Annotation;
-
-    .line 140
-    .end local v0    # "$i$f$emptyArray":I
-    return-object v0
-.end method
-
 .method public final getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
     .locals 1
     .param p1, "annotationClass"    # Ljava/lang/Class;
@@ -197,7 +179,7 @@
     .line 134
     const/4 v0, 0x0
 
-    .line 238
+    .line 237
     .local v0, "$i$f$emptyArray":I
     const/4 v1, 0x0
 
@@ -223,7 +205,7 @@
     .local v0, "$this$map$iv":Ljava/lang/Iterable;
     const/4 v1, 0x0
 
-    .line 230
+    .line 231
     .local v1, "$i$f$map":I
     new-instance v2, Ljava/util/ArrayList;
 
@@ -243,7 +225,7 @@
     .local v3, "$this$mapTo$iv$iv":Ljava/lang/Iterable;
     const/4 v4, 0x0
 
-    .line 231
+    .line 232
     .local v4, "$i$f$mapTo":I
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -260,7 +242,7 @@
 
     move-result-object v6
 
-    .line 232
+    .line 233
     .local v6, "item$iv$iv":Ljava/lang/Object;
     move-object v7, v6
 
@@ -277,13 +259,14 @@
 
     move-result-object v7
 
+    .line 233
     .end local v7    # "it":Lkotlin/reflect/KType;
     .end local v8    # "$i$a$-map-TypeVariableImpl$getBounds$1":I
     invoke-interface {v2, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 233
+    .line 234
     .end local v6    # "item$iv$iv":Ljava/lang/Object;
     :cond_0
     nop
@@ -293,7 +276,7 @@
     .end local v4    # "$i$f$mapTo":I
     check-cast v2, Ljava/util/List;
 
-    .line 230
+    .line 231
     nop
 
     .end local v0    # "$this$map$iv":Ljava/lang/Iterable;
@@ -306,14 +289,11 @@
     .local v0, "$this$toTypedArray$iv":Ljava/util/Collection;
     const/4 v1, 0x0
 
-    .line 234
+    .line 235
     .local v1, "$i$f$toTypedArray":I
     nop
 
-    .line 235
-    nop
-
-    .line 237
+    .line 236
     .local v2, "thisCollection$iv":Ljava/util/Collection;
     const/4 v3, 0x0
 
@@ -321,30 +301,15 @@
 
     invoke-interface {v2, v3}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v3
-
-    if-eqz v3, :cond_1
+    move-result-object v0
 
     .end local v0    # "$this$toTypedArray$iv":Ljava/util/Collection;
     .end local v1    # "$i$f$toTypedArray":I
     .end local v2    # "thisCollection$iv":Ljava/util/Collection;
-    check-cast v3, [Ljava/lang/reflect/Type;
+    check-cast v0, [Ljava/lang/reflect/Type;
 
     .line 116
-    return-object v3
-
-    .line 237
-    .restart local v0    # "$this$toTypedArray$iv":Ljava/util/Collection;
-    .restart local v1    # "$i$f$toTypedArray":I
-    .restart local v2    # "thisCollection$iv":Ljava/util/Collection;
-    :cond_1
-    new-instance v3, Ljava/lang/NullPointerException;
-
-    const-string v4, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-direct {v3, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v3
+    return-object v0
 .end method
 
 .method public final getDeclaredAnnotations()[Ljava/lang/annotation/Annotation;
@@ -353,7 +318,7 @@
     .line 137
     const/4 v0, 0x0
 
-    .line 239
+    .line 238
     .local v0, "$i$f$emptyArray":I
     const/4 v1, 0x0
 
@@ -365,28 +330,52 @@
 .end method
 
 .method public getGenericDeclaration()Ljava/lang/reflect/GenericDeclaration;
-    .locals 3
-
-    new-instance v0, Lkotlin/NotImplementedError;
+    .locals 4
 
     .line 114
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "getGenericDeclaration() is not yet supported for type variables created from KType: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
     iget-object v1, p0, Lkotlin/reflect/TypeVariableImpl;->typeParameter:Lkotlin/reflect/KTypeParameter;
 
-    const-string v2, "getGenericDeclaration() is not yet supported for type variables created from KType: "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v2, "An operation is not implemented: "
+    move-result-object v0
 
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v1, Lkotlin/NotImplementedError;
 
-    move-result-object v1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v1}, Lkotlin/NotImplementedError;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    throw v0
+    const-string v3, "An operation is not implemented: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Lkotlin/NotImplementedError;-><init>(Ljava/lang/String;)V
+
+    throw v1
 .end method
 
 .method public getName()Ljava/lang/String;

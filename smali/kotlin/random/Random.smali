@@ -48,7 +48,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -189,11 +189,11 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 253
-    array-length v0, p1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    array-length v1, p1
 
-    invoke-virtual {p0, p1, v1, v0}, Lkotlin/random/Random;->nextBytes([BII)[B
+    invoke-virtual {p0, p1, v0, v1}, Lkotlin/random/Random;->nextBytes([BII)[B
 
     move-result-object v0
 
@@ -201,7 +201,7 @@
 .end method
 
 .method public nextBytes([BII)[B
-    .locals 9
+    .locals 8
     .param p1, "array"    # [B
     .param p2, "fromIndex"    # I
     .param p3, "toIndex"    # I
@@ -211,64 +211,56 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 222
-    const/4 v0, 0x1
+    new-instance v0, Lkotlin/ranges/IntRange;
 
-    const/4 v1, 0x0
+    array-length v1, p1
 
-    if-ltz p2, :cond_0
+    const/4 v2, 0x0
 
-    array-length v2, p1
+    invoke-direct {v0, v2, v1}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    if-gt p2, v2, :cond_0
+    invoke-virtual {v0, p2}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    move v2, v0
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Lkotlin/ranges/IntRange;
+
+    array-length v3, p1
+
+    invoke-direct {v0, v2, v3}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    invoke-virtual {v0, p3}, Lkotlin/ranges/IntRange;->contains(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    move v0, v1
 
     goto :goto_0
 
     :cond_0
-    move v2, v1
+    move v0, v2
 
     :goto_0
-    if-eqz v2, :cond_2
+    const-string v3, "fromIndex ("
 
-    if-ltz p3, :cond_1
+    if-eqz v0, :cond_5
 
-    array-length v2, p1
-
-    if-gt p3, v2, :cond_1
-
-    move v2, v0
+    .line 223
+    if-gt p2, p3, :cond_1
 
     goto :goto_1
 
     :cond_1
-    move v2, v1
+    move v1, v2
 
     :goto_1
-    if-eqz v2, :cond_2
-
-    move v2, v0
-
-    goto :goto_2
-
-    :cond_2
-    move v2, v1
-
-    :goto_2
-    const-string v3, "fromIndex ("
-
-    if-eqz v2, :cond_7
-
-    .line 223
-    if-gt p2, p3, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move v0, v1
-
-    :goto_3
-    if-eqz v0, :cond_6
+    if-eqz v1, :cond_4
 
     .line 225
     sub-int v0, p3, p2
@@ -277,123 +269,122 @@
 
     .line 227
     .local v0, "steps":I
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    .local v2, "position":I
-    move v2, p2
+    .local v1, "position":I
+    move v1, p2
 
     .line 228
-    move v3, v1
+    nop
 
-    :goto_4
-    if-ge v3, v0, :cond_4
+    :goto_2
+    if-ge v2, v0, :cond_2
 
-    add-int/lit8 v4, v3, 0x1
+    move v3, v2
 
     .local v3, "it":I
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     .line 229
-    .local v5, "$i$a$-repeat-Random$nextBytes$3":I
+    .local v4, "$i$a$-repeat-Random$nextBytes$3":I
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
-    move-result v6
+    move-result v5
 
     .line 230
-    .local v6, "v":I
-    int-to-byte v7, v6
+    .local v5, "v":I
+    int-to-byte v6, v5
 
-    aput-byte v7, p1, v2
+    aput-byte v6, p1, v1
 
     .line 231
-    add-int/lit8 v7, v2, 0x1
+    add-int/lit8 v6, v1, 0x1
 
-    ushr-int/lit8 v8, v6, 0x8
+    ushr-int/lit8 v7, v5, 0x8
 
-    int-to-byte v8, v8
+    int-to-byte v7, v7
 
-    aput-byte v8, p1, v7
+    aput-byte v7, p1, v6
 
     .line 232
-    add-int/lit8 v7, v2, 0x2
+    add-int/lit8 v6, v1, 0x2
 
-    ushr-int/lit8 v8, v6, 0x10
+    ushr-int/lit8 v7, v5, 0x10
 
-    int-to-byte v8, v8
+    int-to-byte v7, v7
 
-    aput-byte v8, p1, v7
+    aput-byte v7, p1, v6
 
     .line 233
-    add-int/lit8 v7, v2, 0x3
+    add-int/lit8 v6, v1, 0x3
 
-    ushr-int/lit8 v8, v6, 0x18
+    ushr-int/lit8 v7, v5, 0x18
 
-    int-to-byte v8, v8
+    int-to-byte v7, v7
 
-    aput-byte v8, p1, v7
+    aput-byte v7, p1, v6
 
     .line 234
-    add-int/lit8 v2, v2, 0x4
+    add-int/lit8 v1, v1, 0x4
 
     .line 235
     nop
 
     .line 228
     .end local v3    # "it":I
-    .end local v5    # "$i$a$-repeat-Random$nextBytes$3":I
-    .end local v6    # "v":I
-    move v3, v4
+    .end local v4    # "$i$a$-repeat-Random$nextBytes$3":I
+    .end local v5    # "v":I
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_2
 
     .line 237
-    :cond_4
-    sub-int v3, p3, v2
+    :cond_2
+    sub-int v2, p3, v1
 
     .line 238
-    .local v3, "remainder":I
-    mul-int/lit8 v4, v3, 0x8
+    .local v2, "remainder":I
+    mul-int/lit8 v3, v2, 0x8
 
-    invoke-virtual {p0, v4}, Lkotlin/random/Random;->nextBits(I)I
+    invoke-virtual {p0, v3}, Lkotlin/random/Random;->nextBits(I)I
 
-    move-result v4
+    move-result v3
 
     .line 239
-    .local v4, "vr":I
-    nop
+    .local v3, "vr":I
+    const/4 v4, 0x0
 
-    :goto_5
-    if-ge v1, v3, :cond_5
-
-    move v5, v1
-
-    .local v5, "i":I
-    add-int/lit8 v1, v1, 0x1
+    .local v4, "i":I
+    :goto_3
+    if-ge v4, v2, :cond_3
 
     .line 240
-    add-int v6, v2, v5
+    add-int v5, v1, v4
 
-    mul-int/lit8 v7, v5, 0x8
+    mul-int/lit8 v6, v4, 0x8
 
-    ushr-int v7, v4, v7
+    ushr-int v6, v3, v6
 
-    int-to-byte v7, v7
+    int-to-byte v6, v6
 
-    aput-byte v7, p1, v6
+    aput-byte v6, p1, v5
 
-    goto :goto_5
+    .line 239
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_3
 
     .line 243
-    .end local v5    # "i":I
-    :cond_5
+    .end local v4    # "i":I
+    :cond_3
     return-object p1
 
     .line 384
     .end local v0    # "steps":I
-    .end local v2    # "position":I
-    .end local v3    # "remainder":I
-    .end local v4    # "vr":I
-    :cond_6
+    .end local v1    # "position":I
+    .end local v2    # "remainder":I
+    .end local v3    # "vr":I
+    :cond_4
     const/4 v0, 0x0
 
     .line 223
@@ -442,7 +433,7 @@
     throw v1
 
     .line 384
-    :cond_7
+    :cond_5
     const/4 v0, 0x0
 
     .line 222

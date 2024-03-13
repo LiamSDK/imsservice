@@ -15,8 +15,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;,
-        Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api29Impl;
+        Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api29Impl;,
+        Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;
     }
 .end annotation
 
@@ -25,42 +25,23 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 735
+    .line 731
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 736
+    .line 732
     return-void
 .end method
 
 .method public static rebase(Landroid/content/res/Resources$Theme;)V
-    .locals 2
+    .locals 0
     .param p0, "theme"    # Landroid/content/res/Resources$Theme;
 
-    .line 753
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 749
+    nop
 
-    const/16 v1, 0x1d
-
-    if-lt v0, v1, :cond_0
-
-    .line 754
+    .line 750
     invoke-static {p0}, Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api29Impl;->rebase(Landroid/content/res/Resources$Theme;)V
 
-    goto :goto_0
-
-    .line 755
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_1
-
-    .line 756
-    invoke-static {p0}, Landroidx/core/content/res/ResourcesCompat$ThemeCompat$Api23Impl;->rebase(Landroid/content/res/Resources$Theme;)V
-
-    .line 758
-    :cond_1
-    :goto_0
+    .line 754
     return-void
 .end method

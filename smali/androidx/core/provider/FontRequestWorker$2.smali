@@ -33,6 +33,11 @@
 # direct methods
 .method constructor <init>(Landroidx/core/provider/CallbackWithHandler;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .line 171
     iput-object p1, p0, Landroidx/core/provider/FontRequestWorker$2;->val$callback:Landroidx/core/provider/CallbackWithHandler;

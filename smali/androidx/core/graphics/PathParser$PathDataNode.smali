@@ -26,16 +26,16 @@
     .param p1, "type"    # C
     .param p2, "params"    # [F
 
-    .line 352
+    .line 350
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 353
+    .line 351
     iput-char p1, p0, Landroidx/core/graphics/PathParser$PathDataNode;->mType:C
 
-    .line 354
+    .line 352
     iput-object p2, p0, Landroidx/core/graphics/PathParser$PathDataNode;->mParams:[F
 
-    .line 355
+    .line 353
     return-void
 .end method
 
@@ -43,28 +43,28 @@
     .locals 3
     .param p1, "n"    # Landroidx/core/graphics/PathParser$PathDataNode;
 
-    .line 357
+    .line 355
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 358
+    .line 356
     iget-char v0, p1, Landroidx/core/graphics/PathParser$PathDataNode;->mType:C
 
     iput-char v0, p0, Landroidx/core/graphics/PathParser$PathDataNode;->mType:C
 
-    .line 359
+    .line 357
     iget-object v0, p1, Landroidx/core/graphics/PathParser$PathDataNode;->mParams:[F
 
-    array-length v1, v0
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    array-length v2, v0
 
-    invoke-static {v0, v2, v1}, Landroidx/core/graphics/PathParser;->copyOfRange([FII)[F
+    invoke-static {v0, v1, v2}, Landroidx/core/graphics/PathParser;->copyOfRange([FII)[F
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/core/graphics/PathParser$PathDataNode;->mParams:[F
 
-    .line 360
+    .line 358
     return-void
 .end method
 
@@ -76,50 +76,50 @@
     .param p3, "cmd"    # C
     .param p4, "val"    # [F
 
-    .line 398
+    .line 396
     move-object/from16 v10, p0
 
     move-object/from16 v11, p4
 
     const/4 v0, 0x2
 
-    .line 399
+    .line 397
     .local v0, "incr":I
     const/4 v12, 0x0
 
     aget v1, p1, v12
 
-    .line 400
+    .line 398
     .local v1, "currentX":F
     const/4 v13, 0x1
 
     aget v2, p1, v13
 
-    .line 401
+    .line 399
     .local v2, "currentY":F
     const/4 v14, 0x2
 
     aget v3, p1, v14
 
-    .line 402
+    .line 400
     .local v3, "ctrlPointX":F
     const/4 v15, 0x3
 
     aget v4, p1, v15
 
-    .line 403
+    .line 401
     .local v4, "ctrlPointY":F
     const/16 v16, 0x4
 
     aget v5, p1, v16
 
-    .line 404
+    .line 402
     .local v5, "currentSegmentStartX":F
     const/16 v17, 0x5
 
     aget v6, p1, v17
 
-    .line 408
+    .line 406
     .local v6, "currentSegmentStartY":F
     sparse-switch p3, :sswitch_data_0
 
@@ -127,73 +127,73 @@
 
     goto :goto_0
 
-    .line 411
+    .line 409
     :sswitch_0
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/Path;->close()V
 
-    .line 415
+    .line 413
     move v1, v5
 
-    .line 416
+    .line 414
     move v2, v6
 
-    .line 417
+    .line 415
     move v3, v5
 
-    .line 418
+    .line 416
     move v4, v6
 
-    .line 419
+    .line 417
     invoke-virtual {v10, v1, v2}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 420
+    .line 418
     move/from16 v18, v0
 
     goto :goto_0
 
-    .line 443
+    .line 441
     :sswitch_1
     const/4 v0, 0x4
 
-    .line 444
+    .line 442
     move/from16 v18, v0
 
     goto :goto_0
 
-    .line 427
+    .line 425
     :sswitch_2
     const/4 v0, 0x2
 
-    .line 428
+    .line 426
     move/from16 v18, v0
 
     goto :goto_0
 
-    .line 433
+    .line 431
     :sswitch_3
     const/4 v0, 0x1
 
-    .line 434
+    .line 432
     move/from16 v18, v0
 
     goto :goto_0
 
-    .line 437
+    .line 435
     :sswitch_4
     const/4 v0, 0x6
 
-    .line 438
+    .line 436
     move/from16 v18, v0
 
     goto :goto_0
 
-    .line 447
+    .line 445
     :sswitch_5
     const/4 v0, 0x7
 
     move/from16 v18, v0
 
-    .line 451
+    .line 449
     .end local v0    # "incr":I
     .local v18, "incr":I
     :goto_0
@@ -234,7 +234,7 @@
 
     if-ge v8, v0, :cond_e
 
-    .line 452
+    .line 450
     const/16 v0, 0x54
 
     const/16 v1, 0x53
@@ -275,7 +275,7 @@
     .local v24, "k":I
     goto/16 :goto_a
 
-    .line 500
+    .line 498
     .end local v12    # "currentY":F
     .end local v14    # "currentX":F
     .end local v15    # "previousCmd":C
@@ -291,29 +291,29 @@
 
     invoke-virtual {v10, v13, v0}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    .line 501
+    .line 499
     add-int/lit8 v0, v8, 0x0
 
     aget v0, v11, v0
 
     add-float/2addr v6, v0
 
-    .line 502
+    .line 500
     move/from16 v24, v8
 
     move v15, v9
 
     goto/16 :goto_a
 
-    .line 572
+    .line 570
     :sswitch_7
     const/4 v1, 0x0
 
-    .line 573
+    .line 571
     .local v1, "reflectiveCtrlPointX":F
     const/4 v3, 0x0
 
-    .line 574
+    .line 572
     .local v3, "reflectiveCtrlPointY":F
     if-eq v9, v15, :cond_0
 
@@ -323,14 +323,14 @@
 
     if-ne v9, v0, :cond_1
 
-    .line 576
+    .line 574
     :cond_0
     sub-float v1, v7, v19
 
-    .line 577
+    .line 575
     sub-float v3, v6, v20
 
-    .line 579
+    .line 577
     :cond_1
     add-int/lit8 v0, v8, 0x0
 
@@ -342,15 +342,15 @@
 
     invoke-virtual {v10, v1, v3, v0, v2}, Landroid/graphics/Path;->rQuadTo(FFFF)V
 
-    .line 581
+    .line 579
     add-float v0, v7, v1
 
-    .line 582
+    .line 580
     .end local v19    # "ctrlPointX":F
     .local v0, "ctrlPointX":F
     add-float v2, v6, v3
 
-    .line 583
+    .line 581
     .end local v20    # "ctrlPointY":F
     .local v2, "ctrlPointY":F
     add-int/lit8 v4, v8, 0x0
@@ -359,14 +359,14 @@
 
     add-float/2addr v7, v4
 
-    .line 584
+    .line 582
     add-int/lit8 v4, v8, 0x1
 
     aget v4, v11, v4
 
     add-float/2addr v6, v4
 
-    .line 585
+    .line 583
     move/from16 v19, v0
 
     move/from16 v20, v2
@@ -377,7 +377,7 @@
 
     goto/16 :goto_a
 
-    .line 526
+    .line 524
     .end local v0    # "ctrlPointX":F
     .end local v1    # "reflectiveCtrlPointX":F
     .end local v2    # "ctrlPointY":F
@@ -387,11 +387,11 @@
     :sswitch_8
     const/4 v0, 0x0
 
-    .line 527
+    .line 525
     .local v0, "reflectiveCtrlPointX":F
     const/4 v2, 0x0
 
-    .line 528
+    .line 526
     .local v2, "reflectiveCtrlPointY":F
     if-eq v9, v14, :cond_3
 
@@ -410,19 +410,19 @@
 
     goto :goto_3
 
-    .line 530
+    .line 528
     :cond_3
     :goto_2
     sub-float v0, v7, v19
 
-    .line 531
+    .line 529
     sub-float v2, v6, v20
 
     move v13, v0
 
     move v14, v2
 
-    .line 533
+    .line 531
     .end local v0    # "reflectiveCtrlPointX":F
     .end local v2    # "reflectiveCtrlPointY":F
     .local v13, "reflectiveCtrlPointX":F
@@ -458,14 +458,14 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->rCubicTo(FFFFFF)V
 
-    .line 537
+    .line 535
     add-int/lit8 v0, v8, 0x0
 
     aget v0, v11, v0
 
     add-float/2addr v0, v7
 
-    .line 538
+    .line 536
     .end local v19    # "ctrlPointX":F
     .local v0, "ctrlPointX":F
     add-int/lit8 v1, v8, 0x1
@@ -474,7 +474,7 @@
 
     add-float v6, v12, v1
 
-    .line 539
+    .line 537
     .end local v20    # "ctrlPointY":F
     .local v6, "ctrlPointY":F
     add-int/lit8 v1, v8, 0x2
@@ -483,14 +483,14 @@
 
     add-float/2addr v7, v1
 
-    .line 540
+    .line 538
     add-int/lit8 v1, v8, 0x3
 
     aget v1, v11, v1
 
     add-float/2addr v1, v12
 
-    .line 541
+    .line 539
     .end local v12    # "currentY":F
     .local v1, "currentY":F
     move/from16 v19, v0
@@ -505,7 +505,7 @@
 
     goto/16 :goto_a
 
-    .line 558
+    .line 556
     .end local v0    # "ctrlPointX":F
     .end local v1    # "currentY":F
     .end local v13    # "reflectiveCtrlPointX":F
@@ -536,14 +536,14 @@
 
     invoke-virtual {v10, v0, v1, v2, v3}, Landroid/graphics/Path;->rQuadTo(FFFF)V
 
-    .line 559
+    .line 557
     add-int/lit8 v0, v8, 0x0
 
     aget v0, v11, v0
 
     add-float/2addr v0, v7
 
-    .line 560
+    .line 558
     .end local v19    # "ctrlPointX":F
     .restart local v0    # "ctrlPointX":F
     add-int/lit8 v1, v8, 0x1
@@ -552,7 +552,7 @@
 
     add-float v6, v12, v1
 
-    .line 561
+    .line 559
     .end local v20    # "ctrlPointY":F
     .local v6, "ctrlPointY":F
     add-int/lit8 v1, v8, 0x2
@@ -561,14 +561,14 @@
 
     add-float/2addr v7, v1
 
-    .line 562
+    .line 560
     add-int/lit8 v1, v8, 0x3
 
     aget v1, v11, v1
 
     add-float/2addr v1, v12
 
-    .line 563
+    .line 561
     .end local v12    # "currentY":F
     .restart local v1    # "currentY":F
     move/from16 v19, v0
@@ -583,7 +583,7 @@
 
     goto/16 :goto_a
 
-    .line 454
+    .line 452
     .end local v0    # "ctrlPointX":F
     .end local v1    # "currentY":F
     .local v6, "currentY":F
@@ -600,19 +600,19 @@
 
     add-float/2addr v7, v0
 
-    .line 455
+    .line 453
     add-int/lit8 v0, v8, 0x1
 
     aget v0, v11, v0
 
     add-float v6, v12, v0
 
-    .line 456
+    .line 454
     .end local v12    # "currentY":F
     .restart local v6    # "currentY":F
     if-lez v8, :cond_4
 
-    .line 460
+    .line 458
     add-int/lit8 v0, v8, 0x0
 
     aget v0, v11, v0
@@ -629,7 +629,7 @@
 
     goto/16 :goto_a
 
-    .line 462
+    .line 460
     :cond_4
     add-int/lit8 v0, v8, 0x0
 
@@ -641,15 +641,15 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/graphics/Path;->rMoveTo(FF)V
 
-    .line 463
+    .line 461
     move v0, v7
 
-    .line 464
+    .line 462
     .end local v21    # "currentSegmentStartX":F
     .local v0, "currentSegmentStartX":F
     move v1, v6
 
-    .line 466
+    .line 464
     .end local v22    # "currentSegmentStartY":F
     .local v1, "currentSegmentStartY":F
     move/from16 v21, v0
@@ -662,7 +662,7 @@
 
     goto/16 :goto_a
 
-    .line 482
+    .line 480
     .end local v0    # "currentSegmentStartX":F
     .end local v1    # "currentSegmentStartY":F
     .restart local v21    # "currentSegmentStartX":F
@@ -682,21 +682,21 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    .line 483
+    .line 481
     add-int/lit8 v0, v8, 0x0
 
     aget v0, v11, v0
 
     add-float/2addr v7, v0
 
-    .line 484
+    .line 482
     add-int/lit8 v0, v8, 0x1
 
     aget v0, v11, v0
 
     add-float v6, v12, v0
 
-    .line 485
+    .line 483
     .end local v12    # "currentY":F
     .restart local v6    # "currentY":F
     move/from16 v24, v8
@@ -705,7 +705,7 @@
 
     goto/16 :goto_a
 
-    .line 492
+    .line 490
     :sswitch_c
     move v12, v6
 
@@ -717,21 +717,21 @@
 
     invoke-virtual {v10, v0, v13}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    .line 493
+    .line 491
     add-int/lit8 v0, v8, 0x0
 
     aget v0, v11, v0
 
     add-float/2addr v7, v0
 
-    .line 494
+    .line 492
     move/from16 v24, v8
 
     move v15, v9
 
     goto/16 :goto_a
 
-    .line 508
+    .line 506
     .end local v12    # "currentY":F
     .restart local v6    # "currentY":F
     :sswitch_d
@@ -767,14 +767,14 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->rCubicTo(FFFFFF)V
 
-    .line 511
+    .line 509
     add-int/lit8 v0, v8, 0x2
 
     aget v0, v11, v0
 
     add-float/2addr v0, v7
 
-    .line 512
+    .line 510
     .end local v19    # "ctrlPointX":F
     .local v0, "ctrlPointX":F
     add-int/lit8 v1, v8, 0x3
@@ -783,7 +783,7 @@
 
     add-float v6, v12, v1
 
-    .line 513
+    .line 511
     .end local v20    # "ctrlPointY":F
     .local v6, "ctrlPointY":F
     add-int/lit8 v1, v8, 0x4
@@ -792,14 +792,14 @@
 
     add-float/2addr v7, v1
 
-    .line 514
+    .line 512
     add-int/lit8 v1, v8, 0x5
 
     aget v1, v11, v1
 
     add-float/2addr v1, v12
 
-    .line 516
+    .line 514
     .end local v12    # "currentY":F
     .local v1, "currentY":F
     move/from16 v19, v0
@@ -814,7 +814,7 @@
 
     goto/16 :goto_a
 
-    .line 603
+    .line 601
     .end local v0    # "ctrlPointX":F
     .end local v1    # "currentY":F
     .local v6, "currentY":F
@@ -907,14 +907,14 @@
 
     invoke-static/range {v0 .. v9}, Landroidx/core/graphics/PathParser$PathDataNode;->drawArc(Landroid/graphics/Path;FFFFFFFZZ)V
 
-    .line 613
+    .line 611
     add-int/lit8 v8, v24, 0x5
 
     aget v0, v11, v8
 
     add-float v7, v10, v0
 
-    .line 614
+    .line 612
     .end local v10    # "currentX":F
     .restart local v7    # "currentX":F
     add-int/lit8 v8, v24, 0x6
@@ -923,17 +923,17 @@
 
     add-float v6, v12, v0
 
-    .line 615
+    .line 613
     .end local v12    # "currentY":F
     .restart local v6    # "currentY":F
     move v0, v7
 
-    .line 616
+    .line 614
     .end local v19    # "ctrlPointX":F
     .restart local v0    # "ctrlPointX":F
     move v1, v6
 
-    .line 617
+    .line 615
     .end local v20    # "ctrlPointY":F
     .local v1, "ctrlPointY":F
     move-object/from16 v10, p0
@@ -946,7 +946,7 @@
 
     goto/16 :goto_a
 
-    .line 504
+    .line 502
     .end local v0    # "ctrlPointX":F
     .end local v1    # "ctrlPointY":F
     .end local v14    # "previousCmd":C
@@ -984,12 +984,12 @@
     .local v9, "currentX":F
     invoke-virtual {v10, v9, v0}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 505
+    .line 503
     add-int/lit8 v8, v24, 0x0
 
     aget v0, v11, v8
 
-    .line 506
+    .line 504
     .end local v12    # "currentY":F
     .local v0, "currentY":F
     move v6, v0
@@ -1000,7 +1000,7 @@
 
     goto/16 :goto_a
 
-    .line 587
+    .line 585
     .end local v0    # "currentY":F
     .end local v14    # "previousCmd":C
     .end local v24    # "k":I
@@ -1026,11 +1026,11 @@
     .restart local v24    # "k":I
     move v1, v9
 
-    .line 588
+    .line 586
     .local v1, "reflectiveCtrlPointX":F
     move v3, v12
 
-    .line 589
+    .line 587
     .restart local v3    # "reflectiveCtrlPointY":F
     if-eq v14, v15, :cond_7
 
@@ -1040,18 +1040,18 @@
 
     if-ne v14, v0, :cond_8
 
-    .line 591
+    .line 589
     :cond_7
     mul-float v7, v9, v23
 
     sub-float v1, v7, v19
 
-    .line 592
+    .line 590
     mul-float v6, v12, v23
 
     sub-float v3, v6, v20
 
-    .line 594
+    .line 592
     :cond_8
     add-int/lit8 v8, v24, 0x0
 
@@ -1063,29 +1063,29 @@
 
     invoke-virtual {v10, v1, v3, v0, v2}, Landroid/graphics/Path;->quadTo(FFFF)V
 
-    .line 596
+    .line 594
     move v0, v1
 
-    .line 597
+    .line 595
     .end local v19    # "ctrlPointX":F
     .local v0, "ctrlPointX":F
     move v2, v3
 
-    .line 598
+    .line 596
     .end local v20    # "ctrlPointY":F
     .local v2, "ctrlPointY":F
     add-int/lit8 v8, v24, 0x0
 
     aget v4, v11, v8
 
-    .line 599
+    .line 597
     .end local v9    # "currentX":F
     .local v4, "currentX":F
     add-int/lit8 v8, v24, 0x1
 
     aget v5, v11, v8
 
-    .line 600
+    .line 598
     .end local v12    # "currentY":F
     .local v5, "currentY":F
     move/from16 v19, v0
@@ -1100,7 +1100,7 @@
 
     goto/16 :goto_a
 
-    .line 543
+    .line 541
     .end local v0    # "ctrlPointX":F
     .end local v1    # "reflectiveCtrlPointX":F
     .end local v2    # "ctrlPointY":F
@@ -1133,11 +1133,11 @@
     .restart local v24    # "k":I
     move v0, v9
 
-    .line 544
+    .line 542
     .local v0, "reflectiveCtrlPointX":F
     move v2, v12
 
-    .line 545
+    .line 543
     .local v2, "reflectiveCtrlPointY":F
     if-eq v15, v14, :cond_a
 
@@ -1156,14 +1156,14 @@
 
     goto :goto_7
 
-    .line 547
+    .line 545
     :cond_a
     :goto_6
     mul-float v7, v9, v23
 
     sub-float v0, v7, v19
 
-    .line 548
+    .line 546
     mul-float v6, v12, v23
 
     sub-float v2, v6, v20
@@ -1172,7 +1172,7 @@
 
     move v8, v2
 
-    .line 550
+    .line 548
     .end local v0    # "reflectiveCtrlPointX":F
     .end local v2    # "reflectiveCtrlPointY":F
     .local v7, "reflectiveCtrlPointX":F
@@ -1202,33 +1202,33 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 552
+    .line 550
     add-int/lit8 v0, v24, 0x0
 
     aget v0, v11, v0
 
-    .line 553
+    .line 551
     .end local v19    # "ctrlPointX":F
     .local v0, "ctrlPointX":F
     add-int/lit8 v1, v24, 0x1
 
     aget v1, v11, v1
 
-    .line 554
+    .line 552
     .end local v20    # "ctrlPointY":F
     .local v1, "ctrlPointY":F
     add-int/lit8 v2, v24, 0x2
 
     aget v2, v11, v2
 
-    .line 555
+    .line 553
     .end local v9    # "currentX":F
     .local v2, "currentX":F
     add-int/lit8 v3, v24, 0x3
 
     aget v3, v11, v3
 
-    .line 556
+    .line 554
     .end local v12    # "currentY":F
     .local v3, "currentY":F
     move/from16 v19, v0
@@ -1241,7 +1241,7 @@
 
     goto/16 :goto_a
 
-    .line 565
+    .line 563
     .end local v0    # "ctrlPointX":F
     .end local v1    # "ctrlPointY":F
     .end local v2    # "currentX":F
@@ -1288,33 +1288,33 @@
 
     invoke-virtual {v10, v0, v1, v2, v3}, Landroid/graphics/Path;->quadTo(FFFF)V
 
-    .line 566
+    .line 564
     add-int/lit8 v8, v24, 0x0
 
     aget v0, v11, v8
 
-    .line 567
+    .line 565
     .end local v19    # "ctrlPointX":F
     .restart local v0    # "ctrlPointX":F
     add-int/lit8 v8, v24, 0x1
 
     aget v1, v11, v8
 
-    .line 568
+    .line 566
     .end local v20    # "ctrlPointY":F
     .restart local v1    # "ctrlPointY":F
     add-int/lit8 v8, v24, 0x2
 
     aget v2, v11, v8
 
-    .line 569
+    .line 567
     .end local v9    # "currentX":F
     .restart local v2    # "currentX":F
     add-int/lit8 v8, v24, 0x3
 
     aget v3, v11, v8
 
-    .line 570
+    .line 568
     .end local v12    # "currentY":F
     .restart local v3    # "currentY":F
     move/from16 v19, v0
@@ -1327,7 +1327,7 @@
 
     goto/16 :goto_a
 
-    .line 468
+    .line 466
     .end local v0    # "ctrlPointX":F
     .end local v1    # "ctrlPointY":F
     .end local v2    # "currentX":F
@@ -1360,19 +1360,19 @@
 
     aget v0, v11, v8
 
-    .line 469
+    .line 467
     .end local v9    # "currentX":F
     .local v0, "currentX":F
     add-int/lit8 v8, v24, 0x1
 
     aget v1, v11, v8
 
-    .line 470
+    .line 468
     .end local v12    # "currentY":F
     .local v1, "currentY":F
     if-lez v24, :cond_b
 
-    .line 474
+    .line 472
     add-int/lit8 v8, v24, 0x0
 
     aget v2, v11, v8
@@ -1389,7 +1389,7 @@
 
     goto/16 :goto_a
 
-    .line 476
+    .line 474
     :cond_b
     add-int/lit8 v8, v24, 0x0
 
@@ -1401,15 +1401,15 @@
 
     invoke-virtual {v10, v2, v3}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 477
+    .line 475
     move v2, v0
 
-    .line 478
+    .line 476
     .end local v21    # "currentSegmentStartX":F
     .local v2, "currentSegmentStartX":F
     move v3, v1
 
-    .line 480
+    .line 478
     .end local v22    # "currentSegmentStartY":F
     .local v3, "currentSegmentStartY":F
     move v7, v0
@@ -1422,7 +1422,7 @@
 
     goto/16 :goto_a
 
-    .line 487
+    .line 485
     .end local v0    # "currentX":F
     .end local v1    # "currentY":F
     .end local v2    # "currentSegmentStartX":F
@@ -1461,19 +1461,19 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 488
+    .line 486
     add-int/lit8 v8, v24, 0x0
 
     aget v0, v11, v8
 
-    .line 489
+    .line 487
     .end local v9    # "currentX":F
     .restart local v0    # "currentX":F
     add-int/lit8 v8, v24, 0x1
 
     aget v1, v11, v8
 
-    .line 490
+    .line 488
     .end local v12    # "currentY":F
     .restart local v1    # "currentY":F
     move v7, v0
@@ -1482,7 +1482,7 @@
 
     goto/16 :goto_a
 
-    .line 496
+    .line 494
     .end local v0    # "currentX":F
     .end local v1    # "currentY":F
     .end local v15    # "previousCmd":C
@@ -1513,19 +1513,19 @@
 
     invoke-virtual {v10, v0, v12}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 497
+    .line 495
     add-int/lit8 v8, v24, 0x0
 
     aget v0, v11, v8
 
-    .line 498
+    .line 496
     .end local v9    # "currentX":F
     .restart local v0    # "currentX":F
     move v7, v0
 
     goto/16 :goto_a
 
-    .line 518
+    .line 516
     .end local v0    # "currentX":F
     .end local v12    # "currentY":F
     .end local v15    # "previousCmd":C
@@ -1578,33 +1578,33 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 520
+    .line 518
     add-int/lit8 v8, v24, 0x4
 
     aget v0, v11, v8
 
-    .line 521
+    .line 519
     .end local v9    # "currentX":F
     .restart local v0    # "currentX":F
     add-int/lit8 v8, v24, 0x5
 
     aget v1, v11, v8
 
-    .line 522
+    .line 520
     .end local v12    # "currentY":F
     .restart local v1    # "currentY":F
     add-int/lit8 v8, v24, 0x2
 
     aget v2, v11, v8
 
-    .line 523
+    .line 521
     .end local v19    # "ctrlPointX":F
     .local v2, "ctrlPointX":F
     add-int/lit8 v8, v24, 0x3
 
     aget v3, v11, v8
 
-    .line 524
+    .line 522
     .end local v20    # "ctrlPointY":F
     .local v3, "ctrlPointY":F
     move v7, v0
@@ -1617,7 +1617,7 @@
 
     goto :goto_a
 
-    .line 619
+    .line 617
     .end local v0    # "currentX":F
     .end local v1    # "currentY":F
     .end local v2    # "ctrlPointX":F
@@ -1712,24 +1712,24 @@
 
     invoke-static/range {v0 .. v9}, Landroidx/core/graphics/PathParser$PathDataNode;->drawArc(Landroid/graphics/Path;FFFFFFFZZ)V
 
-    .line 629
+    .line 627
     add-int/lit8 v8, v24, 0x5
 
     aget v0, v11, v8
 
-    .line 630
+    .line 628
     .end local v14    # "currentX":F
     .restart local v0    # "currentX":F
     add-int/lit8 v8, v24, 0x6
 
     aget v1, v11, v8
 
-    .line 631
+    .line 629
     .end local v12    # "currentY":F
     .restart local v1    # "currentY":F
     move v2, v0
 
-    .line 632
+    .line 630
     .end local v19    # "ctrlPointX":F
     .restart local v2    # "ctrlPointX":F
     move v3, v1
@@ -1742,7 +1742,7 @@
 
     move/from16 v20, v3
 
-    .line 635
+    .line 633
     .end local v0    # "currentX":F
     .end local v1    # "currentY":F
     .end local v2    # "ctrlPointX":F
@@ -1752,7 +1752,7 @@
     :goto_a
     move/from16 v9, p3
 
-    .line 451
+    .line 449
     .end local v15    # "previousCmd":C
     .local v9, "previousCmd":C
     add-int v8, v24, v18
@@ -1774,7 +1774,7 @@
 
     move v14, v7
 
-    .line 637
+    .line 635
     .end local v6    # "currentY":F
     .end local v7    # "currentX":F
     .end local v8    # "k":I
@@ -1784,28 +1784,28 @@
 
     aput v14, p1, v0
 
-    .line 638
+    .line 636
     const/4 v0, 0x1
 
     aput v12, p1, v0
 
-    .line 639
+    .line 637
     const/4 v0, 0x2
 
     aput v19, p1, v0
 
-    .line 640
+    .line 638
     const/4 v0, 0x3
 
     aput v20, p1, v0
 
-    .line 641
+    .line 639
     aput v21, p1, v16
 
-    .line 642
+    .line 640
     aput v22, p1, v17
 
-    .line 643
+    .line 641
     return-void
 
     nop
@@ -1870,7 +1870,7 @@
     .param p15, "start"    # D
     .param p17, "sweep"    # D
 
-    .line 750
+    .line 748
     move-wide/from16 v0, p5
 
     const-wide/high16 v2, 0x4010000000000000L    # 4.0
@@ -1891,35 +1891,35 @@
 
     double-to-int v4, v4
 
-    .line 752
+    .line 750
     .local v4, "numSegments":I
     move-wide/from16 v5, p15
 
-    .line 753
+    .line 751
     .local v5, "eta1":D
     invoke-static/range {p13 .. p14}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v7
 
-    .line 754
+    .line 752
     .local v7, "cosTheta":D
     invoke-static/range {p13 .. p14}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v9
 
-    .line 755
+    .line 753
     .local v9, "sinTheta":D
     invoke-static {v5, v6}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v11
 
-    .line 756
+    .line 754
     .local v11, "cosEta1":D
     invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v13
 
-    .line 757
+    .line 755
     .local v13, "sinEta1":D
     neg-double v2, v0
 
@@ -1933,7 +1933,7 @@
 
     sub-double v2, v2, v17
 
-    .line 758
+    .line 756
     .local v2, "ep1x":D
     move-wide/from16 v17, v2
 
@@ -1951,7 +1951,7 @@
 
     add-double v2, v2, v19
 
-    .line 760
+    .line 758
     .local v2, "ep1y":D
     move-wide/from16 v19, v2
 
@@ -1961,7 +1961,7 @@
 
     div-double v2, p17, v2
 
-    .line 761
+    .line 759
     .local v2, "anglePerSegment":D
     const/16 v21, 0x0
 
@@ -1985,22 +1985,22 @@
     :goto_0
     if-ge v15, v4, :cond_0
 
-    .line 762
+    .line 760
     add-double v27, v23, v2
 
-    .line 763
+    .line 761
     .local v27, "eta2":D
     invoke-static/range {v27 .. v28}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v29
 
-    .line 764
+    .line 762
     .local v29, "sinEta2":D
     invoke-static/range {v27 .. v28}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v31
 
-    .line 765
+    .line 763
     .local v31, "cosEta2":D
     mul-double v33, v0, v7
 
@@ -2018,7 +2018,7 @@
     .local v37, "anglePerSegment":D
     sub-double v2, v33, v35
 
-    .line 766
+    .line 764
     .local v2, "e2x":D
     mul-double v33, v0, v9
 
@@ -2036,7 +2036,7 @@
     .local v39, "cosEta1":D
     add-double v11, v33, v35
 
-    .line 767
+    .line 765
     .local v11, "e2y":D
     move-wide/from16 v33, v13
 
@@ -2054,7 +2054,7 @@
 
     sub-double v13, v13, v35
 
-    .line 768
+    .line 766
     .local v13, "ep2x":D
     move-wide/from16 p9, v11
 
@@ -2072,7 +2072,7 @@
 
     add-double v11, v11, v35
 
-    .line 769
+    .line 767
     .local v11, "ep2y":D
     sub-double v35, v27, v23
 
@@ -2084,11 +2084,11 @@
 
     move-result-wide v35
 
-    .line 770
+    .line 768
     .local v35, "tanDiff2":D
     sub-double v41, v27, v23
 
-    .line 771
+    .line 769
     invoke-static/range {v41 .. v42}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v41
@@ -2115,13 +2115,13 @@
 
     div-double v41, v41, v43
 
-    .line 772
+    .line 770
     .local v41, "alpha":D
     mul-double v43, v41, v21
 
     add-double v0, v5, v43
 
-    .line 773
+    .line 771
     .local v0, "q1x":D
     mul-double v43, v41, v19
 
@@ -2135,7 +2135,7 @@
     .local p11, "e1x":D
     add-double v4, v17, v43
 
-    .line 774
+    .line 772
     .local v4, "q1y":D
     mul-double v43, v41, v13
 
@@ -2145,7 +2145,7 @@
     .local v45, "cosTheta":D
     sub-double v6, v2, v43
 
-    .line 775
+    .line 773
     .local v6, "q2x":D
     mul-double v43, v41, v11
 
@@ -2162,7 +2162,7 @@
     .local p9, "ep2y":D
     sub-double v10, v8, v43
 
-    .line 778
+    .line 776
     .local v10, "q2y":D
     const/4 v12, 0x0
 
@@ -2174,7 +2174,7 @@
     .local v43, "i":I
     invoke-virtual {v15, v12, v12}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    .line 780
+    .line 778
     double-to-float v12, v0
 
     move-wide/from16 v56, v0
@@ -2215,24 +2215,24 @@
 
     invoke-virtual/range {v49 .. v55}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 786
+    .line 784
     move-wide/from16 v23, v27
 
-    .line 787
+    .line 785
     move-wide v5, v2
 
-    .line 788
+    .line 786
     .end local p11    # "e1x":D
     .restart local v5    # "e1x":D
     move-wide/from16 v17, v8
 
-    .line 789
+    .line 787
     move-wide/from16 v21, v13
 
-    .line 790
+    .line 788
     move-wide/from16 v19, p9
 
-    .line 761
+    .line 759
     .end local v2    # "e2x":D
     .end local v8    # "e2y":D
     .end local v10    # "q2y":D
@@ -2268,7 +2268,7 @@
     .local v0, "i":I
     goto/16 :goto_0
 
-    .line 792
+    .line 790
     .end local v0    # "i":I
     .end local v16    # "numSegments":I
     .end local v33    # "sinEta1":D
@@ -2299,7 +2299,7 @@
     .param p8, "isMoreThanHalf"    # Z
     .param p9, "isPositiveArc"    # Z
 
-    .line 657
+    .line 655
     move/from16 v10, p1
 
     move/from16 v11, p2
@@ -2322,19 +2322,19 @@
 
     move-result-wide v35
 
-    .line 659
+    .line 657
     .local v35, "thetaD":D
     invoke-static/range {v35 .. v36}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v37
 
-    .line 660
+    .line 658
     .local v37, "cosTheta":D
     invoke-static/range {v35 .. v36}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v39
 
-    .line 663
+    .line 661
     .local v39, "sinTheta":D
     float-to-double v0, v10
 
@@ -2350,7 +2350,7 @@
 
     div-double v41, v0, v2
 
-    .line 664
+    .line 662
     .local v41, "x0p":D
     neg-float v0, v10
 
@@ -2368,7 +2368,7 @@
 
     div-double v43, v0, v2
 
-    .line 665
+    .line 663
     .local v43, "y0p":D
     float-to-double v0, v12
 
@@ -2384,7 +2384,7 @@
 
     div-double v45, v0, v2
 
-    .line 666
+    .line 664
     .local v45, "x1p":D
     neg-float v0, v12
 
@@ -2402,15 +2402,15 @@
 
     div-double v47, v0, v2
 
-    .line 669
+    .line 667
     .local v47, "y1p":D
     sub-double v49, v41, v45
 
-    .line 670
+    .line 668
     .local v49, "dx":D
     sub-double v51, v43, v47
 
-    .line 671
+    .line 669
     .local v51, "dy":D
     add-double v0, v41, v45
 
@@ -2418,13 +2418,13 @@
 
     div-double v53, v0, v2
 
-    .line 672
+    .line 670
     .local v53, "xm":D
     add-double v0, v43, v47
 
     div-double v55, v0, v2
 
-    .line 674
+    .line 672
     .local v55, "ym":D
     mul-double v0, v49, v49
 
@@ -2432,7 +2432,7 @@
 
     add-double v6, v0, v2
 
-    .line 675
+    .line 673
     .local v6, "dsq":D
     const-wide/16 v0, 0x0
 
@@ -2442,15 +2442,15 @@
 
     if-nez v2, :cond_0
 
-    .line 676
+    .line 674
     const-string v0, " Points are coincident"
 
     invoke-static {v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 677
+    .line 675
     return-void
 
-    .line 679
+    .line 677
     :cond_0
     const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
 
@@ -2460,13 +2460,13 @@
 
     sub-double v57, v4, v16
 
-    .line 680
+    .line 678
     .local v57, "disc":D
     cmpg-double v2, v57, v0
 
     if-gez v2, :cond_1
 
-    .line 681
+    .line 679
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2487,7 +2487,7 @@
 
     invoke-static {v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 682
+    .line 680
     invoke-static {v6, v7}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v0
@@ -2498,7 +2498,7 @@
 
     double-to-float v5, v0
 
-    .line 683
+    .line 681
     .local v5, "adjust":F
     mul-float v16, v14, v5
 
@@ -2536,10 +2536,10 @@
 
     invoke-static/range {v0 .. v9}, Landroidx/core/graphics/PathParser$PathDataNode;->drawArc(Landroid/graphics/Path;FFFFFFFZZ)V
 
-    .line 685
+    .line 683
     return-void
 
-    .line 687
+    .line 685
     .end local v18    # "adjust":F
     .end local v59    # "dsq":D
     .restart local v6    # "dsq":D
@@ -2554,41 +2554,41 @@
 
     move-result-wide v2
 
-    .line 688
+    .line 686
     .local v2, "s":D
     mul-double v4, v2, v49
 
-    .line 689
+    .line 687
     .local v4, "sdx":D
     mul-double v6, v2, v51
 
-    .line 692
+    .line 690
     .local v6, "sdy":D
     move/from16 v8, p8
 
     if-ne v8, v12, :cond_2
 
-    .line 693
+    .line 691
     sub-double v16, v53, v6
 
-    .line 694
+    .line 692
     .local v16, "cx":D
     add-double v18, v55, v4
 
     .local v18, "cy":D
     goto :goto_0
 
-    .line 696
+    .line 694
     .end local v16    # "cx":D
     .end local v18    # "cy":D
     :cond_2
     add-double v16, v53, v6
 
-    .line 697
+    .line 695
     .restart local v16    # "cx":D
     sub-double v18, v55, v4
 
-    .line 700
+    .line 698
     .restart local v18    # "cy":D
     :goto_0
     sub-double v0, v43, v18
@@ -2603,7 +2603,7 @@
 
     move-result-wide v0
 
-    .line 702
+    .line 700
     .local v0, "eta0":D
     sub-double v2, v47, v18
 
@@ -2617,11 +2617,11 @@
 
     move-result-wide v2
 
-    .line 704
+    .line 702
     .local v2, "eta1":D
     sub-double v4, v2, v0
 
-    .line 705
+    .line 703
     .local v4, "sweep":D
     const-wide/16 v20, 0x0
 
@@ -2639,23 +2639,23 @@
     :goto_1
     if-eq v12, v9, :cond_5
 
-    .line 706
+    .line 704
     cmpl-double v9, v4, v20
 
     const-wide v20, 0x401921fb54442d18L    # 6.283185307179586
 
     if-lez v9, :cond_4
 
-    .line 707
+    .line 705
     sub-double v4, v4, v20
 
     goto :goto_2
 
-    .line 709
+    .line 707
     :cond_4
     add-double v4, v4, v20
 
-    .line 713
+    .line 711
     :cond_5
     :goto_2
     move-wide/from16 v65, v2
@@ -2666,17 +2666,17 @@
 
     mul-double v16, v16, v2
 
-    .line 714
+    .line 712
     float-to-double v2, v15
 
     mul-double v2, v2, v18
 
-    .line 715
+    .line 713
     .end local v18    # "cy":D
     .local v2, "cy":D
     move-wide/from16 v67, v16
 
-    .line 716
+    .line 714
     .local v67, "tcx":D
     mul-double v18, v16, v37
 
@@ -2688,7 +2688,7 @@
     .local v69, "cx":D
     move-wide/from16 v17, v69
 
-    .line 717
+    .line 715
     mul-double v19, v67, v39
 
     mul-double v21, v2, v37
@@ -2697,7 +2697,7 @@
 
     move-wide/from16 v19, v2
 
-    .line 719
+    .line 717
     move-wide/from16 v71, v2
 
     .end local v2    # "cy":D
@@ -2728,7 +2728,7 @@
 
     invoke-static/range {v16 .. v34}, Landroidx/core/graphics/PathParser$PathDataNode;->arcToBezier(Landroid/graphics/Path;DDDDDDDDD)V
 
-    .line 720
+    .line 718
     return-void
 .end method
 
@@ -2737,16 +2737,16 @@
     .param p0, "node"    # [Landroidx/core/graphics/PathParser$PathDataNode;
     .param p1, "path"    # Landroid/graphics/Path;
 
-    .line 369
+    .line 367
     const/4 v0, 0x6
 
     new-array v0, v0, [F
 
-    .line 370
+    .line 368
     .local v0, "current":[F
     const/16 v1, 0x6d
 
-    .line 371
+    .line 369
     .local v1, "previousCommand":C
     const/4 v2, 0x0
 
@@ -2756,7 +2756,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 372
+    .line 370
     aget-object v3, p0, v2
 
     iget-char v3, v3, Landroidx/core/graphics/PathParser$PathDataNode;->mType:C
@@ -2767,17 +2767,17 @@
 
     invoke-static {p1, v0, v1, v3, v4}, Landroidx/core/graphics/PathParser$PathDataNode;->addCommand(Landroid/graphics/Path;[FCC[F)V
 
-    .line 373
+    .line 371
     aget-object v3, p0, v2
 
     iget-char v1, v3, Landroidx/core/graphics/PathParser$PathDataNode;->mType:C
 
-    .line 371
+    .line 369
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 375
+    .line 373
     .end local v2    # "i":I
     :cond_0
     return-void
@@ -2791,12 +2791,12 @@
     .param p2, "nodeTo"    # Landroidx/core/graphics/PathParser$PathDataNode;
     .param p3, "fraction"    # F
 
-    .line 388
+    .line 386
     iget-char v0, p1, Landroidx/core/graphics/PathParser$PathDataNode;->mType:C
 
     iput-char v0, p0, Landroidx/core/graphics/PathParser$PathDataNode;->mType:C
 
-    .line 389
+    .line 387
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -2807,7 +2807,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 390
+    .line 388
     iget-object v2, p0, Landroidx/core/graphics/PathParser$PathDataNode;->mParams:[F
 
     aget v1, v1, v0
@@ -2828,12 +2828,12 @@
 
     aput v1, v2, v0
 
-    .line 389
+    .line 387
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 393
+    .line 391
     .end local v0    # "i":I
     :cond_0
     return-void

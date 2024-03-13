@@ -157,6 +157,7 @@
 
     iget-object v4, v1, Lkotlin/jvm/internal/AdaptedFunctionReference;->receiver:Ljava/lang/Object;
 
+    .line 70
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -167,6 +168,7 @@
 
     iget-object v4, v1, Lkotlin/jvm/internal/AdaptedFunctionReference;->owner:Ljava/lang/Class;
 
+    .line 71
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
@@ -177,6 +179,7 @@
 
     iget-object v4, v1, Lkotlin/jvm/internal/AdaptedFunctionReference;->name:Ljava/lang/String;
 
+    .line 72
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -187,6 +190,7 @@
 
     iget-object v4, v1, Lkotlin/jvm/internal/AdaptedFunctionReference;->signature:Ljava/lang/String;
 
+    .line 73
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -198,6 +202,7 @@
     :cond_2
     move v0, v2
 
+    .line 67
     :goto_0
     return v0
 .end method
@@ -228,6 +233,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 59
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinPackage(Ljava/lang/Class;)Lkotlin/reflect/KDeclarationContainer;
 
     move-result-object v0
@@ -239,6 +245,7 @@
 
     move-result-object v0
 
+    .line 58
     :goto_0
     return-object v0
 .end method

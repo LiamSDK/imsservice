@@ -51,48 +51,48 @@
     .locals 3
     .param p1, "this$0"    # Lcom/mediatek/ims/ril/ImsRILAdapter;
 
-    .line 569
+    .line 578
     iput-object p1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 612
+    .line 621
     const/16 v0, 0x20
 
     iput v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->MAXIMUM_DTMF_REQUEST:I
 
-    .line 613
+    .line 622
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->DTMF_STATUS_START:Z
 
-    .line 614
+    .line 623
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->DTMF_STATUS_STOP:Z
 
-    .line 615
+    .line 624
     iput-boolean v1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfStatus:Z
 
-    .line 616
+    .line 625
     new-instance v2, Ljava/util/Vector;
 
     invoke-direct {v2, v0}, Ljava/util/Vector;-><init>(I)V
 
     iput-object v2, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfQueue:Ljava/util/Vector;
 
-    .line 617
+    .line 626
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mPendingCHLDRequest:Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;
 
-    .line 618
+    .line 627
     iput-boolean v1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mIsSendChldRequest:Z
 
-    .line 570
+    .line 579
     iput-boolean v1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfStatus:Z
 
-    .line 571
+    .line 580
     return-void
 .end method
 
@@ -100,7 +100,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;
 
-    .line 560
+    .line 569
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfQueue:Ljava/util/Vector;
 
     return-object v0
@@ -112,12 +112,12 @@
     .locals 1
     .param p1, "o"    # Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;
 
-    .line 582
+    .line 591
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfQueue:Ljava/util/Vector;
 
     invoke-virtual {v0, p1}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
 
-    .line 583
+    .line 592
     return-void
 .end method
 
@@ -126,15 +126,15 @@
     .param p1, "rr"    # Lcom/mediatek/ims/ril/RILRequest;
     .param p2, "param"    # [Ljava/lang/Object;
 
-    .line 620
+    .line 629
     if-nez p1, :cond_0
 
-    .line 621
+    .line 630
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 624
+    .line 633
     :cond_0
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->riljLog(Ljava/lang/String;)V
 
-    .line 627
+    .line 636
     new-instance v0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;-><init>(Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;Lcom/mediatek/ims/ril/RILRequest;[Ljava/lang/Object;)V
@@ -189,7 +189,7 @@
 .method public get()Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;
     .locals 2
 
-    .line 591
+    .line 600
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfQueue:Ljava/util/Vector;
 
     const/4 v1, 0x0
@@ -206,7 +206,7 @@
 .method public getPendingRequest()Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;
     .locals 1
 
-    .line 600
+    .line 609
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mPendingCHLDRequest:Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;
 
     return-object v0
@@ -215,7 +215,7 @@
 .method public hasSendChldRequest()Z
     .locals 3
 
-    .line 609
+    .line 618
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -240,7 +240,7 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->riljLog(Ljava/lang/String;)V
 
-    .line 610
+    .line 619
     iget-boolean v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mIsSendChldRequest:Z
 
     return v0
@@ -249,7 +249,7 @@
 .method public isStart()Z
     .locals 2
 
-    .line 579
+    .line 588
     iget-boolean v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfStatus:Z
 
     const/4 v1, 0x1
@@ -269,12 +269,12 @@
     .locals 1
     .param p1, "idx"    # I
 
-    .line 588
+    .line 597
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfQueue:Ljava/util/Vector;
 
     invoke-virtual {v0, p1}, Ljava/util/Vector;->removeElementAt(I)V
 
-    .line 589
+    .line 598
     return-void
 .end method
 
@@ -282,24 +282,24 @@
     .locals 1
     .param p1, "o"    # Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;
 
-    .line 585
+    .line 594
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfQueue:Ljava/util/Vector;
 
     invoke-virtual {v0, p1}, Ljava/util/Vector;->remove(Ljava/lang/Object;)Z
 
-    .line 586
+    .line 595
     return-void
 .end method
 
 .method public resetSendChldRequest()V
     .locals 1
 
-    .line 606
+    .line 615
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mIsSendChldRequest:Z
 
-    .line 607
+    .line 616
     return-void
 .end method
 
@@ -307,29 +307,29 @@
     .locals 0
     .param p1, "r"    # Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;
 
-    .line 597
+    .line 606
     iput-object p1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mPendingCHLDRequest:Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler$DtmfQueueRR;
 
-    .line 598
+    .line 607
     return-void
 .end method
 
 .method public setSendChldRequest()V
     .locals 1
 
-    .line 603
+    .line 612
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mIsSendChldRequest:Z
 
-    .line 604
+    .line 613
     return-void
 .end method
 
 .method public size()I
     .locals 1
 
-    .line 594
+    .line 603
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfQueue:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->size()I
@@ -342,23 +342,23 @@
 .method public start()V
     .locals 1
 
-    .line 573
+    .line 582
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfStatus:Z
 
-    .line 574
+    .line 583
     return-void
 .end method
 
 .method public stop()V
     .locals 1
 
-    .line 576
+    .line 585
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$DtmfQueueHandler;->mDtmfStatus:Z
 
-    .line 577
+    .line 586
     return-void
 .end method

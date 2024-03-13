@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 185
+    .line 184
     invoke-direct {p0}, Landroidx/core/view/accessibility/AccessibilityViewCommand$CommandArguments;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getX()I
     .locals 2
 
-    .line 191
+    .line 190
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityViewCommand$MoveWindowArguments;->mBundle:Landroid/os/Bundle;
 
     const-string v1, "ACTION_ARGUMENT_MOVE_WINDOW_X"
@@ -44,7 +44,7 @@
 .method public getY()I
     .locals 2
 
-    .line 198
+    .line 197
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityViewCommand$MoveWindowArguments;->mBundle:Landroid/os/Bundle;
 
     const-string v1, "ACTION_ARGUMENT_MOVE_WINDOW_Y"

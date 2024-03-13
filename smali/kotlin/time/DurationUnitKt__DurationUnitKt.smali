@@ -29,7 +29,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -73,13 +73,21 @@
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-static {p0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "Invalid or unsupported duration ISO non-time unit: "
 
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -126,13 +134,21 @@
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-static {p0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "Invalid duration ISO time unit: "
 
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -142,7 +158,7 @@
 .end method
 
 .method public static final durationUnitByShortName(Ljava/lang/String;)Lkotlin/time/DurationUnit;
-    .locals 2
+    .locals 3
     .param p0, "shortName"    # Ljava/lang/String;
 
     const-string v0, "shortName"
@@ -269,15 +285,29 @@
     :goto_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "Unknown duration unit short name: "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unknown duration unit short name: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -292,7 +322,7 @@
 .end method
 
 .method public static final shortName(Lkotlin/time/DurationUnit;)Ljava/lang/String;
-    .locals 2
+    .locals 3
     .param p0, "$this$shortName"    # Lkotlin/time/DurationUnit;
 
     const-string v0, "<this>"
@@ -314,9 +344,21 @@
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 73
-    const-string v1, "Unknown unit: "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unknown unit: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -371,8 +413,6 @@
     .line 74
     :goto_0
     return-object v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

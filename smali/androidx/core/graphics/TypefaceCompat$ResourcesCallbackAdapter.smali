@@ -23,13 +23,13 @@
     .locals 0
     .param p1, "fontCallback"    # Landroidx/core/content/res/ResourcesCompat$FontCallback;
 
-    .line 321
+    .line 362
     invoke-direct {p0}, Landroidx/core/provider/FontsContractCompat$FontRequestCallback;-><init>()V
 
-    .line 322
+    .line 363
     iput-object p1, p0, Landroidx/core/graphics/TypefaceCompat$ResourcesCallbackAdapter;->mFontCallback:Landroidx/core/content/res/ResourcesCompat$FontCallback;
 
-    .line 323
+    .line 364
     return-void
 .end method
 
@@ -39,15 +39,15 @@
     .locals 1
     .param p1, "reason"    # I
 
-    .line 334
+    .line 375
     iget-object v0, p0, Landroidx/core/graphics/TypefaceCompat$ResourcesCallbackAdapter;->mFontCallback:Landroidx/core/content/res/ResourcesCompat$FontCallback;
 
     if-eqz v0, :cond_0
 
-    .line 335
+    .line 376
     invoke-virtual {v0, p1}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->onFontRetrievalFailed(I)V
 
-    .line 337
+    .line 378
     :cond_0
     return-void
 .end method
@@ -56,15 +56,15 @@
     .locals 1
     .param p1, "typeface"    # Landroid/graphics/Typeface;
 
-    .line 327
+    .line 368
     iget-object v0, p0, Landroidx/core/graphics/TypefaceCompat$ResourcesCallbackAdapter;->mFontCallback:Landroidx/core/content/res/ResourcesCompat$FontCallback;
 
     if-eqz v0, :cond_0
 
-    .line 328
+    .line 369
     invoke-virtual {v0, p1}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->onFontRetrieved(Landroid/graphics/Typeface;)V
 
-    .line 330
+    .line 371
     :cond_0
     return-void
 .end method

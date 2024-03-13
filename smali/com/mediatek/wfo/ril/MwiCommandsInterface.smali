@@ -52,10 +52,7 @@
 .method public abstract setNattKeepAliveStatus(Ljava/lang/String;ZLjava/lang/String;ILjava/lang/String;ILandroid/os/Message;)V
 .end method
 
-.method public abstract setWfcConfig(ILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract setWfcConfig_WifiUeMac(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+.method public abstract setWfcConfig(ILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)Z
 .end method
 
 .method public abstract setWifiAssociated(Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;ILjava/lang/String;ILandroid/os/Message;)V

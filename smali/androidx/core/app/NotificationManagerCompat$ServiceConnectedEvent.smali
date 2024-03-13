@@ -26,15 +26,15 @@
     .param p1, "componentName"    # Landroid/content/ComponentName;
     .param p2, "iBinder"    # Landroid/os/IBinder;
 
-    .line 969
+    .line 1162
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 970
+    .line 1163
     iput-object p1, p0, Landroidx/core/app/NotificationManagerCompat$ServiceConnectedEvent;->componentName:Landroid/content/ComponentName;
 
-    .line 971
+    .line 1164
     iput-object p2, p0, Landroidx/core/app/NotificationManagerCompat$ServiceConnectedEvent;->iBinder:Landroid/os/IBinder;
 
-    .line 972
+    .line 1165
     return-void
 .end method

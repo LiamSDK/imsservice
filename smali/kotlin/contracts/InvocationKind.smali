@@ -29,7 +29,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -50,35 +50,19 @@
 
 # direct methods
 .method private static final synthetic $values()[Lkotlin/contracts/InvocationKind;
-    .locals 3
+    .locals 4
 
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lkotlin/contracts/InvocationKind;
-
-    sget-object v1, Lkotlin/contracts/InvocationKind;->AT_MOST_ONCE:Lkotlin/contracts/InvocationKind;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/contracts/InvocationKind;->AT_MOST_ONCE:Lkotlin/contracts/InvocationKind;
 
     sget-object v1, Lkotlin/contracts/InvocationKind;->AT_LEAST_ONCE:Lkotlin/contracts/InvocationKind;
 
-    const/4 v2, 0x1
+    sget-object v2, Lkotlin/contracts/InvocationKind;->EXACTLY_ONCE:Lkotlin/contracts/InvocationKind;
 
-    aput-object v1, v0, v2
+    sget-object v3, Lkotlin/contracts/InvocationKind;->UNKNOWN:Lkotlin/contracts/InvocationKind;
 
-    sget-object v1, Lkotlin/contracts/InvocationKind;->EXACTLY_ONCE:Lkotlin/contracts/InvocationKind;
+    filled-new-array {v0, v1, v2, v3}, [Lkotlin/contracts/InvocationKind;
 
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/contracts/InvocationKind;->UNKNOWN:Lkotlin/contracts/InvocationKind;
-
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method
@@ -86,7 +70,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 103
+    .line 101
     new-instance v0, Lkotlin/contracts/InvocationKind;
 
     const-string v1, "AT_MOST_ONCE"
@@ -97,7 +81,7 @@
 
     sput-object v0, Lkotlin/contracts/InvocationKind;->AT_MOST_ONCE:Lkotlin/contracts/InvocationKind;
 
-    .line 110
+    .line 108
     new-instance v0, Lkotlin/contracts/InvocationKind;
 
     const-string v1, "AT_LEAST_ONCE"
@@ -108,7 +92,7 @@
 
     sput-object v0, Lkotlin/contracts/InvocationKind;->AT_LEAST_ONCE:Lkotlin/contracts/InvocationKind;
 
-    .line 117
+    .line 115
     new-instance v0, Lkotlin/contracts/InvocationKind;
 
     const-string v1, "EXACTLY_ONCE"
@@ -119,7 +103,7 @@
 
     sput-object v0, Lkotlin/contracts/InvocationKind;->EXACTLY_ONCE:Lkotlin/contracts/InvocationKind;
 
-    .line 124
+    .line 122
     new-instance v0, Lkotlin/contracts/InvocationKind;
 
     const-string v1, "UNKNOWN"
@@ -149,10 +133,10 @@
         }
     .end annotation
 
-    .line 95
+    .line 93
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 98
+    .line 96
     return-void
 .end method
 

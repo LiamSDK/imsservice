@@ -29,7 +29,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -50,35 +50,19 @@
 
 # direct methods
 .method private static final synthetic $values()[Lkotlin/reflect/KVisibility;
-    .locals 3
+    .locals 4
 
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lkotlin/reflect/KVisibility;
-
-    sget-object v1, Lkotlin/reflect/KVisibility;->PUBLIC:Lkotlin/reflect/KVisibility;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/reflect/KVisibility;->PUBLIC:Lkotlin/reflect/KVisibility;
 
     sget-object v1, Lkotlin/reflect/KVisibility;->PROTECTED:Lkotlin/reflect/KVisibility;
 
-    const/4 v2, 0x1
+    sget-object v2, Lkotlin/reflect/KVisibility;->INTERNAL:Lkotlin/reflect/KVisibility;
 
-    aput-object v1, v0, v2
+    sget-object v3, Lkotlin/reflect/KVisibility;->PRIVATE:Lkotlin/reflect/KVisibility;
 
-    sget-object v1, Lkotlin/reflect/KVisibility;->INTERNAL:Lkotlin/reflect/KVisibility;
+    filled-new-array {v0, v1, v2, v3}, [Lkotlin/reflect/KVisibility;
 
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/reflect/KVisibility;->PRIVATE:Lkotlin/reflect/KVisibility;
-
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method

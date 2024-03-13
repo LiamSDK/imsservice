@@ -35,22 +35,22 @@
     .param p3, "tag"    # Ljava/lang/String;
     .param p4, "notif"    # Landroid/app/Notification;
 
-    .line 985
+    .line 1178
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 986
+    .line 1179
     iput-object p1, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->packageName:Ljava/lang/String;
 
-    .line 987
+    .line 1180
     iput p2, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->id:I
 
-    .line 988
+    .line 1181
     iput-object p3, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->tag:Ljava/lang/String;
 
-    .line 989
+    .line 1182
     iput-object p4, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->notif:Landroid/app/Notification;
 
-    .line 990
+    .line 1183
     return-void
 .end method
 
@@ -65,7 +65,7 @@
         }
     .end annotation
 
-    .line 994
+    .line 1187
     iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->packageName:Ljava/lang/String;
 
     iget v1, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->id:I
@@ -76,21 +76,21 @@
 
     invoke-interface {p1, v0, v1, v2, v3}, Landroid/support/v4/app/INotificationSideChannel;->notify(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
 
-    .line 995
+    .line 1188
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 1000
+    .line 1193
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "NotifyTask["
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 1001
+    .line 1194
     .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "packageName:"
 
@@ -102,7 +102,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1002
+    .line 1195
     const-string v1, ", id:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -113,7 +113,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1003
+    .line 1196
     const-string v1, ", tag:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -124,12 +124,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1004
+    .line 1197
     const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1005
+    .line 1198
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

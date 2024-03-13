@@ -52,7 +52,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -987,7 +987,7 @@
     move-object v0, p0
 
     .line 382
-    .local v0, "$this$clear_u24lambda_u2d0":Ljava/lang/StringBuilder;
+    .local v0, "$this$clear_u24lambda_u240":Ljava/lang/StringBuilder;
     const/4 v1, 0x0
 
     .line 17
@@ -996,7 +996,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .end local v0    # "$this$clear_u24lambda_u2d0":Ljava/lang/StringBuilder;
+    .end local v0    # "$this$clear_u24lambda_u240":Ljava/lang/StringBuilder;
     .end local v1    # "$i$a$-apply-StringsKt__StringBuilderJVMKt$clear$1":I
     return-object p0
 .end method

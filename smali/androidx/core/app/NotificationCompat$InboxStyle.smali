@@ -13,6 +13,12 @@
     name = "InboxStyle"
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/app/NotificationCompat$InboxStyle$Api16Impl;
+    }
+.end annotation
+
 
 # static fields
 .field private static final TEMPLATE_CLASS_NAME:Ljava/lang/String; = "androidx.core.app.NotificationCompat$InboxStyle"
@@ -34,17 +40,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 4223
+    .line 5518
     invoke-direct {p0}, Landroidx/core/app/NotificationCompat$Style;-><init>()V
 
-    .line 4221
+    .line 5516
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
-    .line 4224
+    .line 5519
     return-void
 .end method
 
@@ -52,20 +58,20 @@
     .locals 1
     .param p1, "builder"    # Landroidx/core/app/NotificationCompat$Builder;
 
-    .line 4226
+    .line 5521
     invoke-direct {p0}, Landroidx/core/app/NotificationCompat$Style;-><init>()V
 
-    .line 4221
+    .line 5516
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
-    .line 4227
+    .line 5522
     invoke-virtual {p0, p1}, Landroidx/core/app/NotificationCompat$InboxStyle;->setBuilder(Landroidx/core/app/NotificationCompat$Builder;)V
 
-    .line 4228
+    .line 5523
     return-void
 .end method
 
@@ -75,10 +81,10 @@
     .locals 2
     .param p1, "cs"    # Ljava/lang/CharSequence;
 
-    .line 4252
+    .line 5547
     if-eqz p1, :cond_0
 
-    .line 4253
+    .line 5548
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
     invoke-static {p1}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -87,7 +93,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4255
+    .line 5550
     :cond_0
     return-object p0
 .end method
@@ -96,42 +102,37 @@
     .locals 3
     .param p1, "builder"    # Landroidx/core/app/NotificationBuilderWithBuilderAccessor;
 
-    .line 4274
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 5567
+    nop
 
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_1
-
-    .line 4275
-    new-instance v0, Landroid/app/Notification$InboxStyle;
-
-    .line 4276
+    .line 5568
     invoke-interface {p1}, Landroidx/core/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/app/Notification$InboxStyle;-><init>(Landroid/app/Notification$Builder;)V
-
-    iget-object v1, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mBigContentTitle:Ljava/lang/CharSequence;
-
-    .line 4277
-    invoke-virtual {v0, v1}, Landroid/app/Notification$InboxStyle;->setBigContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;
 
     move-result-object v0
 
-    .line 4278
+    invoke-static {v0}, Landroidx/core/app/NotificationCompat$InboxStyle$Api16Impl;->createInboxStyle(Landroid/app/Notification$Builder;)Landroid/app/Notification$InboxStyle;
+
+    move-result-object v0
+
+    .line 5569
     .local v0, "style":Landroid/app/Notification$InboxStyle;
+    iget-object v1, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mBigContentTitle:Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Landroidx/core/app/NotificationCompat$InboxStyle$Api16Impl;->setBigContentTitle(Landroid/app/Notification$InboxStyle;Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;
+
+    move-result-object v0
+
+    .line 5570
     iget-boolean v1, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mSummaryTextSet:Z
 
     if-eqz v1, :cond_0
 
-    .line 4279
+    .line 5571
     iget-object v1, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mSummaryText:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v1}, Landroid/app/Notification$InboxStyle;->setSummaryText(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;
+    invoke-static {v0, v1}, Landroidx/core/app/NotificationCompat$InboxStyle$Api16Impl;->setSummaryText(Landroid/app/Notification$InboxStyle;Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;
 
-    .line 4281
+    .line 5573
     :cond_0
     iget-object v1, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
@@ -152,15 +153,15 @@
 
     check-cast v2, Ljava/lang/CharSequence;
 
-    .line 4282
+    .line 5574
     .local v2, "text":Ljava/lang/CharSequence;
-    invoke-virtual {v0, v2}, Landroid/app/Notification$InboxStyle;->addLine(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;
+    invoke-static {v0, v2}, Landroidx/core/app/NotificationCompat$InboxStyle$Api16Impl;->addLine(Landroid/app/Notification$InboxStyle;Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;
 
-    .line 4283
+    .line 5575
     .end local v2    # "text":Ljava/lang/CharSequence;
     goto :goto_0
 
-    .line 4285
+    .line 5577
     .end local v0    # "style":Landroid/app/Notification$InboxStyle;
     :cond_1
     return-void
@@ -170,22 +171,22 @@
     .locals 1
     .param p1, "extras"    # Landroid/os/Bundle;
 
-    .line 4307
+    .line 5597
     invoke-super {p0, p1}, Landroidx/core/app/NotificationCompat$Style;->clearCompatExtraKeys(Landroid/os/Bundle;)V
 
-    .line 4308
+    .line 5598
     const-string v0, "android.textLines"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
-    .line 4309
+    .line 5599
     return-void
 .end method
 
 .method protected getClassName()Ljava/lang/String;
     .locals 1
 
-    .line 4265
+    .line 5559
     const-string v0, "androidx.core.app.NotificationCompat$InboxStyle"
 
     return-object v0
@@ -195,15 +196,15 @@
     .locals 2
     .param p1, "extras"    # Landroid/os/Bundle;
 
-    .line 4293
+    .line 5584
     invoke-super {p0, p1}, Landroidx/core/app/NotificationCompat$Style;->restoreFromCompatExtras(Landroid/os/Bundle;)V
 
-    .line 4294
+    .line 5585
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 4296
+    .line 5587
     const-string v0, "android.textLines"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -212,7 +213,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 4297
+    .line 5588
     iget-object v1, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getCharSequenceArray(Ljava/lang/String;)[Ljava/lang/CharSequence;
@@ -221,7 +222,7 @@
 
     invoke-static {v1, v0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    .line 4299
+    .line 5590
     :cond_0
     return-void
 .end method
@@ -230,14 +231,14 @@
     .locals 1
     .param p1, "title"    # Ljava/lang/CharSequence;
 
-    .line 4235
+    .line 5530
     invoke-static {p1}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mBigContentTitle:Ljava/lang/CharSequence;
 
-    .line 4236
+    .line 5531
     return-object p0
 .end method
 
@@ -245,18 +246,18 @@
     .locals 1
     .param p1, "cs"    # Ljava/lang/CharSequence;
 
-    .line 4243
+    .line 5538
     invoke-static {p1}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mSummaryText:Ljava/lang/CharSequence;
 
-    .line 4244
+    .line 5539
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroidx/core/app/NotificationCompat$InboxStyle;->mSummaryTextSet:Z
 
-    .line 4245
+    .line 5540
     return-object p0
 .end method

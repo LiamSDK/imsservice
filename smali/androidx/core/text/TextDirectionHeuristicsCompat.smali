@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;,
-        Landroidx/core/text/TextDirectionHeuristicsCompat$AnyStrong;,
-        Landroidx/core/text/TextDirectionHeuristicsCompat$FirstStrong;,
-        Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;,
         Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;,
+        Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;,
+        Landroidx/core/text/TextDirectionHeuristicsCompat$FirstStrong;,
+        Landroidx/core/text/TextDirectionHeuristicsCompat$AnyStrong;,
+        Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;,
         Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
     }
 .end annotation

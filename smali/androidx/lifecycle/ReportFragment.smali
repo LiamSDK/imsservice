@@ -89,25 +89,13 @@
 .end method
 
 .method private dispatch(Landroidx/lifecycle/Lifecycle$Event;)V
-    .locals 2
+    .locals 0
     .param p1, "event"    # Landroidx/lifecycle/Lifecycle$Event;
 
     .line 140
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1d
-
-    if-ge v0, v1, :cond_0
-
-    .line 144
-    invoke-virtual {p0}, Landroidx/lifecycle/ReportFragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Landroidx/lifecycle/ReportFragment;->dispatch(Landroid/app/Activity;Landroidx/lifecycle/Lifecycle$Event;)V
+    nop
 
     .line 146
-    :cond_0
     return-void
 .end method
 
@@ -181,17 +169,12 @@
     .param p0, "activity"    # Landroid/app/Activity;
 
     .line 42
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1d
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 44
     invoke-static {p0}, Landroidx/lifecycle/ReportFragment$LifecycleCallbacks;->registerIn(Landroid/app/Activity;)V
 
     .line 50
-    :cond_0
     invoke-virtual {p0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v0
@@ -204,7 +187,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_0
 
     .line 52
     invoke-virtual {v0}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
@@ -225,7 +208,7 @@
     invoke-virtual {v0}, Landroid/app/FragmentManager;->executePendingTransactions()Z
 
     .line 56
-    :cond_1
+    :cond_0
     return-void
 .end method
 

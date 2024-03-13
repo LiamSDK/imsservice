@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 75
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 77
+    .line 76
     return-void
 .end method
 
@@ -29,10 +29,10 @@
     .locals 0
     .param p0, "dragAndDropPermissions"    # Landroid/view/DragAndDropPermissions;
 
-    .line 87
+    .line 86
     invoke-virtual {p0}, Landroid/view/DragAndDropPermissions;->release()V
 
-    .line 88
+    .line 87
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .param p0, "activity"    # Landroid/app/Activity;
     .param p1, "event"    # Landroid/view/DragEvent;
 
-    .line 82
+    .line 81
     invoke-virtual {p0, p1}, Landroid/app/Activity;->requestDragAndDropPermissions(Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;
 
     move-result-object v0

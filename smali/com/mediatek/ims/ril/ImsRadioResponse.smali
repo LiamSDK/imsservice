@@ -294,6 +294,9 @@
     .line 502
     const/4 v6, 0x0
 
+    .line 503
+    nop
+
     .line 506
     .end local v5    # "e":Ljava/text/ParseException;
     .end local v8    # "j":I
@@ -713,23 +716,15 @@
 .end method
 
 .method public getColpResponse(Landroid/hardware/radio/V1_0/RadioResponseInfo;II)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/V1_0/RadioResponseInfo;
     .param p2, "n"    # I
     .param p3, "m"    # I
 
     .line 401
-    const/4 v0, 0x2
+    filled-new-array {p2, p3}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
-
-    const/4 v1, 0x1
-
-    aput p3, v0, v1
+    move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/ims/ril/ImsRadioResponse;->responseInts(Landroid/hardware/radio/V1_0/RadioResponseInfo;[I)V
 
@@ -738,18 +733,14 @@
 .end method
 
 .method public getColrResponse(Landroid/hardware/radio/V1_0/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/V1_0/RadioResponseInfo;
     .param p2, "status"    # I
 
     .line 383
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/ims/ril/ImsRadioResponse;->responseInts(Landroid/hardware/radio/V1_0/RadioResponseInfo;[I)V
 
@@ -758,18 +749,14 @@
 .end method
 
 .method public getImsCfgFeatureValueResponse(Landroid/hardware/radio/V1_0/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/V1_0/RadioResponseInfo;
     .param p2, "value"    # I
 
     .line 195
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/ims/ril/ImsRadioResponse;->responseInts(Landroid/hardware/radio/V1_0/RadioResponseInfo;[I)V
 
@@ -790,18 +777,14 @@
 .end method
 
 .method public getImsCfgResourceCapValueResponse(Landroid/hardware/radio/V1_0/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/V1_0/RadioResponseInfo;
     .param p2, "value"    # I
 
     .line 210
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/ims/ril/ImsRadioResponse;->responseInts(Landroid/hardware/radio/V1_0/RadioResponseInfo;[I)V
 
@@ -940,18 +923,14 @@
 .end method
 
 .method public queryVopsStatusResponse(Landroid/hardware/radio/V1_0/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "responseInfo"    # Landroid/hardware/radio/V1_0/RadioResponseInfo;
     .param p2, "vops"    # I
 
     .line 633
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/ims/ril/ImsRadioResponse;->responseInts(Landroid/hardware/radio/V1_0/RadioResponseInfo;[I)V
 

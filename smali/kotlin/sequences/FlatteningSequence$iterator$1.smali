@@ -50,7 +50,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -128,14 +128,8 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
-    :cond_0
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -144,8 +138,13 @@
 
     move v0, v1
 
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
     :goto_0
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 308
     const/4 v0, 0x0
@@ -153,10 +152,10 @@
     iput-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->itemIterator:Ljava/util/Iterator;
 
     .line 310
-    :cond_2
+    :cond_1
     iget-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->itemIterator:Ljava/util/Iterator;
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     .line 311
     iget-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->iterator:Ljava/util/Iterator;
@@ -165,13 +164,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 312
     return v2
 
     .line 314
-    :cond_3
+    :cond_2
     iget-object v0, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -208,7 +207,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_1
 
     .line 317
     iput-object v3, p0, Lkotlin/sequences/FlatteningSequence$iterator$1;->itemIterator:Ljava/util/Iterator;
@@ -219,7 +218,7 @@
     .line 322
     .end local v0    # "element":Ljava/lang/Object;
     .end local v3    # "nextItemIterator":Ljava/util/Iterator;
-    :cond_4
+    :cond_3
     return v1
 .end method
 

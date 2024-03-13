@@ -27,7 +27,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -44,23 +44,15 @@
 
 # direct methods
 .method private static final synthetic $values()[Lkotlin/io/FileWalkDirection;
-    .locals 3
+    .locals 2
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lkotlin/io/FileWalkDirection;
-
-    sget-object v1, Lkotlin/io/FileWalkDirection;->TOP_DOWN:Lkotlin/io/FileWalkDirection;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/io/FileWalkDirection;->TOP_DOWN:Lkotlin/io/FileWalkDirection;
 
     sget-object v1, Lkotlin/io/FileWalkDirection;->BOTTOM_UP:Lkotlin/io/FileWalkDirection;
 
-    const/4 v2, 0x1
+    filled-new-array {v0, v1}, [Lkotlin/io/FileWalkDirection;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method

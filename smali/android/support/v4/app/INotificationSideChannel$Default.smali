@@ -32,7 +32,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    .line 36
+    .line 30
     const/4 v0, 0x0
 
     return-object v0
@@ -49,7 +49,7 @@
         }
     .end annotation
 
-    .line 27
+    .line 23
     return-void
 .end method
 
@@ -62,7 +62,7 @@
         }
     .end annotation
 
-    .line 33
+    .line 27
     return-void
 .end method
 
@@ -78,6 +78,6 @@
         }
     .end annotation
 
-    .line 21
+    .line 19
     return-void
 .end method

@@ -52,7 +52,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -71,15 +71,6 @@
     .end annotation
 .end field
 
-.field final synthetic this$0:Lkotlin/sequences/IndexingSequence;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlin/sequences/IndexingSequence<",
-            "TT;>;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
 .method constructor <init>(Lkotlin/sequences/IndexingSequence;)V
@@ -92,8 +83,6 @@
             "TT;>;)V"
         }
     .end annotation
-
-    iput-object p1, p0, Lkotlin/sequences/IndexingSequence$iterator$1;->this$0:Lkotlin/sequences/IndexingSequence;
 
     .line 249
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

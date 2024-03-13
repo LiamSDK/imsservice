@@ -32,7 +32,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    .line 35
+    .line 32
     const/4 v0, 0x0
 
     return-object v0
@@ -52,28 +52,10 @@
     return-void
 .end method
 
-.method public onNetworkRespHeader(IILjava/lang/String;ILjava/lang/String;)V
+.method public onNetworkResponse(ILandroid/telephony/ims/SipDetails;)V
     .locals 0
     .param p1, "userData"    # I
-    .param p2, "code"    # I
-    .param p3, "reasonPhrase"    # Ljava/lang/String;
-    .param p4, "reasonHeaderCause"    # I
-    .param p5, "reasonHeaderText"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 23
-    return-void
-.end method
-
-.method public onNetworkResponse(IILjava/lang/String;)V
-    .locals 0
-    .param p1, "userData"    # I
-    .param p2, "code"    # I
-    .param p3, "reason"    # Ljava/lang/String;
+    .param p2, "detail"    # Landroid/telephony/ims/SipDetails;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -102,7 +84,7 @@
         }
     .end annotation
 
-    .line 26
+    .line 23
     .local p2, "pidfXmls":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method
@@ -125,7 +107,7 @@
         }
     .end annotation
 
-    .line 29
+    .line 26
     .local p2, "uriTerminatedReason":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/ims/RcsContactTerminatedReason;>;"
     return-void
 .end method
@@ -141,6 +123,6 @@
         }
     .end annotation
 
-    .line 32
+    .line 29
     return-void
 .end method

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/os/ProcessCompat$Api16Impl;,
+        Landroidx/core/os/ProcessCompat$Api24Impl;,
         Landroidx/core/os/ProcessCompat$Api17Impl;,
-        Landroidx/core/os/ProcessCompat$Api24Impl;
+        Landroidx/core/os/ProcessCompat$Api16Impl;
     }
 .end annotation
 
@@ -25,56 +25,16 @@
 .end method
 
 .method public static isApplicationUid(I)Z
-    .locals 2
+    .locals 1
     .param p0, "uid"    # I
 
     .line 55
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 56
     invoke-static {p0}, Landroidx/core/os/ProcessCompat$Api24Impl;->isApplicationUid(I)Z
 
     move-result v0
-
-    return v0
-
-    .line 57
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-lt v0, v1, :cond_1
-
-    .line 58
-    invoke-static {p0}, Landroidx/core/os/ProcessCompat$Api17Impl;->isApplicationUid(I)Z
-
-    move-result v0
-
-    return v0
-
-    .line 59
-    :cond_1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-ne v0, v1, :cond_2
-
-    .line 60
-    invoke-static {p0}, Landroidx/core/os/ProcessCompat$Api16Impl;->isApplicationUid(I)Z
-
-    move-result v0
-
-    return v0
-
-    .line 62
-    :cond_2
-    const/4 v0, 0x1
 
     return v0
 .end method

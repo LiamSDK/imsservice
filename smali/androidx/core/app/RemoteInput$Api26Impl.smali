@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 601
+    .line 599
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 603
+    .line 601
     return-void
 .end method
 
@@ -41,7 +41,7 @@
         }
     .end annotation
 
-    .line 619
+    .line 617
     .local p2, "results":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Landroid/net/Uri;>;"
     invoke-static {p0}, Landroidx/core/app/RemoteInput;->fromCompat(Landroidx/core/app/RemoteInput;)Landroid/app/RemoteInput;
 
@@ -49,7 +49,7 @@
 
     invoke-static {v0, p1, p2}, Landroid/app/RemoteInput;->addDataResultToIntent(Landroid/app/RemoteInput;Landroid/content/Intent;Ljava/util/Map;)V
 
-    .line 620
+    .line 618
     return-void
 .end method
 
@@ -67,7 +67,7 @@
         }
     .end annotation
 
-    .line 613
+    .line 611
     move-object v0, p0
 
     check-cast v0, Landroid/app/RemoteInput;
@@ -96,7 +96,7 @@
         }
     .end annotation
 
-    .line 608
+    .line 606
     invoke-static {p0, p1}, Landroid/app/RemoteInput;->getDataResultsFromIntent(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v0
@@ -110,7 +110,7 @@
     .param p1, "mimeType"    # Ljava/lang/String;
     .param p2, "doAllow"    # Z
 
-    .line 625
+    .line 623
     invoke-virtual {p0, p1, p2}, Landroid/app/RemoteInput$Builder;->setAllowDataType(Ljava/lang/String;Z)Landroid/app/RemoteInput$Builder;
 
     move-result-object v0

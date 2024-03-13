@@ -26,10 +26,10 @@
     .param p1, "provider"    # Ljava/lang/String;
     .param p2, "listener"    # Landroidx/core/location/LocationListenerCompat;
 
-    .line 530
+    .line 669
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 531
+    .line 670
     const-string v0, "invalid null provider"
 
     invoke-static {p1, v0}, Landroidx/core/util/ObjectsCompat;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -40,7 +40,7 @@
 
     iput-object v0, p0, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;->mProvider:Ljava/lang/String;
 
-    .line 532
+    .line 671
     const-string v0, "invalid null listener"
 
     invoke-static {p2, v0}, Landroidx/core/util/ObjectsCompat;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -51,7 +51,7 @@
 
     iput-object v0, p0, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;->mListener:Landroidx/core/location/LocationListenerCompat;
 
-    .line 533
+    .line 672
     return-void
 .end method
 
@@ -61,23 +61,23 @@
     .locals 4
     .param p1, "o"    # Ljava/lang/Object;
 
-    .line 537
+    .line 676
     instance-of v0, p1, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 538
+    .line 677
     return v1
 
-    .line 541
+    .line 680
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;
 
-    .line 542
+    .line 681
     .local v0, "that":Landroidx/core/location/LocationManagerCompat$LocationListenerKey;
     iget-object v2, p0, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;->mProvider:Ljava/lang/String;
 
@@ -106,24 +106,16 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 2
 
-    .line 547
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget-object v1, p0, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;->mProvider:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    .line 686
+    iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;->mProvider:Ljava/lang/String;
 
     iget-object v1, p0, Landroidx/core/location/LocationManagerCompat$LocationListenerKey;->mListener:Landroidx/core/location/LocationListenerCompat;
 
-    const/4 v2, 0x1
+    filled-new-array {v0, v1}, [Ljava/lang/Object;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     invoke-static {v0}, Landroidx/core/util/ObjectsCompat;->hash([Ljava/lang/Object;)I
 

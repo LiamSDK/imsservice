@@ -25,7 +25,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nClassReference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,205:1\n1557#2:206\n1588#2,4:207\n1251#2,4:211\n1236#2,4:217\n438#3:215\n388#3:216\n*S KotlinDebug\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n*L\n107#1:206\n107#1:207,4\n155#1:211,4\n163#1:217,4\n163#1:215\n163#1:216\n*E\n"
+    value = "SMAP\nClassReference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,205:1\n1559#2:206\n1590#2,4:207\n1253#2,4:211\n1238#2,4:217\n442#3:215\n392#3:216\n*S KotlinDebug\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n*L\n107#1:206\n107#1:207,4\n155#1:211,4\n163#1:217,4\n163#1:215\n163#1:216\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -118,7 +118,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -200,7 +200,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 16
+    .locals 25
 
     new-instance v0, Lkotlin/jvm/internal/ClassReference$Companion;
 
@@ -214,147 +214,55 @@
     nop
 
     .line 102
-    const/16 v0, 0x17
+    const-class v2, Lkotlin/jvm/functions/Function0;
 
-    new-array v0, v0, [Ljava/lang/Class;
+    const-class v3, Lkotlin/jvm/functions/Function1;
 
-    const/4 v2, 0x0
+    const-class v4, Lkotlin/jvm/functions/Function2;
 
-    const-class v3, Lkotlin/jvm/functions/Function0;
+    const-class v5, Lkotlin/jvm/functions/Function3;
 
-    aput-object v3, v0, v2
+    const-class v6, Lkotlin/jvm/functions/Function4;
 
-    const-class v2, Lkotlin/jvm/functions/Function1;
+    const-class v7, Lkotlin/jvm/functions/Function5;
 
-    const/4 v3, 0x1
+    const-class v8, Lkotlin/jvm/functions/Function6;
 
-    aput-object v2, v0, v3
+    const-class v9, Lkotlin/jvm/functions/Function7;
 
-    const-class v2, Lkotlin/jvm/functions/Function2;
+    const-class v10, Lkotlin/jvm/functions/Function8;
 
-    const/4 v3, 0x2
+    const-class v11, Lkotlin/jvm/functions/Function9;
 
-    aput-object v2, v0, v3
+    const-class v12, Lkotlin/jvm/functions/Function10;
 
-    const/4 v2, 0x3
+    const-class v13, Lkotlin/jvm/functions/Function11;
 
-    const-class v4, Lkotlin/jvm/functions/Function3;
+    const-class v14, Lkotlin/jvm/functions/Function12;
 
-    aput-object v4, v0, v2
+    const-class v15, Lkotlin/jvm/functions/Function13;
 
-    const/4 v2, 0x4
+    const-class v16, Lkotlin/jvm/functions/Function14;
 
-    const-class v4, Lkotlin/jvm/functions/Function4;
+    const-class v17, Lkotlin/jvm/functions/Function15;
 
-    aput-object v4, v0, v2
+    const-class v18, Lkotlin/jvm/functions/Function16;
 
-    const/4 v2, 0x5
+    const-class v19, Lkotlin/jvm/functions/Function17;
 
-    const-class v4, Lkotlin/jvm/functions/Function5;
+    const-class v20, Lkotlin/jvm/functions/Function18;
 
-    aput-object v4, v0, v2
+    const-class v21, Lkotlin/jvm/functions/Function19;
 
-    const/4 v2, 0x6
+    const-class v22, Lkotlin/jvm/functions/Function20;
 
-    const-class v4, Lkotlin/jvm/functions/Function6;
+    const-class v23, Lkotlin/jvm/functions/Function21;
 
-    aput-object v4, v0, v2
+    const-class v24, Lkotlin/jvm/functions/Function22;
 
-    const/4 v2, 0x7
+    filled-new-array/range {v2 .. v24}, [Ljava/lang/Class;
 
-    const-class v4, Lkotlin/jvm/functions/Function7;
-
-    aput-object v4, v0, v2
-
-    const/16 v2, 0x8
-
-    const-class v4, Lkotlin/jvm/functions/Function8;
-
-    aput-object v4, v0, v2
-
-    const/16 v2, 0x9
-
-    const-class v4, Lkotlin/jvm/functions/Function9;
-
-    aput-object v4, v0, v2
-
-    const-class v2, Lkotlin/jvm/functions/Function10;
-
-    const/16 v4, 0xa
-
-    aput-object v2, v0, v4
-
-    const/16 v2, 0xb
-
-    const-class v5, Lkotlin/jvm/functions/Function11;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0xc
-
-    const-class v5, Lkotlin/jvm/functions/Function12;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0xd
-
-    const-class v5, Lkotlin/jvm/functions/Function13;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0xe
-
-    const-class v5, Lkotlin/jvm/functions/Function14;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0xf
-
-    const-class v5, Lkotlin/jvm/functions/Function15;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0x10
-
-    const-class v5, Lkotlin/jvm/functions/Function16;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0x11
-
-    const-class v5, Lkotlin/jvm/functions/Function17;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0x12
-
-    const-class v5, Lkotlin/jvm/functions/Function18;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0x13
-
-    const-class v5, Lkotlin/jvm/functions/Function19;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0x14
-
-    const-class v5, Lkotlin/jvm/functions/Function20;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0x15
-
-    const-class v5, Lkotlin/jvm/functions/Function21;
-
-    aput-object v5, v0, v2
-
-    const/16 v2, 0x16
-
-    const-class v5, Lkotlin/jvm/functions/Function22;
-
-    aput-object v5, v0, v2
+    move-result-object v0
 
     .line 101
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
@@ -371,105 +279,106 @@
 
     .line 206
     .local v2, "$i$f$mapIndexed":I
-    new-instance v5, Ljava/util/ArrayList;
+    new-instance v3, Ljava/util/ArrayList;
+
+    const/16 v4, 0xa
 
     invoke-static {v0, v4}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v4
 
-    invoke-direct {v5, v4}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    move-object v4, v5
+    check-cast v3, Ljava/util/Collection;
 
-    check-cast v4, Ljava/util/Collection;
+    .local v3, "destination$iv$iv":Ljava/util/Collection;
+    move-object v4, v0
 
-    .local v4, "destination$iv$iv":Ljava/util/Collection;
-    move-object v5, v0
-
-    .local v5, "$this$mapIndexedTo$iv$iv":Ljava/lang/Iterable;
-    const/4 v6, 0x0
+    .local v4, "$this$mapIndexedTo$iv$iv":Ljava/lang/Iterable;
+    const/4 v5, 0x0
 
     .line 207
-    .local v6, "$i$f$mapIndexedTo":I
-    const/4 v7, 0x0
+    .local v5, "$i$f$mapIndexedTo":I
+    const/4 v6, 0x0
 
     .line 208
-    .local v7, "index$iv$iv":I
-    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .local v6, "index$iv$iv":I
+    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v7
+
+    :goto_0
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v8
 
-    :goto_0
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v9
-
     .line 209
-    .local v9, "item$iv$iv":Ljava/lang/Object;
-    add-int/lit8 v10, v7, 0x1
+    .local v8, "item$iv$iv":Ljava/lang/Object;
+    add-int/lit8 v9, v6, 0x1
 
-    .end local v7    # "index$iv$iv":I
-    .local v10, "index$iv$iv":I
-    if-gez v7, :cond_0
+    .end local v6    # "index$iv$iv":I
+    .local v9, "index$iv$iv":I
+    if-gez v6, :cond_0
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
     :cond_0
-    move-object v11, v9
+    move-object v10, v8
 
-    check-cast v11, Ljava/lang/Class;
+    check-cast v10, Ljava/lang/Class;
 
-    .local v7, "i":I
-    .local v11, "clazz":Ljava/lang/Class;
-    const/4 v12, 0x0
+    .local v6, "i":I
+    .local v10, "clazz":Ljava/lang/Class;
+    const/4 v11, 0x0
 
     .line 107
-    .local v12, "$i$a$-mapIndexed-ClassReference$Companion$FUNCTION_CLASSES$1":I
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .local v11, "$i$a$-mapIndexed-ClassReference$Companion$FUNCTION_CLASSES$1":I
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v13
+    move-result-object v12
 
-    invoke-static {v11, v13}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
+    invoke-static {v10, v12}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
-    move-result-object v7
+    move-result-object v6
 
-    .end local v7    # "i":I
-    .end local v11    # "clazz":Ljava/lang/Class;
-    .end local v12    # "$i$a$-mapIndexed-ClassReference$Companion$FUNCTION_CLASSES$1":I
-    invoke-interface {v4, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    .line 209
+    .end local v6    # "i":I
+    .end local v10    # "clazz":Ljava/lang/Class;
+    .end local v11    # "$i$a$-mapIndexed-ClassReference$Companion$FUNCTION_CLASSES$1":I
+    invoke-interface {v3, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    move v7, v10
+    move v6, v9
 
     goto :goto_0
 
     .line 210
-    .end local v9    # "item$iv$iv":Ljava/lang/Object;
-    .end local v10    # "index$iv$iv":I
-    .local v7, "index$iv$iv":I
+    .end local v8    # "item$iv$iv":Ljava/lang/Object;
+    .end local v9    # "index$iv$iv":I
+    .local v6, "index$iv$iv":I
     :cond_1
     nop
 
-    .end local v4    # "destination$iv$iv":Ljava/util/Collection;
-    .end local v5    # "$this$mapIndexedTo$iv$iv":Ljava/lang/Iterable;
-    .end local v6    # "$i$f$mapIndexedTo":I
-    .end local v7    # "index$iv$iv":I
-    check-cast v4, Ljava/util/List;
+    .end local v3    # "destination$iv$iv":Ljava/util/Collection;
+    .end local v4    # "$this$mapIndexedTo$iv$iv":Ljava/lang/Iterable;
+    .end local v5    # "$i$f$mapIndexedTo":I
+    .end local v6    # "index$iv$iv":I
+    check-cast v3, Ljava/util/List;
 
     .line 206
     nop
 
     .end local v0    # "$this$mapIndexed$iv":Ljava/lang/Iterable;
     .end local v2    # "$i$f$mapIndexed":I
-    check-cast v4, Ljava/lang/Iterable;
+    check-cast v3, Ljava/lang/Iterable;
 
     .line 107
-    invoke-static {v4}, Lkotlin/collections/MapsKt;->toMap(Ljava/lang/Iterable;)Ljava/util/Map;
+    invoke-static {v3}, Lkotlin/collections/MapsKt;->toMap(Ljava/lang/Iterable;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -482,72 +391,72 @@
 
     move-object v2, v0
 
-    .local v2, "$this$primitiveFqNames_u24lambda_u2d1":Ljava/util/HashMap;
-    const/4 v4, 0x0
+    .local v2, "$this$primitiveFqNames_u24lambda_u241":Ljava/util/HashMap;
+    const/4 v3, 0x0
 
     .line 110
-    .local v4, "$i$a$-apply-ClassReference$Companion$primitiveFqNames$1":I
-    const-string v5, "boolean"
+    .local v3, "$i$a$-apply-ClassReference$Companion$primitiveFqNames$1":I
+    const-string v4, "boolean"
 
-    const-string v6, "kotlin.Boolean"
+    const-string v5, "kotlin.Boolean"
 
-    invoke-virtual {v2, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 111
-    const-string v5, "char"
+    const-string v4, "char"
 
-    const-string v7, "kotlin.Char"
+    const-string v6, "kotlin.Char"
 
-    invoke-virtual {v2, v5, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 112
-    const-string v5, "byte"
+    const-string v4, "byte"
 
-    const-string v8, "kotlin.Byte"
+    const-string v7, "kotlin.Byte"
 
-    invoke-virtual {v2, v5, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 113
-    const-string v5, "short"
+    const-string v4, "short"
 
-    const-string v9, "kotlin.Short"
+    const-string v8, "kotlin.Short"
 
-    invoke-virtual {v2, v5, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 114
-    const-string v5, "int"
+    const-string v4, "int"
 
-    const-string v10, "kotlin.Int"
+    const-string v9, "kotlin.Int"
 
-    invoke-virtual {v2, v5, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 115
-    const-string v5, "float"
+    const-string v4, "float"
 
-    const-string v11, "kotlin.Float"
+    const-string v10, "kotlin.Float"
 
-    invoke-virtual {v2, v5, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 116
-    const-string v5, "long"
+    const-string v4, "long"
 
-    const-string v12, "kotlin.Long"
+    const-string v11, "kotlin.Long"
 
-    invoke-virtual {v2, v5, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 117
-    const-string v5, "double"
+    const-string v4, "double"
 
-    const-string v13, "kotlin.Double"
+    const-string v12, "kotlin.Double"
 
-    invoke-virtual {v2, v5, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 118
     nop
 
     .line 109
-    .end local v2    # "$this$primitiveFqNames_u24lambda_u2d1":Ljava/util/HashMap;
-    .end local v4    # "$i$a$-apply-ClassReference$Companion$primitiveFqNames$1":I
+    .end local v2    # "$this$primitiveFqNames_u24lambda_u241":Ljava/util/HashMap;
+    .end local v3    # "$i$a$-apply-ClassReference$Companion$primitiveFqNames$1":I
     sput-object v0, Lkotlin/jvm/internal/ClassReference;->primitiveFqNames:Ljava/util/HashMap;
 
     .line 120
@@ -555,215 +464,215 @@
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    move-object v4, v2
+    move-object v3, v2
 
-    .local v4, "$this$primitiveWrapperFqNames_u24lambda_u2d2":Ljava/util/HashMap;
-    const/4 v5, 0x0
+    .local v3, "$this$primitiveWrapperFqNames_u24lambda_u242":Ljava/util/HashMap;
+    const/4 v4, 0x0
 
     .line 121
-    .local v5, "$i$a$-apply-ClassReference$Companion$primitiveWrapperFqNames$1":I
-    const-string v14, "java.lang.Boolean"
+    .local v4, "$i$a$-apply-ClassReference$Companion$primitiveWrapperFqNames$1":I
+    const-string v13, "java.lang.Boolean"
 
-    invoke-virtual {v4, v14, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v13, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 122
-    const-string v6, "java.lang.Character"
+    const-string v5, "java.lang.Character"
 
-    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 123
-    const-string v6, "java.lang.Byte"
+    const-string v5, "java.lang.Byte"
 
-    invoke-virtual {v4, v6, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 124
-    const-string v6, "java.lang.Short"
+    const-string v5, "java.lang.Short"
 
-    invoke-virtual {v4, v6, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 125
-    const-string v6, "java.lang.Integer"
+    const-string v5, "java.lang.Integer"
 
-    invoke-virtual {v4, v6, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 126
-    const-string v6, "java.lang.Float"
+    const-string v5, "java.lang.Float"
 
-    invoke-virtual {v4, v6, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 127
-    const-string v6, "java.lang.Long"
+    const-string v5, "java.lang.Long"
 
-    invoke-virtual {v4, v6, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 128
-    const-string v6, "java.lang.Double"
+    const-string v5, "java.lang.Double"
 
-    invoke-virtual {v4, v6, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 129
     nop
 
     .line 120
-    .end local v4    # "$this$primitiveWrapperFqNames_u24lambda_u2d2":Ljava/util/HashMap;
-    .end local v5    # "$i$a$-apply-ClassReference$Companion$primitiveWrapperFqNames$1":I
+    .end local v3    # "$this$primitiveWrapperFqNames_u24lambda_u242":Ljava/util/HashMap;
+    .end local v4    # "$i$a$-apply-ClassReference$Companion$primitiveWrapperFqNames$1":I
     sput-object v2, Lkotlin/jvm/internal/ClassReference;->primitiveWrapperFqNames:Ljava/util/HashMap;
 
     .line 132
-    new-instance v4, Ljava/util/HashMap;
+    new-instance v3, Ljava/util/HashMap;
 
-    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    move-object v5, v4
+    move-object v4, v3
 
-    .local v5, "$this$classFqNames_u24lambda_u2d4":Ljava/util/HashMap;
-    const/4 v6, 0x0
+    .local v4, "$this$classFqNames_u24lambda_u244":Ljava/util/HashMap;
+    const/4 v5, 0x0
 
     .line 133
-    .local v6, "$i$a$-apply-ClassReference$Companion$classFqNames$1":I
-    const-string v7, "java.lang.Object"
+    .local v5, "$i$a$-apply-ClassReference$Companion$classFqNames$1":I
+    const-string v6, "java.lang.Object"
 
-    const-string v8, "kotlin.Any"
+    const-string v7, "kotlin.Any"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 134
-    const-string v7, "java.lang.String"
+    const-string v6, "java.lang.String"
 
-    const-string v8, "kotlin.String"
+    const-string v7, "kotlin.String"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 135
-    const-string v7, "java.lang.CharSequence"
+    const-string v6, "java.lang.CharSequence"
 
-    const-string v8, "kotlin.CharSequence"
+    const-string v7, "kotlin.CharSequence"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 136
-    const-string v7, "java.lang.Throwable"
+    const-string v6, "java.lang.Throwable"
 
-    const-string v8, "kotlin.Throwable"
+    const-string v7, "kotlin.Throwable"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 137
-    const-string v7, "java.lang.Cloneable"
+    const-string v6, "java.lang.Cloneable"
 
-    const-string v8, "kotlin.Cloneable"
+    const-string v7, "kotlin.Cloneable"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 138
-    const-string v7, "java.lang.Number"
+    const-string v6, "java.lang.Number"
 
-    const-string v8, "kotlin.Number"
+    const-string v7, "kotlin.Number"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 139
-    const-string v7, "java.lang.Comparable"
+    const-string v6, "java.lang.Comparable"
 
-    const-string v8, "kotlin.Comparable"
+    const-string v7, "kotlin.Comparable"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 140
-    const-string v7, "java.lang.Enum"
+    const-string v6, "java.lang.Enum"
 
-    const-string v8, "kotlin.Enum"
+    const-string v7, "kotlin.Enum"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 141
-    const-string v7, "java.lang.annotation.Annotation"
+    const-string v6, "java.lang.annotation.Annotation"
 
-    const-string v8, "kotlin.Annotation"
+    const-string v7, "kotlin.Annotation"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 142
-    const-string v7, "java.lang.Iterable"
+    const-string v6, "java.lang.Iterable"
 
-    const-string v8, "kotlin.collections.Iterable"
+    const-string v7, "kotlin.collections.Iterable"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 143
-    const-string v7, "java.util.Iterator"
+    const-string v6, "java.util.Iterator"
 
-    const-string v8, "kotlin.collections.Iterator"
+    const-string v7, "kotlin.collections.Iterator"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 144
-    const-string v7, "java.util.Collection"
+    const-string v6, "java.util.Collection"
 
-    const-string v8, "kotlin.collections.Collection"
+    const-string v7, "kotlin.collections.Collection"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 145
-    const-string v7, "java.util.List"
+    const-string v6, "java.util.List"
 
-    const-string v8, "kotlin.collections.List"
+    const-string v7, "kotlin.collections.List"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 146
-    const-string v7, "java.util.Set"
+    const-string v6, "java.util.Set"
 
-    const-string v8, "kotlin.collections.Set"
+    const-string v7, "kotlin.collections.Set"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 147
-    const-string v7, "java.util.ListIterator"
+    const-string v6, "java.util.ListIterator"
 
-    const-string v8, "kotlin.collections.ListIterator"
+    const-string v7, "kotlin.collections.ListIterator"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 148
-    const-string v7, "java.util.Map"
+    const-string v6, "java.util.Map"
 
-    const-string v8, "kotlin.collections.Map"
+    const-string v7, "kotlin.collections.Map"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 149
-    const-string v7, "java.util.Map$Entry"
+    const-string v6, "java.util.Map$Entry"
 
-    const-string v8, "kotlin.collections.Map.Entry"
+    const-string v7, "kotlin.collections.Map.Entry"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 150
-    const-string v7, "kotlin.jvm.internal.StringCompanionObject"
+    const-string v6, "kotlin.jvm.internal.StringCompanionObject"
 
-    const-string v8, "kotlin.String.Companion"
+    const-string v7, "kotlin.String.Companion"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 151
-    const-string v7, "kotlin.jvm.internal.EnumCompanionObject"
+    const-string v6, "kotlin.jvm.internal.EnumCompanionObject"
 
-    const-string v8, "kotlin.Enum.Companion"
+    const-string v7, "kotlin.Enum.Companion"
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 153
-    move-object v7, v0
+    move-object v6, v0
 
-    check-cast v7, Ljava/util/Map;
+    check-cast v6, Ljava/util/Map;
 
-    invoke-virtual {v5, v7}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+    invoke-virtual {v4, v6}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
     .line 154
     check-cast v2, Ljava/util/Map;
 
-    invoke-virtual {v5, v2}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+    invoke-virtual {v4, v2}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
     .line 155
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -783,28 +692,30 @@
     .local v2, "$i$f$associateTo":I
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v7
+    move-result-object v6
 
     :goto_1
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v7
+
+    const/4 v8, 0x2
 
     const/16 v9, 0x2e
 
-    if-eqz v8, :cond_2
+    if-eqz v7, :cond_2
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 212
-    .local v8, "element$iv":Ljava/lang/Object;
-    move-object v10, v5
+    .local v7, "element$iv":Ljava/lang/Object;
+    move-object v10, v4
 
     check-cast v10, Ljava/util/Map;
 
-    move-object v11, v8
+    move-object v11, v7
 
     check-cast v11, Ljava/lang/String;
 
@@ -827,15 +738,33 @@
 
     invoke-static {v11, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v11, v9, v1, v3, v1}, Lkotlin/text/StringsKt;->substringAfterLast$default(Ljava/lang/String;CLjava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+    invoke-static {v11, v9, v1, v8, v1}, Lkotlin/text/StringsKt;->substringAfterLast$default(Ljava/lang/String;CLjava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v13, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "CompanionObject"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v13, "CompanionObject"
+    const-string v13, ".Companion"
 
     invoke-virtual {v9, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -845,34 +774,29 @@
 
     move-result-object v9
 
-    const-string v13, ".Companion"
+    invoke-static {v8, v9}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
-    invoke-static {v11, v13}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v8
 
-    move-result-object v13
-
-    invoke-static {v9, v13}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
-
-    move-result-object v9
-
+    .line 212
     .end local v11    # "kotlinName":Ljava/lang/String;
     .end local v12    # "$i$a$-associateTo-ClassReference$Companion$classFqNames$1$1":I
-    invoke-virtual {v9}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
-
-    move-result-object v11
-
-    invoke-virtual {v9}, Lkotlin/Pair;->getSecond()Ljava/lang/Object;
+    invoke-virtual {v8}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v9
 
-    invoke-interface {v10, v11, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v8}, Lkotlin/Pair;->getSecond()Ljava/lang/Object;
+
+    move-result-object v8
+
+    invoke-interface {v10, v9, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
     .line 214
-    .end local v8    # "element$iv":Ljava/lang/Object;
+    .end local v7    # "element$iv":Ljava/lang/Object;
     :cond_2
-    move-object v0, v5
+    move-object v0, v4
 
     check-cast v0, Ljava/util/Map;
 
@@ -904,11 +828,11 @@
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/lang/Class;
+    check-cast v6, Ljava/lang/Class;
 
-    .local v7, "klass":Ljava/lang/Class;
+    .local v6, "klass":Ljava/lang/Class;
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -921,37 +845,45 @@
 
     .line 159
     .local v2, "arity":I
-    invoke-virtual {v7}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v11, "kotlin.Function"
 
-    invoke-static {v11, v10}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v10
 
-    invoke-virtual {v5, v8, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v4, v7, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_2
 
     .line 161
     .end local v2    # "arity":I
-    .end local v7    # "klass":Ljava/lang/Class;
+    .end local v6    # "klass":Ljava/lang/Class;
     :cond_3
     nop
 
     .line 132
-    .end local v5    # "$this$classFqNames_u24lambda_u2d4":Ljava/util/HashMap;
-    .end local v6    # "$i$a$-apply-ClassReference$Companion$classFqNames$1":I
-    sput-object v4, Lkotlin/jvm/internal/ClassReference;->classFqNames:Ljava/util/HashMap;
+    .end local v4    # "$this$classFqNames_u24lambda_u244":Ljava/util/HashMap;
+    .end local v5    # "$i$a$-apply-ClassReference$Companion$classFqNames$1":I
+    sput-object v3, Lkotlin/jvm/internal/ClassReference;->classFqNames:Ljava/util/HashMap;
 
     .line 163
-    move-object v0, v4
+    move-object v0, v3
 
     check-cast v0, Ljava/util/Map;
 
@@ -960,40 +892,40 @@
 
     .line 215
     .local v2, "$i$f$mapValues":I
-    new-instance v4, Ljava/util/LinkedHashMap;
+    new-instance v3, Ljava/util/LinkedHashMap;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v5}, Lkotlin/collections/MapsKt;->mapCapacity(I)I
+    invoke-static {v4}, Lkotlin/collections/MapsKt;->mapCapacity(I)I
 
-    move-result v5
+    move-result v4
 
-    invoke-direct {v4, v5}, Ljava/util/LinkedHashMap;-><init>(I)V
+    invoke-direct {v3, v4}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    check-cast v4, Ljava/util/Map;
+    check-cast v3, Ljava/util/Map;
 
-    .local v4, "destination$iv$iv":Ljava/util/Map;
-    move-object v5, v0
+    .local v3, "destination$iv$iv":Ljava/util/Map;
+    move-object v4, v0
 
-    .local v5, "$this$mapValuesTo$iv$iv":Ljava/util/Map;
-    const/4 v6, 0x0
+    .local v4, "$this$mapValuesTo$iv$iv":Ljava/util/Map;
+    const/4 v5, 0x0
 
     .line 216
-    .local v6, "$i$f$mapValuesTo":I
-    invoke-interface {v5}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    .local v5, "$i$f$mapValuesTo":I
+    invoke-interface {v4}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/lang/Iterable;
+    check-cast v6, Ljava/lang/Iterable;
 
-    .local v7, "$this$associateByTo$iv$iv$iv":Ljava/lang/Iterable;
-    const/4 v8, 0x0
+    .local v6, "$this$associateByTo$iv$iv$iv":Ljava/lang/Iterable;
+    const/4 v7, 0x0
 
     .line 217
-    .local v8, "$i$f$associateByTo":I
-    invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .local v7, "$i$f$associateByTo":I
+    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v10
 
@@ -1023,32 +955,32 @@
 
     move-result-object v12
 
+    .line 218
     .end local v12    # "it$iv$iv":Ljava/util/Map$Entry;
     .end local v13    # "$i$a$-associateByTo-MapsKt__MapsKt$mapValuesTo$1$iv$iv":I
     move-object v13, v11
 
     check-cast v13, Ljava/util/Map$Entry;
 
-    .local v13, "$dstr$_u24__u24$fqName":Ljava/util/Map$Entry;
     const/4 v14, 0x0
 
     .line 163
     .local v14, "$i$a$-mapValues-ClassReference$Companion$simpleNames$1":I
     invoke-interface {v13}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v13
 
-    check-cast v15, Ljava/lang/String;
+    check-cast v13, Ljava/lang/String;
 
-    .local v15, "fqName":Ljava/lang/String;
-    invoke-static {v15, v9, v1, v3, v1}, Lkotlin/text/StringsKt;->substringAfterLast$default(Ljava/lang/String;CLjava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+    .local v13, "fqName":Ljava/lang/String;
+    invoke-static {v13, v9, v1, v8, v1}, Lkotlin/text/StringsKt;->substringAfterLast$default(Ljava/lang/String;CLjava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v13
 
-    .end local v13    # "$dstr$_u24__u24$fqName":Ljava/util/Map$Entry;
+    .line 218
+    .end local v13    # "fqName":Ljava/lang/String;
     .end local v14    # "$i$a$-mapValues-ClassReference$Companion$simpleNames$1":I
-    .end local v15    # "fqName":Ljava/lang/String;
-    invoke-interface {v4, v12, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v12, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3
 
@@ -1058,20 +990,20 @@
     nop
 
     .line 216
-    .end local v7    # "$this$associateByTo$iv$iv$iv":Ljava/lang/Iterable;
-    .end local v8    # "$i$f$associateByTo":I
+    .end local v6    # "$this$associateByTo$iv$iv$iv":Ljava/lang/Iterable;
+    .end local v7    # "$i$f$associateByTo":I
     nop
 
     .line 215
-    .end local v4    # "destination$iv$iv":Ljava/util/Map;
-    .end local v5    # "$this$mapValuesTo$iv$iv":Ljava/util/Map;
-    .end local v6    # "$i$f$mapValuesTo":I
+    .end local v3    # "destination$iv$iv":Ljava/util/Map;
+    .end local v4    # "$this$mapValuesTo$iv$iv":Ljava/util/Map;
+    .end local v5    # "$i$f$mapValuesTo":I
     nop
 
     .line 163
     .end local v0    # "$this$mapValues$iv":Ljava/util/Map;
     .end local v2    # "$i$f$mapValues":I
-    sput-object v4, Lkotlin/jvm/internal/ClassReference;->simpleNames:Ljava/util/Map;
+    sput-object v3, Lkotlin/jvm/internal/ClassReference;->simpleNames:Ljava/util/Map;
 
     return-void
 .end method
@@ -1643,17 +1575,29 @@
     .locals 2
 
     .line 97
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual {p0}, Lkotlin/jvm/internal/ClassReference;->getJClass()Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/Class;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Class;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     const-string v1, " (Kotlin reflection is not available)"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

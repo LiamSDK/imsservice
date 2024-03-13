@@ -18,23 +18,23 @@
 # static fields
 .field public static final DESCRIPTOR:Ljava/lang/String;
 
-.field public static final HASH:Ljava/lang/String; = "57e8e923513d80a26102e450d335e89b4346be66"
+.field public static final HASH:Ljava/lang/String; = "1b6608f238bd0b1c642df315621a7b605eafc883"
 
-.field public static final VERSION:I = 0x1
+.field public static final VERSION:I = 0x2
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 584
-    const-string v0, "android$hardware$radio$network$IRadioNetworkIndication"
+    .line 614
+    const/16 v0, 0x24
 
-    const/16 v1, 0x24
+    const/16 v1, 0x2e
 
-    const/16 v2, 0x2e
+    const-string v2, "android$hardware$radio$network$IRadioNetworkIndication"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v0
 
@@ -86,6 +86,14 @@
 .end method
 
 .method public abstract currentSignalStrength(ILandroid/hardware/radio/network/SignalStrength;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract emergencyNetworkScanResult(ILandroid/hardware/radio/network/EmergencyRegResult;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

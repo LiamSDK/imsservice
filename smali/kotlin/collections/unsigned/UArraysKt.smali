@@ -11,7 +11,7 @@
     k = 0x4
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     pn = "kotlin.collections"

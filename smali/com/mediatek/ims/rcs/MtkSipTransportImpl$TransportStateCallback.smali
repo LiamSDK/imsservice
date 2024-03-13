@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    .line 284
+    .line 330
     iput-object p1, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$TransportStateCallback;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
     invoke-direct {p0}, Lcom/mediatek/ims/rcs/UaServiceManager$StateCallback;-><init>()V
@@ -33,14 +33,15 @@
 
 
 # virtual methods
-.method public onDeregisterInd(I)V
+.method public onDeregisterInd(II)V
     .locals 3
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 319
+    .line 365
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$TransportStateCallback;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$200(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Ljava/util/List;
+    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$500(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Ljava/util/List;
 
     move-result-object v0
 
@@ -61,29 +62,30 @@
 
     check-cast v1, Lcom/mediatek/ims/rcs/MtkSipDelegate;
 
-    .line 320
+    .line 366
     .local v1, "delegate":Lcom/mediatek/ims/rcs/MtkSipDelegate;
     const/4 v2, 0x7
 
     invoke-virtual {v1, v2}, Lcom/mediatek/ims/rcs/MtkSipDelegate;->notifyRegistrationDeregistering(I)V
 
-    .line 321
+    .line 367
     .end local v1    # "delegate":Lcom/mediatek/ims/rcs/MtkSipDelegate;
     goto :goto_0
 
-    .line 322
+    .line 368
     :cond_0
     return-void
 .end method
 
-.method public onDeregistered(I)V
+.method public onDeregistered(II)V
     .locals 2
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 305
+    .line 351
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$TransportStateCallback;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$200(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Ljava/util/List;
+    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$500(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Ljava/util/List;
 
     move-result-object v0
 
@@ -104,48 +106,58 @@
 
     check-cast v1, Lcom/mediatek/ims/rcs/MtkSipDelegate;
 
-    .line 306
+    .line 352
     .local v1, "delegate":Lcom/mediatek/ims/rcs/MtkSipDelegate;
     invoke-virtual {v1}, Lcom/mediatek/ims/rcs/MtkSipDelegate;->notifyRegistrationDeregistered()V
 
-    .line 307
+    .line 353
     .end local v1    # "delegate":Lcom/mediatek/ims/rcs/MtkSipDelegate;
     goto :goto_0
 
-    .line 308
+    .line 354
     :cond_0
     return-void
 .end method
 
-.method public onDeregistering(I)V
+.method public onDeregistering(II)V
     .locals 0
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 301
+    .line 347
     return-void
 .end method
 
-.method public onRegistered(I)V
+.method public onRegistered(II)V
     .locals 3
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 292
+    .line 338
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$TransportStateCallback;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$100(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Lcom/mediatek/ims/rcs/UaServiceManager;
+    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$300(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Lcom/mediatek/ims/rcs/UaServiceManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/mediatek/ims/rcs/UaServiceManager;->imsRegistered()Z
+    invoke-virtual {v0, p1}, Lcom/mediatek/ims/rcs/UaServiceManager;->imsRegistered(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 293
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$TransportStateCallback;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$200(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Ljava/util/List;
+    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$400(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 339
+    iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$TransportStateCallback;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
+
+    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$500(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Ljava/util/List;
 
     move-result-object v0
 
@@ -166,45 +178,47 @@
 
     check-cast v1, Lcom/mediatek/ims/rcs/MtkSipDelegate;
 
-    .line 294
+    .line 340
     .local v1, "delegate":Lcom/mediatek/ims/rcs/MtkSipDelegate;
     iget-object v2, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$TransportStateCallback;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    invoke-static {v2}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$100(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Lcom/mediatek/ims/rcs/UaServiceManager;
+    invoke-static {v2}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$300(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Lcom/mediatek/ims/rcs/UaServiceManager;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/mediatek/ims/rcs/UaServiceManager;->getRegistrationInfo()Lcom/mediatek/ims/rcsua/RegistrationInfo;
+    invoke-virtual {v2, p1}, Lcom/mediatek/ims/rcs/UaServiceManager;->getRegistrationInfo(I)Lcom/mediatek/ims/rcsua/RegistrationInfo;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Lcom/mediatek/ims/rcs/MtkSipDelegate;->notifyRegistrationRegistered(Lcom/mediatek/ims/rcsua/RegistrationInfo;)V
 
-    .line 295
+    .line 341
     .end local v1    # "delegate":Lcom/mediatek/ims/rcs/MtkSipDelegate;
     goto :goto_0
 
-    .line 297
+    .line 343
     :cond_0
     return-void
 .end method
 
-.method public onRegistering(I)V
+.method public onRegistering(II)V
     .locals 0
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 287
+    .line 333
     return-void
 .end method
 
-.method public onReregistered(I)V
+.method public onReregistered(II)V
     .locals 3
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 312
+    .line 358
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$TransportStateCallback;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$200(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Ljava/util/List;
+    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$500(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Ljava/util/List;
 
     move-result-object v0
 
@@ -225,25 +239,25 @@
 
     check-cast v1, Lcom/mediatek/ims/rcs/MtkSipDelegate;
 
-    .line 313
+    .line 359
     .local v1, "delegate":Lcom/mediatek/ims/rcs/MtkSipDelegate;
     iget-object v2, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$TransportStateCallback;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    invoke-static {v2}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$100(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Lcom/mediatek/ims/rcs/UaServiceManager;
+    invoke-static {v2}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$300(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Lcom/mediatek/ims/rcs/UaServiceManager;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/mediatek/ims/rcs/UaServiceManager;->getRegistrationInfo()Lcom/mediatek/ims/rcsua/RegistrationInfo;
+    invoke-virtual {v2, p1}, Lcom/mediatek/ims/rcs/UaServiceManager;->getRegistrationInfo(I)Lcom/mediatek/ims/rcsua/RegistrationInfo;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Lcom/mediatek/ims/rcs/MtkSipDelegate;->notifyRegistrationRegistered(Lcom/mediatek/ims/rcsua/RegistrationInfo;)V
 
-    .line 314
+    .line 360
     .end local v1    # "delegate":Lcom/mediatek/ims/rcs/MtkSipDelegate;
     goto :goto_0
 
-    .line 315
+    .line 361
     :cond_0
     return-void
 .end method

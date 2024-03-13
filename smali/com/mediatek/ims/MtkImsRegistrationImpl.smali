@@ -194,12 +194,12 @@
     .locals 1
     .param p0, "msg"    # Ljava/lang/String;
 
-    .line 194
+    .line 185
     const-string v0, "MtkImsRegImpl"
 
     invoke-static {v0, p0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
+    .line 186
     return-void
 .end method
 
@@ -207,12 +207,12 @@
     .locals 1
     .param p0, "msg"    # Ljava/lang/String;
 
-    .line 202
+    .line 193
     const-string v0, "MtkImsRegImpl"
 
     invoke-static {v0, p0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 203
+    .line 194
     return-void
 .end method
 
@@ -220,12 +220,12 @@
     .locals 1
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 198
+    .line 189
     const-string v0, "MtkImsRegImpl"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 199
+    .line 190
     return-void
 .end method
 
@@ -285,7 +285,7 @@
     .param p1, "sipCode"    # I
     .param p2, "sipReason"    # Ljava/lang/String;
 
-    .line 182
+    .line 176
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -334,20 +334,7 @@
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/MtkImsRegistrationImpl;->logi(Ljava/lang/String;)V
 
-    .line 183
-    iget v0, p0, Lcom/mediatek/ims/MtkImsRegistrationImpl;->mSlotId:I
-
-    invoke-static {}, Lcom/mediatek/ims/ImsCommonUtil;->getDefaultRcsPhoneId()I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_0
-
-    .line 184
-    return-void
-
-    .line 187
-    :cond_0
+    .line 178
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsRegistrationImpl;->mImsServiceImpl:Lcom/mediatek/ims/ImsService;
 
     iget v1, p0, Lcom/mediatek/ims/MtkImsRegistrationImpl;->mSlotId:I
@@ -356,22 +343,22 @@
 
     move-result-object v0
 
-    .line 188
+    .line 179
     .local v0, "transport":Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 189
+    .line 180
     invoke-virtual {v0, p1, p2}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->triggerFullNetworkRegistration(ILjava/lang/String;)V
 
-    .line 191
-    :cond_1
+    .line 182
+    :cond_0
     return-void
 .end method
 
 .method public triggerSipDelegateDeregistration()V
     .locals 2
 
-    .line 155
+    .line 152
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -400,20 +387,7 @@
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/MtkImsRegistrationImpl;->logi(Ljava/lang/String;)V
 
-    .line 156
-    iget v0, p0, Lcom/mediatek/ims/MtkImsRegistrationImpl;->mSlotId:I
-
-    invoke-static {}, Lcom/mediatek/ims/ImsCommonUtil;->getDefaultRcsPhoneId()I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_0
-
-    .line 157
-    return-void
-
-    .line 160
-    :cond_0
+    .line 154
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsRegistrationImpl;->mImsServiceImpl:Lcom/mediatek/ims/ImsService;
 
     iget v1, p0, Lcom/mediatek/ims/MtkImsRegistrationImpl;->mSlotId:I
@@ -422,15 +396,15 @@
 
     move-result-object v0
 
-    .line 161
+    .line 155
     .local v0, "transport":Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 162
+    .line 156
     invoke-virtual {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->triggerSipDelegateDeregistration()V
 
-    .line 164
-    :cond_1
+    .line 158
+    :cond_0
     return-void
 .end method
 
@@ -466,20 +440,7 @@
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/MtkImsRegistrationImpl;->logi(Ljava/lang/String;)V
 
-    .line 131
-    iget v0, p0, Lcom/mediatek/ims/MtkImsRegistrationImpl;->mSlotId:I
-
-    invoke-static {}, Lcom/mediatek/ims/ImsCommonUtil;->getDefaultRcsPhoneId()I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_0
-
     .line 132
-    return-void
-
-    .line 135
-    :cond_0
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsRegistrationImpl;->mImsServiceImpl:Lcom/mediatek/ims/ImsService;
 
     iget v1, p0, Lcom/mediatek/ims/MtkImsRegistrationImpl;->mSlotId:I
@@ -488,14 +449,14 @@
 
     move-result-object v0
 
-    .line 136
+    .line 133
     .local v0, "transport":Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 137
+    .line 134
     invoke-virtual {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->updateSipDelegateRegistration()V
 
-    .line 139
-    :cond_1
+    .line 136
+    :cond_0
     return-void
 .end method

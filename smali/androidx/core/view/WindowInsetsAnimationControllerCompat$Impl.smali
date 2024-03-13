@@ -92,22 +92,13 @@
 .method isCancelled()Z
     .locals 1
 
-    .line 279
+    .line 275
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method isFinished()Z
-    .locals 1
-
-    .line 275
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public isReady()Z
     .locals 1
 
     .line 271

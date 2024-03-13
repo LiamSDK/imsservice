@@ -33,11 +33,7 @@
     .param p6, "cancellationSignal"    # Landroidx/core/os/CancellationSignal;
 
     .line 80
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_2
+    nop
 
     .line 84
     if-eqz p6, :cond_0
@@ -105,20 +101,4 @@
     .line 96
     :cond_1
     throw v0
-
-    .line 102
-    .end local v0    # "e":Ljava/lang/Exception;
-    :cond_2
-    if-eqz p6, :cond_3
-
-    .line 103
-    invoke-virtual {p6}, Landroidx/core/os/CancellationSignal;->throwIfCanceled()V
-
-    .line 105
-    :cond_3
-    invoke-virtual/range {p0 .. p5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    return-object v0
 .end method

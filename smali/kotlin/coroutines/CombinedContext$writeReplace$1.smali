@@ -43,7 +43,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -95,36 +95,35 @@
 .end method
 
 .method public final invoke(Lkotlin/Unit;Lkotlin/coroutines/CoroutineContext$Element;)V
-    .locals 4
-    .param p1, "$noName_0"    # Lkotlin/Unit;
+    .locals 3
     .param p2, "element"    # Lkotlin/coroutines/CoroutineContext$Element;
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "element"
+    const-string p1, "element"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 182
-    iget-object v0, p0, Lkotlin/coroutines/CombinedContext$writeReplace$1;->$elements:[Lkotlin/coroutines/CoroutineContext;
+    iget-object p1, p0, Lkotlin/coroutines/CombinedContext$writeReplace$1;->$elements:[Lkotlin/coroutines/CoroutineContext;
+
+    iget-object v0, p0, Lkotlin/coroutines/CombinedContext$writeReplace$1;->$index:Lkotlin/jvm/internal/Ref$IntRef;
+
+    iget v0, v0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     iget-object v1, p0, Lkotlin/coroutines/CombinedContext$writeReplace$1;->$index:Lkotlin/jvm/internal/Ref$IntRef;
 
-    iget v1, v1, Lkotlin/jvm/internal/Ref$IntRef;->element:I
+    add-int/lit8 v2, v0, 0x1
 
-    iget-object v2, p0, Lkotlin/coroutines/CombinedContext$writeReplace$1;->$index:Lkotlin/jvm/internal/Ref$IntRef;
+    iput v2, v1, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    add-int/lit8 v3, v1, 0x1
+    move-object v1, p2
 
-    iput v3, v2, Lkotlin/jvm/internal/Ref$IntRef;->element:I
+    check-cast v1, Lkotlin/coroutines/CoroutineContext;
 
-    move-object v2, p2
-
-    check-cast v2, Lkotlin/coroutines/CoroutineContext;
-
-    aput-object v2, v0, v1
+    aput-object v1, p1, v0
 
     return-void
 .end method

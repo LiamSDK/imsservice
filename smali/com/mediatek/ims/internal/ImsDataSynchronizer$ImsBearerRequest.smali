@@ -42,25 +42,25 @@
     .param p4, "request"    # I
     .param p5, "capability"    # Ljava/lang/String;
 
-    .line 610
+    .line 613
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 611
+    .line 614
     iput p1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mAid:I
 
-    .line 612
+    .line 615
     iput p2, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mAction:I
 
-    .line 613
+    .line 616
     iput p3, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mPhoneId:I
 
-    .line 614
+    .line 617
     iput p4, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mRequest:I
 
-    .line 615
+    .line 618
     iput-object p5, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mCapability:Ljava/lang/String;
 
-    .line 616
+    .line 619
     return-void
 .end method
 
@@ -69,7 +69,7 @@
 .method public getAction()I
     .locals 1
 
-    .line 623
+    .line 626
     iget v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mAction:I
 
     return v0
@@ -78,7 +78,7 @@
 .method public getAid()I
     .locals 1
 
-    .line 619
+    .line 622
     iget v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mAid:I
 
     return v0
@@ -87,7 +87,7 @@
 .method public getCapability()Ljava/lang/String;
     .locals 1
 
-    .line 635
+    .line 638
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mCapability:Ljava/lang/String;
 
     return-object v0
@@ -96,7 +96,7 @@
 .method public getPhoneId()I
     .locals 1
 
-    .line 627
+    .line 630
     iget v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mPhoneId:I
 
     return v0
@@ -105,7 +105,7 @@
 .method public getRequest()I
     .locals 1
 
-    .line 631
+    .line 634
     iget v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mRequest:I
 
     return v0
@@ -114,12 +114,12 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 639
+    .line 642
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 640
+    .line 643
     .local v0, "builder":Ljava/lang/StringBuilder;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -143,7 +143,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 641
+    .line 644
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -166,7 +166,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 642
+    .line 645
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -189,7 +189,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 643
+    .line 646
     iget v1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->mRequest:I
 
     packed-switch v1, :pswitch_data_0
@@ -197,7 +197,7 @@
     :pswitch_0
     goto :goto_0
 
-    .line 648
+    .line 651
     :pswitch_1
     const-string v1, " Request: EVENT_DISCONNECT"
 
@@ -205,16 +205,16 @@
 
     goto :goto_0
 
-    .line 645
+    .line 648
     :pswitch_2
     const-string v1, " Request: EVENT_CONNECT"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 646
+    .line 649
     nop
 
-    .line 651
+    .line 654
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -244,7 +244,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 652
+    .line 655
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

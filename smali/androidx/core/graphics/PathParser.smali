@@ -20,10 +20,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 795
+    .line 793
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 796
+    .line 794
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .param p0, "nodesFrom"    # [Landroidx/core/graphics/PathParser$PathDataNode;
     .param p1, "nodesTo"    # [Landroidx/core/graphics/PathParser$PathDataNode;
 
-    .line 137
+    .line 138
     const/4 v0, 0x0
 
     if-eqz p0, :cond_5
@@ -66,7 +66,7 @@
 
     goto :goto_2
 
-    .line 141
+    .line 142
     :cond_0
     array-length v1, p0
 
@@ -74,10 +74,10 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 142
+    .line 143
     return v0
 
-    .line 145
+    .line 146
     :cond_1
     const/4 v1, 0x0
 
@@ -87,7 +87,7 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 146
+    .line 147
     aget-object v2, p0, v1
 
     iget-char v2, v2, Landroidx/core/graphics/PathParser$PathDataNode;->mType:C
@@ -114,25 +114,25 @@
 
     goto :goto_1
 
-    .line 145
+    .line 146
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 148
+    .line 149
     :cond_3
     :goto_1
     return v0
 
-    .line 151
+    .line 152
     .end local v1    # "i":I
     :cond_4
     const/4 v0, 0x1
 
     return v0
 
-    .line 138
+    .line 139
     :cond_5
     :goto_2
     return v0
@@ -144,22 +144,22 @@
     .param p1, "start"    # I
     .param p2, "end"    # I
 
-    .line 54
+    .line 55
     if-gt p1, p2, :cond_1
 
-    .line 57
+    .line 58
     array-length v0, p0
 
-    .line 58
+    .line 59
     .local v0, "originalLength":I
     if-ltz p1, :cond_0
 
     if-gt p1, v0, :cond_0
 
-    .line 61
+    .line 62
     sub-int v1, p2, p1
 
-    .line 62
+    .line 63
     .local v1, "resultLength":I
     sub-int v2, v0, p1
 
@@ -167,20 +167,20 @@
 
     move-result v2
 
-    .line 63
+    .line 64
     .local v2, "copyLength":I
     new-array v3, v1, [F
 
-    .line 64
+    .line 65
     .local v3, "result":[F
     const/4 v4, 0x0
 
     invoke-static {p0, p1, v3, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 65
+    .line 66
     return-object v3
 
-    .line 59
+    .line 60
     .end local v1    # "resultLength":I
     .end local v2    # "copyLength":I
     .end local v3    # "result":[F
@@ -191,7 +191,7 @@
 
     throw v1
 
-    .line 55
+    .line 56
     .end local v0    # "originalLength":I
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -205,29 +205,29 @@
     .locals 6
     .param p0, "pathData"    # Ljava/lang/String;
 
-    .line 91
+    .line 92
     if-nez p0, :cond_0
 
-    .line 92
+    .line 93
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 94
+    .line 95
     :cond_0
     const/4 v0, 0x0
 
-    .line 95
+    .line 96
     .local v0, "start":I
     const/4 v1, 0x1
 
-    .line 97
+    .line 98
     .local v1, "end":I
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 98
+    .line 99
     .local v2, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroidx/core/graphics/PathParser$PathDataNode;>;"
     :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -238,12 +238,12 @@
 
     if-ge v1, v3, :cond_2
 
-    .line 99
+    .line 100
     invoke-static {p0, v1}, Landroidx/core/graphics/PathParser;->nextStart(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 100
+    .line 101
     invoke-virtual {p0, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
@@ -252,7 +252,7 @@
 
     move-result-object v3
 
-    .line 101
+    .line 102
     .local v3, "s":Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
@@ -260,12 +260,12 @@
 
     if-lez v5, :cond_1
 
-    .line 102
+    .line 103
     invoke-static {v3}, Landroidx/core/graphics/PathParser;->getFloats(Ljava/lang/String;)[F
 
     move-result-object v5
 
-    .line 103
+    .line 104
     .local v5, "val":[F
     invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
 
@@ -273,21 +273,21 @@
 
     invoke-static {v2, v4, v5}, Landroidx/core/graphics/PathParser;->addNode(Ljava/util/ArrayList;C[F)V
 
-    .line 106
+    .line 107
     .end local v5    # "val":[F
     :cond_1
     move v0, v1
 
-    .line 107
+    .line 108
     nop
 
     .end local v3    # "s":Ljava/lang/String;
     add-int/lit8 v1, v1, 0x1
 
-    .line 108
+    .line 109
     goto :goto_0
 
-    .line 109
+    .line 110
     :cond_2
     sub-int v3, v1, v0
 
@@ -301,7 +301,7 @@
 
     if-ge v0, v3, :cond_3
 
-    .line 110
+    .line 111
     invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
@@ -310,7 +310,7 @@
 
     invoke-static {v2, v3, v4}, Landroidx/core/graphics/PathParser;->addNode(Ljava/util/ArrayList;C[F)V
 
-    .line 112
+    .line 113
     :cond_3
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -331,38 +331,38 @@
     .locals 6
     .param p0, "pathData"    # Ljava/lang/String;
 
-    .line 73
+    .line 74
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    .line 74
+    .line 75
     .local v0, "path":Landroid/graphics/Path;
     invoke-static {p0}, Landroidx/core/graphics/PathParser;->createNodesFromPathData(Ljava/lang/String;)[Landroidx/core/graphics/PathParser$PathDataNode;
 
     move-result-object v1
 
-    .line 75
+    .line 76
     .local v1, "nodes":[Landroidx/core/graphics/PathParser$PathDataNode;
     if-eqz v1, :cond_0
 
-    .line 77
+    .line 78
     :try_start_0
     invoke-static {v1, v0}, Landroidx/core/graphics/PathParser$PathDataNode;->nodesToPath([Landroidx/core/graphics/PathParser$PathDataNode;Landroid/graphics/Path;)V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 80
+    .line 81
     nop
 
-    .line 81
+    .line 82
     return-object v0
 
-    .line 78
+    .line 79
     :catch_0
     move-exception v2
 
-    .line 79
+    .line 80
     .local v2, "e":Ljava/lang/RuntimeException;
     new-instance v3, Ljava/lang/RuntimeException;
 
@@ -388,7 +388,7 @@
 
     throw v3
 
-    .line 83
+    .line 84
     .end local v2    # "e":Ljava/lang/RuntimeException;
     :cond_0
     const/4 v2, 0x0
@@ -400,21 +400,21 @@
     .locals 4
     .param p0, "source"    # [Landroidx/core/graphics/PathParser$PathDataNode;
 
-    .line 120
+    .line 121
     if-nez p0, :cond_0
 
-    .line 121
+    .line 122
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 123
+    .line 124
     :cond_0
     array-length v0, p0
 
     new-array v0, v0, [Landroidx/core/graphics/PathParser$PathDataNode;
 
-    .line 124
+    .line 125
     .local v0, "copy":[Landroidx/core/graphics/PathParser$PathDataNode;
     const/4 v1, 0x0
 
@@ -424,7 +424,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 125
+    .line 126
     new-instance v2, Landroidx/core/graphics/PathParser$PathDataNode;
 
     aget-object v3, p0, v1
@@ -433,12 +433,12 @@
 
     aput-object v2, v0, v1
 
-    .line 124
+    .line 125
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 127
+    .line 128
     .end local v1    # "i":I
     :cond_1
     return-object v0
@@ -852,6 +852,8 @@
     .param p1, "end"    # I
 
     .line 174
+    nop
+
     :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 

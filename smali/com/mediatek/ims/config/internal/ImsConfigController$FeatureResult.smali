@@ -28,12 +28,12 @@
 .method private constructor <init>(Lcom/mediatek/ims/config/internal/ImsConfigController;)V
     .locals 0
 
-    .line 116
+    .line 115
     iput-object p1, p0, Lcom/mediatek/ims/config/internal/ImsConfigController$FeatureResult;->this$0:Lcom/mediatek/ims/config/internal/ImsConfigController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 119
+    .line 118
     new-instance p1, Ljava/lang/Object;
 
     invoke-direct {p1}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
     .param p1, "x0"    # Lcom/mediatek/ims/config/internal/ImsConfigController;
     .param p2, "x1"    # Lcom/mediatek/ims/config/internal/ImsConfigController$1;
 
-    .line 116
+    .line 115
     invoke-direct {p0, p1}, Lcom/mediatek/ims/config/internal/ImsConfigController$FeatureResult;-><init>(Lcom/mediatek/ims/config/internal/ImsConfigController;)V
 
     return-void

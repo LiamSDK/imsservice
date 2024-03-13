@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 883
+    .line 936
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 885
+    .line 938
     return-void
 .end method
 
@@ -29,15 +29,15 @@
     .locals 1
     .param p0, "onSharedElementsReadyListener"    # Ljava/lang/Object;
 
-    .line 899
+    .line 952
     move-object v0, p0
 
-    check-cast v0, Landroidx/core/app/SharedElementCallback$OnSharedElementsReadyListener;
+    check-cast v0, Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;
 
-    .line 900
-    invoke-interface {v0}, Landroidx/core/app/SharedElementCallback$OnSharedElementsReadyListener;->onSharedElementsReady()V
+    .line 953
+    invoke-interface {v0}, Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;->onSharedElementsReady()V
 
-    .line 901
+    .line 954
     return-void
 .end method
 
@@ -47,10 +47,10 @@
     .param p1, "permissions"    # [Ljava/lang/String;
     .param p2, "requestCode"    # I
 
-    .line 889
+    .line 942
     invoke-virtual {p0, p1, p2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
 
-    .line 890
+    .line 943
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .param p0, "activity"    # Landroid/app/Activity;
     .param p1, "permission"    # Ljava/lang/String;
 
-    .line 894
+    .line 947
     invoke-virtual {p0, p1}, Landroid/app/Activity;->shouldShowRequestPermissionRationale(Ljava/lang/String;)Z
 
     move-result v0

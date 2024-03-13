@@ -85,11 +85,11 @@
 
     .line 414
     .local v1, "data":Ljava/lang/String;
-    const/4 v2, 0x0
+    const-string v2, "call.id"
 
-    const-string v3, "call.id"
+    const/4 v3, 0x0
 
-    invoke-virtual {p2, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 

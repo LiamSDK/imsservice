@@ -22,7 +22,7 @@
 
     check-cast p1, Lcom/mediatek/ims/rcsua/Capability;
 
-    invoke-static {p1}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->lambda$triggerSipDelegateDeregistration$2(Lcom/mediatek/ims/rcsua/Capability;)Z
+    invoke-static {p1}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->lambda$triggerSipDelegateDeregistration$4(Lcom/mediatek/ims/rcsua/Capability;)Z
 
     move-result p1
 

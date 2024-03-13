@@ -23,7 +23,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCoroutineContextImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoroutineContextImpl.kt\nkotlin/coroutines/CombinedContext$Serialized\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,196:1\n12947#2,3:197\n*S KotlinDebug\n*F\n+ 1 CoroutineContextImpl.kt\nkotlin/coroutines/CombinedContext$Serialized\n*L\n193#1:197,3\n*E\n"
+    value = "SMAP\nCoroutineContextImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoroutineContextImpl.kt\nkotlin/coroutines/CombinedContext$Serialized\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,196:1\n12990#2,3:197\n*S KotlinDebug\n*F\n+ 1 CoroutineContextImpl.kt\nkotlin/coroutines/CombinedContext$Serialized\n*L\n193#1:197,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -125,8 +125,6 @@
     aget-object v6, v0, v5
 
     .local v6, "element$iv":Ljava/lang/Object;
-    add-int/lit8 v5, v5, 0x1
-
     move-object v7, v3
 
     check-cast v7, Lkotlin/coroutines/CoroutineContext;
@@ -141,15 +139,20 @@
     .local v9, "$i$a$-fold-CombinedContext$Serialized$readResolve$1":I
     invoke-interface {v7, v8}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
-    move-result-object v3
+    move-result-object v7
 
+    .line 198
     .end local v7    # "p0":Lkotlin/coroutines/CoroutineContext;
     .end local v8    # "p1":Lkotlin/coroutines/CoroutineContext;
     .end local v9    # "$i$a$-fold-CombinedContext$Serialized$readResolve$1":I
+    move-object v3, v7
+
+    .end local v6    # "element$iv":Ljava/lang/Object;
+    add-int/lit8 v5, v5, 0x1
+
     goto :goto_0
 
     .line 199
-    .end local v6    # "element$iv":Ljava/lang/Object;
     :cond_0
     nop
 

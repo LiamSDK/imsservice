@@ -46,7 +46,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -97,6 +97,10 @@
     .param p2, "seed2"    # I
 
     .line 28
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
     not-int v5, p1
 
     shl-int/lit8 v0, p1, 0xa
@@ -104,10 +108,6 @@
     ushr-int/lit8 v1, p2, 0x4
 
     xor-int v6, v0, v1
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
 
     move-object v0, p0
 
@@ -121,7 +121,7 @@
 .end method
 
 .method public constructor <init>(IIIIII)V
-    .locals 4
+    .locals 3
     .param p1, "x"    # I
     .param p2, "y"    # I
     .param p3, "z"    # I
@@ -177,25 +177,27 @@
     if-eqz v0, :cond_2
 
     .line 34
-    const/16 v0, 0x40
+    nop
 
     :goto_1
+    const/16 v0, 0x40
+
     if-ge v1, v0, :cond_1
 
-    add-int/lit8 v2, v1, 0x1
+    move v0, v1
 
     .line 61
-    .local v1, "it":I
-    const/4 v3, 0x0
+    .local v0, "it":I
+    const/4 v2, 0x0
 
     .line 34
-    .local v3, "$i$a$-repeat-XorWowRandom$2":I
+    .local v2, "$i$a$-repeat-XorWowRandom$2":I
     invoke-virtual {p0}, Lkotlin/random/XorWowRandom;->nextInt()I
 
-    move v1, v2
+    .end local v0    # "it":I
+    .end local v2    # "$i$a$-repeat-XorWowRandom$2":I
+    add-int/lit8 v1, v1, 0x1
 
-    .end local v1    # "it":I
-    .end local v3    # "$i$a$-repeat-XorWowRandom$2":I
     goto :goto_1
 
     .line 35

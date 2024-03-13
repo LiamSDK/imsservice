@@ -27,8 +27,13 @@
 .method constructor <init>(Lcom/mediatek/ims/rcs/MtkSipDelegate;Landroid/telephony/ims/SipMessage;)V
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/rcs/MtkSipDelegate;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
-    .line 104
+    .line 106
     iput-object p1, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$1;->this$0:Lcom/mediatek/ims/rcs/MtkSipDelegate;
 
     iput-object p2, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$1;->val$message:Landroid/telephony/ims/SipMessage;
@@ -43,7 +48,7 @@
 .method public run()V
     .locals 3
 
-    .line 107
+    .line 109
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$1;->this$0:Lcom/mediatek/ims/rcs/MtkSipDelegate;
 
     invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipDelegate;->access$000(Lcom/mediatek/ims/rcs/MtkSipDelegate;)Landroid/telephony/ims/DelegateMessageCallback;
@@ -52,16 +57,16 @@
 
     iget-object v1, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$1;->val$message:Landroid/telephony/ims/SipMessage;
 
-    .line 108
+    .line 110
     invoke-virtual {v1}, Landroid/telephony/ims/SipMessage;->getViaBranchParameter()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 107
+    .line 109
     const/16 v2, 0x8
 
     invoke-interface {v0, v1, v2}, Landroid/telephony/ims/DelegateMessageCallback;->onMessageSendFailure(Ljava/lang/String;I)V
 
-    .line 109
+    .line 111
     return-void
 .end method

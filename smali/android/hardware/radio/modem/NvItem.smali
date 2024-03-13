@@ -13,6 +13,9 @@
     }
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # static fields
 .field public static final CDMA_1X_ADVANCED_ENABLED:I = 0x39

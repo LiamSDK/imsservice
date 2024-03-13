@@ -28,7 +28,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 2133
+    .line 2131
     :try_start_0
     const-class v0, Landroid/view/View;
 
@@ -40,19 +40,19 @@
 
     sput-object v0, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sViewAttachInfoField:Ljava/lang/reflect/Field;
 
-    .line 2134
+    .line 2132
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2135
+    .line 2133
     const-string v0, "android.view.View$AttachInfo"
 
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 2136
+    .line 2134
     .local v0, "sAttachInfoClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-string v2, "mStableInsets"
 
@@ -62,10 +62,10 @@
 
     sput-object v2, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sStableInsets:Ljava/lang/reflect/Field;
 
-    .line 2137
+    .line 2135
     invoke-virtual {v2, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2138
+    .line 2136
     const-string v2, "mContentInsets"
 
     invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -74,23 +74,23 @@
 
     sput-object v2, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sContentInsets:Ljava/lang/reflect/Field;
 
-    .line 2139
+    .line 2137
     invoke-virtual {v2, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 2140
+    .line 2138
     sput-boolean v1, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sReflectionSucceeded:Z
     :try_end_0
     .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2143
+    .line 2141
     .end local v0    # "sAttachInfoClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     goto :goto_0
 
-    .line 2141
+    .line 2139
     :catch_0
     move-exception v0
 
-    .line 2142
+    .line 2140
     .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -118,7 +118,7 @@
 
     invoke-static {v2, v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2144
+    .line 2142
     .end local v0    # "e":Ljava/lang/ReflectiveOperationException;
     :goto_0
     return-void
@@ -127,10 +127,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 2122
+    .line 2120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2124
+    .line 2122
     return-void
 .end method
 
@@ -138,7 +138,7 @@
     .locals 7
     .param p0, "v"    # Landroid/view/View;
 
-    .line 2150
+    .line 2148
     sget-boolean v0, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sReflectionSucceeded:Z
 
     const/4 v1, 0x0
@@ -153,13 +153,13 @@
 
     goto :goto_1
 
-    .line 2154
+    .line 2152
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 2156
+    .line 2154
     .local v0, "rootView":Landroid/view/View;
     :try_start_0
     sget-object v2, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sViewAttachInfoField:Ljava/lang/reflect/Field;
@@ -168,11 +168,11 @@
 
     move-result-object v2
 
-    .line 2157
+    .line 2155
     .local v2, "attachInfo":Ljava/lang/Object;
     if-eqz v2, :cond_1
 
-    .line 2158
+    .line 2156
     sget-object v3, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sStableInsets:Ljava/lang/reflect/Field;
 
     invoke-virtual {v3, v2}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -181,7 +181,7 @@
 
     check-cast v3, Landroid/graphics/Rect;
 
-    .line 2159
+    .line 2157
     .local v3, "stableInsets":Landroid/graphics/Rect;
     sget-object v4, Landroidx/core/view/WindowInsetsCompat$Api21ReflectionHolder;->sContentInsets:Ljava/lang/reflect/Field;
 
@@ -191,18 +191,18 @@
 
     check-cast v4, Landroid/graphics/Rect;
 
-    .line 2160
+    .line 2158
     .local v4, "visibleInsets":Landroid/graphics/Rect;
     if-eqz v3, :cond_1
 
     if-eqz v4, :cond_1
 
-    .line 2161
+    .line 2159
     new-instance v5, Landroidx/core/view/WindowInsetsCompat$Builder;
 
     invoke-direct {v5}, Landroidx/core/view/WindowInsetsCompat$Builder;-><init>()V
 
-    .line 2162
+    .line 2160
     invoke-static {v3}, Landroidx/core/graphics/Insets;->of(Landroid/graphics/Rect;)Landroidx/core/graphics/Insets;
 
     move-result-object v6
@@ -211,7 +211,7 @@
 
     move-result-object v5
 
-    .line 2163
+    .line 2161
     invoke-static {v4}, Landroidx/core/graphics/Insets;->of(Landroid/graphics/Rect;)Landroidx/core/graphics/Insets;
 
     move-result-object v6
@@ -220,16 +220,16 @@
 
     move-result-object v5
 
-    .line 2164
+    .line 2162
     invoke-virtual {v5}, Landroidx/core/view/WindowInsetsCompat$Builder;->build()Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object v5
 
-    .line 2168
+    .line 2166
     .local v5, "insets":Landroidx/core/view/WindowInsetsCompat;
     invoke-virtual {v5, v5}, Landroidx/core/view/WindowInsetsCompat;->setRootWindowInsets(Landroidx/core/view/WindowInsetsCompat;)V
 
-    .line 2169
+    .line 2167
     invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v6
@@ -238,10 +238,10 @@
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2170
+    .line 2168
     return-object v5
 
-    .line 2175
+    .line 2173
     .end local v2    # "attachInfo":Ljava/lang/Object;
     .end local v3    # "stableInsets":Landroid/graphics/Rect;
     .end local v4    # "visibleInsets":Landroid/graphics/Rect;
@@ -249,11 +249,11 @@
     :cond_1
     goto :goto_0
 
-    .line 2173
+    .line 2171
     :catch_0
     move-exception v2
 
-    .line 2174
+    .line 2172
     .local v2, "e":Ljava/lang/IllegalAccessException;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -281,12 +281,12 @@
 
     invoke-static {v4, v3, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2176
+    .line 2174
     .end local v2    # "e":Ljava/lang/IllegalAccessException;
     :goto_0
     return-object v1
 
-    .line 2151
+    .line 2149
     .end local v0    # "rootView":Landroid/view/View;
     :cond_2
     :goto_1

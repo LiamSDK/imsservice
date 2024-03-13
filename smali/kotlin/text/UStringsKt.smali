@@ -46,7 +46,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -56,7 +56,7 @@
 # direct methods
 .method public static final toString-JSWoG40(JI)Ljava/lang/String;
     .locals 1
-    .param p0, "$this$toString"    # J
+    .param p0, "$this$toString_u2dJSWoG40"    # J
     .param p2, "radix"    # I
 
     .line 48
@@ -73,7 +73,7 @@
 
 .method public static final toString-LxnNnR4(BI)Ljava/lang/String;
     .locals 2
-    .param p0, "$this$toString"    # B
+    .param p0, "$this$toString_u2dLxnNnR4"    # B
     .param p1, "radix"    # I
 
     .line 18
@@ -96,7 +96,7 @@
 
 .method public static final toString-V7xB4Y4(II)Ljava/lang/String;
     .locals 4
-    .param p0, "$this$toString"    # I
+    .param p0, "$this$toString_u2dV7xB4Y4"    # I
     .param p1, "radix"    # I
 
     .line 39
@@ -123,7 +123,7 @@
 
 .method public static final toString-olVBNx4(SI)Ljava/lang/String;
     .locals 2
-    .param p0, "$this$toString"    # S
+    .param p0, "$this$toString_u2dolVBNx4"    # S
     .param p1, "radix"    # I
 
     .line 28
@@ -243,11 +243,8 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    return-object v1
-
-    :cond_0
     invoke-virtual {v0}, Lkotlin/UInt;->unbox-impl()I
 
     move-result v0
@@ -260,16 +257,16 @@
 
     move-result v2
 
-    invoke-static {v0, v2}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v0, v2}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v2
 
-    if-lez v2, :cond_1
+    if-lez v2, :cond_0
 
     return-object v1
 
     .line 143
-    :cond_1
+    :cond_0
     int-to-byte v1, v0
 
     invoke-static {v1}, Lkotlin/UByte;->constructor-impl(B)B
@@ -280,6 +277,11 @@
 
     move-result-object v1
 
+    return-object v1
+
+    .line 141
+    .end local v0    # "int":I
+    :cond_1
     return-object v1
 .end method
 
@@ -365,7 +367,7 @@
 .end method
 
 .method public static final toUIntOrNull(Ljava/lang/String;I)Lkotlin/UInt;
-    .locals 14
+    .locals 13
     .param p0, "$this$toUIntOrNull"    # Ljava/lang/String;
     .param p1, "radix"    # I
 
@@ -462,95 +464,97 @@
     .local v8, "result":I
     move v9, v3
 
-    :cond_4
+    .local v9, "i":I
+    :goto_2
     if-ge v9, v0, :cond_8
 
-    move v10, v9
-
-    .local v10, "i":I
-    add-int/lit8 v9, v9, 0x1
-
     .line 207
-    invoke-virtual {p0, v10}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p0, v9}, Ljava/lang/String;->charAt(I)C
 
-    move-result v11
+    move-result v10
 
-    invoke-static {v11, p1}, Lkotlin/text/CharsKt;->digitOf(CI)I
+    invoke-static {v10, p1}, Lkotlin/text/CharsKt;->digitOf(CI)I
 
-    move-result v11
+    move-result v10
 
     .line 209
-    .local v11, "digit":I
-    if-gez v11, :cond_5
+    .local v10, "digit":I
+    if-gez v10, :cond_4
 
     return-object v1
 
     .line 210
-    :cond_5
-    invoke-static {v8, v6}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    :cond_4
+    invoke-static {v8, v6}, Ljava/lang/Integer;->compareUnsigned(II)I
 
-    move-result v12
+    move-result v11
 
-    if-lez v12, :cond_7
+    if-lez v11, :cond_6
 
     .line 211
-    if-ne v6, v5, :cond_6
+    if-ne v6, v5, :cond_5
 
     .line 212
-    invoke-static {v2, v7}, Lkotlin/UnsignedKt;->uintDivide-J1ME1BU(II)I
+    invoke-static {v2, v7}, Ljava/lang/Integer;->divideUnsigned(II)I
 
     move-result v6
 
     .line 214
-    invoke-static {v8, v6}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v8, v6}, Ljava/lang/Integer;->compareUnsigned(II)I
 
-    move-result v12
+    move-result v11
 
-    if-lez v12, :cond_7
+    if-lez v11, :cond_6
 
     .line 215
     return-object v1
 
     .line 218
-    :cond_6
+    :cond_5
     return-object v1
 
     .line 222
-    :cond_7
-    mul-int v12, v8, v7
+    :cond_6
+    mul-int v11, v8, v7
+
+    invoke-static {v11}, Lkotlin/UInt;->constructor-impl(I)I
+
+    move-result v8
+
+    .line 224
+    move v11, v8
+
+    .line 225
+    .local v11, "beforeAdding":I
+    invoke-static {v10}, Lkotlin/UInt;->constructor-impl(I)I
+
+    move-result v12
+
+    add-int/2addr v12, v8
 
     invoke-static {v12}, Lkotlin/UInt;->constructor-impl(I)I
 
     move-result v8
 
-    .line 224
-    move v12, v8
-
-    .line 225
-    .local v12, "beforeAdding":I
-    invoke-static {v11}, Lkotlin/UInt;->constructor-impl(I)I
-
-    move-result v13
-
-    add-int/2addr v13, v8
-
-    invoke-static {v13}, Lkotlin/UInt;->constructor-impl(I)I
-
-    move-result v8
-
     .line 226
-    invoke-static {v8, v12}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v8, v11}, Ljava/lang/Integer;->compareUnsigned(II)I
 
-    move-result v13
+    move-result v12
 
-    if-gez v13, :cond_4
+    if-gez v12, :cond_7
 
     return-object v1
 
+    .line 206
+    .end local v10    # "digit":I
+    .end local v11    # "beforeAdding":I
+    :cond_7
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_2
+
     .line 229
-    .end local v10    # "i":I
-    .end local v11    # "digit":I
-    .end local v12    # "beforeAdding":I
+    .end local v9    # "i":I
     :cond_8
     invoke-static {v8}, Lkotlin/UInt;->box-impl(I)Lkotlin/UInt;
 
@@ -641,7 +645,7 @@
 .end method
 
 .method public static final toULongOrNull(Ljava/lang/String;I)Lkotlin/ULong;
-    .locals 23
+    .locals 22
     .param p0, "$this$toULongOrNull"    # Ljava/lang/String;
     .param p1, "radix"    # I
 
@@ -742,37 +746,30 @@
 
     .line 271
     .local v14, "result":J
-    move v3, v6
+    move/from16 v16, v6
 
+    move/from16 v3, v16
+
+    .local v3, "i":I
     :goto_2
     if-ge v3, v2, :cond_9
 
-    move/from16 v17, v3
-
-    .local v17, "i":I
-    add-int/lit8 v3, v3, 0x1
-
     .line 272
-    move/from16 v18, v2
+    move/from16 v17, v2
 
-    move/from16 v2, v17
+    .end local v2    # "length":I
+    .local v17, "length":I
+    invoke-virtual {v0, v3}, Ljava/lang/String;->charAt(I)C
 
-    move/from16 v17, v3
+    move-result v2
 
-    .end local v17    # "i":I
-    .local v2, "i":I
-    .local v18, "length":I
-    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
+    invoke-static {v2, v1}, Lkotlin/text/CharsKt;->digitOf(CI)I
 
-    move-result v3
-
-    invoke-static {v3, v1}, Lkotlin/text/CharsKt;->digitOf(CI)I
-
-    move-result v3
+    move-result v2
 
     .line 274
-    .local v3, "digit":I
-    if-gez v3, :cond_4
+    .local v2, "digit":I
+    if-gez v2, :cond_4
 
     const/16 v16, 0x0
 
@@ -780,28 +777,28 @@
 
     .line 275
     :cond_4
-    invoke-static {v14, v15, v10, v11}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v14, v15, v10, v11}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
-    move-result v19
+    move-result v18
 
-    if-lez v19, :cond_7
+    if-lez v18, :cond_7
 
     .line 276
-    cmp-long v19, v10, v8
+    cmp-long v18, v10, v8
 
-    if-nez v19, :cond_6
+    if-nez v18, :cond_6
 
     .line 277
-    invoke-static {v4, v5, v12, v13}, Lkotlin/UnsignedKt;->ulongDivide-eb3DHEI(JJ)J
+    invoke-static {v4, v5, v12, v13}, Ljava/lang/Long;->divideUnsigned(JJ)J
 
     move-result-wide v10
 
     .line 279
-    invoke-static {v14, v15, v10, v11}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v14, v15, v10, v11}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
-    move-result v19
+    move-result v18
 
-    if-lez v19, :cond_5
+    if-lez v18, :cond_5
 
     .line 280
     const/16 v16, 0x0
@@ -823,26 +820,26 @@
     .line 287
     :cond_7
     :goto_3
-    mul-long v19, v14, v12
+    mul-long v18, v14, v12
 
-    invoke-static/range {v19 .. v20}, Lkotlin/ULong;->constructor-impl(J)J
+    invoke-static/range {v18 .. v19}, Lkotlin/ULong;->constructor-impl(J)J
 
     move-result-wide v14
 
     .line 289
-    move-wide/from16 v19, v14
+    move-wide/from16 v18, v14
 
     .line 290
-    .local v19, "beforeAdding":J
-    invoke-static {v3}, Lkotlin/UInt;->constructor-impl(I)I
+    .local v18, "beforeAdding":J
+    invoke-static {v2}, Lkotlin/UInt;->constructor-impl(I)I
 
     move-result v0
 
     int-to-long v0, v0
 
-    const-wide v21, 0xffffffffL
+    const-wide v20, 0xffffffffL
 
-    and-long v0, v0, v21
+    and-long v0, v0, v20
 
     invoke-static {v0, v1}, Lkotlin/ULong;->constructor-impl(J)J
 
@@ -855,15 +852,15 @@
     move-result-wide v14
 
     .line 291
-    move-wide/from16 v0, v19
+    move-wide/from16 v0, v18
 
-    .end local v19    # "beforeAdding":J
+    .end local v18    # "beforeAdding":J
     .local v0, "beforeAdding":J
-    invoke-static {v14, v15, v0, v1}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v14, v15, v0, v1}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
-    move-result v19
+    move-result v18
 
-    if-gez v19, :cond_8
+    if-gez v18, :cond_8
 
     const/16 v16, 0x0
 
@@ -872,20 +869,22 @@
     :cond_8
     const/16 v16, 0x0
 
+    .line 271
+    .end local v0    # "beforeAdding":J
+    .end local v2    # "digit":I
+    add-int/lit8 v3, v3, 0x1
+
     move-object/from16 v0, p0
 
     move/from16 v1, p1
 
-    move/from16 v3, v17
-
-    move/from16 v2, v18
+    move/from16 v2, v17
 
     goto :goto_2
 
     .line 294
-    .end local v0    # "beforeAdding":J
-    .end local v3    # "digit":I
-    .end local v18    # "length":I
+    .end local v3    # "i":I
+    .end local v17    # "length":I
     .local v2, "length":I
     :cond_9
     invoke-static {v14, v15}, Lkotlin/ULong;->box-impl(J)Lkotlin/ULong;
@@ -992,11 +991,8 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    return-object v1
-
-    :cond_0
     invoke-virtual {v0}, Lkotlin/UInt;->unbox-impl()I
 
     move-result v0
@@ -1009,16 +1005,16 @@
 
     move-result v2
 
-    invoke-static {v0, v2}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v0, v2}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v2
 
-    if-lez v2, :cond_1
+    if-lez v2, :cond_0
 
     return-object v1
 
     .line 165
-    :cond_1
+    :cond_0
     int-to-short v1, v0
 
     invoke-static {v1}, Lkotlin/UShort;->constructor-impl(S)S
@@ -1029,5 +1025,10 @@
 
     move-result-object v1
 
+    return-object v1
+
+    .line 163
+    .end local v0    # "int":I
+    :cond_1
     return-object v1
 .end method

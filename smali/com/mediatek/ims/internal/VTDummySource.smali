@@ -31,24 +31,24 @@
     .line 65
     const-string v0, "[getAllCameraResolutions] "
 
-    const-string v1, "VT SRC_Dummy"
+    const-string v1, "[STC] [getAllCameraResolutions] Start"
 
-    const-string v2, "[STC] [getAllCameraResolutions] Start"
+    const-string v2, "VT SRC_Dummy"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 67
-    sget-object v2, Lcom/mediatek/ims/internal/VTDummySource;->sCameraResolutions:[Lcom/mediatek/ims/internal/VTSource$Resolution;
+    sget-object v1, Lcom/mediatek/ims/internal/VTDummySource;->sCameraResolutions:[Lcom/mediatek/ims/internal/VTSource$Resolution;
 
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
     .line 68
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 71
-    .local v2, "sensorResolutions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/mediatek/ims/internal/VTSource$Resolution;>;"
+    .local v1, "sensorResolutions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/mediatek/ims/internal/VTSource$Resolution;>;"
     :try_start_0
     new-instance v3, Lcom/mediatek/ims/internal/VTSource$Resolution;
 
@@ -95,10 +95,10 @@
 
     move-result-object v6
 
-    invoke-static {v1, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 78
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 80
     new-instance v6, Lcom/mediatek/ims/internal/VTSource$Resolution;
@@ -142,10 +142,10 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 87
-    invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -180,19 +180,19 @@
 
     move-result-object v3
 
-    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 92
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
     .line 93
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
@@ -203,7 +203,7 @@
     .line 94
     sget-object v0, Lcom/mediatek/ims/internal/VTDummySource;->sCameraResolutions:[Lcom/mediatek/ims/internal/VTSource$Resolution;
 
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
@@ -224,7 +224,7 @@
     move-result-object v0
 
     .line 97
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
@@ -237,14 +237,14 @@
     move-result-object v0
 
     .line 96
-    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 99
-    .end local v2    # "sensorResolutions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/mediatek/ims/internal/VTSource$Resolution;>;"
+    .end local v1    # "sensorResolutions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/mediatek/ims/internal/VTSource$Resolution;>;"
     :cond_1
     const-string v0, "[STC] [getAllCameraResolutions] Finish"
 
-    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 100
     sget-object v0, Lcom/mediatek/ims/internal/VTDummySource;->sCameraResolutions:[Lcom/mediatek/ims/internal/VTSource$Resolution;
@@ -304,13 +304,6 @@
     return-object v0
 .end method
 
-.method public hideMe()V
-    .locals 0
-
-    .line 215
-    return-void
-.end method
-
 .method public open(Ljava/lang/String;)V
     .locals 0
     .param p1, "cameraId"    # Ljava/lang/String;
@@ -330,7 +323,7 @@
     .locals 0
     .param p1, "degree"    # I
 
-    .line 229
+    .line 215
     return-void
 .end method
 
@@ -363,13 +356,6 @@
     .param p1, "zoomValue"    # F
 
     .line 177
-    return-void
-.end method
-
-.method public showMe()V
-    .locals 0
-
-    .line 222
     return-void
 .end method
 

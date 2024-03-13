@@ -38,7 +38,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -83,6 +83,6 @@
         }
     .end annotation
 
-    .line 1162
+    .line 1163
     return-object p1
 .end method

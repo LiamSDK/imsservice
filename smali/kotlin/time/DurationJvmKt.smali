@@ -35,7 +35,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -105,7 +105,7 @@
 
     move-object v1, v0
 
-    .local v1, "$this$createFormatForDecimals_u24lambda_u2d0":Ljava/text/DecimalFormat;
+    .local v1, "$this$createFormatForDecimals_u24lambda_u240":Ljava/text/DecimalFormat;
     const/4 v2, 0x0
 
     .line 17
@@ -124,7 +124,7 @@
     nop
 
     .line 16
-    .end local v1    # "$this$createFormatForDecimals_u24lambda_u2d0":Ljava/text/DecimalFormat;
+    .end local v1    # "$this$createFormatForDecimals_u24lambda_u240":Ljava/text/DecimalFormat;
     .end local v2    # "$i$a$-apply-DurationJvmKt$createFormatForDecimals$1":I
     nop
 
@@ -165,10 +165,17 @@
     .end local v1    # "$i$a$-getOrSet-DurationJvmKt$formatToExactDecimals$format$1":I
     invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
+    goto :goto_0
+
     :cond_0
+    const-string v0, "get() ?: default().also(this::set)"
+
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_0
     check-cast v1, Ljava/text/DecimalFormat;
 
-    goto :goto_0
+    goto :goto_1
 
     .line 25
     :cond_1
@@ -177,7 +184,7 @@
     move-result-object v1
 
     .line 22
-    :goto_0
+    :goto_1
     move-object v0, v1
 
     .line 26
@@ -209,7 +216,7 @@
     move-object v1, v0
 
     .line 34
-    .local v1, "$this$formatUpToDecimals_u24lambda_u2d2":Ljava/text/DecimalFormat;
+    .local v1, "$this$formatUpToDecimals_u24lambda_u242":Ljava/text/DecimalFormat;
     const/4 v2, 0x0
 
     .line 31
@@ -217,7 +224,7 @@
     invoke-virtual {v1, p2}, Ljava/text/DecimalFormat;->setMaximumFractionDigits(I)V
 
     .line 32
-    .end local v1    # "$this$formatUpToDecimals_u24lambda_u2d2":Ljava/text/DecimalFormat;
+    .end local v1    # "$this$formatUpToDecimals_u24lambda_u242":Ljava/text/DecimalFormat;
     .end local v2    # "$i$a$-apply-DurationJvmKt$formatUpToDecimals$1":I
     invoke-virtual {v0, p0, p1}, Ljava/text/DecimalFormat;->format(D)Ljava/lang/String;
 

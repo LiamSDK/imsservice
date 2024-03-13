@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/mediatek/ims/internal/DialogEventPackageReceiver$ListenerBase;,
-        Lcom/mediatek/ims/internal/DialogEventPackageReceiver$Listener;
+        Lcom/mediatek/ims/internal/DialogEventPackageReceiver$Listener;,
+        Lcom/mediatek/ims/internal/DialogEventPackageReceiver$ListenerBase;
     }
 .end annotation
 

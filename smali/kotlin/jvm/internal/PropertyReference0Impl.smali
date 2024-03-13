@@ -58,12 +58,14 @@
 
     check-cast v0, Lkotlin/jvm/internal/ClassBasedDeclarationContainer;
 
+    .line 17
     invoke-interface {v0}, Lkotlin/jvm/internal/ClassBasedDeclarationContainer;->getJClass()Ljava/lang/Class;
 
     move-result-object v2
 
     instance-of v0, p1, Lkotlin/reflect/KClass;
 
+    .line 15
     xor-int/lit8 v5, v0, 0x1
 
     move-object v0, p0

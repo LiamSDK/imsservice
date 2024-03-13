@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 709
+    .line 707
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 711
+    .line 709
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "remoteInput"    # Ljava/lang/Object;
 
-    .line 715
+    .line 713
     move-object v0, p0
 
     check-cast v0, Landroid/app/RemoteInput;
@@ -46,7 +46,7 @@
     .param p0, "builder"    # Landroid/app/RemoteInput$Builder;
     .param p1, "editChoicesBeforeSending"    # I
 
-    .line 721
+    .line 719
     invoke-virtual {p0, p1}, Landroid/app/RemoteInput$Builder;->setEditChoicesBeforeSending(I)Landroid/app/RemoteInput$Builder;
 
     move-result-object v0

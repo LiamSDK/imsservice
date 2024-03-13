@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/view/MenuItemCompat$Api26Impl;,
-        Landroidx/core/view/MenuItemCompat$OnActionExpandListener;
+        Landroidx/core/view/MenuItemCompat$OnActionExpandListener;,
+        Landroidx/core/view/MenuItemCompat$Api26Impl;
     }
 .end annotation
 
@@ -128,7 +128,7 @@
 .end method
 
 .method public static getAlphabeticModifiers(Landroid/view/MenuItem;)I
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
 
     .line 507
@@ -149,11 +149,7 @@
 
     .line 511
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 512
     invoke-static {p0}, Landroidx/core/view/MenuItemCompat$Api26Impl;->getAlphabeticModifiers(Landroid/view/MenuItem;)I
@@ -161,16 +157,10 @@
     move-result v0
 
     return v0
-
-    .line 514
-    :cond_1
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public static getContentDescription(Landroid/view/MenuItem;)Ljava/lang/CharSequence;
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
 
     .line 346
@@ -191,11 +181,7 @@
 
     .line 350
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 351
     invoke-static {p0}, Landroidx/core/view/MenuItemCompat$Api26Impl;->getContentDescription(Landroid/view/MenuItem;)Ljava/lang/CharSequence;
@@ -203,16 +189,10 @@
     move-result-object v0
 
     return-object v0
-
-    .line 353
-    :cond_1
-    const/4 v0, 0x0
-
-    return-object v0
 .end method
 
 .method public static getIconTintList(Landroid/view/MenuItem;)Landroid/content/res/ColorStateList;
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
 
     .line 546
@@ -233,11 +213,7 @@
 
     .line 550
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 551
     invoke-static {p0}, Landroidx/core/view/MenuItemCompat$Api26Impl;->getIconTintList(Landroid/view/MenuItem;)Landroid/content/res/ColorStateList;
@@ -245,16 +221,10 @@
     move-result-object v0
 
     return-object v0
-
-    .line 553
-    :cond_1
-    const/4 v0, 0x0
-
-    return-object v0
 .end method
 
 .method public static getIconTintMode(Landroid/view/MenuItem;)Landroid/graphics/PorterDuff$Mode;
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
 
     .line 584
@@ -275,11 +245,7 @@
 
     .line 588
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 589
     invoke-static {p0}, Landroidx/core/view/MenuItemCompat$Api26Impl;->getIconTintMode(Landroid/view/MenuItem;)Landroid/graphics/PorterDuff$Mode;
@@ -287,16 +253,10 @@
     move-result-object v0
 
     return-object v0
-
-    .line 591
-    :cond_1
-    const/4 v0, 0x0
-
-    return-object v0
 .end method
 
 .method public static getNumericModifiers(Landroid/view/MenuItem;)I
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
 
     .line 457
@@ -317,11 +277,7 @@
 
     .line 461
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 462
     invoke-static {p0}, Landroidx/core/view/MenuItemCompat$Api26Impl;->getNumericModifiers(Landroid/view/MenuItem;)I
@@ -329,16 +285,10 @@
     move-result v0
 
     return v0
-
-    .line 464
-    :cond_1
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public static getTooltipText(Landroid/view/MenuItem;)Ljava/lang/CharSequence;
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
 
     .line 378
@@ -359,22 +309,12 @@
 
     .line 382
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 383
     invoke-static {p0}, Landroidx/core/view/MenuItemCompat$Api26Impl;->getTooltipText(Landroid/view/MenuItem;)Ljava/lang/CharSequence;
 
     move-result-object v0
-
-    return-object v0
-
-    .line 385
-    :cond_1
-    const/4 v0, 0x0
 
     return-object v0
 .end method
@@ -457,7 +397,7 @@
 .end method
 
 .method public static setAlphabeticShortcut(Landroid/view/MenuItem;CI)V
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
     .param p1, "alphaChar"    # C
     .param p2, "alphaModifiers"    # I
@@ -478,23 +418,18 @@
 
     .line 490
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 491
     invoke-static {p0, p1, p2}, Landroidx/core/view/MenuItemCompat$Api26Impl;->setAlphabeticShortcut(Landroid/view/MenuItem;CI)Landroid/view/MenuItem;
 
     .line 493
-    :cond_1
     :goto_0
     return-void
 .end method
 
 .method public static setContentDescription(Landroid/view/MenuItem;Ljava/lang/CharSequence;)V
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
     .param p1, "contentDescription"    # Ljava/lang/CharSequence;
 
@@ -514,23 +449,18 @@
 
     .line 333
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 334
     invoke-static {p0, p1}, Landroidx/core/view/MenuItemCompat$Api26Impl;->setContentDescription(Landroid/view/MenuItem;Ljava/lang/CharSequence;)Landroid/view/MenuItem;
 
     .line 336
-    :cond_1
     :goto_0
     return-void
 .end method
 
 .method public static setIconTintList(Landroid/view/MenuItem;Landroid/content/res/ColorStateList;)V
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
     .param p1, "tint"    # Landroid/content/res/ColorStateList;
 
@@ -550,23 +480,18 @@
 
     .line 534
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 535
     invoke-static {p0, p1}, Landroidx/core/view/MenuItemCompat$Api26Impl;->setIconTintList(Landroid/view/MenuItem;Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
 
     .line 537
-    :cond_1
     :goto_0
     return-void
 .end method
 
 .method public static setIconTintMode(Landroid/view/MenuItem;Landroid/graphics/PorterDuff$Mode;)V
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
     .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
@@ -586,23 +511,18 @@
 
     .line 570
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 571
     invoke-static {p0, p1}, Landroidx/core/view/MenuItemCompat$Api26Impl;->setIconTintMode(Landroid/view/MenuItem;Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
 
     .line 573
-    :cond_1
     :goto_0
     return-void
 .end method
 
 .method public static setNumericShortcut(Landroid/view/MenuItem;CI)V
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
     .param p1, "numericChar"    # C
     .param p2, "numericModifiers"    # I
@@ -623,17 +543,12 @@
 
     .line 440
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 441
     invoke-static {p0, p1, p2}, Landroidx/core/view/MenuItemCompat$Api26Impl;->setNumericShortcut(Landroid/view/MenuItem;CI)Landroid/view/MenuItem;
 
     .line 443
-    :cond_1
     :goto_0
     return-void
 .end method
@@ -658,7 +573,7 @@
 .end method
 
 .method public static setShortcut(Landroid/view/MenuItem;CCII)V
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
     .param p1, "numericChar"    # C
     .param p2, "alphaChar"    # C
@@ -681,17 +596,12 @@
 
     .line 417
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 418
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/core/view/MenuItemCompat$Api26Impl;->setShortcut(Landroid/view/MenuItem;CCII)Landroid/view/MenuItem;
 
     .line 420
-    :cond_1
     :goto_0
     return-void
 .end method
@@ -711,7 +621,7 @@
 .end method
 
 .method public static setTooltipText(Landroid/view/MenuItem;Ljava/lang/CharSequence;)V
-    .locals 2
+    .locals 1
     .param p0, "item"    # Landroid/view/MenuItem;
     .param p1, "tooltipText"    # Ljava/lang/CharSequence;
 
@@ -731,17 +641,12 @@
 
     .line 365
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 366
     invoke-static {p0, p1}, Landroidx/core/view/MenuItemCompat$Api26Impl;->setTooltipText(Landroid/view/MenuItem;Ljava/lang/CharSequence;)Landroid/view/MenuItem;
 
     .line 368
-    :cond_1
     :goto_0
     return-void
 .end method

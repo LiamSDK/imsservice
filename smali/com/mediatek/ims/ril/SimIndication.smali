@@ -45,7 +45,7 @@
     .locals 1
 
     .line 127
-    const-string v0, "01cea196fdf8f5e41fda8dc41125f1cc2b96f757"
+    const-string v0, "4f348cc7aca716cc41c09ea95895c4b261231035"
 
     return-object v0
 .end method
@@ -54,7 +54,7 @@
     .locals 1
 
     .line 132
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
     return v0
 .end method

@@ -19,7 +19,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -41,13 +41,13 @@
 
     .line 26
     .local v0, "$i$f$emptyArray":I
-    const/4 v1, 0x0
+    const-string v1, "T?"
 
-    const-string v2, "T?"
+    const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->reifiedOperationMarker(ILjava/lang/String;)V
+    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->reifiedOperationMarker(ILjava/lang/String;)V
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v1, v2, [Ljava/lang/Object;
 
     return-object v1
 .end method

@@ -27,6 +27,8 @@
 
 .field public static final REG_DENIED_EM:I = 0xd
 
+.field public static final REG_EM:I = 0x14
+
 .field public static final REG_HOME:I = 0x1
 
 .field public static final REG_ROAMING:I = 0x5

@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\n_ArraysJvm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _ArraysJvm.kt\nkotlin/collections/ArraysKt___ArraysJvmKt$asList$5\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,3024:1\n12751#2,2:3025\n1680#2,6:3027\n1788#2,6:3033\n*S KotlinDebug\n*F\n+ 1 _ArraysJvm.kt\nkotlin/collections/ArraysKt___ArraysJvmKt$asList$5\n*L\n199#1:3025,2\n201#1:3027,6\n202#1:3033,6\n*E\n"
+    value = "SMAP\n_ArraysJvm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _ArraysJvm.kt\nkotlin/collections/ArraysKt___ArraysJvmKt$asList$5\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,3420:1\n12794#2,2:3421\n1687#2,6:3423\n1795#2,6:3429\n*S KotlinDebug\n*F\n+ 1 _ArraysJvm.kt\nkotlin/collections/ArraysKt___ArraysJvmKt$asList$5\n*L\n199#1:3421,2\n201#1:3423,6\n202#1:3429,6\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -57,7 +57,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -93,7 +93,7 @@
     .local v0, "$this$any$iv":[F
     const/4 v1, 0x0
 
-    .line 3025
+    .line 3421
     .local v1, "$i$f$any":I
     array-length v2, v0
 
@@ -101,58 +101,62 @@
 
     move v4, v3
 
-    :cond_0
-    const/4 v5, 0x1
-
+    :goto_0
     if-ge v4, v2, :cond_2
 
-    aget v6, v0, v4
+    aget v5, v0, v4
 
-    .local v6, "element$iv":F
-    add-int/lit8 v4, v4, 0x1
+    .local v5, "element$iv":F
+    move v6, v5
 
-    move v7, v6
-
-    .local v7, "it":F
-    const/4 v8, 0x0
+    .local v6, "it":F
+    const/4 v7, 0x0
 
     .line 199
-    .local v8, "$i$a$-any-ArraysKt___ArraysJvmKt$asList$5$contains$1":I
-    invoke-static {v7}, Ljava/lang/Float;->floatToIntBits(F)I
+    .local v7, "$i$a$-any-ArraysKt___ArraysJvmKt$asList$5$contains$1":I
+    invoke-static {v6}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v9
+    move-result v8
 
     invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v10
+    move-result v9
 
-    if-ne v9, v10, :cond_1
+    const/4 v10, 0x1
 
-    move v9, v5
+    if-ne v8, v9, :cond_0
 
-    goto :goto_0
-
-    :cond_1
-    move v9, v3
-
-    .end local v7    # "it":F
-    .end local v8    # "$i$a$-any-ArraysKt___ArraysJvmKt$asList$5$contains$1":I
-    :goto_0
-    if-eqz v9, :cond_0
-
-    move v3, v5
+    move v8, v10
 
     goto :goto_1
 
-    .line 3026
-    .end local v6    # "element$iv":F
+    :cond_0
+    move v8, v3
+
+    .line 3421
+    .end local v6    # "it":F
+    .end local v7    # "$i$a$-any-ArraysKt___ArraysJvmKt$asList$5$contains$1":I
+    :goto_1
+    if-eqz v8, :cond_1
+
+    move v3, v10
+
+    goto :goto_2
+
+    .end local v5    # "element$iv":F
+    :cond_1
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    .line 3422
     :cond_2
     nop
 
     .line 199
     .end local v0    # "$this$any$iv":[F
     .end local v1    # "$i$f$any":I
-    :goto_1
+    :goto_2
     return v3
 .end method
 
@@ -225,7 +229,7 @@
 .end method
 
 .method public indexOf(F)I
-    .locals 10
+    .locals 8
     .param p1, "element"    # F
 
     .line 201
@@ -234,65 +238,66 @@
     .local v0, "$this$indexOfFirst$iv":[F
     const/4 v1, 0x0
 
-    .line 3027
+    .line 3423
     .local v1, "$i$f$indexOfFirst":I
-    array-length v2, v0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    .local v2, "index$iv":I
+    array-length v3, v0
 
-    move v4, v3
+    :goto_0
+    if-ge v2, v3, :cond_2
 
-    :cond_0
-    if-ge v4, v2, :cond_2
+    .line 3424
+    aget v4, v0, v2
 
-    move v5, v4
-
-    .local v5, "index$iv":I
-    add-int/lit8 v4, v4, 0x1
-
-    .line 3028
-    aget v6, v0, v5
-
-    .local v6, "it":F
-    const/4 v7, 0x0
+    .local v4, "it":F
+    const/4 v5, 0x0
 
     .line 201
-    .local v7, "$i$a$-indexOfFirst-ArraysKt___ArraysJvmKt$asList$5$indexOf$1":I
-    invoke-static {v6}, Ljava/lang/Float;->floatToIntBits(F)I
+    .local v5, "$i$a$-indexOfFirst-ArraysKt___ArraysJvmKt$asList$5$indexOf$1":I
+    invoke-static {v4}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v8
+    move-result v6
 
     invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    move-result v9
+    move-result v7
 
-    if-ne v8, v9, :cond_1
+    if-ne v6, v7, :cond_0
 
-    const/4 v8, 0x1
+    const/4 v6, 0x1
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v6, 0x0
+
+    .line 3424
+    .end local v4    # "it":F
+    .end local v5    # "$i$a$-indexOfFirst-ArraysKt___ArraysJvmKt$asList$5$indexOf$1":I
+    :goto_1
+    if-eqz v6, :cond_1
+
+    .line 3425
+    goto :goto_2
+
+    .line 3423
+    :cond_1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_1
-    move v8, v3
-
-    .end local v6    # "it":F
-    .end local v7    # "$i$a$-indexOfFirst-ArraysKt___ArraysJvmKt$asList$5$indexOf$1":I
-    :goto_0
-    if-eqz v8, :cond_0
-
-    .line 3029
-    goto :goto_1
-
-    .line 3032
-    .end local v5    # "index$iv":I
+    .line 3428
+    .end local v2    # "index$iv":I
     :cond_2
-    const/4 v5, -0x1
+    const/4 v2, -0x1
 
     .line 201
     .end local v0    # "$this$indexOfFirst$iv":[F
     .end local v1    # "$i$f$indexOfFirst":I
-    :goto_1
-    return v5
+    :goto_2
+    return v2
 .end method
 
 .method public final bridge indexOf(Ljava/lang/Object;)I
@@ -355,7 +360,7 @@
     .local v0, "$this$indexOfLast$iv":[F
     const/4 v1, 0x0
 
-    .line 3033
+    .line 3429
     .local v1, "$i$f$indexOfLast":I
     array-length v2, v0
 
@@ -371,7 +376,7 @@
     .local v4, "index$iv":I
     add-int/2addr v2, v3
 
-    .line 3034
+    .line 3430
     aget v5, v0, v4
 
     .local v5, "it":F
@@ -396,21 +401,22 @@
     :cond_1
     const/4 v7, 0x0
 
+    .line 3430
     .end local v5    # "it":F
     .end local v6    # "$i$a$-indexOfLast-ArraysKt___ArraysJvmKt$asList$5$lastIndexOf$1":I
     :goto_0
     if-eqz v7, :cond_2
 
-    .line 3035
+    .line 3431
     move v3, v4
 
     goto :goto_1
 
-    .line 3033
+    .line 3429
     :cond_2
     if-gez v2, :cond_0
 
-    .line 3038
+    .line 3434
     .end local v4    # "index$iv":I
     :cond_3
     nop

@@ -32,7 +32,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    .line 26
+    .line 23
     const/4 v0, 0x0
 
     return-object v0
@@ -52,28 +52,10 @@
     return-void
 .end method
 
-.method public onNetworkRespHeader(IILjava/lang/String;ILjava/lang/String;)V
+.method public onNetworkResponse(ILandroid/telephony/ims/SipDetails;)V
     .locals 0
     .param p1, "userData"    # I
-    .param p2, "code"    # I
-    .param p3, "reasonPhrase"    # Ljava/lang/String;
-    .param p4, "reasonHeaderCause"    # I
-    .param p5, "reasonHeaderText"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .line 23
-    return-void
-.end method
-
-.method public onNetworkResponse(IILjava/lang/String;)V
-    .locals 0
-    .param p1, "userData"    # I
-    .param p2, "code"    # I
-    .param p3, "reason"    # Ljava/lang/String;
+    .param p2, "details"    # Landroid/telephony/ims/SipDetails;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

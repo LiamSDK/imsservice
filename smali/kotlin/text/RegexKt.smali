@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRegex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Regex.kt\nkotlin/text/RegexKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,398:1\n1783#2,3:399\n*S KotlinDebug\n*F\n+ 1 Regex.kt\nkotlin/text/RegexKt\n*L\n19#1:399,3\n*E\n"
+    value = "SMAP\nRegex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Regex.kt\nkotlin/text/RegexKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,398:1\n1789#2,3:399\n*S KotlinDebug\n*F\n+ 1 Regex.kt\nkotlin/text/RegexKt\n*L\n19#1:399,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -38,7 +38,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -177,12 +177,12 @@
 
     check-cast v2, Ljava/util/EnumSet;
 
-    .local v2, "$this$fromInt_u24lambda_u2d1":Ljava/util/EnumSet;
+    .local v2, "$this$fromInt_u24lambda_u241":Ljava/util/EnumSet;
     const/4 v3, 0x0
 
     .line 23
     .local v3, "$i$a$-apply-RegexKt$fromInt$1":I
-    const-string v4, ""
+    const-string v4, "fromInt$lambda$1"
 
     invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -204,7 +204,7 @@
     nop
 
     .line 22
-    .end local v2    # "$this$fromInt_u24lambda_u2d1":Ljava/util/EnumSet;
+    .end local v2    # "$this$fromInt_u24lambda_u241":Ljava/util/EnumSet;
     .end local v3    # "$i$a$-apply-RegexKt$fromInt$1":I
     check-cast v1, Ljava/util/Set;
 
@@ -352,12 +352,15 @@
 
     move-result v9
 
-    or-int v3, v7, v9
+    or-int v6, v7, v9
 
-    .end local v5    # "element$iv":Ljava/lang/Object;
+    .line 400
     .end local v6    # "option":Lkotlin/text/FlagEnum;
     .end local v7    # "value":I
     .end local v8    # "$i$a$-fold-RegexKt$toInt$1":I
+    move v3, v6
+
+    .end local v5    # "element$iv":Ljava/lang/Object;
     goto :goto_0
 
     .line 401

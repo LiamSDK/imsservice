@@ -14,11 +14,11 @@
     .locals 2
 
     .line 48
-    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    const-string v0, "eng"
 
-    const-string v1, "eng"
+    sget-object v1, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -108,12 +108,25 @@
 .end method
 
 .method public static callComposerCapable()Z
-    .locals 1
+    .locals 3
 
     .line 231
-    const/4 v0, 0x1
+    const-string v0, "persist.vendor.mtk_rcs_ua_support"
 
-    return v0
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move v1, v2
+
+    :cond_0
+    return v1
 .end method
 
 .method public static getDefaultRcsPhoneId()I

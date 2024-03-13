@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDebugMetadata.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DebugMetadata.kt\nkotlin/coroutines/jvm/internal/DebugMetadataKt\n+ 2 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,134:1\n37#2:135\n36#2,3:136\n*S KotlinDebug\n*F\n+ 1 DebugMetadata.kt\nkotlin/coroutines/jvm/internal/DebugMetadataKt\n*L\n131#1:135\n131#1:136,3\n*E\n"
+    value = "SMAP\nDebugMetadata.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DebugMetadata.kt\nkotlin/coroutines/jvm/internal/DebugMetadataKt\n+ 2 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,134:1\n37#2,2:135\n*S KotlinDebug\n*F\n+ 1 DebugMetadata.kt\nkotlin/coroutines/jvm/internal/DebugMetadataKt\n*L\n131#1:135,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -35,7 +35,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -168,18 +168,18 @@
     const/4 v2, 0x0
 
     :goto_0
-    if-nez v2, :cond_1
+    if-eqz v2, :cond_1
 
-    const/4 v2, 0x0
-
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v2, 0x0
 
     :goto_1
     sub-int/2addr v2, v1
@@ -254,7 +254,6 @@
 
     move v6, v5
 
-    :cond_1
     :goto_0
     if-ge v6, v4, :cond_2
 
@@ -263,10 +262,8 @@
     .local v7, "i":I
     aget v8, v3, v6
 
-    .local v8, "labelOfIndex":I
-    add-int/lit8 v6, v6, 0x1
-
     .line 126
+    .local v8, "labelOfIndex":I
     if-ne v8, v2, :cond_1
 
     .line 127
@@ -287,11 +284,15 @@
 
     invoke-virtual {v1, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    .line 125
+    .end local v7    # "i":I
+    .end local v8    # "labelOfIndex":I
+    :cond_1
+    add-int/lit8 v6, v6, 0x1
+
     goto :goto_0
 
     .line 131
-    .end local v7    # "i":I
-    .end local v8    # "labelOfIndex":I
     :cond_2
     move-object v3, v1
 
@@ -302,41 +303,23 @@
 
     .line 135
     .local v4, "$i$f$toTypedArray":I
-    nop
-
-    .line 136
     move-object v6, v3
 
-    .line 138
+    .line 136
     .local v6, "thisCollection$iv":Ljava/util/Collection;
     new-array v5, v5, [Ljava/lang/String;
 
     invoke-interface {v6, v5}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v5
-
-    if-eqz v5, :cond_3
+    move-result-object v3
 
     .end local v3    # "$this$toTypedArray$iv":Ljava/util/Collection;
     .end local v4    # "$i$f$toTypedArray":I
     .end local v6    # "thisCollection$iv":Ljava/util/Collection;
-    check-cast v5, [Ljava/lang/String;
+    check-cast v3, [Ljava/lang/String;
 
     .line 131
-    return-object v5
-
-    .line 138
-    .restart local v3    # "$this$toTypedArray$iv":Ljava/util/Collection;
-    .restart local v4    # "$i$f$toTypedArray":I
-    .restart local v6    # "thisCollection$iv":Ljava/util/Collection;
-    :cond_3
-    new-instance v5, Ljava/lang/NullPointerException;
-
-    const-string v7, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-direct {v5, v7}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v5
+    return-object v3
 .end method
 
 .method public static final getStackTraceElement(Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;)Ljava/lang/StackTraceElement;
@@ -413,7 +396,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 

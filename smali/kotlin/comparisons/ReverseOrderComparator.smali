@@ -39,7 +39,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -66,7 +66,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 315
+    .line 323
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -98,7 +98,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 316
+    .line 324
     invoke-interface {p2, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v0
@@ -111,7 +111,7 @@
     .param p1, "p0"    # Ljava/lang/Object;
     .param p2, "p1"    # Ljava/lang/Object;
 
-    .line 315
+    .line 323
     move-object v0, p1
 
     check-cast v0, Ljava/lang/Comparable;
@@ -139,7 +139,7 @@
         }
     .end annotation
 
-    .line 318
+    .line 326
     sget-object v0, Lkotlin/comparisons/NaturalOrderComparator;->INSTANCE:Lkotlin/comparisons/NaturalOrderComparator;
 
     check-cast v0, Ljava/util/Comparator;

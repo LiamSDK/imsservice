@@ -22,10 +22,10 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 353
+    .line 407
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 355
+    .line 409
     return-void
 .end method
 
@@ -33,13 +33,13 @@
     .locals 0
     .param p1, "handler"    # Landroid/os/Handler;
 
-    .line 357
+    .line 411
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 358
+    .line 412
     iput-object p1, p0, Lcom/mediatek/ims/rcs/UaServiceManager$StateCallback;->myHandler:Landroid/os/Handler;
 
-    .line 359
+    .line 413
     return-void
 .end method
 
@@ -48,7 +48,7 @@
 .method getMyHandler()Landroid/os/Handler;
     .locals 1
 
-    .line 389
+    .line 443
     iget-object v0, p0, Lcom/mediatek/ims/rcs/UaServiceManager$StateCallback;->myHandler:Landroid/os/Handler;
 
     return-object v0
@@ -58,54 +58,60 @@
     .locals 0
     .param p1, "phoneId"    # I
 
-    .line 386
+    .line 440
     return-void
 .end method
 
-.method public onDeregisterInd(I)V
+.method public onDeregisterInd(II)V
     .locals 0
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 383
+    .line 437
     return-void
 .end method
 
-.method public onDeregistered(I)V
+.method public onDeregistered(II)V
     .locals 0
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 375
+    .line 429
     return-void
 .end method
 
-.method public onDeregistering(I)V
+.method public onDeregistering(II)V
     .locals 0
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 371
+    .line 425
     return-void
 .end method
 
-.method public onRegistered(I)V
+.method public onRegistered(II)V
     .locals 0
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 367
+    .line 421
     return-void
 .end method
 
-.method public onRegistering(I)V
+.method public onRegistering(II)V
     .locals 0
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 363
+    .line 417
     return-void
 .end method
 
-.method public onReregistered(I)V
+.method public onReregistered(II)V
     .locals 0
-    .param p1, "mode"    # I
+    .param p1, "phoneId"    # I
+    .param p2, "mode"    # I
 
-    .line 379
+    .line 433
     return-void
 .end method

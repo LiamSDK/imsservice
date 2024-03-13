@@ -40,7 +40,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -101,12 +101,12 @@
         }
     .end annotation
 
-    .line 2312
+    .line 2407
     iget v0, p0, Lkotlin/text/StringsKt___StringsKt$windowedSequence$2;->$size:I
 
     add-int/2addr v0, p1
 
-    .line 2313
+    .line 2408
     .local v0, "end":I
     if-ltz v0, :cond_1
 
@@ -133,7 +133,7 @@
 
     move-result v1
 
-    .line 2314
+    .line 2409
     .local v1, "coercedEnd":I
     :goto_1
     iget-object v2, p0, Lkotlin/text/StringsKt___StringsKt$windowedSequence$2;->$transform:Lkotlin/jvm/functions/Function1;
@@ -155,7 +155,7 @@
     .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
-    .line 2311
+    .line 2406
     move-object v0, p1
 
     check-cast v0, Ljava/lang/Number;

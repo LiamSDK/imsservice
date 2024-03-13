@@ -24,17 +24,17 @@
     .param p1, "id"    # Ljava/lang/String;
     .param p2, "importance"    # I
 
-    .line 89
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 90
+    .line 91
     new-instance v0, Landroidx/core/app/NotificationChannelCompat;
 
     invoke-direct {v0, p1, p2}, Landroidx/core/app/NotificationChannelCompat;-><init>(Ljava/lang/String;I)V
 
     iput-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
-    .line 91
+    .line 92
     return-void
 .end method
 
@@ -43,36 +43,31 @@
 .method public build()Landroidx/core/app/NotificationChannelCompat;
     .locals 1
 
-    .line 270
+    .line 271
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     return-object v0
 .end method
 
 .method public setConversationId(Ljava/lang/String;Ljava/lang/String;)Landroidx/core/app/NotificationChannelCompat$Builder;
-    .locals 2
+    .locals 1
     .param p1, "parentChannelId"    # Ljava/lang/String;
     .param p2, "conversationId"    # Ljava/lang/String;
 
-    .line 258
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1e
-
-    if-lt v0, v1, :cond_0
-
     .line 259
-    iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
-
-    iput-object p1, v0, Landroidx/core/app/NotificationChannelCompat;->mParentId:Ljava/lang/String;
+    nop
 
     .line 260
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
+    iput-object p1, v0, Landroidx/core/app/NotificationChannelCompat;->mParentId:Ljava/lang/String;
+
+    .line 261
+    iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
+
     iput-object p2, v0, Landroidx/core/app/NotificationChannelCompat;->mConversationId:Ljava/lang/String;
 
-    .line 262
-    :cond_0
+    .line 263
     return-object p0
 .end method
 
@@ -80,12 +75,12 @@
     .locals 1
     .param p1, "description"    # Ljava/lang/String;
 
-    .line 131
+    .line 132
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput-object p1, v0, Landroidx/core/app/NotificationChannelCompat;->mDescription:Ljava/lang/String;
 
-    .line 132
+    .line 133
     return-object p0
 .end method
 
@@ -93,12 +88,12 @@
     .locals 1
     .param p1, "groupId"    # Ljava/lang/String;
 
-    .line 149
+    .line 150
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput-object p1, v0, Landroidx/core/app/NotificationChannelCompat;->mGroupId:Ljava/lang/String;
 
-    .line 150
+    .line 151
     return-object p0
 .end method
 
@@ -106,12 +101,12 @@
     .locals 1
     .param p1, "importance"    # I
 
-    .line 119
+    .line 120
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput p1, v0, Landroidx/core/app/NotificationChannelCompat;->mImportance:I
 
-    .line 120
+    .line 121
     return-object p0
 .end method
 
@@ -119,12 +114,12 @@
     .locals 1
     .param p1, "argb"    # I
 
-    .line 207
+    .line 208
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput p1, v0, Landroidx/core/app/NotificationChannelCompat;->mLightColor:I
 
-    .line 208
+    .line 209
     return-object p0
 .end method
 
@@ -132,12 +127,12 @@
     .locals 1
     .param p1, "lights"    # Z
 
-    .line 193
+    .line 194
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput-boolean p1, v0, Landroidx/core/app/NotificationChannelCompat;->mLights:Z
 
-    .line 194
+    .line 195
     return-object p0
 .end method
 
@@ -145,12 +140,12 @@
     .locals 1
     .param p1, "name"    # Ljava/lang/CharSequence;
 
-    .line 104
+    .line 105
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput-object p1, v0, Landroidx/core/app/NotificationChannelCompat;->mName:Ljava/lang/CharSequence;
 
-    .line 105
+    .line 106
     return-object p0
 .end method
 
@@ -158,12 +153,12 @@
     .locals 1
     .param p1, "showBadge"    # Z
 
-    .line 164
+    .line 165
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput-boolean p1, v0, Landroidx/core/app/NotificationChannelCompat;->mShowBadge:Z
 
-    .line 165
+    .line 166
     return-object p0
 .end method
 
@@ -172,17 +167,17 @@
     .param p1, "sound"    # Landroid/net/Uri;
     .param p2, "audioAttributes"    # Landroid/media/AudioAttributes;
 
-    .line 179
+    .line 180
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput-object p1, v0, Landroidx/core/app/NotificationChannelCompat;->mSound:Landroid/net/Uri;
 
-    .line 180
+    .line 181
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput-object p2, v0, Landroidx/core/app/NotificationChannelCompat;->mAudioAttributes:Landroid/media/AudioAttributes;
 
-    .line 181
+    .line 182
     return-object p0
 .end method
 
@@ -190,12 +185,12 @@
     .locals 1
     .param p1, "vibration"    # Z
 
-    .line 220
+    .line 221
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput-boolean p1, v0, Landroidx/core/app/NotificationChannelCompat;->mVibrationEnabled:Z
 
-    .line 221
+    .line 222
     return-object p0
 .end method
 
@@ -203,7 +198,7 @@
     .locals 2
     .param p1, "vibrationPattern"    # [J
 
-    .line 234
+    .line 235
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     if-eqz p1, :cond_0
@@ -222,11 +217,11 @@
     :goto_0
     iput-boolean v1, v0, Landroidx/core/app/NotificationChannelCompat;->mVibrationEnabled:Z
 
-    .line 235
+    .line 236
     iget-object v0, p0, Landroidx/core/app/NotificationChannelCompat$Builder;->mChannel:Landroidx/core/app/NotificationChannelCompat;
 
     iput-object p1, v0, Landroidx/core/app/NotificationChannelCompat;->mVibrationPattern:[J
 
-    .line 236
+    .line 237
     return-object p0
 .end method

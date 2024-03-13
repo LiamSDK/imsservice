@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 5102
+    .line 5399
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5104
+    .line 5401
     return-void
 .end method
 
@@ -39,19 +39,31 @@
         }
     .end annotation
 
-    .line 5155
+    .line 5452
     .local p1, "views":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/view/View;>;"
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->addKeyboardNavigationClusters(Ljava/util/Collection;I)V
 
-    .line 5156
+    .line 5453
     return-void
+.end method
+
+.method public static getAutofillId(Landroid/view/View;)Landroid/view/autofill/AutofillId;
+    .locals 1
+    .param p0, "view"    # Landroid/view/View;
+
+    .line 5482
+    invoke-virtual {p0}, Landroid/view/View;->getAutofillId()Landroid/view/autofill/AutofillId;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method static getImportantForAutofill(Landroid/view/View;)I
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5170
+    .line 5467
     invoke-virtual {p0}, Landroid/view/View;->getImportantForAutofill()I
 
     move-result v0
@@ -63,7 +75,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5118
+    .line 5415
     invoke-virtual {p0}, Landroid/view/View;->getNextClusterForwardId()I
 
     move-result v0
@@ -75,7 +87,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5165
+    .line 5462
     invoke-virtual {p0}, Landroid/view/View;->hasExplicitFocusable()Z
 
     move-result v0
@@ -87,7 +99,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5138
+    .line 5435
     invoke-virtual {p0}, Landroid/view/View;->isFocusedByDefault()Z
 
     move-result v0
@@ -99,7 +111,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5180
+    .line 5477
     invoke-virtual {p0}, Landroid/view/View;->isImportantForAutofill()Z
 
     move-result v0
@@ -111,7 +123,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5128
+    .line 5425
     invoke-virtual {p0}, Landroid/view/View;->isKeyboardNavigationCluster()Z
 
     move-result v0
@@ -125,7 +137,7 @@
     .param p1, "currentCluster"    # Landroid/view/View;
     .param p2, "direction"    # I
 
-    .line 5149
+    .line 5446
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->keyboardNavigationClusterSearch(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v0
@@ -137,7 +149,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5160
+    .line 5457
     invoke-virtual {p0}, Landroid/view/View;->restoreDefaultFocus()Z
 
     move-result v0
@@ -150,10 +162,10 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "autofillHints"    # [Ljava/lang/String;
 
-    .line 5108
+    .line 5405
     invoke-virtual {p0, p1}, Landroid/view/View;->setAutofillHints([Ljava/lang/String;)V
 
-    .line 5109
+    .line 5406
     return-void
 .end method
 
@@ -162,10 +174,10 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "isFocusedByDefault"    # Z
 
-    .line 5143
+    .line 5440
     invoke-virtual {p0, p1}, Landroid/view/View;->setFocusedByDefault(Z)V
 
-    .line 5144
+    .line 5441
     return-void
 .end method
 
@@ -174,10 +186,10 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "mode"    # I
 
-    .line 5175
+    .line 5472
     invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForAutofill(I)V
 
-    .line 5176
+    .line 5473
     return-void
 .end method
 
@@ -186,10 +198,10 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "isCluster"    # Z
 
-    .line 5133
+    .line 5430
     invoke-virtual {p0, p1}, Landroid/view/View;->setKeyboardNavigationCluster(Z)V
 
-    .line 5134
+    .line 5431
     return-void
 .end method
 
@@ -198,10 +210,10 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "nextClusterForwardId"    # I
 
-    .line 5123
+    .line 5420
     invoke-virtual {p0, p1}, Landroid/view/View;->setNextClusterForwardId(I)V
 
-    .line 5124
+    .line 5421
     return-void
 .end method
 
@@ -210,9 +222,9 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "tooltipText"    # Ljava/lang/CharSequence;
 
-    .line 5113
+    .line 5410
     invoke-virtual {p0, p1}, Landroid/view/View;->setTooltipText(Ljava/lang/CharSequence;)V
 
-    .line 5114
+    .line 5411
     return-void
 .end method

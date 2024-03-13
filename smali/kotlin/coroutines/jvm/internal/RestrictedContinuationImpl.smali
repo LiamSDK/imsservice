@@ -24,7 +24,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -51,11 +51,8 @@
     nop
 
     .line 85
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_2
 
-    goto :goto_1
-
-    :cond_0
     move-object v0, p1
 
     .local v0, "it":Lkotlin/coroutines/Continuation;
@@ -69,17 +66,17 @@
 
     sget-object v3, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v3, :cond_0
 
     const/4 v2, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     const/4 v2, 0x0
 
     :goto_0
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     .line 89
     nop
@@ -87,19 +84,12 @@
     .line 85
     .end local v0    # "it":Lkotlin/coroutines/Continuation;
     .end local v1    # "$i$a$-let-RestrictedContinuationImpl$1":I
-    nop
-
-    .line 90
-    :goto_1
-    nop
-
-    .line 81
-    return-void
+    goto :goto_1
 
     .line 86
     .restart local v0    # "it":Lkotlin/coroutines/Continuation;
     .restart local v1    # "$i$a$-let-RestrictedContinuationImpl$1":I
-    :cond_2
+    :cond_1
     const/4 v2, 0x0
 
     .line 87
@@ -119,6 +109,16 @@
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
+
+    .line 90
+    .end local v0    # "it":Lkotlin/coroutines/Continuation;
+    .end local v1    # "$i$a$-let-RestrictedContinuationImpl$1":I
+    :cond_2
+    :goto_1
+    nop
+
+    .line 81
+    return-void
 .end method
 
 

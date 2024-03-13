@@ -84,29 +84,15 @@
     .param p1, "hotSpotX"    # F
     .param p2, "hotSpotY"    # F
 
+    .line 154
+    nop
+
     .line 155
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
-
-    .line 156
     new-instance v0, Landroidx/core/view/PointerIconCompat;
 
     invoke-static {p0, p1, p2}, Landroidx/core/view/PointerIconCompat$Api24Impl;->create(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;
 
     move-result-object v1
-
-    invoke-direct {v0, v1}, Landroidx/core/view/PointerIconCompat;-><init>(Landroid/view/PointerIcon;)V
-
-    return-object v0
-
-    .line 158
-    :cond_0
-    new-instance v0, Landroidx/core/view/PointerIconCompat;
-
-    const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Landroidx/core/view/PointerIconCompat;-><init>(Landroid/view/PointerIcon;)V
 
@@ -118,29 +104,15 @@
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "style"    # I
 
+    .line 132
+    nop
+
     .line 133
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
-
-    .line 134
     new-instance v0, Landroidx/core/view/PointerIconCompat;
 
     invoke-static {p0, p1}, Landroidx/core/view/PointerIconCompat$Api24Impl;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
 
     move-result-object v1
-
-    invoke-direct {v0, v1}, Landroidx/core/view/PointerIconCompat;-><init>(Landroid/view/PointerIcon;)V
-
-    return-object v0
-
-    .line 136
-    :cond_0
-    new-instance v0, Landroidx/core/view/PointerIconCompat;
-
-    const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Landroidx/core/view/PointerIconCompat;-><init>(Landroid/view/PointerIcon;)V
 
@@ -152,29 +124,15 @@
     .param p0, "resources"    # Landroid/content/res/Resources;
     .param p1, "resourceId"    # I
 
+    .line 183
+    nop
+
     .line 184
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
-
-    .line 185
     new-instance v0, Landroidx/core/view/PointerIconCompat;
 
     invoke-static {p0, p1}, Landroidx/core/view/PointerIconCompat$Api24Impl;->load(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;
 
     move-result-object v1
-
-    invoke-direct {v0, v1}, Landroidx/core/view/PointerIconCompat;-><init>(Landroid/view/PointerIcon;)V
-
-    return-object v0
-
-    .line 187
-    :cond_0
-    new-instance v0, Landroidx/core/view/PointerIconCompat;
-
-    const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Landroidx/core/view/PointerIconCompat;-><init>(Landroid/view/PointerIcon;)V
 
@@ -186,7 +144,7 @@
 .method public getPointerIcon()Ljava/lang/Object;
     .locals 1
 
-    .line 120
+    .line 119
     iget-object v0, p0, Landroidx/core/view/PointerIconCompat;->mPointerIcon:Landroid/view/PointerIcon;
 
     return-object v0

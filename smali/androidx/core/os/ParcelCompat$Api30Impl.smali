@@ -18,14 +18,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 291
+    .line 435
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 293
+    .line 437
     return-void
 .end method
 
-.method static final readParcelableCreator(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/os/Parcelable$Creator;
+.method static readParcelableCreator(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/os/Parcelable$Creator;
     .locals 1
     .param p0, "in"    # Landroid/os/Parcel;
     .param p1, "loader"    # Ljava/lang/ClassLoader;
@@ -40,7 +40,7 @@
         }
     .end annotation
 
-    .line 298
+    .line 442
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->readParcelableCreator(Ljava/lang/ClassLoader;)Landroid/os/Parcelable$Creator;
 
     move-result-object v0

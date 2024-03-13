@@ -33,7 +33,7 @@
 
     monitor-enter p0
 
-    .line 363
+    .line 364
     monitor-exit p0
 
     return-object p0

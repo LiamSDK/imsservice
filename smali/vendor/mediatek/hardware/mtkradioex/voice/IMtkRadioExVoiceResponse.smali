@@ -28,13 +28,13 @@
     .locals 3
 
     .line 791
-    const-string v0, "vendor$mediatek$hardware$mtkradioex$voice$IMtkRadioExVoiceResponse"
+    const/16 v0, 0x24
 
-    const/16 v1, 0x24
+    const/16 v1, 0x2e
 
-    const/16 v2, 0x2e
+    const-string v2, "vendor$mediatek$hardware$mtkradioex$voice$IMtkRadioExVoiceResponse"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v0
 

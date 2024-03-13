@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 5186
+    .line 5488
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5188
+    .line 5490
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5202
+    .line 5504
     invoke-virtual {p0}, Landroid/view/View;->getClipBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -41,7 +41,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5192
+    .line 5494
     invoke-virtual {p0}, Landroid/view/View;->isInLayout()Z
 
     move-result v0
@@ -54,9 +54,9 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "clipBounds"    # Landroid/graphics/Rect;
 
-    .line 5197
+    .line 5499
     invoke-virtual {p0, p1}, Landroid/view/View;->setClipBounds(Landroid/graphics/Rect;)V
 
-    .line 5198
+    .line 5500
     return-void
 .end method

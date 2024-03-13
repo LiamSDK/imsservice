@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 469
+    .line 496
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 471
+    .line 498
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "accessibilityEvent"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 490
+    .line 517
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->getAction()I
 
     move-result v0
@@ -41,7 +41,7 @@
     .locals 1
     .param p0, "accessibilityEvent"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 480
+    .line 507
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->getMovementGranularity()I
 
     move-result v0
@@ -54,10 +54,10 @@
     .param p0, "accessibilityEvent"    # Landroid/view/accessibility/AccessibilityEvent;
     .param p1, "action"    # I
 
-    .line 485
+    .line 512
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setAction(I)V
 
-    .line 486
+    .line 513
     return-void
 .end method
 
@@ -66,9 +66,9 @@
     .param p0, "accessibilityEvent"    # Landroid/view/accessibility/AccessibilityEvent;
     .param p1, "granularity"    # I
 
-    .line 475
+    .line 502
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setMovementGranularity(I)V
 
-    .line 476
+    .line 503
     return-void
 .end method

@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 158
+    .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 160
+    .line 159
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .param p0, "gnssStatus"    # Landroid/location/GnssStatus;
     .param p1, "satelliteIndex"    # I
 
-    .line 169
+    .line 168
     invoke-virtual {p0, p1}, Landroid/location/GnssStatus;->getBasebandCn0DbHz(I)F
 
     move-result v0
@@ -43,7 +43,7 @@
     .param p0, "gnssStatus"    # Landroid/location/GnssStatus;
     .param p1, "satelliteIndex"    # I
 
-    .line 164
+    .line 163
     invoke-virtual {p0, p1}, Landroid/location/GnssStatus;->hasBasebandCn0DbHz(I)Z
 
     move-result v0

@@ -31,7 +31,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAbstractList.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,157:1\n348#2,7:158\n376#2,7:165\n*S KotlinDebug\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n*L\n27#1:158,7\n29#1:165,7\n*E\n"
+    value = "SMAP\nAbstractList.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,157:1\n350#2,7:158\n378#2,7:165\n*S KotlinDebug\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n*L\n27#1:158,7\n29#1:165,7\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -76,7 +76,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -268,6 +268,7 @@
 
     move-result v5
 
+    .line 160
     .end local v5    # "it":Ljava/lang/Object;
     .end local v6    # "$i$a$-indexOfFirst-AbstractList$indexOf$1":I
     if-eqz v5, :cond_0
@@ -277,9 +278,11 @@
 
     .line 162
     :cond_0
-    add-int/lit8 v2, v2, 0x1
+    nop
 
     .end local v4    # "item$iv":Ljava/lang/Object;
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 164
@@ -366,6 +369,7 @@
 
     move-result v3
 
+    .line 167
     .end local v3    # "it":Ljava/lang/Object;
     .end local v4    # "$i$a$-indexOfLast-AbstractList$lastIndexOf$1":I
     if-eqz v3, :cond_0

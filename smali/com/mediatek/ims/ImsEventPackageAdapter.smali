@@ -177,9 +177,9 @@
 
     .line 163
     .local p1, "dialogList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;>;"
-    const-string v1, "ImsEventPackageAdapter"
-
     const-string v0, "handleDialogEventPackage()"
+
+    const-string v1, "ImsEventPackageAdapter"
 
     invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -386,16 +386,16 @@
 
     new-array v6, v6, [Ljava/lang/Object;
 
-    const/4 v7, 0x0
-
-    iget v8, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->dialogId:I
+    iget v7, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->dialogId:I
 
     .line 188
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v7
 
-    aput-object v8, v6, v7
+    const/4 v8, 0x0
+
+    aput-object v7, v6, v8
 
     const/4 v7, 0x1
 
@@ -405,56 +405,56 @@
 
     aput-object v14, v6, v7
 
-    const/4 v7, 0x3
+    iget-boolean v7, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->isPullable:Z
 
-    iget-boolean v8, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->isPullable:Z
+    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v7
 
-    move-result-object v8
+    const/4 v8, 0x3
 
-    aput-object v8, v6, v7
+    aput-object v7, v6, v8
 
-    const/4 v7, 0x4
+    iget v7, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->callState:I
 
-    iget v8, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->callState:I
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v7
 
-    move-result-object v8
+    const/4 v8, 0x4
 
-    aput-object v8, v6, v7
+    aput-object v7, v6, v8
 
-    const/4 v7, 0x5
-
-    iget v8, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->callType:I
+    iget v7, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->callType:I
 
     .line 189
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v7
 
-    aput-object v8, v6, v7
+    const/4 v8, 0x5
 
-    const/4 v7, 0x6
+    aput-object v7, v6, v8
 
-    iget-boolean v8, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->isCallHeld:Z
+    iget-boolean v7, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->isCallHeld:Z
 
-    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v8
+    move-result-object v7
 
-    aput-object v8, v6, v7
+    const/4 v8, 0x6
 
-    const/4 v7, 0x7
+    aput-object v7, v6, v8
 
-    iget-boolean v8, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->isMt:Z
+    iget-boolean v7, v5, Lvendor/mediatek/hardware/mtkradioex/V3_0/Dialog;->isMt:Z
 
-    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v8
+    move-result-object v7
 
-    aput-object v8, v6, v7
+    const/4 v8, 0x7
+
+    aput-object v7, v6, v8
 
     .line 187
     invoke-virtual {v0, v6}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
@@ -627,18 +627,18 @@
     .param p1, "msg"    # [Ljava/lang/String;
 
     .line 107
-    const-string v0, "ImsEventPackageAdapter"
+    const-string v0, "handleLetMessageWaiting()"
 
-    const-string v1, "handleLetMessageWaiting()"
+    const-string v1, "ImsEventPackageAdapter"
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 108
-    const/4 v1, 0x4
+    const/4 v0, 0x4
 
     .line 109
-    .local v1, "intDataCount":I
-    new-array v2, v1, [I
+    .local v0, "intDataCount":I
+    new-array v2, v0, [I
 
     .line 111
     .local v2, "intData":[I
@@ -646,7 +646,7 @@
 
     .local v3, "i":I
     :goto_0
-    if-ge v3, v1, :cond_0
+    if-ge v3, v0, :cond_0
 
     .line 112
     :try_start_0
@@ -674,7 +674,7 @@
     .local v3, "e":Ljava/lang/NumberFormatException;
     const-string v4, "handleLetMessageWaiting failed: invalid params"
 
-    invoke-static {v0, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 116
     return-void
@@ -733,7 +733,7 @@
     .line 127
     const-string v3, "handleLetMessageWaiting ignore, not the correct phone id"
 
-    invoke-static {v0, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 128
     return-void
@@ -741,20 +741,20 @@
     .line 132
     .end local v8    # "phoneId":I
     :cond_1
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    if-ne v5, v0, :cond_2
+    if-ne v5, v1, :cond_2
 
-    move v3, v0
+    move v3, v1
 
     :cond_2
-    move v0, v3
+    move v1, v3
 
     .line 133
-    .local v0, "isFirstPkt":Z
+    .local v1, "isFirstPkt":Z
     iget-object v3, p0, Lcom/mediatek/ims/ImsEventPackageAdapter;->mMWIData:Ljava/lang/String;
 
-    invoke-direct {p0, v0, v3, v7}, Lcom/mediatek/ims/ImsEventPackageAdapter;->concatData(ZLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v1, v3, v7}, Lcom/mediatek/ims/ImsEventPackageAdapter;->concatData(ZLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -786,18 +786,18 @@
 
     .line 141
     .local v3, "intent":Landroid/content/Intent;
-    iget-object v8, p0, Lcom/mediatek/ims/ImsEventPackageAdapter;->mMWIData:Ljava/lang/String;
+    const-string v8, "lte_mwi_body"
 
-    const-string v9, "lte_mwi_body"
+    iget-object v9, p0, Lcom/mediatek/ims/ImsEventPackageAdapter;->mMWIData:Ljava/lang/String;
 
-    invoke-virtual {v3, v9, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v3, v8, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 142
-    iget v8, p0, Lcom/mediatek/ims/ImsEventPackageAdapter;->mPhoneId:I
+    const-string v8, "phone.id"
 
-    const-string v9, "phone.id"
+    iget v9, p0, Lcom/mediatek/ims/ImsEventPackageAdapter;->mPhoneId:I
 
-    invoke-virtual {v3, v9, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v3, v8, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     .line 143
     const/high16 v8, 0x1000000

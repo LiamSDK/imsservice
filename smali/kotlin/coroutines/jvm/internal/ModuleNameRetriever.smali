@@ -36,7 +36,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -240,13 +240,8 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_2
 
-    move-object v1, v2
-
-    goto :goto_0
-
-    :cond_2
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v4
@@ -256,6 +251,11 @@
     invoke-virtual {v1, v4, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
+
+    goto :goto_0
+
+    :cond_2
+    move-object v1, v2
 
     :goto_0
     if-nez v1, :cond_3
@@ -267,18 +267,18 @@
     :cond_3
     iget-object v4, v0, Lkotlin/coroutines/jvm/internal/ModuleNameRetriever$Cache;->getDescriptorMethod:Ljava/lang/reflect/Method;
 
-    if-nez v4, :cond_4
+    if-eqz v4, :cond_4
 
-    move-object v4, v2
-
-    goto :goto_1
-
-    :cond_4
     new-array v5, v3, [Ljava/lang/Object;
 
     invoke-virtual {v4, v1, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
+
+    goto :goto_1
+
+    :cond_4
+    move-object v4, v2
 
     :goto_1
     if-nez v4, :cond_5
@@ -290,18 +290,18 @@
     :cond_5
     iget-object v5, v0, Lkotlin/coroutines/jvm/internal/ModuleNameRetriever$Cache;->nameMethod:Ljava/lang/reflect/Method;
 
-    if-nez v5, :cond_6
+    if-eqz v5, :cond_6
 
-    move-object v3, v2
-
-    goto :goto_2
-
-    :cond_6
     new-array v3, v3, [Ljava/lang/Object;
 
     invoke-virtual {v5, v4, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
+
+    goto :goto_2
+
+    :cond_6
+    move-object v3, v2
 
     :goto_2
     instance-of v5, v3, Ljava/lang/String;

@@ -45,7 +45,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -225,7 +225,7 @@
 
     move-object v6, v3
 
-    .local v6, "$this$readExternal_u24lambda_u2d3":Ljava/util/Set;
+    .local v6, "$this$readExternal_u24lambda_u243":Ljava/util/Set;
     const/4 v7, 0x0
 
     .line 415
@@ -235,10 +235,10 @@
     :goto_0
     if-ge v5, v4, :cond_0
 
-    add-int/lit8 v8, v5, 0x1
+    move v8, v5
 
     .line 430
-    .local v5, "it":I
+    .local v8, "it":I
     const/4 v9, 0x0
 
     .line 415
@@ -249,21 +249,19 @@
 
     invoke-interface {v6, v10}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    move v5, v8
-
-    .end local v5    # "it":I
+    .end local v8    # "it":I
     .end local v9    # "$i$a$-repeat-SerializedCollection$readExternal$2$1":I
+    add-int/lit8 v5, v5, 0x1
+
     goto :goto_0
 
     .line 416
     :cond_0
     nop
 
-    .end local v6    # "$this$readExternal_u24lambda_u2d3":Ljava/util/Set;
-    .end local v7    # "$i$a$-buildSet-SerializedCollection$readExternal$2":I
-    sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 414
+    .end local v6    # "$this$readExternal_u24lambda_u243":Ljava/util/Set;
+    .end local v7    # "$i$a$-buildSet-SerializedCollection$readExternal$2":I
     invoke-static {v3}, Lkotlin/collections/SetsKt;->build(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object v3
@@ -280,7 +278,7 @@
 
     move-object v6, v3
 
-    .local v6, "$this$readExternal_u24lambda_u2d1":Ljava/util/List;
+    .local v6, "$this$readExternal_u24lambda_u241":Ljava/util/List;
     const/4 v7, 0x0
 
     .line 412
@@ -290,10 +288,10 @@
     :goto_1
     if-ge v5, v4, :cond_1
 
-    add-int/lit8 v8, v5, 0x1
+    move v8, v5
 
     .line 430
-    .restart local v5    # "it":I
+    .restart local v8    # "it":I
     const/4 v9, 0x0
 
     .line 412
@@ -304,21 +302,19 @@
 
     invoke-interface {v6, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move v5, v8
-
-    .end local v5    # "it":I
+    .end local v8    # "it":I
     .end local v9    # "$i$a$-repeat-SerializedCollection$readExternal$1$1":I
+    add-int/lit8 v5, v5, 0x1
+
     goto :goto_1
 
     .line 413
     :cond_1
     nop
 
-    .end local v6    # "$this$readExternal_u24lambda_u2d1":Ljava/util/List;
-    .end local v7    # "$i$a$-buildList-SerializedCollection$readExternal$1":I
-    sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 411
+    .end local v6    # "$this$readExternal_u24lambda_u241":Ljava/util/List;
+    .end local v7    # "$i$a$-buildList-SerializedCollection$readExternal$1":I
     invoke-static {v3}, Lkotlin/collections/CollectionsKt;->build(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v3

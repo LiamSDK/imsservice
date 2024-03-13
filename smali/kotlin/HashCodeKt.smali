@@ -17,7 +17,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -30,16 +30,16 @@
     .param p0, "$this$hashCode"    # Ljava/lang/Object;
 
     .line 18
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
+    const/4 v0, 0x0
 
     :goto_0
     return v0

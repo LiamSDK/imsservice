@@ -25,7 +25,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\n_Sequences.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt$groupingBy$1\n*L\n1#1,2932:1\n*E\n"
+    value = "SMAP\n_Sequences.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt$groupingBy$1\n*L\n1#1,3094:1\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -45,7 +45,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0xb0
@@ -91,7 +91,7 @@
 
     iput-object p2, p0, Lkotlin/sequences/SequencesKt___SequencesKt$groupingBy$1;->$keySelector:Lkotlin/jvm/functions/Function1;
 
-    .line 1036
+    .line 1037
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -108,7 +108,7 @@
         }
     .end annotation
 
-    .line 1038
+    .line 1039
     iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$groupingBy$1;->$keySelector:Lkotlin/jvm/functions/Function1;
 
     invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -128,7 +128,7 @@
         }
     .end annotation
 
-    .line 1037
+    .line 1038
     iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$groupingBy$1;->$this_groupingBy:Lkotlin/sequences/Sequence;
 
     invoke-interface {v0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;

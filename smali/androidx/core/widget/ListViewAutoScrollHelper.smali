@@ -77,7 +77,7 @@
     if-lez p1, :cond_2
 
     .line 63
-    if-lt v5, v1, :cond_3
+    if-lt v5, v1, :cond_4
 
     .line 64
     add-int/lit8 v6, v3, -0x1
@@ -108,10 +108,10 @@
 
     .line 69
     :cond_2
-    if-gez p1, :cond_4
+    if-gez p1, :cond_5
 
     .line 71
-    if-gtz v4, :cond_3
+    if-gtz v4, :cond_4
 
     .line 72
     invoke-virtual {v0, v2}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
@@ -129,16 +129,20 @@
     .line 74
     return v2
 
-    .line 83
+    .line 76
     .end local v6    # "firstView":Landroid/view/View;
     :cond_3
+    nop
+
+    .line 83
+    :cond_4
     :goto_0
     const/4 v2, 0x1
 
     return v2
 
     .line 80
-    :cond_4
+    :cond_5
     return v2
 .end method
 

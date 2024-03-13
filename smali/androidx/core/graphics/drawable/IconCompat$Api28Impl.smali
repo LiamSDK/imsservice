@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1064
+    .line 1047
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1066
+    .line 1049
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "icon"    # Ljava/lang/Object;
 
-    .line 1080
+    .line 1063
     move-object v0, p0
 
     check-cast v0, Landroid/graphics/drawable/Icon;
@@ -45,7 +45,7 @@
     .locals 1
     .param p0, "icon"    # Ljava/lang/Object;
 
-    .line 1070
+    .line 1053
     move-object v0, p0
 
     check-cast v0, Landroid/graphics/drawable/Icon;
@@ -61,7 +61,7 @@
     .locals 1
     .param p0, "icon"    # Ljava/lang/Object;
 
-    .line 1075
+    .line 1058
     move-object v0, p0
 
     check-cast v0, Landroid/graphics/drawable/Icon;
@@ -77,7 +77,7 @@
     .locals 1
     .param p0, "icon"    # Ljava/lang/Object;
 
-    .line 1085
+    .line 1068
     move-object v0, p0
 
     check-cast v0, Landroid/graphics/drawable/Icon;

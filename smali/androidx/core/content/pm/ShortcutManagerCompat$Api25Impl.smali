@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 922
+    .line 921
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,15 +36,15 @@
         }
     .end annotation
 
-    .line 924
+    .line 923
     .local p0, "shortcuts":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     const/4 v0, -0x1
 
-    .line 925
+    .line 924
     .local v0, "rank":I
     const/4 v1, 0x0
 
-    .line 926
+    .line 925
     .local v1, "target":Ljava/lang/String;
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -63,7 +63,7 @@
 
     check-cast v3, Landroid/content/pm/ShortcutInfo;
 
-    .line 927
+    .line 926
     .local v3, "s":Landroid/content/pm/ShortcutInfo;
     invoke-virtual {v3}, Landroid/content/pm/ShortcutInfo;->getRank()I
 
@@ -71,22 +71,22 @@
 
     if-le v4, v0, :cond_0
 
-    .line 928
+    .line 927
     invoke-virtual {v3}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 929
+    .line 928
     invoke-virtual {v3}, Landroid/content/pm/ShortcutInfo;->getRank()I
 
     move-result v0
 
-    .line 931
+    .line 930
     .end local v3    # "s":Landroid/content/pm/ShortcutInfo;
     :cond_0
     goto :goto_0
 
-    .line 932
+    .line 931
     :cond_1
     return-object v1
 .end method

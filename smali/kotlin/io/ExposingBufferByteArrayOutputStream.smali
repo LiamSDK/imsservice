@@ -23,7 +23,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -47,7 +47,7 @@
     .locals 2
 
     .line 99
-    iget-object v0, p0, Lkotlin/io/ExposingBufferByteArrayOutputStream;->buf:[B
+    iget-object v0, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
     const-string v1, "buf"
 

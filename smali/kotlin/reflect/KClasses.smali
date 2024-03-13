@@ -25,7 +25,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static final cast(Lkotlin/reflect/KClass;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
     .param p0, "$this$cast"    # Lkotlin/reflect/KClass;
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -58,43 +58,48 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 27
-    if-eqz p1, :cond_0
+    const-string v0, "null cannot be cast to non-null type T of kotlin.reflect.KClasses.cast"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "null cannot be cast to non-null type T of kotlin.reflect.KClasses.cast"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
     .line 26
-    :cond_1
+    :cond_0
     new-instance v0, Ljava/lang/ClassCastException;
 
-    move-object v1, p0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .local v1, "$this$qualifiedOrSimpleName$iv":Lkotlin/reflect/KClass;
-    const/4 v2, 0x0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 49
-    .local v2, "$i$f$getQualifiedOrSimpleName":I
-    invoke-interface {v1}, Lkotlin/reflect/KClass;->getQualifiedName()Ljava/lang/String;
+    const-string v2, "Value cannot be cast to "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 26
-    .end local v1    # "$this$qualifiedOrSimpleName$iv":Lkotlin/reflect/KClass;
-    .end local v2    # "$i$f$getQualifiedOrSimpleName":I
-    const-string v2, "Value cannot be cast to "
+    move-object v2, p0
 
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    .local v2, "$this$qualifiedOrSimpleName$iv":Lkotlin/reflect/KClass;
+    const/4 v3, 0x0
+
+    .line 49
+    .local v3, "$i$f$getQualifiedOrSimpleName":I
+    invoke-interface {v2}, Lkotlin/reflect/KClass;->getQualifiedName()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 26
+    .end local v2    # "$this$qualifiedOrSimpleName$iv":Lkotlin/reflect/KClass;
+    .end local v3    # "$i$f$getQualifiedOrSimpleName":I
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -104,7 +109,7 @@
 .end method
 
 .method public static final safeCast(Lkotlin/reflect/KClass;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 1
     .param p0, "$this$safeCast"    # Lkotlin/reflect/KClass;
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -128,24 +133,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    if-eqz p1, :cond_0
+    const-string v0, "null cannot be cast to non-null type T of kotlin.reflect.KClasses.safeCast"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v0, p1
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "null cannot be cast to non-null type T of kotlin.reflect.KClasses.safeCast"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
     const/4 v0, 0x0
 
     :goto_0

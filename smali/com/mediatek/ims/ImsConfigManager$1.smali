@@ -39,13 +39,13 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .line 108
+    const-string v0, "com.android.intent.action.IMS_CONFIG_CHANGED"
+
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "com.android.intent.action.IMS_CONFIG_CHANGED"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -64,11 +64,11 @@
     if-eqz v0, :cond_2
 
     .line 109
-    const/4 v0, 0x0
+    const-string v0, "phone_id"
 
-    const-string v7, "phone_id"
+    const/4 v7, 0x0
 
-    invoke-virtual {p2, v7, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p2, v0, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -166,13 +166,13 @@
     .end local v1    # "value":Ljava/lang/String;
     .end local v5    # "itemId":I
     :cond_2
+    const-string v0, "com.mediatek.ims.config.action.CONFIG_LOADED"
+
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v7
 
-    const-string v7, "com.mediatek.ims.config.action.CONFIG_LOADED"
-
-    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 

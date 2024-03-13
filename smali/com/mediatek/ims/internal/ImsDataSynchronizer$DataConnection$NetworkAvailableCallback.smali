@@ -24,17 +24,17 @@
 .method public constructor <init>(Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;)V
     .locals 0
 
-    .line 527
+    .line 530
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection$NetworkAvailableCallback;->this$1:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
 
-    .line 525
+    .line 528
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection$NetworkAvailableCallback;->mNetworkCallbackRegistered:Z
 
-    .line 528
+    .line 531
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .locals 4
     .param p1, "network"    # Landroid/net/Network;
 
-    .line 532
+    .line 535
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection$NetworkAvailableCallback;->this$1:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->access$2300(Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;)Landroid/net/ConnectivityManager;
@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    .line 533
+    .line 536
     .local v0, "netInfo":Landroid/net/NetworkInfo;
     iget-object v1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection$NetworkAvailableCallback;->this$1:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
@@ -91,12 +91,12 @@
 
     invoke-virtual {v1, v2}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->logd(Ljava/lang/String;)V
 
-    .line 535
+    .line 538
     iget-boolean v1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection$NetworkAvailableCallback;->mNetworkCallbackRegistered:Z
 
     if-eqz v1, :cond_0
 
-    .line 536
+    .line 539
     iget-object v1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection$NetworkAvailableCallback;->this$1:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->access$1700(Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;)Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
@@ -117,7 +117,7 @@
 
     invoke-virtual {v1, v2}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->sendMessage(Landroid/os/Message;)V
 
-    .line 538
+    .line 541
     :cond_0
     return-void
 .end method
@@ -126,7 +126,7 @@
     .locals 3
     .param p1, "regState"    # Z
 
-    .line 541
+    .line 544
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection$NetworkAvailableCallback;->this$1:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -149,9 +149,9 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->logd(Ljava/lang/String;)V
 
-    .line 542
+    .line 545
     iput-boolean p1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection$NetworkAvailableCallback;->mNetworkCallbackRegistered:Z
 
-    .line 543
+    .line 546
     return-void
 .end method

@@ -18,9 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 438
+    .line 618
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 619
     return-void
 .end method
 
@@ -28,7 +29,7 @@
     .locals 1
     .param p0, "location"    # Landroid/location/Location;
 
-    .line 442
+    .line 623
     invoke-virtual {p0}, Landroid/location/Location;->isFromMockProvider()Z
 
     move-result v0

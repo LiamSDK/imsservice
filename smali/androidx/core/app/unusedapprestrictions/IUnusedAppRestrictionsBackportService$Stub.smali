@@ -24,8 +24,6 @@
 
 
 # static fields
-.field private static final DESCRIPTOR:Ljava/lang/String; = "androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportService"
-
 .field static final TRANSACTION_isPermissionRevocationEnabledForApp:I = 0x1
 
 
@@ -33,15 +31,15 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 36
+    .line 35
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 37
-    const-string v0, "androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportService"
+    .line 36
+    sget-object v0, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {p0, p0, v0}, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 38
+    .line 37
     return-void
 .end method
 
@@ -49,23 +47,23 @@
     .locals 2
     .param p0, "obj"    # Landroid/os/IBinder;
 
-    .line 45
+    .line 44
     if-nez p0, :cond_0
 
-    .line 46
+    .line 45
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 48
+    .line 47
     :cond_0
-    const-string v0, "androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportService"
+    sget-object v0, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
-    .line 49
+    .line 48
     .local v0, "iin":Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
@@ -73,14 +71,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 50
+    .line 49
     move-object v1, v0
 
     check-cast v1, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService;
 
     return-object v1
 
-    .line 52
+    .line 51
     :cond_1
     new-instance v1, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub$Proxy;
 
@@ -89,58 +87,12 @@
     return-object v1
 .end method
 
-.method public static getDefaultImpl()Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService;
-    .locals 1
-
-    .line 141
-    sget-object v0, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub$Proxy;->sDefaultImpl:Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService;
-
-    return-object v0
-.end method
-
-.method public static setDefaultImpl(Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService;)Z
-    .locals 2
-    .param p0, "impl"    # Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService;
-
-    .line 131
-    sget-object v0, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub$Proxy;->sDefaultImpl:Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService;
-
-    if-nez v0, :cond_1
-
-    .line 134
-    if-eqz p0, :cond_0
-
-    .line 135
-    sput-object p0, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub$Proxy;->sDefaultImpl:Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService;
-
-    .line 136
-    const/4 v0, 0x1
-
-    return v0
-
-    .line 138
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-
-    .line 132
-    :cond_1
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "setDefaultImpl() called twice"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
     .locals 0
 
-    .line 56
+    .line 55
     return-object p0
 .end method
 
@@ -156,34 +108,45 @@
         }
     .end annotation
 
-    .line 60
-    const-string v0, "androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportService"
+    .line 59
+    sget-object v0, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub;->DESCRIPTOR:Ljava/lang/String;
 
-    .line 61
+    .line 60
     .local v0, "descriptor":Ljava/lang/String;
     const/4 v1, 0x1
 
-    sparse-switch p1, :sswitch_data_0
+    if-lt p1, v1, :cond_0
 
-    .line 78
+    const v2, 0xffffff
+
+    if-gt p1, v2, :cond_0
+
+    .line 61
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 63
+    :cond_0
+    packed-switch p1, :pswitch_data_0
+
+    .line 71
+    packed-switch p1, :pswitch_data_1
+
+    .line 82
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
 
     return v1
 
-    .line 65
-    :sswitch_0
+    .line 67
+    :pswitch_0
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 66
+    .line 68
     return v1
 
-    .line 70
-    :sswitch_1
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 72
+    .line 76
+    :pswitch_1
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v2
@@ -192,16 +155,26 @@
 
     move-result-object v2
 
-    .line 73
+    .line 77
     .local v2, "_arg0":Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportCallback;
     invoke-virtual {p0, v2}, Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportService$Stub;->isPermissionRevocationEnabledForApp(Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportCallback;)V
 
-    .line 74
+    .line 78
+    nop
+
+    .line 85
+    .end local v2    # "_arg0":Landroidx/core/app/unusedapprestrictions/IUnusedAppRestrictionsBackportCallback;
     return v1
 
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_1
-        0x5f4e5446 -> :sswitch_0
-    .end sparse-switch
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x5f4e5446
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x1
+        :pswitch_1
+    .end packed-switch
 .end method

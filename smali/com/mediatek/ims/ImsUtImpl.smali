@@ -1069,13 +1069,13 @@
     .line 757
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3ec
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x3ec
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v4, v2, v1, v3}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -1153,13 +1153,13 @@
     .line 736
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3eb
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x3eb
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v4, v2, v1, v3}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -1237,13 +1237,13 @@
     .line 799
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3ee
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x3ee
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v4, v2, v1, v3}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -1321,13 +1321,13 @@
     .line 778
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3ed
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x3ed
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v4, v2, v1, v3}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -1761,13 +1761,13 @@
     .line 715
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3ea
+    const/4 v1, 0x0
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const/16 v5, 0x3ea
 
-    invoke-virtual {v0, v1, v2, v4, v5}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v5, v2, v1, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -1896,13 +1896,13 @@
     .line 1026
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3f3
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x3f3
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v4, v2, v1, v3}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -1981,13 +1981,13 @@
     .line 1004
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3f2
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x3f2
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v4, v2, v1, v3}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -2066,13 +2066,13 @@
     .line 1070
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3f5
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x3f5
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v4, v2, v1, v3}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -2151,13 +2151,13 @@
     .line 1048
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3f4
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x3f4
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v4, v2, v1, v3}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -2720,13 +2720,13 @@
     .line 958
     iget-object v0, v1, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v2, 0x3f0
+    const/4 v2, 0x0
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const/16 v5, 0x3f0
 
-    invoke-virtual {v0, v2, v3, v4, v5}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v5, v3, v2, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -2850,9 +2850,7 @@
 
     .line 1173
     .local v2, "requestId":I
-    const/4 v3, 0x1
-
-    add-int/2addr v0, v3
+    add-int/lit8 v0, v0, 0x1
 
     sput v0, Lcom/mediatek/ims/ImsUtImpl;->sRequestId:I
 
@@ -2868,9 +2866,9 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "updateCallForwardUncondTimer(): requestId = "
+    const-string v3, "updateCallForwardUncondTimer(): requestId = "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2917,40 +2915,26 @@
     :cond_2
     const-string v0, "%02d:%02d,%02d:%02d"
 
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
     .line 1187
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    aput-object v4, v1, v5
+    move-result-object v1
 
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
-
-    aput-object v4, v1, v3
-
-    const/4 v3, 0x2
+    move-result-object v3
 
     invoke-static/range {p3 .. p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
-    aput-object v4, v1, v3
-
-    const/4 v3, 0x3
-
     invoke-static/range {p4 .. p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    aput-object v4, v1, v3
+    filled-new-array {v1, v3, v4, v5}, [Ljava/lang/Object;
+
+    move-result-object v1
 
     .line 1186
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -2961,11 +2945,13 @@
     .local v0, "timer":Ljava/lang/String;
     iget-object v1, v7, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v3, 0x4b1
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    invoke-virtual {v1, v3, v2, v5, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    const/16 v5, 0x4b1
+
+    invoke-virtual {v1, v5, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
@@ -3083,13 +3069,13 @@
     .line 982
     iget-object v0, p0, Lcom/mediatek/ims/ImsUtImpl;->mHandler:Lcom/mediatek/ims/ImsUtImpl$ResultHandler;
 
-    const/16 v1, 0x3f1
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/16 v4, 0x3f1
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v4, v2, v1, v3}, Lcom/mediatek/ims/ImsUtImpl$ResultHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 

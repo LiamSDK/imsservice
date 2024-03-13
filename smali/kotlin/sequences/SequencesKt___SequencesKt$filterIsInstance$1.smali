@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\n_Sequences.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt$filterIsInstance$1\n*L\n1#1,2932:1\n*E\n"
+    value = "SMAP\n_Sequences.kt\nKotlin\n*S Kotlin\n*F\n+ 1 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt$filterIsInstance$1\n*L\n1#1,3094:1\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -46,7 +46,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0xb0
@@ -86,7 +86,7 @@
     .locals 2
     .param p1, "it"    # Ljava/lang/Object;
 
-    .line 472
+    .line 473
     const/4 v0, 0x3
 
     const-string v1, "R"
@@ -106,7 +106,7 @@
     .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
-    .line 472
+    .line 473
     invoke-virtual {p0, p1}, Lkotlin/sequences/SequencesKt___SequencesKt$filterIsInstance$1;->invoke(Ljava/lang/Object;)Ljava/lang/Boolean;
 
     move-result-object v0

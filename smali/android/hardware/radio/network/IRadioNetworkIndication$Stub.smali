@@ -36,6 +36,8 @@
 
 .field static final TRANSACTION_currentSignalStrength:I = 0x6
 
+.field static final TRANSACTION_emergencyNetworkScanResult:I = 0xf
+
 .field static final TRANSACTION_getInterfaceHash:I = 0xfffffe
 
 .field static final TRANSACTION_getInterfaceVersion:I = 0xffffff
@@ -61,18 +63,18 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 78
+    .line 81
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 79
+    .line 82
     invoke-virtual {p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->markVintfStability()V
 
-    .line 80
+    .line 83
     sget-object v0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {p0, p0, v0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 81
+    .line 84
     return-void
 .end method
 
@@ -80,15 +82,15 @@
     .locals 2
     .param p0, "obj"    # Landroid/os/IBinder;
 
-    .line 88
+    .line 91
     if-nez p0, :cond_0
 
-    .line 89
+    .line 92
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 91
+    .line 94
     :cond_0
     sget-object v0, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->DESCRIPTOR:Ljava/lang/String;
 
@@ -96,7 +98,7 @@
 
     move-result-object v0
 
-    .line 92
+    .line 95
     .local v0, "iin":Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
@@ -104,14 +106,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 93
+    .line 96
     move-object v1, v0
 
     check-cast v1, Landroid/hardware/radio/network/IRadioNetworkIndication;
 
     return-object v1
 
-    .line 95
+    .line 98
     :cond_1
     new-instance v1, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub$Proxy;
 
@@ -125,7 +127,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 0
 
-    .line 99
+    .line 102
     return-object p0
 .end method
 
@@ -141,7 +143,7 @@
         }
     .end annotation
 
-    .line 103
+    .line 106
     move-object/from16 v7, p0
 
     move/from16 v8, p1
@@ -152,7 +154,7 @@
 
     sget-object v11, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->DESCRIPTOR:Ljava/lang/String;
 
-    .line 104
+    .line 107
     .local v11, "descriptor":Ljava/lang/String;
     const/4 v12, 0x1
 
@@ -162,89 +164,117 @@
 
     if-gt v8, v0, :cond_0
 
-    .line 105
+    .line 108
     invoke-virtual {v9, v11}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 107
+    .line 110
     :cond_0
     sparse-switch v8, :sswitch_data_0
 
-    .line 127
+    .line 130
     packed-switch v8, :pswitch_data_0
 
-    .line 281
+    .line 294
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
 
     return v0
 
-    .line 111
+    .line 114
     :sswitch_0
     invoke-virtual {v10, v11}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 112
+    .line 115
     return v12
 
-    .line 116
+    .line 119
     :sswitch_1
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 117
+    .line 120
     invoke-virtual/range {p0 .. p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->getInterfaceVersion()I
 
     move-result v0
 
     invoke-virtual {v10, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 118
+    .line 121
     return v12
 
-    .line 122
+    .line 125
     :sswitch_2
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 123
+    .line 126
     invoke-virtual/range {p0 .. p0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->getInterfaceHash()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v10, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 124
+    .line 127
     return v12
 
-    .line 272
+    .line 285
     :pswitch_0
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 274
+    .line 287
     .local v0, "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+    sget-object v1, Landroid/hardware/radio/network/EmergencyRegResult;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    move-result v1
+    invoke-virtual {v9, v1}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
 
-    .line 275
-    .local v1, "_arg1":I
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/radio/network/EmergencyRegResult;
+
+    .line 288
+    .local v1, "_arg1":Landroid/hardware/radio/network/EmergencyRegResult;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 276
-    invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->voiceRadioTechChanged(II)V
+    .line 289
+    invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->emergencyNetworkScanResult(ILandroid/hardware/radio/network/EmergencyRegResult;)V
 
-    .line 277
+    .line 290
     goto/16 :goto_0
 
-    .line 262
+    .line 275
     .end local v0    # "_arg0":I
-    .end local v1    # "_arg1":I
+    .end local v1    # "_arg1":Landroid/hardware/radio/network/EmergencyRegResult;
     :pswitch_1
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 264
+    .line 277
+    .restart local v0    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 278
+    .local v1, "_arg1":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
+
+    .line 279
+    invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->voiceRadioTechChanged(II)V
+
+    .line 280
+    goto/16 :goto_0
+
+    .line 265
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
+    :pswitch_2
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 267
     .restart local v0    # "_arg0":I
     sget-object v1, Landroid/hardware/radio/network/SuppSvcNotification;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -254,49 +284,49 @@
 
     check-cast v1, Landroid/hardware/radio/network/SuppSvcNotification;
 
-    .line 265
+    .line 268
     .local v1, "_arg1":Landroid/hardware/radio/network/SuppSvcNotification;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 266
+    .line 269
     invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->suppSvcNotify(ILandroid/hardware/radio/network/SuppSvcNotification;)V
 
-    .line 267
+    .line 270
     goto/16 :goto_0
 
-    .line 252
+    .line 255
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":Landroid/hardware/radio/network/SuppSvcNotification;
-    :pswitch_2
+    :pswitch_3
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 254
+    .line 257
     .restart local v0    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 255
+    .line 258
     .local v1, "_arg1":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 256
+    .line 259
     invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->restrictedStateChanged(II)V
 
-    .line 257
+    .line 260
     goto/16 :goto_0
 
-    .line 234
+    .line 237
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":I
-    :pswitch_3
+    :pswitch_4
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v13
 
-    .line 236
+    .line 239
     .local v13, "_arg0":I
     sget-object v0, Landroid/hardware/radio/network/CellIdentity;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -308,35 +338,35 @@
 
     check-cast v14, Landroid/hardware/radio/network/CellIdentity;
 
-    .line 238
+    .line 241
     .local v14, "_arg1":Landroid/hardware/radio/network/CellIdentity;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v15
 
-    .line 240
+    .line 243
     .local v15, "_arg2":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v16
 
-    .line 242
+    .line 245
     .local v16, "_arg3":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v17
 
-    .line 244
+    .line 247
     .local v17, "_arg4":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v18
 
-    .line 245
+    .line 248
     .local v18, "_arg5":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 246
+    .line 249
     move-object/from16 v0, p0
 
     move v1, v13
@@ -353,44 +383,44 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->registrationFailed(ILandroid/hardware/radio/network/CellIdentity;Ljava/lang/String;III)V
 
-    .line 247
+    .line 250
     goto/16 :goto_0
 
-    .line 220
+    .line 223
     .end local v13    # "_arg0":I
     .end local v14    # "_arg1":Landroid/hardware/radio/network/CellIdentity;
     .end local v15    # "_arg2":Ljava/lang/String;
     .end local v16    # "_arg3":I
     .end local v17    # "_arg4":I
     .end local v18    # "_arg5":I
-    :pswitch_4
+    :pswitch_5
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v13
 
-    .line 222
+    .line 225
     .restart local v13    # "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v14
 
-    .line 224
+    .line 227
     .local v14, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v15
 
-    .line 226
+    .line 229
     .local v15, "_arg2":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v17
 
-    .line 227
+    .line 230
     .local v17, "_arg3":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 228
+    .line 231
     move-object/from16 v0, p0
 
     move v1, v13
@@ -403,37 +433,37 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->nitzTimeReceived(ILjava/lang/String;JJ)V
 
-    .line 229
+    .line 232
     goto/16 :goto_0
 
-    .line 212
+    .line 215
     .end local v13    # "_arg0":I
     .end local v14    # "_arg1":Ljava/lang/String;
     .end local v15    # "_arg2":J
     .end local v17    # "_arg3":J
-    :pswitch_5
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 213
-    .restart local v0    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
-
-    .line 214
-    invoke-virtual {v7, v0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->networkStateChanged(I)V
-
-    .line 215
-    goto/16 :goto_0
-
-    .line 202
-    .end local v0    # "_arg0":I
     :pswitch_6
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 204
+    .line 216
+    .restart local v0    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
+
+    .line 217
+    invoke-virtual {v7, v0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->networkStateChanged(I)V
+
+    .line 218
+    goto/16 :goto_0
+
+    .line 205
+    .end local v0    # "_arg0":I
+    :pswitch_7
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 207
     .restart local v0    # "_arg0":I
     sget-object v1, Landroid/hardware/radio/network/NetworkScanResult;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -443,42 +473,42 @@
 
     check-cast v1, Landroid/hardware/radio/network/NetworkScanResult;
 
-    .line 205
+    .line 208
     .local v1, "_arg1":Landroid/hardware/radio/network/NetworkScanResult;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 206
+    .line 209
     invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->networkScanResult(ILandroid/hardware/radio/network/NetworkScanResult;)V
 
-    .line 207
+    .line 210
     goto/16 :goto_0
-
-    .line 194
-    .end local v0    # "_arg0":I
-    .end local v1    # "_arg1":Landroid/hardware/radio/network/NetworkScanResult;
-    :pswitch_7
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 195
-    .restart local v0    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
-
-    .line 196
-    invoke-virtual {v7, v0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->imsNetworkStateChanged(I)V
 
     .line 197
-    goto/16 :goto_0
-
-    .line 184
     .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":Landroid/hardware/radio/network/NetworkScanResult;
     :pswitch_8
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 186
+    .line 198
+    .restart local v0    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
+
+    .line 199
+    invoke-virtual {v7, v0}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->imsNetworkStateChanged(I)V
+
+    .line 200
+    goto/16 :goto_0
+
+    .line 187
+    .end local v0    # "_arg0":I
+    :pswitch_9
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 189
     .restart local v0    # "_arg0":I
     sget-object v1, Landroid/hardware/radio/network/SignalStrength;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -488,25 +518,25 @@
 
     check-cast v1, Landroid/hardware/radio/network/SignalStrength;
 
-    .line 187
+    .line 190
     .local v1, "_arg1":Landroid/hardware/radio/network/SignalStrength;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 188
+    .line 191
     invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->currentSignalStrength(ILandroid/hardware/radio/network/SignalStrength;)V
 
-    .line 189
+    .line 192
     goto :goto_0
 
-    .line 174
+    .line 177
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":Landroid/hardware/radio/network/SignalStrength;
-    :pswitch_9
+    :pswitch_a
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 176
+    .line 179
     .restart local v0    # "_arg0":I
     sget-object v1, Landroid/hardware/radio/network/PhysicalChannelConfig;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -516,25 +546,25 @@
 
     check-cast v1, [Landroid/hardware/radio/network/PhysicalChannelConfig;
 
-    .line 177
+    .line 180
     .local v1, "_arg1":[Landroid/hardware/radio/network/PhysicalChannelConfig;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 178
+    .line 181
     invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->currentPhysicalChannelConfigs(I[Landroid/hardware/radio/network/PhysicalChannelConfig;)V
 
-    .line 179
+    .line 182
     goto :goto_0
 
-    .line 164
+    .line 167
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":[Landroid/hardware/radio/network/PhysicalChannelConfig;
-    :pswitch_a
+    :pswitch_b
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 166
+    .line 169
     .restart local v0    # "_arg0":I
     sget-object v1, Landroid/hardware/radio/network/LinkCapacityEstimate;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -544,25 +574,25 @@
 
     check-cast v1, Landroid/hardware/radio/network/LinkCapacityEstimate;
 
-    .line 167
+    .line 170
     .local v1, "_arg1":Landroid/hardware/radio/network/LinkCapacityEstimate;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 168
+    .line 171
     invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->currentLinkCapacityEstimate(ILandroid/hardware/radio/network/LinkCapacityEstimate;)V
 
-    .line 169
+    .line 172
     goto :goto_0
 
-    .line 154
+    .line 157
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":Landroid/hardware/radio/network/LinkCapacityEstimate;
-    :pswitch_b
+    :pswitch_c
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 156
+    .line 159
     .restart local v0    # "_arg0":I
     sget-object v1, Landroid/hardware/radio/network/CellInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -572,49 +602,49 @@
 
     check-cast v1, [Landroid/hardware/radio/network/CellInfo;
 
-    .line 157
+    .line 160
     .local v1, "_arg1":[Landroid/hardware/radio/network/CellInfo;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 158
+    .line 161
     invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->cellInfoList(I[Landroid/hardware/radio/network/CellInfo;)V
 
-    .line 159
+    .line 162
     goto :goto_0
-
-    .line 144
-    .end local v0    # "_arg0":I
-    .end local v1    # "_arg1":[Landroid/hardware/radio/network/CellInfo;
-    :pswitch_c
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 146
-    .restart local v0    # "_arg0":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
 
     .line 147
-    .local v1, "_arg1":I
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
-
-    .line 148
-    invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->cdmaPrlChanged(II)V
-
-    .line 149
-    goto :goto_0
-
-    .line 132
     .end local v0    # "_arg0":I
-    .end local v1    # "_arg1":I
+    .end local v1    # "_arg1":[Landroid/hardware/radio/network/CellInfo;
     :pswitch_d
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 134
+    .line 149
+    .restart local v0    # "_arg0":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 150
+    .local v1, "_arg1":I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
+
+    .line 151
+    invoke-virtual {v7, v0, v1}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->cdmaPrlChanged(II)V
+
+    .line 152
+    goto :goto_0
+
+    .line 135
+    .end local v0    # "_arg0":I
+    .end local v1    # "_arg1":I
+    :pswitch_e
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 137
     .restart local v0    # "_arg0":I
     sget-object v1, Landroid/hardware/radio/network/CellIdentity;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -624,7 +654,7 @@
 
     check-cast v1, Landroid/hardware/radio/network/CellIdentity;
 
-    .line 136
+    .line 139
     .local v1, "_arg1":Landroid/hardware/radio/network/CellIdentity;
     sget-object v2, Landroid/hardware/radio/network/BarringInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -634,17 +664,17 @@
 
     check-cast v2, [Landroid/hardware/radio/network/BarringInfo;
 
-    .line 137
+    .line 140
     .local v2, "_arg2":[Landroid/hardware/radio/network/BarringInfo;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 138
+    .line 141
     invoke-virtual {v7, v0, v1, v2}, Landroid/hardware/radio/network/IRadioNetworkIndication$Stub;->barringInfoChanged(ILandroid/hardware/radio/network/CellIdentity;[Landroid/hardware/radio/network/BarringInfo;)V
 
-    .line 139
+    .line 142
     nop
 
-    .line 284
+    .line 297
     .end local v0    # "_arg0":I
     .end local v1    # "_arg1":Landroid/hardware/radio/network/CellIdentity;
     .end local v2    # "_arg2":[Landroid/hardware/radio/network/BarringInfo;
@@ -660,6 +690,7 @@
 
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_e
         :pswitch_d
         :pswitch_c
         :pswitch_b

@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 858
+    .line 911
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 860
+    .line 913
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "activity"    # Landroid/app/Activity;
 
-    .line 864
+    .line 917
     invoke-virtual {p0}, Landroid/app/Activity;->getReferrer()Landroid/net/Uri;
 
     move-result-object v0

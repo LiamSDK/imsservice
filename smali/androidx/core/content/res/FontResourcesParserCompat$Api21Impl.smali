@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 366
+    .line 363
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 368
+    .line 365
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .param p0, "typedArray"    # Landroid/content/res/TypedArray;
     .param p1, "index"    # I
 
-    .line 372
+    .line 369
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getType(I)I
 
     move-result v0

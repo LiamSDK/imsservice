@@ -32,7 +32,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    .line 70
+    .line 73
     const/4 v0, 0x0
 
     return-object v0
@@ -123,10 +123,24 @@
     return-void
 .end method
 
+.method public emergencyNetworkScanResult(ILandroid/hardware/radio/network/EmergencyRegResult;)V
+    .locals 0
+    .param p1, "type"    # I
+    .param p2, "result"    # Landroid/hardware/radio/network/EmergencyRegResult;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 62
+    return-void
+.end method
+
 .method public getInterfaceHash()Ljava/lang/String;
     .locals 1
 
-    .line 66
+    .line 69
     const-string v0, ""
 
     return-object v0
@@ -135,7 +149,7 @@
 .method public getInterfaceVersion()I
     .locals 1
 
-    .line 62
+    .line 65
     const/4 v0, 0x0
 
     return v0

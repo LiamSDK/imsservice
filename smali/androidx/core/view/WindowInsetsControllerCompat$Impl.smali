@@ -18,10 +18,10 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 348
+    .line 368
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 350
+    .line 370
     return-void
 .end method
 
@@ -31,7 +31,7 @@
     .locals 0
     .param p1, "listener"    # Landroidx/core/view/WindowInsetsControllerCompat$OnControllableInsetsChangedListener;
 
-    .line 386
+    .line 406
     return-void
 .end method
 
@@ -43,14 +43,14 @@
     .param p5, "cancellationSignal"    # Landroid/os/CancellationSignal;
     .param p6, "listener"    # Landroidx/core/view/WindowInsetsAnimationControlListenerCompat;
 
-    .line 361
+    .line 381
     return-void
 .end method
 
 .method getSystemBarsBehavior()I
     .locals 1
 
-    .line 367
+    .line 387
     const/4 v0, 0x0
 
     return v0
@@ -60,14 +60,14 @@
     .locals 0
     .param p1, "types"    # I
 
-    .line 356
+    .line 376
     return-void
 .end method
 
 .method public isAppearanceLightNavigationBars()Z
     .locals 1
 
-    .line 378
+    .line 398
     const/4 v0, 0x0
 
     return v0
@@ -76,7 +76,7 @@
 .method public isAppearanceLightStatusBars()Z
     .locals 1
 
-    .line 371
+    .line 391
     const/4 v0, 0x0
 
     return v0
@@ -86,7 +86,7 @@
     .locals 0
     .param p1, "listener"    # Landroidx/core/view/WindowInsetsControllerCompat$OnControllableInsetsChangedListener;
 
-    .line 391
+    .line 411
     return-void
 .end method
 
@@ -94,7 +94,7 @@
     .locals 0
     .param p1, "isLight"    # Z
 
-    .line 382
+    .line 402
     return-void
 .end method
 
@@ -102,7 +102,7 @@
     .locals 0
     .param p1, "isLight"    # Z
 
-    .line 375
+    .line 395
     return-void
 .end method
 
@@ -110,7 +110,7 @@
     .locals 0
     .param p1, "behavior"    # I
 
-    .line 364
+    .line 384
     return-void
 .end method
 
@@ -118,6 +118,6 @@
     .locals 0
     .param p1, "types"    # I
 
-    .line 353
+    .line 373
     return-void
 .end method

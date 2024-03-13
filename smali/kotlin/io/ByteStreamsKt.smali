@@ -45,7 +45,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -198,9 +198,9 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 80
     new-instance v0, Ljava/io/InputStreamReader;
 
+    .line 80
     invoke-direct {v0, p0, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
     check-cast v0, Ljava/io/Reader;
@@ -253,22 +253,22 @@
 
     check-cast p2, Ljava/io/Reader;
 
-    const/16 p3, 0x2000
+    instance-of p3, p2, Ljava/io/BufferedReader;
 
-    instance-of v0, p2, Ljava/io/BufferedReader;
-
-    if-eqz v0, :cond_1
+    if-eqz p3, :cond_1
 
     check-cast p2, Ljava/io/BufferedReader;
 
     goto :goto_0
 
     :cond_1
-    new-instance v0, Ljava/io/BufferedReader;
+    new-instance p3, Ljava/io/BufferedReader;
 
-    invoke-direct {v0, p2, p3}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+    const/16 v0, 0x2000
 
-    move-object p2, v0
+    invoke-direct {p3, p2, v0}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+
+    move-object p2, p3
 
     :goto_0
     return-object p2
@@ -287,9 +287,9 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 96
     new-instance v0, Ljava/io/OutputStreamWriter;
 
+    .line 96
     invoke-direct {v0, p0, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
     check-cast v0, Ljava/io/Writer;
@@ -342,22 +342,22 @@
 
     check-cast p2, Ljava/io/Writer;
 
-    const/16 p3, 0x2000
+    instance-of p3, p2, Ljava/io/BufferedWriter;
 
-    instance-of v0, p2, Ljava/io/BufferedWriter;
-
-    if-eqz v0, :cond_1
+    if-eqz p3, :cond_1
 
     check-cast p2, Ljava/io/BufferedWriter;
 
     goto :goto_0
 
     :cond_1
-    new-instance v0, Ljava/io/BufferedWriter;
+    new-instance p3, Ljava/io/BufferedWriter;
 
-    invoke-direct {v0, p2, p3}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+    const/16 v0, 0x2000
 
-    move-object p2, v0
+    invoke-direct {p3, p2, v0}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+
+    move-object p2, p3
 
     :goto_0
     return-object p2
@@ -564,13 +564,13 @@
     .line 135
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
+    const/16 v1, 0x2000
+
     invoke-virtual {p0}, Ljava/io/InputStream;->available()I
 
-    move-result v1
+    move-result v2
 
-    const/16 v2, 0x2000
-
-    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
@@ -582,13 +582,13 @@
 
     check-cast v1, Ljava/io/OutputStream;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    invoke-static {p0, v1, v2, v3, v4}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
+    invoke-static {p0, v1, v4, v2, v3}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
 
     .line 137
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -642,13 +642,13 @@
 
     check-cast v1, Ljava/io/OutputStream;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    invoke-static {p0, v1, v2, v3, v4}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
+    invoke-static {p0, v1, v4, v2, v3}, Lkotlin/io/ByteStreamsKt;->copyTo$default(Ljava/io/InputStream;Ljava/io/OutputStream;IILjava/lang/Object;)J
 
     .line 125
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B

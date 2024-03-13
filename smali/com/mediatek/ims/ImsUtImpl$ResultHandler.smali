@@ -130,7 +130,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 446
     :sswitch_0
@@ -233,7 +233,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_1
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 410
     :sswitch_1
@@ -420,7 +420,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_4
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 467
     :sswitch_2
@@ -618,7 +618,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_7
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 349
     :sswitch_3
@@ -851,7 +851,7 @@
     invoke-virtual {v1, v4, v3}, Landroid/telephony/ims/ImsUtListener;->onUtConfigurationCallForwardQueried(I[Landroid/telephony/ims/ImsCallForwardInfo;)V
 
     .line 374
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 385
     .end local v0    # "ar":Landroid/os/AsyncResult;
@@ -970,7 +970,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_b
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 318
     :sswitch_5
@@ -1096,7 +1096,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_d
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 287
     :sswitch_6
@@ -1265,7 +1265,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_10
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 258
     :sswitch_7
@@ -1409,7 +1409,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_12
-    goto/16 :goto_16
+    goto/16 :goto_17
 
     .line 235
     :sswitch_8
@@ -1524,7 +1524,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_14
-    goto :goto_16
+    goto :goto_17
 
     .line 205
     :sswitch_9
@@ -1664,12 +1664,18 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/telephony/ims/ImsUtListener;->onUtConfigurationQueryFailed(ILandroid/telephony/ims/ImsReasonInfo;)V
 
-    .line 506
+    .line 232
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
-    :cond_18
     :goto_16
+    nop
+
+    .line 506
+    :cond_18
+    :goto_17
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

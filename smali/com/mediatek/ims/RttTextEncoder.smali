@@ -767,6 +767,9 @@
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 146
+    nop
+
     .line 149
     .end local v7    # "i":I
     .end local v8    # "e":Ljava/lang/IndexOutOfBoundsException;

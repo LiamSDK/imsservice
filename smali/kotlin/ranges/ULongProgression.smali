@@ -61,7 +61,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -101,46 +101,46 @@
     .param p3, "endInclusive"    # J
     .param p5, "step"    # J
 
-    .line 50
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
+    .line 67
     nop
 
-    .line 59
+    .line 68
     const-wide/16 v0, 0x0
 
     cmp-long v0, p5, v0
 
     if-eqz v0, :cond_1
 
-    .line 60
+    .line 69
     const-wide/high16 v0, -0x8000000000000000L
 
     cmp-long v0, p5, v0
 
     if-eqz v0, :cond_0
 
-    .line 61
+    .line 70
     nop
 
-    .line 66
+    .line 75
     iput-wide p1, p0, Lkotlin/ranges/ULongProgression;->first:J
 
-    .line 71
+    .line 80
     invoke-static/range {p1 .. p6}, Lkotlin/internal/UProgressionUtilKt;->getProgressionLastElement-7ftBX0g(JJJ)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lkotlin/ranges/ULongProgression;->last:J
 
-    .line 76
+    .line 85
     iput-wide p5, p0, Lkotlin/ranges/ULongProgression;->step:J
 
-    .line 53
+    .line 62
     return-void
 
-    .line 60
+    .line 69
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -150,7 +150,7 @@
 
     throw v0
 
-    .line 59
+    .line 68
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -175,7 +175,7 @@
     .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
-    .line 89
+    .line 98
     instance-of v0, p1, Lkotlin/ranges/ULongProgression;
 
     if-eqz v0, :cond_2
@@ -196,35 +196,27 @@
 
     if-nez v0, :cond_1
 
-    .line 90
+    .line 99
     :cond_0
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
-
-    move-result-wide v0
+    iget-wide v0, p0, Lkotlin/ranges/ULongProgression;->first:J
 
     move-object v2, p1
 
     check-cast v2, Lkotlin/ranges/ULongProgression;
 
-    invoke-virtual {v2}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
-
-    move-result-wide v2
+    iget-wide v2, v2, Lkotlin/ranges/ULongProgression;->first:J
 
     cmp-long v0, v0, v2
 
     if-nez v0, :cond_2
 
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
-
-    move-result-wide v0
+    iget-wide v0, p0, Lkotlin/ranges/ULongProgression;->last:J
 
     move-object v2, p1
 
     check-cast v2, Lkotlin/ranges/ULongProgression;
 
-    invoke-virtual {v2}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
-
-    move-result-wide v2
+    iget-wide v2, v2, Lkotlin/ranges/ULongProgression;->last:J
 
     cmp-long v0, v0, v2
 
@@ -257,7 +249,7 @@
 .method public final getFirst-s-VKNKU()J
     .locals 2
 
-    .line 66
+    .line 75
     iget-wide v0, p0, Lkotlin/ranges/ULongProgression;->first:J
 
     return-wide v0
@@ -266,7 +258,7 @@
 .method public final getLast-s-VKNKU()J
     .locals 2
 
-    .line 71
+    .line 80
     iget-wide v0, p0, Lkotlin/ranges/ULongProgression;->last:J
 
     return-wide v0
@@ -275,7 +267,7 @@
 .method public final getStep()J
     .locals 2
 
-    .line 76
+    .line 85
     iget-wide v0, p0, Lkotlin/ranges/ULongProgression;->step:J
 
     return-wide v0
@@ -284,7 +276,7 @@
 .method public hashCode()I
     .locals 7
 
-    .line 93
+    .line 102
     invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->isEmpty()Z
 
     move-result v0
@@ -296,23 +288,17 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
+    iget-wide v0, p0, Lkotlin/ranges/ULongProgression;->first:J
 
-    move-result-wide v0
+    const/16 v2, 0x20
 
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
+    ushr-long v3, v0, v2
 
-    move-result-wide v2
+    invoke-static {v3, v4}, Lkotlin/ULong;->constructor-impl(J)J
 
-    const/16 v4, 0x20
+    move-result-wide v3
 
-    ushr-long/2addr v2, v4
-
-    invoke-static {v2, v3}, Lkotlin/ULong;->constructor-impl(J)J
-
-    move-result-wide v2
-
-    xor-long/2addr v0, v2
+    xor-long/2addr v0, v3
 
     invoke-static {v0, v1}, Lkotlin/ULong;->constructor-impl(J)J
 
@@ -322,35 +308,29 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
+    iget-wide v3, p0, Lkotlin/ranges/ULongProgression;->last:J
 
-    move-result-wide v1
-
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
-
-    move-result-wide v5
-
-    ushr-long/2addr v5, v4
+    ushr-long v5, v3, v2
 
     invoke-static {v5, v6}, Lkotlin/ULong;->constructor-impl(J)J
 
     move-result-wide v5
 
-    xor-long/2addr v1, v5
+    xor-long/2addr v3, v5
 
-    invoke-static {v1, v2}, Lkotlin/ULong;->constructor-impl(J)J
+    invoke-static {v3, v4}, Lkotlin/ULong;->constructor-impl(J)J
 
-    move-result-wide v1
+    move-result-wide v3
 
-    long-to-int v1, v1
+    long-to-int v1, v3
 
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-wide v1, p0, Lkotlin/ranges/ULongProgression;->step:J
+    iget-wide v3, p0, Lkotlin/ranges/ULongProgression;->step:J
 
-    ushr-long v3, v1, v4
+    ushr-long v1, v3, v2
 
     xor-long/2addr v1, v3
 
@@ -365,7 +345,7 @@
 .method public isEmpty()Z
     .locals 7
 
-    .line 86
+    .line 95
     iget-wide v0, p0, Lkotlin/ranges/ULongProgression;->step:J
 
     const-wide/16 v2, 0x0
@@ -376,17 +356,13 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
+    iget-wide v3, p0, Lkotlin/ranges/ULongProgression;->first:J
 
-    move-result-wide v3
-
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
-
-    move-result-wide v5
+    iget-wide v5, p0, Lkotlin/ranges/ULongProgression;->last:J
 
     if-lez v0, :cond_0
 
-    invoke-static {v3, v4, v5, v6}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -395,7 +371,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {v3, v4, v5, v6}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -422,16 +398,12 @@
         }
     .end annotation
 
-    .line 78
+    .line 87
     new-instance v8, Lkotlin/ranges/ULongProgressionIterator;
 
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
+    iget-wide v1, p0, Lkotlin/ranges/ULongProgression;->first:J
 
-    move-result-wide v1
-
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
-
-    move-result-wide v3
+    iget-wide v3, p0, Lkotlin/ranges/ULongProgression;->last:J
 
     iget-wide v5, p0, Lkotlin/ranges/ULongProgression;->step:J
 
@@ -449,7 +421,7 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 95
+    .line 104
     iget-wide v0, p0, Lkotlin/ranges/ULongProgression;->step:J
 
     const-wide/16 v2, 0x0
@@ -464,9 +436,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
-
-    move-result-wide v2
+    iget-wide v2, p0, Lkotlin/ranges/ULongProgression;->first:J
 
     invoke-static {v2, v3}, Lkotlin/ULong;->toString-impl(J)Ljava/lang/String;
 
@@ -482,9 +452,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
-
-    move-result-wide v2
+    iget-wide v2, p0, Lkotlin/ranges/ULongProgression;->last:J
 
     invoke-static {v2, v3}, Lkotlin/ULong;->toString-impl(J)Ljava/lang/String;
 
@@ -507,9 +475,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getFirst-s-VKNKU()J
-
-    move-result-wide v2
+    iget-wide v2, p0, Lkotlin/ranges/ULongProgression;->first:J
 
     invoke-static {v2, v3}, Lkotlin/ULong;->toString-impl(J)Ljava/lang/String;
 
@@ -525,9 +491,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lkotlin/ranges/ULongProgression;->getLast-s-VKNKU()J
-
-    move-result-wide v2
+    iget-wide v2, p0, Lkotlin/ranges/ULongProgression;->last:J
 
     invoke-static {v2, v3}, Lkotlin/ULong;->toString-impl(J)Ljava/lang/String;
 

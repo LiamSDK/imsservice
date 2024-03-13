@@ -97,11 +97,11 @@
 
     move-result-wide v7
 
-    .line 73
     const-wide/16 v9, 0x0
 
     const/4 v11, 0x1
 
+    .line 73
     move-object v4, p0
 
     invoke-virtual/range {v4 .. v11}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;
@@ -346,27 +346,19 @@
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 4
 
     .line 39
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget-object v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/CipherNotification;->simCipherStatus:Ljava/lang/String;
+    iget-object v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/CipherNotification;->simCipherStatus:Ljava/lang/String;
 
     .line 40
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     iget-object v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/CipherNotification;->sessionStatus:Ljava/lang/String;
 
@@ -379,39 +371,31 @@
 
     move-result-object v1
 
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/CipherNotification;->csStatus:Ljava/lang/String;
+    iget-object v2, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/CipherNotification;->csStatus:Ljava/lang/String;
 
     .line 42
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v2}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/CipherNotification;->psStatus:Ljava/lang/String;
+    iget-object v3, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/CipherNotification;->psStatus:Ljava/lang/String;
 
     .line 43
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v3}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v3
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    const/4 v2, 0x3
+    filled-new-array {v0, v1, v2, v3}, [Ljava/lang/Object;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 39
     invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
@@ -465,9 +449,9 @@
 
     add-long v10, v4, v2
 
-    .line 92
     const/4 v12, 0x0
 
+    .line 92
     move-object/from16 v5, p1
 
     invoke-virtual/range {v5 .. v12}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;
@@ -506,9 +490,9 @@
 
     add-long v12, v4, v2
 
-    .line 99
     const/4 v14, 0x0
 
+    .line 99
     move-object/from16 v7, p1
 
     invoke-virtual/range {v7 .. v14}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;

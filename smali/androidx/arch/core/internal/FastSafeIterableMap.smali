@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field private mHashMap:Ljava/util/HashMap;
+.field private final mHashMap:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -34,11 +34,11 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 35
+    .line 36
     .local p0, "this":Landroidx/arch/core/internal/FastSafeIterableMap;, "Landroidx/arch/core/internal/FastSafeIterableMap<TK;TV;>;"
     invoke-direct {p0}, Landroidx/arch/core/internal/SafeIterableMap;-><init>()V
 
-    .line 37
+    .line 38
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -60,7 +60,7 @@
         }
     .end annotation
 
-    .line 76
+    .line 79
     .local p0, "this":Landroidx/arch/core/internal/FastSafeIterableMap;, "Landroidx/arch/core/internal/FastSafeIterableMap<TK;TV;>;"
     .local p1, "k":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0, p1}, Landroidx/arch/core/internal/FastSafeIterableMap;->contains(Ljava/lang/Object;)Z
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 77
+    .line 80
     iget-object v0, p0, Landroidx/arch/core/internal/FastSafeIterableMap;->mHashMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -82,7 +82,7 @@
 
     return-object v0
 
-    .line 79
+    .line 82
     :cond_0
     const/4 v0, 0x0
 
@@ -97,7 +97,7 @@
         }
     .end annotation
 
-    .line 67
+    .line 69
     .local p0, "this":Landroidx/arch/core/internal/FastSafeIterableMap;, "Landroidx/arch/core/internal/FastSafeIterableMap<TK;TV;>;"
     .local p1, "key":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Landroidx/arch/core/internal/FastSafeIterableMap;->mHashMap:Ljava/util/HashMap;
@@ -119,7 +119,7 @@
         }
     .end annotation
 
-    .line 42
+    .line 44
     .local p0, "this":Landroidx/arch/core/internal/FastSafeIterableMap;, "Landroidx/arch/core/internal/FastSafeIterableMap<TK;TV;>;"
     .local p1, "k":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Landroidx/arch/core/internal/FastSafeIterableMap;->mHashMap:Ljava/util/HashMap;
@@ -141,7 +141,7 @@
         }
     .end annotation
 
-    .line 47
+    .line 49
     .local p0, "this":Landroidx/arch/core/internal/FastSafeIterableMap;, "Landroidx/arch/core/internal/FastSafeIterableMap<TK;TV;>;"
     .local p1, "key":Ljava/lang/Object;, "TK;"
     .local p2, "v":Ljava/lang/Object;, "TV;"
@@ -149,16 +149,16 @@
 
     move-result-object v0
 
-    .line 48
+    .line 50
     .local v0, "current":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     if-eqz v0, :cond_0
 
-    .line 49
+    .line 51
     iget-object v1, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mValue:Ljava/lang/Object;
 
     return-object v1
 
-    .line 51
+    .line 53
     :cond_0
     iget-object v1, p0, Landroidx/arch/core/internal/FastSafeIterableMap;->mHashMap:Ljava/util/HashMap;
 
@@ -168,7 +168,7 @@
 
     invoke-virtual {v1, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 52
+    .line 54
     const/4 v1, 0x0
 
     return-object v1
@@ -182,19 +182,19 @@
         }
     .end annotation
 
-    .line 57
+    .line 59
     .local p0, "this":Landroidx/arch/core/internal/FastSafeIterableMap;, "Landroidx/arch/core/internal/FastSafeIterableMap<TK;TV;>;"
     .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-super {p0, p1}, Landroidx/arch/core/internal/SafeIterableMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 58
+    .line 60
     .local v0, "removed":Ljava/lang/Object;, "TV;"
     iget-object v1, p0, Landroidx/arch/core/internal/FastSafeIterableMap;->mHashMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 59
+    .line 61
     return-object v0
 .end method

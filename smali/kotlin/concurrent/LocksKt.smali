@@ -28,7 +28,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -94,13 +94,12 @@
     .line 38
     return-object v2
 
-    .line 39
+    .line 40
     :catchall_0
     move-exception v2
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 40
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
@@ -160,13 +159,12 @@
     .line 22
     return-object v1
 
-    .line 23
+    .line 24
     :catchall_0
     move-exception v1
 
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 24
     invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
@@ -232,20 +230,20 @@
     :goto_1
     if-ge v3, v1, :cond_1
 
-    add-int/lit8 v4, v3, 0x1
+    move v4, v3
 
     .line 75
-    .local v3, "it":I
+    .local v4, "it":I
     const/4 v5, 0x0
 
     .line 63
     .local v5, "$i$a$-repeat-LocksKt$write$2":I
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
-    move v3, v4
-
-    .end local v3    # "it":I
+    .end local v4    # "it":I
     .end local v5    # "$i$a$-repeat-LocksKt$write$2":I
+    add-int/lit8 v3, v3, 0x1
+
     goto :goto_1
 
     .line 65
@@ -279,20 +277,20 @@
     :goto_2
     if-ge v2, v1, :cond_2
 
-    add-int/lit8 v6, v2, 0x1
+    move v6, v2
 
     .line 75
-    .local v2, "it":I
+    .local v6, "it":I
     const/4 v7, 0x0
 
     .line 70
     .local v7, "$i$a$-repeat-LocksKt$write$3":I
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->lock()V
 
-    move v2, v6
-
-    .end local v2    # "it":I
+    .end local v6    # "it":I
     .end local v7    # "$i$a$-repeat-LocksKt$write$3":I
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_2
 
     .line 71
@@ -304,32 +302,29 @@
     .line 68
     return-object v5
 
-    .line 69
+    .line 70
     :catchall_0
     move-exception v5
 
     invoke-static {v4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 70
-    nop
-
     :goto_3
     if-ge v2, v1, :cond_3
 
-    add-int/lit8 v6, v2, 0x1
+    move v6, v2
 
     .line 75
-    .restart local v2    # "it":I
+    .restart local v6    # "it":I
     const/4 v7, 0x0
 
     .line 70
     .restart local v7    # "$i$a$-repeat-LocksKt$write$3":I
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->lock()V
 
-    move v2, v6
-
-    .end local v2    # "it":I
+    .end local v6    # "it":I
     .end local v7    # "$i$a$-repeat-LocksKt$write$3":I
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_3
 
     .line 71

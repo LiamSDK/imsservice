@@ -39,13 +39,11 @@
     sput-object v0, Landroidx/concurrent/futures/DirectExecutor;->INSTANCE:Landroidx/concurrent/futures/DirectExecutor;
 
     .line 29
-    const/4 v1, 0x1
+    filled-new-array {v0}, [Landroidx/concurrent/futures/DirectExecutor;
 
-    new-array v1, v1, [Landroidx/concurrent/futures/DirectExecutor;
+    move-result-object v0
 
-    aput-object v0, v1, v2
-
-    sput-object v1, Landroidx/concurrent/futures/DirectExecutor;->$VALUES:[Landroidx/concurrent/futures/DirectExecutor;
+    sput-object v0, Landroidx/concurrent/futures/DirectExecutor;->$VALUES:[Landroidx/concurrent/futures/DirectExecutor;
 
     return-void
 .end method

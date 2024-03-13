@@ -43,7 +43,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -89,13 +89,15 @@
 
     .line 36
     :try_start_0
-    invoke-virtual {p0}, Lkotlin/coroutines/jvm/internal/RunSuspend;->getResult-xLWZpok()Lkotlin/Result;
-
-    move-result-object v1
+    iget-object v1, p0, Lkotlin/coroutines/jvm/internal/RunSuspend;->result:Lkotlin/Result;
 
     .line 37
     .local v1, "result":Lkotlin/Result;
     if-nez v1, :cond_0
+
+    const-string v2, "null cannot be cast to non-null type java.lang.Object"
+
+    invoke-static {p0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v2, p0
 
@@ -176,9 +178,13 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lkotlin/coroutines/jvm/internal/RunSuspend;->setResult(Lkotlin/Result;)V
+    iput-object v1, p0, Lkotlin/coroutines/jvm/internal/RunSuspend;->result:Lkotlin/Result;
 
     .line 31
+    const-string v1, "null cannot be cast to non-null type java.lang.Object"
+
+    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     move-object v1, p0
 
     check-cast v1, Ljava/lang/Object;

@@ -15,7 +15,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 36
+    .line 37
     invoke-direct {p0}, Landroidx/core/graphics/TypefaceCompatApi26Impl;-><init>()V
 
     return-void
@@ -24,10 +24,10 @@
 
 # virtual methods
 .method protected createFromFamiliesWithDefault(Ljava/lang/Object;)Landroid/graphics/Typeface;
-    .locals 7
+    .locals 6
     .param p1, "family"    # Ljava/lang/Object;
 
-    .line 49
+    .line 50
     :try_start_0
     iget-object v0, p0, Landroidx/core/graphics/TypefaceCompatApi28Impl;->mFontFamily:Ljava/lang/Class;
 
@@ -37,48 +37,48 @@
 
     move-result-object v0
 
-    .line 50
+    .line 51
     .local v0, "familyArray":Ljava/lang/Object;
     const/4 v2, 0x0
 
     invoke-static {v0, v2, p1}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    .line 51
+    .line 52
     iget-object v3, p0, Landroidx/core/graphics/TypefaceCompatApi28Impl;->mCreateFromFamiliesWithDefault:Ljava/lang/reflect/Method;
 
-    const/4 v4, 0x0
+    const/4 v4, 0x4
 
-    const/4 v5, 0x4
+    new-array v4, v4, [Ljava/lang/Object;
 
-    new-array v5, v5, [Ljava/lang/Object;
-
-    aput-object v0, v5, v2
+    aput-object v0, v4, v2
 
     const-string v2, "sans-serif"
 
-    aput-object v2, v5, v1
+    aput-object v2, v4, v1
 
-    const/4 v1, 0x2
+    .line 53
+    const/4 v1, -0x1
 
-    .line 52
-    const/4 v2, -0x1
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    aput-object v6, v5, v1
-
-    const/4 v1, 0x3
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    aput-object v2, v5, v1
+    const/4 v5, 0x2
 
-    .line 51
-    invoke-virtual {v3, v4, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    aput-object v2, v4, v5
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x3
+
+    aput-object v1, v4, v2
+
+    .line 52
+    const/4 v1, 0x0
+
+    invoke-virtual {v3, v1, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -89,12 +89,12 @@
 
     return-object v1
 
-    .line 53
+    .line 54
     .end local v0    # "familyArray":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 54
+    .line 55
     .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -103,8 +103,23 @@
     throw v1
 .end method
 
+.method createWeightStyle(Landroid/content/Context;Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+    .locals 1
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "base"    # Landroid/graphics/Typeface;
+    .param p3, "weight"    # I
+    .param p4, "italic"    # Z
+
+    .line 73
+    invoke-static {p2, p3, p4}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method protected obtainCreateFromFamiliesWithDefaultMethod(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -120,7 +135,7 @@
         }
     .end annotation
 
-    .line 61
+    .line 62
     .local p1, "fontFamily":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v0, 0x1
 
@@ -128,50 +143,36 @@
 
     move-result-object v1
 
-    .line 62
+    .line 63
     .local v1, "familyArray":Ljava/lang/Object;
     const-class v2, Landroid/graphics/Typeface;
 
-    const/4 v3, 0x4
-
-    new-array v3, v3, [Ljava/lang/Class;
-
-    .line 63
+    .line 64
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
+    move-result-object v3
 
     const-class v4, Ljava/lang/String;
 
-    aput-object v4, v3, v0
+    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    const/4 v5, 0x2
+    filled-new-array {v3, v4, v5, v6}, [Ljava/lang/Class;
 
-    aput-object v4, v3, v5
+    move-result-object v3
 
-    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const/4 v5, 0x3
-
-    aput-object v4, v3, v5
-
-    .line 62
+    .line 63
     const-string v4, "createFromFamiliesWithDefault"
 
     invoke-virtual {v2, v4, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v2
 
-    .line 64
+    .line 65
     .local v2, "m":Ljava/lang/reflect/Method;
     invoke-virtual {v2, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    .line 65
+    .line 66
     return-object v2
 .end method

@@ -43,7 +43,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -52,7 +52,7 @@
 
 # direct methods
 .method public static final doubleToUInt(D)I
-    .locals 5
+    .locals 4
     .param p0, "v"    # D
 
     .line 65
@@ -63,32 +63,28 @@
 
     move-result v0
 
-    const/4 v1, -0x1
-
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
-
-    move v1, v2
 
     goto :goto_0
 
     .line 67
     :cond_0
-    invoke-static {v2}, Lkotlin/UnsignedKt;->uintToDouble(I)D
+    invoke-static {v1}, Lkotlin/UnsignedKt;->uintToDouble(I)D
 
-    move-result-wide v3
+    move-result-wide v2
 
-    cmpg-double v0, p0, v3
+    cmpg-double v0, p0, v2
 
     if-gtz v0, :cond_1
-
-    move v1, v2
 
     goto :goto_0
 
     .line 68
     :cond_1
+    const/4 v1, -0x1
+
     invoke-static {v1}, Lkotlin/UnsignedKt;->uintToDouble(I)D
 
     move-result-wide v2
@@ -145,7 +141,7 @@
 .end method
 
 .method public static final doubleToULong(D)J
-    .locals 7
+    .locals 5
     .param p0, "v"    # D
 
     .line 74
@@ -156,32 +152,28 @@
 
     move-result v0
 
-    const-wide/16 v1, -0x1
-
-    const-wide/16 v3, 0x0
+    const-wide/16 v1, 0x0
 
     if-eqz v0, :cond_0
-
-    move-wide v1, v3
 
     goto :goto_0
 
     .line 76
     :cond_0
-    invoke-static {v3, v4}, Lkotlin/UnsignedKt;->ulongToDouble(J)D
+    invoke-static {v1, v2}, Lkotlin/UnsignedKt;->ulongToDouble(J)D
 
-    move-result-wide v5
+    move-result-wide v3
 
-    cmpg-double v0, p0, v5
+    cmpg-double v0, p0, v3
 
     if-gtz v0, :cond_1
-
-    move-wide v1, v3
 
     goto :goto_0
 
     .line 77
     :cond_1
+    const-wide/16 v1, -0x1
+
     invoke-static {v1, v2}, Lkotlin/UnsignedKt;->ulongToDouble(J)D
 
     move-result-wide v3
@@ -372,7 +364,7 @@
     if-gez v6, :cond_1
 
     .line 26
-    invoke-static/range {p0 .. p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static/range {p0 .. p3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v6
 
@@ -431,7 +423,7 @@
 
     move-result-wide v11
 
-    invoke-static {v9, v10, v11, v12}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v9, v10, v11, v12}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v9
 
@@ -475,7 +467,7 @@
     if-gez v6, :cond_1
 
     .line 46
-    invoke-static/range {p0 .. p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static/range {p0 .. p3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v4
 
@@ -539,7 +531,7 @@
 
     move-result-wide v12
 
-    invoke-static {v10, v11, v12, v13}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v10, v11, v12, v13}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v10
 
@@ -665,15 +657,23 @@
 
     .line 103
     :cond_1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {p2}, Lkotlin/text/CharsKt;->checkRadix(I)I
 
-    move-result v0
+    move-result v6
 
-    invoke-static {v2, v3, v0}, Ljava/lang/Long;->toString(JI)Ljava/lang/String;
+    invoke-static {v2, v3, v6}, Ljava/lang/Long;->toString(JI)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p2}, Lkotlin/text/CharsKt;->checkRadix(I)I
 
@@ -685,7 +685,11 @@
 
     invoke-static {v6, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v6}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

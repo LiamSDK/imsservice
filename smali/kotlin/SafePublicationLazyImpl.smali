@@ -56,7 +56,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -107,17 +107,17 @@
     sput-object v0, Lkotlin/SafePublicationLazyImpl;->Companion:Lkotlin/SafePublicationLazyImpl$Companion;
 
     .line 124
-    const-class v0, Lkotlin/SafePublicationLazyImpl;
-
-    const-class v1, Ljava/lang/Object;
+    const-class v0, Ljava/lang/Object;
 
     .line 127
     nop
 
     .line 124
+    const-class v1, Lkotlin/SafePublicationLazyImpl;
+
     const-string v2, "_value"
 
-    invoke-static {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {v1, v0, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 

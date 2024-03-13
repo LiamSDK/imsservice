@@ -144,23 +144,23 @@
 
     .line 804
     .local v0, "elapsedSinceStart":J
-    const/high16 v2, 0x3f000000    # 0.5f
+    long-to-float v2, v0
 
-    long-to-float v4, v0
+    iget v4, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mRampUpDuration:I
 
-    iget v5, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mRampUpDuration:I
+    int-to-float v4, v4
 
-    int-to-float v5, v5
+    div-float/2addr v2, v4
 
-    div-float/2addr v4, v5
+    invoke-static {v2, v3, v6}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
 
-    invoke-static {v4, v3, v6}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
+    move-result v2
 
-    move-result v3
+    const/high16 v3, 0x3f000000    # 0.5f
 
-    mul-float/2addr v3, v2
+    mul-float/2addr v2, v3
 
-    return v3
+    return v2
 .end method
 
 .method private interpolateValue(F)F
@@ -377,11 +377,11 @@
 
     long-to-int v2, v2
 
-    iget v3, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mRampDownDuration:I
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    iget v4, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mRampDownDuration:I
 
-    invoke-static {v2, v4, v3}, Landroidx/core/widget/AutoScrollHelper;->constrain(III)I
+    invoke-static {v2, v3, v4}, Landroidx/core/widget/AutoScrollHelper;->constrain(III)I
 
     move-result v2
 

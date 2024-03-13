@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
-    .line 532
+    .line 536
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$1;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-direct {p0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;-><init>()V
@@ -36,11 +36,11 @@
 .method public onSubscriptionsChanged()V
     .locals 1
 
-    .line 536
+    .line 540
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$1;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->access$300(Lcom/mediatek/ims/internal/ImsVTProviderUtil;)V
 
-    .line 537
+    .line 541
     return-void
 .end method

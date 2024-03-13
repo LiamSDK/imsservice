@@ -128,7 +128,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_9
+    goto/16 :goto_a
 
     .line 428
     :pswitch_0
@@ -242,7 +242,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_1
-    goto/16 :goto_9
+    goto/16 :goto_a
 
     .line 416
     :pswitch_1
@@ -317,7 +317,7 @@
     .line 425
     .end local v0    # "ar":Landroid/os/AsyncResult;
     :goto_2
-    goto/16 :goto_9
+    goto/16 :goto_a
 
     .line 395
     :pswitch_2
@@ -428,7 +428,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_4
-    goto/16 :goto_9
+    goto/16 :goto_a
 
     .line 333
     :pswitch_3
@@ -539,7 +539,7 @@
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :goto_6
-    goto/16 :goto_9
+    goto/16 :goto_a
 
     .line 355
     :pswitch_4
@@ -732,14 +732,16 @@
 
     invoke-virtual {v2, p1, v1}, Lcom/mediatek/ims/ImsUtImpl;->notifyUtConfigurationQueryFailed(Landroid/os/Message;Landroid/telephony/ims/ImsReasonInfo;)V
 
-    .line 454
+    .line 392
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v1    # "reason":Landroid/telephony/ims/ImsReasonInfo;
-    :cond_a
     :goto_9
-    return-void
-
     nop
+
+    .line 454
+    :cond_a
+    :goto_a
+    return-void
 
     :pswitch_data_0
     .packed-switch 0x4b0

@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 134
+    .line 133
     invoke-direct {p0}, Landroidx/core/view/accessibility/AccessibilityViewCommand$CommandArguments;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getText()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 141
+    .line 140
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityViewCommand$SetTextArguments;->mBundle:Landroid/os/Bundle;
 
     const-string v1, "ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE"

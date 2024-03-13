@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1046
+    .line 1049
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1048
+    .line 1051
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "obj"    # Landroid/content/Context;
 
-    .line 1057
+    .line 1060
     invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;
 
     move-result-object v0
@@ -41,7 +41,7 @@
     .locals 1
     .param p0, "obj"    # Landroid/content/Context;
 
-    .line 1052
+    .line 1055
     invoke-virtual {p0}, Landroid/content/Context;->getDataDir()Ljava/io/File;
 
     move-result-object v0
@@ -53,7 +53,7 @@
     .locals 1
     .param p0, "obj"    # Landroid/content/Context;
 
-    .line 1062
+    .line 1065
     invoke-virtual {p0}, Landroid/content/Context;->isDeviceProtectedStorage()Z
 
     move-result v0

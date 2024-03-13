@@ -85,7 +85,7 @@
 .end method
 
 .method public final getHashChain()Ljava/util/ArrayList;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -97,35 +97,23 @@
     .line 587
     new-instance v0, Ljava/util/ArrayList;
 
-    const/4 v1, 0x3
+    const/16 v1, 0x20
 
-    new-array v1, v1, [[B
+    new-array v2, v1, [B
 
-    const/16 v2, 0x20
+    fill-array-data v2, :array_0
 
-    new-array v3, v2, [B
-
-    fill-array-data v3, :array_0
-
-    const/4 v4, 0x0
-
-    aput-object v3, v1, v4
-
-    new-array v3, v2, [B
+    new-array v3, v1, [B
 
     fill-array-data v3, :array_1
 
-    const/4 v4, 0x1
+    new-array v1, v1, [B
 
-    aput-object v3, v1, v4
+    fill-array-data v1, :array_2
 
-    new-array v2, v2, [B
+    filled-new-array {v2, v3, v1}, [[B
 
-    fill-array-data v2, :array_2
-
-    const/4 v3, 0x2
-
-    aput-object v2, v1, v3
+    move-result-object v1
 
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -260,13 +248,13 @@
     .line 566
     new-instance v0, Ljava/util/ArrayList;
 
-    const-string v1, "android.hardware.radio@1.1::ISap"
+    const-string v1, "android.hardware.radio@1.0::ISap"
 
-    const-string v2, "android.hardware.radio@1.0::ISap"
+    const-string v2, "android.hidl.base@1.0::IBase"
 
-    const-string v3, "android.hidl.base@1.0::IBase"
+    const-string v3, "android.hardware.radio@1.1::ISap"
 
-    filled-new-array {v1, v2, v3}, [Ljava/lang/String;
+    filled-new-array {v3, v1, v2}, [Ljava/lang/String;
 
     move-result-object v1
 

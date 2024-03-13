@@ -42,7 +42,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -349,18 +349,18 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    move-object v0, p0
-
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v0}, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->intercepted()Lkotlin/coroutines/Continuation;
 
     move-result-object v0
 
-    :goto_1
+    if-nez v0, :cond_2
+
+    :cond_1
+    move-object v0, p0
+
+    :cond_2
     return-object v0
 .end method
 

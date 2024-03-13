@@ -29,6 +29,11 @@
 .method constructor <init>(Landroidx/core/provider/RequestExecutor$ReplyRunnable;Landroidx/core/util/Consumer;Ljava/lang/Object;)V
     .locals 0
     .param p1, "this$0"    # Landroidx/core/provider/RequestExecutor$ReplyRunnable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .line 151
     .local p0, "this":Landroidx/core/provider/RequestExecutor$ReplyRunnable$1;, "Landroidx/core/provider/RequestExecutor$ReplyRunnable$1;"

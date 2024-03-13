@@ -29,15 +29,7 @@
     .end annotation
 .end method
 
-.method public abstract onNetworkRespHeader(IILjava/lang/String;ILjava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract onNetworkResponse(IILjava/lang/String;)V
+.method public abstract onNetworkResponse(ILandroid/telephony/ims/SipDetails;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

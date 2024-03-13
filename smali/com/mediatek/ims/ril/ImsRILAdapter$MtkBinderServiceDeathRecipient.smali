@@ -30,15 +30,15 @@
     .locals 0
     .param p2, "service"    # I
 
-    .line 876
+    .line 890
     iput-object p1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 877
+    .line 891
     iput p2, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->mService:I
 
-    .line 878
+    .line 892
     return-void
 .end method
 
@@ -47,7 +47,7 @@
 .method public binderDied()V
     .locals 6
 
-    .line 896
+    .line 910
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -82,7 +82,7 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->riljLog(Ljava/lang/String;)V
 
-    .line 897
+    .line 911
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
     iget-object v0, v0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mRilHandler:Lcom/mediatek/ims/ril/ImsRILAdapter$RilHandler;
@@ -95,7 +95,7 @@
 
     iget-object v3, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
-    .line 898
+    .line 912
     invoke-static {v3}, Lcom/mediatek/ims/ril/ImsRILAdapter;->access$900(Lcom/mediatek/ims/ril/ImsRILAdapter;)Landroid/util/SparseArray;
 
     move-result-object v3
@@ -106,7 +106,7 @@
 
     move-result-object v3
 
-    .line 897
+    .line 911
     const/16 v4, 0xa
 
     const/4 v5, 0x0
@@ -117,10 +117,10 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/ims/ril/ImsRILAdapter$RilHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 899
+    .line 913
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->unlinkToDeath()V
 
-    .line 900
+    .line 914
     return-void
 .end method
 
@@ -133,13 +133,13 @@
         }
     .end annotation
 
-    .line 881
+    .line 895
     if-eqz p1, :cond_0
 
-    .line 882
+    .line 896
     iput-object p1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->mBinder:Landroid/os/IBinder;
 
-    .line 883
+    .line 897
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->this$0:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
     invoke-static {v0}, Lcom/mediatek/ims/ril/ImsRILAdapter;->access$900(Lcom/mediatek/ims/ril/ImsRILAdapter;)Landroid/util/SparseArray;
@@ -162,7 +162,7 @@
 
     invoke-interface {p1, p0, v0}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
-    .line 885
+    .line 899
     :cond_0
     return-void
 .end method
@@ -172,32 +172,32 @@
 
     monitor-enter p0
 
-    .line 888
+    .line 902
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->mBinder:Landroid/os/IBinder;
 
     if-eqz v0, :cond_0
 
-    .line 889
+    .line 903
     const/4 v1, 0x0
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 890
+    .line 904
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;->mBinder:Landroid/os/IBinder;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 892
+    .line 906
     .end local p0    # "this":Lcom/mediatek/ims/ril/ImsRILAdapter$MtkBinderServiceDeathRecipient;
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 887
+    .line 901
     :catchall_0
     move-exception v0
 

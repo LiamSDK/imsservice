@@ -3,7 +3,7 @@
 .source "TimeSources.kt"
 
 # interfaces
-.implements Lkotlin/time/TimeSource;
+.implements Lkotlin/time/TimeSource$WithComparableMarks;
 
 
 # annotations
@@ -19,14 +19,14 @@
     }
     d2 = {
         "Lkotlin/time/AbstractLongTimeSource;",
-        "Lkotlin/time/TimeSource;",
+        "Lkotlin/time/TimeSource$WithComparableMarks;",
         "unit",
         "Lkotlin/time/DurationUnit;",
         "(Lkotlin/time/DurationUnit;)V",
         "getUnit",
         "()Lkotlin/time/DurationUnit;",
         "markNow",
-        "Lkotlin/time/TimeMark;",
+        "Lkotlin/time/ComparableTimeMark;",
         "read",
         "",
         "LongTimeMark",
@@ -35,7 +35,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -55,10 +55,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
+    .line 28
     iput-object p1, p0, Lkotlin/time/AbstractLongTimeSource;->unit:Lkotlin/time/DurationUnit;
 
     return-void
@@ -69,16 +69,16 @@
 .method protected final getUnit()Lkotlin/time/DurationUnit;
     .locals 1
 
-    .line 19
+    .line 28
     iget-object v0, p0, Lkotlin/time/AbstractLongTimeSource;->unit:Lkotlin/time/DurationUnit;
 
     return-object v0
 .end method
 
-.method public markNow()Lkotlin/time/TimeMark;
+.method public markNow()Lkotlin/time/ComparableTimeMark;
     .locals 8
 
-    .line 31
+    .line 83
     new-instance v7, Lkotlin/time/AbstractLongTimeSource$LongTimeMark;
 
     invoke-virtual {p0}, Lkotlin/time/AbstractLongTimeSource;->read()J
@@ -99,9 +99,22 @@
 
     invoke-direct/range {v0 .. v6}, Lkotlin/time/AbstractLongTimeSource$LongTimeMark;-><init>(JLkotlin/time/AbstractLongTimeSource;JLkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    check-cast v7, Lkotlin/time/TimeMark;
+    check-cast v7, Lkotlin/time/ComparableTimeMark;
 
     return-object v7
+.end method
+
+.method public bridge synthetic markNow()Lkotlin/time/TimeMark;
+    .locals 1
+
+    .line 26
+    invoke-virtual {p0}, Lkotlin/time/AbstractLongTimeSource;->markNow()Lkotlin/time/ComparableTimeMark;
+
+    move-result-object v0
+
+    check-cast v0, Lkotlin/time/TimeMark;
+
+    return-object v0
 .end method
 
 .method protected abstract read()J

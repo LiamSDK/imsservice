@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 975
+    .line 1161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 977
+    .line 1163
     return-void
 .end method
 
@@ -30,8 +30,22 @@
     .param p0, "locationManager"    # Landroid/location/LocationManager;
     .param p1, "provider"    # Ljava/lang/String;
 
-    .line 981
+    .line 1167
     invoke-virtual {p0, p1}, Landroid/location/LocationManager;->hasProvider(Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static registerGnssMeasurementsCallback(Landroid/location/LocationManager;Ljava/util/concurrent/Executor;Landroid/location/GnssMeasurementsEvent$Callback;)Z
+    .locals 1
+    .param p0, "locationManager"    # Landroid/location/LocationManager;
+    .param p1, "executor"    # Ljava/util/concurrent/Executor;
+    .param p2, "callback"    # Landroid/location/GnssMeasurementsEvent$Callback;
+
+    .line 1182
+    invoke-virtual {p0, p1, p2}, Landroid/location/LocationManager;->registerGnssMeasurementsCallback(Ljava/util/concurrent/Executor;Landroid/location/GnssMeasurementsEvent$Callback;)Z
 
     move-result v0
 
@@ -46,9 +60,9 @@
     .param p3, "executor"    # Ljava/util/concurrent/Executor;
     .param p4, "listener"    # Landroid/location/LocationListener;
 
-    .line 989
+    .line 1175
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;Landroid/location/LocationRequest;Ljava/util/concurrent/Executor;Landroid/location/LocationListener;)V
 
-    .line 990
+    .line 1176
     return-void
 .end method

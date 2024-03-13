@@ -64,11 +64,11 @@
     .locals 2
 
     .line 76
-    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    const-string v0, "eng"
 
-    const-string v1, "eng"
+    sget-object v1, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -1076,9 +1076,9 @@
 
     iget v3, p0, Lcom/mediatek/ims/feature/MtkImsSmsImpl;->mPhoneId:I
 
+    .line 180
     const/4 v5, 0x2
 
-    .line 180
     invoke-virtual {v1, v3, v4, v5}, Lcom/mediatek/ims/ImsService;->acknowledgeLastIncomingCdmaSms(IZI)V
 
     goto :goto_3

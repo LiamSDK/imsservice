@@ -255,28 +255,28 @@
 
     if-ltz v12, :cond_0
 
-    const v11, 0x3f30a3d7    # 0.69f
+    const v11, 0x3f666666    # 0.9f
 
-    const v12, 0x3f666666    # 0.9f
+    sub-float v11, v10, v11
 
-    sub-float v12, v10, v12
+    mul-float/2addr v11, v9
 
-    mul-float/2addr v12, v9
+    const v9, 0x3f30a3d7    # 0.69f
 
-    invoke-static {v13, v11, v12}, Landroidx/core/content/res/CamUtils;->lerp(FFF)F
+    invoke-static {v13, v9, v11}, Landroidx/core/content/res/CamUtils;->lerp(FFF)F
 
     move-result v9
 
     goto :goto_0
 
     :cond_0
-    const v12, 0x3f066666    # 0.525f
-
     sub-float v11, v10, v11
 
     mul-float/2addr v11, v9
 
-    invoke-static {v12, v13, v11}, Landroidx/core/content/res/CamUtils;->lerp(FFF)F
+    const v9, 0x3f066666    # 0.525f
+
+    invoke-static {v9, v13, v11}, Landroidx/core/content/res/CamUtils;->lerp(FFF)F
 
     move-result v9
 
@@ -294,29 +294,29 @@
     goto :goto_1
 
     :cond_1
-    const v11, 0x3e8e38e4
+    neg-float v11, v0
 
-    neg-float v12, v0
+    const/high16 v12, 0x42280000    # 42.0f
 
-    const/high16 v13, 0x42280000    # 42.0f
+    sub-float/2addr v11, v12
 
-    sub-float/2addr v12, v13
+    const/high16 v12, 0x42b80000    # 92.0f
 
-    const/high16 v13, 0x42b80000    # 92.0f
+    div-float/2addr v11, v12
 
-    div-float/2addr v12, v13
+    float-to-double v11, v11
 
-    float-to-double v12, v12
+    invoke-static {v11, v12}, Ljava/lang/Math;->exp(D)D
 
-    invoke-static {v12, v13}, Ljava/lang/Math;->exp(D)D
+    move-result-wide v11
 
-    move-result-wide v12
+    double-to-float v11, v11
 
-    double-to-float v12, v12
+    const v12, 0x3e8e38e4
 
-    mul-float/2addr v12, v11
+    mul-float/2addr v11, v12
 
-    sub-float v11, v9, v12
+    sub-float v11, v9, v11
 
     mul-float/2addr v11, v10
 
@@ -461,23 +461,21 @@
 
     .line 173
     .local v7, "n":F
-    const v13, 0x3fbd70a4    # 1.48f
+    float-to-double v13, v7
 
-    float-to-double v14, v7
+    invoke-static {v13, v14}, Ljava/lang/Math;->sqrt(D)D
 
-    invoke-static {v14, v15}, Ljava/lang/Math;->sqrt(D)D
+    move-result-wide v13
 
-    move-result-wide v14
+    double-to-float v13, v13
 
-    double-to-float v14, v14
+    const v14, 0x3fbd70a4    # 1.48f
 
-    add-float v27, v14, v13
+    add-float v27, v13, v14
 
     .line 176
     .local v27, "z":F
-    const v13, 0x3f39999a    # 0.725f
-
-    float-to-double v14, v7
+    float-to-double v13, v7
 
     move/from16 v28, v6
 
@@ -485,21 +483,23 @@
     .local v28, "fl":F
     const-wide v5, 0x3fc999999999999aL    # 0.2
 
-    invoke-static {v14, v15, v5, v6}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v13, v14, v5, v6}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v5
 
     double-to-float v5, v5
 
-    div-float v5, v13, v5
+    const v6, 0x3f39999a    # 0.725f
+
+    div-float/2addr v6, v5
 
     .line 177
-    .local v5, "nbb":F
-    move/from16 v16, v5
+    .local v6, "nbb":F
+    move/from16 v16, v6
 
     .line 181
     .local v16, "ncb":F
-    new-array v6, v12, [F
+    new-array v5, v12, [F
 
     aget v13, v23, v3
 
@@ -509,9 +509,9 @@
 
     float-to-double v13, v13
 
-    const-wide/high16 v21, 0x4059000000000000L    # 100.0
+    const-wide/high16 v20, 0x4059000000000000L    # 100.0
 
-    div-double v13, v13, v21
+    div-double v13, v13, v20
 
     move/from16 v29, v4
 
@@ -527,7 +527,7 @@
 
     const/4 v14, 0x0
 
-    aput v13, v6, v14
+    aput v13, v5, v14
 
     const/4 v13, 0x1
 
@@ -537,42 +537,42 @@
 
     mul-float v14, v14, v26
 
-    float-to-double v12, v14
+    float-to-double v14, v14
 
-    div-double v12, v12, v21
+    div-double v14, v14, v20
 
     .line 182
+    invoke-static {v14, v15, v3, v4}, Ljava/lang/Math;->pow(DD)D
+
+    move-result-wide v14
+
+    double-to-float v14, v14
+
+    aput v14, v5, v13
+
+    const/4 v13, 0x2
+
+    aget v14, v23, v13
+
+    mul-float v14, v14, v28
+
+    mul-float/2addr v14, v8
+
+    float-to-double v12, v14
+
+    div-double v12, v12, v20
+
     invoke-static {v12, v13, v3, v4}, Ljava/lang/Math;->pow(DD)D
-
-    move-result-wide v12
-
-    double-to-float v12, v12
-
-    const/4 v13, 0x1
-
-    aput v12, v6, v13
-
-    const/4 v12, 0x2
-
-    aget v13, v23, v12
-
-    mul-float v13, v13, v28
-
-    mul-float/2addr v13, v8
-
-    float-to-double v13, v13
-
-    div-double v13, v13, v21
-
-    invoke-static {v13, v14, v3, v4}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v3
 
     double-to-float v3, v3
 
-    aput v3, v6, v12
+    const/4 v4, 0x2
 
-    move-object v3, v6
+    aput v3, v5, v4
+
+    move-object v3, v5
 
     .line 185
     .local v3, "rgbAFactors":[F
@@ -580,51 +580,51 @@
 
     new-array v4, v4, [F
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aget v12, v3, v6
+    aget v12, v3, v5
 
     const/high16 v13, 0x43c80000    # 400.0f
 
     mul-float/2addr v12, v13
 
-    aget v14, v3, v6
+    aget v14, v3, v5
 
-    const v21, 0x41d90a3d    # 27.13f
+    const v20, 0x41d90a3d    # 27.13f
 
-    add-float v14, v14, v21
-
-    div-float/2addr v12, v14
-
-    aput v12, v4, v6
-
-    const/4 v6, 0x1
-
-    aget v12, v3, v6
-
-    mul-float/2addr v12, v13
-
-    aget v14, v3, v6
-
-    add-float v14, v14, v21
+    add-float v14, v14, v20
 
     div-float/2addr v12, v14
 
-    aput v12, v4, v6
+    aput v12, v4, v5
 
-    const/4 v6, 0x2
+    const/4 v5, 0x1
 
-    aget v12, v3, v6
+    aget v12, v3, v5
 
     mul-float/2addr v12, v13
 
-    aget v13, v3, v6
+    aget v14, v3, v5
 
-    add-float v13, v13, v21
+    add-float v14, v14, v20
+
+    div-float/2addr v12, v14
+
+    aput v12, v4, v5
+
+    const/4 v5, 0x2
+
+    aget v12, v3, v5
+
+    mul-float/2addr v12, v13
+
+    aget v13, v3, v5
+
+    add-float v13, v13, v20
 
     div-float/2addr v12, v13
 
-    aput v12, v4, v6
+    aput v12, v4, v5
 
     .line 189
     .local v4, "rgbA":[F
@@ -644,16 +644,16 @@
 
     const v12, 0x3d4ccccd    # 0.05f
 
-    aget v6, v4, v6
+    aget v5, v4, v5
 
-    mul-float/2addr v6, v12
+    mul-float/2addr v5, v12
 
-    add-float/2addr v13, v6
+    add-float/2addr v13, v5
 
-    mul-float v6, v13, v5
+    mul-float v5, v13, v6
 
     .line 191
-    .local v6, "aw":F
+    .local v5, "aw":F
     new-instance v30, Landroidx/core/content/res/ViewingConditions;
 
     move/from16 v15, v28
@@ -678,13 +678,13 @@
 
     move v13, v7
 
-    move v14, v6
+    move v14, v5
 
     move v1, v15
 
     .end local v15    # "fl":F
     .local v1, "fl":F
-    move v15, v5
+    move v15, v6
 
     move-object/from16 v19, v23
 

@@ -23,15 +23,11 @@
 .end method
 
 .method public static getDragToOpenListener(Ljava/lang/Object;)Landroid/view/View$OnTouchListener;
-    .locals 2
+    .locals 1
     .param p0, "popupMenu"    # Ljava/lang/Object;
 
     .line 57
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 58
     move-object v0, p0
@@ -41,12 +37,6 @@
     invoke-static {v0}, Landroidx/core/widget/PopupMenuCompat$Api19Impl;->getDragToOpenListener(Landroid/widget/PopupMenu;)Landroid/view/View$OnTouchListener;
 
     move-result-object v0
-
-    return-object v0
-
-    .line 60
-    :cond_0
-    const/4 v0, 0x0
 
     return-object v0
 .end method

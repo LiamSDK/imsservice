@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/wfo/impl/MwiService;
 
-    .line 128
+    .line 133
     iput-object p1, p0, Lcom/mediatek/wfo/impl/MwiService$1;->this$0:Lcom/mediatek/wfo/impl/MwiService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 131
+    .line 136
     const-string v0, "android.telephony.extra.ACTIVE_SIM_SUPPORTED_COUNT"
 
     const/4 v1, 0x0
@@ -47,13 +47,13 @@
 
     move-result v0
 
-    .line 134
+    .line 139
     .local v0, "activeModemCount":I
     invoke-static {}, Landroid/app/Application;->getProcessName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 136
+    .line 141
     .local v1, "processName":Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -103,7 +103,7 @@
 
     invoke-static {v3, v2}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
+    .line 144
     if-eqz v0, :cond_2
 
     iget-object v2, p0, Lcom/mediatek/wfo/impl/MwiService$1;->this$0:Lcom/mediatek/wfo/impl/MwiService;
@@ -114,7 +114,7 @@
 
     if-eq v2, v0, :cond_2
 
-    .line 140
+    .line 145
     const-string v2, "com.mediatek.ims"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -123,10 +123,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 141
+    .line 146
     return-void
 
-    .line 143
+    .line 148
     :cond_0
     iget-object v2, p0, Lcom/mediatek/wfo/impl/MwiService$1;->this$0:Lcom/mediatek/wfo/impl/MwiService;
 
@@ -136,13 +136,13 @@
 
     array-length v2, v2
 
-    .line 144
+    .line 149
     .local v2, "prevActiveModemCount":I
     iget-object v3, p0, Lcom/mediatek/wfo/impl/MwiService$1;->this$0:Lcom/mediatek/wfo/impl/MwiService;
 
     invoke-static {v3, v0}, Lcom/mediatek/wfo/impl/MwiService;->-$$Nest$fputmSimCount(Lcom/mediatek/wfo/impl/MwiService;I)V
 
-    .line 146
+    .line 151
     iget-object v3, p0, Lcom/mediatek/wfo/impl/MwiService$1;->this$0:Lcom/mediatek/wfo/impl/MwiService;
 
     invoke-static {v3}, Lcom/mediatek/wfo/impl/MwiService;->-$$Nest$fgetmMwiRil(Lcom/mediatek/wfo/impl/MwiService;)[Lcom/mediatek/wfo/ril/MwiRIL;
@@ -157,14 +157,14 @@
 
     invoke-static {v3, v4}, Lcom/mediatek/wfo/impl/MwiService;->-$$Nest$fputmMwiRil(Lcom/mediatek/wfo/impl/MwiService;[Lcom/mediatek/wfo/ril/MwiRIL;)V
 
-    .line 148
+    .line 153
     move v3, v2
 
     .local v3, "i":I
     :goto_0
     if-ge v3, v0, :cond_1
 
-    .line 149
+    .line 154
     iget-object v4, p0, Lcom/mediatek/wfo/impl/MwiService$1;->this$0:Lcom/mediatek/wfo/impl/MwiService;
 
     invoke-static {v4}, Lcom/mediatek/wfo/impl/MwiService;->-$$Nest$fgetmMwiRil(Lcom/mediatek/wfo/impl/MwiService;)[Lcom/mediatek/wfo/ril/MwiRIL;
@@ -191,12 +191,12 @@
 
     aput-object v5, v4, v3
 
-    .line 148
+    .line 153
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 151
+    .line 156
     .end local v3    # "i":I
     :cond_1
     invoke-static {}, Lcom/mediatek/wfo/impl/MwiService;->-$$Nest$sfgetmWifiPdnHandler()Lcom/mediatek/wfo/impl/WifiPdnHandler;
@@ -211,7 +211,7 @@
 
     invoke-virtual {v3, v0, v4}, Lcom/mediatek/wfo/impl/WifiPdnHandler;->notifyMultiSimConfigChanged(I[Lcom/mediatek/wfo/ril/MwiRIL;)V
 
-    .line 152
+    .line 157
     iget-object v3, p0, Lcom/mediatek/wfo/impl/MwiService$1;->this$0:Lcom/mediatek/wfo/impl/MwiService;
 
     invoke-static {v3}, Lcom/mediatek/wfo/impl/MwiService;->-$$Nest$fgetmWfcHandler(Lcom/mediatek/wfo/impl/MwiService;)Lcom/mediatek/wfo/impl/WfcHandler;
@@ -226,7 +226,7 @@
 
     invoke-virtual {v3, v0, v4}, Lcom/mediatek/wfo/impl/WfcHandler;->notifyMultiSimConfigChanged(I[Lcom/mediatek/wfo/ril/MwiRIL;)V
 
-    .line 153
+    .line 158
     iget-object v3, p0, Lcom/mediatek/wfo/impl/MwiService$1;->this$0:Lcom/mediatek/wfo/impl/MwiService;
 
     invoke-static {v3}, Lcom/mediatek/wfo/impl/MwiService;->-$$Nest$fgetmImsLocationHandler(Lcom/mediatek/wfo/impl/MwiService;)Lcom/mediatek/wfo/impl/ImsLocationHandler;
@@ -241,7 +241,7 @@
 
     invoke-virtual {v3, v0, v4}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->notifyMultiSimConfigChanged(I[Lcom/mediatek/wfo/ril/MwiRIL;)V
 
-    .line 156
+    .line 161
     .end local v2    # "prevActiveModemCount":I
     :cond_2
     return-void

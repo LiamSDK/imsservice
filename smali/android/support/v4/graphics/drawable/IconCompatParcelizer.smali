@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 11
+    .line 8
     invoke-direct {p0}, Landroidx/core/graphics/drawable/IconCompatParcelizer;-><init>()V
 
     return-void
@@ -17,7 +17,7 @@
     .locals 1
     .param p0, "parcel"    # Landroidx/versionedparcelable/VersionedParcel;
 
-    .line 13
+    .line 10
     invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->read(Landroidx/versionedparcelable/VersionedParcel;)Landroidx/core/graphics/drawable/IconCompat;
 
     move-result-object v0
@@ -30,9 +30,9 @@
     .param p0, "obj"    # Landroidx/core/graphics/drawable/IconCompat;
     .param p1, "parcel"    # Landroidx/versionedparcelable/VersionedParcel;
 
-    .line 17
+    .line 14
     invoke-static {p0, p1}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->write(Landroidx/core/graphics/drawable/IconCompat;Landroidx/versionedparcelable/VersionedParcel;)V
 
-    .line 18
+    .line 15
     return-void
 .end method

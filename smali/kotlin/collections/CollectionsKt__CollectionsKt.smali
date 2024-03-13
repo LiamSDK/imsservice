@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,469:1\n392#1:471\n1#2:470\n*S KotlinDebug\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n*L\n386#1:471\n*E\n"
+    value = "SMAP\nCollections.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,471:1\n394#1:473\n1#2:472\n*S KotlinDebug\n*F\n+ 1 Collections.kt\nkotlin/collections/CollectionsKt__CollectionsKt\n*L\n388#1:473\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -96,7 +96,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -145,19 +145,17 @@
     :goto_0
     if-ge v1, p0, :cond_0
 
-    add-int/lit8 v2, v1, 0x1
-
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {p1, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move v1, v2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
@@ -201,15 +199,15 @@
     :goto_0
     if-ge v1, p0, :cond_0
 
-    add-int/lit8 v2, v1, 0x1
+    move v2, v1
 
-    .line 470
-    .local v1, "index":I
+    .line 472
+    .local v2, "index":I
     const/4 v3, 0x0
 
     .line 154
     .local v3, "$i$a$-repeat-CollectionsKt__CollectionsKt$MutableList$1":I
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
@@ -219,10 +217,10 @@
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move v1, v2
-
-    .end local v1    # "index":I
+    .end local v2    # "index":I
     .end local v3    # "$i$a$-repeat-CollectionsKt__CollectionsKt$MutableList$1":I
+    add-int/lit8 v1, v1, 0x1
+
     goto :goto_0
 
     .line 155
@@ -356,37 +354,37 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 419
+    .line 421
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
     invoke-static {v0, p1, p2}, Lkotlin/collections/CollectionsKt__CollectionsKt;->rangeCheck$CollectionsKt__CollectionsKt(III)V
 
-    .line 421
+    .line 423
     move v0, p1
 
-    .line 422
+    .line 424
     .local v0, "low":I
     add-int/lit8 v1, p2, -0x1
 
-    .line 424
+    .line 426
     .local v1, "high":I
     :goto_0
     if-gt v0, v1, :cond_2
 
-    .line 425
+    .line 427
     add-int v2, v0, v1
 
     ushr-int/lit8 v2, v2, 0x1
 
-    .line 426
+    .line 428
     .local v2, "mid":I
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 427
+    .line 429
     .local v3, "midVal":Ljava/lang/Object;
     invoke-interface {p3, v3}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -398,29 +396,29 @@
 
     move-result v4
 
-    .line 429
+    .line 431
     .local v4, "cmp":I
     if-gez v4, :cond_0
 
-    .line 430
+    .line 432
     add-int/lit8 v0, v2, 0x1
 
     goto :goto_0
 
-    .line 431
+    .line 433
     :cond_0
     if-lez v4, :cond_1
 
-    .line 432
+    .line 434
     add-int/lit8 v1, v2, -0x1
 
     goto :goto_0
 
-    .line 434
+    .line 436
     :cond_1
     return v2
 
-    .line 436
+    .line 438
     .end local v2    # "mid":I
     .end local v3    # "midVal":Ljava/lang/Object;
     .end local v4    # "cmp":I
@@ -452,31 +450,31 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 314
+    .line 316
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
     invoke-static {v0, p2, p3}, Lkotlin/collections/CollectionsKt__CollectionsKt;->rangeCheck$CollectionsKt__CollectionsKt(III)V
 
-    .line 316
+    .line 318
     move v0, p2
 
-    .line 317
+    .line 319
     .local v0, "low":I
     add-int/lit8 v1, p3, -0x1
 
-    .line 319
+    .line 321
     .local v1, "high":I
     :goto_0
     if-gt v0, v1, :cond_2
 
-    .line 320
+    .line 322
     add-int v2, v0, v1
 
     ushr-int/lit8 v2, v2, 0x1
 
-    .line 321
+    .line 323
     .local v2, "mid":I
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -484,35 +482,35 @@
 
     check-cast v3, Ljava/lang/Comparable;
 
-    .line 322
+    .line 324
     .local v3, "midVal":Ljava/lang/Comparable;
     invoke-static {v3, p1}, Lkotlin/comparisons/ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result v4
 
-    .line 324
+    .line 326
     .local v4, "cmp":I
     if-gez v4, :cond_0
 
-    .line 325
+    .line 327
     add-int/lit8 v0, v2, 0x1
 
     goto :goto_0
 
-    .line 326
+    .line 328
     :cond_0
     if-lez v4, :cond_1
 
-    .line 327
+    .line 329
     add-int/lit8 v1, v2, -0x1
 
     goto :goto_0
 
-    .line 329
+    .line 331
     :cond_1
     return v2
 
-    .line 331
+    .line 333
     .end local v2    # "mid":I
     .end local v3    # "midVal":Ljava/lang/Comparable;
     .end local v4    # "cmp":I
@@ -551,65 +549,65 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 350
+    .line 352
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
     invoke-static {v0, p3, p4}, Lkotlin/collections/CollectionsKt__CollectionsKt;->rangeCheck$CollectionsKt__CollectionsKt(III)V
 
-    .line 352
+    .line 354
     move v0, p3
 
-    .line 353
+    .line 355
     .local v0, "low":I
     add-int/lit8 v1, p4, -0x1
 
-    .line 355
+    .line 357
     .local v1, "high":I
     :goto_0
     if-gt v0, v1, :cond_2
 
-    .line 356
+    .line 358
     add-int v2, v0, v1
 
     ushr-int/lit8 v2, v2, 0x1
 
-    .line 357
+    .line 359
     .local v2, "mid":I
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 358
+    .line 360
     .local v3, "midVal":Ljava/lang/Object;
     invoke-interface {p2, v3, p1}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v4
 
-    .line 360
+    .line 362
     .local v4, "cmp":I
     if-gez v4, :cond_0
 
-    .line 361
+    .line 363
     add-int/lit8 v0, v2, 0x1
 
     goto :goto_0
 
-    .line 362
+    .line 364
     :cond_0
     if-lez v4, :cond_1
 
-    .line 363
+    .line 365
     add-int/lit8 v1, v2, -0x1
 
     goto :goto_0
 
-    .line 365
+    .line 367
     :cond_1
     return v2
 
-    .line 367
+    .line 369
     .end local v2    # "mid":I
     .end local v3    # "midVal":Ljava/lang/Object;
     .end local v4    # "cmp":I
@@ -624,7 +622,7 @@
 .method public static synthetic binarySearch$default(Ljava/util/List;IILkotlin/jvm/functions/Function1;ILjava/lang/Object;)I
     .locals 0
 
-    .line 418
+    .line 420
     and-int/lit8 p5, p4, 0x1
 
     if-eqz p5, :cond_0
@@ -651,7 +649,7 @@
 .method public static synthetic binarySearch$default(Ljava/util/List;Ljava/lang/Comparable;IIILjava/lang/Object;)I
     .locals 0
 
-    .line 313
+    .line 315
     and-int/lit8 p5, p4, 0x2
 
     if-eqz p5, :cond_0
@@ -678,7 +676,7 @@
 .method public static synthetic binarySearch$default(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;IIILjava/lang/Object;)I
     .locals 0
 
-    .line 349
+    .line 351
     and-int/lit8 p6, p5, 0x4
 
     if-eqz p6, :cond_0
@@ -733,7 +731,7 @@
 
     const/4 v0, 0x0
 
-    .line 392
+    .line 394
     .local v0, "$i$f$binarySearchBy":I
     new-instance v1, Lkotlin/collections/CollectionsKt__CollectionsKt$binarySearchBy$1;
 
@@ -756,39 +754,33 @@
     .param p3, "toIndex"    # I
     .param p4, "selector"    # Lkotlin/jvm/functions/Function1;
 
-    .line 386
+    .line 388
     and-int/lit8 p6, p5, 0x2
 
     if-eqz p6, :cond_0
 
-    .line 388
+    .line 390
     const/4 p2, 0x0
 
-    .line 386
+    .line 388
     :cond_0
     and-int/lit8 p5, p5, 0x4
 
     if-eqz p5, :cond_1
 
-    .line 389
-    nop
-
-    .line 386
-    nop
-
-    .line 389
+    .line 391
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p3
 
-    .line 386
+    .line 388
     :cond_1
     move-object p5, p0
 
     .local p5, "$this$binarySearchBy$iv":Ljava/util/List;
     const/4 p6, 0x0
 
-    .line 471
+    .line 473
     .local p6, "$i$f$binarySearchBy":I
     new-instance v0, Lkotlin/collections/CollectionsKt__CollectionsKt$binarySearchBy$1;
 
@@ -800,7 +792,7 @@
 
     move-result p5
 
-    .line 386
+    .line 388
     .end local p5    # "$this$binarySearchBy$iv":Ljava/util/List;
     .end local p6    # "$i$f$binarySearchBy":I
     return p5
@@ -830,10 +822,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 201
+    .line 203
     nop
 
-    .line 202
+    .line 204
     invoke-static {p0}, Lkotlin/collections/CollectionsKt;->createListBuilder(I)Ljava/util/List;
 
     move-result-object v0
@@ -870,10 +862,10 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 173
+    .line 174
     nop
 
-    .line 174
+    .line 175
     invoke-static {}, Lkotlin/collections/CollectionsKt;->createListBuilder()Ljava/util/List;
 
     move-result-object v0
@@ -911,7 +903,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 280
+    .line 282
     invoke-interface {p0, p1}, Ljava/util/Collection;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
@@ -955,7 +947,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 215
+    .line 217
     new-instance v0, Lkotlin/ranges/IntRange;
 
     invoke-interface {p0}, Ljava/util/Collection;->size()I
@@ -988,7 +980,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 223
+    .line 225
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1018,7 +1010,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 269
+    .line 271
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -1055,7 +1047,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 230
+    .line 232
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -1078,10 +1070,10 @@
         }
     .end annotation
 
-    .line 239
+    .line 241
     nop
 
-    .line 243
+    .line 245
     if-eqz p0, :cond_1
 
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
@@ -1306,19 +1298,19 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 291
+    .line 293
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 294
+    .line 296
     move-object v0, p0
 
     goto :goto_0
 
-    .line 293
+    .line 295
     :pswitch_0
     const/4 v0, 0x0
 
@@ -1332,13 +1324,13 @@
 
     goto :goto_0
 
-    .line 292
+    .line 294
     :pswitch_1
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 295
+    .line 297
     :goto_0
     return-object v0
 
@@ -1366,7 +1358,7 @@
         }
     .end annotation
 
-    .line 251
+    .line 253
     if-nez p0, :cond_0
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
@@ -1399,7 +1391,7 @@
         }
     .end annotation
 
-    .line 258
+    .line 260
     if-nez p0, :cond_0
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
@@ -1421,26 +1413,26 @@
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
 
-    .line 444
+    .line 446
     nop
 
-    .line 445
+    .line 447
     const-string v0, ")."
 
     const-string v1, "fromIndex ("
 
     if-gt p1, p2, :cond_2
 
-    .line 446
+    .line 448
     if-ltz p1, :cond_1
 
-    .line 447
+    .line 449
     if-gt p2, p0, :cond_0
 
-    .line 449
+    .line 451
     return-void
 
-    .line 447
+    .line 449
     :cond_0
     new-instance v1, Ljava/lang/IndexOutOfBoundsException;
 
@@ -1480,7 +1472,7 @@
 
     throw v1
 
-    .line 446
+    .line 448
     :cond_1
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -1510,7 +1502,7 @@
 
     throw v0
 
-    .line 445
+    .line 447
     :cond_2
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -1575,22 +1567,22 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 288
+    .line 290
     invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v0
 
     move-object v1, v0
 
-    .line 470
-    .local v1, "$this$shuffled_u24lambda_u2d4":Ljava/util/List;
+    .line 472
+    .local v1, "$this$shuffled_u24lambda_u244":Ljava/util/List;
     const/4 v2, 0x0
 
-    .line 288
+    .line 290
     .local v2, "$i$a$-apply-CollectionsKt__CollectionsKt$shuffled$1":I
     invoke-static {v1, p1}, Lkotlin/collections/CollectionsKt;->shuffle(Ljava/util/List;Lkotlin/random/Random;)V
 
-    .end local v1    # "$this$shuffled_u24lambda_u2d4":Ljava/util/List;
+    .end local v1    # "$this$shuffled_u24lambda_u244":Ljava/util/List;
     .end local v2    # "$i$a$-apply-CollectionsKt__CollectionsKt$shuffled$1":I
     return-object v0
 .end method
@@ -1598,7 +1590,7 @@
 .method public static final throwCountOverflow()V
     .locals 2
 
-    .line 467
+    .line 469
     new-instance v0, Ljava/lang/ArithmeticException;
 
     const-string v1, "Count overflow has happened."
@@ -1611,7 +1603,7 @@
 .method public static final throwIndexOverflow()V
     .locals 2
 
-    .line 463
+    .line 465
     new-instance v0, Ljava/lang/ArithmeticException;
 
     const-string v1, "Index overflow has happened."

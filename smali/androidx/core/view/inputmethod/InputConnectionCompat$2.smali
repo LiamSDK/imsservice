@@ -24,7 +24,7 @@
     .param p1, "target"    # Landroid/view/inputmethod/InputConnection;
     .param p2, "mutable"    # Z
 
-    .line 297
+    .line 298
     iput-object p3, p0, Landroidx/core/view/inputmethod/InputConnectionCompat$2;->val$listener:Landroidx/core/view/inputmethod/InputConnectionCompat$OnCommitContentListener;
 
     invoke-direct {p0, p1, p2}, Landroid/view/inputmethod/InputConnectionWrapper;-><init>(Landroid/view/inputmethod/InputConnection;Z)V
@@ -39,7 +39,7 @@
     .param p1, "action"    # Ljava/lang/String;
     .param p2, "data"    # Landroid/os/Bundle;
 
-    .line 300
+    .line 301
     iget-object v0, p0, Landroidx/core/view/inputmethod/InputConnectionCompat$2;->val$listener:Landroidx/core/view/inputmethod/InputConnectionCompat$OnCommitContentListener;
 
     invoke-static {p1, p2, v0}, Landroidx/core/view/inputmethod/InputConnectionCompat;->handlePerformPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;Landroidx/core/view/inputmethod/InputConnectionCompat$OnCommitContentListener;)Z
@@ -48,12 +48,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 301
+    .line 302
     const/4 v0, 0x1
 
     return v0
 
-    .line 303
+    .line 304
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/view/inputmethod/InputConnectionWrapper;->performPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;)Z
 

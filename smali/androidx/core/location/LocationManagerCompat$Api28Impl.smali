@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1075
+    .line 1269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1077
+    .line 1271
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "locationManager"    # Landroid/location/LocationManager;
 
-    .line 1086
+    .line 1280
     invoke-virtual {p0}, Landroid/location/LocationManager;->getGnssHardwareModelName()Ljava/lang/String;
 
     move-result-object v0
@@ -41,7 +41,7 @@
     .locals 1
     .param p0, "locationManager"    # Landroid/location/LocationManager;
 
-    .line 1091
+    .line 1285
     invoke-virtual {p0}, Landroid/location/LocationManager;->getGnssYearOfHardware()I
 
     move-result v0
@@ -53,7 +53,7 @@
     .locals 1
     .param p0, "locationManager"    # Landroid/location/LocationManager;
 
-    .line 1081
+    .line 1275
     invoke-virtual {p0}, Landroid/location/LocationManager;->isLocationEnabled()Z
 
     move-result v0

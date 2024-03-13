@@ -36,8 +36,8 @@
     k = 0x1
     mv = {
         0x1,
-        0x5,
-        0x1
+        0x8,
+        0x0
     }
     xi = 0x30
 .end annotation
@@ -53,23 +53,15 @@
 
 # direct methods
 .method private static final synthetic $values()[Landroidx/annotation/experimental/Experimental$Level;
-    .locals 3
+    .locals 2
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Landroidx/annotation/experimental/Experimental$Level;
-
-    sget-object v1, Landroidx/annotation/experimental/Experimental$Level;->WARNING:Landroidx/annotation/experimental/Experimental$Level;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Landroidx/annotation/experimental/Experimental$Level;->WARNING:Landroidx/annotation/experimental/Experimental$Level;
 
     sget-object v1, Landroidx/annotation/experimental/Experimental$Level;->ERROR:Landroidx/annotation/experimental/Experimental$Level;
 
-    const/4 v2, 0x1
+    filled-new-array {v0, v1}, [Landroidx/annotation/experimental/Experimental$Level;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method
@@ -77,7 +69,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 84
+    .line 51
     new-instance v0, Landroidx/annotation/experimental/Experimental$Level;
 
     const-string v1, "WARNING"
@@ -88,7 +80,7 @@
 
     sput-object v0, Landroidx/annotation/experimental/Experimental$Level;->WARNING:Landroidx/annotation/experimental/Experimental$Level;
 
-    .line 89
+    .line 56
     new-instance v0, Landroidx/annotation/experimental/Experimental$Level;
 
     const-string v1, "ERROR"
@@ -118,7 +110,7 @@
         }
     .end annotation
 
-    .line 80
+    .line 47
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

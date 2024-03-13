@@ -1,14 +1,11 @@
 .class Lcom/mediatek/ims/rcs/MtkSipTransportImpl$1;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "MtkSipTransportImpl.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->notifyProvisioningChanged(Ljava/lang/String;Z)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,61 +17,41 @@
 # instance fields
 .field final synthetic this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-.field final synthetic val$feature:Ljava/lang/String;
-
 
 # direct methods
-.method constructor <init>(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;Ljava/lang/String;)V
+.method constructor <init>(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)V
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    .line 255
+    .line 94
     iput-object p1, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    iput-object p2, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$1;->val$feature:Ljava/lang/String;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 258
+    .line 97
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$000(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Lcom/mediatek/ims/rcsua/Capability;
+    const-string v1, "System shutdown received"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$000(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$1;->val$feature:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lcom/mediatek/ims/rcsua/Capability;->contains(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 259
+    .line 98
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
 
-    invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$000(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;)Lcom/mediatek/ims/rcsua/Capability;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->access$102(Lcom/mediatek/ims/rcs/MtkSipTransportImpl;Z)Z
 
-    iget-object v1, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$1;->val$feature:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lcom/mediatek/ims/rcsua/Capability;->add(Ljava/lang/String;)Lcom/mediatek/ims/rcsua/Capability;
-
-    .line 260
-    iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkSipTransportImpl;
-
-    invoke-virtual {v0}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->updateSipDelegateRegistration()V
-
-    .line 262
-    :cond_0
+    .line 99
     return-void
 .end method

@@ -56,7 +56,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -127,131 +127,51 @@
 
 # direct methods
 .method private static final synthetic $values()[Lkotlin/text/CharDirectionality;
-    .locals 3
+    .locals 20
 
-    const/16 v0, 0x14
-
-    new-array v0, v0, [Lkotlin/text/CharDirectionality;
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->UNDEFINED:Lkotlin/text/CharDirectionality;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/text/CharDirectionality;->UNDEFINED:Lkotlin/text/CharDirectionality;
 
     sget-object v1, Lkotlin/text/CharDirectionality;->LEFT_TO_RIGHT:Lkotlin/text/CharDirectionality;
 
-    const/4 v2, 0x1
+    sget-object v2, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT:Lkotlin/text/CharDirectionality;
 
-    aput-object v1, v0, v2
+    sget-object v3, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT_ARABIC:Lkotlin/text/CharDirectionality;
 
-    sget-object v1, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT:Lkotlin/text/CharDirectionality;
+    sget-object v4, Lkotlin/text/CharDirectionality;->EUROPEAN_NUMBER:Lkotlin/text/CharDirectionality;
 
-    const/4 v2, 0x2
+    sget-object v5, Lkotlin/text/CharDirectionality;->EUROPEAN_NUMBER_SEPARATOR:Lkotlin/text/CharDirectionality;
 
-    aput-object v1, v0, v2
+    sget-object v6, Lkotlin/text/CharDirectionality;->EUROPEAN_NUMBER_TERMINATOR:Lkotlin/text/CharDirectionality;
 
-    sget-object v1, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT_ARABIC:Lkotlin/text/CharDirectionality;
+    sget-object v7, Lkotlin/text/CharDirectionality;->ARABIC_NUMBER:Lkotlin/text/CharDirectionality;
 
-    const/4 v2, 0x3
+    sget-object v8, Lkotlin/text/CharDirectionality;->COMMON_NUMBER_SEPARATOR:Lkotlin/text/CharDirectionality;
 
-    aput-object v1, v0, v2
+    sget-object v9, Lkotlin/text/CharDirectionality;->NONSPACING_MARK:Lkotlin/text/CharDirectionality;
 
-    sget-object v1, Lkotlin/text/CharDirectionality;->EUROPEAN_NUMBER:Lkotlin/text/CharDirectionality;
+    sget-object v10, Lkotlin/text/CharDirectionality;->BOUNDARY_NEUTRAL:Lkotlin/text/CharDirectionality;
 
-    const/4 v2, 0x4
+    sget-object v11, Lkotlin/text/CharDirectionality;->PARAGRAPH_SEPARATOR:Lkotlin/text/CharDirectionality;
 
-    aput-object v1, v0, v2
+    sget-object v12, Lkotlin/text/CharDirectionality;->SEGMENT_SEPARATOR:Lkotlin/text/CharDirectionality;
 
-    sget-object v1, Lkotlin/text/CharDirectionality;->EUROPEAN_NUMBER_SEPARATOR:Lkotlin/text/CharDirectionality;
+    sget-object v13, Lkotlin/text/CharDirectionality;->WHITESPACE:Lkotlin/text/CharDirectionality;
 
-    const/4 v2, 0x5
+    sget-object v14, Lkotlin/text/CharDirectionality;->OTHER_NEUTRALS:Lkotlin/text/CharDirectionality;
 
-    aput-object v1, v0, v2
+    sget-object v15, Lkotlin/text/CharDirectionality;->LEFT_TO_RIGHT_EMBEDDING:Lkotlin/text/CharDirectionality;
 
-    sget-object v1, Lkotlin/text/CharDirectionality;->EUROPEAN_NUMBER_TERMINATOR:Lkotlin/text/CharDirectionality;
+    sget-object v16, Lkotlin/text/CharDirectionality;->LEFT_TO_RIGHT_OVERRIDE:Lkotlin/text/CharDirectionality;
 
-    const/4 v2, 0x6
+    sget-object v17, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT_EMBEDDING:Lkotlin/text/CharDirectionality;
 
-    aput-object v1, v0, v2
+    sget-object v18, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT_OVERRIDE:Lkotlin/text/CharDirectionality;
 
-    sget-object v1, Lkotlin/text/CharDirectionality;->ARABIC_NUMBER:Lkotlin/text/CharDirectionality;
+    sget-object v19, Lkotlin/text/CharDirectionality;->POP_DIRECTIONAL_FORMAT:Lkotlin/text/CharDirectionality;
 
-    const/4 v2, 0x7
+    filled-new-array/range {v0 .. v19}, [Lkotlin/text/CharDirectionality;
 
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->COMMON_NUMBER_SEPARATOR:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0x8
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->NONSPACING_MARK:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->BOUNDARY_NEUTRAL:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0xa
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->PARAGRAPH_SEPARATOR:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0xb
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->SEGMENT_SEPARATOR:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0xc
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->WHITESPACE:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0xd
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->OTHER_NEUTRALS:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0xe
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->LEFT_TO_RIGHT_EMBEDDING:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0xf
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->LEFT_TO_RIGHT_OVERRIDE:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0x10
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT_EMBEDDING:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0x11
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT_OVERRIDE:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0x12
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/CharDirectionality;->POP_DIRECTIONAL_FORMAT:Lkotlin/text/CharDirectionality;
-
-    const/16 v2, 0x13
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method
@@ -262,13 +182,13 @@
     .line 19
     new-instance v0, Lkotlin/text/CharDirectionality;
 
-    const-string v1, "UNDEFINED"
+    const/4 v1, -0x1
 
-    const/4 v2, 0x0
+    const-string v2, "UNDEFINED"
 
-    const/4 v3, -0x1
+    const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v2, v3, v1}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->UNDEFINED:Lkotlin/text/CharDirectionality;
 
@@ -277,9 +197,9 @@
 
     const-string v1, "LEFT_TO_RIGHT"
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->LEFT_TO_RIGHT:Lkotlin/text/CharDirectionality;
 
@@ -288,9 +208,9 @@
 
     const-string v1, "RIGHT_TO_LEFT"
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT:Lkotlin/text/CharDirectionality;
 
@@ -299,9 +219,9 @@
 
     const-string v1, "RIGHT_TO_LEFT_ARABIC"
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT_ARABIC:Lkotlin/text/CharDirectionality;
 
@@ -310,9 +230,9 @@
 
     const-string v1, "EUROPEAN_NUMBER"
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->EUROPEAN_NUMBER:Lkotlin/text/CharDirectionality;
 
@@ -321,9 +241,9 @@
 
     const-string v1, "EUROPEAN_NUMBER_SEPARATOR"
 
-    const/4 v3, 0x5
+    const/4 v2, 0x5
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->EUROPEAN_NUMBER_SEPARATOR:Lkotlin/text/CharDirectionality;
 
@@ -332,9 +252,9 @@
 
     const-string v1, "EUROPEAN_NUMBER_TERMINATOR"
 
-    const/4 v2, 0x6
+    const/4 v3, 0x6
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->EUROPEAN_NUMBER_TERMINATOR:Lkotlin/text/CharDirectionality;
 
@@ -343,9 +263,9 @@
 
     const-string v1, "ARABIC_NUMBER"
 
-    const/4 v3, 0x7
+    const/4 v2, 0x7
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->ARABIC_NUMBER:Lkotlin/text/CharDirectionality;
 
@@ -354,9 +274,9 @@
 
     const-string v1, "COMMON_NUMBER_SEPARATOR"
 
-    const/16 v2, 0x8
+    const/16 v3, 0x8
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->COMMON_NUMBER_SEPARATOR:Lkotlin/text/CharDirectionality;
 
@@ -365,9 +285,9 @@
 
     const-string v1, "NONSPACING_MARK"
 
-    const/16 v3, 0x9
+    const/16 v2, 0x9
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->NONSPACING_MARK:Lkotlin/text/CharDirectionality;
 
@@ -376,9 +296,9 @@
 
     const-string v1, "BOUNDARY_NEUTRAL"
 
-    const/16 v2, 0xa
+    const/16 v3, 0xa
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->BOUNDARY_NEUTRAL:Lkotlin/text/CharDirectionality;
 
@@ -387,9 +307,9 @@
 
     const-string v1, "PARAGRAPH_SEPARATOR"
 
-    const/16 v3, 0xb
+    const/16 v2, 0xb
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->PARAGRAPH_SEPARATOR:Lkotlin/text/CharDirectionality;
 
@@ -398,9 +318,9 @@
 
     const-string v1, "SEGMENT_SEPARATOR"
 
-    const/16 v2, 0xc
+    const/16 v3, 0xc
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->SEGMENT_SEPARATOR:Lkotlin/text/CharDirectionality;
 
@@ -409,9 +329,9 @@
 
     const-string v1, "WHITESPACE"
 
-    const/16 v3, 0xd
+    const/16 v2, 0xd
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->WHITESPACE:Lkotlin/text/CharDirectionality;
 
@@ -420,9 +340,9 @@
 
     const-string v1, "OTHER_NEUTRALS"
 
-    const/16 v2, 0xe
+    const/16 v3, 0xe
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->OTHER_NEUTRALS:Lkotlin/text/CharDirectionality;
 
@@ -431,9 +351,9 @@
 
     const-string v1, "LEFT_TO_RIGHT_EMBEDDING"
 
-    const/16 v3, 0xf
+    const/16 v2, 0xf
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->LEFT_TO_RIGHT_EMBEDDING:Lkotlin/text/CharDirectionality;
 
@@ -442,9 +362,9 @@
 
     const-string v1, "LEFT_TO_RIGHT_OVERRIDE"
 
-    const/16 v2, 0x10
+    const/16 v3, 0x10
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->LEFT_TO_RIGHT_OVERRIDE:Lkotlin/text/CharDirectionality;
 
@@ -453,9 +373,9 @@
 
     const-string v1, "RIGHT_TO_LEFT_EMBEDDING"
 
-    const/16 v3, 0x11
+    const/16 v2, 0x11
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT_EMBEDDING:Lkotlin/text/CharDirectionality;
 
@@ -464,9 +384,9 @@
 
     const-string v1, "RIGHT_TO_LEFT_OVERRIDE"
 
-    const/16 v2, 0x12
+    const/16 v3, 0x12
 
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->RIGHT_TO_LEFT_OVERRIDE:Lkotlin/text/CharDirectionality;
 
@@ -475,9 +395,9 @@
 
     const-string v1, "POP_DIRECTIONAL_FORMAT"
 
-    const/16 v3, 0x13
+    const/16 v2, 0x13
 
-    invoke-direct {v0, v1, v3, v2}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2, v3}, Lkotlin/text/CharDirectionality;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lkotlin/text/CharDirectionality;->POP_DIRECTIONAL_FORMAT:Lkotlin/text/CharDirectionality;
 

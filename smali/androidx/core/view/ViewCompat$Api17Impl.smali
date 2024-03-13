@@ -18,17 +18,17 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 5303
+    .line 5605
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5305
+    .line 5607
     return-void
 .end method
 
 .method static generateViewId()I
     .locals 1
 
-    .line 5314
+    .line 5616
     invoke-static {}, Landroid/view/View;->generateViewId()I
 
     move-result v0
@@ -40,7 +40,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5309
+    .line 5611
     invoke-virtual {p0}, Landroid/view/View;->getDisplay()Landroid/view/Display;
 
     move-result-object v0
@@ -52,7 +52,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5319
+    .line 5621
     invoke-virtual {p0}, Landroid/view/View;->getLabelFor()I
 
     move-result v0
@@ -64,7 +64,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5334
+    .line 5636
     invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v0
@@ -76,7 +76,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5349
+    .line 5651
     invoke-virtual {p0}, Landroid/view/View;->getPaddingEnd()I
 
     move-result v0
@@ -88,7 +88,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5344
+    .line 5646
     invoke-virtual {p0}, Landroid/view/View;->getPaddingStart()I
 
     move-result v0
@@ -100,7 +100,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5359
+    .line 5661
     invoke-virtual {p0}, Landroid/view/View;->isPaddingRelative()Z
 
     move-result v0
@@ -113,10 +113,10 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "id"    # I
 
-    .line 5324
+    .line 5626
     invoke-virtual {p0, p1}, Landroid/view/View;->setLabelFor(I)V
 
-    .line 5325
+    .line 5627
     return-void
 .end method
 
@@ -125,10 +125,10 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "paint"    # Landroid/graphics/Paint;
 
-    .line 5329
+    .line 5631
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayerPaint(Landroid/graphics/Paint;)V
 
-    .line 5330
+    .line 5632
     return-void
 .end method
 
@@ -137,10 +137,10 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "layoutDirection"    # I
 
-    .line 5339
+    .line 5641
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutDirection(I)V
 
-    .line 5340
+    .line 5642
     return-void
 .end method
 
@@ -152,9 +152,9 @@
     .param p3, "end"    # I
     .param p4, "bottom"    # I
 
-    .line 5354
+    .line 5656
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPaddingRelative(IIII)V
 
-    .line 5355
+    .line 5657
     return-void
 .end method

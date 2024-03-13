@@ -41,7 +41,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -49,10 +49,10 @@
 
 
 # instance fields
-.field final synthetic $other:Ljava/util/Collection;
+.field final synthetic $other:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Collection<",
+            "Ljava/util/List<",
             "TT;>;"
         }
     .end annotation
@@ -60,17 +60,17 @@
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Collection;)V
+.method constructor <init>(Ljava/util/List;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/util/Collection<",
+            "Ljava/util/List<",
             "+TT;>;)V"
         }
     .end annotation
 
-    iput-object p1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$4$iterator$1;->$other:Ljava/util/Collection;
+    iput-object p1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$4$iterator$1;->$other:Ljava/util/List;
 
     const/4 v0, 0x1
 
@@ -91,10 +91,10 @@
         }
     .end annotation
 
-    .line 2502
-    iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$4$iterator$1;->$other:Ljava/util/Collection;
+    .line 2664
+    iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$4$iterator$1;->$other:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -109,7 +109,7 @@
     .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
-    .line 2502
+    .line 2664
     invoke-virtual {p0, p1}, Lkotlin/sequences/SequencesKt___SequencesKt$minus$4$iterator$1;->invoke(Ljava/lang/Object;)Ljava/lang/Boolean;
 
     move-result-object v0

@@ -67,6 +67,8 @@
 
 .field private mEnableVolteForImsEcc:Z
 
+.field private mEnableVowifiForImsEcc:Z
+
 .field private mOngoingMergeCallIds:[Ljava/lang/String;
 
 .field private mPhoneId:I
@@ -128,6 +130,9 @@
     iput-boolean v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mEnableVolteForImsEcc:Z
 
     .line 88
+    iput-boolean v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mEnableVowifiForImsEcc:Z
+
+    .line 89
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -186,7 +191,7 @@
 .method public static isEccExistOnAnySlot()Z
     .locals 4
 
-    .line 276
+    .line 319
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -199,7 +204,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 277
+    .line 320
     sget-object v1, Lcom/mediatek/ims/ImsServiceCallTracker;->mImsServiceCTs:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -208,27 +213,27 @@
 
     check-cast v1, Lcom/mediatek/ims/ImsServiceCallTracker;
 
-    .line 278
+    .line 321
     .local v1, "imsServiceCT":Lcom/mediatek/ims/ImsServiceCallTracker;
     const/4 v2, 0x0
 
-    .line 280
+    .line 323
     .local v2, "isEccExist":Z
     if-eqz v1, :cond_0
 
-    .line 281
+    .line 324
     invoke-virtual {v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->isEccExist()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 282
+    .line 325
     const/4 v3, 0x1
 
     return v3
 
-    .line 276
+    .line 319
     .end local v1    # "imsServiceCT":Lcom/mediatek/ims/ImsServiceCallTracker;
     .end local v2    # "isEccExist":Z
     :cond_0
@@ -236,7 +241,7 @@
 
     goto :goto_0
 
-    .line 286
+    .line 329
     .end local v0    # "i":I
     :cond_1
     const/4 v0, 0x0
@@ -248,14 +253,14 @@
     .locals 2
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 600
+    .line 649
     sget-boolean v0, Lcom/mediatek/ims/ImsServiceCallTracker;->TELDBG:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 601
+    .line 650
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -291,7 +296,7 @@
 
     invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 602
+    .line 651
     return-void
 .end method
 
@@ -299,7 +304,7 @@
     .locals 1
     .param p0, "msg"    # Ljava/lang/String;
 
-    .line 605
+    .line 654
     sget-boolean v0, Lcom/mediatek/ims/ImsServiceCallTracker;->SENLOG:Z
 
     if-eqz v0, :cond_1
@@ -310,13 +315,13 @@
 
     goto :goto_0
 
-    .line 608
+    .line 657
     :cond_0
     const-string v0, "[hidden]"
 
     return-object v0
 
-    .line 606
+    .line 655
     :cond_1
     :goto_0
     const-string v0, "ImsServiceCT"
@@ -334,7 +339,7 @@
     .locals 5
     .param p1, "state"    # Lcom/mediatek/ims/ImsCallInfo$State;
 
-    .line 158
+    .line 201
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
@@ -358,7 +363,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 159
+    .line 202
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -366,7 +371,7 @@
 
     check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 161
+    .line 204
     .local v2, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -392,7 +397,7 @@
 
     iget-object v4, v2, Lcom/mediatek/ims/ImsCallInfo;->mCallNum:Ljava/lang/String;
 
-    .line 162
+    .line 205
     invoke-static {v4}, Lcom/mediatek/ims/ImsServiceCallTracker;->sensitiveEncode(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -417,23 +422,23 @@
 
     move-result-object v3
 
-    .line 161
+    .line 204
     invoke-direct {p0, v3}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 164
+    .line 207
     iget-object v3, v2, Lcom/mediatek/ims/ImsCallInfo;->mState:Lcom/mediatek/ims/ImsCallInfo$State;
 
     if-ne v3, p1, :cond_0
 
-    .line 165
+    .line 208
     return-object v2
 
-    .line 167
+    .line 210
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     :cond_0
     goto :goto_0
 
-    .line 168
+    .line 211
     .end local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_1
     const/4 v0, 0x0
@@ -445,20 +450,20 @@
     .locals 3
     .param p1, "callId"    # Ljava/lang/String;
 
-    .line 139
+    .line 182
     if-nez p1, :cond_0
 
-    .line 140
+    .line 183
     const-string v0, "getCallInfo(callId) : callID is null"
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 141
+    .line 184
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 144
+    .line 187
     :cond_0
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -468,13 +473,13 @@
 
     check-cast v0, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 146
+    .line 189
     .local v0, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     const-string v1, "getCallInfo(callId) : callID: "
 
     if-eqz v0, :cond_1
 
-    .line 147
+    .line 190
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -497,7 +502,7 @@
 
     iget-object v2, v0, Lcom/mediatek/ims/ImsCallInfo;->mCallNum:Ljava/lang/String;
 
-    .line 148
+    .line 191
     invoke-static {v2}, Lcom/mediatek/ims/ImsServiceCallTracker;->sensitiveEncode(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -522,12 +527,12 @@
 
     move-result-object v1
 
-    .line 147
+    .line 190
     invoke-direct {p0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 150
+    .line 193
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -553,7 +558,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 153
+    .line 196
     :goto_0
     return-object v0
 .end method
@@ -561,7 +566,7 @@
 .method public getConferenceHostCall()Lcom/mediatek/ims/ImsCallSessionProxy;
     .locals 5
 
-    .line 194
+    .line 237
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
@@ -585,7 +590,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 195
+    .line 238
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -593,7 +598,7 @@
 
     check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 196
+    .line 239
     .local v2, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     iget-boolean v3, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
 
@@ -601,18 +606,18 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 197
+    .line 240
     iget-object v0, v2, Lcom/mediatek/ims/ImsCallInfo;->mCallSession:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     return-object v0
 
-    .line 199
+    .line 242
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .end local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_0
     goto :goto_0
 
-    .line 200
+    .line 243
     :cond_1
     const/4 v0, 0x0
 
@@ -622,7 +627,7 @@
 .method public getCurrentCallCount()I
     .locals 1
 
-    .line 204
+    .line 247
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     if-nez v0, :cond_0
@@ -631,7 +636,7 @@
 
     return v0
 
-    .line 205
+    .line 248
     :cond_0
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->size()I
 
@@ -649,10 +654,19 @@
     return v0
 .end method
 
+.method public getEnableVowifiForImsEcc()Z
+    .locals 1
+
+    .line 114
+    iget-boolean v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mEnableVowifiForImsEcc:Z
+
+    return v0
+.end method
+
 .method public getFgCall()Lcom/mediatek/ims/ImsCallSessionProxy;
     .locals 5
 
-    .line 184
+    .line 227
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
@@ -676,7 +690,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 185
+    .line 228
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -684,7 +698,7 @@
 
     check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 186
+    .line 229
     .local v2, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     sget-object v3, Lcom/mediatek/ims/ImsCallInfo$State;->ACTIVE:Lcom/mediatek/ims/ImsCallInfo$State;
 
@@ -692,18 +706,18 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 187
+    .line 230
     iget-object v0, v2, Lcom/mediatek/ims/ImsCallInfo;->mCallSession:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     return-object v0
 
-    .line 189
+    .line 232
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .end local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_0
     goto :goto_0
 
-    .line 190
+    .line 233
     :cond_1
     const/4 v0, 0x0
 
@@ -714,10 +728,10 @@
     .locals 5
     .param p1, "callNumber"    # Ljava/lang/String;
 
-    .line 209
+    .line 252
     const/4 v0, -0x1
 
-    .line 211
+    .line 254
     .local v0, "participantCallId":I
     iget-object v1, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -742,7 +756,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 212
+    .line 255
     .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -750,7 +764,7 @@
 
     check-cast v3, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 213
+    .line 256
     .local v3, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     iget-object v4, v3, Lcom/mediatek/ims/ImsCallInfo;->mCallNum:Ljava/lang/String;
 
@@ -760,23 +774,23 @@
 
     if-eqz v4, :cond_0
 
-    .line 214
+    .line 257
     iget-object v1, v3, Lcom/mediatek/ims/ImsCallInfo;->mCallId:Ljava/lang/String;
 
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 215
+    .line 258
     goto :goto_1
 
-    .line 217
+    .line 260
     .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .end local v3    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_0
     goto :goto_0
 
-    .line 219
+    .line 262
     :cond_1
     :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
@@ -799,7 +813,7 @@
 
     invoke-direct {p0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 221
+    .line 264
     return v0
 .end method
 
@@ -814,7 +828,7 @@
         }
     .end annotation
 
-    .line 352
+    .line 395
     invoke-static {}, Lcom/mediatek/ims/internal/ImsXuiManager;->getInstance()Lcom/mediatek/ims/internal/ImsXuiManager;
 
     move-result-object v0
@@ -825,22 +839,22 @@
 
     move-result-object v0
 
-    .line 353
+    .line 396
     .local v0, "selfUri":[Landroid/net/Uri;
     if-nez v0, :cond_0
 
-    .line 354
+    .line 397
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 356
+    .line 399
     :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 357
+    .line 400
     .local v1, "selfAddressList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v2, 0x0
 
@@ -850,14 +864,14 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 358
+    .line 401
     aget-object v3, v0, v2
 
     invoke-virtual {v3}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 359
+    .line 402
     .local v3, "address":Ljava/lang/String;
     const-string v4, "[@;:]"
 
@@ -865,7 +879,7 @@
 
     move-result-object v4
 
-    .line 360
+    .line 403
     .local v4, "numberParts":[Ljava/lang/String;
     array-length v5, v4
 
@@ -873,7 +887,7 @@
 
     goto :goto_1
 
-    .line 361
+    .line 404
     :cond_1
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -903,12 +917,12 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 362
+    .line 405
     aget-object v5, v4, v6
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 357
+    .line 400
     .end local v3    # "address":Ljava/lang/String;
     .end local v4    # "numberParts":[Ljava/lang/String;
     :goto_1
@@ -916,7 +930,7 @@
 
     goto :goto_0
 
-    .line 364
+    .line 407
     .end local v2    # "i":I
     :cond_2
     return-object v1
@@ -926,7 +940,7 @@
     .locals 1
     .param p1, "mode"    # I
 
-    .line 242
+    .line 285
     const/16 v0, 0x16
 
     if-eq v0, p1, :cond_1
@@ -945,13 +959,13 @@
 
     goto :goto_0
 
-    .line 245
+    .line 288
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 243
+    .line 286
     :cond_1
     :goto_0
     const/4 v0, 0x1
@@ -962,7 +976,7 @@
 .method public isConferenceCallExist()Z
     .locals 4
 
-    .line 313
+    .line 356
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
@@ -986,7 +1000,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 314
+    .line 357
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -994,7 +1008,7 @@
 
     check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 315
+    .line 358
     .local v2, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     iget-boolean v3, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsConference:Z
 
@@ -1011,18 +1025,18 @@
 
     if-eqz v3, :cond_1
 
-    .line 316
+    .line 359
     const/4 v0, 0x1
 
     return v0
 
-    .line 318
+    .line 361
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .end local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_1
     goto :goto_0
 
-    .line 319
+    .line 362
     :cond_2
     const/4 v0, 0x0
 
@@ -1033,7 +1047,7 @@
     .locals 1
     .param p1, "mode"    # I
 
-    .line 250
+    .line 293
     const/16 v0, 0x16
 
     if-eq v0, p1, :cond_1
@@ -1044,13 +1058,13 @@
 
     goto :goto_0
 
-    .line 253
+    .line 296
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 251
+    .line 294
     :cond_1
     :goto_0
     const/4 v0, 0x1
@@ -1061,7 +1075,7 @@
 .method public isConferenceHostCallExist()Z
     .locals 4
 
-    .line 324
+    .line 367
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
@@ -1085,7 +1099,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 325
+    .line 368
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1093,7 +1107,7 @@
 
     check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 326
+    .line 369
     .local v2, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     iget-boolean v3, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
 
@@ -1105,18 +1119,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 327
+    .line 370
     const/4 v0, 0x1
 
     return v0
 
-    .line 329
+    .line 372
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .end local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_0
     goto :goto_0
 
-    .line 330
+    .line 373
     :cond_1
     const/4 v0, 0x0
 
@@ -1126,7 +1140,7 @@
 .method public isEccExist()Z
     .locals 4
 
-    .line 291
+    .line 334
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
@@ -1150,7 +1164,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 292
+    .line 335
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1158,7 +1172,7 @@
 
     check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 293
+    .line 336
     .local v2, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     iget-boolean v3, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsEcc:Z
 
@@ -1170,28 +1184,69 @@
 
     if-eqz v3, :cond_0
 
-    .line 294
+    .line 337
     const/4 v0, 0x1
 
     return v0
 
-    .line 296
+    .line 339
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .end local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_0
     goto :goto_0
 
-    .line 297
+    .line 340
     :cond_1
     const/4 v0, 0x0
 
     return v0
 .end method
 
+.method public isIgnoreUpdateStatus(Ljava/lang/String;)Z
+    .locals 2
+    .param p1, "callId"    # Ljava/lang/String;
+
+    .line 158
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    .line 159
+    const-string v1, "isIgnoreUpdateStatus(callId) : callId is null"
+
+    invoke-direct {p0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
+
+    .line 160
+    return v0
+
+    .line 162
+    :cond_0
+    iget-object v1, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v1, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/mediatek/ims/ImsCallInfo;
+
+    .line 163
+    .local v1, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
+    if-eqz v1, :cond_1
+
+    .line 164
+    iget-boolean v0, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsIgnoreUpdateStatus:Z
+
+    return v0
+
+    .line 166
+    :cond_1
+    return v0
+.end method
+
 .method public isInCall()Z
     .locals 5
 
-    .line 258
+    .line 301
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
@@ -1215,7 +1270,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 259
+    .line 302
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1223,7 +1278,7 @@
 
     check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 260
+    .line 303
     .local v2, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     sget-object v3, Lcom/mediatek/ims/ImsCallInfo$State;->ACTIVE:Lcom/mediatek/ims/ImsCallInfo$State;
 
@@ -1239,13 +1294,13 @@
 
     goto :goto_1
 
-    .line 263
+    .line 306
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .end local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_0
     goto :goto_0
 
-    .line 261
+    .line 304
     .restart local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .restart local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_1
@@ -1254,7 +1309,7 @@
 
     return v0
 
-    .line 264
+    .line 307
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .end local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_2
@@ -1267,7 +1322,7 @@
     .locals 2
     .param p1, "callInfo"    # Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 269
+    .line 312
     sget-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->ACTIVE:Lcom/mediatek/ims/ImsCallInfo$State;
 
     iget-object v1, p1, Lcom/mediatek/ims/ImsCallInfo;->mState:Lcom/mediatek/ims/ImsCallInfo$State;
@@ -1282,13 +1337,13 @@
 
     goto :goto_0
 
-    .line 272
+    .line 315
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 270
+    .line 313
     :cond_1
     :goto_0
     const/4 v0, 0x1
@@ -1300,26 +1355,22 @@
     .locals 5
     .param p1, "callId"    # Ljava/lang/String;
 
-    .line 114
-    iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mOngoingMergeCallIds:[Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    .line 115
-    const-string v0, "isInMergeProgress : no merge call"
-
-    invoke-direct {p0, v0}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
-
-    .line 116
-    return v1
-
-    .line 118
-    :cond_0
+    .line 122
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    if-eqz p1, :cond_3
+
+    iget-object v1, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mOngoingMergeCallIds:[Ljava/lang/String;
+
+    if-nez v1, :cond_0
+
+    goto :goto_1
+
+    .line 126
+    :cond_0
+    const/4 v1, 0x0
+
+    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mOngoingMergeCallIds:[Ljava/lang/String;
 
@@ -1327,10 +1378,10 @@
 
     const-string v4, "isInMergeProgress : Id :"
 
-    if-ge v0, v3, :cond_2
+    if-ge v1, v3, :cond_2
 
-    .line 119
-    aget-object v2, v2, v0
+    .line 127
+    aget-object v2, v2, v1
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1338,45 +1389,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 120
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " yes"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
-
-    .line 121
-    const/4 v1, 0x1
-
-    return v1
-
-    .line 118
-    :cond_1
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 124
-    .end local v0    # "i":I
-    :cond_2
+    .line 128
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1389,7 +1402,7 @@
 
     move-result-object v0
 
-    const-string v2, "no"
+    const-string v2, " yes"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1401,15 +1414,63 @@
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 125
-    return v1
+    .line 129
+    const/4 v0, 0x1
+
+    return v0
+
+    .line 126
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 132
+    .end local v1    # "i":I
+    :cond_2
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "no"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
+
+    .line 133
+    return v0
+
+    .line 123
+    :cond_3
+    :goto_1
+    const-string v1, "isInMergeProgress : no merge call"
+
+    invoke-direct {p0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
+
+    .line 124
+    return v0
 .end method
 
 .method public isSelfAddress(Ljava/lang/String;)Z
     .locals 7
     .param p1, "addr"    # Ljava/lang/String;
 
-    .line 334
+    .line 377
     invoke-static {}, Lcom/mediatek/ims/internal/ImsXuiManager;->getInstance()Lcom/mediatek/ims/internal/ImsXuiManager;
 
     move-result-object v0
@@ -1420,16 +1481,16 @@
 
     move-result-object v0
 
-    .line 335
+    .line 378
     .local v0, "selfUri":[Landroid/net/Uri;
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 336
+    .line 379
     return v1
 
-    .line 338
+    .line 381
     :cond_0
     const/4 v2, 0x0
 
@@ -1439,14 +1500,14 @@
 
     if-ge v2, v3, :cond_3
 
-    .line 339
+    .line 382
     aget-object v3, v0, v2
 
     invoke-virtual {v3}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 340
+    .line 383
     .local v3, "address":Ljava/lang/String;
     const-string v4, "[@;:]"
 
@@ -1454,7 +1515,7 @@
 
     move-result-object v4
 
-    .line 341
+    .line 384
     .local v4, "numberParts":[Ljava/lang/String;
     array-length v5, v4
 
@@ -1462,7 +1523,7 @@
 
     goto :goto_1
 
-    .line 342
+    .line 385
     :cond_1
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1490,7 +1551,7 @@
 
     move-result-object v5
 
-    .line 343
+    .line 386
     invoke-static {p1}, Lcom/mediatek/ims/ImsServiceCallTracker;->sensitiveEncode(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
@@ -1503,10 +1564,10 @@
 
     move-result-object v5
 
-    .line 342
+    .line 385
     invoke-direct {p0, v5}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 344
+    .line 387
     aget-object v5, v4, v1
 
     invoke-static {p1, v5}, Landroid/telephony/PhoneNumberUtils;->compareLoosely(Ljava/lang/String;Ljava/lang/String;)Z
@@ -1515,12 +1576,12 @@
 
     if-eqz v5, :cond_2
 
-    .line 345
+    .line 388
     const/4 v1, 0x1
 
     return v1
 
-    .line 338
+    .line 381
     .end local v3    # "address":Ljava/lang/String;
     .end local v4    # "numberParts":[Ljava/lang/String;
     :cond_2
@@ -1529,17 +1590,58 @@
 
     goto :goto_0
 
-    .line 348
+    .line 391
     .end local v2    # "i":I
     :cond_3
     return v1
+.end method
+
+.method public isStkCall(Ljava/lang/String;)Z
+    .locals 2
+    .param p1, "callId"    # Ljava/lang/String;
+
+    .line 146
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    .line 147
+    const-string v1, "isStkCall(callId) : callID is null"
+
+    invoke-direct {p0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
+
+    .line 148
+    return v0
+
+    .line 150
+    :cond_0
+    iget-object v1, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v1, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/mediatek/ims/ImsCallInfo;
+
+    .line 151
+    .local v1, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
+    if-eqz v1, :cond_1
+
+    .line 152
+    iget-boolean v0, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsStkCall:Z
+
+    return v0
+
+    .line 154
+    :cond_1
+    return v0
 .end method
 
 .method public isVideoCall(I)Z
     .locals 1
     .param p1, "mode"    # I
 
-    .line 234
+    .line 277
     const/16 v0, 0x15
 
     if-eq v0, p1, :cond_1
@@ -1554,13 +1656,13 @@
 
     goto :goto_0
 
-    .line 237
+    .line 280
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 235
+    .line 278
     :cond_1
     :goto_0
     const/4 v0, 0x1
@@ -1571,7 +1673,7 @@
 .method public isVideoCallExist()Z
     .locals 4
 
-    .line 302
+    .line 345
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
@@ -1595,7 +1697,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 303
+    .line 346
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1603,7 +1705,7 @@
 
     check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 304
+    .line 347
     .local v2, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     iget-boolean v3, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsVideo:Z
 
@@ -1615,18 +1717,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 305
+    .line 348
     const/4 v0, 0x1
 
     return v0
 
-    .line 307
+    .line 350
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/mediatek/ims/ImsCallInfo;>;"
     .end local v2    # "callInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_0
     goto :goto_0
 
-    .line 308
+    .line 351
     :cond_1
     const/4 v0, 0x0
 
@@ -1637,7 +1739,7 @@
     .locals 1
     .param p1, "mode"    # I
 
-    .line 226
+    .line 269
     const/16 v0, 0x14
 
     if-eq v0, p1, :cond_1
@@ -1652,13 +1754,13 @@
 
     goto :goto_0
 
-    .line 229
+    .line 272
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 227
+    .line 270
     :cond_1
     :goto_0
     const/4 v0, 0x1
@@ -1667,30 +1769,30 @@
 .end method
 
 .method public processCallInfoIndication([Ljava/lang/String;Lcom/mediatek/ims/ImsCallSessionProxy;Landroid/telephony/ims/ImsCallProfile;)V
-    .locals 24
+    .locals 25
     .param p1, "callInfo"    # [Ljava/lang/String;
     .param p2, "callSession"    # Lcom/mediatek/ims/ImsCallSessionProxy;
     .param p3, "profile"    # Landroid/telephony/ims/ImsCallProfile;
 
-    .line 376
+    .line 419
     move-object/from16 v0, p0
 
     const/4 v1, 0x0
 
-    aget-object v12, p1, v1
+    aget-object v13, p1, v1
 
-    .line 377
-    .local v12, "callId":Ljava/lang/String;
+    .line 420
+    .local v13, "callId":Ljava/lang/String;
     const/4 v2, 0x1
 
     aget-object v3, p1, v2
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v13
+    move-result v14
 
-    .line 378
-    .local v13, "msgType":I
+    .line 421
+    .local v14, "msgType":I
     const/4 v3, 0x5
 
     aget-object v4, p1, v3
@@ -1713,94 +1815,94 @@
     move-result v3
 
     :goto_0
-    move v14, v3
+    move v15, v3
 
-    .line 379
-    .local v14, "callMode":I
+    .line 422
+    .local v15, "callMode":I
     const/4 v3, 0x6
 
-    aget-object v15, p1, v3
+    aget-object v16, p1, v3
 
-    .line 381
-    .local v15, "callNum":Ljava/lang/String;
+    .line 424
+    .local v16, "callNum":Ljava/lang/String;
     const/4 v3, 0x0
 
-    .line 382
+    .line 425
     .local v3, "isConference":Z
-    invoke-virtual {v0, v14}, Lcom/mediatek/ims/ImsServiceCallTracker;->isConferenceCall(I)Z
+    invoke-virtual {v0, v15}, Lcom/mediatek/ims/ImsServiceCallTracker;->isConferenceCall(I)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 383
+    .line 426
     const/4 v3, 0x1
 
-    move v11, v3
+    move v12, v3
 
     goto :goto_1
 
-    .line 382
+    .line 425
     :cond_1
-    move v11, v3
+    move v12, v3
 
-    .line 386
+    .line 429
     .end local v3    # "isConference":Z
-    .local v11, "isConference":Z
+    .local v12, "isConference":Z
     :goto_1
     const/4 v3, 0x0
 
-    .line 387
+    .line 430
     .local v3, "isConferenceHost":Z
-    invoke-virtual {v0, v14}, Lcom/mediatek/ims/ImsServiceCallTracker;->isConferenceCallHost(I)Z
+    invoke-virtual {v0, v15}, Lcom/mediatek/ims/ImsServiceCallTracker;->isConferenceCallHost(I)Z
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    .line 388
+    .line 431
     const/4 v3, 0x1
 
-    move v10, v3
+    move v11, v3
 
     goto :goto_2
 
-    .line 387
+    .line 430
     :cond_2
-    move v10, v3
+    move v11, v3
 
-    .line 391
+    .line 434
     .end local v3    # "isConferenceHost":Z
-    .local v10, "isConferenceHost":Z
+    .local v11, "isConferenceHost":Z
     :goto_2
     const/4 v3, 0x0
 
-    .line 392
+    .line 435
     .local v3, "isVideo":Z
-    invoke-virtual {v0, v14}, Lcom/mediatek/ims/ImsServiceCallTracker;->isVideoCall(I)Z
+    invoke-virtual {v0, v15}, Lcom/mediatek/ims/ImsServiceCallTracker;->isVideoCall(I)Z
 
     move-result v4
 
     if-eqz v4, :cond_3
 
-    .line 393
+    .line 436
     const/4 v3, 0x1
 
-    move v9, v3
+    move v10, v3
 
     goto :goto_3
 
-    .line 392
+    .line 435
     :cond_3
-    move v9, v3
+    move v10, v3
 
-    .line 396
+    .line 439
     .end local v3    # "isVideo":Z
-    .local v9, "isVideo":Z
+    .local v10, "isVideo":Z
     :goto_3
     const/4 v3, 0x0
 
-    .line 397
+    .line 440
     .local v3, "isEcc":Z
     invoke-virtual/range {p3 .. p3}, Landroid/telephony/ims/ImsCallProfile;->getServiceType()I
 
@@ -1810,29 +1912,29 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 398
+    .line 441
     const/4 v3, 0x1
 
-    move v8, v3
+    move v9, v3
 
     goto :goto_4
 
-    .line 397
+    .line 440
     :cond_4
-    move v8, v3
+    move v9, v3
 
-    .line 401
+    .line 444
     .end local v3    # "isEcc":Z
-    .local v8, "isEcc":Z
+    .local v9, "isEcc":Z
     :goto_4
-    const/16 v16, 0x0
-
-    .line 403
-    .local v16, "isRemoteHold":Z
     const/16 v17, 0x0
 
-    .line 404
-    .local v17, "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .line 446
+    .local v17, "isRemoteHold":Z
+    const/16 v18, 0x0
+
+    .line 447
+    .local v18, "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     const-string v3, ", isEcc = "
 
     const-string v4, ", isVideo = "
@@ -1843,169 +1945,157 @@
 
     const-string v7, ", callMode = "
 
-    sparse-switch v13, :sswitch_data_0
+    sparse-switch v14, :sswitch_data_0
 
-    move/from16 v23, v9
+    move/from16 v19, v9
 
     move/from16 v22, v10
 
-    move/from16 v21, v11
+    move/from16 v24, v11
 
-    move/from16 v18, v13
+    move/from16 v21, v12
 
-    move-object/from16 v19, v15
+    move/from16 v20, v14
 
-    move-object v15, v0
-
-    move v13, v8
-
-    .end local v8    # "isEcc":Z
-    .end local v9    # "isVideo":Z
-    .end local v10    # "isConferenceHost":Z
-    .end local v11    # "isConference":Z
-    .end local v15    # "callNum":Ljava/lang/String;
-    .local v13, "isEcc":Z
-    .local v18, "msgType":I
-    .local v19, "callNum":Ljava/lang/String;
+    .end local v9    # "isEcc":Z
+    .end local v10    # "isVideo":Z
+    .end local v11    # "isConferenceHost":Z
+    .end local v12    # "isConference":Z
+    .end local v14    # "msgType":I
+    .local v19, "isEcc":Z
+    .local v20, "msgType":I
     .local v21, "isConference":Z
-    .local v22, "isConferenceHost":Z
-    .local v23, "isVideo":Z
-    goto/16 :goto_5
+    .local v22, "isVideo":Z
+    .local v24, "isConferenceHost":Z
+    goto/16 :goto_6
 
-    .line 548
-    .end local v18    # "msgType":I
-    .end local v19    # "callNum":Ljava/lang/String;
+    .line 597
+    .end local v19    # "isEcc":Z
+    .end local v20    # "msgType":I
     .end local v21    # "isConference":Z
-    .end local v22    # "isConferenceHost":Z
-    .end local v23    # "isVideo":Z
-    .restart local v8    # "isEcc":Z
-    .restart local v9    # "isVideo":Z
-    .restart local v10    # "isConferenceHost":Z
-    .restart local v11    # "isConference":Z
-    .local v13, "msgType":I
-    .restart local v15    # "callNum":Ljava/lang/String;
+    .end local v22    # "isVideo":Z
+    .end local v24    # "isConferenceHost":Z
+    .restart local v9    # "isEcc":Z
+    .restart local v10    # "isVideo":Z
+    .restart local v11    # "isConferenceHost":Z
+    .restart local v12    # "isConference":Z
+    .restart local v14    # "msgType":I
     :sswitch_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "processCallInfoIndication() : CALL_MSG_TYPE_ACTIVE_BY_REMOTE => callId = "
+    const-string v8, "processCallInfoIndication() : CALL_MSG_TYPE_ACTIVE_BY_REMOTE => callId = "
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-direct {v0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 556
-    iget-object v1, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+    .line 605
+    iget-object v2, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v1, v12}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v13}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lcom/mediatek/ims/ImsCallInfo;
+    check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 557
-    .end local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    .local v1, "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    if-nez v1, :cond_5
+    .line 606
+    .end local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .local v2, "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    if-nez v2, :cond_5
 
     return-void
 
-    .line 558
+    .line 607
     :cond_5
-    const/4 v2, 0x0
+    iput-boolean v1, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsRemoteHold:Z
 
-    iput-boolean v2, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsRemoteHold:Z
+    .line 608
+    iget-object v1, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 559
-    iget-object v2, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {v1, v13, v2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v2, v12, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 609
+    move-object/from16 v18, v2
 
-    .line 560
-    move-object/from16 v17, v1
-
-    move/from16 v23, v9
+    move/from16 v19, v9
 
     move/from16 v22, v10
 
-    move/from16 v21, v11
+    move/from16 v24, v11
 
-    move/from16 v18, v13
+    move/from16 v21, v12
 
-    move-object/from16 v19, v15
+    move/from16 v20, v14
 
-    move-object v15, v0
+    goto/16 :goto_6
 
-    move v13, v8
-
-    goto/16 :goto_5
-
-    .line 532
-    .end local v1    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    .restart local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .line 581
+    .end local v2    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .restart local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     :sswitch_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "processCallInfoIndication() : CALL_MSG_TYPE_HELD_BY_REMOTE => callId = "
+    const-string v8, "processCallInfoIndication() : CALL_MSG_TYPE_HELD_BY_REMOTE => callId = "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2013,7 +2103,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2021,7 +2111,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2029,7 +2119,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2037,7 +2127,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2045,7 +2135,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2055,55 +2145,49 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 540
+    .line 589
     iget-object v1, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v1, v12}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v13}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 541
-    .end local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    .restart local v1    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .line 590
+    .end local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .local v1, "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     if-nez v1, :cond_6
 
     return-void
 
-    .line 542
+    .line 591
     :cond_6
-    const/4 v2, 0x1
-
     iput-boolean v2, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsRemoteHold:Z
 
-    .line 543
+    .line 592
     iget-object v2, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v2, v12, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v13, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 544
-    move-object/from16 v17, v1
+    .line 593
+    move-object/from16 v18, v1
 
-    move/from16 v23, v9
+    move/from16 v19, v9
 
     move/from16 v22, v10
 
-    move/from16 v21, v11
+    move/from16 v24, v11
 
-    move/from16 v18, v13
+    move/from16 v21, v12
 
-    move-object/from16 v19, v15
+    move/from16 v20, v14
 
-    move-object v15, v0
+    goto/16 :goto_6
 
-    move v13, v8
-
-    goto/16 :goto_5
-
-    .line 511
+    .line 560
     .end local v1    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    .restart local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .restart local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     :sswitch_2
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2115,7 +2199,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2123,7 +2207,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2131,7 +2215,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2139,7 +2223,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2147,7 +2231,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2155,7 +2239,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2165,64 +2249,60 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 519
+    .line 568
     iget-object v1, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v1, v12}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v13}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 520
-    .end local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .line 569
+    .end local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     .restart local v1    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     if-nez v1, :cond_7
 
     return-void
 
-    .line 521
+    .line 570
     :cond_7
     sget-object v2, Lcom/mediatek/ims/ImsCallInfo$State;->DISCONNECTED:Lcom/mediatek/ims/ImsCallInfo$State;
 
     iput-object v2, v1, Lcom/mediatek/ims/ImsCallInfo;->mState:Lcom/mediatek/ims/ImsCallInfo$State;
 
-    .line 522
-    iput-boolean v11, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConference:Z
+    .line 571
+    iput-boolean v12, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConference:Z
 
-    .line 523
-    iput-boolean v10, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
+    .line 572
+    iput-boolean v11, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
 
-    .line 524
-    iput-boolean v9, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsVideo:Z
+    .line 573
+    iput-boolean v10, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsVideo:Z
 
-    .line 525
+    .line 574
     iget-object v2, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v2, v12, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v13, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 528
-    move-object/from16 v17, v1
+    .line 577
+    move-object/from16 v18, v1
 
-    move/from16 v23, v9
+    move/from16 v19, v9
 
     move/from16 v22, v10
 
-    move/from16 v21, v11
+    move/from16 v24, v11
 
-    move/from16 v18, v13
+    move/from16 v21, v12
 
-    move-object/from16 v19, v15
+    move/from16 v20, v14
 
-    move-object v15, v0
+    goto/16 :goto_6
 
-    move v13, v8
-
-    goto/16 :goto_5
-
-    .line 492
+    .line 541
     .end local v1    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    .restart local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .restart local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     :sswitch_3
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2234,7 +2314,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2242,7 +2322,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2250,7 +2330,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2258,7 +2338,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2266,7 +2346,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2274,7 +2354,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2284,64 +2364,60 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 500
+    .line 549
     iget-object v1, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v1, v12}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v13}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 501
-    .end local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .line 550
+    .end local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     .restart local v1    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     if-nez v1, :cond_8
 
     return-void
 
-    .line 502
+    .line 551
     :cond_8
     sget-object v2, Lcom/mediatek/ims/ImsCallInfo$State;->ACTIVE:Lcom/mediatek/ims/ImsCallInfo$State;
 
     iput-object v2, v1, Lcom/mediatek/ims/ImsCallInfo;->mState:Lcom/mediatek/ims/ImsCallInfo$State;
 
-    .line 503
-    iput-boolean v11, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConference:Z
+    .line 552
+    iput-boolean v12, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConference:Z
 
-    .line 504
-    iput-boolean v10, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
+    .line 553
+    iput-boolean v11, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
 
-    .line 505
-    iput-boolean v9, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsVideo:Z
+    .line 554
+    iput-boolean v10, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsVideo:Z
 
-    .line 506
+    .line 555
     iget-object v2, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v2, v12, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v13, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 507
-    move-object/from16 v17, v1
+    .line 556
+    move-object/from16 v18, v1
 
-    move/from16 v23, v9
+    move/from16 v19, v9
 
     move/from16 v22, v10
 
-    move/from16 v21, v11
+    move/from16 v24, v11
 
-    move/from16 v18, v13
+    move/from16 v21, v12
 
-    move-object/from16 v19, v15
+    move/from16 v20, v14
 
-    move-object v15, v0
+    goto/16 :goto_6
 
-    move v13, v8
-
-    goto/16 :goto_5
-
-    .line 474
+    .line 523
     .end local v1    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    .restart local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .restart local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     :sswitch_4
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2353,7 +2429,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2361,7 +2437,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2369,7 +2445,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2377,7 +2453,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2385,7 +2461,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2393,7 +2469,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2403,61 +2479,57 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 482
+    .line 531
     iget-object v1, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v1, v12}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v13}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 483
-    .end local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .line 532
+    .end local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     .restart local v1    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     if-nez v1, :cond_9
 
     return-void
 
-    .line 484
+    .line 533
     :cond_9
     sget-object v2, Lcom/mediatek/ims/ImsCallInfo$State;->HOLDING:Lcom/mediatek/ims/ImsCallInfo$State;
 
     iput-object v2, v1, Lcom/mediatek/ims/ImsCallInfo;->mState:Lcom/mediatek/ims/ImsCallInfo$State;
 
-    .line 485
-    iput-boolean v11, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConference:Z
+    .line 534
+    iput-boolean v12, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConference:Z
 
-    .line 486
-    iput-boolean v10, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
+    .line 535
+    iput-boolean v11, v1, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
 
-    .line 487
+    .line 536
     iget-object v2, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v2, v12, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v13, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 488
-    move-object/from16 v17, v1
+    .line 537
+    move-object/from16 v18, v1
 
-    move/from16 v23, v9
+    move/from16 v19, v9
 
     move/from16 v22, v10
 
-    move/from16 v21, v11
+    move/from16 v24, v11
 
-    move/from16 v18, v13
+    move/from16 v21, v12
 
-    move-object/from16 v19, v15
+    move/from16 v20, v14
 
-    move-object v15, v0
+    goto/16 :goto_6
 
-    move v13, v8
-
-    goto/16 :goto_5
-
-    .line 432
+    .line 475
     .end local v1    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    .restart local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .restart local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     :sswitch_5
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2469,7 +2541,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2477,7 +2549,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2485,7 +2557,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2493,7 +2565,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2501,7 +2573,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2509,7 +2581,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2519,395 +2591,407 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 440
+    .line 483
     sget-object v1, Lcom/mediatek/ims/ImsCallInfo$State;->ALERTING:Lcom/mediatek/ims/ImsCallInfo$State;
 
-    .line 441
+    .line 484
     .local v1, "state":Lcom/mediatek/ims/ImsCallInfo$State;
-    iget-object v7, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+    const/4 v2, 0x0
 
-    new-instance v6, Lcom/mediatek/ims/ImsCallInfo;
+    .line 485
+    .local v2, "isStkCall":Z
+    const/16 v3, 0x14
 
-    move-object v2, v6
+    if-ne v15, v3, :cond_a
 
-    move-object v3, v12
+    .line 486
+    const/4 v2, 0x1
 
-    move-object v4, v15
+    move/from16 v19, v2
 
-    move v5, v11
+    goto :goto_5
 
-    move/from16 v18, v13
+    .line 485
+    :cond_a
+    move/from16 v19, v2
 
-    move-object v13, v6
+    .line 489
+    .end local v2    # "isStkCall":Z
+    .local v19, "isStkCall":Z
+    :goto_5
+    iget-object v8, v0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .end local v13    # "msgType":I
-    .restart local v18    # "msgType":I
-    move v6, v10
+    new-instance v7, Lcom/mediatek/ims/ImsCallInfo;
 
-    move-object/from16 v19, v15
+    move-object v2, v7
 
-    move-object v15, v7
+    move-object v3, v13
 
-    .end local v15    # "callNum":Ljava/lang/String;
-    .restart local v19    # "callNum":Ljava/lang/String;
-    move v7, v9
+    move-object/from16 v4, v16
 
-    move/from16 v20, v8
+    move v5, v12
 
-    .end local v8    # "isEcc":Z
-    .local v20, "isEcc":Z
-    move v0, v9
+    move v6, v11
 
-    .end local v9    # "isVideo":Z
-    .local v0, "isVideo":Z
-    move-object v9, v1
+    move/from16 v20, v14
 
-    move-object/from16 v21, v1
+    move-object v14, v7
 
-    move v1, v10
+    .end local v14    # "msgType":I
+    .restart local v20    # "msgType":I
+    move v7, v10
 
-    .end local v10    # "isConferenceHost":Z
-    .local v1, "isConferenceHost":Z
-    .local v21, "state":Lcom/mediatek/ims/ImsCallInfo$State;
-    move/from16 v10, v16
+    move-object v0, v8
 
-    move/from16 v22, v0
+    move v8, v9
 
-    move v0, v11
+    move/from16 v21, v9
 
-    .end local v11    # "isConference":Z
-    .local v0, "isConference":Z
-    .local v22, "isVideo":Z
-    move-object/from16 v11, p2
+    .end local v9    # "isEcc":Z
+    .local v21, "isEcc":Z
+    move/from16 v9, v19
 
-    invoke-direct/range {v2 .. v11}, Lcom/mediatek/ims/ImsCallInfo;-><init>(Ljava/lang/String;Ljava/lang/String;ZZZZLcom/mediatek/ims/ImsCallInfo$State;ZLcom/mediatek/ims/ImsCallSessionProxy;)V
+    move/from16 v22, v10
 
-    invoke-virtual {v15, v12, v13}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 452
-    move-object/from16 v15, p0
-
-    move/from16 v21, v0
-
-    move/from16 v13, v20
-
-    move/from16 v23, v22
-
-    move/from16 v22, v1
-
-    goto/16 :goto_5
-
-    .line 456
-    .end local v0    # "isConference":Z
-    .end local v1    # "isConferenceHost":Z
-    .end local v18    # "msgType":I
-    .end local v19    # "callNum":Ljava/lang/String;
-    .end local v20    # "isEcc":Z
-    .end local v21    # "state":Lcom/mediatek/ims/ImsCallInfo$State;
-    .end local v22    # "isVideo":Z
-    .restart local v8    # "isEcc":Z
-    .restart local v9    # "isVideo":Z
-    .restart local v10    # "isConferenceHost":Z
-    .restart local v11    # "isConference":Z
-    .restart local v13    # "msgType":I
-    .restart local v15    # "callNum":Ljava/lang/String;
-    :sswitch_6
-    move/from16 v20, v8
-
-    move/from16 v22, v9
-
-    move v1, v10
-
-    move v0, v11
-
-    move/from16 v18, v13
-
-    move-object/from16 v19, v15
-
-    .end local v8    # "isEcc":Z
-    .end local v9    # "isVideo":Z
-    .end local v10    # "isConferenceHost":Z
-    .end local v11    # "isConference":Z
-    .end local v13    # "msgType":I
-    .end local v15    # "callNum":Ljava/lang/String;
-    .restart local v0    # "isConference":Z
-    .restart local v1    # "isConferenceHost":Z
-    .restart local v18    # "msgType":I
-    .restart local v19    # "callNum":Ljava/lang/String;
-    .restart local v20    # "isEcc":Z
+    .end local v10    # "isVideo":Z
     .restart local v22    # "isVideo":Z
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-object v10, v1
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-object/from16 v23, v1
 
-    const-string v8, "processCallInfoIndication() : CALL_MSG_TYPE_ALERT => callId = "
+    move v1, v11
 
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .end local v11    # "isConferenceHost":Z
+    .local v1, "isConferenceHost":Z
+    .local v23, "state":Lcom/mediatek/ims/ImsCallInfo$State;
+    move/from16 v11, v17
 
-    move-result-object v2
+    move/from16 v24, v1
 
-    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move v1, v12
 
-    move-result-object v2
+    .end local v12    # "isConference":Z
+    .local v1, "isConference":Z
+    .restart local v24    # "isConferenceHost":Z
+    move-object/from16 v12, p2
 
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct/range {v2 .. v12}, Lcom/mediatek/ims/ImsCallInfo;-><init>(Ljava/lang/String;Ljava/lang/String;ZZZZZLcom/mediatek/ims/ImsCallInfo$State;ZLcom/mediatek/ims/ImsCallSessionProxy;)V
 
-    move-result-object v2
+    invoke-virtual {v0, v13, v14}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .line 501
+    move/from16 v19, v21
 
-    move-result-object v2
+    move/from16 v21, v1
 
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto/16 :goto_6
 
-    move-result-object v2
+    .line 505
+    .end local v1    # "isConference":Z
+    .end local v19    # "isStkCall":Z
+    .end local v20    # "msgType":I
+    .end local v21    # "isEcc":Z
+    .end local v22    # "isVideo":Z
+    .end local v23    # "state":Lcom/mediatek/ims/ImsCallInfo$State;
+    .end local v24    # "isConferenceHost":Z
+    .restart local v9    # "isEcc":Z
+    .restart local v10    # "isVideo":Z
+    .restart local v11    # "isConferenceHost":Z
+    .restart local v12    # "isConference":Z
+    .restart local v14    # "msgType":I
+    :sswitch_6
+    move/from16 v21, v9
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    move/from16 v22, v10
 
-    move-result-object v2
+    move/from16 v24, v11
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move v1, v12
 
-    move-result-object v2
+    move/from16 v20, v14
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    .end local v9    # "isEcc":Z
+    .end local v10    # "isVideo":Z
+    .end local v11    # "isConferenceHost":Z
+    .end local v12    # "isConference":Z
+    .end local v14    # "msgType":I
+    .restart local v1    # "isConference":Z
+    .restart local v20    # "msgType":I
+    .restart local v21    # "isEcc":Z
+    .restart local v22    # "isVideo":Z
+    .restart local v24    # "isConferenceHost":Z
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "processCallInfoIndication() : CALL_MSG_TYPE_ALERT => callId = "
 
-    move-result-object v2
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move/from16 v4, v22
+    move-result-object v0
+
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    move/from16 v14, v24
+
+    .end local v24    # "isConferenceHost":Z
+    .local v14, "isConferenceHost":Z
+    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    move/from16 v12, v22
 
     .end local v22    # "isVideo":Z
-    .local v4, "isVideo":Z
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    .local v12, "isVideo":Z
+    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    move/from16 v13, v20
+    move/from16 v11, v21
 
-    .end local v20    # "isEcc":Z
-    .local v13, "isEcc":Z
-    invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    .end local v21    # "isEcc":Z
+    .local v11, "isEcc":Z
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    move-object/from16 v15, p0
+    move-object/from16 v10, p0
 
-    move v11, v4
+    invoke-direct {v10, v0}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .end local v4    # "isVideo":Z
-    .local v11, "isVideo":Z
-    invoke-direct {v15, v2}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
+    .line 513
+    iget-object v0, v10, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 464
-    iget-object v2, v15, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {v0, v13}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v2, v12}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v2
+    check-cast v0, Lcom/mediatek/ims/ImsCallInfo;
 
-    check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
-
-    .line 465
-    .end local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    .local v2, "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    if-nez v2, :cond_a
+    .line 514
+    .end local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .local v0, "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    if-nez v0, :cond_b
 
     return-void
 
-    .line 466
-    :cond_a
-    iput-boolean v0, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsConference:Z
+    .line 515
+    :cond_b
+    iput-boolean v1, v0, Lcom/mediatek/ims/ImsCallInfo;->mIsConference:Z
 
-    .line 467
-    iput-boolean v1, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
+    .line 516
+    iput-boolean v14, v0, Lcom/mediatek/ims/ImsCallInfo;->mIsConferenceHost:Z
 
-    .line 468
-    iput-boolean v11, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsVideo:Z
+    .line 517
+    iput-boolean v12, v0, Lcom/mediatek/ims/ImsCallInfo;->mIsVideo:Z
 
-    .line 469
-    iget-object v3, v15, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+    .line 518
+    iget-object v2, v10, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v3, v12, v2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v13, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 470
-    move/from16 v21, v0
+    .line 519
+    move-object/from16 v18, v0
 
-    move/from16 v22, v1
+    move/from16 v21, v1
 
-    move-object/from16 v17, v2
+    move/from16 v19, v11
 
-    move/from16 v23, v11
+    move/from16 v22, v12
 
-    goto/16 :goto_5
+    move/from16 v24, v14
 
-    .line 407
-    .end local v0    # "isConference":Z
-    .end local v1    # "isConferenceHost":Z
-    .end local v2    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
-    .end local v18    # "msgType":I
-    .end local v19    # "callNum":Ljava/lang/String;
-    .restart local v8    # "isEcc":Z
-    .restart local v9    # "isVideo":Z
-    .restart local v10    # "isConferenceHost":Z
-    .local v11, "isConference":Z
-    .local v13, "msgType":I
-    .restart local v15    # "callNum":Ljava/lang/String;
-    .restart local v17    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    goto/16 :goto_6
+
+    .line 450
+    .end local v0    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
+    .end local v1    # "isConference":Z
+    .end local v20    # "msgType":I
+    .restart local v9    # "isEcc":Z
+    .restart local v10    # "isVideo":Z
+    .local v11, "isConferenceHost":Z
+    .local v12, "isConference":Z
+    .local v14, "msgType":I
+    .restart local v18    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     :sswitch_7
-    move v1, v10
+    move v1, v12
 
-    move/from16 v18, v13
+    move/from16 v20, v14
 
-    move-object/from16 v19, v15
+    move v12, v10
 
-    move-object v15, v0
+    move v14, v11
 
-    move v13, v8
-
-    move v0, v11
+    move-object v10, v0
 
     move v11, v9
 
-    .end local v8    # "isEcc":Z
-    .end local v9    # "isVideo":Z
-    .end local v10    # "isConferenceHost":Z
-    .end local v15    # "callNum":Ljava/lang/String;
-    .restart local v0    # "isConference":Z
-    .restart local v1    # "isConferenceHost":Z
-    .local v11, "isVideo":Z
-    .local v13, "isEcc":Z
-    .restart local v18    # "msgType":I
-    .restart local v19    # "callNum":Ljava/lang/String;
-    new-instance v2, Ljava/lang/StringBuilder;
+    .end local v9    # "isEcc":Z
+    .end local v10    # "isVideo":Z
+    .restart local v1    # "isConference":Z
+    .local v11, "isEcc":Z
+    .local v12, "isVideo":Z
+    .local v14, "isConferenceHost":Z
+    .restart local v20    # "msgType":I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "processCallInfoIndication() : CALL_MSG_TYPE_MT => callId = "
+    const-string v2, "processCallInfoIndication() : CALL_MSG_TYPE_MT => callId = "
 
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v15, v2}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
+    invoke-direct {v10, v0}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 415
-    sget-object v20, Lcom/mediatek/ims/ImsCallInfo$State;->INCOMING:Lcom/mediatek/ims/ImsCallInfo$State;
+    .line 458
+    sget-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->INCOMING:Lcom/mediatek/ims/ImsCallInfo$State;
 
-    .line 416
-    .local v20, "state":Lcom/mediatek/ims/ImsCallInfo$State;
-    iget-object v10, v15, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+    .line 459
+    .local v0, "state":Lcom/mediatek/ims/ImsCallInfo$State;
+    iget-object v9, v10, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
-    new-instance v9, Lcom/mediatek/ims/ImsCallInfo;
+    new-instance v8, Lcom/mediatek/ims/ImsCallInfo;
 
-    move-object v2, v9
+    const/16 v19, 0x0
 
-    move-object v3, v12
+    move-object v2, v8
 
-    move-object/from16 v4, v19
+    move-object v3, v13
 
-    move v5, v0
+    move-object/from16 v4, v16
 
-    move v6, v1
+    move v5, v1
 
-    move v7, v11
+    move v6, v14
 
-    move v8, v13
+    move v7, v12
 
-    move/from16 v21, v0
+    move/from16 v21, v1
 
-    move-object v0, v9
+    move-object v1, v8
 
-    .end local v0    # "isConference":Z
+    .end local v1    # "isConference":Z
     .local v21, "isConference":Z
-    move-object/from16 v9, v20
+    move v8, v11
 
-    move/from16 v22, v1
+    move/from16 v24, v14
 
-    move-object v1, v10
+    move-object v14, v9
 
-    .end local v1    # "isConferenceHost":Z
-    .local v22, "isConferenceHost":Z
-    move/from16 v10, v16
+    .end local v14    # "isConferenceHost":Z
+    .restart local v24    # "isConferenceHost":Z
+    move/from16 v9, v19
 
-    move/from16 v23, v11
+    move-object v10, v0
 
-    .end local v11    # "isVideo":Z
-    .restart local v23    # "isVideo":Z
-    move-object/from16 v11, p2
+    move/from16 v19, v11
 
-    invoke-direct/range {v2 .. v11}, Lcom/mediatek/ims/ImsCallInfo;-><init>(Ljava/lang/String;Ljava/lang/String;ZZZZLcom/mediatek/ims/ImsCallInfo$State;ZLcom/mediatek/ims/ImsCallSessionProxy;)V
+    .end local v11    # "isEcc":Z
+    .local v19, "isEcc":Z
+    move/from16 v11, v17
 
-    invoke-virtual {v1, v12, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move/from16 v22, v12
 
-    .line 427
+    .end local v12    # "isVideo":Z
+    .restart local v22    # "isVideo":Z
+    move-object/from16 v12, p2
+
+    invoke-direct/range {v2 .. v12}, Lcom/mediatek/ims/ImsCallInfo;-><init>(Ljava/lang/String;Ljava/lang/String;ZZZZZLcom/mediatek/ims/ImsCallInfo$State;ZLcom/mediatek/ims/ImsCallSessionProxy;)V
+
+    invoke-virtual {v14, v13, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 471
     nop
 
-    .line 566
-    .end local v20    # "state":Lcom/mediatek/ims/ImsCallInfo$State;
-    :goto_5
+    .line 615
+    .end local v0    # "state":Lcom/mediatek/ims/ImsCallInfo$State;
+    :goto_6
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -2926,23 +3010,23 @@
     .locals 5
     .param p1, "callModeInfo"    # [Ljava/lang/String;
 
-    .line 574
+    .line 623
     const/4 v0, -0x1
 
-    .line 575
+    .line 624
     .local v0, "callMode":I
     if-nez p1, :cond_0
 
-    .line 576
+    .line 625
     return-void
 
-    .line 579
+    .line 628
     :cond_0
     const/4 v1, 0x0
 
     aget-object v1, p1, v1
 
-    .line 580
+    .line 629
     .local v1, "callId":Ljava/lang/String;
     const/4 v2, 0x1
 
@@ -2960,7 +3044,7 @@
 
     if-nez v3, :cond_1
 
-    .line 582
+    .line 631
     :try_start_0
     aget-object v2, p1, v2
 
@@ -2972,23 +3056,23 @@
 
     move v0, v2
 
-    .line 586
+    .line 635
     goto :goto_0
 
-    .line 583
+    .line 632
     :catch_0
     move-exception v2
 
-    .line 584
+    .line 633
     .local v2, "e":Ljava/lang/NumberFormatException;
     const-string v3, "processCallModeChangeIndication() : callMode is not integer"
 
     invoke-direct {p0, v3}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 585
+    .line 634
     return-void
 
-    .line 588
+    .line 637
     .end local v2    # "e":Ljava/lang/NumberFormatException;
     :cond_1
     :goto_0
@@ -3022,7 +3106,7 @@
 
     invoke-direct {p0, v2}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 592
+    .line 641
     iget-object v2, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v2, v1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3031,13 +3115,13 @@
 
     check-cast v2, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 593
+    .line 642
     .local v2, "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     if-nez v2, :cond_2
 
     return-void
 
-    .line 595
+    .line 644
     :cond_2
     invoke-virtual {p0, v0}, Lcom/mediatek/ims/ImsServiceCallTracker;->isVideoCall(I)Z
 
@@ -3045,12 +3129,12 @@
 
     iput-boolean v3, v2, Lcom/mediatek/ims/ImsCallInfo;->mIsVideo:Z
 
-    .line 596
+    .line 645
     iget-object v3, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v3, v1, v2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 597
+    .line 646
     return-void
 .end method
 
@@ -3059,10 +3143,10 @@
     .param p1, "callId"    # Ljava/lang/String;
     .param p2, "callSession"    # Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    .line 172
+    .line 215
     if-eqz p1, :cond_1
 
-    .line 173
+    .line 216
     iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3071,24 +3155,24 @@
 
     check-cast v0, Lcom/mediatek/ims/ImsCallInfo;
 
-    .line 174
+    .line 217
     .local v0, "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 177
+    .line 220
     :cond_0
     iget-object v1, v0, Lcom/mediatek/ims/ImsCallInfo;->mCallSession:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     if-ne v1, p2, :cond_1
 
-    .line 178
+    .line 221
     iget-object v1, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 181
+    .line 224
     .end local v0    # "imsCallInfo":Lcom/mediatek/ims/ImsCallInfo;
     :cond_1
     return-void
@@ -3105,21 +3189,75 @@
     return-void
 .end method
 
+.method public setEnableVowifiForImsEcc(Z)V
+    .locals 0
+    .param p1, "enable"    # Z
+
+    .line 118
+    iput-boolean p1, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mEnableVowifiForImsEcc:Z
+
+    .line 119
+    return-void
+.end method
+
+.method public setIgnoreUpdateStatus(Ljava/lang/String;Z)V
+    .locals 2
+    .param p1, "callId"    # Ljava/lang/String;
+    .param p2, "ignore"    # Z
+
+    .line 170
+    if-nez p1, :cond_0
+
+    .line 171
+    const-string v0, "setIgnoreUpdateStatus(callId) : callId is null"
+
+    invoke-direct {p0, v0}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
+
+    .line 172
+    return-void
+
+    .line 174
+    :cond_0
+    iget-object v0, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/mediatek/ims/ImsCallInfo;
+
+    .line 175
+    .local v0, "callInfo":Lcom/mediatek/ims/ImsCallInfo;
+    if-eqz v0, :cond_1
+
+    .line 176
+    iput-boolean p2, v0, Lcom/mediatek/ims/ImsCallInfo;->mIsIgnoreUpdateStatus:Z
+
+    .line 177
+    iget-object v1, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mCallConnections:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v1, p1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 179
+    :cond_1
+    return-void
+.end method
+
 .method public setOngoingMergeCallIds([Ljava/lang/String;)V
     .locals 2
     .param p1, "callIds"    # [Ljava/lang/String;
 
-    .line 129
+    .line 137
     if-nez p1, :cond_0
 
-    .line 130
+    .line 138
     const-string v0, "reset OngoingMergeCallIds"
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 132
+    .line 140
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -3159,10 +3297,10 @@
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/ImsServiceCallTracker;->logWithPhoneId(Ljava/lang/String;)V
 
-    .line 134
+    .line 142
     :goto_0
     iput-object p1, p0, Lcom/mediatek/ims/ImsServiceCallTracker;->mOngoingMergeCallIds:[Ljava/lang/String;
 
-    .line 135
+    .line 143
     return-void
 .end method

@@ -23,13 +23,13 @@
     .locals 0
     .param p1, "info"    # Ljava/lang/Object;
 
-    .line 983
+    .line 1046
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 984
+    .line 1047
     iput-object p1, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->mInfo:Ljava/lang/Object;
 
-    .line 985
+    .line 1048
     return-void
 .end method
 
@@ -41,29 +41,15 @@
     .param p3, "columnSpan"    # I
     .param p4, "heading"    # Z
 
-    .line 975
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1038
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 976
+    .line 1039
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
 
     invoke-static {p0, p1, p2, p3, p4}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->obtain(IIIIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
 
     move-result-object v1
-
-    invoke-direct {v0, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;-><init>(Ljava/lang/Object;)V
-
-    return-object v0
-
-    .line 979
-    :cond_0
-    new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
-
-    const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;-><init>(Ljava/lang/Object;)V
 
@@ -79,14 +65,10 @@
     .param p4, "heading"    # Z
     .param p5, "selected"    # Z
 
-    .line 950
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1013
+    nop
 
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
-
-    .line 951
+    .line 1014
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
 
     invoke-static/range {p0 .. p5}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->obtain(IIIIZZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -96,50 +78,17 @@
     invoke-direct {v0, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;-><init>(Ljava/lang/Object;)V
 
     return-object v0
-
-    .line 953
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_1
-
-    .line 954
-    new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
-
-    invoke-static {p0, p1, p2, p3, p4}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->obtain(IIIIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;-><init>(Ljava/lang/Object;)V
-
-    return-object v0
-
-    .line 957
-    :cond_1
-    new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;-><init>(Ljava/lang/Object;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
 .method public getColumnIndex()I
-    .locals 2
+    .locals 1
 
-    .line 993
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1056
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 994
+    .line 1057
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -149,25 +98,15 @@
     move-result v0
 
     return v0
-
-    .line 996
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public getColumnSpan()I
-    .locals 2
+    .locals 1
 
-    .line 1006
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1069
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 1007
+    .line 1070
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -177,25 +116,15 @@
     move-result v0
 
     return v0
-
-    .line 1009
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public getRowIndex()I
-    .locals 2
+    .locals 1
 
-    .line 1019
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1082
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 1020
+    .line 1083
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -205,25 +134,15 @@
     move-result v0
 
     return v0
-
-    .line 1022
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public getRowSpan()I
-    .locals 2
+    .locals 1
 
-    .line 1032
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1095
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 1033
+    .line 1096
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -233,27 +152,17 @@
     move-result v0
 
     return v0
-
-    .line 1035
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public isHeading()Z
-    .locals 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 1049
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1112
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 1050
+    .line 1113
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -263,25 +172,15 @@
     move-result v0
 
     return v0
-
-    .line 1052
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public isSelected()Z
-    .locals 2
+    .locals 1
 
-    .line 1062
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1125
+    nop
 
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
-
-    .line 1063
+    .line 1126
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
@@ -289,12 +188,6 @@
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->isSelected()Z
 
     move-result v0
-
-    return v0
-
-    .line 1065
-    :cond_0
-    const/4 v0, 0x0
 
     return v0
 .end method

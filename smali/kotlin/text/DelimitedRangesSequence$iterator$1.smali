@@ -65,7 +65,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -436,12 +436,14 @@
     :cond_0
     iget v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextState:I
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 1214
     iget-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
 
-    if-eqz v0, :cond_1
+    const-string v2, "null cannot be cast to non-null type kotlin.ranges.IntRange"
+
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1216
     .local v0, "result":Lkotlin/ranges/IntRange;
@@ -455,19 +457,9 @@
     .line 1218
     return-object v0
 
-    .line 1214
+    .line 1213
     .end local v0    # "result":Lkotlin/ranges/IntRange;
     :cond_1
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "null cannot be cast to non-null type kotlin.ranges.IntRange"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 1213
-    :cond_2
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V

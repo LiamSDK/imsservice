@@ -1,11 +1,14 @@
 .class Lcom/mediatek/wfo/impl/ImsLocationHandler$3;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "ImsLocationHandler.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/mediatek/wfo/impl/ImsLocationHandler;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/mediatek/wfo/impl/ImsLocationHandler;->pollLocationInfo()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,542 +20,120 @@
 # instance fields
 .field final synthetic this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
+.field final synthetic val$LocationInfoQueueCopy:Ljava/util/List;
+
 
 # direct methods
-.method constructor <init>(Lcom/mediatek/wfo/impl/ImsLocationHandler;)V
+.method constructor <init>(Lcom/mediatek/wfo/impl/ImsLocationHandler;Ljava/util/List;)V
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/wfo/impl/ImsLocationHandler;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
-    .line 1497
+    .line 960
     iput-object p1, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->val$LocationInfoQueueCopy:Ljava/util/List;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 16
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public run()V
+    .locals 6
 
-    .line 1500
-    move-object/from16 v1, p0
+    .line 962
+    iget-object v0, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->val$LocationInfoQueueCopy:Ljava/util/List;
 
-    move-object/from16 v2, p2
+    if-eqz v0, :cond_1
 
-    if-eqz v2, :cond_d
+    .line 963
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v0
+    const-string v1, "pollLocationInfo: queue size="
 
-    if-nez v0, :cond_0
-
-    goto/16 :goto_4
-
-    .line 1503
-    :cond_0
-    iget-object v0, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "onReceive action:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->log(Ljava/lang/String;)V
-
-    .line 1504
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v3, "android.telephony.action.NETWORK_COUNTRY_CHANGED"
+    iget-object v1, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->val$LocationInfoQueueCopy:Ljava/util/List;
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3
-
-    .line 1505
-    const-string v0, "android.telephony.extra.NETWORK_COUNTRY"
-
-    .line 1506
-    invoke-virtual {v2, v0}, Landroid/content/Intent;->getExtra(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 1507
-    .local v0, "lowerCaseCountryCode":Ljava/lang/String;
-    if-eqz v0, :cond_2
+    move-result-object v0
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    const-string v1, "ImsLocationHandler"
 
-    move-result v3
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v3, :cond_2
+    .line 964
+    iget-object v0, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->val$LocationInfoQueueCopy:Ljava/util/List;
 
-    .line 1508
-    invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v0
 
-    .line 1509
-    .local v3, "isoCountryCode":Ljava/lang/String;
-    const-string v4, "ImsLocationHandler"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "ACTION_LOCATED_PLMN_CHANGED, iso: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1510
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v4}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$misCtaNotAllow(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_1
-
-    .line 1511
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    const/16 v5, 0xbbd
-
-    invoke-virtual {v4, v5, v3}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
-
-    .line 1513
-    .end local v3    # "isoCountryCode":Ljava/lang/String;
-    :cond_1
-    goto :goto_0
-
-    .line 1514
-    :cond_2
-    const-string v3, "ImsLocationHandler"
-
-    const-string v4, "iso country code is null"
-
-    invoke-static {v3, v4}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1516
-    .end local v0    # "lowerCaseCountryCode":Ljava/lang/String;
     :goto_0
-    goto/16 :goto_3
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    :cond_3
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    move-result v1
 
-    move-result-object v0
+    if-eqz v1, :cond_1
 
-    const-string v3, "android.location.MODE_CHANGED"
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
 
-    move-result v0
+    check-cast v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;
 
-    if-eqz v0, :cond_4
+    .line 965
+    .local v1, "gpsLocationInfo":Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;
+    iget-object v2, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
-    .line 1517
-    const-string v0, "ImsLocationHandler"
+    invoke-static {v2, v1}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$mgetGeoLocationFromLatLong(Lcom/mediatek/wfo/impl/ImsLocationHandler;Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;)Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;
 
-    const-string v3, "LocationManager.MODE_CHANGED_ACTION"
+    move-result-object v2
 
-    invoke-static {v0, v3}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
+    .line 966
+    .local v2, "res":Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;
+    if-eqz v2, :cond_0
 
-    .line 1518
-    iget-object v0, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
+    .line 967
+    iget-object v3, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
-    const/16 v3, 0xbc1
+    const/16 v4, 0xbbc
 
-    invoke-virtual {v0, v3}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->obtainMessage(I)Landroid/os/Message;
+    const/4 v5, 0x0
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    goto/16 :goto_3
-
-    .line 1519
-    :cond_4
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v3, "android.location.PROVIDERS_CHANGED"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    .line 1520
-    iget-object v0, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v0}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmLocationManager(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Landroid/location/LocationManager;
-
-    move-result-object v0
-
-    const-string v3, "network"
-
-    .line 1521
-    invoke-virtual {v0, v3}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
-
-    move-result v3
-
-    .line 1522
-    .local v3, "isNlpEnabled":Z
-    iget-object v0, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v0}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmLocationTimeoutLock(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    monitor-enter v4
-
-    .line 1523
-    :try_start_0
-    const-string v0, "ImsLocationHandler"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "LocationManager.PROVIDERS_CHANGED_ACTION isNlpEnabled: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ", location timeout = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v6, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v6}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmLocationTimeout(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Z
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v0, v5}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1525
-    iget-object v0, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v0}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmLocationTimeout(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    if-eqz v3, :cond_6
-
-    .line 1526
-    iget-object v0, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v0}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmLocationRequestRegistered(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    .line 1527
-    iget-object v0, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v0}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$mcancelNetworkLocationRequest(Lcom/mediatek/wfo/impl/ImsLocationHandler;)V
-
-    .line 1529
-    :cond_5
-    iget-object v0, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    const/16 v5, 0xbc5
-
-    invoke-virtual {v0, v5}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 1531
-    :cond_6
-    monitor-exit v4
-
-    .line 1532
-    .end local v3    # "isNlpEnabled":Z
-    goto/16 :goto_3
-
-    .line 1531
-    .restart local v3    # "isNlpEnabled":Z
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    .line 1532
-    .end local v3    # "isNlpEnabled":Z
-    :cond_7
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v3, "com.mediatek.intent.action.LOCATION_HANDLE"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    const/4 v3, 0x0
-
-    if-eqz v0, :cond_8
-
-    .line 1533
-    const-string v0, "enable_location_handle"
-
-    invoke-virtual {v2, v0, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 1534
-    .local v0, "cacheEnable":I
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    const/16 v5, 0xbc3
-
-    invoke-virtual {v4, v5, v0, v3}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {v3, v4, v5, v5, v2}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v3
 
-    .line 1535
-    .local v3, "msg":Landroid/os/Message;
     invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
 
-    .end local v0    # "cacheEnable":I
-    .end local v3    # "msg":Landroid/os/Message;
-    goto/16 :goto_2
-
-    .line 1536
-    :cond_8
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v4, "android.telephony.action.CARRIER_CONFIG_CHANGED"
-
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b
-
-    .line 1537
-    const-string v0, "phone"
-
-    const/4 v4, -0x1
-
-    invoke-virtual {v2, v0, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 1538
-    .local v0, "phoneId":I
-    if-ltz v0, :cond_a
-
-    const/4 v4, 0x2
-
-    if-le v0, v4, :cond_9
-
-    goto :goto_1
-
-    .line 1541
-    :cond_9
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "CARRIER_CONFIG_CHANGED phoneId:"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ",mIgnoreLocaitonSetting:"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v6, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v6}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmIgnoreLocaitonSetting(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Z
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->log(Ljava/lang/String;)V
-
-    .line 1543
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v4}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmLocationRequestRegistered(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_c
-
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v4}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmLocationSetting(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_c
-
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v4}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmIgnoreLocaitonSetting(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_c
-
-    .line 1544
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    const-string v5, "mtk_carrier_wfc_get_location_always"
-
-    .line 1545
-    invoke-static {v4, v5, v0, v3}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$mgetBooleanCarrierConfig(Lcom/mediatek/wfo/impl/ImsLocationHandler;Ljava/lang/String;IZ)Z
-
-    move-result v3
-
-    .line 1546
-    .local v3, "isGetLocAlways":Z
-    if-eqz v3, :cond_c
-
-    .line 1547
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    invoke-static {v4}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$mcancelNetworkLocationRequest(Lcom/mediatek/wfo/impl/ImsLocationHandler;)V
-
-    .line 1548
-    iget-object v4, v1, Lcom/mediatek/wfo/impl/ImsLocationHandler$3;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
-
-    new-instance v15, Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x1
-
-    const-wide/16 v10, 0x0
-
-    const-wide/16 v12, 0x0
-
-    const/4 v14, 0x0
-
-    move-object v5, v15
-
-    move-object v6, v4
-
-    move v7, v0
-
-    invoke-direct/range {v5 .. v14}, Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;-><init>(Lcom/mediatek/wfo/impl/ImsLocationHandler;IIIDDF)V
-
-    invoke-static {v4, v15}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$mdispatchLocationRequest(Lcom/mediatek/wfo/impl/ImsLocationHandler;Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;)V
-
-    goto :goto_3
-
-    .line 1539
-    .end local v3    # "isGetLocAlways":Z
-    :cond_a
-    :goto_1
-    return-void
-
-    .line 1536
-    .end local v0    # "phoneId":I
-    :cond_b
-    :goto_2
-    nop
-
-    .line 1553
-    :cond_c
-    :goto_3
-    return-void
-
-    .line 1501
-    :cond_d
-    :goto_4
+    .line 969
+    .end local v1    # "gpsLocationInfo":Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;
+    .end local v2    # "res":Lcom/mediatek/wfo/impl/ImsLocationHandler$LocationInfo;
+    :cond_0
+    goto :goto_0
+
+    .line 971
+    :cond_1
     return-void
 .end method

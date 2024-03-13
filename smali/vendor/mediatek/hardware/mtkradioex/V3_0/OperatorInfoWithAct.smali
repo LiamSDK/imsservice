@@ -88,11 +88,11 @@
 
     move-result-wide v7
 
-    .line 66
     const-wide/16 v9, 0x0
 
     const/4 v11, 0x1
 
+    .line 66
     move-object v4, p0
 
     invoke-virtual/range {v4 .. v11}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;
@@ -325,24 +325,16 @@
     .locals 3
 
     .line 35
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget-object v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/OperatorInfoWithAct;->base:Landroid/hardware/radio/V1_0/OperatorInfo;
+    iget-object v0, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/OperatorInfoWithAct;->base:Landroid/hardware/radio/V1_0/OperatorInfo;
 
     .line 36
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     iget-object v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/OperatorInfoWithAct;->lac:Ljava/lang/String;
 
@@ -355,24 +347,20 @@
 
     move-result-object v1
 
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/OperatorInfoWithAct;->act:Ljava/lang/String;
+    iget-object v2, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/OperatorInfoWithAct;->act:Ljava/lang/String;
 
     .line 38
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v2}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x2
+    filled-new-array {v0, v1, v2}, [Ljava/lang/Object;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 35
     invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
@@ -437,9 +425,9 @@
 
     add-long v12, v5, v3
 
-    .line 86
     const/4 v14, 0x0
 
+    .line 86
     move-object/from16 v7, p1
 
     invoke-virtual/range {v7 .. v14}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;

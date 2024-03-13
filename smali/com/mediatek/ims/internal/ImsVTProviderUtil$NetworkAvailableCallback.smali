@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/mediatek/ims/internal/ImsVTProviderUtil;)V
     .locals 0
 
-    .line 403
+    .line 407
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$NetworkAvailableCallback;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -35,7 +35,7 @@
     .param p1, "x0"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil;
     .param p2, "x1"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil$1;
 
-    .line 403
+    .line 407
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/ImsVTProviderUtil$NetworkAvailableCallback;-><init>(Lcom/mediatek/ims/internal/ImsVTProviderUtil;)V
 
     return-void
@@ -47,7 +47,7 @@
     .locals 6
     .param p1, "network"    # Landroid/net/Network;
 
-    .line 406
+    .line 410
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,10 +70,10 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 408
+    .line 412
     if-eqz p1, :cond_3
 
-    .line 409
+    .line 413
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$NetworkAvailableCallback;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->access$200(Lcom/mediatek/ims/internal/ImsVTProviderUtil;)Landroid/net/ConnectivityManager;
@@ -84,34 +84,34 @@
 
     move-result-object v0
 
-    .line 411
+    .line 415
     .local v0, "linkProp":Landroid/net/LinkProperties;
     if-eqz v0, :cond_2
 
-    .line 412
+    .line 416
     invoke-virtual {v0}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 413
+    .line 417
     .local v2, "ifName":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/net/Network;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 414
+    .line 418
     .local v3, "netId":Ljava/lang/String;
     if-nez v3, :cond_0
 
-    .line 415
+    .line 419
     const-string v4, "NetworkAvailableCallback.onAvailable: network id is null"
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 416
+    .line 420
     return-void
 
-    .line 418
+    .line 422
     :cond_0
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -149,50 +149,50 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 421
+    .line 425
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->isVideoCallOnByPlatform()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 422
-    const/4 v1, 0x1
-
+    .line 426
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v4
+    move-result v1
 
-    invoke-static {v1, v4, v2}, Lcom/mediatek/ims/internal/ImsVTProvider;->nUpdateNetworkTable(ZILjava/lang/String;)I
+    const/4 v4, 0x1
 
-    .line 425
+    invoke-static {v4, v1, v2}, Lcom/mediatek/ims/internal/ImsVTProvider;->nUpdateNetworkTable(ZILjava/lang/String;)I
+
+    .line 429
     .end local v2    # "ifName":Ljava/lang/String;
     .end local v3    # "netId":Ljava/lang/String;
     :cond_1
     goto :goto_0
 
-    .line 426
+    .line 430
     :cond_2
     const-string v2, "NetworkAvailableCallback.onAvailable: linkProp = null"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 429
+    .line 433
     .end local v0    # "linkProp":Landroid/net/LinkProperties;
     :goto_0
     goto :goto_1
 
-    .line 430
+    .line 434
     :cond_3
     const-string v0, "NetworkAvailableCallback.onAvailable: network = null"
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 432
+    .line 436
     :goto_1
     return-void
 .end method
@@ -201,7 +201,7 @@
     .locals 4
     .param p1, "network"    # Landroid/net/Network;
 
-    .line 436
+    .line 440
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -224,27 +224,27 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 438
+    .line 442
     if-eqz p1, :cond_2
 
-    .line 439
+    .line 443
     invoke-virtual {p1}, Landroid/net/Network;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 440
+    .line 444
     .local v0, "netId":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 441
+    .line 445
     const-string v2, "NetworkAvailableCallback.onLost: network id is null"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 442
+    .line 446
     return-void
 
-    .line 445
+    .line 449
     :cond_0
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->isVideoCallOnByPlatform()Z
 
@@ -252,33 +252,33 @@
 
     if-eqz v1, :cond_1
 
-    .line 446
-    const/4 v1, 0x0
-
+    .line 450
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v2
+    move-result v1
+
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    invoke-static {v1, v2, v3}, Lcom/mediatek/ims/internal/ImsVTProvider;->nUpdateNetworkTable(ZILjava/lang/String;)I
+    invoke-static {v3, v1, v2}, Lcom/mediatek/ims/internal/ImsVTProvider;->nUpdateNetworkTable(ZILjava/lang/String;)I
 
-    .line 449
+    .line 453
     .end local v0    # "netId":Ljava/lang/String;
     :cond_1
     goto :goto_0
 
-    .line 450
+    .line 454
     :cond_2
     const-string v0, "NetworkAvailableCallback.onLost: network = null"
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 452
+    .line 456
     :goto_0
     return-void
 .end method

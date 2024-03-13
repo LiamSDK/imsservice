@@ -56,7 +56,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -330,20 +330,15 @@
 .end method
 
 .method public bridge synthetic put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
+    .locals 2
 
-    .line 14
-    move-object v0, p2
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    check-cast v0, Ljava/lang/Void;
+    const-string v1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {p0, p1, v0}, Lkotlin/collections/EmptyMap;->put(Ljava/lang/Object;Ljava/lang/Void;)Ljava/lang/Void;
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
-
-    return-object v0
+    throw v0
 .end method
 
 .method public put(Ljava/lang/Object;Ljava/lang/Void;)Ljava/lang/Void;

@@ -32,10 +32,37 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    .line 136
+    .line 161
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public cancelEmergencyNetworkScan(IZ)V
+    .locals 0
+    .param p1, "serial"    # I
+    .param p2, "resetScan"    # Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 135
+    return-void
+.end method
+
+.method public exitEmergencyMode(I)V
+    .locals 0
+    .param p1, "serial"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 138
+    return-void
 .end method
 
 .method public getAllowedNetworkTypesBitmap(I)V
@@ -138,14 +165,14 @@
         }
     .end annotation
 
-    .line 41
+    .line 42
     return-void
 .end method
 
 .method public getInterfaceHash()Ljava/lang/String;
     .locals 1
 
-    .line 132
+    .line 157
     const-string v0, ""
 
     return-object v0
@@ -154,7 +181,7 @@
 .method public getInterfaceVersion()I
     .locals 1
 
-    .line 128
+    .line 153
     const/4 v0, 0x0
 
     return v0
@@ -169,7 +196,7 @@
         }
     .end annotation
 
-    .line 44
+    .line 45
     return-void
 .end method
 
@@ -182,7 +209,7 @@
         }
     .end annotation
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -195,7 +222,7 @@
         }
     .end annotation
 
-    .line 50
+    .line 51
     return-void
 .end method
 
@@ -208,7 +235,7 @@
         }
     .end annotation
 
-    .line 53
+    .line 54
     return-void
 .end method
 
@@ -221,7 +248,7 @@
         }
     .end annotation
 
-    .line 125
+    .line 126
     return-void
 .end method
 
@@ -234,7 +261,7 @@
         }
     .end annotation
 
-    .line 56
+    .line 57
     return-void
 .end method
 
@@ -247,7 +274,20 @@
         }
     .end annotation
 
-    .line 59
+    .line 60
+    return-void
+.end method
+
+.method public isN1ModeEnabled(I)V
+    .locals 0
+    .param p1, "serial"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 147
     return-void
 .end method
 
@@ -260,7 +300,20 @@
         }
     .end annotation
 
-    .line 62
+    .line 63
+    return-void
+.end method
+
+.method public isNullCipherAndIntegrityEnabled(I)V
+    .locals 0
+    .param p1, "serial"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 144
     return-void
 .end method
 
@@ -272,7 +325,7 @@
         }
     .end annotation
 
-    .line 65
+    .line 66
     return-void
 .end method
 
@@ -286,7 +339,7 @@
         }
     .end annotation
 
-    .line 68
+    .line 69
     return-void
 .end method
 
@@ -300,7 +353,7 @@
         }
     .end annotation
 
-    .line 71
+    .line 72
     return-void
 .end method
 
@@ -316,7 +369,7 @@
         }
     .end annotation
 
-    .line 74
+    .line 75
     return-void
 .end method
 
@@ -330,7 +383,7 @@
         }
     .end annotation
 
-    .line 77
+    .line 78
     return-void
 .end method
 
@@ -344,7 +397,21 @@
         }
     .end annotation
 
-    .line 80
+    .line 81
+    return-void
+.end method
+
+.method public setEmergencyMode(II)V
+    .locals 0
+    .param p1, "serial"    # I
+    .param p2, "emcModeType"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 129
     return-void
 .end method
 
@@ -358,7 +425,7 @@
         }
     .end annotation
 
-    .line 83
+    .line 84
     return-void
 .end method
 
@@ -377,7 +444,7 @@
         }
     .end annotation
 
-    .line 86
+    .line 87
     return-void
 .end method
 
@@ -391,7 +458,21 @@
         }
     .end annotation
 
-    .line 89
+    .line 90
+    return-void
+.end method
+
+.method public setN1ModeEnabled(IZ)V
+    .locals 0
+    .param p1, "serial"    # I
+    .param p2, "enable"    # Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 150
     return-void
 .end method
 
@@ -404,7 +485,7 @@
         }
     .end annotation
 
-    .line 92
+    .line 93
     return-void
 .end method
 
@@ -419,7 +500,7 @@
         }
     .end annotation
 
-    .line 95
+    .line 96
     return-void
 .end method
 
@@ -433,7 +514,21 @@
         }
     .end annotation
 
-    .line 98
+    .line 99
+    return-void
+.end method
+
+.method public setNullCipherAndIntegrityEnabled(IZ)V
+    .locals 0
+    .param p1, "serial"    # I
+    .param p2, "enabled"    # Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 141
     return-void
 .end method
 
@@ -447,7 +542,7 @@
         }
     .end annotation
 
-    .line 101
+    .line 102
     return-void
 .end method
 
@@ -461,7 +556,7 @@
         }
     .end annotation
 
-    .line 104
+    .line 105
     return-void
 .end method
 
@@ -475,7 +570,7 @@
         }
     .end annotation
 
-    .line 107
+    .line 108
     return-void
 .end method
 
@@ -490,7 +585,7 @@
         }
     .end annotation
 
-    .line 110
+    .line 111
     return-void
 .end method
 
@@ -504,7 +599,7 @@
         }
     .end annotation
 
-    .line 122
+    .line 123
     return-void
 .end method
 
@@ -518,7 +613,7 @@
         }
     .end annotation
 
-    .line 113
+    .line 114
     return-void
 .end method
 
@@ -531,7 +626,7 @@
         }
     .end annotation
 
-    .line 116
+    .line 117
     return-void
 .end method
 
@@ -545,6 +640,20 @@
         }
     .end annotation
 
-    .line 119
+    .line 120
+    return-void
+.end method
+
+.method public triggerEmergencyNetworkScan(ILandroid/hardware/radio/network/EmergencyNetworkScanTrigger;)V
+    .locals 0
+    .param p1, "serial"    # I
+    .param p2, "request"    # Landroid/hardware/radio/network/EmergencyNetworkScanTrigger;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 132
     return-void
 .end method

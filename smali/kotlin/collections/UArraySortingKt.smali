@@ -48,7 +48,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -91,7 +91,7 @@
 
     move-result-wide v4
 
-    invoke-static {v4, v5, v2, v3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v4, v5, v2, v3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v4
 
@@ -109,7 +109,7 @@
 
     move-result-wide v4
 
-    invoke-static {v4, v5, v2, v3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v4, v5, v2, v3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v4
 
@@ -144,9 +144,11 @@
     add-int/lit8 v0, v0, 0x1
 
     .line 124
-    add-int/lit8 v1, v1, -0x1
+    nop
 
     .end local v4    # "tmp":J
+    add-int/lit8 v1, v1, -0x1
+
     goto :goto_0
 
     .line 127
@@ -250,9 +252,11 @@
     add-int/lit8 v0, v0, 0x1
 
     .line 25
-    add-int/lit8 v1, v1, -0x1
+    nop
 
     .end local v3    # "tmp":B
+    add-int/lit8 v1, v1, -0x1
+
     goto :goto_0
 
     .line 28
@@ -358,9 +362,11 @@
     add-int/lit8 v0, v0, 0x1
 
     .line 58
-    add-int/lit8 v1, v1, -0x1
+    nop
 
     .end local v3    # "tmp":S
+    add-int/lit8 v1, v1, -0x1
+
     goto :goto_0
 
     .line 61
@@ -403,7 +409,7 @@
 
     move-result v3
 
-    invoke-static {v3, v2}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v3, v2}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v3
 
@@ -421,7 +427,7 @@
 
     move-result v3
 
-    invoke-static {v3, v2}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v3, v2}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v3
 
@@ -456,9 +462,11 @@
     add-int/lit8 v0, v0, 0x1
 
     .line 91
-    add-int/lit8 v1, v1, -0x1
+    nop
 
     .end local v3    # "tmp":I
+    add-int/lit8 v1, v1, -0x1
+
     goto :goto_0
 
     .line 94

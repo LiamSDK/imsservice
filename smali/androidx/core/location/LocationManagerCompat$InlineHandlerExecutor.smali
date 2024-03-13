@@ -26,10 +26,10 @@
     .locals 1
     .param p1, "handler"    # Landroid/os/Handler;
 
-    .line 959
+    .line 1145
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 960
+    .line 1146
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -38,7 +38,7 @@
 
     iput-object v0, p0, Landroidx/core/location/LocationManagerCompat$InlineHandlerExecutor;->mHandler:Landroid/os/Handler;
 
-    .line 961
+    .line 1147
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 3
     .param p1, "command"    # Ljava/lang/Runnable;
 
-    .line 965
+    .line 1151
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -61,12 +61,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 966
+    .line 1152
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    .line 967
+    .line 1153
     :cond_0
     iget-object v0, p0, Landroidx/core/location/LocationManagerCompat$InlineHandlerExecutor;->mHandler:Landroid/os/Handler;
 
@@ -82,11 +82,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 970
+    .line 1156
     :goto_0
     return-void
 
-    .line 968
+    .line 1154
     :cond_1
     new-instance v0, Ljava/util/concurrent/RejectedExecutionException;
 

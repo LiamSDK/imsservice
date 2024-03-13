@@ -24,7 +24,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 36
+    .line 35
     .local p0, "this":Landroidx/core/content/pm/ShortcutInfoCompatSaver;, "Landroidx/core/content/pm/ShortcutInfoCompatSaver<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -61,7 +61,7 @@
         }
     .end annotation
 
-    .line 48
+    .line 47
     .local p0, "this":Landroidx/core/content/pm/ShortcutInfoCompatSaver;, "Landroidx/core/content/pm/ShortcutInfoCompatSaver<TT;>;"
     new-instance v0, Ljava/util/ArrayList;
 

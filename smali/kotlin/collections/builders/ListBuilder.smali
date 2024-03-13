@@ -128,7 +128,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -193,7 +193,6 @@
 
     move-result-object v1
 
-    .line 23
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -204,6 +203,7 @@
 
     const/4 v6, 0x0
 
+    .line 23
     move-object v0, p0
 
     invoke-direct/range {v0 .. v6}, Lkotlin/collections/builders/ListBuilder;-><init>([Ljava/lang/Object;IIZLkotlin/collections/builders/ListBuilder;Lkotlin/collections/builders/ListBuilder;)V
@@ -1679,13 +1679,13 @@
     :cond_0
     iget-object v0, p0, Lkotlin/collections/builders/ListBuilder;->array:[Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    iget v2, p0, Lkotlin/collections/builders/ListBuilder;->offset:I
 
-    iget v3, p0, Lkotlin/collections/builders/ListBuilder;->offset:I
+    add-int/2addr v1, v2
 
-    add-int/2addr v1, v3
+    const/4 v3, 0x0
 
-    invoke-static {v0, p1, v2, v3, v1}, Lkotlin/collections/ArraysKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
+    invoke-static {v0, p1, v3, v2, v1}, Lkotlin/collections/ArraysKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
     .line 151
     array-length v0, p1

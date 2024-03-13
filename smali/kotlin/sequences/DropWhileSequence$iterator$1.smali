@@ -58,7 +58,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -136,6 +136,8 @@
     .locals 2
 
     .line 529
+    nop
+
     :cond_0
     iget-object v0, p0, Lkotlin/sequences/DropWhileSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
@@ -302,9 +304,6 @@
 
     .line 546
     iget-object v0, p0, Lkotlin/sequences/DropWhileSequence$iterator$1;->nextItem:Ljava/lang/Object;
-
-    .line 545
-    nop
 
     .line 547
     .local v0, "result":Ljava/lang/Object;

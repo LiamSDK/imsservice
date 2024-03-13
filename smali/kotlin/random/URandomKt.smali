@@ -59,7 +59,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -73,7 +73,7 @@
     .param p1, "until"    # I
 
     .line 153
-    invoke-static {p1, p0}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p1, p0}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -127,7 +127,7 @@
     .param p2, "until"    # J
 
     .line 154
-    invoke-static {p2, p3, p0, p1}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p2, p3, p0, p1}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -198,7 +198,7 @@
 
 .method public static final nextUBytes-EVgfTAA(Lkotlin/random/Random;[B)[B
     .locals 1
-    .param p0, "$this$nextUBytes"    # Lkotlin/random/Random;
+    .param p0, "$this$nextUBytes_u2dEVgfTAA"    # Lkotlin/random/Random;
     .param p1, "array"    # [B
 
     const-string v0, "$this$nextUBytes"
@@ -218,7 +218,7 @@
 
 .method public static final nextUBytes-Wvrt4B4(Lkotlin/random/Random;[BII)[B
     .locals 1
-    .param p0, "$this$nextUBytes"    # Lkotlin/random/Random;
+    .param p0, "$this$nextUBytes_u2dWvrt4B4"    # Lkotlin/random/Random;
     .param p1, "array"    # [B
     .param p2, "fromIndex"    # I
     .param p3, "toIndex"    # I
@@ -286,7 +286,7 @@
 .end method
 
 .method public static final nextUInt(Lkotlin/random/Random;Lkotlin/ranges/UIntRange;)I
-    .locals 2
+    .locals 3
     .param p0, "$this$nextUInt"    # Lkotlin/random/Random;
     .param p1, "range"    # Lkotlin/ranges/UIntRange;
 
@@ -315,7 +315,7 @@
 
     const/4 v1, -0x1
 
-    invoke-static {v0, v1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -349,7 +349,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -395,9 +395,21 @@
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "Cannot get random in empty range: "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Cannot get random in empty range: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -408,7 +420,7 @@
 
 .method public static final nextUInt-a8DCA5k(Lkotlin/random/Random;II)I
     .locals 4
-    .param p0, "$this$nextUInt"    # Lkotlin/random/Random;
+    .param p0, "$this$nextUInt_u2da8DCA5k"    # Lkotlin/random/Random;
     .param p1, "from"    # I
     .param p2, "until"    # I
 
@@ -447,7 +459,7 @@
 
 .method public static final nextUInt-qCasIEU(Lkotlin/random/Random;I)I
     .locals 1
-    .param p0, "$this$nextUInt"    # Lkotlin/random/Random;
+    .param p0, "$this$nextUInt_u2dqCasIEU"    # Lkotlin/random/Random;
     .param p1, "until"    # I
 
     const-string v0, "$this$nextUInt"
@@ -514,7 +526,7 @@
 
     const-wide/16 v2, -0x1
 
-    invoke-static {v0, v1, v2, v3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -560,7 +572,7 @@
 
     const-wide/16 v6, 0x0
 
-    invoke-static {v4, v5, v6, v7}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {v4, v5, v6, v7}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -618,9 +630,21 @@
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "Cannot get random in empty range: "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Cannot get random in empty range: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -631,7 +655,7 @@
 
 .method public static final nextULong-V1Xi4fY(Lkotlin/random/Random;J)J
     .locals 2
-    .param p0, "$this$nextULong"    # Lkotlin/random/Random;
+    .param p0, "$this$nextULong_u2dV1Xi4fY"    # Lkotlin/random/Random;
     .param p1, "until"    # J
 
     const-string v0, "$this$nextULong"
@@ -650,7 +674,7 @@
 
 .method public static final nextULong-jmpaW-c(Lkotlin/random/Random;JJ)J
     .locals 8
-    .param p0, "$this$nextULong"    # Lkotlin/random/Random;
+    .param p0, "$this$nextULong_u2djmpaW_u2dc"    # Lkotlin/random/Random;
     .param p1, "from"    # J
     .param p3, "until"    # J
 

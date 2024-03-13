@@ -39,7 +39,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -160,7 +160,7 @@
 
     move-object v3, v2
 
-    .local v3, "$this$readExternal_u24lambda_u2d1":Ljava/util/Map;
+    .local v3, "$this$readExternal_u24lambda_u241":Ljava/util/Map;
     const/4 v4, 0x0
 
     .line 663
@@ -170,9 +170,9 @@
     :goto_0
     if-ge v5, v1, :cond_0
 
-    add-int/lit8 v6, v5, 0x1
+    move v6, v5
 
-    .local v5, "it":I
+    .local v6, "it":I
     const/4 v7, 0x0
 
     .line 664
@@ -195,11 +195,11 @@
     nop
 
     .line 663
-    .end local v5    # "it":I
+    .end local v6    # "it":I
     .end local v7    # "$i$a$-repeat-SerializedMap$readExternal$1$1":I
     .end local v8    # "key":Ljava/lang/Object;
     .end local v9    # "value":Ljava/lang/Object;
-    move v5, v6
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
@@ -207,11 +207,9 @@
     :cond_0
     nop
 
-    .end local v3    # "$this$readExternal_u24lambda_u2d1":Ljava/util/Map;
-    .end local v4    # "$i$a$-buildMap-SerializedMap$readExternal$1":I
-    sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 662
+    .end local v3    # "$this$readExternal_u24lambda_u241":Ljava/util/Map;
+    .end local v4    # "$i$a$-buildMap-SerializedMap$readExternal$1":I
     invoke-static {v2}, Lkotlin/collections/MapsKt;->build(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v2
@@ -258,13 +256,21 @@
     :cond_2
     new-instance v1, Ljava/io/InvalidObjectException;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "Unsupported flags value: "
 
-    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 

@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/mediatek/ims/ImsService;)V
     .locals 0
 
-    .line 1947
+    .line 1960
     iput-object p1, p0, Lcom/mediatek/ims/ImsService$IWifiOffloadServiceDeathRecipient;->this$0:Lcom/mediatek/ims/ImsService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "x0"    # Lcom/mediatek/ims/ImsService;
     .param p2, "x1"    # Lcom/mediatek/ims/ImsService$1;
 
-    .line 1947
+    .line 1960
     invoke-direct {p0, p1}, Lcom/mediatek/ims/ImsService$IWifiOffloadServiceDeathRecipient;-><init>(Lcom/mediatek/ims/ImsService;)V
 
     return-void
@@ -49,11 +49,11 @@
 .method public binderDied()V
     .locals 1
 
-    .line 1950
+    .line 1963
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/mediatek/ims/ImsService;->access$2802(Lcom/mediatek/wfo/IWifiOffloadService;)Lcom/mediatek/wfo/IWifiOffloadService;
+    invoke-static {v0}, Lcom/mediatek/ims/ImsService;->access$2902(Lcom/mediatek/wfo/IWifiOffloadService;)Lcom/mediatek/wfo/IWifiOffloadService;
 
-    .line 1951
+    .line 1964
     return-void
 .end method

@@ -29,7 +29,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -50,35 +50,19 @@
 
 # direct methods
 .method private static final synthetic $values()[Lkotlin/collections/State;
-    .locals 3
+    .locals 4
 
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lkotlin/collections/State;
-
-    sget-object v1, Lkotlin/collections/State;->Ready:Lkotlin/collections/State;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/collections/State;->Ready:Lkotlin/collections/State;
 
     sget-object v1, Lkotlin/collections/State;->NotReady:Lkotlin/collections/State;
 
-    const/4 v2, 0x1
+    sget-object v2, Lkotlin/collections/State;->Done:Lkotlin/collections/State;
 
-    aput-object v1, v0, v2
+    sget-object v3, Lkotlin/collections/State;->Failed:Lkotlin/collections/State;
 
-    sget-object v1, Lkotlin/collections/State;->Done:Lkotlin/collections/State;
+    filled-new-array {v0, v1, v2, v3}, [Lkotlin/collections/State;
 
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/collections/State;->Failed:Lkotlin/collections/State;
-
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method

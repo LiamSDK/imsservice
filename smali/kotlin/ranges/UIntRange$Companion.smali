@@ -30,7 +30,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -41,7 +41,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 41
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +60,7 @@
 .method public final getEMPTY()Lkotlin/ranges/UIntRange;
     .locals 1
 
-    .line 43
+    .line 52
     invoke-static {}, Lkotlin/ranges/UIntRange;->access$getEMPTY$cp()Lkotlin/ranges/UIntRange;
 
     move-result-object v0

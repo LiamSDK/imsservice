@@ -58,12 +58,14 @@
 
     check-cast v0, Lkotlin/jvm/internal/ClassBasedDeclarationContainer;
 
+    .line 17
     invoke-interface {v0}, Lkotlin/jvm/internal/ClassBasedDeclarationContainer;->getJClass()Ljava/lang/Class;
 
     move-result-object v2
 
     instance-of v0, p1, Lkotlin/reflect/KClass;
 
+    .line 15
     xor-int/lit8 v5, v0, 0x1
 
     move-object v0, p0
@@ -100,7 +102,7 @@
 .end method
 
 .method public set(Ljava/lang/Object;)V
-    .locals 3
+    .locals 2
     .param p1, "value"    # Ljava/lang/Object;
 
     .line 39
@@ -108,13 +110,9 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    filled-new-array {p1}, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
+    move-result-object v1
 
     invoke-interface {v0, v1}, Lkotlin/reflect/KMutableProperty0$Setter;->call([Ljava/lang/Object;)Ljava/lang/Object;
 

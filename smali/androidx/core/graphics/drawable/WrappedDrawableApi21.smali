@@ -116,48 +116,15 @@
 .end method
 
 .method protected isCompatTintEnabled()Z
-    .locals 3
+    .locals 1
 
     .line 113
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0x15
-
-    if-ne v0, v2, :cond_2
-
-    .line 114
-    iget-object v0, p0, Landroidx/core/graphics/drawable/WrappedDrawableApi21;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 115
-    .local v0, "drawable":Landroid/graphics/drawable/Drawable;
-    instance-of v2, v0, Landroid/graphics/drawable/GradientDrawable;
-
-    if-nez v2, :cond_0
-
-    instance-of v2, v0, Landroid/graphics/drawable/DrawableContainer;
-
-    if-nez v2, :cond_0
-
-    instance-of v2, v0, Landroid/graphics/drawable/InsetDrawable;
-
-    if-nez v2, :cond_0
-
-    instance-of v2, v0, Landroid/graphics/drawable/RippleDrawable;
-
-    if-eqz v2, :cond_1
-
-    :cond_0
-    const/4 v1, 0x1
-
-    :cond_1
-    return v1
+    nop
 
     .line 120
-    .end local v0    # "drawable":Landroid/graphics/drawable/Drawable;
-    :cond_2
-    return v1
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public isProjected()Z

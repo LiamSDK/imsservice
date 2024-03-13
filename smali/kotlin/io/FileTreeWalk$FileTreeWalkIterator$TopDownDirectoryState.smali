@@ -36,7 +36,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -66,10 +66,6 @@
         }
     .end annotation
 
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "rootDir"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -92,7 +88,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     .line 168
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->this$0:Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;
@@ -107,12 +103,8 @@
 
     const/4 v3, 0x1
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
-    :cond_0
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {p0}, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->getRoot()Ljava/io/File;
 
     move-result-object v4
@@ -131,14 +123,14 @@
 
     move v2, v3
 
-    :goto_0
-    if-eqz v2, :cond_2
+    :cond_0
+    if-eqz v2, :cond_1
 
     .line 169
     return-object v1
 
     .line 172
-    :cond_2
+    :cond_1
     iput-boolean v3, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->rootVisited:Z
 
     .line 173
@@ -149,10 +141,10 @@
     return-object v0
 
     .line 174
-    :cond_3
+    :cond_2
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->fileList:[Ljava/io/File;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     iget v2, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->fileIndex:I
 
@@ -160,12 +152,12 @@
 
     array-length v0, v0
 
-    if-ge v2, v0, :cond_4
+    if-ge v2, v0, :cond_3
 
-    goto :goto_2
+    goto :goto_0
 
     .line 190
-    :cond_4
+    :cond_3
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->this$0:Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;
 
     iget-object v0, v0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;->this$0:Lkotlin/io/FileTreeWalk;
@@ -174,11 +166,8 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_5
+    if-eqz v0, :cond_4
 
-    goto :goto_1
-
-    :cond_5
     invoke-virtual {p0}, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->getRoot()Ljava/io/File;
 
     move-result-object v2
@@ -186,15 +175,15 @@
     invoke-interface {v0, v2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 191
-    :goto_1
+    :cond_4
     return-object v1
 
     .line 175
-    :cond_6
-    :goto_2
+    :cond_5
+    :goto_0
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->fileList:[Ljava/io/File;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_9
 
     .line 177
     invoke-virtual {p0}, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->getRoot()Ljava/io/File;
@@ -208,7 +197,7 @@
     iput-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->fileList:[Ljava/io/File;
 
     .line 178
-    if-nez v0, :cond_8
+    if-nez v0, :cond_6
 
     .line 179
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->this$0:Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;
@@ -219,11 +208,8 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_7
+    if-eqz v0, :cond_6
 
-    goto :goto_3
-
-    :cond_7
     invoke-virtual {p0}, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->getRoot()Ljava/io/File;
 
     move-result-object v2
@@ -236,11 +222,11 @@
 
     const/4 v5, 0x0
 
+    const-string v6, "Cannot list files in a directory"
+
     const/4 v7, 0x2
 
     const/4 v8, 0x0
-
-    const-string v6, "Cannot list files in a directory"
 
     move-object v3, v9
 
@@ -249,20 +235,19 @@
     invoke-interface {v0, v2, v9}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 181
-    :cond_8
-    :goto_3
+    :cond_6
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->fileList:[Ljava/io/File;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_7
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     array-length v0, v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_9
 
     .line 182
-    :cond_9
+    :cond_7
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->this$0:Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;
 
     iget-object v0, v0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;->this$0:Lkotlin/io/FileTreeWalk;
@@ -271,11 +256,8 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_a
+    if-eqz v0, :cond_8
 
-    goto :goto_4
-
-    :cond_a
     invoke-virtual {p0}, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->getRoot()Ljava/io/File;
 
     move-result-object v2
@@ -283,11 +265,11 @@
     invoke-interface {v0, v2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 183
-    :goto_4
+    :cond_8
     return-object v1
 
     .line 187
-    :cond_b
+    :cond_9
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;->fileList:[Ljava/io/File;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V

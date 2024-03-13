@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1024
+    .line 1027
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1026
+    .line 1029
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .param p0, "obj"    # Landroid/content/Context;
     .param p1, "id"    # I
 
-    .line 1030
+    .line 1033
     invoke-virtual {p0, p1}, Landroid/content/Context;->getColor(I)I
 
     move-result v0
@@ -52,7 +52,7 @@
         }
     .end annotation
 
-    .line 1035
+    .line 1038
     .local p1, "serviceClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
@@ -74,7 +74,7 @@
         }
     .end annotation
 
-    .line 1040
+    .line 1043
     .local p1, "serviceClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemServiceName(Ljava/lang/Class;)Ljava/lang/String;
 

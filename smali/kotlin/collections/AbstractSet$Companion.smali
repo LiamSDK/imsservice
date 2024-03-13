@@ -36,7 +36,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -154,16 +154,16 @@
 
     .line 37
     .local v2, "element":Ljava/lang/Object;
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v3, 0x0
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
 
     goto :goto_1
 
     :cond_0
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v3
+    const/4 v3, 0x0
 
     :goto_1
     add-int/2addr v0, v3

@@ -6,14 +6,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/content/res/ResourcesCompat$ThemeCompat;,
-        Landroidx/core/content/res/ResourcesCompat$Api15Impl;,
+        Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;,
         Landroidx/core/content/res/ResourcesCompat$Api21Impl;,
+        Landroidx/core/content/res/ResourcesCompat$Api15Impl;,
         Landroidx/core/content/res/ResourcesCompat$Api23Impl;,
+        Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheEntry;,
         Landroidx/core/content/res/ResourcesCompat$Api29Impl;,
         Landroidx/core/content/res/ResourcesCompat$FontCallback;,
-        Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheEntry;,
-        Landroidx/core/content/res/ResourcesCompat$ColorStateListCacheKey;
+        Landroidx/core/content/res/ResourcesCompat$ThemeCompat;
     }
 .end annotation
 
@@ -81,10 +81,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 728
+    .line 724
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 729
+    .line 725
     return-void
 .end method
 
@@ -398,7 +398,7 @@
 .end method
 
 .method public static getColor(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)I
-    .locals 2
+    .locals 1
     .param p0, "res"    # Landroid/content/res/Resources;
     .param p1, "id"    # I
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
@@ -409,11 +409,7 @@
     .end annotation
 
     .line 199
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 200
     invoke-static {p0, p1, p2}, Landroidx/core/content/res/ResourcesCompat$Api23Impl;->getColor(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)I
@@ -421,18 +417,10 @@
     move-result v0
 
     return v0
-
-    .line 202
-    :cond_0
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public static getColorStateList(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
-    .locals 4
+    .locals 3
     .param p0, "res"    # Landroid/content/res/Resources;
     .param p1, "id"    # I
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
@@ -477,11 +465,7 @@
 
     .line 243
     :cond_1
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x17
-
-    if-lt v2, v3, :cond_2
+    nop
 
     .line 244
     invoke-static {p0, p1, p2}, Landroidx/core/content/res/ResourcesCompat$Api23Impl;->getColorStateList(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
@@ -489,18 +473,10 @@
     move-result-object v2
 
     return-object v2
-
-    .line 246
-    :cond_2
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getColorStateList(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v2
-
-    return-object v2
 .end method
 
 .method public static getDrawable(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .locals 2
+    .locals 1
     .param p0, "res"    # Landroid/content/res/Resources;
     .param p1, "id"    # I
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
@@ -511,11 +487,7 @@
     .end annotation
 
     .line 136
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 137
     invoke-static {p0, p1, p2}, Landroidx/core/content/res/ResourcesCompat$Api21Impl;->getDrawable(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
@@ -523,18 +495,10 @@
     move-result-object v0
 
     return-object v0
-
-    .line 139
-    :cond_0
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public static getDrawableForDensity(Landroid/content/res/Resources;IILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .locals 2
+    .locals 1
     .param p0, "res"    # Landroid/content/res/Resources;
     .param p1, "id"    # I
     .param p2, "density"    # I
@@ -546,11 +510,7 @@
     .end annotation
 
     .line 169
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 170
     invoke-static {p0, p1, p2, p3}, Landroidx/core/content/res/ResourcesCompat$Api21Impl;->getDrawableForDensity(Landroid/content/res/Resources;IILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
@@ -558,42 +518,15 @@
     move-result-object v0
 
     return-object v0
-
-    .line 171
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0xf
-
-    if-lt v0, v1, :cond_1
-
-    .line 172
-    invoke-static {p0, p1, p2}, Landroidx/core/content/res/ResourcesCompat$Api15Impl;->getDrawableForDensity(Landroid/content/res/Resources;II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 174
-    :cond_1
-    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public static getFloat(Landroid/content/res/Resources;I)F
-    .locals 4
+    .locals 1
     .param p0, "res"    # Landroid/content/res/Resources;
     .param p1, "id"    # I
 
     .line 373
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1d
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 374
     invoke-static {p0, p1}, Landroidx/core/content/res/ResourcesCompat$Api29Impl;->getFloat(Landroid/content/res/Resources;I)F
@@ -601,85 +534,6 @@
     move-result v0
 
     return v0
-
-    .line 377
-    :cond_0
-    invoke-static {}, Landroidx/core/content/res/ResourcesCompat;->getTypedValue()Landroid/util/TypedValue;
-
-    move-result-object v0
-
-    .line 378
-    .local v0, "value":Landroid/util/TypedValue;
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, p1, v0, v1}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
-
-    .line 379
-    iget v1, v0, Landroid/util/TypedValue;->type:I
-
-    const/4 v2, 0x4
-
-    if-ne v1, v2, :cond_1
-
-    .line 380
-    invoke-virtual {v0}, Landroid/util/TypedValue;->getFloat()F
-
-    move-result v1
-
-    return v1
-
-    .line 382
-    :cond_1
-    new-instance v1, Landroid/content/res/Resources$NotFoundException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Resource ID #0x"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " type #0x"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, v0, Landroid/util/TypedValue;->type:I
-
-    .line 383
-    invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " is not valid"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Landroid/content/res/Resources$NotFoundException;-><init>(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public static getFont(Landroid/content/Context;I)Landroid/graphics/Typeface;
@@ -744,19 +598,19 @@
         }
     .end annotation
 
-    .line 543
+    .line 539
     invoke-virtual {p0}, Landroid/content/Context;->isRestricted()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 544
+    .line 540
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 546
+    .line 542
     :cond_0
     const/4 v6, 0x0
 
@@ -793,25 +647,25 @@
         }
     .end annotation
 
-    .line 523
+    .line 520
     invoke-static {p2}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 524
+    .line 521
     invoke-virtual {p0}, Landroid/content/Context;->isRestricted()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 525
+    .line 522
     const/4 v0, -0x4
 
     invoke-virtual {p2, v0, p3}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
 
-    .line 527
+    .line 524
     return-void
 
-    .line 529
+    .line 526
     :cond_0
     new-instance v3, Landroid/util/TypedValue;
 
@@ -833,7 +687,7 @@
 
     invoke-static/range {v1 .. v8}, Landroidx/core/content/res/ResourcesCompat;->loadFont(Landroid/content/Context;ILandroid/util/TypedValue;ILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;ZZ)Landroid/graphics/Typeface;
 
-    .line 531
+    .line 528
     return-void
 .end method
 
@@ -969,12 +823,12 @@
     .param p6, "isRequestFromLayoutInflator"    # Z
     .param p7, "isCachedOnly"    # Z
 
-    .line 568
+    .line 564
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
 
-    .line 569
+    .line 565
     .local v9, "resources":Landroid/content/res/Resources;
     const/4 v0, 0x1
 
@@ -984,7 +838,7 @@
 
     invoke-virtual {v9, p1, p2, v0}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 570
+    .line 566
     move-object v0, p0
 
     move-object v1, v9
@@ -1007,7 +861,7 @@
 
     move-result-object v0
 
-    .line 572
+    .line 568
     .local v0, "typeface":Landroid/graphics/Typeface;
     if-nez v0, :cond_1
 
@@ -1017,7 +871,7 @@
 
     goto :goto_0
 
-    .line 573
+    .line 569
     :cond_0
     new-instance v1, Landroid/content/res/Resources$NotFoundException;
 
@@ -1031,7 +885,7 @@
 
     move-result-object v2
 
-    .line 574
+    .line 570
     invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -1054,7 +908,7 @@
 
     throw v1
 
-    .line 576
+    .line 572
     :cond_1
     :goto_0
     return-object v0
@@ -1072,7 +926,7 @@
     .param p7, "isRequestFromLayoutInflator"    # Z
     .param p8, "isCachedOnly"    # Z
 
-    .line 600
+    .line 596
     move-object/from16 v11, p1
 
     move-object/from16 v12, p2
@@ -1089,14 +943,14 @@
 
     if-eqz v0, :cond_b
 
-    .line 605
+    .line 601
     iget-object v0, v12, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 606
+    .line 602
     .local v9, "file":Ljava/lang/String;
     const-string v0, "res/"
 
@@ -1110,17 +964,17 @@
 
     if-nez v0, :cond_1
 
-    .line 608
+    .line 604
     if-eqz v14, :cond_0
 
-    .line 609
+    .line 605
     invoke-virtual {v14, v8, v15}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
 
-    .line 612
+    .line 608
     :cond_0
     return-object v16
 
-    .line 614
+    .line 610
     :cond_1
     iget v0, v12, Landroid/util/TypedValue;->assetCookie:I
 
@@ -1130,28 +984,28 @@
 
     move-result-object v6
 
-    .line 617
+    .line 613
     .local v6, "typeface":Landroid/graphics/Typeface;
     if-eqz v6, :cond_3
 
-    .line 618
+    .line 614
     if-eqz v14, :cond_2
 
-    .line 619
+    .line 615
     invoke-virtual {v14, v6, v15}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackSuccessAsync(Landroid/graphics/Typeface;Landroid/os/Handler;)V
 
-    .line 621
+    .line 617
     :cond_2
     return-object v6
 
-    .line 622
+    .line 618
     :cond_3
     if-eqz p8, :cond_4
 
-    .line 623
+    .line 619
     return-object v16
 
-    .line 627
+    .line 623
     :cond_4
     :try_start_0
     invoke-virtual {v9}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -1170,16 +1024,16 @@
 
     if-eqz v0, :cond_7
 
-    .line 628
+    .line 624
     invoke-virtual {v11, v13}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
     move-result-object v0
 
-    .line 629
+    .line 625
     .local v0, "rp":Landroid/content/res/XmlResourceParser;
     nop
 
-    .line 630
+    .line 626
     invoke-static {v0, v11}, Landroidx/core/content/res/FontResourcesParserCompat;->parse(Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources;)Landroidx/core/content/res/FontResourcesParserCompat$FamilyResourceEntry;
 
     move-result-object v1
@@ -1189,30 +1043,30 @@
 
     move-object/from16 v17, v1
 
-    .line 631
+    .line 627
     .local v17, "familyEntry":Landroidx/core/content/res/FontResourcesParserCompat$FamilyResourceEntry;
     if-nez v17, :cond_6
 
-    .line 632
+    .line 628
     :try_start_2
     const-string v1, "Failed to find font-family tag"
 
     invoke-static {v10, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 633
+    .line 629
     if-eqz v14, :cond_5
 
-    .line 634
+    .line 630
     invoke-virtual {v14, v8, v15}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
     :try_end_2
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 637
+    .line 633
     :cond_5
     return-object v16
 
-    .line 656
+    .line 652
     .end local v0    # "rp":Landroid/content/res/XmlResourceParser;
     .end local v17    # "familyEntry":Landroidx/core/content/res/FontResourcesParserCompat$FamilyResourceEntry;
     :catch_0
@@ -1226,7 +1080,7 @@
 
     goto/16 :goto_1
 
-    .line 654
+    .line 650
     :catch_1
     move-exception v0
 
@@ -1238,7 +1092,7 @@
 
     goto/16 :goto_2
 
-    .line 639
+    .line 635
     .restart local v0    # "rp":Landroid/content/res/XmlResourceParser;
     .restart local v17    # "familyEntry":Landroidx/core/content/res/FontResourcesParserCompat$FamilyResourceEntry;
     :cond_6
@@ -1289,7 +1143,7 @@
 
     return-object v1
 
-    .line 643
+    .line 639
     .end local v0    # "rp":Landroid/content/res/XmlResourceParser;
     .end local v17    # "familyEntry":Landroidx/core/content/res/FontResourcesParserCompat$FamilyResourceEntry;
     .end local v18    # "file":Ljava/lang/String;
@@ -1330,21 +1184,21 @@
 
     move-object v6, v0
 
-    .line 645
+    .line 641
     .end local v19    # "typeface":Landroid/graphics/Typeface;
     .restart local v6    # "typeface":Landroid/graphics/Typeface;
     if-eqz v14, :cond_9
 
-    .line 646
+    .line 642
     if-eqz v6, :cond_8
 
-    .line 647
+    .line 643
     :try_start_5
     invoke-virtual {v14, v6, v15}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackSuccessAsync(Landroid/graphics/Typeface;Landroid/os/Handler;)V
 
     goto :goto_0
 
-    .line 649
+    .line 645
     :cond_8
     invoke-virtual {v14, v11, v15}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
     :try_end_5
@@ -1353,13 +1207,13 @@
 
     goto :goto_0
 
-    .line 656
+    .line 652
     :catch_2
     move-exception v0
 
     goto :goto_1
 
-    .line 654
+    .line 650
     :catch_3
     move-exception v0
 
@@ -1369,12 +1223,12 @@
 
     goto :goto_2
 
-    .line 653
+    .line 649
     :cond_9
     :goto_0
     return-object v6
 
-    .line 656
+    .line 652
     .end local v6    # "typeface":Landroid/graphics/Typeface;
     .restart local v19    # "typeface":Landroid/graphics/Typeface;
     :catch_4
@@ -1384,7 +1238,7 @@
 
     goto :goto_1
 
-    .line 654
+    .line 650
     :catch_5
     move-exception v0
 
@@ -1417,7 +1271,7 @@
     .restart local v19    # "typeface":Landroid/graphics/Typeface;
     goto :goto_2
 
-    .line 656
+    .line 652
     .end local v18    # "file":Ljava/lang/String;
     .end local v19    # "typeface":Landroid/graphics/Typeface;
     .restart local v6    # "typeface":Landroid/graphics/Typeface;
@@ -1433,7 +1287,7 @@
 
     move-object/from16 v20, v10
 
-    .line 657
+    .line 653
     .end local v9    # "file":Ljava/lang/String;
     .local v0, "e":Ljava/io/IOException;
     .restart local v18    # "file":Ljava/lang/String;
@@ -1466,7 +1320,7 @@
 
     goto :goto_3
 
-    .line 654
+    .line 650
     .end local v0    # "e":Ljava/io/IOException;
     .end local v2    # "file":Ljava/lang/String;
     .restart local v9    # "file":Ljava/lang/String;
@@ -1481,7 +1335,7 @@
 
     move-object v3, v10
 
-    .line 655
+    .line 651
     .end local v9    # "file":Ljava/lang/String;
     .local v0, "e":Lorg/xmlpull/v1/XmlPullParserException;
     .restart local v2    # "file":Ljava/lang/String;
@@ -1506,22 +1360,22 @@
 
     invoke-static {v3, v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 658
+    .line 654
     .end local v0    # "e":Lorg/xmlpull/v1/XmlPullParserException;
     nop
 
-    .line 659
+    .line 655
     :goto_3
     if-eqz v14, :cond_a
 
-    .line 660
+    .line 656
     invoke-virtual {v14, v11, v15}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
 
-    .line 663
+    .line 659
     :cond_a
     return-object v16
 
-    .line 601
+    .line 597
     .end local v2    # "file":Ljava/lang/String;
     .end local v6    # "typeface":Landroid/graphics/Typeface;
     :cond_b
@@ -1553,7 +1407,7 @@
 
     move-result-object v1
 
-    .line 602
+    .line 598
     invoke-static/range {p3 .. p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v3

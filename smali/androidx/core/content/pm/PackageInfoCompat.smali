@@ -104,24 +104,12 @@
     .param p0, "info"    # Landroid/content/pm/PackageInfo;
 
     .line 51
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1c
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 52
     invoke-static {p0}, Landroidx/core/content/pm/PackageInfoCompat$Api28Impl;->getLongVersionCode(Landroid/content/pm/PackageInfo;)J
 
     move-result-wide v0
-
-    return-wide v0
-
-    .line 54
-    :cond_0
-    iget v0, p0, Landroid/content/pm/PackageInfo;->versionCode:I
-
-    int-to-long v0, v0
 
     return-wide v0
 .end method
@@ -149,11 +137,7 @@
     .end annotation
 
     .line 88
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1c
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 89
     const/high16 v0, 0x8000000
@@ -194,26 +178,10 @@
     .end local v1    # "signingInfo":Landroid/content/pm/SigningInfo;
     .restart local v2    # "array":[Landroid/content/pm/Signature;
     :goto_0
-    goto :goto_1
-
-    .line 100
-    .end local v2    # "array":[Landroid/content/pm/Signature;
-    :cond_1
-    const/16 v0, 0x40
-
-    invoke-virtual {p0, p1, v0}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    move-result-object v0
-
-    .line 102
-    .restart local v0    # "pkgInfo":Landroid/content/pm/PackageInfo;
-    iget-object v2, v0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
+    nop
 
     .line 106
-    .end local v0    # "pkgInfo":Landroid/content/pm/PackageInfo;
-    .restart local v2    # "array":[Landroid/content/pm/Signature;
-    :goto_1
-    if-nez v2, :cond_2
+    if-nez v2, :cond_1
 
     .line 107
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -223,7 +191,7 @@
     return-object v0
 
     .line 109
-    :cond_2
+    :cond_1
     invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -425,12 +393,6 @@
     const/4 v3, 0x1
 
     if-nez p3, :cond_6
-
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v6, 0x1c
-
-    if-lt v5, v6, :cond_6
 
     .line 185
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;

@@ -40,7 +40,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -83,101 +83,41 @@
 
 # direct methods
 .method private static final synthetic $values()[Lkotlin/annotation/AnnotationTarget;
-    .locals 3
+    .locals 15
 
-    const/16 v0, 0xf
-
-    new-array v0, v0, [Lkotlin/annotation/AnnotationTarget;
-
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->CLASS:Lkotlin/annotation/AnnotationTarget;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/annotation/AnnotationTarget;->CLASS:Lkotlin/annotation/AnnotationTarget;
 
     sget-object v1, Lkotlin/annotation/AnnotationTarget;->ANNOTATION_CLASS:Lkotlin/annotation/AnnotationTarget;
 
-    const/4 v2, 0x1
+    sget-object v2, Lkotlin/annotation/AnnotationTarget;->TYPE_PARAMETER:Lkotlin/annotation/AnnotationTarget;
 
-    aput-object v1, v0, v2
+    sget-object v3, Lkotlin/annotation/AnnotationTarget;->PROPERTY:Lkotlin/annotation/AnnotationTarget;
 
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->TYPE_PARAMETER:Lkotlin/annotation/AnnotationTarget;
+    sget-object v4, Lkotlin/annotation/AnnotationTarget;->FIELD:Lkotlin/annotation/AnnotationTarget;
 
-    const/4 v2, 0x2
+    sget-object v5, Lkotlin/annotation/AnnotationTarget;->LOCAL_VARIABLE:Lkotlin/annotation/AnnotationTarget;
 
-    aput-object v1, v0, v2
+    sget-object v6, Lkotlin/annotation/AnnotationTarget;->VALUE_PARAMETER:Lkotlin/annotation/AnnotationTarget;
 
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->PROPERTY:Lkotlin/annotation/AnnotationTarget;
+    sget-object v7, Lkotlin/annotation/AnnotationTarget;->CONSTRUCTOR:Lkotlin/annotation/AnnotationTarget;
 
-    const/4 v2, 0x3
+    sget-object v8, Lkotlin/annotation/AnnotationTarget;->FUNCTION:Lkotlin/annotation/AnnotationTarget;
 
-    aput-object v1, v0, v2
+    sget-object v9, Lkotlin/annotation/AnnotationTarget;->PROPERTY_GETTER:Lkotlin/annotation/AnnotationTarget;
 
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->FIELD:Lkotlin/annotation/AnnotationTarget;
+    sget-object v10, Lkotlin/annotation/AnnotationTarget;->PROPERTY_SETTER:Lkotlin/annotation/AnnotationTarget;
 
-    const/4 v2, 0x4
+    sget-object v11, Lkotlin/annotation/AnnotationTarget;->TYPE:Lkotlin/annotation/AnnotationTarget;
 
-    aput-object v1, v0, v2
+    sget-object v12, Lkotlin/annotation/AnnotationTarget;->EXPRESSION:Lkotlin/annotation/AnnotationTarget;
 
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->LOCAL_VARIABLE:Lkotlin/annotation/AnnotationTarget;
+    sget-object v13, Lkotlin/annotation/AnnotationTarget;->FILE:Lkotlin/annotation/AnnotationTarget;
 
-    const/4 v2, 0x5
+    sget-object v14, Lkotlin/annotation/AnnotationTarget;->TYPEALIAS:Lkotlin/annotation/AnnotationTarget;
 
-    aput-object v1, v0, v2
+    filled-new-array/range {v0 .. v14}, [Lkotlin/annotation/AnnotationTarget;
 
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->VALUE_PARAMETER:Lkotlin/annotation/AnnotationTarget;
-
-    const/4 v2, 0x6
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->CONSTRUCTOR:Lkotlin/annotation/AnnotationTarget;
-
-    const/4 v2, 0x7
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->FUNCTION:Lkotlin/annotation/AnnotationTarget;
-
-    const/16 v2, 0x8
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->PROPERTY_GETTER:Lkotlin/annotation/AnnotationTarget;
-
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->PROPERTY_SETTER:Lkotlin/annotation/AnnotationTarget;
-
-    const/16 v2, 0xa
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->TYPE:Lkotlin/annotation/AnnotationTarget;
-
-    const/16 v2, 0xb
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->EXPRESSION:Lkotlin/annotation/AnnotationTarget;
-
-    const/16 v2, 0xc
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->FILE:Lkotlin/annotation/AnnotationTarget;
-
-    const/16 v2, 0xd
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/annotation/AnnotationTarget;->TYPEALIAS:Lkotlin/annotation/AnnotationTarget;
-
-    const/16 v2, 0xe
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method

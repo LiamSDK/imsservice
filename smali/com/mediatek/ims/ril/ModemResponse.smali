@@ -12,13 +12,13 @@
     .locals 0
     .param p1, "ril"    # Lcom/mediatek/ims/ril/ImsRILAdapter;
 
-    .line 30
+    .line 31
     invoke-direct {p0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;-><init>()V
 
-    .line 31
+    .line 32
     iput-object p1, p0, Lcom/mediatek/ims/ril/ModemResponse;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
-    .line 32
+    .line 33
     return-void
 .end method
 
@@ -28,12 +28,12 @@
     .locals 1
     .param p1, "serial"    # I
 
-    .line 41
+    .line 42
     iget-object v0, p0, Lcom/mediatek/ims/ril/ModemResponse;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processRequestAck(I)V
 
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 48
+    .line 49
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "version"    # Ljava/lang/String;
 
-    .line 55
+    .line 56
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .param p4, "esn"    # Ljava/lang/String;
     .param p5, "meid"    # Ljava/lang/String;
 
-    .line 66
+    .line 67
     return-void
 .end method
 
@@ -71,15 +71,24 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "config"    # [Landroid/hardware/radio/modem/HardwareConfig;
 
-    .line 74
+    .line 83
+    return-void
+.end method
+
+.method public getImeiResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/modem/ImeiInfo;)V
+    .locals 0
+    .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
+    .param p2, "imeiInfo"    # Landroid/hardware/radio/modem/ImeiInfo;
+
+    .line 75
     return-void
 .end method
 
 .method public getInterfaceHash()Ljava/lang/String;
     .locals 1
 
-    .line 152
-    const-string v0, "9dee2319b599d654955c05268c1eed6ca4373b58"
+    .line 161
+    const-string v0, "09927560afccc75a063944fbbab3af48099261ca"
 
     return-object v0
 .end method
@@ -87,8 +96,8 @@
 .method public getInterfaceVersion()I
     .locals 1
 
-    .line 157
-    const/4 v0, 0x1
+    .line 166
+    const/4 v0, 0x2
 
     return v0
 .end method
@@ -98,7 +107,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "activityInfo"    # Landroid/hardware/radio/modem/ActivityStatsInfo;
 
-    .line 82
+    .line 91
     return-void
 .end method
 
@@ -107,7 +116,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "isEnabled"    # Z
 
-    .line 89
+    .line 98
     return-void
 .end method
 
@@ -116,7 +125,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "radioCapability"    # Landroid/hardware/radio/modem/RadioCapability;
 
-    .line 97
+    .line 106
     return-void
 .end method
 
@@ -125,7 +134,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "result"    # Ljava/lang/String;
 
-    .line 104
+    .line 113
     return-void
 .end method
 
@@ -133,7 +142,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 110
+    .line 119
     return-void
 .end method
 
@@ -141,7 +150,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 116
+    .line 125
     return-void
 .end method
 
@@ -149,7 +158,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 122
+    .line 131
     return-void
 .end method
 
@@ -157,7 +166,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 128
+    .line 137
     return-void
 .end method
 
@@ -165,7 +174,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 134
+    .line 143
     return-void
 .end method
 
@@ -174,7 +183,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "radioCapability"    # Landroid/hardware/radio/modem/RadioCapability;
 
-    .line 142
+    .line 151
     return-void
 .end method
 
@@ -182,6 +191,6 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 148
+    .line 157
     return-void
 .end method

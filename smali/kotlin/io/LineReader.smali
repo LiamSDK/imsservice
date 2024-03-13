@@ -54,7 +54,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -150,7 +150,7 @@
     .line 257
     sget-object v0, Lkotlin/io/LineReader;->byteBuf:Ljava/nio/ByteBuffer;
 
-    .local v0, "$this$compactBytes_u24lambda_u2d1":Ljava/nio/ByteBuffer;
+    .local v0, "$this$compactBytes_u24lambda_u241":Ljava/nio/ByteBuffer;
     const/4 v1, 0x0
 
     .line 258
@@ -184,6 +184,8 @@
     .param p1, "endOfInput"    # Z
 
     .line 240
+    nop
+
     :goto_0
     nop
 
@@ -405,9 +407,7 @@
     .line 279
     const/16 v2, 0xa
 
-    int-to-byte v3, v2
-
-    invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     .line 280
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
@@ -704,17 +704,17 @@
     :goto_4
     if-eqz v7, :cond_a
 
-    sget-object v2, Lkotlin/io/LineReader;->chars:[C
+    new-instance v2, Ljava/lang/String;
 
-    new-instance v3, Ljava/lang/String;
+    sget-object v3, Lkotlin/io/LineReader;->chars:[C
 
-    invoke-direct {v3, v2, v8, v1}, Ljava/lang/String;-><init>([CII)V
+    invoke-direct {v2, v3, v8, v1}, Ljava/lang/String;-><init>([CII)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     monitor-exit p0
 
-    return-object v3
+    return-object v2
 
     .line 230
     :cond_a

@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 668
+    .line 664
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 670
+    .line 666
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .param p0, "res"    # Landroid/content/res/Resources;
     .param p1, "id"    # I
 
-    .line 674
+    .line 670
     invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getFloat(I)F
 
     move-result v0

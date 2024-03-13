@@ -23,16 +23,12 @@
 .end method
 
 .method public static equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 2
+    .locals 1
     .param p0, "a"    # Ljava/lang/Object;
     .param p1, "b"    # Ljava/lang/Object;
 
     .line 54
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 55
     invoke-static {p0, p1}, Landroidx/core/util/ObjectsCompat$Api19Impl;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -40,55 +36,17 @@
     move-result v0
 
     return v0
-
-    .line 57
-    :cond_0
-    if-eq p0, p1, :cond_2
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_2
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    return v0
 .end method
 
 .method public static varargs hash([Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
     .param p0, "values"    # [Ljava/lang/Object;
 
     .line 96
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 97
     invoke-static {p0}, Landroidx/core/util/ObjectsCompat$Api19Impl;->hash([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-
-    .line 99
-    :cond_0
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0
 

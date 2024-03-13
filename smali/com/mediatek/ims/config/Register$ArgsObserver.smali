@@ -84,43 +84,46 @@
 
     iget-object v1, v1, Lcom/mediatek/ims/config/Register;->argType:Ljava/lang/String;
 
-    const/4 v2, -0x1
-
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    move-result v3
+    move-result v2
 
-    sparse-switch v3, :sswitch_data_0
+    sparse-switch v2, :sswitch_data_0
 
     :cond_1
     goto :goto_0
 
     :sswitch_0
-    const-string v3, "feature"
+    const-string v2, "feature"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :sswitch_1
-    const-string v3, "config"
+    const-string v2, "config"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
+
+    goto :goto_1
 
     :goto_0
-    packed-switch v2, :pswitch_data_0
+    const/4 v1, -0x1
+
+    :goto_1
+    packed-switch v1, :pswitch_data_0
 
     .line 105
     new-instance v1, Ljava/lang/RuntimeException;
@@ -177,7 +180,7 @@
     invoke-interface {v2, v0}, Lcom/mediatek/ims/config/Register$IArgsChangeListener;->onChange(I)V
 
     .line 103
-    goto :goto_1
+    goto :goto_2
 
     .line 93
     .end local v1    # "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -202,8 +205,10 @@
 
     .line 108
     .end local v1    # "configName":Ljava/lang/String;
-    :goto_1
+    :goto_2
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

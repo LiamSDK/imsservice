@@ -1,6 +1,6 @@
 .class public final Lkotlin/ranges/LongRange$Companion;
 .super Ljava/lang/Object;
-.source "Ranges.kt"
+.source "PrimitiveRanges.kt"
 
 
 # annotations
@@ -30,7 +30,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -41,7 +41,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 97
+    .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +60,7 @@
 .method public final getEMPTY()Lkotlin/ranges/LongRange;
     .locals 1
 
-    .line 99
+    .line 126
     invoke-static {}, Lkotlin/ranges/LongRange;->access$getEMPTY$cp()Lkotlin/ranges/LongRange;
 
     move-result-object v0

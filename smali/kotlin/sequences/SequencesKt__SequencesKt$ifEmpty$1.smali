@@ -44,7 +44,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -206,7 +206,6 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 73
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -215,7 +214,6 @@
 
     throw p1
 
-    .line 66
     :pswitch_0
     move-object v0, p0
 

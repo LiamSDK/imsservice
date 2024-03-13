@@ -1,6 +1,6 @@
 .class public interface abstract annotation Landroidx/annotation/InspectableProperty;
 .super Ljava/lang/Object;
-.source "InspectableProperty.java"
+.source "InspectableProperty.kt"
 
 # interfaces
 .implements Ljava/lang/annotation/Annotation;
@@ -20,13 +20,10 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/annotation/InspectableProperty$ValueType;,
+        Landroidx/annotation/InspectableProperty$EnumEntry;,
         Landroidx/annotation/InspectableProperty$FlagEntry;,
-        Landroidx/annotation/InspectableProperty$EnumEntry;
+        Landroidx/annotation/InspectableProperty$ValueType;
     }
-.end annotation
-
-.annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 .annotation runtime Ljava/lang/annotation/Retention;
@@ -36,6 +33,62 @@
 .annotation runtime Ljava/lang/annotation/Target;
     value = {
         .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Deprecated;
+    message = "Replaced by the {@code androidx.resourceinpsection} package."
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0008\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\n\u0008\u0087\u0002\u0018\u00002\u00020\u0001:\u0003\u0015\u0016\u0017BH\u0012\u0008\u0008\u0002\u0010\u0002\u001a\u00020\u0003\u0012\u0008\u0008\u0002\u0010\u0004\u001a\u00020\u0005\u0012\u0008\u0008\u0002\u0010\u0006\u001a\u00020\u0007\u0012\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t\u0012\u000e\u0008\u0002\u0010\n\u001a\u0008\u0012\u0004\u0012\u00020\u000c0\u000b\u0012\u000e\u0008\u0002\u0010\r\u001a\u0008\u0012\u0004\u0012\u00020\u000e0\u000bR\u000f\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0006\u001a\u0004\u0008\u0004\u0010\u000fR\u0015\u0010\n\u001a\u0008\u0012\u0004\u0012\u00020\u000c0\u000b\u00a2\u0006\u0006\u001a\u0004\u0008\n\u0010\u0010R\u0015\u0010\r\u001a\u0008\u0012\u0004\u0012\u00020\u000e0\u000b\u00a2\u0006\u0006\u001a\u0004\u0008\r\u0010\u0011R\u000f\u0010\u0006\u001a\u00020\u0007\u00a2\u0006\u0006\u001a\u0004\u0008\u0006\u0010\u0012R\u000f\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0006\u001a\u0004\u0008\u0002\u0010\u0013R\u000f\u0010\u0008\u001a\u00020\t\u00a2\u0006\u0006\u001a\u0004\u0008\u0008\u0010\u0014\u00a8\u0006\u0018"
+    }
+    d2 = {
+        "Landroidx/annotation/InspectableProperty;",
+        "",
+        "name",
+        "",
+        "attributeId",
+        "",
+        "hasAttributeId",
+        "",
+        "valueType",
+        "Landroidx/annotation/InspectableProperty$ValueType;",
+        "enumMapping",
+        "",
+        "Landroidx/annotation/InspectableProperty$EnumEntry;",
+        "flagMapping",
+        "Landroidx/annotation/InspectableProperty$FlagEntry;",
+        "()I",
+        "()[Landroidx/annotation/InspectableProperty$EnumEntry;",
+        "()[Landroidx/annotation/InspectableProperty$FlagEntry;",
+        "()Z",
+        "()Ljava/lang/String;",
+        "()Landroidx/annotation/InspectableProperty$ValueType;",
+        "EnumEntry",
+        "FlagEntry",
+        "ValueType",
+        "annotation"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x8,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+.annotation runtime Lkotlin/annotation/Retention;
+    value = .enum Lkotlin/annotation/AnnotationRetention;->SOURCE:Lkotlin/annotation/AnnotationRetention;
+.end annotation
+
+.annotation runtime Lkotlin/annotation/Target;
+    allowedTargets = {
+        .enum Lkotlin/annotation/AnnotationTarget;->FUNCTION:Lkotlin/annotation/AnnotationTarget;,
+        .enum Lkotlin/annotation/AnnotationTarget;->PROPERTY_GETTER:Lkotlin/annotation/AnnotationTarget;,
+        .enum Lkotlin/annotation/AnnotationTarget;->PROPERTY_SETTER:Lkotlin/annotation/AnnotationTarget;
     }
 .end annotation
 

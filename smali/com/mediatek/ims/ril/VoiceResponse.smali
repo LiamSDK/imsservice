@@ -465,18 +465,14 @@
 .end method
 
 .method public getClipResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "status"    # I
 
     .line 202
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/mediatek/ims/ril/VoiceResponse;->responseInts(Landroid/hardware/radio/RadioResponseInfo;[I)V
 
@@ -485,23 +481,15 @@
 .end method
 
 .method public getClirResponse(Landroid/hardware/radio/RadioResponseInfo;II)V
-    .locals 2
+    .locals 1
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "n"    # I
     .param p3, "m"    # I
 
     .line 211
-    const/4 v0, 0x2
+    filled-new-array {p2, p3}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
-
-    const/4 v1, 0x1
-
-    aput p3, v0, v1
+    move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/mediatek/ims/ril/VoiceResponse;->responseInts(Landroid/hardware/radio/RadioResponseInfo;[I)V
 
@@ -529,7 +517,7 @@
     .locals 1
 
     .line 422
-    const-string v0, "e9ffc70247a89e6c1e526c6334c37da46f33ebea"
+    const-string v0, "8c5e0d53dc67b5ed221b2da0570a17684d973a20"
 
     return-object v0
 .end method
@@ -538,7 +526,7 @@
     .locals 1
 
     .line 427
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
     return v0
 .end method
@@ -642,18 +630,14 @@
 .end method
 
 .method public getTtyModeResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "mode"    # I
 
     .line 267
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/mediatek/ims/ril/VoiceResponse;->responseInts(Landroid/hardware/radio/RadioResponseInfo;[I)V
 

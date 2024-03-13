@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 824
+    .line 877
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 826
+    .line 879
     return-void
 .end method
 
@@ -29,10 +29,10 @@
     .locals 0
     .param p0, "activity"    # Landroid/app/Activity;
 
-    .line 830
+    .line 883
     invoke-virtual {p0}, Landroid/app/Activity;->finishAfterTransition()V
 
-    .line 831
+    .line 884
     return-void
 .end method
 
@@ -40,10 +40,10 @@
     .locals 0
     .param p0, "activity"    # Landroid/app/Activity;
 
-    .line 847
+    .line 900
     invoke-virtual {p0}, Landroid/app/Activity;->postponeEnterTransition()V
 
-    .line 848
+    .line 901
     return-void
 .end method
 
@@ -52,10 +52,10 @@
     .param p0, "activity"    # Landroid/app/Activity;
     .param p1, "callback"    # Landroid/app/SharedElementCallback;
 
-    .line 836
+    .line 889
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setEnterSharedElementCallback(Landroid/app/SharedElementCallback;)V
 
-    .line 837
+    .line 890
     return-void
 .end method
 
@@ -64,10 +64,10 @@
     .param p0, "activity"    # Landroid/app/Activity;
     .param p1, "callback"    # Landroid/app/SharedElementCallback;
 
-    .line 842
+    .line 895
     invoke-virtual {p0, p1}, Landroid/app/Activity;->setExitSharedElementCallback(Landroid/app/SharedElementCallback;)V
 
-    .line 843
+    .line 896
     return-void
 .end method
 
@@ -75,9 +75,9 @@
     .locals 0
     .param p0, "activity"    # Landroid/app/Activity;
 
-    .line 852
+    .line 905
     invoke-virtual {p0}, Landroid/app/Activity;->startPostponedEnterTransition()V
 
-    .line 853
+    .line 906
     return-void
 .end method

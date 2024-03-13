@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1109
+    .line 1092
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1111
+    .line 1094
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "uri"    # Landroid/net/Uri;
 
-    .line 1115
+    .line 1098
     invoke-static {p0}, Landroid/graphics/drawable/Icon;->createWithAdaptiveBitmapContentUri(Landroid/net/Uri;)Landroid/graphics/drawable/Icon;
 
     move-result-object v0

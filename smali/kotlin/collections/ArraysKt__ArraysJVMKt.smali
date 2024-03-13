@@ -41,7 +41,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -87,20 +87,13 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.arrayOfNulls>"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, [Ljava/lang/Object;
 
     return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.arrayOfNulls>"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public static final contentDeepHashCode([Ljava/lang/Object;)I
@@ -197,23 +190,23 @@
 
     .line 62
     .local v1, "$i$f$emptyArray":I
-    const/4 v2, 0x0
+    const-string v2, "T?"
 
-    const-string v3, "T?"
+    const/4 v3, 0x0
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->reifiedOperationMarker(ILjava/lang/String;)V
+    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->reifiedOperationMarker(ILjava/lang/String;)V
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v2, v3, [Ljava/lang/Object;
 
-    .end local v1    # "$i$f$emptyArray":I
     goto :goto_0
 
     .line 18
+    .end local v1    # "$i$f$emptyArray":I
     :cond_0
-    move-object v1, p0
+    move-object v2, p0
 
     :goto_0
-    return-object v1
+    return-object v2
 .end method
 
 .method private static final toString([BLjava/nio/charset/Charset;)Ljava/lang/String;
@@ -262,35 +255,19 @@
 
     check-cast v1, Ljava/util/Collection;
 
-    .line 36
-    nop
-
     .line 38
     .local v1, "thisCollection":Ljava/util/Collection;
-    const/4 v2, 0x0
+    const-string v2, "T?"
 
-    const-string v3, "T?"
+    const/4 v3, 0x0
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->reifiedOperationMarker(ILjava/lang/String;)V
+    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->reifiedOperationMarker(ILjava/lang/String;)V
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v2, v3, [Ljava/lang/Object;
 
     invoke-interface {v1, v2}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v2
 
-    if-eqz v2, :cond_0
-
-    check-cast v2, [Ljava/lang/Object;
-
     return-object v2
-
-    :cond_0
-    new-instance v2, Ljava/lang/NullPointerException;
-
-    const-string v3, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-direct {v2, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v2
 .end method

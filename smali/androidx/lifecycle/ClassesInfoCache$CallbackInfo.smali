@@ -13,6 +13,9 @@
     name = "CallbackInfo"
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # instance fields
 .field final mEventToHandlers:Ljava/util/Map;
@@ -52,21 +55,21 @@
         }
     .end annotation
 
-    .line 169
+    .line 174
     .local p1, "handlerToEvent":Ljava/util/Map;, "Ljava/util/Map<Landroidx/lifecycle/ClassesInfoCache$MethodReference;Landroidx/lifecycle/Lifecycle$Event;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
+    .line 175
     iput-object p1, p0, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->mHandlerToEvent:Ljava/util/Map;
 
-    .line 171
+    .line 176
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->mEventToHandlers:Ljava/util/Map;
 
-    .line 172
+    .line 177
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -88,7 +91,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 173
+    .line 178
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Landroidx/lifecycle/ClassesInfoCache$MethodReference;Landroidx/lifecycle/Lifecycle$Event;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -96,7 +99,7 @@
 
     check-cast v2, Landroidx/lifecycle/Lifecycle$Event;
 
-    .line 174
+    .line 179
     .local v2, "event":Landroidx/lifecycle/Lifecycle$Event;
     iget-object v3, p0, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->mEventToHandlers:Ljava/util/Map;
 
@@ -106,23 +109,23 @@
 
     check-cast v3, Ljava/util/List;
 
-    .line 175
+    .line 180
     .local v3, "methodReferences":Ljava/util/List;, "Ljava/util/List<Landroidx/lifecycle/ClassesInfoCache$MethodReference;>;"
     if-nez v3, :cond_0
 
-    .line 176
+    .line 181
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     move-object v3, v4
 
-    .line 177
+    .line 182
     iget-object v4, p0, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->mEventToHandlers:Ljava/util/Map;
 
     invoke-interface {v4, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 179
+    .line 184
     :cond_0
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -132,13 +135,13 @@
 
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 180
+    .line 185
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Landroidx/lifecycle/ClassesInfoCache$MethodReference;Landroidx/lifecycle/Lifecycle$Event;>;"
     .end local v2    # "event":Landroidx/lifecycle/Lifecycle$Event;
     .end local v3    # "methodReferences":Ljava/util/List;, "Ljava/util/List<Landroidx/lifecycle/ClassesInfoCache$MethodReference;>;"
     goto :goto_0
 
-    .line 181
+    .line 186
     :cond_1
     return-void
 .end method
@@ -161,11 +164,11 @@
         }
     .end annotation
 
-    .line 192
+    .line 197
     .local p0, "handlers":Ljava/util/List;, "Ljava/util/List<Landroidx/lifecycle/ClassesInfoCache$MethodReference;>;"
     if-eqz p0, :cond_0
 
-    .line 193
+    .line 198
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -176,7 +179,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 194
+    .line 199
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -185,12 +188,12 @@
 
     invoke-virtual {v1, p1, p2, p3}, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->invokeCallback(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Object;)V
 
-    .line 193
+    .line 198
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 197
+    .line 202
     .end local v0    # "i":I
     :cond_0
     return-void
@@ -204,7 +207,7 @@
     .param p2, "event"    # Landroidx/lifecycle/Lifecycle$Event;
     .param p3, "target"    # Ljava/lang/Object;
 
-    .line 185
+    .line 190
     iget-object v0, p0, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->mEventToHandlers:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -215,7 +218,7 @@
 
     invoke-static {v0, p1, p2, p3}, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->invokeMethodsForEvent(Ljava/util/List;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Object;)V
 
-    .line 186
+    .line 191
     iget-object v0, p0, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->mEventToHandlers:Ljava/util/Map;
 
     sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_ANY:Landroidx/lifecycle/Lifecycle$Event;
@@ -228,6 +231,6 @@
 
     invoke-static {v0, p1, p2, p3}, Landroidx/lifecycle/ClassesInfoCache$CallbackInfo;->invokeMethodsForEvent(Ljava/util/List;Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;Ljava/lang/Object;)V
 
-    .line 188
+    .line 193
     return-void
 .end method

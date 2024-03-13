@@ -47,6 +47,8 @@
 
 .field public static final enum OP112:Lcom/mediatek/ims/OperatorUtils$OPID;
 
+.field public static final enum OP115:Lcom/mediatek/ims/OperatorUtils$OPID;
+
 .field public static final enum OP117:Lcom/mediatek/ims/OperatorUtils$OPID;
 
 .field public static final enum OP12:Lcom/mediatek/ims/OperatorUtils$OPID;
@@ -85,6 +87,8 @@
 
 .field public static final enum OP204:Lcom/mediatek/ims/OperatorUtils$OPID;
 
+.field public static final enum OP218:Lcom/mediatek/ims/OperatorUtils$OPID;
+
 .field public static final enum OP236:Lcom/mediatek/ims/OperatorUtils$OPID;
 
 .field public static final enum OP50:Lcom/mediatek/ims/OperatorUtils$OPID;
@@ -97,8 +101,93 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method private static synthetic $values()[Lcom/mediatek/ims/OperatorUtils$OPID;
     .locals 37
+
+    .line 60
+    sget-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP01:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v1, Lcom/mediatek/ims/OperatorUtils$OPID;->OP02:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OP03:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v3, Lcom/mediatek/ims/OperatorUtils$OPID;->OP05:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OP06:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v5, Lcom/mediatek/ims/OperatorUtils$OPID;->OP06_ES:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v6, Lcom/mediatek/ims/OperatorUtils$OPID;->OP07:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v7, Lcom/mediatek/ims/OperatorUtils$OPID;->OP08:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v8, Lcom/mediatek/ims/OperatorUtils$OPID;->OP09:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v9, Lcom/mediatek/ims/OperatorUtils$OPID;->OP11:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v10, Lcom/mediatek/ims/OperatorUtils$OPID;->OP12:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v11, Lcom/mediatek/ims/OperatorUtils$OPID;->OP15:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v12, Lcom/mediatek/ims/OperatorUtils$OPID;->OP16:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v13, Lcom/mediatek/ims/OperatorUtils$OPID;->OP18:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v14, Lcom/mediatek/ims/OperatorUtils$OPID;->OP50:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v15, Lcom/mediatek/ims/OperatorUtils$OPID;->OP112:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v16, Lcom/mediatek/ims/OperatorUtils$OPID;->OP115:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v17, Lcom/mediatek/ims/OperatorUtils$OPID;->OP129:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v18, Lcom/mediatek/ims/OperatorUtils$OPID;->OP156:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v19, Lcom/mediatek/ims/OperatorUtils$OPID;->OP130:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v20, Lcom/mediatek/ims/OperatorUtils$OPID;->OP120:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v21, Lcom/mediatek/ims/OperatorUtils$OPID;->OP132:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v22, Lcom/mediatek/ims/OperatorUtils$OPID;->OPOi:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v23, Lcom/mediatek/ims/OperatorUtils$OPID;->OP165:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v24, Lcom/mediatek/ims/OperatorUtils$OPID;->OP152:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v25, Lcom/mediatek/ims/OperatorUtils$OPID;->OP117:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v26, Lcom/mediatek/ims/OperatorUtils$OPID;->OP131:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v27, Lcom/mediatek/ims/OperatorUtils$OPID;->OP125:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v28, Lcom/mediatek/ims/OperatorUtils$OPID;->OP132_Peru:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v29, Lcom/mediatek/ims/OperatorUtils$OPID;->OP136_Peru:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v30, Lcom/mediatek/ims/OperatorUtils$OPID;->OP147:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v31, Lcom/mediatek/ims/OperatorUtils$OPID;->OP151:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v32, Lcom/mediatek/ims/OperatorUtils$OPID;->OP204:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v33, Lcom/mediatek/ims/OperatorUtils$OPID;->OP218:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v34, Lcom/mediatek/ims/OperatorUtils$OPID;->OP236:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v35, Lcom/mediatek/ims/OperatorUtils$OPID;->OP_EIOT:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    sget-object v36, Lcom/mediatek/ims/OperatorUtils$OPID;->OPClaro:Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    filled-new-array/range {v0 .. v36}, [Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 61
     new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
@@ -112,567 +201,407 @@
     sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP01:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 62
-    new-instance v1, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v3, "OP02"
+    const-string v1, "OP02"
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v1, v3, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/mediatek/ims/OperatorUtils$OPID;->OP02:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP02:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 63
-    new-instance v3, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v5, "OP03"
+    const-string v1, "OP03"
 
-    const/4 v6, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v3, v5, v6}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v3, Lcom/mediatek/ims/OperatorUtils$OPID;->OP03:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP03:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 64
-    new-instance v5, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v7, "OP05"
+    const-string v1, "OP05"
 
-    const/4 v8, 0x3
+    const/4 v2, 0x3
 
-    invoke-direct {v5, v7, v8}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v5, Lcom/mediatek/ims/OperatorUtils$OPID;->OP05:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP05:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 65
-    new-instance v7, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v9, "OP06"
+    const-string v1, "OP06"
 
-    const/4 v10, 0x4
+    const/4 v2, 0x4
 
-    invoke-direct {v7, v9, v10}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v7, Lcom/mediatek/ims/OperatorUtils$OPID;->OP06:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP06:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 66
-    new-instance v9, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v11, "OP06_ES"
+    const-string v1, "OP06_ES"
 
-    const/4 v12, 0x5
+    const/4 v2, 0x5
 
-    invoke-direct {v9, v11, v12}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v9, Lcom/mediatek/ims/OperatorUtils$OPID;->OP06_ES:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP06_ES:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 67
-    new-instance v11, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v13, "OP07"
+    const-string v1, "OP07"
 
-    const/4 v14, 0x6
+    const/4 v2, 0x6
 
-    invoke-direct {v11, v13, v14}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v11, Lcom/mediatek/ims/OperatorUtils$OPID;->OP07:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP07:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 68
-    new-instance v13, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v15, "OP08"
+    const-string v1, "OP08"
 
-    const/4 v14, 0x7
+    const/4 v2, 0x7
 
-    invoke-direct {v13, v15, v14}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v13, Lcom/mediatek/ims/OperatorUtils$OPID;->OP08:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP08:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 69
-    new-instance v15, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v14, "OP09"
+    const-string v1, "OP09"
 
-    const/16 v12, 0x8
+    const/16 v2, 0x8
 
-    invoke-direct {v15, v14, v12}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v15, Lcom/mediatek/ims/OperatorUtils$OPID;->OP09:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP09:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 70
-    new-instance v14, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v12, "OP11"
+    const-string v1, "OP11"
 
-    const/16 v10, 0x9
+    const/16 v2, 0x9
 
-    invoke-direct {v14, v12, v10}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v14, Lcom/mediatek/ims/OperatorUtils$OPID;->OP11:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP11:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 71
-    new-instance v12, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v10, "OP12"
+    const-string v1, "OP12"
 
-    const/16 v8, 0xa
+    const/16 v2, 0xa
 
-    invoke-direct {v12, v10, v8}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v12, Lcom/mediatek/ims/OperatorUtils$OPID;->OP12:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP12:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 72
-    new-instance v10, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v8, "OP15"
+    const-string v1, "OP15"
 
-    const/16 v6, 0xb
+    const/16 v2, 0xb
 
-    invoke-direct {v10, v8, v6}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v10, Lcom/mediatek/ims/OperatorUtils$OPID;->OP15:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP15:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 73
-    new-instance v8, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP16"
+    const-string v1, "OP16"
 
-    const/16 v4, 0xc
+    const/16 v2, 0xc
 
-    invoke-direct {v8, v6, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v8, Lcom/mediatek/ims/OperatorUtils$OPID;->OP16:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP16:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 74
-    new-instance v6, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v4, "OP18"
+    const-string v1, "OP18"
 
     const/16 v2, 0xd
 
-    invoke-direct {v6, v4, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v6, Lcom/mediatek/ims/OperatorUtils$OPID;->OP18:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP18:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 75
-    new-instance v4, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v2, "OP50"
+    const-string v1, "OP50"
 
-    move-object/from16 v16, v6
+    const/16 v2, 0xe
 
-    const/16 v6, 0xe
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v4, v2, v6}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OP50:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP50:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 76
-    new-instance v2, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP112"
+    const-string v1, "OP112"
 
-    move-object/from16 v17, v4
+    const/16 v2, 0xf
 
-    const/16 v4, 0xf
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OP112:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP112:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 77
-    new-instance v6, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v4, "OP129"
-
-    move-object/from16 v18, v2
+    const-string v1, "OP115"
 
     const/16 v2, 0x10
 
-    invoke-direct {v6, v4, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v6, Lcom/mediatek/ims/OperatorUtils$OPID;->OP129:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP115:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 78
-    new-instance v4, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v2, "OP156"
+    const-string v1, "OP129"
 
-    move-object/from16 v19, v6
+    const/16 v2, 0x11
 
-    const/16 v6, 0x11
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v4, v2, v6}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OP156:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP129:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 79
-    new-instance v2, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP130"
+    const-string v1, "OP156"
 
-    move-object/from16 v20, v4
+    const/16 v2, 0x12
 
-    const/16 v4, 0x12
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OP130:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP156:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 80
-    new-instance v6, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v4, "OP120"
-
-    move-object/from16 v21, v2
+    const-string v1, "OP130"
 
     const/16 v2, 0x13
 
-    invoke-direct {v6, v4, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v6, Lcom/mediatek/ims/OperatorUtils$OPID;->OP120:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP130:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 81
-    new-instance v4, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v2, "OP132"
+    const-string v1, "OP120"
 
-    move-object/from16 v22, v6
+    const/16 v2, 0x14
 
-    const/16 v6, 0x14
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v4, v2, v6}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OP132:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP120:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 82
-    new-instance v2, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OPOi"
+    const-string v1, "OP132"
 
-    move-object/from16 v23, v4
+    const/16 v2, 0x15
 
-    const/16 v4, 0x15
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OPOi:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP132:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 83
-    new-instance v6, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v4, "OP165"
-
-    move-object/from16 v24, v2
+    const-string v1, "OPOi"
 
     const/16 v2, 0x16
 
-    invoke-direct {v6, v4, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v6, Lcom/mediatek/ims/OperatorUtils$OPID;->OP165:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OPOi:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 84
-    new-instance v2, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v4, "OP152"
+    const-string v1, "OP165"
 
-    move-object/from16 v25, v6
+    const/16 v2, 0x17
 
-    const/16 v6, 0x17
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v4, v6}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OP152:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP165:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 85
-    new-instance v4, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP117"
-
-    move-object/from16 v26, v2
+    const-string v1, "OP152"
 
     const/16 v2, 0x18
 
-    invoke-direct {v4, v6, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OP117:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP152:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 86
-    new-instance v2, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP131"
+    const-string v1, "OP117"
 
-    move-object/from16 v27, v4
+    const/16 v2, 0x19
 
-    const/16 v4, 0x19
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OP131:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP117:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 87
-    new-instance v4, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP125"
-
-    move-object/from16 v28, v2
+    const-string v1, "OP131"
 
     const/16 v2, 0x1a
 
-    invoke-direct {v4, v6, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OP125:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP131:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 88
-    new-instance v2, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP132_Peru"
+    const-string v1, "OP125"
 
-    move-object/from16 v29, v4
+    const/16 v2, 0x1b
 
-    const/16 v4, 0x1b
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OP132_Peru:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP125:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 89
-    new-instance v4, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP136_Peru"
-
-    move-object/from16 v30, v2
+    const-string v1, "OP132_Peru"
 
     const/16 v2, 0x1c
 
-    invoke-direct {v4, v6, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OP136_Peru:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP132_Peru:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 90
-    new-instance v2, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP147"
+    const-string v1, "OP136_Peru"
 
-    move-object/from16 v31, v4
+    const/16 v2, 0x1d
 
-    const/16 v4, 0x1d
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OP147:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP136_Peru:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 91
-    new-instance v4, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP151"
-
-    move-object/from16 v32, v2
+    const-string v1, "OP147"
 
     const/16 v2, 0x1e
 
-    invoke-direct {v4, v6, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OP151:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP147:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 92
-    new-instance v2, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP204"
+    const-string v1, "OP151"
 
-    move-object/from16 v33, v4
+    const/16 v2, 0x1f
 
-    const/16 v4, 0x1f
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OP204:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP151:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 93
-    new-instance v4, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP236"
-
-    move-object/from16 v34, v2
+    const-string v1, "OP204"
 
     const/16 v2, 0x20
 
-    invoke-direct {v4, v6, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OP236:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP204:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 94
-    new-instance v2, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OP_EIOT"
+    const-string v1, "OP218"
 
-    move-object/from16 v35, v4
+    const/16 v2, 0x21
 
-    const/16 v4, 0x21
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v6, v4}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->OP_EIOT:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP218:Lcom/mediatek/ims/OperatorUtils$OPID;
 
     .line 95
-    new-instance v4, Lcom/mediatek/ims/OperatorUtils$OPID;
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const-string v6, "OPClaro"
-
-    move-object/from16 v36, v2
+    const-string v1, "OP236"
 
     const/16 v2, 0x22
 
-    invoke-direct {v4, v6, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    sput-object v4, Lcom/mediatek/ims/OperatorUtils$OPID;->OPClaro:Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP236:Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    .line 60
+    .line 96
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
+
+    const-string v1, "OP_EIOT"
+
     const/16 v2, 0x23
 
-    new-array v2, v2, [Lcom/mediatek/ims/OperatorUtils$OPID;
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    const/4 v6, 0x0
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OP_EIOT:Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    aput-object v0, v2, v6
+    .line 97
+    new-instance v0, Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const/4 v0, 0x1
+    const-string v1, "OPClaro"
 
-    aput-object v1, v2, v0
+    const/16 v2, 0x24
 
-    const/4 v0, 0x2
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/OperatorUtils$OPID;-><init>(Ljava/lang/String;I)V
 
-    aput-object v3, v2, v0
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->OPClaro:Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    const/4 v0, 0x3
+    .line 60
+    invoke-static {}, Lcom/mediatek/ims/OperatorUtils$OPID;->$values()[Lcom/mediatek/ims/OperatorUtils$OPID;
 
-    aput-object v5, v2, v0
+    move-result-object v0
 
-    const/4 v0, 0x4
-
-    aput-object v7, v2, v0
-
-    const/4 v0, 0x5
-
-    aput-object v9, v2, v0
-
-    const/4 v0, 0x6
-
-    aput-object v11, v2, v0
-
-    const/4 v0, 0x7
-
-    aput-object v13, v2, v0
-
-    const/16 v0, 0x8
-
-    aput-object v15, v2, v0
-
-    const/16 v0, 0x9
-
-    aput-object v14, v2, v0
-
-    const/16 v0, 0xa
-
-    aput-object v12, v2, v0
-
-    const/16 v0, 0xb
-
-    aput-object v10, v2, v0
-
-    const/16 v0, 0xc
-
-    aput-object v8, v2, v0
-
-    const/16 v0, 0xd
-
-    aput-object v16, v2, v0
-
-    const/16 v0, 0xe
-
-    aput-object v17, v2, v0
-
-    const/16 v0, 0xf
-
-    aput-object v18, v2, v0
-
-    const/16 v0, 0x10
-
-    aput-object v19, v2, v0
-
-    const/16 v0, 0x11
-
-    aput-object v20, v2, v0
-
-    const/16 v0, 0x12
-
-    aput-object v21, v2, v0
-
-    const/16 v0, 0x13
-
-    aput-object v22, v2, v0
-
-    const/16 v0, 0x14
-
-    aput-object v23, v2, v0
-
-    const/16 v0, 0x15
-
-    aput-object v24, v2, v0
-
-    const/16 v0, 0x16
-
-    aput-object v25, v2, v0
-
-    const/16 v0, 0x17
-
-    aput-object v26, v2, v0
-
-    const/16 v0, 0x18
-
-    aput-object v27, v2, v0
-
-    const/16 v0, 0x19
-
-    aput-object v28, v2, v0
-
-    const/16 v0, 0x1a
-
-    aput-object v29, v2, v0
-
-    const/16 v0, 0x1b
-
-    aput-object v30, v2, v0
-
-    const/16 v0, 0x1c
-
-    aput-object v31, v2, v0
-
-    const/16 v0, 0x1d
-
-    aput-object v32, v2, v0
-
-    const/16 v0, 0x1e
-
-    aput-object v33, v2, v0
-
-    const/16 v0, 0x1f
-
-    aput-object v34, v2, v0
-
-    const/16 v0, 0x20
-
-    aput-object v35, v2, v0
-
-    const/16 v0, 0x21
-
-    aput-object v36, v2, v0
-
-    const/16 v0, 0x22
-
-    aput-object v4, v2, v0
-
-    sput-object v2, Lcom/mediatek/ims/OperatorUtils$OPID;->$VALUES:[Lcom/mediatek/ims/OperatorUtils$OPID;
+    sput-object v0, Lcom/mediatek/ims/OperatorUtils$OPID;->$VALUES:[Lcom/mediatek/ims/OperatorUtils$OPID;
 
     return-void
 .end method

@@ -55,7 +55,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -77,55 +77,52 @@
     .param p0, "radix"    # I
 
     .line 313
-    const/4 v0, 0x0
+    new-instance v0, Lkotlin/ranges/IntRange;
 
     const/4 v1, 0x2
 
-    if-gt v1, p0, :cond_0
+    const/16 v2, 0x24
 
-    const/16 v2, 0x25
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    if-ge p0, v2, :cond_0
+    invoke-virtual {v0, p0}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    const/4 v0, 0x1
+    move-result v0
 
-    :cond_0
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 316
     return p0
 
     .line 314
-    :cond_1
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "radix "
+    const-string v4, "radix "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, " was not in valid range "
+    const-string v4, " was not in valid range "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    new-instance v3, Lkotlin/ranges/IntRange;
+    new-instance v4, Lkotlin/ranges/IntRange;
 
-    const/16 v4, 0x24
+    invoke-direct {v4, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    invoke-direct {v3, v1, v4}, Lkotlin/ranges/IntRange;-><init>(II)V
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -384,6 +381,10 @@
 
     move-result-object v0
 
+    const-string v1, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -411,6 +412,10 @@
 
     move-result-object v0
 
+    const-string v1, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-virtual {v0, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
@@ -435,7 +440,7 @@
 .end method
 
 .method public static final titlecase(CLjava/util/Locale;)Ljava/lang/String;
-    .locals 4
+    .locals 5
     .param p0, "$this$titlecase"    # C
     .param p1, "locale"    # Ljava/util/Locale;
 
@@ -454,9 +459,11 @@
 
     move-result v1
 
-    const/4 v2, 0x1
+    const-string v2, "null cannot be cast to non-null type java.lang.String"
 
-    if-le v1, v2, :cond_1
+    const/4 v3, 0x1
+
+    if-le v1, v3, :cond_1
 
     .line 273
     const/16 v1, 0x149
@@ -474,17 +481,21 @@
 
     move-result v1
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v2
+    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    const-string v3, "this as java.lang.String).substring(startIndex)"
+    move-result-object v3
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v4, "this as java.lang.String).substring(startIndex)"
 
-    sget-object v3, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v2, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -516,6 +527,8 @@
     invoke-static {p0}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
 
     move-result-object v1
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v2, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -639,6 +652,10 @@
 
     move-result-object v0
 
+    const-string v1, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -665,6 +682,10 @@
     invoke-static {p0}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
 
     move-result-object v0
+
+    const-string v1, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 

@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
-    .line 455
+    .line 459
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$ImsVTMessagePacker;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,23 +37,23 @@
     .locals 5
     .param p1, "videoProfile"    # Landroid/telecom/VideoProfile;
 
-    .line 459
+    .line 463
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 461
+    .line 465
     .local v0, "flattened":Ljava/lang/StringBuilder;
     const-string v1, "mVideoState"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 462
+    .line 466
     const-string v1, "="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 463
+    .line 467
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -78,20 +78,20 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 464
+    .line 468
     const-string v2, ";"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 465
+    .line 469
     const-string v4, "mQuality"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 466
+    .line 470
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 467
+    .line 471
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -114,10 +114,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 468
+    .line 472
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 471
+    .line 475
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -126,7 +126,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
 
-    .line 473
+    .line 477
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -153,7 +153,7 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 475
+    .line 479
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -165,7 +165,7 @@
     .locals 10
     .param p1, "flattened"    # Ljava/lang/String;
 
-    .line 480
+    .line 484
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -188,22 +188,22 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 482
+    .line 486
     new-instance v0, Ljava/util/StringTokenizer;
 
     const-string v2, ";"
 
     invoke-direct {v0, p1, v2}, Ljava/util/StringTokenizer;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 483
+    .line 487
     .local v0, "tokenizer":Ljava/util/StringTokenizer;
     const/4 v2, 0x3
 
-    .line 484
+    .line 488
     .local v2, "state":I
     const/4 v3, 0x4
 
-    .line 486
+    .line 490
     .local v3, "qty":I
     :goto_0
     invoke-virtual {v0}, Ljava/util/StringTokenizer;->hasMoreElements()Z
@@ -212,12 +212,12 @@
 
     if-eqz v4, :cond_3
 
-    .line 487
+    .line 491
     invoke-virtual {v0}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 488
+    .line 492
     .local v4, "kv":Ljava/lang/String;
     const/16 v5, 0x3d
 
@@ -225,16 +225,16 @@
 
     move-result v5
 
-    .line 489
+    .line 493
     .local v5, "pos":I
     const/4 v6, -0x1
 
     if-ne v5, v6, :cond_0
 
-    .line 490
+    .line 494
     goto :goto_0
 
-    .line 492
+    .line 496
     :cond_0
     const/4 v6, 0x0
 
@@ -242,7 +242,7 @@
 
     move-result-object v6
 
-    .line 493
+    .line 497
     .local v6, "k":Ljava/lang/String;
     add-int/lit8 v7, v5, 0x1
 
@@ -250,7 +250,7 @@
 
     move-result-object v7
 
-    .line 495
+    .line 499
     .local v7, "v":Ljava/lang/String;
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -282,7 +282,7 @@
 
     invoke-static {v1, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 497
+    .line 501
     const-string v8, "mVideoState"
 
     invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -291,7 +291,7 @@
 
     if-eqz v8, :cond_1
 
-    .line 498
+    .line 502
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v8
@@ -302,7 +302,7 @@
 
     goto :goto_1
 
-    .line 499
+    .line 503
     :cond_1
     const-string v8, "mQuality"
 
@@ -312,7 +312,7 @@
 
     if-eqz v8, :cond_2
 
-    .line 500
+    .line 504
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v8
@@ -321,7 +321,7 @@
 
     move-result v3
 
-    .line 502
+    .line 506
     .end local v4    # "kv":Ljava/lang/String;
     .end local v5    # "pos":I
     .end local v6    # "k":Ljava/lang/String;
@@ -330,7 +330,7 @@
     :goto_1
     goto :goto_0
 
-    .line 503
+    .line 507
     :cond_3
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -362,7 +362,7 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 504
+    .line 508
     new-instance v1, Landroid/telecom/VideoProfile;
 
     invoke-direct {v1, v2, v3}, Landroid/telecom/VideoProfile;-><init>(II)V

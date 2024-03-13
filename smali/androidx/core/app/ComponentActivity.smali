@@ -37,17 +37,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 49
+    .line 50
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 57
+    .line 58
     new-instance v0, Landroidx/collection/SimpleArrayMap;
 
     invoke-direct {v0}, Landroidx/collection/SimpleArrayMap;-><init>()V
 
     iput-object v0, p0, Landroidx/core/app/ComponentActivity;->mExtraDataMap:Landroidx/collection/SimpleArrayMap;
 
-    .line 64
+    .line 65
     new-instance v0, Landroidx/lifecycle/LifecycleRegistry;
 
     invoke-direct {v0, p0}, Landroidx/lifecycle/LifecycleRegistry;-><init>(Landroidx/lifecycle/LifecycleOwner;)V
@@ -58,158 +58,131 @@
 .end method
 
 .method private static shouldSkipDump([Ljava/lang/String;)Z
-    .locals 5
+    .locals 4
     .param p0, "args"    # [Ljava/lang/String;
 
-    .line 171
+    .line 170
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_1
 
     array-length v1, p0
 
-    if-lez v1, :cond_5
+    if-lez v1, :cond_1
 
-    .line 173
+    .line 172
     aget-object v1, p0, v0
-
-    const/4 v2, -0x1
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    move-result v3
+    move-result v2
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    sparse-switch v3, :sswitch_data_0
+    sparse-switch v2, :sswitch_data_0
 
     :cond_0
     goto :goto_0
 
     :sswitch_0
-    const-string v3, "--autofill"
+    const-string v2, "--autofill"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    move v2, v0
-
-    goto :goto_0
-
-    :sswitch_1
-    const-string v3, "--contentcapture"
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    move v2, v4
-
-    goto :goto_0
-
-    :sswitch_2
-    const-string v3, "--list-dumpables"
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v2, 0x3
-
-    goto :goto_0
-
-    :sswitch_3
-    const-string v3, "--dump-dumpable"
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v2, 0x4
-
-    goto :goto_0
-
-    :sswitch_4
-    const-string v3, "--translation"
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v2, 0x2
-
-    :goto_0
-    packed-switch v2, :pswitch_data_0
+    move v1, v0
 
     goto :goto_1
 
-    .line 182
-    :pswitch_0
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    :sswitch_1
+    const-string v2, "--contentcapture"
 
-    const/16 v2, 0x21
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-lt v1, v2, :cond_1
+    move-result v1
 
-    move v0, v4
+    if-eqz v1, :cond_0
 
-    :cond_1
-    return v0
+    move v1, v3
 
-    .line 179
-    :pswitch_1
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    goto :goto_1
 
-    const/16 v2, 0x1f
+    :sswitch_2
+    const-string v2, "--list-dumpables"
 
-    if-lt v1, v2, :cond_2
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move v0, v4
+    move-result v1
 
-    :cond_2
-    return v0
+    if-eqz v1, :cond_0
 
-    .line 177
-    :pswitch_2
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v1, 0x3
 
-    const/16 v2, 0x1d
+    goto :goto_1
 
-    if-lt v1, v2, :cond_3
+    :sswitch_3
+    const-string v2, "--dump-dumpable"
 
-    move v0, v4
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :cond_3
-    return v0
+    move-result v1
 
-    .line 175
-    :pswitch_3
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-eqz v1, :cond_0
 
-    const/16 v2, 0x1a
+    const/4 v1, 0x4
 
-    if-lt v1, v2, :cond_4
+    goto :goto_1
 
-    move v0, v4
+    :sswitch_4
+    const-string v2, "--translation"
 
-    :cond_4
-    return v0
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 185
-    :cond_5
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x2
+
+    goto :goto_1
+
+    :goto_0
+    const/4 v1, -0x1
+
     :goto_1
+    packed-switch v1, :pswitch_data_0
+
+    goto :goto_2
+
+    .line 181
+    :pswitch_0
+    invoke-static {}, Landroidx/core/os/BuildCompat;->isAtLeastT()Z
+
+    move-result v0
+
     return v0
+
+    .line 178
+    :pswitch_1
+    return v3
+
+    .line 176
+    :pswitch_2
+    return v3
+
+    .line 174
+    :pswitch_3
+    return v3
+
+    .line 184
+    :cond_1
+    :goto_2
+    return v0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -236,7 +209,7 @@
     .locals 2
     .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .line 138
+    .line 136
     invoke-virtual {p0}, Landroidx/core/app/ComponentActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -245,7 +218,7 @@
 
     move-result-object v0
 
-    .line 139
+    .line 137
     .local v0, "decor":Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -255,12 +228,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 140
+    .line 138
     const/4 v1, 0x1
 
     return v1
 
-    .line 142
+    .line 140
     :cond_0
     invoke-static {p0, v0, p0, p1}, Landroidx/core/view/KeyEventDispatcher;->dispatchKeyEvent(Landroidx/core/view/KeyEventDispatcher$Component;Landroid/view/View;Landroid/view/Window$Callback;Landroid/view/KeyEvent;)Z
 
@@ -273,7 +246,7 @@
     .locals 2
     .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .line 129
+    .line 127
     invoke-virtual {p0}, Landroidx/core/app/ComponentActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -282,7 +255,7 @@
 
     move-result-object v0
 
-    .line 130
+    .line 128
     .local v0, "decor":Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -292,12 +265,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 131
+    .line 129
     const/4 v1, 0x1
 
     return v1
 
-    .line 133
+    .line 131
     :cond_0
     invoke-super {p0, p1}, Landroid/app/Activity;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
 
@@ -321,7 +294,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 108
+    .line 107
     .local p1, "extraDataClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     iget-object v0, p0, Landroidx/core/app/ComponentActivity;->mExtraDataMap:Landroidx/collection/SimpleArrayMap;
 
@@ -337,7 +310,7 @@
 .method public getLifecycle()Landroidx/lifecycle/Lifecycle;
     .locals 1
 
-    .line 114
+    .line 113
     iget-object v0, p0, Landroidx/core/app/ComponentActivity;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
 
     return-object v0
@@ -398,7 +371,7 @@
     .locals 1
     .param p1, "args"    # [Ljava/lang/String;
 
-    .line 167
+    .line 165
     invoke-static {p1}, Landroidx/core/app/ComponentActivity;->shouldSkipDump([Ljava/lang/String;)Z
 
     move-result v0
@@ -412,7 +385,7 @@
     .locals 1
     .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .line 124
+    .line 122
     invoke-super {p0, p1}, Landroid/app/Activity;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0

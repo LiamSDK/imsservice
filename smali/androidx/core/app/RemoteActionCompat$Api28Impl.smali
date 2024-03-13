@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 216
+    .line 209
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 218
+    .line 211
     return-void
 .end method
 
@@ -30,10 +30,10 @@
     .param p0, "remoteAction"    # Landroid/app/RemoteAction;
     .param p1, "shouldShowIcon"    # Z
 
-    .line 227
+    .line 220
     invoke-virtual {p0, p1}, Landroid/app/RemoteAction;->setShouldShowIcon(Z)V
 
-    .line 228
+    .line 221
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .locals 1
     .param p0, "remoteAction"    # Landroid/app/RemoteAction;
 
-    .line 222
+    .line 215
     invoke-virtual {p0}, Landroid/app/RemoteAction;->shouldShowIcon()Z
 
     move-result v0

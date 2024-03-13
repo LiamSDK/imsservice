@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 768
+    .line 777
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 770
+    .line 779
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "contextWrapper"    # Landroid/content/ContextWrapper;
 
-    .line 780
+    .line 789
     invoke-virtual {p0}, Landroid/content/ContextWrapper;->getDisplay()Landroid/view/Display;
 
     move-result-object v0
@@ -43,7 +43,7 @@
     .param p1, "locusId"    # Landroidx/core/content/LocusIdCompat;
     .param p2, "bundle"    # Landroid/os/Bundle;
 
-    .line 775
+    .line 784
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
@@ -58,6 +58,6 @@
     :goto_0
     invoke-virtual {p0, v0, p2}, Landroid/app/Activity;->setLocusContext(Landroid/content/LocusId;Landroid/os/Bundle;)V
 
-    .line 776
+    .line 785
     return-void
 .end method

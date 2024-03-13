@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/widget/EdgeEffectCompat$Api21Impl;,
-        Landroidx/core/widget/EdgeEffectCompat$Api31Impl;
+        Landroidx/core/widget/EdgeEffectCompat$Api31Impl;,
+        Landroidx/core/widget/EdgeEffectCompat$Api21Impl;
     }
 .end annotation
 
@@ -38,16 +38,12 @@
 .end method
 
 .method public static create(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/widget/EdgeEffect;
-    .locals 2
+    .locals 1
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "attrs"    # Landroid/util/AttributeSet;
 
     .line 69
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1f
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 70
     invoke-static {p0, p1}, Landroidx/core/widget/EdgeEffectCompat$Api31Impl;->create(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/widget/EdgeEffect;
@@ -55,26 +51,14 @@
     move-result-object v0
 
     return-object v0
-
-    .line 73
-    :cond_0
-    new-instance v0, Landroid/widget/EdgeEffect;
-
-    invoke-direct {v0, p0}, Landroid/widget/EdgeEffect;-><init>(Landroid/content/Context;)V
-
-    return-object v0
 .end method
 
 .method public static getDistance(Landroid/widget/EdgeEffect;)F
-    .locals 2
+    .locals 1
     .param p0, "edgeEffect"    # Landroid/widget/EdgeEffect;
 
     .line 90
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1f
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 91
     invoke-static {p0}, Landroidx/core/widget/EdgeEffectCompat$Api31Impl;->getDistance(Landroid/widget/EdgeEffect;)F
@@ -82,53 +66,32 @@
     move-result v0
 
     return v0
-
-    .line 93
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public static onPull(Landroid/widget/EdgeEffect;FF)V
-    .locals 2
+    .locals 0
     .param p0, "edgeEffect"    # Landroid/widget/EdgeEffect;
     .param p1, "deltaDistance"    # F
     .param p2, "displacement"    # F
 
     .line 197
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 198
     invoke-static {p0, p1, p2}, Landroidx/core/widget/EdgeEffectCompat$Api21Impl;->onPull(Landroid/widget/EdgeEffect;FF)V
 
-    goto :goto_0
-
-    .line 200
-    :cond_0
-    invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->onPull(F)V
-
     .line 202
-    :goto_0
     return-void
 .end method
 
 .method public static onPullDistance(Landroid/widget/EdgeEffect;FF)F
-    .locals 2
+    .locals 1
     .param p0, "edgeEffect"    # Landroid/widget/EdgeEffect;
     .param p1, "deltaDistance"    # F
     .param p2, "displacement"    # F
 
     .line 245
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1f
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 246
     invoke-static {p0, p1, p2}, Landroidx/core/widget/EdgeEffectCompat$Api31Impl;->onPullDistance(Landroid/widget/EdgeEffect;FF)F
@@ -136,13 +99,6 @@
     move-result v0
 
     return v0
-
-    .line 248
-    :cond_0
-    invoke-static {p0, p1, p2}, Landroidx/core/widget/EdgeEffectCompat;->onPull(Landroid/widget/EdgeEffect;FF)V
-
-    .line 249
-    return p1
 .end method
 
 

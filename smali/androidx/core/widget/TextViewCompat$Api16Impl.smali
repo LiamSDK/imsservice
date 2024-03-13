@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1132
+    .line 1129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1134
+    .line 1131
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "textView"    # Landroid/widget/TextView;
 
-    .line 1148
+    .line 1145
     invoke-virtual {p0}, Landroid/widget/TextView;->getIncludeFontPadding()Z
 
     move-result v0
@@ -41,7 +41,7 @@
     .locals 1
     .param p0, "textView"    # Landroid/widget/TextView;
 
-    .line 1138
+    .line 1135
     invoke-virtual {p0}, Landroid/widget/TextView;->getMaxLines()I
 
     move-result v0
@@ -53,7 +53,7 @@
     .locals 1
     .param p0, "textView"    # Landroid/widget/TextView;
 
-    .line 1143
+    .line 1140
     invoke-virtual {p0}, Landroid/widget/TextView;->getMinLines()I
 
     move-result v0

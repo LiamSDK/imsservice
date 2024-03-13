@@ -47,7 +47,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -94,19 +94,15 @@
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)Z
-    .locals 1
-    .param p1, "element"    # Ljava/lang/Object;
+    .locals 2
 
-    .line 14
-    move-object v0, p1
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    check-cast v0, Ljava/lang/Void;
+    const-string v1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {p0, v0}, Lkotlin/collections/EmptySet;->add(Ljava/lang/Void;)Z
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result v0
-
-    return v0
+    throw v0
 .end method
 
 .method public add(Ljava/lang/Void;)Z

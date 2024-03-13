@@ -60,7 +60,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -100,40 +100,40 @@
     .param p2, "endInclusive"    # I
     .param p3, "step"    # I
 
-    .line 50
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
+    .line 67
     nop
 
-    .line 59
+    .line 68
     if-eqz p3, :cond_1
 
-    .line 60
+    .line 69
     const/high16 v0, -0x80000000
 
     if-eq p3, v0, :cond_0
 
-    .line 61
+    .line 70
     nop
 
-    .line 66
+    .line 75
     iput p1, p0, Lkotlin/ranges/UIntProgression;->first:I
 
-    .line 71
+    .line 80
     invoke-static {p1, p2, p3}, Lkotlin/internal/UProgressionUtilKt;->getProgressionLastElement-Nkh28Cs(III)I
 
     move-result v0
 
     iput v0, p0, Lkotlin/ranges/UIntProgression;->last:I
 
-    .line 76
+    .line 85
     iput p3, p0, Lkotlin/ranges/UIntProgression;->step:I
 
-    .line 53
+    .line 62
     return-void
 
-    .line 60
+    .line 69
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -143,7 +143,7 @@
 
     throw v0
 
-    .line 59
+    .line 68
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -168,7 +168,7 @@
     .locals 2
     .param p1, "other"    # Ljava/lang/Object;
 
-    .line 89
+    .line 98
     instance-of v0, p1, Lkotlin/ranges/UIntProgression;
 
     if-eqz v0, :cond_2
@@ -189,33 +189,25 @@
 
     if-nez v0, :cond_1
 
-    .line 90
+    .line 99
     :cond_0
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
-
-    move-result v0
+    iget v0, p0, Lkotlin/ranges/UIntProgression;->first:I
 
     move-object v1, p1
 
     check-cast v1, Lkotlin/ranges/UIntProgression;
 
-    invoke-virtual {v1}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
-
-    move-result v1
+    iget v1, v1, Lkotlin/ranges/UIntProgression;->first:I
 
     if-ne v0, v1, :cond_2
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
-
-    move-result v0
+    iget v0, p0, Lkotlin/ranges/UIntProgression;->last:I
 
     move-object v1, p1
 
     check-cast v1, Lkotlin/ranges/UIntProgression;
 
-    invoke-virtual {v1}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
-
-    move-result v1
+    iget v1, v1, Lkotlin/ranges/UIntProgression;->last:I
 
     if-ne v0, v1, :cond_2
 
@@ -244,7 +236,7 @@
 .method public final getFirst-pVg5ArA()I
     .locals 1
 
-    .line 66
+    .line 75
     iget v0, p0, Lkotlin/ranges/UIntProgression;->first:I
 
     return v0
@@ -253,7 +245,7 @@
 .method public final getLast-pVg5ArA()I
     .locals 1
 
-    .line 71
+    .line 80
     iget v0, p0, Lkotlin/ranges/UIntProgression;->last:I
 
     return v0
@@ -262,7 +254,7 @@
 .method public final getStep()I
     .locals 1
 
-    .line 76
+    .line 85
     iget v0, p0, Lkotlin/ranges/UIntProgression;->step:I
 
     return v0
@@ -271,7 +263,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 93
+    .line 102
     invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->isEmpty()Z
 
     move-result v0
@@ -283,15 +275,11 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
-
-    move-result v0
+    iget v0, p0, Lkotlin/ranges/UIntProgression;->first:I
 
     mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
-
-    move-result v1
+    iget v1, p0, Lkotlin/ranges/UIntProgression;->last:I
 
     add-int/2addr v0, v1
 
@@ -308,7 +296,7 @@
 .method public isEmpty()Z
     .locals 4
 
-    .line 86
+    .line 95
     iget v0, p0, Lkotlin/ranges/UIntProgression;->step:I
 
     const/4 v1, 0x1
@@ -317,15 +305,11 @@
 
     if-lez v0, :cond_0
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
+    iget v0, p0, Lkotlin/ranges/UIntProgression;->first:I
 
-    move-result v0
+    iget v3, p0, Lkotlin/ranges/UIntProgression;->last:I
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
-
-    move-result v3
-
-    invoke-static {v0, v3}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v0, v3}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -334,15 +318,11 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
+    iget v0, p0, Lkotlin/ranges/UIntProgression;->first:I
 
-    move-result v0
+    iget v3, p0, Lkotlin/ranges/UIntProgression;->last:I
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
-
-    move-result v3
-
-    invoke-static {v0, v3}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {v0, v3}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -369,16 +349,12 @@
         }
     .end annotation
 
-    .line 78
+    .line 87
     new-instance v0, Lkotlin/ranges/UIntProgressionIterator;
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
+    iget v1, p0, Lkotlin/ranges/UIntProgression;->first:I
 
-    move-result v1
-
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
-
-    move-result v2
+    iget v2, p0, Lkotlin/ranges/UIntProgression;->last:I
 
     iget v3, p0, Lkotlin/ranges/UIntProgression;->step:I
 
@@ -394,7 +370,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 95
+    .line 104
     iget v0, p0, Lkotlin/ranges/UIntProgression;->step:I
 
     const-string v1, " step "
@@ -405,9 +381,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
-
-    move-result v2
+    iget v2, p0, Lkotlin/ranges/UIntProgression;->first:I
 
     invoke-static {v2}, Lkotlin/UInt;->toString-impl(I)Ljava/lang/String;
 
@@ -423,9 +397,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
-
-    move-result v2
+    iget v2, p0, Lkotlin/ranges/UIntProgression;->last:I
 
     invoke-static {v2}, Lkotlin/UInt;->toString-impl(I)Ljava/lang/String;
 
@@ -448,9 +420,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getFirst-pVg5ArA()I
-
-    move-result v2
+    iget v2, p0, Lkotlin/ranges/UIntProgression;->first:I
 
     invoke-static {v2}, Lkotlin/UInt;->toString-impl(I)Ljava/lang/String;
 
@@ -466,9 +436,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lkotlin/ranges/UIntProgression;->getLast-pVg5ArA()I
-
-    move-result v2
+    iget v2, p0, Lkotlin/ranges/UIntProgression;->last:I
 
     invoke-static {v2}, Lkotlin/UInt;->toString-impl(I)Ljava/lang/String;
 

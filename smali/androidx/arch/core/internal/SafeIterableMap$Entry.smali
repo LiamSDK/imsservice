@@ -75,19 +75,19 @@
         }
     .end annotation
 
-    .line 368
+    .line 373
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     .local p1, "key":Ljava/lang/Object;, "TK;"
     .local p2, "value":Ljava/lang/Object;, "TV;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 369
+    .line 374
     iput-object p1, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
 
-    .line 370
+    .line 375
     iput-object p2, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mValue:Ljava/lang/Object;
 
-    .line 371
+    .line 376
     return-void
 .end method
 
@@ -97,16 +97,16 @@
     .locals 5
     .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 398
+    .line 403
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     const/4 v0, 0x1
 
     if-ne p1, p0, :cond_0
 
-    .line 399
+    .line 404
     return v0
 
-    .line 401
+    .line 406
     :cond_0
     instance-of v1, p1, Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
@@ -114,16 +114,16 @@
 
     if-nez v1, :cond_1
 
-    .line 402
+    .line 407
     return v2
 
-    .line 404
+    .line 409
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 405
+    .line 410
     .local v1, "entry":Landroidx/arch/core/internal/SafeIterableMap$Entry;
     iget-object v3, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
 
@@ -162,7 +162,7 @@
         }
     .end annotation
 
-    .line 376
+    .line 381
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
 
@@ -177,7 +177,7 @@
         }
     .end annotation
 
-    .line 382
+    .line 387
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mValue:Ljava/lang/Object;
 
@@ -187,7 +187,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 410
+    .line 415
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
 
@@ -214,7 +214,7 @@
         }
     .end annotation
 
-    .line 387
+    .line 392
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     .local p1, "value":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -229,7 +229,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 392
+    .line 397
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

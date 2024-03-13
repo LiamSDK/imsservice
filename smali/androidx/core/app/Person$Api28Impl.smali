@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 363
+    .line 358
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 365
+    .line 360
     return-void
 .end method
 
@@ -29,12 +29,12 @@
     .locals 2
     .param p0, "person"    # Landroid/app/Person;
 
-    .line 369
+    .line 364
     new-instance v0, Landroidx/core/app/Person$Builder;
 
     invoke-direct {v0}, Landroidx/core/app/Person$Builder;-><init>()V
 
-    .line 370
+    .line 365
     invoke-virtual {p0}, Landroid/app/Person;->getName()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -43,14 +43,14 @@
 
     move-result-object v0
 
-    .line 372
+    .line 367
     invoke-virtual {p0}, Landroid/app/Person;->getIcon()Landroid/graphics/drawable/Icon;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 373
+    .line 368
     invoke-virtual {p0}, Landroid/app/Person;->getIcon()Landroid/graphics/drawable/Icon;
 
     move-result-object v1
@@ -61,17 +61,17 @@
 
     goto :goto_0
 
-    .line 374
+    .line 369
     :cond_0
     const/4 v1, 0x0
 
-    .line 371
+    .line 366
     :goto_0
     invoke-virtual {v0, v1}, Landroidx/core/app/Person$Builder;->setIcon(Landroidx/core/graphics/drawable/IconCompat;)Landroidx/core/app/Person$Builder;
 
     move-result-object v0
 
-    .line 375
+    .line 370
     invoke-virtual {p0}, Landroid/app/Person;->getUri()Ljava/lang/String;
 
     move-result-object v1
@@ -80,7 +80,7 @@
 
     move-result-object v0
 
-    .line 376
+    .line 371
     invoke-virtual {p0}, Landroid/app/Person;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -89,7 +89,7 @@
 
     move-result-object v0
 
-    .line 377
+    .line 372
     invoke-virtual {p0}, Landroid/app/Person;->isBot()Z
 
     move-result v1
@@ -98,7 +98,7 @@
 
     move-result-object v0
 
-    .line 378
+    .line 373
     invoke-virtual {p0}, Landroid/app/Person;->isImportant()Z
 
     move-result v1
@@ -107,12 +107,12 @@
 
     move-result-object v0
 
-    .line 379
+    .line 374
     invoke-virtual {v0}, Landroidx/core/app/Person$Builder;->build()Landroidx/core/app/Person;
 
     move-result-object v0
 
-    .line 369
+    .line 364
     return-object v0
 .end method
 
@@ -120,12 +120,12 @@
     .locals 2
     .param p0, "person"    # Landroidx/core/app/Person;
 
-    .line 385
+    .line 380
     new-instance v0, Landroid/app/Person$Builder;
 
     invoke-direct {v0}, Landroid/app/Person$Builder;-><init>()V
 
-    .line 386
+    .line 381
     invoke-virtual {p0}, Landroidx/core/app/Person;->getName()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -134,7 +134,7 @@
 
     move-result-object v0
 
-    .line 387
+    .line 382
     invoke-virtual {p0}, Landroidx/core/app/Person;->getIcon()Landroidx/core/graphics/drawable/IconCompat;
 
     move-result-object v1
@@ -159,7 +159,7 @@
 
     move-result-object v0
 
-    .line 388
+    .line 383
     invoke-virtual {p0}, Landroidx/core/app/Person;->getUri()Ljava/lang/String;
 
     move-result-object v1
@@ -168,7 +168,7 @@
 
     move-result-object v0
 
-    .line 389
+    .line 384
     invoke-virtual {p0}, Landroidx/core/app/Person;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -177,7 +177,7 @@
 
     move-result-object v0
 
-    .line 390
+    .line 385
     invoke-virtual {p0}, Landroidx/core/app/Person;->isBot()Z
 
     move-result v1
@@ -186,7 +186,7 @@
 
     move-result-object v0
 
-    .line 391
+    .line 386
     invoke-virtual {p0}, Landroidx/core/app/Person;->isImportant()Z
 
     move-result v1
@@ -195,11 +195,11 @@
 
     move-result-object v0
 
-    .line 392
+    .line 387
     invoke-virtual {v0}, Landroid/app/Person$Builder;->build()Landroid/app/Person;
 
     move-result-object v0
 
-    .line 385
+    .line 380
     return-object v0
 .end method

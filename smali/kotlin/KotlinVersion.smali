@@ -56,7 +56,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -144,67 +144,50 @@
 .end method
 
 .method private final versionOf(III)I
-    .locals 4
+    .locals 3
     .param p1, "major"    # I
     .param p2, "minor"    # I
     .param p3, "patch"    # I
 
     .line 26
-    const/16 v0, 0x100
+    new-instance v0, Lkotlin/ranges/IntRange;
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0xff
+
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    invoke-virtual {v0, p1}, Lkotlin/ranges/IntRange;->contains(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Lkotlin/ranges/IntRange;
+
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    invoke-virtual {v0, p2}, Lkotlin/ranges/IntRange;->contains(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Lkotlin/ranges/IntRange;
+
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    invoke-virtual {v0, p3}, Lkotlin/ranges/IntRange;->contains(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
-
-    if-ltz p1, :cond_0
-
-    if-ge p1, v0, :cond_0
-
-    move v3, v1
-
-    goto :goto_0
-
     :cond_0
-    move v3, v2
-
-    :goto_0
-    if-eqz v3, :cond_3
-
-    if-ltz p2, :cond_1
-
-    if-ge p2, v0, :cond_1
-
-    move v3, v1
-
-    goto :goto_1
-
-    :cond_1
-    move v3, v2
-
-    :goto_1
-    if-eqz v3, :cond_3
-
-    if-ltz p3, :cond_2
-
-    if-ge p3, v0, :cond_2
-
-    move v0, v1
-
-    goto :goto_2
-
-    :cond_2
-    move v0, v2
-
-    :goto_2
-    if-eqz v0, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move v1, v2
-
-    :goto_3
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_1
 
     .line 29
     shl-int/lit8 v0, p1, 0x10
@@ -218,7 +201,7 @@
     return v0
 
     .line 26
-    :cond_4
+    :cond_1
     const/4 v0, 0x0
 
     .line 27

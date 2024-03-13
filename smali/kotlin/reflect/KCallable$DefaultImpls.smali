@@ -17,7 +17,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -25,6 +25,12 @@
 
 
 # direct methods
+.method public static synthetic getName$annotations()V
+    .locals 0
+
+    return-void
+.end method
+
 .method public static synthetic getTypeParameters$annotations()V
     .locals 0
 

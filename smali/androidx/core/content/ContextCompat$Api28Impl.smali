@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1093
+    .line 1096
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1095
+    .line 1098
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "obj"    # Landroid/content/Context;
 
-    .line 1099
+    .line 1102
     invoke-virtual {p0}, Landroid/content/Context;->getMainExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0

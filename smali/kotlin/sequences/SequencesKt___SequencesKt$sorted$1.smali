@@ -38,7 +38,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -70,7 +70,7 @@
 
     iput-object p1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$sorted$1;->$this_sorted:Lkotlin/sequences/Sequence;
 
-    .line 583
+    .line 584
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -88,18 +88,18 @@
         }
     .end annotation
 
-    .line 585
+    .line 586
     iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$sorted$1;->$this_sorted:Lkotlin/sequences/Sequence;
 
     invoke-static {v0}, Lkotlin/sequences/SequencesKt;->toMutableList(Lkotlin/sequences/Sequence;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 586
+    .line 587
     .local v0, "sortedList":Ljava/util/List;
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->sort(Ljava/util/List;)V
 
-    .line 587
+    .line 588
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1

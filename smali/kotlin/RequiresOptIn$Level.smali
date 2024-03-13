@@ -36,7 +36,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -53,23 +53,15 @@
 
 # direct methods
 .method private static final synthetic $values()[Lkotlin/RequiresOptIn$Level;
-    .locals 3
+    .locals 2
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lkotlin/RequiresOptIn$Level;
-
-    sget-object v1, Lkotlin/RequiresOptIn$Level;->WARNING:Lkotlin/RequiresOptIn$Level;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/RequiresOptIn$Level;->WARNING:Lkotlin/RequiresOptIn$Level;
 
     sget-object v1, Lkotlin/RequiresOptIn$Level;->ERROR:Lkotlin/RequiresOptIn$Level;
 
-    const/4 v2, 0x1
+    filled-new-array {v0, v1}, [Lkotlin/RequiresOptIn$Level;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method
@@ -77,7 +69,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 42
+    .line 108
     new-instance v0, Lkotlin/RequiresOptIn$Level;
 
     const-string v1, "WARNING"
@@ -88,7 +80,7 @@
 
     sput-object v0, Lkotlin/RequiresOptIn$Level;->WARNING:Lkotlin/RequiresOptIn$Level;
 
-    .line 45
+    .line 111
     new-instance v0, Lkotlin/RequiresOptIn$Level;
 
     const-string v1, "ERROR"
@@ -118,7 +110,7 @@
         }
     .end annotation
 
-    .line 40
+    .line 106
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

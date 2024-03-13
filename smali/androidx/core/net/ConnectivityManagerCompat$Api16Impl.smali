@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 175
+    .line 174
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 177
+    .line 176
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "connectivityManager"    # Landroid/net/ConnectivityManager;
 
-    .line 182
+    .line 181
     invoke-virtual {p0}, Landroid/net/ConnectivityManager;->isActiveNetworkMetered()Z
 
     move-result v0

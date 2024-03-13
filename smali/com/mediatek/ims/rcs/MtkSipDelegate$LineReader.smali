@@ -27,21 +27,21 @@
     .locals 1
     .param p1, "data"    # [B
 
-    .line 490
+    .line 495
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 491
+    .line 496
     iput-object p1, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->buffer:[B
 
-    .line 492
+    .line 497
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->currPos:I
 
-    .line 493
+    .line 498
     iput v0, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->nextPos:I
 
-    .line 494
+    .line 499
     return-void
 .end method
 
@@ -50,7 +50,7 @@
 .method getCurrPosition()I
     .locals 1
 
-    .line 598
+    .line 603
     iget v0, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->currPos:I
 
     return v0
@@ -59,7 +59,7 @@
 .method getNextPosition()I
     .locals 1
 
-    .line 600
+    .line 605
     iget v0, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->nextPos:I
 
     return v0
@@ -68,7 +68,7 @@
 .method read()[C
     .locals 14
 
-    .line 497
+    .line 502
     iget v0, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->nextPos:I
 
     iget-object v1, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->buffer:[B
@@ -77,41 +77,41 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 498
+    .line 503
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 500
+    .line 505
     :cond_0
     iput v0, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->currPos:I
 
-    .line 501
+    .line 506
     const/16 v0, 0x8
 
-    .line 502
+    .line 507
     .local v0, "MAX_LINES":I
     const/16 v1, 0x8
 
     new-array v2, v1, [I
 
-    .line 503
+    .line 508
     .local v2, "bofs":[I
     new-array v1, v1, [I
 
-    .line 504
+    .line 509
     .local v1, "eofs":[I
     const/4 v3, 0x0
 
-    .line 505
+    .line 510
     .local v3, "lineIdx":I
     const/4 v4, 0x0
 
-    .line 506
+    .line 511
     .local v4, "dataLen":I
     const/4 v5, 0x0
 
-    .line 508
+    .line 513
     .local v5, "nextOffset":I
     const/4 v6, 0x0
 
@@ -121,27 +121,27 @@
 
     if-ge v6, v7, :cond_1
 
-    .line 509
+    .line 514
     const/4 v7, -0x1
 
     aput v7, v2, v6
 
-    .line 510
+    .line 515
     aput v7, v1, v6
 
-    .line 508
+    .line 513
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 513
+    .line 518
     .end local v6    # "i":I
     :cond_1
     iget v6, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->currPos:I
 
     aput v6, v2, v3
 
-    .line 515
+    .line 520
     iget v6, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->currPos:I
 
     .restart local v6    # "i":I
@@ -154,30 +154,30 @@
 
     if-ge v6, v8, :cond_d
 
-    .line 516
+    .line 521
     if-lez v5, :cond_2
 
-    .line 517
+    .line 522
     goto/16 :goto_5
 
-    .line 519
+    .line 524
     :cond_2
     aget-byte v7, v7, v6
 
     sparse-switch v7, :sswitch_data_0
 
-    .line 554
+    .line 559
     aget v7, v1, v3
 
     if-ltz v7, :cond_a
 
-    .line 555
+    .line 560
     move v5, v6
 
-    .line 556
+    .line 561
     goto :goto_4
 
-    .line 521
+    .line 526
     :sswitch_0
     aget v7, v2, v3
 
@@ -185,7 +185,7 @@
 
     aput v6, v2, v3
 
-    .line 522
+    .line 527
     :cond_3
     aget v7, v1, v3
 
@@ -195,14 +195,14 @@
 
     goto :goto_4
 
-    .line 524
+    .line 529
     :cond_4
     move v5, v6
 
-    .line 525
+    .line 530
     goto :goto_4
 
-    .line 528
+    .line 533
     :sswitch_1
     aget v7, v2, v3
 
@@ -210,7 +210,7 @@
 
     aput v6, v2, v3
 
-    .line 529
+    .line 534
     :cond_5
     aget v7, v1, v3
 
@@ -220,26 +220,26 @@
 
     goto :goto_4
 
-    .line 534
+    .line 539
     :sswitch_2
     aget v7, v1, v3
 
     if-ltz v7, :cond_9
 
-    .line 535
+    .line 540
     add-int/lit8 v7, v3, 0x1
 
     array-length v8, v2
 
     if-ge v7, v8, :cond_c
 
-    .line 536
+    .line 541
     add-int/lit8 v3, v3, 0x1
 
-    .line 538
+    .line 543
     add-int/lit8 v7, v6, 0x1
 
-    .line 539
+    .line 544
     .local v7, "j":I
     :goto_2
     iget-object v8, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->buffer:[B
@@ -261,71 +261,71 @@
 
     goto :goto_2
 
-    .line 540
+    .line 545
     :cond_7
     array-length v8, v8
 
     if-ge v7, v8, :cond_8
 
-    .line 541
+    .line 546
     add-int/lit8 v6, v7, -0x1
 
-    .line 542
+    .line 547
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
-    .line 544
+    .line 549
     :cond_8
     add-int/lit8 v3, v3, -0x1
 
-    .line 545
+    .line 550
     move v5, v7
 
-    .line 547
+    .line 552
     .end local v7    # "j":I
     :goto_3
     goto :goto_4
 
-    .line 549
+    .line 554
     :cond_9
     add-int/lit8 v4, v4, 0x1
 
-    .line 551
+    .line 556
     goto :goto_4
 
-    .line 559
+    .line 564
     :cond_a
     aget v7, v2, v3
 
     if-gez v7, :cond_b
 
-    .line 560
+    .line 565
     aput v6, v2, v3
 
-    .line 561
+    .line 566
     :cond_b
     add-int/lit8 v4, v4, 0x1
 
-    .line 515
+    .line 520
     :cond_c
     :goto_4
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    .line 567
+    .line 572
     .end local v6    # "i":I
     :cond_d
     :goto_5
     if-lez v5, :cond_e
 
-    .line 568
+    .line 573
     iput v5, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->nextPos:I
 
     goto :goto_6
 
-    .line 570
+    .line 575
     :cond_e
     aget v6, v2, v3
 
@@ -335,33 +335,33 @@
 
     if-gez v6, :cond_f
 
-    .line 571
+    .line 576
     array-length v6, v7
 
     aput v6, v1, v3
 
-    .line 572
+    .line 577
     :cond_f
     array-length v6, v7
 
     iput v6, p0, Lcom/mediatek/ims/rcs/MtkSipDelegate$LineReader;->nextPos:I
 
-    .line 575
+    .line 580
     :goto_6
     if-nez v4, :cond_10
 
-    .line 576
+    .line 581
     const/4 v6, 0x0
 
     new-array v6, v6, [C
 
     return-object v6
 
-    .line 579
+    .line 584
     :cond_10
     new-array v6, v4, [B
 
-    .line 580
+    .line 585
     .local v6, "bb":[B
     const/4 v7, 0x0
 
@@ -374,25 +374,25 @@
 
     if-ge v7, v10, :cond_13
 
-    .line 581
+    .line 586
     aget v10, v2, v7
 
-    .line 582
+    .line 587
     .local v10, "begin":I
     if-gez v10, :cond_11
 
-    .line 583
+    .line 588
     goto :goto_8
 
-    .line 584
+    .line 589
     :cond_11
     aget v11, v1, v7
 
-    .line 585
+    .line 590
     .local v11, "end":I
     if-lez v7, :cond_12
 
-    .line 586
+    .line 591
     add-int/lit8 v12, v8, 0x1
 
     .end local v8    # "pos":I
@@ -401,7 +401,7 @@
 
     move v8, v12
 
-    .line 588
+    .line 593
     .end local v12    # "pos":I
     .restart local v8    # "pos":I
     :cond_12
@@ -411,19 +411,19 @@
 
     invoke-static {v12, v10, v6, v8, v13}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 589
+    .line 594
     sub-int v12, v11, v10
 
     add-int/2addr v8, v12
 
-    .line 580
+    .line 585
     .end local v10    # "begin":I
     .end local v11    # "end":I
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_7
 
-    .line 591
+    .line 596
     .end local v7    # "i":I
     .end local v8    # "pos":I
     :cond_13
@@ -432,7 +432,7 @@
 
     new-array v7, v7, [C
 
-    .line 592
+    .line 597
     .local v7, "chars":[C
     const/4 v8, 0x0
 
@@ -442,7 +442,7 @@
 
     if-ge v8, v9, :cond_14
 
-    .line 593
+    .line 598
     aget-byte v9, v6, v8
 
     and-int/lit16 v9, v9, 0xff
@@ -451,12 +451,12 @@
 
     aput-char v9, v7, v8
 
-    .line 592
+    .line 597
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_9
 
-    .line 595
+    .line 600
     .end local v8    # "i":I
     :cond_14
     return-object v7

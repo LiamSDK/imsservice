@@ -207,11 +207,11 @@
     if-nez v1, :cond_1
 
     .line 106
-    const/4 v3, 0x0
-
     monitor-exit v0
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     .line 109
     :cond_1

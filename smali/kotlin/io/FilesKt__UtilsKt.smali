@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Utils.kt\nkotlin/io/FilesKt__UtilsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,473:1\n1#2:474\n1261#3,3:475\n*S KotlinDebug\n*F\n+ 1 Utils.kt\nkotlin/io/FilesKt__UtilsKt\n*L\n347#1:475,3\n*E\n"
+    value = "SMAP\nUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Utils.kt\nkotlin/io/FilesKt__UtilsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,473:1\n1#2:474\n1266#3,3:475\n*S KotlinDebug\n*F\n+ 1 Utils.kt\nkotlin/io/FilesKt__UtilsKt\n*L\n347#1:475,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -61,7 +61,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -129,11 +129,11 @@
 
     const/4 v5, 0x0
 
+    const-string v6, "The source file doesn\'t exist."
+
     const/4 v7, 0x2
 
     const/4 v8, 0x0
-
-    const-string v6, "The source file doesn\'t exist."
 
     move-object v3, v0
 
@@ -541,7 +541,7 @@
 
     if-eqz v0, :cond_3
 
-    goto :goto_2
+    goto :goto_1
 
     .line 231
     :cond_3
@@ -559,14 +559,11 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_5
+    if-eqz v0, :cond_5
 
-    goto :goto_1
-
-    :cond_5
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    :goto_1
+    :cond_5
     new-instance v0, Ljava/io/FileInputStream;
 
     .line 235
@@ -630,7 +627,7 @@
     invoke-static {v0, v4}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     .line 242
-    :goto_2
+    :goto_1
     return-object p1
 
     .line 236
@@ -706,11 +703,11 @@
 
     const/4 v5, 0x0
 
+    const-string v6, "The source file doesn\'t exist."
+
     const/4 v7, 0x2
 
     const/4 v8, 0x0
-
-    const-string v6, "The source file doesn\'t exist."
 
     move-object v3, v0
 
@@ -985,6 +982,7 @@
     :cond_1
     const/4 v9, 0x0
 
+    .line 476
     .end local v6    # "it":Ljava/io/File;
     .end local v7    # "res":Z
     .end local v8    # "$i$a$-fold-FilesKt__UtilsKt$deleteRecursively$1":I
@@ -1156,17 +1154,17 @@
     .line 99
     sget-char v0, Ljava/io/File;->separatorChar:C
 
-    const-string v1, "path"
+    const/16 v1, 0x2f
 
-    const/16 v2, 0x2f
+    const-string v2, "path"
 
-    if-eq v0, v2, :cond_0
+    if-eq v0, v1, :cond_0
 
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-char v4, Ljava/io/File;->separatorChar:C
 
@@ -1189,7 +1187,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_0
     return-object v0
@@ -1212,13 +1210,13 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "."
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const-string v3, "."
 
-    invoke-static {v0, v1, v2, v3, v2}, Lkotlin/text/StringsKt;->substringBeforeLast$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v3, v1, v2, v1}, Lkotlin/text/StringsKt;->substringBeforeLast$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1239,7 +1237,7 @@
     move-result-object v0
 
     .line 474
-    .local v0, "$this$normalize_u24lambda_u2d5":Lkotlin/io/FilePathComponents;
+    .local v0, "$this$normalize_u24lambda_u245":Lkotlin/io/FilePathComponents;
     const/4 v1, 0x0
 
     .line 410
@@ -1292,7 +1290,7 @@
 
     move-result-object v0
 
-    .end local v0    # "$this$normalize_u24lambda_u2d5":Lkotlin/io/FilePathComponents;
+    .end local v0    # "$this$normalize_u24lambda_u245":Lkotlin/io/FilePathComponents;
     .end local v1    # "$i$a$-with-FilesKt__UtilsKt$normalize$1":I
     return-object v0
 .end method
@@ -1330,6 +1328,7 @@
 
     move-result-object v1
 
+    :cond_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1356,12 +1355,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
-
-    goto :goto_0
+    if-nez v4, :cond_0
 
     .line 420
-    :cond_0
     const-string v4, ".."
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1486,15 +1482,10 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 474
     .local v0, "p0":Ljava/lang/String;
-    :cond_0
     const/4 v1, 0x0
 
     .line 148
@@ -1503,12 +1494,15 @@
 
     invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    move-object v0, v2
-
     .end local v0    # "p0":Ljava/lang/String;
     .end local v1    # "$i$a$-let-FilesKt__UtilsKt$relativeToOrNull$1":I
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x0
+
     :goto_0
-    return-object v0
+    return-object v2
 .end method
 
 .method public static final relativeToOrSelf(Ljava/io/File;Ljava/io/File;)Ljava/io/File;
@@ -1529,15 +1523,10 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    move-object v2, p0
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 474
     .local v0, "p0":Ljava/lang/String;
-    :cond_0
     const/4 v1, 0x0
 
     .line 138
@@ -1548,6 +1537,11 @@
 
     .end local v0    # "p0":Ljava/lang/String;
     .end local v1    # "$i$a$-let-FilesKt__UtilsKt$relativeToOrSelf$1":I
+    goto :goto_0
+
+    :cond_0
+    move-object v2, p0
+
     :goto_0
     return-object v2
 .end method
@@ -1660,7 +1654,19 @@
     :goto_1
     new-instance v1, Ljava/io/File;
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1730,15 +1736,15 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
-
     invoke-virtual {v0}, Lkotlin/io/FilePathComponents;->getSize()I
 
-    move-result v2
+    move-result v1
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    invoke-virtual {v0, v1, v2}, Lkotlin/io/FilePathComponents;->subPath(II)Ljava/io/File;
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2, v1}, Lkotlin/io/FilePathComponents;->subPath(II)Ljava/io/File;
 
     move-result-object v1
 
@@ -2021,7 +2027,7 @@
     .local v4, "thisCount":I
     move-object/from16 v5, p0
 
-    .local v5, "$this$toRelativeStringOrNull_u24lambda_u2d1":Ljava/io/File;
+    .local v5, "$this$toRelativeStringOrNull_u24lambda_u241":Ljava/io/File;
     const/4 v6, 0x0
 
     .line 163
@@ -2071,7 +2077,7 @@
     nop
 
     .line 162
-    .end local v5    # "$this$toRelativeStringOrNull_u24lambda_u2d1":Ljava/io/File;
+    .end local v5    # "$this$toRelativeStringOrNull_u24lambda_u241":Ljava/io/File;
     .end local v6    # "$i$a$-run-FilesKt__UtilsKt$toRelativeStringOrNull$sameCount$1":I
     .end local v7    # "i":I
     .end local v8    # "maxSameCount":I
@@ -2087,63 +2093,63 @@
     .local v6, "res":Ljava/lang/StringBuilder;
     add-int/lit8 v7, v2, -0x1
 
-    if-gt v5, v7, :cond_5
-
-    :cond_2
-    move v8, v7
-
-    .local v8, "i":I
-    add-int/lit8 v7, v7, -0x1
+    .restart local v7    # "i":I
+    if-gt v5, v7, :cond_4
 
     .line 173
+    :goto_1
     invoke-virtual {v1}, Lkotlin/io/FilePathComponents;->getSegments()Ljava/util/List;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-interface {v9, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v8, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v8
 
-    check-cast v9, Ljava/io/File;
+    check-cast v8, Ljava/io/File;
 
-    invoke-virtual {v9}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/io/File;->getName()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    const-string v10, ".."
+    const-string v9, ".."
 
-    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_3
+    if-eqz v8, :cond_2
 
     .line 174
     return-object v3
 
     .line 177
-    :cond_3
-    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_2
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 179
-    if-eq v8, v5, :cond_4
+    if-eq v7, v5, :cond_3
 
     .line 180
-    sget-char v9, Ljava/io/File;->separatorChar:C
+    sget-char v8, Ljava/io/File;->separatorChar:C
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 172
-    :cond_4
-    if-ne v8, v5, :cond_2
+    :cond_3
+    if-eq v7, v5, :cond_4
+
+    add-int/lit8 v7, v7, -0x1
+
+    goto :goto_1
 
     .line 185
-    .end local v8    # "i":I
-    :cond_5
-    if-ge v5, v4, :cond_7
+    .end local v7    # "i":I
+    :cond_4
+    if-ge v5, v4, :cond_6
 
     .line 187
-    if-ge v5, v2, :cond_6
+    if-ge v5, v2, :cond_5
 
     .line 188
     sget-char v3, Ljava/io/File;->separatorChar:C
@@ -2151,7 +2157,7 @@
     invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 190
-    :cond_6
+    :cond_5
     invoke-virtual {v0}, Lkotlin/io/FilePathComponents;->getSegments()Ljava/util/List;
 
     move-result-object v3
@@ -2197,7 +2203,7 @@
     invoke-static/range {v7 .. v16}, Lkotlin/collections/CollectionsKt;->joinTo$default(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/lang/Appendable;
 
     .line 193
-    :cond_7
+    :cond_6
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3

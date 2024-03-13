@@ -28,7 +28,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -146,15 +146,12 @@
 
     const/4 v2, 0x0
 
-    :cond_0
     :goto_0
     if-ge v2, v1, :cond_1
 
     aget-object v3, p1, v2
 
     .local v3, "e":Ljava/lang/Object;
-    add-int/lit8 v2, v2, 0x1
-
     invoke-interface {p2, v0, v3}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v4
@@ -163,10 +160,13 @@
 
     move-object v0, v3
 
+    .end local v3    # "e":Ljava/lang/Object;
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 203
-    .end local v3    # "e":Ljava/lang/Object;
     :cond_1
     return-object v0
 .end method
@@ -272,15 +272,12 @@
 
     const/4 v2, 0x0
 
-    :cond_0
     :goto_0
     if-ge v2, v1, :cond_1
 
     aget-object v3, p1, v2
 
     .local v3, "e":Ljava/lang/Object;
-    add-int/lit8 v2, v2, 0x1
-
     invoke-interface {p2, v0, v3}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v4
@@ -289,10 +286,13 @@
 
     move-object v0, v3
 
+    .end local v3    # "e":Ljava/lang/Object;
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 391
-    .end local v3    # "e":Ljava/lang/Object;
     :cond_1
     return-object v0
 .end method

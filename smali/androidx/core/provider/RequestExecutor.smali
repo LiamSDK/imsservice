@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/provider/RequestExecutor$DefaultThreadFactory;,
         Landroidx/core/provider/RequestExecutor$ReplyRunnable;,
+        Landroidx/core/provider/RequestExecutor$DefaultThreadFactory;,
         Landroidx/core/provider/RequestExecutor$HandlerExecutor;
     }
 .end annotation
@@ -38,6 +38,10 @@
     .local v7, "threadFactory":Ljava/util/concurrent/ThreadFactory;
     new-instance v8, Ljava/util/concurrent/ThreadPoolExecutor;
 
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
     int-to-long v3, p2
 
     sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
@@ -45,10 +49,6 @@
     new-instance v6, Ljava/util/concurrent/LinkedBlockingDeque;
 
     invoke-direct {v6}, Ljava/util/concurrent/LinkedBlockingDeque;-><init>()V
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
 
     move-object v0, v8
 

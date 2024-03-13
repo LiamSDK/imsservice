@@ -36,16 +36,16 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 390
+    .line 386
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 391
+    .line 387
     iput p1, p0, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;->mStatusCode:I
 
-    .line 392
+    .line 388
     iput-object p2, p0, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;->mFonts:[Landroidx/core/provider/FontsContractCompat$FontInfo;
 
-    .line 393
+    .line 389
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .param p0, "statusCode"    # I
     .param p1, "fonts"    # [Landroidx/core/provider/FontsContractCompat$FontInfo;
 
-    .line 407
+    .line 403
     new-instance v0, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;
 
     invoke-direct {v0, p0, p1}, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;-><init>(I[Landroidx/core/provider/FontsContractCompat$FontInfo;)V
@@ -67,7 +67,7 @@
 .method public getFonts()[Landroidx/core/provider/FontsContractCompat$FontInfo;
     .locals 1
 
-    .line 400
+    .line 396
     iget-object v0, p0, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;->mFonts:[Landroidx/core/provider/FontsContractCompat$FontInfo;
 
     return-object v0
@@ -76,7 +76,7 @@
 .method public getStatusCode()I
     .locals 1
 
-    .line 396
+    .line 392
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontFamilyResult;->mStatusCode:I
 
     return v0

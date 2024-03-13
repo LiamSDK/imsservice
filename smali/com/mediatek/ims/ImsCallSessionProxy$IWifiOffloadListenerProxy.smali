@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/mediatek/ims/ImsCallSessionProxy;)V
     .locals 0
 
-    .line 3955
+    .line 4003
     iput-object p1, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     invoke-direct {p0}, Lcom/mediatek/wfo/WifiOffloadManager$Listener;-><init>()V
@@ -35,7 +35,7 @@
     .param p1, "x0"    # Lcom/mediatek/ims/ImsCallSessionProxy;
     .param p2, "x1"    # Lcom/mediatek/ims/ImsCallSessionProxy$1;
 
-    .line 3955
+    .line 4003
     invoke-direct {p0, p1}, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;-><init>(Lcom/mediatek/ims/ImsCallSessionProxy;)V
 
     return-void
@@ -49,7 +49,7 @@
     .param p2, "stage"    # I
     .param p3, "ratType"    # I
 
-    .line 3958
+    .line 4006
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     invoke-static {v0}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$900(Lcom/mediatek/ims/ImsCallSessionProxy;)I
@@ -58,10 +58,10 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 3959
+    .line 4007
     return-void
 
-    .line 3962
+    .line 4010
     :cond_0
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
@@ -77,7 +77,7 @@
 
     goto :goto_1
 
-    .line 3966
+    .line 4014
     :cond_1
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
@@ -85,59 +85,59 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$12400(Lcom/mediatek/ims/ImsCallSessionProxy;I)I
+    invoke-static {v0, v1}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$12500(Lcom/mediatek/ims/ImsCallSessionProxy;I)I
 
     move-result v0
 
-    .line 3967
+    .line 4015
     .local v0, "srcRadioTech":I
     iget-object v1, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    invoke-static {v1, p3}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$12400(Lcom/mediatek/ims/ImsCallSessionProxy;I)I
+    invoke-static {v1, p3}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$12500(Lcom/mediatek/ims/ImsCallSessionProxy;I)I
 
     move-result v1
 
-    .line 3970
+    .line 4018
     .local v1, "targetRadioTech":I
     iget-object v2, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    invoke-static {v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$12500(Lcom/mediatek/ims/ImsCallSessionProxy;)Z
+    invoke-static {v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$12600(Lcom/mediatek/ims/ImsCallSessionProxy;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 3971
+    .line 4019
     iget-object v2, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     const/4 v3, 0x0
 
-    invoke-static {v2, p3, v3}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5100(Lcom/mediatek/ims/ImsCallSessionProxy;II)Z
+    invoke-static {v2, p3, v3}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5200(Lcom/mediatek/ims/ImsCallSessionProxy;II)Z
 
-    .line 3973
+    .line 4021
     :cond_2
     iget-object v2, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    invoke-static {v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5700(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
+    invoke-static {v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5800(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
 
     move-result-object v2
 
     if-eqz v2, :cond_3
 
-    .line 3974
+    .line 4022
     iget-object v2, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    const/4 v3, 0x2
+    const-string v3, "onHandover()"
 
-    const-string v4, "onHandover()"
+    const/4 v4, 0x2
 
-    invoke-static {v2, v4, v3}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$100(Lcom/mediatek/ims/ImsCallSessionProxy;Ljava/lang/String;I)V
+    invoke-static {v2, v3, v4}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$100(Lcom/mediatek/ims/ImsCallSessionProxy;Ljava/lang/String;I)V
 
-    .line 3976
+    .line 4024
     :try_start_0
     iget-object v2, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    invoke-static {v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5700(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
+    invoke-static {v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5800(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
 
     move-result-object v2
 
@@ -149,10 +149,10 @@
 
     invoke-virtual {v2, v3}, Landroid/telephony/ims/ImsCallSessionListener;->callSessionUpdated(Landroid/telephony/ims/ImsCallProfile;)V
 
-    .line 3977
+    .line 4025
     iget-object v2, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    invoke-static {v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5700(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
+    invoke-static {v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5800(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
 
     move-result-object v2
 
@@ -164,30 +164,30 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3980
+    .line 4028
     goto :goto_0
 
-    .line 3978
+    .line 4026
     :catch_0
     move-exception v2
 
-    .line 3979
+    .line 4027
     .local v2, "e":Ljava/lang/RuntimeException;
     iget-object v3, p0, Lcom/mediatek/ims/ImsCallSessionProxy$IWifiOffloadListenerProxy;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    const/4 v4, 0x5
+    const-string v4, "RuntimeException callSessionHandover()"
 
-    const-string v5, "RuntimeException callSessionHandover()"
+    const/4 v5, 0x5
 
-    invoke-static {v3, v5, v4}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$100(Lcom/mediatek/ims/ImsCallSessionProxy;Ljava/lang/String;I)V
+    invoke-static {v3, v4, v5}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$100(Lcom/mediatek/ims/ImsCallSessionProxy;Ljava/lang/String;I)V
 
-    .line 3982
+    .line 4030
     .end local v2    # "e":Ljava/lang/RuntimeException;
     :cond_3
     :goto_0
     return-void
 
-    .line 3963
+    .line 4011
     .end local v0    # "srcRadioTech":I
     .end local v1    # "targetRadioTech":I
     :cond_4
@@ -200,6 +200,6 @@
     .param p1, "simIdx"    # I
     .param p2, "isImsOn"    # Z
 
-    .line 3988
+    .line 4036
     return-void
 .end method

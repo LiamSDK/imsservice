@@ -82,29 +82,9 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .line 307
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-ne v0, v1, :cond_0
-
-    .line 308
-    const-class v0, Landroid/hardware/fingerprint/FingerprintManager;
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/fingerprint/FingerprintManager;
-
-    return-object v0
+    nop
 
     .line 309
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-le v0, v1, :cond_1
-
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -116,7 +96,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 311
     const-class v0, Landroid/hardware/fingerprint/FingerprintManager;
@@ -130,7 +110,7 @@
     return-object v0
 
     .line 313
-    :cond_1
+    :cond_0
     const/4 v0, 0x0
 
     return-object v0

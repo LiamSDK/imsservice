@@ -88,7 +88,9 @@
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 146
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+    const/4 v2, 0x0
+
+    invoke-static {v0, p1, v2}, Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService$_Parcel;->access$000(Landroid/os/Parcel;Ljava/util/List;I)V
 
     .line 147
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
@@ -97,13 +99,11 @@
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeStrongInterface(Landroid/os/IInterface;)V
 
     .line 149
-    iget-object v2, p0, Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+    iget-object v3, p0, Lcom/mediatek/ims/rcs/aidl/IMtkPresenceService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v3, v4, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
 
@@ -229,10 +229,10 @@
     throw v2
 .end method
 
-.method public setRcsCapabilityExchangeAvailable(ZLandroid/telephony/ims/aidl/ICapabilityExchangeEventListener;)V
+.method public setRcsCapabilityExchangeAvailable(ZLcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;)V
     .locals 5
     .param p1, "value"    # Z
-    .param p2, "listener"    # Landroid/telephony/ims/aidl/ICapabilityExchangeEventListener;
+    .param p2, "listener"    # Lcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

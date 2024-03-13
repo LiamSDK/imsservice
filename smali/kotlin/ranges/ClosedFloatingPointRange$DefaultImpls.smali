@@ -17,7 +17,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -27,7 +27,7 @@
 # direct methods
 .method public static contains(Lkotlin/ranges/ClosedFloatingPointRange;Ljava/lang/Comparable;)Z
     .locals 1
-    .param p0, "this"    # Lkotlin/ranges/ClosedFloatingPointRange;
+    .param p0, "$this"    # Lkotlin/ranges/ClosedFloatingPointRange;
     .param p1, "value"    # Ljava/lang/Comparable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -39,15 +39,11 @@
         }
     .end annotation
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "value"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
+    .line 80
     invoke-interface {p0}, Lkotlin/ranges/ClosedFloatingPointRange;->getStart()Ljava/lang/Comparable;
 
     move-result-object v0
@@ -81,7 +77,7 @@
 
 .method public static isEmpty(Lkotlin/ranges/ClosedFloatingPointRange;)Z
     .locals 2
-    .param p0, "this"    # Lkotlin/ranges/ClosedFloatingPointRange;
+    .param p0, "$this"    # Lkotlin/ranges/ClosedFloatingPointRange;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -92,11 +88,7 @@
         }
     .end annotation
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 50
+    .line 81
     invoke-interface {p0}, Lkotlin/ranges/ClosedFloatingPointRange;->getStart()Ljava/lang/Comparable;
 
     move-result-object v0

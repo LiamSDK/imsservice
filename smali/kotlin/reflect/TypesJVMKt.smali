@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTypesJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/TypesJVMKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,229:1\n1#2:230\n1547#3:231\n1618#3,3:232\n1547#3:235\n1618#3,3:236\n1547#3:239\n1618#3,3:240\n*S KotlinDebug\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/TypesJVMKt\n*L\n69#1:231\n69#1:232,3\n71#1:235\n71#1:236,3\n77#1:239\n77#1:240,3\n*E\n"
+    value = "SMAP\nTypesJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/TypesJVMKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,230:1\n1#2:231\n1549#3:232\n1620#3,3:233\n1549#3:236\n1620#3,3:237\n1549#3:240\n1620#3,3:241\n*S KotlinDebug\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/TypesJVMKt\n*L\n69#1:232\n69#1:233,3\n71#1:236\n71#1:237,3\n77#1:240\n77#1:241,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -45,7 +45,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -227,13 +227,13 @@
     :pswitch_1
     invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    invoke-static {v3, v5, v6, v7}, Lkotlin/reflect/TypesJVMKt;->computeJavaType$default(Lkotlin/reflect/KType;ZILjava/lang/Object;)Ljava/lang/reflect/Type;
+    invoke-static {v3, v7, v5, v6}, Lkotlin/reflect/TypesJVMKt;->computeJavaType$default(Lkotlin/reflect/KType;ZILjava/lang/Object;)Ljava/lang/reflect/Type;
 
     move-result-object v5
 
@@ -275,9 +275,21 @@
     :cond_6
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    const-string v4, "kotlin.Array must have exactly one type argument: "
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-static {v4, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "kotlin.Array must have exactly one type argument: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -299,9 +311,21 @@
     :cond_8
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
-    const-string v2, "Unsupported type classifier: "
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static {v2, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Unsupported type classifier: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -365,96 +389,97 @@
     if-nez v0, :cond_1
 
     .line 69
-    const/4 v0, 0x0
+    move-object v0, p1
 
-    move-object v2, p1
+    check-cast v0, Ljava/lang/Iterable;
 
-    check-cast v2, Ljava/lang/Iterable;
+    .local v0, "$this$map$iv":Ljava/lang/Iterable;
+    const/4 v2, 0x0
 
-    .local v2, "$this$map$iv":Ljava/lang/Iterable;
-    const/4 v3, 0x0
+    .line 232
+    .local v2, "$i$f$map":I
+    new-instance v3, Ljava/util/ArrayList;
 
-    .line 231
-    .local v3, "$i$f$map":I
-    new-instance v4, Ljava/util/ArrayList;
-
-    invoke-static {v2, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v1
 
-    invoke-direct {v4, v1}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    move-object v1, v4
+    move-object v1, v3
 
     check-cast v1, Ljava/util/Collection;
 
     .local v1, "destination$iv$iv":Ljava/util/Collection;
-    move-object v4, v2
+    move-object v3, v0
 
-    .local v4, "$this$mapTo$iv$iv":Ljava/lang/Iterable;
-    const/4 v5, 0x0
+    .local v3, "$this$mapTo$iv$iv":Ljava/lang/Iterable;
+    const/4 v4, 0x0
 
-    .line 232
-    .local v5, "$i$f$mapTo":I
-    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 233
+    .local v4, "$i$f$mapTo":I
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    :goto_0
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v6
 
-    :goto_0
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    .line 234
+    .local v6, "item$iv$iv":Ljava/lang/Object;
+    move-object v7, v6
 
-    move-result v7
+    check-cast v7, Lkotlin/reflect/KTypeProjection;
 
-    if-eqz v7, :cond_0
+    .local v7, "p0":Lkotlin/reflect/KTypeProjection;
+    const/4 v8, 0x0
 
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 69
+    .local v8, "$i$a$-map-TypesJVMKt$createPossiblyInnerType$ownerClass$1":I
+    invoke-static {v7}, Lkotlin/reflect/TypesJVMKt;->getJavaType(Lkotlin/reflect/KTypeProjection;)Ljava/lang/reflect/Type;
 
     move-result-object v7
 
-    .line 233
-    .local v7, "item$iv$iv":Ljava/lang/Object;
-    move-object v8, v7
-
-    check-cast v8, Lkotlin/reflect/KTypeProjection;
-
-    .local v8, "p0":Lkotlin/reflect/KTypeProjection;
-    const/4 v9, 0x0
-
-    .line 69
-    .local v9, "$i$a$-map-TypesJVMKt$createPossiblyInnerType$ownerClass$1":I
-    invoke-static {v8}, Lkotlin/reflect/TypesJVMKt;->getJavaType(Lkotlin/reflect/KTypeProjection;)Ljava/lang/reflect/Type;
-
-    move-result-object v8
-
-    .end local v8    # "p0":Lkotlin/reflect/KTypeProjection;
-    .end local v9    # "$i$a$-map-TypesJVMKt$createPossiblyInnerType$ownerClass$1":I
-    invoke-interface {v1, v8}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    .line 234
+    .end local v7    # "p0":Lkotlin/reflect/KTypeProjection;
+    .end local v8    # "$i$a$-map-TypesJVMKt$createPossiblyInnerType$ownerClass$1":I
+    invoke-interface {v1, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 234
-    .end local v7    # "item$iv$iv":Ljava/lang/Object;
+    .line 235
+    .end local v6    # "item$iv$iv":Ljava/lang/Object;
     :cond_0
     nop
 
     .end local v1    # "destination$iv$iv":Ljava/util/Collection;
-    .end local v4    # "$this$mapTo$iv$iv":Ljava/lang/Iterable;
-    .end local v5    # "$i$f$mapTo":I
+    .end local v3    # "$this$mapTo$iv$iv":Ljava/lang/Iterable;
+    .end local v4    # "$i$f$mapTo":I
     check-cast v1, Ljava/util/List;
 
-    .line 231
+    .line 232
     nop
 
     .line 69
-    .end local v2    # "$this$map$iv":Ljava/lang/Iterable;
-    .end local v3    # "$i$f$map":I
-    new-instance v2, Lkotlin/reflect/ParameterizedTypeImpl;
+    .end local v0    # "$this$map$iv":Ljava/lang/Iterable;
+    .end local v2    # "$i$f$map":I
+    new-instance v0, Lkotlin/reflect/ParameterizedTypeImpl;
 
-    invoke-direct {v2, p0, v0, v1}, Lkotlin/reflect/ParameterizedTypeImpl;-><init>(Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/List;)V
+    const/4 v2, 0x0
 
-    check-cast v2, Ljava/lang/reflect/Type;
+    invoke-direct {v0, p0, v2, v1}, Lkotlin/reflect/ParameterizedTypeImpl;-><init>(Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/List;)V
 
-    return-object v2
+    check-cast v0, Ljava/lang/reflect/Type;
+
+    return-object v0
 
     .line 70
     .local v0, "ownerClass":Ljava/lang/Class;
@@ -481,7 +506,7 @@
     .local v3, "$this$map$iv":Ljava/lang/Iterable;
     const/4 v4, 0x0
 
-    .line 235
+    .line 236
     .local v4, "$i$f$map":I
     new-instance v5, Ljava/util/ArrayList;
 
@@ -501,7 +526,7 @@
     .local v5, "$this$mapTo$iv$iv":Ljava/lang/Iterable;
     const/4 v6, 0x0
 
-    .line 236
+    .line 237
     .local v6, "$i$f$mapTo":I
     invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -518,7 +543,7 @@
 
     move-result-object v8
 
-    .line 237
+    .line 238
     .local v8, "item$iv$iv":Ljava/lang/Object;
     move-object v9, v8
 
@@ -533,13 +558,14 @@
 
     move-result-object v9
 
+    .line 238
     .end local v9    # "p0":Lkotlin/reflect/KTypeProjection;
     .end local v10    # "$i$a$-map-TypesJVMKt$createPossiblyInnerType$1":I
     invoke-interface {v1, v9}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 238
+    .line 239
     .end local v8    # "item$iv$iv":Ljava/lang/Object;
     :cond_2
     nop
@@ -549,7 +575,7 @@
     .end local v6    # "$i$f$mapTo":I
     check-cast v1, Ljava/util/List;
 
-    .line 235
+    .line 236
     nop
 
     .line 71
@@ -603,7 +629,7 @@
     .local v4, "$this$map$iv":Ljava/lang/Iterable;
     const/4 v5, 0x0
 
-    .line 239
+    .line 240
     .local v5, "$i$f$map":I
     new-instance v6, Ljava/util/ArrayList;
 
@@ -623,7 +649,7 @@
     .local v6, "$this$mapTo$iv$iv":Ljava/lang/Iterable;
     const/4 v7, 0x0
 
-    .line 240
+    .line 241
     .local v7, "$i$f$mapTo":I
     invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -640,7 +666,7 @@
 
     move-result-object v9
 
-    .line 241
+    .line 242
     .local v9, "item$iv$iv":Ljava/lang/Object;
     move-object v10, v9
 
@@ -655,13 +681,14 @@
 
     move-result-object v10
 
+    .line 242
     .end local v10    # "p0":Lkotlin/reflect/KTypeProjection;
     .end local v11    # "$i$a$-map-TypesJVMKt$createPossiblyInnerType$2":I
     invoke-interface {v1, v10}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 242
+    .line 243
     .end local v9    # "item$iv$iv":Ljava/lang/Object;
     :cond_4
     nop
@@ -671,7 +698,7 @@
     .end local v7    # "$i$f$mapTo":I
     check-cast v1, Ljava/util/List;
 
-    .line 239
+    .line 240
     nop
 
     .line 74
@@ -697,7 +724,7 @@
     .line 28
     instance-of v0, p0, Lkotlin/jvm/internal/KTypeBase;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 30
     move-object v0, p0
@@ -708,13 +735,10 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    .line 230
+    .line 231
     .local v0, "it":Ljava/lang/reflect/Type;
-    :cond_0
     const/4 v1, 0x0
 
     .line 30
@@ -724,15 +748,14 @@
     .line 33
     .end local v0    # "it":Ljava/lang/reflect/Type;
     .end local v1    # "$i$a$-let-TypesJVMKt$javaType$1":I
-    :cond_1
-    :goto_0
-    const/4 v0, 0x0
+    :cond_0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    invoke-static {p0, v0, v1, v2}, Lkotlin/reflect/TypesJVMKt;->computeJavaType$default(Lkotlin/reflect/KType;ZILjava/lang/Object;)Ljava/lang/reflect/Type;
+    invoke-static {p0, v2, v0, v1}, Lkotlin/reflect/TypesJVMKt;->computeJavaType$default(Lkotlin/reflect/KType;ZILjava/lang/Object;)Ljava/lang/reflect/Type;
 
     move-result-object v0
 
@@ -853,12 +876,12 @@
     .locals 4
     .param p0, "type"    # Ljava/lang/reflect/Type;
 
-    .line 223
+    .line 224
     instance-of v0, p0, Ljava/lang/Class;
 
     if-eqz v0, :cond_1
 
-    .line 224
+    .line 225
     move-object v0, p0
 
     check-cast v0, Ljava/lang/Class;
@@ -869,7 +892,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 225
+    .line 226
     sget-object v0, Lkotlin/reflect/TypesJVMKt$typeToString$unwrap$1;->INSTANCE:Lkotlin/reflect/TypesJVMKt$typeToString$unwrap$1;
 
     check-cast v0, Lkotlin/jvm/functions/Function1;
@@ -878,15 +901,23 @@
 
     move-result-object v0
 
-    .line 226
+    .line 227
     .local v0, "unwrap":Lkotlin/sequences/Sequence;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {v0}, Lkotlin/sequences/SequencesKt;->last(Lkotlin/sequences/Sequence;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Ljava/lang/Class;
+    check-cast v2, Ljava/lang/Class;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -902,14 +933,18 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     .end local v0    # "unwrap":Lkotlin/sequences/Sequence;
     goto :goto_0
 
-    .line 227
+    .line 228
     :cond_0
     move-object v0, p0
 
@@ -919,18 +954,18 @@
 
     move-result-object v0
 
-    .line 223
+    .line 224
     :goto_0
     nop
 
-    .line 227
+    .line 228
     const-string v1, "{\n        if (type.isArr\u2026   } else type.name\n    }"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 228
+    .line 229
     :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

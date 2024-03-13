@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hardware/radio/V1_4/IRadioIndication$Stub;,
-        Landroid/hardware/radio/V1_4/IRadioIndication$Proxy;
+        Landroid/hardware/radio/V1_4/IRadioIndication$Proxy;,
+        Landroid/hardware/radio/V1_4/IRadioIndication$Stub;
     }
 .end annotation
 

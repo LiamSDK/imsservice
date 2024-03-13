@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 241
+    .line 239
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 243
+    .line 241
     return-void
 .end method
 
@@ -37,7 +37,7 @@
         }
     .end annotation
 
-    .line 249
+    .line 247
     invoke-virtual {p0, p1, p2, p3}, Landroid/content/ContentResolver;->openFileDescriptor(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0

@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 2062
+    .line 2060
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,10 +28,10 @@
     .locals 3
     .param p0, "typeMask"    # I
 
-    .line 2070
+    .line 2068
     const/4 v0, 0x0
 
-    .line 2071
+    .line 2069
     .local v0, "result":I
     const/4 v1, 0x1
 
@@ -41,17 +41,17 @@
 
     if-gt v1, v2, :cond_1
 
-    .line 2072
+    .line 2070
     and-int v2, p0, v1
 
     if-eqz v2, :cond_0
 
-    .line 2073
+    .line 2071
     sparse-switch v1, :sswitch_data_0
 
     goto :goto_1
 
-    .line 2096
+    .line 2094
     :sswitch_0
     invoke-static {}, Landroid/view/WindowInsets$Type;->displayCutout()I
 
@@ -61,7 +61,7 @@
 
     goto :goto_1
 
-    .line 2093
+    .line 2091
     :sswitch_1
     invoke-static {}, Landroid/view/WindowInsets$Type;->tappableElement()I
 
@@ -69,10 +69,10 @@
 
     or-int/2addr v0, v2
 
-    .line 2094
+    .line 2092
     goto :goto_1
 
-    .line 2090
+    .line 2088
     :sswitch_2
     invoke-static {}, Landroid/view/WindowInsets$Type;->mandatorySystemGestures()I
 
@@ -80,10 +80,10 @@
 
     or-int/2addr v0, v2
 
-    .line 2091
+    .line 2089
     goto :goto_1
 
-    .line 2087
+    .line 2085
     :sswitch_3
     invoke-static {}, Landroid/view/WindowInsets$Type;->systemGestures()I
 
@@ -91,10 +91,10 @@
 
     or-int/2addr v0, v2
 
-    .line 2088
+    .line 2086
     goto :goto_1
 
-    .line 2084
+    .line 2082
     :sswitch_4
     invoke-static {}, Landroid/view/WindowInsets$Type;->ime()I
 
@@ -102,10 +102,10 @@
 
     or-int/2addr v0, v2
 
-    .line 2085
+    .line 2083
     goto :goto_1
 
-    .line 2081
+    .line 2079
     :sswitch_5
     invoke-static {}, Landroid/view/WindowInsets$Type;->captionBar()I
 
@@ -113,10 +113,10 @@
 
     or-int/2addr v0, v2
 
-    .line 2082
+    .line 2080
     goto :goto_1
 
-    .line 2078
+    .line 2076
     :sswitch_6
     invoke-static {}, Landroid/view/WindowInsets$Type;->navigationBars()I
 
@@ -124,10 +124,10 @@
 
     or-int/2addr v0, v2
 
-    .line 2079
+    .line 2077
     goto :goto_1
 
-    .line 2075
+    .line 2073
     :sswitch_7
     invoke-static {}, Landroid/view/WindowInsets$Type;->statusBars()I
 
@@ -135,19 +135,20 @@
 
     or-int/2addr v0, v2
 
-    .line 2071
+    .line 2074
+    nop
+
+    .line 2069
     :cond_0
     :goto_1
     shl-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2101
+    .line 2099
     .end local v1    # "i":I
     :cond_1
     return v0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

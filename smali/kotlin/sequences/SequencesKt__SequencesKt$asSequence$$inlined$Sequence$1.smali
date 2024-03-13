@@ -42,7 +42,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -84,6 +84,7 @@
     .local v0, "$i$a$-Sequence-SequencesKt__SequencesKt$asSequence$1":I
     iget-object v0, p0, Lkotlin/sequences/SequencesKt__SequencesKt$asSequence$$inlined$Sequence$1;->$this_asSequence$inlined:Ljava/util/Iterator;
 
+    .line 22
     .end local v0    # "$i$a$-Sequence-SequencesKt__SequencesKt$asSequence$1":I
     return-object v0
 .end method

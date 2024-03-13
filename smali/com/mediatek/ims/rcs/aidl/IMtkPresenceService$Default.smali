@@ -79,10 +79,10 @@
     return-void
 .end method
 
-.method public setRcsCapabilityExchangeAvailable(ZLandroid/telephony/ims/aidl/ICapabilityExchangeEventListener;)V
+.method public setRcsCapabilityExchangeAvailable(ZLcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;)V
     .locals 0
     .param p1, "value"    # Z
-    .param p2, "listener"    # Landroid/telephony/ims/aidl/ICapabilityExchangeEventListener;
+    .param p2, "listener"    # Lcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -30,7 +30,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -66,17 +66,15 @@
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)V
-    .locals 1
-    .param p1, "element"    # Ljava/lang/Object;
+    .locals 2
 
-    .line 15
-    move-object v0, p1
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    check-cast v0, Ljava/lang/Void;
+    const-string v1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {p0, v0}, Lkotlin/collections/EmptyIterator;->add(Ljava/lang/Void;)V
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    return-void
+    throw v0
 .end method
 
 .method public add(Ljava/lang/Void;)V
@@ -184,17 +182,15 @@
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;)V
-    .locals 1
-    .param p1, "element"    # Ljava/lang/Object;
+    .locals 2
 
-    .line 15
-    move-object v0, p1
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    check-cast v0, Ljava/lang/Void;
+    const-string v1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {p0, v0}, Lkotlin/collections/EmptyIterator;->set(Ljava/lang/Void;)V
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    return-void
+    throw v0
 .end method
 
 .method public set(Ljava/lang/Void;)V

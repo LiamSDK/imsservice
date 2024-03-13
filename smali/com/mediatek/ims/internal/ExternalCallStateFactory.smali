@@ -81,13 +81,13 @@
 
     .line 82
     :cond_0
+    const-string v1, "confirmed"
+
     invoke-virtual {p1}, Lcom/mediatek/ims/internal/DialogInfo$Dialog;->getState()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "confirmed"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -144,13 +144,13 @@
 
     .line 96
     .local v3, "mediaAttribute":Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;
+    const-string v4, "audio"
+
     invoke-virtual {v3}, Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;->getMediaType()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "audio"
-
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -172,13 +172,13 @@
 
     .line 101
     :cond_2
+    const-string v4, "inactive"
+
     invoke-virtual {v3}, Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;->getMediaDirection()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "inactive"
-
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -191,13 +191,13 @@
 
     .line 103
     :cond_3
+    const-string v4, "sendrecv"
+
     invoke-virtual {v3}, Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;->getMediaDirection()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "sendrecv"
-
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -210,13 +210,13 @@
 
     .line 105
     :cond_4
+    const-string v4, "sendonly"
+
     invoke-virtual {v3}, Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;->getMediaDirection()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "sendonly"
-
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -229,13 +229,13 @@
 
     .line 107
     :cond_5
+    const-string v4, "recvonly"
+
     invoke-virtual {v3}, Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;->getMediaDirection()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "recvonly"
-
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -291,13 +291,13 @@
 
     .line 118
     :cond_0
+    const-string v1, "+sip.rendering"
+
     invoke-virtual {p1}, Lcom/mediatek/ims/internal/DialogInfo$Dialog;->getPname()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "+sip.rendering"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -382,13 +382,13 @@
 
     .line 132
     .local v2, "mediaAttribute":Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;
+    const-string v3, "audio"
+
     invoke-virtual {v2}, Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;->getMediaType()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "audio"
-
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v3
 
@@ -512,13 +512,13 @@
 
     .line 146
     .local v3, "mediaAttribute":Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;
+    const-string v4, "video"
+
     invoke-virtual {v3}, Lcom/mediatek/ims/internal/DialogInfo$MediaAttribute;->getMediaType()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "video"
-
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 

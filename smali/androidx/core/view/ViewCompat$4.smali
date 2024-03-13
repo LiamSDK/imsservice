@@ -28,7 +28,7 @@
     .param p1, "tagKey"    # I
     .param p3, "frameworkMinimumSdk"    # I
 
-    .line 4387
+    .line 4658
     .local p2, "type":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Boolean;>;"
     invoke-direct {p0, p1, p2, p3}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;-><init>(ILjava/lang/Class;I)V
 
@@ -41,7 +41,7 @@
     .locals 1
     .param p1, "view"    # Landroid/view/View;
 
-    .line 4392
+    .line 4663
     invoke-static {p1}, Landroidx/core/view/ViewCompat$Api28Impl;->isAccessibilityHeading(Landroid/view/View;)Z
 
     move-result v0
@@ -56,7 +56,7 @@
 .method bridge synthetic frameworkGet(Landroid/view/View;)Ljava/lang/Object;
     .locals 0
 
-    .line 4387
+    .line 4658
     invoke-virtual {p0, p1}, Landroidx/core/view/ViewCompat$4;->frameworkGet(Landroid/view/View;)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -69,21 +69,21 @@
     .param p1, "view"    # Landroid/view/View;
     .param p2, "value"    # Ljava/lang/Boolean;
 
-    .line 4398
+    .line 4669
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     invoke-static {p1, v0}, Landroidx/core/view/ViewCompat$Api28Impl;->setAccessibilityHeading(Landroid/view/View;Z)V
 
-    .line 4399
+    .line 4670
     return-void
 .end method
 
 .method bridge synthetic frameworkSet(Landroid/view/View;Ljava/lang/Object;)V
     .locals 0
 
-    .line 4387
+    .line 4658
     check-cast p2, Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1, p2}, Landroidx/core/view/ViewCompat$4;->frameworkSet(Landroid/view/View;Ljava/lang/Boolean;)V
@@ -96,7 +96,7 @@
     .param p1, "oldValue"    # Ljava/lang/Boolean;
     .param p2, "newValue"    # Ljava/lang/Boolean;
 
-    .line 4403
+    .line 4674
     invoke-virtual {p0, p1, p2}, Landroidx/core/view/ViewCompat$4;->booleanNullToFalseEquals(Ljava/lang/Boolean;Ljava/lang/Boolean;)Z
 
     move-result v0
@@ -109,7 +109,7 @@
 .method bridge synthetic shouldUpdate(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
 
-    .line 4387
+    .line 4658
     check-cast p1, Ljava/lang/Boolean;
 
     check-cast p2, Ljava/lang/Boolean;

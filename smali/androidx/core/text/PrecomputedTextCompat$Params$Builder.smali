@@ -26,63 +26,35 @@
 
 # direct methods
 .method public constructor <init>(Landroid/text/TextPaint;)V
-    .locals 2
+    .locals 1
     .param p1, "paint"    # Landroid/text/TextPaint;
 
-    .line 116
+    .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 117
+    .line 118
     iput-object p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mPaint:Landroid/text/TextPaint;
 
-    .line 118
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
-
     .line 119
+    nop
+
+    .line 120
     const/4 v0, 0x1
 
     iput v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mBreakStrategy:I
 
-    .line 120
+    .line 121
     iput v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mHyphenationFrequency:I
-
-    goto :goto_0
-
-    .line 122
-    :cond_0
-    const/4 v0, 0x0
-
-    iput v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mHyphenationFrequency:I
-
-    iput v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mBreakStrategy:I
-
-    .line 124
-    :goto_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_1
 
     .line 125
+    nop
+
+    .line 126
     sget-object v0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
     iput-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
-    goto :goto_1
-
-    .line 127
-    :cond_1
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mTextDir:Landroid/text/TextDirectionHeuristic;
-
-    .line 129
-    :goto_1
+    .line 130
     return-void
 .end method
 
@@ -91,7 +63,7 @@
 .method public build()Landroidx/core/text/PrecomputedTextCompat$Params;
     .locals 5
 
-    .line 191
+    .line 192
     new-instance v0, Landroidx/core/text/PrecomputedTextCompat$Params;
 
     iget-object v1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mPaint:Landroid/text/TextPaint;
@@ -111,10 +83,10 @@
     .locals 0
     .param p1, "strategy"    # I
 
-    .line 145
+    .line 146
     iput p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mBreakStrategy:I
 
-    .line 146
+    .line 147
     return-object p0
 .end method
 
@@ -122,10 +94,10 @@
     .locals 0
     .param p1, "frequency"    # I
 
-    .line 163
+    .line 164
     iput p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mHyphenationFrequency:I
 
-    .line 164
+    .line 165
     return-object p0
 .end method
 
@@ -133,9 +105,9 @@
     .locals 0
     .param p1, "textDir"    # Landroid/text/TextDirectionHeuristic;
 
-    .line 181
+    .line 182
     iput-object p1, p0, Landroidx/core/text/PrecomputedTextCompat$Params$Builder;->mTextDir:Landroid/text/TextDirectionHeuristic;
 
-    .line 182
+    .line 183
     return-object p0
 .end method

@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTypesJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/WildcardTypeImpl\n+ 2 ArrayIntrinsics.kt\nkotlin/ArrayIntrinsicsKt\n*L\n1#1,229:1\n26#2:230\n*S KotlinDebug\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/WildcardTypeImpl\n*L\n162#1:230\n*E\n"
+    value = "SMAP\nTypesJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/WildcardTypeImpl\n+ 2 ArrayIntrinsics.kt\nkotlin/ArrayIntrinsicsKt\n*L\n1#1,230:1\n26#2:231\n*S KotlinDebug\n*F\n+ 1 TypesJVM.kt\nkotlin/reflect/WildcardTypeImpl\n*L\n163#1:231\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -80,7 +80,7 @@
 
     sput-object v0, Lkotlin/reflect/WildcardTypeImpl;->Companion:Lkotlin/reflect/WildcardTypeImpl$Companion;
 
-    .line 179
+    .line 180
     new-instance v0, Lkotlin/reflect/WildcardTypeImpl;
 
     invoke-direct {v0, v1, v1}, Lkotlin/reflect/WildcardTypeImpl;-><init>(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)V
@@ -95,10 +95,10 @@
     .param p1, "upperBound"    # Ljava/lang/reflect/Type;
     .param p2, "lowerBound"    # Ljava/lang/reflect/Type;
 
-    .line 156
+    .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 157
+    .line 158
     iput-object p1, p0, Lkotlin/reflect/WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
     iput-object p2, p0, Lkotlin/reflect/WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
@@ -109,7 +109,7 @@
 .method public static final synthetic access$getSTAR$cp()Lkotlin/reflect/WildcardTypeImpl;
     .locals 1
 
-    .line 156
+    .line 157
     sget-object v0, Lkotlin/reflect/WildcardTypeImpl;->STAR:Lkotlin/reflect/WildcardTypeImpl;
 
     return-object v0
@@ -121,7 +121,7 @@
     .locals 2
     .param p1, "other"    # Ljava/lang/Object;
 
-    .line 171
+    .line 172
     instance-of v0, p1, Ljava/lang/reflect/WildcardType;
 
     if-eqz v0, :cond_0
@@ -174,33 +174,29 @@
 .end method
 
 .method public getLowerBounds()[Ljava/lang/reflect/Type;
-    .locals 3
+    .locals 2
 
-    .line 162
+    .line 163
     iget-object v0, p0, Lkotlin/reflect/WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
-
-    const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 230
+    .line 231
     .local v0, "$i$f$emptyArray":I
+    const/4 v1, 0x0
+
     new-array v0, v1, [Ljava/lang/reflect/Type;
 
     .end local v0    # "$i$f$emptyArray":I
     goto :goto_0
 
-    .line 162
+    .line 163
     :cond_0
-    const/4 v2, 0x1
+    filled-new-array {v0}, [Ljava/lang/reflect/Type;
 
-    new-array v2, v2, [Ljava/lang/reflect/Type;
-
-    aput-object v0, v2, v1
-
-    move-object v0, v2
+    move-result-object v0
 
     :goto_0
     return-object v0
@@ -209,27 +205,41 @@
 .method public getTypeName()Ljava/lang/String;
     .locals 2
 
-    .line 164
+    .line 165
     nop
 
-    .line 165
+    .line 166
     iget-object v0, p0, Lkotlin/reflect/WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0}, Lkotlin/reflect/TypesJVMKt;->access$typeToString(Ljava/lang/reflect/Type;)Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "? super "
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lkotlin/reflect/WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
+
+    invoke-static {v1}, Lkotlin/reflect/TypesJVMKt;->access$typeToString(Ljava/lang/reflect/Type;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 166
+    .line 167
     :cond_0
     iget-object v0, p0, Lkotlin/reflect/WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
@@ -243,25 +253,37 @@
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Lkotlin/reflect/WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Lkotlin/reflect/TypesJVMKt;->access$typeToString(Ljava/lang/reflect/Type;)Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "? extends "
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lkotlin/reflect/WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
+
+    invoke-static {v1}, Lkotlin/reflect/TypesJVMKt;->access$typeToString(Ljava/lang/reflect/Type;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 167
+    .line 168
     :cond_1
     const-string v0, "?"
 
-    .line 168
+    .line 169
     :goto_0
     return-object v0
 .end method
@@ -269,7 +291,7 @@
 .method public getUpperBounds()[Ljava/lang/reflect/Type;
     .locals 3
 
-    .line 159
+    .line 160
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/reflect/Type;
@@ -293,7 +315,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 174
+    .line 175
     invoke-virtual {p0}, Lkotlin/reflect/WildcardTypeImpl;->getUpperBounds()[Ljava/lang/reflect/Type;
 
     move-result-object v0
@@ -318,7 +340,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 176
+    .line 177
     invoke-virtual {p0}, Lkotlin/reflect/WildcardTypeImpl;->getTypeName()Ljava/lang/String;
 
     move-result-object v0

@@ -34,7 +34,7 @@
     .locals 0
     .param p1, "this$0"    # Landroidx/collection/ArrayMap;
 
-    .line 298
+    .line 373
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     iput-object p1, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
@@ -53,7 +53,7 @@
         }
     .end annotation
 
-    .line 301
+    .line 376
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     .local p1, "object":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -73,7 +73,7 @@
         }
     .end annotation
 
-    .line 306
+    .line 381
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<+TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -86,13 +86,13 @@
 .method public clear()V
     .locals 1
 
-    .line 311
+    .line 386
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v0}, Landroidx/collection/ArrayMap;->clear()V
 
-    .line 312
+    .line 387
     return-void
 .end method
 
@@ -100,11 +100,11 @@
     .locals 1
     .param p1, "object"    # Ljava/lang/Object;
 
-    .line 316
+    .line 392
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
-    invoke-virtual {v0, p1}, Landroidx/collection/ArrayMap;->indexOfValue(Ljava/lang/Object;)I
+    invoke-virtual {v0, p1}, Landroidx/collection/ArrayMap;->__restricted$indexOfValue(Ljava/lang/Object;)I
 
     move-result v0
 
@@ -131,7 +131,7 @@
         }
     .end annotation
 
-    .line 321
+    .line 397
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -149,7 +149,7 @@
 
     move-result-object v1
 
-    .line 322
+    .line 398
     .local v1, "o":Ljava/lang/Object;
     invoke-virtual {p0, v1}, Landroidx/collection/ArrayMap$ValueCollection;->contains(Ljava/lang/Object;)Z
 
@@ -157,17 +157,17 @@
 
     if-nez v2, :cond_0
 
-    .line 323
+    .line 399
     const/4 v0, 0x0
 
     return v0
 
-    .line 325
+    .line 401
     .end local v1    # "o":Ljava/lang/Object;
     :cond_0
     goto :goto_0
 
-    .line 326
+    .line 402
     :cond_1
     const/4 v0, 0x1
 
@@ -177,7 +177,7 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 331
+    .line 407
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
@@ -198,7 +198,7 @@
         }
     .end annotation
 
-    .line 336
+    .line 413
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     new-instance v0, Landroidx/collection/ArrayMap$ValueIterator;
 
@@ -213,29 +213,29 @@
     .locals 2
     .param p1, "object"    # Ljava/lang/Object;
 
-    .line 341
+    .line 419
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
-    invoke-virtual {v0, p1}, Landroidx/collection/ArrayMap;->indexOfValue(Ljava/lang/Object;)I
+    invoke-virtual {v0, p1}, Landroidx/collection/ArrayMap;->__restricted$indexOfValue(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 342
+    .line 420
     .local v0, "index":I
     if-ltz v0, :cond_0
 
-    .line 343
+    .line 421
     iget-object v1, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArrayMap;->removeAt(I)Ljava/lang/Object;
 
-    .line 344
+    .line 422
     const/4 v1, 0x1
 
     return v1
 
-    .line 346
+    .line 424
     :cond_0
     const/4 v1, 0x0
 
@@ -252,18 +252,20 @@
         }
     .end annotation
 
-    .line 351
+    .line 429
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
-    iget v0, v0, Landroidx/collection/ArrayMap;->mSize:I
+    invoke-virtual {v0}, Landroidx/collection/ArrayMap;->size()I
 
-    .line 352
+    move-result v0
+
+    .line 430
     .local v0, "N":I
     const/4 v1, 0x0
 
-    .line 353
+    .line 431
     .local v1, "changed":Z
     const/4 v2, 0x0
 
@@ -271,14 +273,14 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 354
+    .line 432
     iget-object v3, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v3, v2}, Landroidx/collection/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 355
+    .line 433
     .local v3, "cur":Ljava/lang/Object;, "TV;"
     invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
@@ -286,28 +288,28 @@
 
     if-eqz v4, :cond_0
 
-    .line 356
+    .line 434
     iget-object v4, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v4, v2}, Landroidx/collection/ArrayMap;->removeAt(I)Ljava/lang/Object;
 
-    .line 357
+    .line 435
     add-int/lit8 v2, v2, -0x1
 
-    .line 358
+    .line 436
     add-int/lit8 v0, v0, -0x1
 
-    .line 359
+    .line 437
     const/4 v1, 0x1
 
-    .line 353
+    .line 431
     .end local v3    # "cur":Ljava/lang/Object;, "TV;"
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 362
+    .line 440
     .end local v2    # "i":I
     :cond_1
     return v1
@@ -323,18 +325,20 @@
         }
     .end annotation
 
-    .line 367
+    .line 445
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
-    iget v0, v0, Landroidx/collection/ArrayMap;->mSize:I
+    invoke-virtual {v0}, Landroidx/collection/ArrayMap;->size()I
 
-    .line 368
+    move-result v0
+
+    .line 446
     .local v0, "N":I
     const/4 v1, 0x0
 
-    .line 369
+    .line 447
     .local v1, "changed":Z
     const/4 v2, 0x0
 
@@ -342,14 +346,14 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 370
+    .line 448
     iget-object v3, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v3, v2}, Landroidx/collection/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 371
+    .line 449
     .local v3, "cur":Ljava/lang/Object;, "TV;"
     invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
@@ -357,28 +361,28 @@
 
     if-nez v4, :cond_0
 
-    .line 372
+    .line 450
     iget-object v4, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v4, v2}, Landroidx/collection/ArrayMap;->removeAt(I)Ljava/lang/Object;
 
-    .line 373
+    .line 451
     add-int/lit8 v2, v2, -0x1
 
-    .line 374
+    .line 452
     add-int/lit8 v0, v0, -0x1
 
-    .line 375
+    .line 453
     const/4 v1, 0x1
 
-    .line 369
+    .line 447
     .end local v3    # "cur":Ljava/lang/Object;, "TV;"
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 378
+    .line 456
     .end local v2    # "i":I
     :cond_1
     return v1
@@ -387,11 +391,13 @@
 .method public size()I
     .locals 1
 
-    .line 383
+    .line 461
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
-    iget v0, v0, Landroidx/collection/ArrayMap;->mSize:I
+    invoke-virtual {v0}, Landroidx/collection/ArrayMap;->size()I
+
+    move-result v0
 
     return v0
 .end method
@@ -399,17 +405,19 @@
 .method public toArray()[Ljava/lang/Object;
     .locals 4
 
-    .line 388
+    .line 467
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
-    iget v0, v0, Landroidx/collection/ArrayMap;->mSize:I
+    invoke-virtual {v0}, Landroidx/collection/ArrayMap;->size()I
 
-    .line 389
+    move-result v0
+
+    .line 468
     .local v0, "N":I
     new-array v1, v0, [Ljava/lang/Object;
 
-    .line 390
+    .line 469
     .local v1, "result":[Ljava/lang/Object;
     const/4 v2, 0x0
 
@@ -417,7 +425,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 391
+    .line 470
     iget-object v3, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v3, v2}, Landroidx/collection/ArrayMap;->valueAt(I)Ljava/lang/Object;
@@ -426,19 +434,19 @@
 
     aput-object v3, v1, v2
 
-    .line 390
+    .line 469
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 393
+    .line 472
     .end local v2    # "i":I
     :cond_0
     return-object v1
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -447,16 +455,71 @@
         }
     .end annotation
 
-    .line 398
+    .line 479
     .local p0, "this":Landroidx/collection/ArrayMap$ValueCollection;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueCollection;"
     .local p1, "array":[Ljava/lang/Object;, "[TT;"
-    iget-object v0, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
+    invoke-virtual {p0}, Landroidx/collection/ArrayMap$ValueCollection;->size()I
 
-    const/4 v1, 0x1
+    move-result v0
 
-    invoke-virtual {v0, p1, v1}, Landroidx/collection/ArrayMap;->toArrayHelper([Ljava/lang/Object;I)[Ljava/lang/Object;
+    .line 480
+    .local v0, "mySize":I
+    array-length v1, p1
 
-    move-result-object v0
+    if-ge v1, v0, :cond_0
 
-    return-object v0
+    .line 481
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object p1, v1
+
+    check-cast p1, [Ljava/lang/Object;
+
+    .line 483
+    :cond_0
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_0
+    if-ge v1, v0, :cond_1
+
+    .line 484
+    iget-object v2, p0, Landroidx/collection/ArrayMap$ValueCollection;->this$0:Landroidx/collection/ArrayMap;
+
+    invoke-virtual {v2, v1}, Landroidx/collection/ArrayMap;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    aput-object v2, p1, v1
+
+    .line 483
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 486
+    .end local v1    # "i":I
+    :cond_1
+    array-length v1, p1
+
+    if-le v1, v0, :cond_2
+
+    .line 487
+    const/4 v1, 0x0
+
+    aput-object v1, p1, v0
+
+    .line 489
+    :cond_2
+    return-object p1
 .end method

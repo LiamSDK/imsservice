@@ -41,29 +41,21 @@
 .end method
 
 .method public static fromSingleUri(Landroid/content/Context;Landroid/net/Uri;)Landroidx/documentfile/provider/DocumentFile;
-    .locals 3
+    .locals 2
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "singleUri"    # Landroid/net/Uri;
 
     .line 117
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0x13
-
-    if-lt v0, v2, :cond_0
+    nop
 
     .line 118
     new-instance v0, Landroidx/documentfile/provider/SingleDocumentFile;
 
+    const/4 v1, 0x0
+
     invoke-direct {v0, v1, p0, p1}, Landroidx/documentfile/provider/SingleDocumentFile;-><init>(Landroidx/documentfile/provider/DocumentFile;Landroid/content/Context;Landroid/net/Uri;)V
 
     return-object v0
-
-    .line 120
-    :cond_0
-    return-object v1
 .end method
 
 .method public static fromTreeUri(Landroid/content/Context;Landroid/net/Uri;)Landroidx/documentfile/provider/DocumentFile;
@@ -72,13 +64,7 @@
     .param p1, "treeUri"    # Landroid/net/Uri;
 
     .line 135
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0x15
-
-    if-lt v0, v2, :cond_3
+    nop
 
     .line 136
     invoke-static {p1}, Landroidx/core/provider/DocumentsContractCompat;->getTreeDocumentId(Landroid/net/Uri;)Ljava/lang/String;
@@ -89,9 +75,9 @@
     .local v0, "documentId":Ljava/lang/String;
     invoke-static {p0, p1}, Landroidx/core/provider/DocumentsContractCompat;->isDocumentUri(Landroid/content/Context;Landroid/net/Uri;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     .line 138
     invoke-static {p1}, Landroidx/core/provider/DocumentsContractCompat;->getDocumentId(Landroid/net/Uri;)Ljava/lang/String;
@@ -108,22 +94,24 @@
     .line 145
     invoke-static {p1, v0}, Landroidx/core/provider/DocumentsContractCompat;->buildDocumentUriUsingTree(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 146
-    .local v2, "treeDocumentUri":Landroid/net/Uri;
-    if-eqz v2, :cond_1
+    .local v1, "treeDocumentUri":Landroid/net/Uri;
+    if-eqz v1, :cond_1
 
     .line 150
-    new-instance v3, Landroidx/documentfile/provider/TreeDocumentFile;
+    new-instance v2, Landroidx/documentfile/provider/TreeDocumentFile;
 
-    invoke-direct {v3, v1, p0, v2}, Landroidx/documentfile/provider/TreeDocumentFile;-><init>(Landroidx/documentfile/provider/DocumentFile;Landroid/content/Context;Landroid/net/Uri;)V
+    const/4 v3, 0x0
 
-    return-object v3
+    invoke-direct {v2, v3, p0, v1}, Landroidx/documentfile/provider/TreeDocumentFile;-><init>(Landroidx/documentfile/provider/DocumentFile;Landroid/content/Context;Landroid/net/Uri;)V
+
+    return-object v2
 
     .line 147
     :cond_1
-    new-instance v1, Ljava/lang/NullPointerException;
+    new-instance v2, Ljava/lang/NullPointerException;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -143,12 +131,12 @@
 
     move-result-object v3
 
-    invoke-direct {v1, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v2
 
     .line 141
-    .end local v2    # "treeDocumentUri":Landroid/net/Uri;
+    .end local v1    # "treeDocumentUri":Landroid/net/Uri;
     :cond_2
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -173,11 +161,6 @@
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
-
-    .line 152
-    .end local v0    # "documentId":Ljava/lang/String;
-    :cond_3
-    return-object v1
 .end method
 
 .method public static isDocumentUri(Landroid/content/Context;Landroid/net/Uri;)Z

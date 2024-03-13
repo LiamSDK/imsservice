@@ -58,7 +58,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -290,9 +290,6 @@
 
     .line 458
     iget-object v0, p0, Lkotlin/sequences/TakeWhileSequence$iterator$1;->nextItem:Ljava/lang/Object;
-
-    .line 457
-    nop
 
     .line 461
     .local v0, "result":Ljava/lang/Object;

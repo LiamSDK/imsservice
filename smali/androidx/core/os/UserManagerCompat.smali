@@ -23,26 +23,16 @@
 .end method
 
 .method public static isUserUnlocked(Landroid/content/Context;)Z
-    .locals 2
+    .locals 1
     .param p0, "context"    # Landroid/content/Context;
 
     .line 43
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 44
     invoke-static {p0}, Landroidx/core/os/UserManagerCompat$Api24Impl;->isUserUnlocked(Landroid/content/Context;)Z
 
     move-result v0
-
-    return v0
-
-    .line 46
-    :cond_0
-    const/4 v0, 0x1
 
     return v0
 .end method

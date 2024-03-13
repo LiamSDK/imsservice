@@ -43,7 +43,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -76,53 +76,25 @@
 
 # direct methods
 .method private static final synthetic $values()[Lkotlin/text/RegexOption;
-    .locals 3
+    .locals 7
 
-    const/4 v0, 0x7
-
-    new-array v0, v0, [Lkotlin/text/RegexOption;
-
-    sget-object v1, Lkotlin/text/RegexOption;->IGNORE_CASE:Lkotlin/text/RegexOption;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/text/RegexOption;->IGNORE_CASE:Lkotlin/text/RegexOption;
 
     sget-object v1, Lkotlin/text/RegexOption;->MULTILINE:Lkotlin/text/RegexOption;
 
-    const/4 v2, 0x1
+    sget-object v2, Lkotlin/text/RegexOption;->LITERAL:Lkotlin/text/RegexOption;
 
-    aput-object v1, v0, v2
+    sget-object v3, Lkotlin/text/RegexOption;->UNIX_LINES:Lkotlin/text/RegexOption;
 
-    sget-object v1, Lkotlin/text/RegexOption;->LITERAL:Lkotlin/text/RegexOption;
+    sget-object v4, Lkotlin/text/RegexOption;->COMMENTS:Lkotlin/text/RegexOption;
 
-    const/4 v2, 0x2
+    sget-object v5, Lkotlin/text/RegexOption;->DOT_MATCHES_ALL:Lkotlin/text/RegexOption;
 
-    aput-object v1, v0, v2
+    sget-object v6, Lkotlin/text/RegexOption;->CANON_EQ:Lkotlin/text/RegexOption;
 
-    sget-object v1, Lkotlin/text/RegexOption;->UNIX_LINES:Lkotlin/text/RegexOption;
+    filled-new-array/range {v0 .. v6}, [Lkotlin/text/RegexOption;
 
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/RegexOption;->COMMENTS:Lkotlin/text/RegexOption;
-
-    const/4 v2, 0x4
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/RegexOption;->DOT_MATCHES_ALL:Lkotlin/text/RegexOption;
-
-    const/4 v2, 0x5
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lkotlin/text/RegexOption;->CANON_EQ:Lkotlin/text/RegexOption;
-
-    const/4 v2, 0x6
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method

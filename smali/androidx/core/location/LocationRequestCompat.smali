@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/location/LocationRequestCompat$Api19Impl;,
         Landroidx/core/location/LocationRequestCompat$Api31Impl;,
+        Landroidx/core/location/LocationRequestCompat$Api19Impl;,
         Landroidx/core/location/LocationRequestCompat$Builder;,
         Landroidx/core/location/LocationRequestCompat$Quality;
     }
@@ -53,31 +53,31 @@
     .param p9, "minUpdateDistanceMeters"    # F
     .param p10, "maxUpdateDelayMillis"    # J
 
-    .line 108
+    .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 109
+    .line 108
     iput-wide p1, p0, Landroidx/core/location/LocationRequestCompat;->mIntervalMillis:J
 
-    .line 110
+    .line 109
     iput p3, p0, Landroidx/core/location/LocationRequestCompat;->mQuality:I
 
-    .line 111
+    .line 110
     iput-wide p7, p0, Landroidx/core/location/LocationRequestCompat;->mMinUpdateIntervalMillis:J
 
-    .line 112
+    .line 111
     iput-wide p4, p0, Landroidx/core/location/LocationRequestCompat;->mDurationMillis:J
 
-    .line 113
+    .line 112
     iput p6, p0, Landroidx/core/location/LocationRequestCompat;->mMaxUpdates:I
 
-    .line 114
+    .line 113
     iput p9, p0, Landroidx/core/location/LocationRequestCompat;->mMinUpdateDistanceMeters:F
 
-    .line 115
+    .line 114
     iput-wide p10, p0, Landroidx/core/location/LocationRequestCompat;->mMaxUpdateDelayMillis:J
 
-    .line 116
+    .line 115
     return-void
 .end method
 
@@ -87,15 +87,15 @@
     .locals 7
     .param p1, "o"    # Ljava/lang/Object;
 
-    .line 245
+    .line 244
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    .line 246
+    .line 245
     return v0
 
-    .line 248
+    .line 247
     :cond_0
     instance-of v1, p1, Landroidx/core/location/LocationRequestCompat;
 
@@ -103,16 +103,16 @@
 
     if-nez v1, :cond_1
 
-    .line 249
+    .line 248
     return v2
 
-    .line 252
+    .line 251
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/core/location/LocationRequestCompat;
 
-    .line 253
+    .line 252
     .local v1, "that":Landroidx/core/location/LocationRequestCompat;
     iget v3, p0, Landroidx/core/location/LocationRequestCompat;->mQuality:I
 
@@ -154,7 +154,7 @@
 
     iget v4, p0, Landroidx/core/location/LocationRequestCompat;->mMinUpdateDistanceMeters:F
 
-    .line 256
+    .line 255
     invoke-static {v3, v4}, Ljava/lang/Float;->compare(FF)I
 
     move-result v3
@@ -174,7 +174,7 @@
     :cond_2
     move v0, v2
 
-    .line 253
+    .line 252
     :goto_0
     return v0
 .end method
@@ -182,7 +182,7 @@
 .method public getDurationMillis()J
     .locals 2
 
-    .line 167
+    .line 166
     iget-wide v0, p0, Landroidx/core/location/LocationRequestCompat;->mDurationMillis:J
 
     return-wide v0
@@ -191,7 +191,7 @@
 .method public getIntervalMillis()J
     .locals 2
 
-    .line 138
+    .line 137
     iget-wide v0, p0, Landroidx/core/location/LocationRequestCompat;->mIntervalMillis:J
 
     return-wide v0
@@ -200,7 +200,7 @@
 .method public getMaxUpdateDelayMillis()J
     .locals 2
 
-    .line 206
+    .line 205
     iget-wide v0, p0, Landroidx/core/location/LocationRequestCompat;->mMaxUpdateDelayMillis:J
 
     return-wide v0
@@ -209,7 +209,7 @@
 .method public getMaxUpdates()I
     .locals 1
 
-    .line 176
+    .line 175
     iget v0, p0, Landroidx/core/location/LocationRequestCompat;->mMaxUpdates:I
 
     return v0
@@ -218,7 +218,7 @@
 .method public getMinUpdateDistanceMeters()F
     .locals 1
 
-    .line 188
+    .line 187
     iget v0, p0, Landroidx/core/location/LocationRequestCompat;->mMinUpdateDistanceMeters:F
 
     return v0
@@ -227,7 +227,7 @@
 .method public getMinUpdateIntervalMillis()J
     .locals 4
 
-    .line 153
+    .line 152
     iget-wide v0, p0, Landroidx/core/location/LocationRequestCompat;->mMinUpdateIntervalMillis:J
 
     const-wide/16 v2, -0x1
@@ -236,12 +236,12 @@
 
     if-nez v2, :cond_0
 
-    .line 154
+    .line 153
     iget-wide v0, p0, Landroidx/core/location/LocationRequestCompat;->mIntervalMillis:J
 
     return-wide v0
 
-    .line 156
+    .line 155
     :cond_0
     return-wide v0
 .end method
@@ -249,7 +249,7 @@
 .method public getQuality()I
     .locals 1
 
-    .line 124
+    .line 123
     iget v0, p0, Landroidx/core/location/LocationRequestCompat;->mQuality:I
 
     return v0
@@ -258,10 +258,10 @@
 .method public hashCode()I
     .locals 7
 
-    .line 262
+    .line 261
     iget v0, p0, Landroidx/core/location/LocationRequestCompat;->mQuality:I
 
-    .line 263
+    .line 262
     .local v0, "result":I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -277,7 +277,7 @@
 
     add-int/2addr v1, v2
 
-    .line 264
+    .line 263
     .end local v0    # "result":I
     .local v1, "result":I
     mul-int/lit8 v0, v1, 0x1f
@@ -292,7 +292,7 @@
 
     add-int/2addr v0, v2
 
-    .line 265
+    .line 264
     .end local v1    # "result":I
     .restart local v0    # "result":I
     return v0
@@ -301,7 +301,7 @@
 .method public toLocationRequest()Landroid/location/LocationRequest;
     .locals 1
 
-    .line 218
+    .line 217
     invoke-static {p0}, Landroidx/core/location/LocationRequestCompat$Api31Impl;->toLocationRequest(Landroidx/core/location/LocationRequestCompat;)Landroid/location/LocationRequest;
 
     move-result-object v0
@@ -310,30 +310,16 @@
 .end method
 
 .method public toLocationRequest(Ljava/lang/String;)Landroid/location/LocationRequest;
-    .locals 2
+    .locals 1
     .param p1, "provider"    # Ljava/lang/String;
 
+    .line 234
+    nop
+
     .line 235
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1f
-
-    if-lt v0, v1, :cond_0
-
-    .line 236
     invoke-virtual {p0}, Landroidx/core/location/LocationRequestCompat;->toLocationRequest()Landroid/location/LocationRequest;
 
     move-result-object v0
-
-    return-object v0
-
-    .line 239
-    :cond_0
-    invoke-static {p0, p1}, Landroidx/core/location/LocationRequestCompat$Api19Impl;->toLocationRequest(Landroidx/core/location/LocationRequestCompat;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/location/LocationRequest;
 
     return-object v0
 .end method
@@ -341,18 +327,18 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    .line 271
+    .line 270
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 272
+    .line 271
     .local v0, "s":Ljava/lang/StringBuilder;
     const-string v1, "Request["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 273
+    .line 272
     iget-wide v1, p0, Landroidx/core/location/LocationRequestCompat;->mIntervalMillis:J
 
     const-wide v3, 0x7fffffffffffffffL
@@ -361,17 +347,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 274
+    .line 273
     const-string v1, "@"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 275
+    .line 274
     iget-wide v1, p0, Landroidx/core/location/LocationRequestCompat;->mIntervalMillis:J
 
     invoke-static {v1, v2, v0}, Landroidx/core/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 277
+    .line 276
     iget v1, p0, Landroidx/core/location/LocationRequestCompat;->mQuality:I
 
     packed-switch v1, :pswitch_data_0
@@ -379,7 +365,7 @@
     :pswitch_0
     goto :goto_0
 
-    .line 285
+    .line 284
     :pswitch_1
     const-string v1, " LOW_POWER"
 
@@ -387,35 +373,35 @@
 
     goto :goto_0
 
-    .line 282
+    .line 281
     :pswitch_2
     const-string v1, " BALANCED"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 283
+    .line 282
     goto :goto_0
 
-    .line 279
+    .line 278
     :pswitch_3
     const-string v1, " HIGH_ACCURACY"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 280
+    .line 279
     nop
 
-    .line 286
+    .line 285
     :goto_0
     goto :goto_1
 
-    .line 289
+    .line 288
     :cond_0
     const-string v1, "PASSIVE"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 291
+    .line 290
     :goto_1
     iget-wide v1, p0, Landroidx/core/location/LocationRequestCompat;->mDurationMillis:J
 
@@ -423,17 +409,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 292
+    .line 291
     const-string v1, ", duration="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 293
+    .line 292
     iget-wide v1, p0, Landroidx/core/location/LocationRequestCompat;->mDurationMillis:J
 
     invoke-static {v1, v2, v0}, Landroidx/core/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 295
+    .line 294
     :cond_1
     iget v1, p0, Landroidx/core/location/LocationRequestCompat;->mMaxUpdates:I
 
@@ -441,7 +427,7 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 296
+    .line 295
     const-string v1, ", maxUpdates="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -452,7 +438,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 298
+    .line 297
     :cond_2
     iget-wide v1, p0, Landroidx/core/location/LocationRequestCompat;->mMinUpdateIntervalMillis:J
 
@@ -468,17 +454,17 @@
 
     if-gez v1, :cond_3
 
-    .line 300
+    .line 299
     const-string v1, ", minUpdateInterval="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 301
+    .line 300
     iget-wide v1, p0, Landroidx/core/location/LocationRequestCompat;->mMinUpdateIntervalMillis:J
 
     invoke-static {v1, v2, v0}, Landroidx/core/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 303
+    .line 302
     :cond_3
     iget v1, p0, Landroidx/core/location/LocationRequestCompat;->mMinUpdateDistanceMeters:F
 
@@ -490,7 +476,7 @@
 
     if-lez v1, :cond_4
 
-    .line 304
+    .line 303
     const-string v1, ", minUpdateDistance="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -501,7 +487,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 306
+    .line 305
     :cond_4
     iget-wide v1, p0, Landroidx/core/location/LocationRequestCompat;->mMaxUpdateDelayMillis:J
 
@@ -515,23 +501,23 @@
 
     if-lez v1, :cond_5
 
-    .line 307
+    .line 306
     const-string v1, ", maxUpdateDelay="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 308
+    .line 307
     iget-wide v1, p0, Landroidx/core/location/LocationRequestCompat;->mMaxUpdateDelayMillis:J
 
     invoke-static {v1, v2, v0}, Landroidx/core/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 310
+    .line 309
     :cond_5
     const/16 v1, 0x5d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 311
+    .line 310
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

@@ -23,7 +23,7 @@
 .end method
 
 .method public static setGroupDividerEnabled(Landroid/view/Menu;Z)V
-    .locals 2
+    .locals 1
     .param p0, "menu"    # Landroid/view/Menu;
     .param p1, "enabled"    # Z
 
@@ -43,17 +43,12 @@
 
     .line 53
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1c
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 54
     invoke-static {p0, p1}, Landroidx/core/view/MenuCompat$Api28Impl;->setGroupDividerEnabled(Landroid/view/Menu;Z)V
 
     .line 56
-    :cond_1
     :goto_0
     return-void
 .end method

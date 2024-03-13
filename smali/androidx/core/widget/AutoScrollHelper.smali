@@ -173,42 +173,42 @@
 
     .line 214
     .local v0, "metrics":Landroid/util/DisplayMetrics;
-    iget v1, v0, Landroid/util/DisplayMetrics;->density:F
+    const v1, 0x44c4e000    # 1575.0f
 
-    const v2, 0x44c4e000    # 1575.0f
+    iget v2, v0, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v2, v1
 
-    const/high16 v2, 0x3f000000    # 0.5f
+    const/high16 v1, 0x3f000000    # 0.5f
 
-    add-float/2addr v1, v2
+    add-float/2addr v2, v1
 
-    float-to-int v1, v1
+    float-to-int v2, v2
 
     .line 215
-    .local v1, "maxVelocity":I
-    iget v3, v0, Landroid/util/DisplayMetrics;->density:F
+    .local v2, "maxVelocity":I
+    const v3, 0x439d8000    # 315.0f
 
-    const v4, 0x439d8000    # 315.0f
+    iget v4, v0, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v3, v4
+    mul-float/2addr v4, v3
 
-    add-float/2addr v3, v2
+    add-float/2addr v4, v1
 
-    float-to-int v2, v3
+    float-to-int v1, v4
 
     .line 216
-    .local v2, "minVelocity":I
-    int-to-float v3, v1
+    .local v1, "minVelocity":I
+    int-to-float v3, v2
 
-    int-to-float v4, v1
+    int-to-float v4, v2
 
     invoke-virtual {p0, v3, v4}, Landroidx/core/widget/AutoScrollHelper;->setMaximumVelocity(FF)Landroidx/core/widget/AutoScrollHelper;
 
     .line 217
-    int-to-float v3, v2
+    int-to-float v3, v1
 
-    int-to-float v4, v2
+    int-to-float v4, v1
 
     invoke-virtual {p0, v3, v4}, Landroidx/core/widget/AutoScrollHelper;->setMinimumVelocity(FF)Landroidx/core/widget/AutoScrollHelper;
 
@@ -981,9 +981,9 @@
     aput v2, v0, v3
 
     .line 297
-    div-float v1, p2, v1
-
     const/4 v2, 0x1
+
+    div-float v1, p2, v1
 
     aput v1, v0, v2
 
@@ -1008,9 +1008,9 @@
     aput v2, v0, v3
 
     .line 316
-    div-float v1, p2, v1
-
     const/4 v2, 0x1
+
+    div-float v1, p2, v1
 
     aput v1, v0, v2
 
@@ -1082,9 +1082,9 @@
     aput v2, v0, v3
 
     .line 338
-    div-float v1, p2, v1
-
     const/4 v2, 0x1
+
+    div-float v1, p2, v1
 
     aput v1, v0, v2
 

@@ -54,7 +54,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -299,7 +299,7 @@
 .end method
 
 .method public static final eachCountTo(Lkotlin/collections/Grouping;Ljava/util/Map;)Ljava/util/Map;
-    .locals 21
+    .locals 19
     .param p0, "$this$eachCountTo"    # Lkotlin/collections/Grouping;
     .param p1, "destination"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -399,58 +399,54 @@
     move v13, v1
 
     :goto_1
-    move-object v14, v10
+    move-object v14, v9
 
-    .local v14, "$noName_0$iv":Ljava/lang/Object;
+    .local v14, "e$iv":Ljava/lang/Object;
     move-object v15, v11
 
     .local v13, "first$iv":Z
     .local v15, "acc$iv":Ljava/lang/Object;
-    move-object/from16 v16, v9
-
-    .local v16, "e$iv":Ljava/lang/Object;
-    const/16 v17, 0x0
+    const/16 v16, 0x0
 
     .line 337
-    .local v17, "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$2$iv":I
+    .local v16, "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$2$iv":I
     if-eqz v13, :cond_1
 
-    move-object/from16 v18, v3
+    move-object/from16 v17, v3
 
     goto :goto_2
 
     :cond_1
-    move-object/from16 v18, v15
+    move-object/from16 v17, v15
 
     :goto_2
-    check-cast v18, Ljava/lang/Number;
+    check-cast v17, Ljava/lang/Number;
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/Number;->intValue()I
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/Number;->intValue()I
 
-    move-result v18
+    move-result v17
 
-    .local v18, "acc":I
-    move-object/from16 v19, v16
-
-    .local v19, "$noName_1":Ljava/lang/Object;
-    const/16 v20, 0x0
+    .local v17, "acc":I
+    const/16 v18, 0x0
 
     .line 257
-    .local v20, "$i$a$-foldTo-GroupingKt__GroupingKt$eachCountTo$1":I
-    add-int/lit8 v18, v18, 0x1
+    .local v18, "$i$a$-foldTo-GroupingKt__GroupingKt$eachCountTo$1":I
+    add-int/lit8 v17, v17, 0x1
 
-    .end local v18    # "acc":I
-    .end local v19    # "$noName_1":Ljava/lang/Object;
-    .end local v20    # "$i$a$-foldTo-GroupingKt__GroupingKt$eachCountTo$1":I
-    invoke-static/range {v18 .. v18}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .end local v17    # "acc":I
+    .end local v18    # "$i$a$-foldTo-GroupingKt__GroupingKt$eachCountTo$1":I
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
 
+    .line 337
+    nop
+
+    .line 341
     .end local v13    # "first$iv":Z
-    .end local v14    # "$noName_0$iv":Ljava/lang/Object;
+    .end local v14    # "e$iv":Ljava/lang/Object;
     .end local v15    # "acc$iv":Ljava/lang/Object;
-    .end local v16    # "e$iv":Ljava/lang/Object;
-    .end local v17    # "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$2$iv":I
+    .end local v16    # "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$2$iv":I
     invoke-interface {v0, v10, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
@@ -475,7 +471,7 @@
 .end method
 
 .method public static final fold(Lkotlin/collections/Grouping;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/Map;
-    .locals 18
+    .locals 17
     .param p0, "$this$fold"    # Lkotlin/collections/Grouping;
     .param p1, "initialValue"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -579,21 +575,18 @@
     const/4 v12, 0x0
 
     :goto_1
-    move-object v13, v10
+    move-object v13, v11
 
-    .local v13, "$noName_0":Ljava/lang/Object;
+    .local v13, "acc":Ljava/lang/Object;
     move-object v14, v9
 
     .local v12, "first":Z
     .local v14, "e":Ljava/lang/Object;
-    move-object v15, v11
-
-    .local v15, "acc":Ljava/lang/Object;
-    const/16 v16, 0x0
+    const/4 v15, 0x0
 
     .line 164
-    .local v16, "$i$a$-aggregate-GroupingKt__GroupingKt$fold$2":I
-    move/from16 v17, v1
+    .local v15, "$i$a$-aggregate-GroupingKt__GroupingKt$fold$2":I
+    move/from16 v16, v1
 
     if-eqz v12, :cond_1
 
@@ -602,23 +595,23 @@
     goto :goto_2
 
     :cond_1
-    move-object v1, v15
+    move-object v1, v13
 
     .end local v1    # "$i$f$fold":I
-    .local v17, "$i$f$fold":I
+    .local v16, "$i$f$fold":I
     :goto_2
     invoke-interface {v0, v1, v14}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
+    .line 315
     .end local v12    # "first":Z
-    .end local v13    # "$noName_0":Ljava/lang/Object;
+    .end local v13    # "acc":Ljava/lang/Object;
     .end local v14    # "e":Ljava/lang/Object;
-    .end local v15    # "acc":Ljava/lang/Object;
-    .end local v16    # "$i$a$-aggregate-GroupingKt__GroupingKt$fold$2":I
+    .end local v15    # "$i$a$-aggregate-GroupingKt__GroupingKt$fold$2":I
     invoke-interface {v5, v10, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move/from16 v1, v17
+    move/from16 v1, v16
 
     goto :goto_0
 
@@ -626,7 +619,7 @@
     .end local v9    # "e$iv$iv":Ljava/lang/Object;
     .end local v10    # "key$iv$iv":Ljava/lang/Object;
     .end local v11    # "accumulator$iv$iv":Ljava/lang/Object;
-    .end local v17    # "$i$f$fold":I
+    .end local v16    # "$i$f$fold":I
     .restart local v1    # "$i$f$fold":I
     :cond_2
     nop
@@ -756,46 +749,66 @@
     const/4 v13, 0x0
 
     :goto_1
-    move-object v14, v11
+    move-object v14, v12
 
-    .local v14, "key":Ljava/lang/Object;
+    .local v14, "acc":Ljava/lang/Object;
     move-object v15, v10
 
     .local v13, "first":Z
     .local v15, "e":Ljava/lang/Object;
-    move-object/from16 v16, v12
+    move-object/from16 v16, v11
 
-    .local v16, "acc":Ljava/lang/Object;
+    .local v16, "key":Ljava/lang/Object;
     const/16 v17, 0x0
 
     .line 112
     .local v17, "$i$a$-aggregate-GroupingKt__GroupingKt$fold$1":I
     if-eqz v13, :cond_1
 
-    invoke-interface {v0, v14, v15}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move/from16 v18, v2
 
-    move-result-object v18
+    move-object/from16 v2, v16
 
-    move-object/from16 v0, v18
+    .end local v16    # "key":Ljava/lang/Object;
+    .local v2, "key":Ljava/lang/Object;
+    .local v18, "$i$f$fold":I
+    invoke-interface {v0, v2, v15}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v16
+
+    move-object/from16 v0, v16
 
     goto :goto_2
 
+    .end local v18    # "$i$f$fold":I
+    .local v2, "$i$f$fold":I
+    .restart local v16    # "key":Ljava/lang/Object;
     :cond_1
-    move-object/from16 v0, v16
+    move/from16 v18, v2
+
+    move-object/from16 v2, v16
+
+    .end local v16    # "key":Ljava/lang/Object;
+    .local v2, "key":Ljava/lang/Object;
+    .restart local v18    # "$i$f$fold":I
+    move-object v0, v14
 
     :goto_2
-    invoke-interface {v1, v14, v0, v15}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v2, v0, v15}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
+    .line 302
+    .end local v2    # "key":Ljava/lang/Object;
     .end local v13    # "first":Z
-    .end local v14    # "key":Ljava/lang/Object;
+    .end local v14    # "acc":Ljava/lang/Object;
     .end local v15    # "e":Ljava/lang/Object;
-    .end local v16    # "acc":Ljava/lang/Object;
     .end local v17    # "$i$a$-aggregate-GroupingKt__GroupingKt$fold$1":I
     invoke-interface {v6, v11, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object/from16 v0, p1
+
+    move/from16 v2, v18
 
     goto :goto_0
 
@@ -803,6 +816,8 @@
     .end local v10    # "e$iv$iv":Ljava/lang/Object;
     .end local v11    # "key$iv$iv":Ljava/lang/Object;
     .end local v12    # "accumulator$iv$iv":Ljava/lang/Object;
+    .end local v18    # "$i$f$fold":I
+    .local v2, "$i$f$fold":I
     :cond_2
     nop
 
@@ -819,7 +834,7 @@
 .end method
 
 .method public static final foldTo(Lkotlin/collections/Grouping;Ljava/util/Map;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/Map;
-    .locals 16
+    .locals 12
     .param p0, "$this$foldTo"    # Lkotlin/collections/Grouping;
     .param p1, "destination"    # Ljava/util/Map;
     .param p2, "initialValue"    # Ljava/lang/Object;
@@ -842,128 +857,119 @@
         }
     .end annotation
 
-    move-object/from16 v0, p1
+    const-string v0, "<this>"
 
-    move-object/from16 v1, p3
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "<this>"
+    const-string v0, "destination"
 
-    move-object/from16 v3, p0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "operation"
 
-    const-string v2, "destination"
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v2, "operation"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 189
-    .local v2, "$i$f$foldTo":I
-    move-object/from16 v4, p0
+    .local v0, "$i$f$foldTo":I
+    move-object v1, p0
 
-    .local v4, "$this$aggregateTo$iv":Lkotlin/collections/Grouping;
-    const/4 v5, 0x0
+    .local v1, "$this$aggregateTo$iv":Lkotlin/collections/Grouping;
+    const/4 v2, 0x0
 
     .line 318
-    .local v5, "$i$f$aggregateTo":I
-    invoke-interface {v4}, Lkotlin/collections/Grouping;->sourceIterator()Ljava/util/Iterator;
+    .local v2, "$i$f$aggregateTo":I
+    invoke-interface {v1}, Lkotlin/collections/Grouping;->sourceIterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    .line 319
+    .local v4, "e$iv":Ljava/lang/Object;
+    invoke-interface {v1, v4}, Lkotlin/collections/Grouping;->keyOf(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    .line 320
+    .local v5, "key$iv":Ljava/lang/Object;
+    invoke-interface {p1, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
 
-    :goto_0
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    .line 321
+    .local v6, "accumulator$iv":Ljava/lang/Object;
+    if-nez v6, :cond_0
+
+    invoke-interface {p1, v5}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_2
+    if-nez v7, :cond_0
 
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    .line 319
-    .local v7, "e$iv":Ljava/lang/Object;
-    invoke-interface {v4, v7}, Lkotlin/collections/Grouping;->keyOf(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    .line 320
-    .local v8, "key$iv":Ljava/lang/Object;
-    invoke-interface {v0, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v9
-
-    .line 321
-    .local v9, "accumulator$iv":Ljava/lang/Object;
-    if-nez v9, :cond_0
-
-    invoke-interface {v0, v8}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-nez v10, :cond_0
-
-    const/4 v10, 0x1
+    const/4 v7, 0x1
 
     goto :goto_1
 
     :cond_0
-    const/4 v10, 0x0
+    const/4 v7, 0x0
 
     :goto_1
-    move-object v11, v8
+    move-object v8, v4
 
-    .local v11, "$noName_0":Ljava/lang/Object;
-    move-object v12, v9
+    .local v8, "e":Ljava/lang/Object;
+    move-object v9, v6
 
-    .local v10, "first":Z
-    .local v12, "acc":Ljava/lang/Object;
-    move-object v13, v7
-
-    .local v13, "e":Ljava/lang/Object;
-    const/4 v14, 0x0
+    .local v7, "first":Z
+    .local v9, "acc":Ljava/lang/Object;
+    const/4 v10, 0x0
 
     .line 189
-    .local v14, "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$2":I
-    if-eqz v10, :cond_1
+    .local v10, "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$2":I
+    if-eqz v7, :cond_1
 
-    move-object/from16 v15, p2
+    move-object v11, p2
 
     goto :goto_2
 
     :cond_1
-    move-object v15, v12
+    move-object v11, v9
 
     :goto_2
-    invoke-interface {v1, v15, v13}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, v11, v8}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v7
 
-    .end local v10    # "first":Z
-    .end local v11    # "$noName_0":Ljava/lang/Object;
-    .end local v12    # "acc":Ljava/lang/Object;
-    .end local v13    # "e":Ljava/lang/Object;
-    .end local v14    # "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$2":I
-    invoke-interface {v0, v8, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 321
+    .end local v7    # "first":Z
+    .end local v8    # "e":Ljava/lang/Object;
+    .end local v9    # "acc":Ljava/lang/Object;
+    .end local v10    # "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$2":I
+    invoke-interface {p1, v5, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     .line 323
-    .end local v7    # "e$iv":Ljava/lang/Object;
-    .end local v8    # "key$iv":Ljava/lang/Object;
-    .end local v9    # "accumulator$iv":Ljava/lang/Object;
+    .end local v4    # "e$iv":Ljava/lang/Object;
+    .end local v5    # "key$iv":Ljava/lang/Object;
+    .end local v6    # "accumulator$iv":Ljava/lang/Object;
     :cond_2
     nop
 
     .line 189
-    .end local v4    # "$this$aggregateTo$iv":Lkotlin/collections/Grouping;
-    .end local v5    # "$i$f$aggregateTo":I
-    return-object v0
+    .end local v1    # "$this$aggregateTo$iv":Lkotlin/collections/Grouping;
+    .end local v2    # "$i$f$aggregateTo":I
+    return-object p1
 .end method
 
 .method public static final foldTo(Lkotlin/collections/Grouping;Ljava/util/Map;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)Ljava/util/Map;
@@ -1075,20 +1081,20 @@
     move-object v12, v9
 
     .local v12, "key":Ljava/lang/Object;
-    move-object v13, v10
+    move-object v13, v8
+
+    .local v13, "e":Ljava/lang/Object;
+    move-object v14, v10
 
     .local v11, "first":Z
-    .local v13, "acc":Ljava/lang/Object;
-    move-object v14, v8
-
-    .local v14, "e":Ljava/lang/Object;
+    .local v14, "acc":Ljava/lang/Object;
     const/4 v15, 0x0
 
     .line 143
     .local v15, "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$1":I
     if-eqz v11, :cond_1
 
-    invoke-interface {v1, v12, v14}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v12, v13}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v16
 
@@ -1097,17 +1103,18 @@
     goto :goto_2
 
     :cond_1
-    move-object v1, v13
+    move-object v1, v14
 
     :goto_2
-    invoke-interface {v2, v12, v1, v14}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v2, v12, v1, v13}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
+    .line 308
     .end local v11    # "first":Z
     .end local v12    # "key":Ljava/lang/Object;
-    .end local v13    # "acc":Ljava/lang/Object;
-    .end local v14    # "e":Ljava/lang/Object;
+    .end local v13    # "e":Ljava/lang/Object;
+    .end local v14    # "acc":Ljava/lang/Object;
     .end local v15    # "$i$a$-aggregateTo-GroupingKt__GroupingKt$foldTo$1":I
     invoke-interface {v0, v9, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1235,10 +1242,10 @@
     .local v13, "key":Ljava/lang/Object;
     move-object v14, v11
 
+    .local v12, "first":Z
     .local v14, "acc":Ljava/lang/Object;
     move-object v15, v9
 
-    .local v12, "first":Z
     .local v15, "e":Ljava/lang/Object;
     const/16 v16, 0x0
 
@@ -1255,6 +1262,7 @@
 
     move-object/from16 v15, v17
 
+    .line 328
     .end local v12    # "first":Z
     .end local v13    # "key":Ljava/lang/Object;
     .end local v14    # "acc":Ljava/lang/Object;
@@ -1373,16 +1381,16 @@
     const/4 v7, 0x0
 
     :goto_1
-    move-object v8, v5
+    move-object v8, v6
 
-    .local v8, "key":Ljava/lang/Object;
-    move-object v9, v4
+    .local v8, "acc":Ljava/lang/Object;
+    move-object v9, v5
 
-    .local v9, "e":Ljava/lang/Object;
-    move-object v10, v6
+    .local v9, "key":Ljava/lang/Object;
+    move-object v10, v4
 
     .local v7, "first":Z
-    .local v10, "acc":Ljava/lang/Object;
+    .local v10, "e":Ljava/lang/Object;
     const/4 v11, 0x0
 
     .line 241
@@ -1392,19 +1400,20 @@
     goto :goto_2
 
     :cond_1
-    invoke-interface {p2, v8, v10, v9}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v9, v8, v10}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v12
 
-    move-object v9, v12
+    move-object v10, v12
 
+    .line 334
     .end local v7    # "first":Z
-    .end local v8    # "key":Ljava/lang/Object;
-    .end local v9    # "e":Ljava/lang/Object;
-    .end local v10    # "acc":Ljava/lang/Object;
+    .end local v8    # "acc":Ljava/lang/Object;
+    .end local v9    # "key":Ljava/lang/Object;
+    .end local v10    # "e":Ljava/lang/Object;
     .end local v11    # "$i$a$-aggregateTo-GroupingKt__GroupingKt$reduceTo$1":I
     :goto_2
-    invoke-interface {p1, v5, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v5, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 

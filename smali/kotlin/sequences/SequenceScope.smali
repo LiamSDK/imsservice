@@ -41,7 +41,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -52,10 +52,10 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 59
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
+    .line 53
     return-void
 .end method
 
@@ -91,7 +91,7 @@
         }
     .end annotation
 
-    .line 88
+    .line 80
     instance-of v0, p1, Ljava/util/Collection;
 
     if-eqz v0, :cond_0
@@ -110,7 +110,7 @@
 
     return-object v0
 
-    .line 89
+    .line 81
     :cond_0
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -166,7 +166,7 @@
         }
     .end annotation
 
-    .line 100
+    .line 92
     invoke-interface {p1}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

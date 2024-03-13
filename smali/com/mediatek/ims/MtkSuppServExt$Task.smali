@@ -33,39 +33,39 @@
     .param p3, "extraInt"    # I
     .param p4, "extraMsg"    # Ljava/lang/String;
 
-    .line 170
+    .line 171
     iput-object p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->this$0:Lcom/mediatek/ims/MtkSuppServExt;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 156
+    .line 157
     const/4 p1, -0x1
 
     iput p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mTaskId:I
 
-    .line 157
+    .line 158
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraBool:Z
 
-    .line 158
+    .line 159
     iput p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraInt:I
 
-    .line 159
+    .line 160
     const-string p1, ""
 
     iput-object p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraMsg:Ljava/lang/String;
 
-    .line 171
+    .line 172
     iput p2, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mTaskId:I
 
-    .line 172
+    .line 173
     iput p3, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraInt:I
 
-    .line 173
+    .line 174
     iput-object p4, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraMsg:Ljava/lang/String;
 
-    .line 174
+    .line 175
     return-void
 .end method
 
@@ -74,36 +74,36 @@
     .param p2, "taskId"    # I
     .param p3, "extraMsg"    # Ljava/lang/String;
 
-    .line 166
+    .line 167
     iput-object p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->this$0:Lcom/mediatek/ims/MtkSuppServExt;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 156
+    .line 157
     const/4 p1, -0x1
 
     iput p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mTaskId:I
 
-    .line 157
+    .line 158
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraBool:Z
 
-    .line 158
+    .line 159
     iput p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraInt:I
 
-    .line 159
+    .line 160
     const-string p1, ""
 
     iput-object p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraMsg:Ljava/lang/String;
 
-    .line 167
+    .line 168
     iput p2, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mTaskId:I
 
-    .line 168
+    .line 169
     iput-object p3, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraMsg:Ljava/lang/String;
 
-    .line 169
+    .line 170
     return-void
 .end method
 
@@ -113,39 +113,39 @@
     .param p3, "b"    # Z
     .param p4, "extraMsg"    # Ljava/lang/String;
 
-    .line 161
+    .line 162
     iput-object p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->this$0:Lcom/mediatek/ims/MtkSuppServExt;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 156
+    .line 157
     const/4 p1, -0x1
 
     iput p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mTaskId:I
 
-    .line 157
+    .line 158
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraBool:Z
 
-    .line 158
+    .line 159
     iput p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraInt:I
 
-    .line 159
+    .line 160
     const-string p1, ""
 
     iput-object p1, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraMsg:Ljava/lang/String;
 
-    .line 162
+    .line 163
     iput p2, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mTaskId:I
 
-    .line 163
+    .line 164
     iput-boolean p3, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraBool:Z
 
-    .line 164
+    .line 165
     iput-object p4, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraMsg:Ljava/lang/String;
 
-    .line 165
+    .line 166
     return-void
 .end method
 
@@ -154,7 +154,7 @@
 .method public getExtraBoolean()Z
     .locals 1
 
-    .line 182
+    .line 183
     iget-boolean v0, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraBool:Z
 
     return v0
@@ -163,7 +163,7 @@
 .method public getExtraInt()I
     .locals 1
 
-    .line 179
+    .line 180
     iget v0, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraInt:I
 
     return v0
@@ -172,7 +172,7 @@
 .method public getExtraMsg()Ljava/lang/String;
     .locals 1
 
-    .line 185
+    .line 186
     iget-object v0, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mExtraMsg:Ljava/lang/String;
 
     return-object v0
@@ -181,7 +181,7 @@
 .method public getTaskId()I
     .locals 1
 
-    .line 176
+    .line 177
     iget v0, p0, Lcom/mediatek/ims/MtkSuppServExt$Task;->mTaskId:I
 
     return v0
@@ -190,7 +190,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 188
+    .line 189
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

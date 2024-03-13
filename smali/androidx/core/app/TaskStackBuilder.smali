@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/app/TaskStackBuilder$Api16Impl;,
-        Landroidx/core/app/TaskStackBuilder$SupportParentable;
+        Landroidx/core/app/TaskStackBuilder$SupportParentable;,
+        Landroidx/core/app/TaskStackBuilder$Api16Impl;
     }
 .end annotation
 
@@ -463,7 +463,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     .line 340
     iget-object v0, p0, Landroidx/core/app/TaskStackBuilder;->mIntents:Ljava/util/ArrayList;
@@ -495,11 +495,7 @@
     aput-object v2, v0, v1
 
     .line 344
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x10
-
-    if-lt v1, v2, :cond_0
+    nop
 
     .line 345
     iget-object v1, p0, Landroidx/core/app/TaskStackBuilder;->mSourceContext:Landroid/content/Context;
@@ -510,19 +506,9 @@
 
     return-object v1
 
-    .line 347
-    :cond_0
-    iget-object v1, p0, Landroidx/core/app/TaskStackBuilder;->mSourceContext:Landroid/content/Context;
-
-    invoke-static {v1, p1, v0, p2}, Landroid/app/PendingIntent;->getActivities(Landroid/content/Context;I[Landroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v1
-
-    return-object v1
-
     .line 336
     .end local v0    # "intents":[Landroid/content/Intent;
-    :cond_1
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "No intents added to TaskStackBuilder; cannot getPendingIntent"

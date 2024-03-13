@@ -43,7 +43,7 @@
     .end annotation
 .end field
 
-.field private mIterators:Ljava/util/WeakHashMap;
+.field private final mIterators:Ljava/util/WeakHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/WeakHashMap<",
@@ -71,18 +71,18 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 35
+    .line 36
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 43
     new-instance v0, Ljava/util/WeakHashMap;
 
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
     iput-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap;->mIterators:Ljava/util/WeakHashMap;
 
-    .line 43
+    .line 44
     const/4 v0, 0x0
 
     iput v0, p0, Landroidx/arch/core/internal/SafeIterableMap;->mSize:I
@@ -103,7 +103,7 @@
         }
     .end annotation
 
-    .line 151
+    .line 154
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     new-instance v0, Landroidx/arch/core/internal/SafeIterableMap$DescendingIterator;
 
@@ -113,7 +113,7 @@
 
     invoke-direct {v0, v1, v2}, Landroidx/arch/core/internal/SafeIterableMap$DescendingIterator;-><init>(Landroidx/arch/core/internal/SafeIterableMap$Entry;Landroidx/arch/core/internal/SafeIterableMap$Entry;)V
 
-    .line 152
+    .line 155
     .local v0, "iterator":Landroidx/arch/core/internal/SafeIterableMap$DescendingIterator;, "Landroidx/arch/core/internal/SafeIterableMap$DescendingIterator<TK;TV;>;"
     iget-object v1, p0, Landroidx/arch/core/internal/SafeIterableMap;->mIterators:Ljava/util/WeakHashMap;
 
@@ -125,7 +125,7 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 153
+    .line 156
     return-object v0
 .end method
 
@@ -139,7 +139,7 @@
         }
     .end annotation
 
-    .line 170
+    .line 174
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap;->mStart:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
@@ -150,16 +150,16 @@
     .locals 8
     .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 182
+    .line 188
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     const/4 v0, 0x1
 
     if-ne p1, p0, :cond_0
 
-    .line 183
+    .line 189
     return v0
 
-    .line 185
+    .line 191
     :cond_0
     instance-of v1, p1, Landroidx/arch/core/internal/SafeIterableMap;
 
@@ -167,16 +167,16 @@
 
     if-nez v1, :cond_1
 
-    .line 186
+    .line 192
     return v2
 
-    .line 188
+    .line 194
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/arch/core/internal/SafeIterableMap;
 
-    .line 189
+    .line 195
     .local v1, "map":Landroidx/arch/core/internal/SafeIterableMap;
     invoke-virtual {p0}, Landroidx/arch/core/internal/SafeIterableMap;->size()I
 
@@ -188,22 +188,22 @@
 
     if-eq v3, v4, :cond_2
 
-    .line 190
+    .line 196
     return v2
 
-    .line 192
+    .line 198
     :cond_2
     invoke-virtual {p0}, Landroidx/arch/core/internal/SafeIterableMap;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    .line 193
+    .line 199
     .local v3, "iterator1":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-virtual {v1}, Landroidx/arch/core/internal/SafeIterableMap;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    .line 194
+    .line 200
     .local v4, "iterator2":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
@@ -218,20 +218,20 @@
 
     if-eqz v5, :cond_6
 
-    .line 195
+    .line 201
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Ljava/util/Map$Entry;
 
-    .line 196
+    .line 202
     .local v5, "next1":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 197
+    .line 203
     .local v6, "next2":Ljava/lang/Object;
     if-nez v5, :cond_3
 
@@ -240,24 +240,24 @@
     :cond_3
     if-eqz v5, :cond_5
 
-    .line 198
+    .line 204
     invoke-interface {v5, v6}, Ljava/util/Map$Entry;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
     if-nez v7, :cond_5
 
-    .line 199
+    .line 205
     :cond_4
     return v2
 
-    .line 201
+    .line 207
     .end local v5    # "next1":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     .end local v6    # "next2":Ljava/lang/Object;
     :cond_5
     goto :goto_0
 
-    .line 202
+    .line 208
     :cond_6
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -290,17 +290,17 @@
         }
     .end annotation
 
-    .line 47
+    .line 49
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     .local p1, "k":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap;->mStart:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 48
+    .line 50
     .local v0, "currentNode":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 49
+    .line 51
     iget-object v1, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mKey:Ljava/lang/Object;
 
     invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -309,36 +309,34 @@
 
     if-eqz v1, :cond_0
 
-    .line 50
+    .line 52
     goto :goto_1
 
-    .line 52
+    .line 54
     :cond_0
     iget-object v0, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     goto :goto_0
 
-    .line 54
+    .line 56
     :cond_1
     :goto_1
     return-object v0
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 4
 
-    .line 207
+    .line 213
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     const/4 v0, 0x0
 
-    .line 208
+    .line 214
     .local v0, "h":I
     invoke-virtual {p0}, Landroidx/arch/core/internal/SafeIterableMap;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 209
-    .local v1, "i":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -346,22 +344,25 @@
 
     if-eqz v2, :cond_0
 
-    .line 210
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/util/Map$Entry;
 
+    .line 215
+    .local v2, "kvEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->hashCode()I
 
-    move-result v2
+    move-result v3
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v3
 
+    .line 216
+    .end local v2    # "kvEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     goto :goto_0
 
-    .line 212
+    .line 217
     :cond_0
     return v0
 .end method
@@ -377,7 +378,7 @@
         }
     .end annotation
 
-    .line 141
+    .line 143
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     new-instance v0, Landroidx/arch/core/internal/SafeIterableMap$AscendingIterator;
 
@@ -387,7 +388,7 @@
 
     invoke-direct {v0, v1, v2}, Landroidx/arch/core/internal/SafeIterableMap$AscendingIterator;-><init>(Landroidx/arch/core/internal/SafeIterableMap$Entry;Landroidx/arch/core/internal/SafeIterableMap$Entry;)V
 
-    .line 142
+    .line 144
     .local v0, "iterator":Landroidx/arch/core/internal/SafeIterableMap$ListIterator;, "Landroidx/arch/core/internal/SafeIterableMap$ListIterator<TK;TV;>;"
     iget-object v1, p0, Landroidx/arch/core/internal/SafeIterableMap;->mIterators:Ljava/util/WeakHashMap;
 
@@ -399,7 +400,7 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 143
+    .line 145
     return-object v0
 .end method
 
@@ -413,13 +414,13 @@
         }
     .end annotation
 
-    .line 161
+    .line 164
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     new-instance v0, Landroidx/arch/core/internal/SafeIterableMap$IteratorWithAdditions;
 
     invoke-direct {v0, p0}, Landroidx/arch/core/internal/SafeIterableMap$IteratorWithAdditions;-><init>(Landroidx/arch/core/internal/SafeIterableMap;)V
 
-    .line 162
+    .line 165
     .local v0, "iterator":Landroidx/arch/core/internal/SafeIterableMap$IteratorWithAdditions;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>.IteratorWithAdditions;"
     iget-object v1, p0, Landroidx/arch/core/internal/SafeIterableMap;->mIterators:Ljava/util/WeakHashMap;
 
@@ -431,7 +432,7 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 163
+    .line 166
     return-object v0
 .end method
 
@@ -445,7 +446,7 @@
         }
     .end annotation
 
-    .line 177
+    .line 182
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     iget-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap;->mEnd:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
@@ -462,7 +463,7 @@
         }
     .end annotation
 
-    .line 76
+    .line 78
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     .local p1, "key":Ljava/lang/Object;, "TK;"
     .local p2, "v":Ljava/lang/Object;, "TV;"
@@ -470,7 +471,7 @@
 
     invoke-direct {v0, p1, p2}, Landroidx/arch/core/internal/SafeIterableMap$Entry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 77
+    .line 79
     .local v0, "newEntry":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     iget v1, p0, Landroidx/arch/core/internal/SafeIterableMap;->mSize:I
 
@@ -478,33 +479,33 @@
 
     iput v1, p0, Landroidx/arch/core/internal/SafeIterableMap;->mSize:I
 
-    .line 78
+    .line 80
     iget-object v1, p0, Landroidx/arch/core/internal/SafeIterableMap;->mEnd:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     if-nez v1, :cond_0
 
-    .line 79
+    .line 81
     iput-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap;->mStart:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 80
+    .line 82
     iput-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap;->mEnd:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 81
+    .line 83
     return-object v0
 
-    .line 84
+    .line 86
     :cond_0
     iput-object v0, v1, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 85
+    .line 87
     iget-object v1, p0, Landroidx/arch/core/internal/SafeIterableMap;->mEnd:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     iput-object v1, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mPrevious:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 86
+    .line 88
     iput-object v0, p0, Landroidx/arch/core/internal/SafeIterableMap;->mEnd:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 87
+    .line 89
     return-object v0
 .end method
 
@@ -516,7 +517,7 @@
         }
     .end annotation
 
-    .line 67
+    .line 69
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     .local p1, "key":Ljava/lang/Object;, "TK;"
     .local p2, "v":Ljava/lang/Object;, "TV;"
@@ -524,20 +525,20 @@
 
     move-result-object v0
 
-    .line 68
+    .line 70
     .local v0, "entry":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     if-eqz v0, :cond_0
 
-    .line 69
+    .line 71
     iget-object v1, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mValue:Ljava/lang/Object;
 
     return-object v1
 
-    .line 71
+    .line 73
     :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/arch/core/internal/SafeIterableMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 72
+    .line 74
     const/4 v1, 0x0
 
     return-object v1
@@ -551,23 +552,23 @@
         }
     .end annotation
 
-    .line 99
+    .line 101
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0, p1}, Landroidx/arch/core/internal/SafeIterableMap;->get(Ljava/lang/Object;)Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     move-result-object v0
 
-    .line 100
+    .line 102
     .local v0, "toRemove":Landroidx/arch/core/internal/SafeIterableMap$Entry;, "Landroidx/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 101
+    .line 103
     return-object v1
 
-    .line 103
+    .line 105
     :cond_0
     iget v2, p0, Landroidx/arch/core/internal/SafeIterableMap;->mSize:I
 
@@ -575,7 +576,7 @@
 
     iput v2, p0, Landroidx/arch/core/internal/SafeIterableMap;->mSize:I
 
-    .line 104
+    .line 106
     iget-object v2, p0, Landroidx/arch/core/internal/SafeIterableMap;->mIterators:Ljava/util/WeakHashMap;
 
     invoke-virtual {v2}, Ljava/util/WeakHashMap;->isEmpty()Z
@@ -584,7 +585,7 @@
 
     if-nez v2, :cond_1
 
-    .line 105
+    .line 107
     iget-object v2, p0, Landroidx/arch/core/internal/SafeIterableMap;->mIterators:Ljava/util/WeakHashMap;
 
     invoke-virtual {v2}, Ljava/util/WeakHashMap;->keySet()Ljava/util/Set;
@@ -608,21 +609,21 @@
 
     check-cast v3, Landroidx/arch/core/internal/SafeIterableMap$SupportRemove;
 
-    .line 106
+    .line 108
     .local v3, "iter":Landroidx/arch/core/internal/SafeIterableMap$SupportRemove;, "Landroidx/arch/core/internal/SafeIterableMap$SupportRemove<TK;TV;>;"
     invoke-virtual {v3, v0}, Landroidx/arch/core/internal/SafeIterableMap$SupportRemove;->supportRemove(Landroidx/arch/core/internal/SafeIterableMap$Entry;)V
 
-    .line 107
+    .line 109
     .end local v3    # "iter":Landroidx/arch/core/internal/SafeIterableMap$SupportRemove;, "Landroidx/arch/core/internal/SafeIterableMap$SupportRemove<TK;TV;>;"
     goto :goto_0
 
-    .line 110
+    .line 112
     :cond_1
     iget-object v2, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mPrevious:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     if-eqz v2, :cond_2
 
-    .line 111
+    .line 113
     iget-object v2, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mPrevious:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     iget-object v3, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroidx/arch/core/internal/SafeIterableMap$Entry;
@@ -631,19 +632,19 @@
 
     goto :goto_1
 
-    .line 113
+    .line 115
     :cond_2
     iget-object v2, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     iput-object v2, p0, Landroidx/arch/core/internal/SafeIterableMap;->mStart:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 116
+    .line 118
     :goto_1
     iget-object v2, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     if-eqz v2, :cond_3
 
-    .line 117
+    .line 119
     iget-object v2, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     iget-object v3, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mPrevious:Landroidx/arch/core/internal/SafeIterableMap$Entry;
@@ -652,20 +653,20 @@
 
     goto :goto_2
 
-    .line 119
+    .line 121
     :cond_3
     iget-object v2, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mPrevious:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
     iput-object v2, p0, Landroidx/arch/core/internal/SafeIterableMap;->mEnd:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 122
+    .line 124
     :goto_2
     iput-object v1, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 123
+    .line 125
     iput-object v1, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mPrevious:Landroidx/arch/core/internal/SafeIterableMap$Entry;
 
-    .line 124
+    .line 126
     iget-object v1, v0, Landroidx/arch/core/internal/SafeIterableMap$Entry;->mValue:Ljava/lang/Object;
 
     return-object v1
@@ -674,7 +675,7 @@
 .method public size()I
     .locals 1
 
-    .line 131
+    .line 133
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     iget v0, p0, Landroidx/arch/core/internal/SafeIterableMap;->mSize:I
 
@@ -684,24 +685,24 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 217
+    .line 222
     .local p0, "this":Landroidx/arch/core/internal/SafeIterableMap;, "Landroidx/arch/core/internal/SafeIterableMap<TK;TV;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 218
+    .line 223
     .local v0, "builder":Ljava/lang/StringBuilder;
     const-string v1, "["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 219
+    .line 224
     invoke-virtual {p0}, Landroidx/arch/core/internal/SafeIterableMap;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 220
+    .line 225
     .local v1, "iterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
     :cond_0
     :goto_0
@@ -711,7 +712,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 221
+    .line 226
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
@@ -724,27 +725,27 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 222
+    .line 227
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 223
+    .line 228
     const-string v2, ", "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 226
+    .line 231
     :cond_1
     const-string v2, "]"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 227
+    .line 232
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2

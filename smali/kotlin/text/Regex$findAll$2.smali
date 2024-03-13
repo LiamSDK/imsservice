@@ -30,7 +30,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -57,9 +57,9 @@
 .method constructor <init>()V
     .locals 6
 
-    const-class v2, Lkotlin/text/MatchResult;
-
     const/4 v1, 0x1
+
+    const-class v2, Lkotlin/text/MatchResult;
 
     const-string v3, "next"
 

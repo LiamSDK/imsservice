@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 98
+    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 100
+    .line 101
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .param p0, "foreground"    # Landroid/graphics/Color;
     .param p1, "background"    # Landroid/graphics/Color;
 
-    .line 104
+    .line 105
     invoke-virtual {p0}, Landroid/graphics/Color;->getModel()Landroid/graphics/ColorSpace$Model;
 
     move-result-object v0
@@ -45,7 +45,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 110
+    .line 111
     invoke-virtual {p1}, Landroid/graphics/Color;->getColorSpace()Landroid/graphics/ColorSpace;
 
     move-result-object v0
@@ -60,12 +60,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 111
+    .line 112
     move-object v0, p0
 
     goto :goto_0
 
-    .line 112
+    .line 113
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Color;->getColorSpace()Landroid/graphics/ColorSpace;
 
@@ -78,25 +78,25 @@
     :goto_0
     nop
 
-    .line 114
+    .line 115
     .local v0, "s":Landroid/graphics/Color;
     invoke-virtual {v0}, Landroid/graphics/Color;->getComponents()[F
 
     move-result-object v1
 
-    .line 115
+    .line 116
     .local v1, "src":[F
     invoke-virtual {p1}, Landroid/graphics/Color;->getComponents()[F
 
     move-result-object v2
 
-    .line 117
+    .line 118
     .local v2, "dst":[F
     invoke-virtual {v0}, Landroid/graphics/Color;->alpha()F
 
     move-result v3
 
-    .line 119
+    .line 120
     .local v3, "sa":F
     invoke-virtual {p1}, Landroid/graphics/Color;->alpha()F
 
@@ -108,7 +108,7 @@
 
     mul-float/2addr v4, v5
 
-    .line 123
+    .line 124
     .local v4, "da":F
     invoke-virtual {p1}, Landroid/graphics/Color;->getComponentCount()I
 
@@ -116,13 +116,13 @@
 
     add-int/lit8 v5, v5, -0x1
 
-    .line 126
+    .line 127
     .local v5, "ai":I
     add-float v6, v3, v4
 
     aput v6, v2, v5
 
-    .line 129
+    .line 130
     aget v6, v2, v5
 
     const/4 v7, 0x0
@@ -131,17 +131,17 @@
 
     if-lez v6, :cond_1
 
-    .line 130
+    .line 131
     aget v6, v2, v5
 
     div-float/2addr v3, v6
 
-    .line 131
+    .line 132
     aget v6, v2, v5
 
     div-float/2addr v4, v6
 
-    .line 135
+    .line 136
     :cond_1
     const/4 v6, 0x0
 
@@ -149,7 +149,7 @@
     :goto_1
     if-ge v6, v5, :cond_2
 
-    .line 136
+    .line 137
     aget v7, v1, v6
 
     mul-float/2addr v7, v3
@@ -162,12 +162,12 @@
 
     aput v7, v2, v6
 
-    .line 135
+    .line 136
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    .line 139
+    .line 140
     .end local v6    # "i":I
     :cond_2
     invoke-virtual {p1}, Landroid/graphics/Color;->getColorSpace()Landroid/graphics/ColorSpace;
@@ -180,7 +180,7 @@
 
     return-object v6
 
-    .line 105
+    .line 106
     .end local v0    # "s":Landroid/graphics/Color;
     .end local v1    # "src":[F
     .end local v2    # "dst":[F
@@ -200,7 +200,7 @@
 
     move-result-object v1
 
-    .line 106
+    .line 107
     invoke-virtual {p0}, Landroid/graphics/Color;->getModel()Landroid/graphics/ColorSpace$Model;
 
     move-result-object v2
@@ -215,7 +215,7 @@
 
     move-result-object v1
 
-    .line 107
+    .line 108
     invoke-virtual {p1}, Landroid/graphics/Color;->getModel()Landroid/graphics/ColorSpace$Model;
 
     move-result-object v2

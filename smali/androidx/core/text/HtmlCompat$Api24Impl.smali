@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 188
+    .line 186
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 190
+    .line 188
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .param p0, "source"    # Ljava/lang/String;
     .param p1, "flags"    # I
 
-    .line 194
+    .line 192
     invoke-static {p0, p1}, Landroid/text/Html;->fromHtml(Ljava/lang/String;I)Landroid/text/Spanned;
 
     move-result-object v0
@@ -45,7 +45,7 @@
     .param p2, "imageGetter"    # Landroid/text/Html$ImageGetter;
     .param p3, "tagHandler"    # Landroid/text/Html$TagHandler;
 
-    .line 200
+    .line 198
     invoke-static {p0, p1, p2, p3}, Landroid/text/Html;->fromHtml(Ljava/lang/String;ILandroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .param p0, "text"    # Landroid/text/Spanned;
     .param p1, "option"    # I
 
-    .line 205
+    .line 203
     invoke-static {p0, p1}, Landroid/text/Html;->toHtml(Landroid/text/Spanned;I)Ljava/lang/String;
 
     move-result-object v0

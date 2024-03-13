@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
-    .line 239
+    .line 259
     iput-object p1, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$CallStateListener;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "state"    # I
     .param p2, "incomingNumber"    # Ljava/lang/String;
 
-    .line 242
+    .line 262
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -61,7 +61,7 @@
 
     invoke-static {v1, v0}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 243
+    .line 263
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_3
@@ -74,12 +74,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 244
+    .line 264
     const-string v0, "E911 is dialing"
 
     invoke-static {v1, v0}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 245
+    .line 265
     iget-object v0, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$CallStateListener;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$fgetmIgnoreList(Lcom/mediatek/wfo/impl/ImsLocationHandler;)Ljava/util/List;
@@ -92,15 +92,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 246
+    .line 266
     const-string v0, "onCallStateChanged: ignore"
 
     invoke-static {v1, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 247
+    .line 267
     return-void
 
-    .line 249
+    .line 269
     :cond_0
     iget-object v0, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$CallStateListener;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
@@ -122,20 +122,25 @@
 
     if-nez v0, :cond_1
 
-    .line 250
+    .line 270
     const-string v0, "E911, Wi-Fi isn\'t connected and network unavailable"
 
     invoke-static {v1, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 251
+    .line 271
+    iget-object v0, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$CallStateListener;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
+
+    invoke-static {v0}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$mupdateLocationForNoSimEcc(Lcom/mediatek/wfo/impl/ImsLocationHandler;)V
+
+    .line 272
     iget-object v0, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$CallStateListener;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$maddRetryLocationRequestForECC(Lcom/mediatek/wfo/impl/ImsLocationHandler;)V
 
-    .line 252
+    .line 273
     return-void
 
-    .line 255
+    .line 276
     :cond_1
     iget-object v0, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$CallStateListener;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
@@ -161,12 +166,12 @@
 
     if-nez v0, :cond_2
 
-    .line 256
+    .line 277
     iget-object v0, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$CallStateListener;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/ImsLocationHandler;->-$$Nest$mcancelNetworkLocationRequest(Lcom/mediatek/wfo/impl/ImsLocationHandler;)V
 
-    .line 258
+    .line 279
     :cond_2
     iget-object v0, p0, Lcom/mediatek/wfo/impl/ImsLocationHandler$CallStateListener;->this$0:Lcom/mediatek/wfo/impl/ImsLocationHandler;
 
@@ -178,7 +183,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 260
+    .line 281
     :cond_3
     return-void
 .end method

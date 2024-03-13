@@ -39,7 +39,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -107,8 +107,9 @@
     .local v2, "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$1":I
     sget-object v2, Lkotlin/jvm/internal/CollectionToArray;->EMPTY:[Ljava/lang/Object;
 
+    .line 84
     .end local v2    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$1":I
-    goto :goto_2
+    goto/16 :goto_2
 
     .line 85
     :cond_0
@@ -130,9 +131,10 @@
     .local v3, "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$1":I
     sget-object v3, Lkotlin/jvm/internal/CollectionToArray;->EMPTY:[Ljava/lang/Object;
 
+    .line 86
+    .end local v3    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$1":I
     move-object v2, v3
 
-    .end local v3    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$1":I
     goto :goto_2
 
     .line 87
@@ -146,8 +148,12 @@
     .local v4, "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$2":I
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 88
+    .line 87
+    .end local v3    # "size":I
     .end local v4    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$2":I
+    nop
+
+    .line 88
     .local v3, "result$iv":[Ljava/lang/Object;
     const/4 v4, 0x0
 
@@ -257,6 +263,10 @@
 
     invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 104
+    .end local v4    # "result":[Ljava/lang/Object;
+    .end local v6    # "size":I
+    .end local v7    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$3":I
     move-object v2, v8
 
     .line 24
@@ -264,10 +274,7 @@
     .end local v1    # "size$iv":I
     .end local v2    # "iter$iv":Ljava/util/Iterator;
     .end local v3    # "result$iv":[Ljava/lang/Object;
-    .end local v4    # "result":[Ljava/lang/Object;
     .end local v5    # "i$iv":I
-    .end local v6    # "size":I
-    .end local v7    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$3":I
     :goto_2
     return-object v2
 
@@ -303,7 +310,7 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 30
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_b
 
     .line 31
     const/4 v0, 0x0
@@ -336,6 +343,7 @@
     :cond_0
     nop
 
+    .line 106
     .end local v4    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$4":I
     goto :goto_0
 
@@ -367,11 +375,14 @@
     :cond_2
     nop
 
+    .line 108
+    .end local v5    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$4":I
+    nop
+
     .line 31
     .end local v0    # "$i$f$toArrayImpl":I
     .end local v1    # "size$iv":I
     .end local v4    # "iter$iv":Ljava/util/Iterator;
-    .end local v5    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$4":I
     :goto_0
     move-object v2, p1
 
@@ -410,10 +421,13 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_b
+    const-string v7, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>"
+
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v6, [Ljava/lang/Object;
 
+    .line 109
     .end local v2    # "size":I
     .end local v5    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$5":I
     :goto_1
@@ -541,6 +555,12 @@
 
     .line 42
     :goto_4
+    nop
+
+    .line 126
+    .end local v5    # "result":[Ljava/lang/Object;
+    .end local v7    # "size":I
+    .end local v8    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$6":I
     move-object v2, v3
 
     .line 31
@@ -548,10 +568,7 @@
     .end local v1    # "size$iv":I
     .end local v2    # "result$iv":[Ljava/lang/Object;
     .end local v4    # "iter$iv":Ljava/util/Iterator;
-    .end local v5    # "result":[Ljava/lang/Object;
     .end local v6    # "i$iv":I
-    .end local v7    # "size":I
-    .end local v8    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$6":I
     :goto_5
     return-object v2
 
@@ -566,26 +583,13 @@
 
     goto :goto_2
 
-    .line 39
-    .end local v6    # "i$iv":I
-    .local v2, "size":I
-    .local v5, "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$5":I
-    :cond_b
-    new-instance v3, Ljava/lang/NullPointerException;
-
-    const-string v6, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>"
-
-    invoke-direct {v3, v6}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-
     .line 30
     .end local v0    # "$i$f$toArrayImpl":I
     .end local v1    # "size$iv":I
-    .end local v2    # "size":I
+    .end local v2    # "result$iv":[Ljava/lang/Object;
     .end local v4    # "iter$iv":Ljava/util/Iterator;
-    .end local v5    # "$i$a$-toArrayImpl-CollectionToArray$collectionToArray$5":I
-    :cond_c
+    .end local v6    # "i$iv":I
+    :cond_b
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V

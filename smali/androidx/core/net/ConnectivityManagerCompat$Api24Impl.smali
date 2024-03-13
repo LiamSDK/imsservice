@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 188
+    .line 187
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 190
+    .line 189
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "connectivityManager"    # Landroid/net/ConnectivityManager;
 
-    .line 194
+    .line 193
     invoke-virtual {p0}, Landroid/net/ConnectivityManager;->getRestrictBackgroundStatus()I
 
     move-result v0

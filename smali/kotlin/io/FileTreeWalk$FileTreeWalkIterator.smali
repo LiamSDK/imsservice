@@ -56,7 +56,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -86,10 +86,6 @@
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 66
     iput-object p1, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;->this$0:Lkotlin/io/FileTreeWalk;
@@ -229,10 +225,9 @@
 .method private final gotoNext()Ljava/io/File;
     .locals 4
 
-    .line 95
+    .line 97
     nop
 
-    .line 97
     :goto_0
     iget-object v0, p0, Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;->state:Ljava/util/ArrayDeque;
 
@@ -312,9 +307,15 @@
     invoke-virtual {v2, v3}, Ljava/util/ArrayDeque;->push(Ljava/lang/Object;)V
 
     .line 111
+    nop
+
+    .end local v0    # "topState":Lkotlin/io/FileTreeWalk$WalkState;
+    .end local v1    # "file":Ljava/io/File;
     goto :goto_0
 
     .line 107
+    .restart local v0    # "topState":Lkotlin/io/FileTreeWalk$WalkState;
+    .restart local v1    # "file":Ljava/io/File;
     :cond_3
     :goto_1
     return-object v1

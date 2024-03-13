@@ -137,16 +137,16 @@
     .line 95
     new-instance v2, Landroid/telephony/ims/ImsReasonInfo;
 
-    const v4, 0xf009
-
-    sget-object v5, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_25:Lcom/android/internal/telephony/CommandException$Error;
+    sget-object v4, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_25:Lcom/android/internal/telephony/CommandException$Error;
 
     .line 96
-    invoke-virtual {p0, v5, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
+    invoke-virtual {p0, v4, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v2, v4, v3, v5}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    const v5, 0xf009
+
+    invoke-direct {v2, v5, v3, v4}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     move-object v1, v2
 
@@ -178,16 +178,16 @@
     .line 100
     new-instance v2, Landroid/telephony/ims/ImsReasonInfo;
 
-    const v4, 0xf010
-
-    sget-object v5, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_6:Lcom/android/internal/telephony/CommandException$Error;
+    sget-object v4, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_6:Lcom/android/internal/telephony/CommandException$Error;
 
     .line 101
-    invoke-virtual {p0, v5, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
+    invoke-virtual {p0, v4, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v2, v4, v3, v5}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    const v5, 0xf010
+
+    invoke-direct {v2, v5, v3, v4}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     move-object v1, v2
 
@@ -202,16 +202,16 @@
     .line 103
     new-instance v2, Landroid/telephony/ims/ImsReasonInfo;
 
-    const v4, 0xf011
-
-    sget-object v5, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_24:Lcom/android/internal/telephony/CommandException$Error;
+    sget-object v4, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_24:Lcom/android/internal/telephony/CommandException$Error;
 
     .line 104
-    invoke-virtual {p0, v5, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
+    invoke-virtual {p0, v4, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v2, v4, v3, v5}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    const v5, 0xf011
+
+    invoke-direct {v2, v5, v3, v4}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     move-object v1, v2
 
@@ -226,16 +226,16 @@
     .line 106
     new-instance v2, Landroid/telephony/ims/ImsReasonInfo;
 
-    const v4, 0xf012
-
-    sget-object v5, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_23:Lcom/android/internal/telephony/CommandException$Error;
+    sget-object v4, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_23:Lcom/android/internal/telephony/CommandException$Error;
 
     .line 107
-    invoke-virtual {p0, v5, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
+    invoke-virtual {p0, v4, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v2, v4, v3, v5}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    const v5, 0xf012
+
+    invoke-direct {v2, v5, v3, v4}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     move-object v1, v2
 
@@ -250,16 +250,16 @@
     .line 109
     new-instance v2, Landroid/telephony/ims/ImsReasonInfo;
 
-    const v4, 0xf013
-
-    sget-object v5, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_22:Lcom/android/internal/telephony/CommandException$Error;
+    sget-object v4, Lcom/android/internal/telephony/CommandException$Error;->OEM_ERROR_22:Lcom/android/internal/telephony/CommandException$Error;
 
     .line 110
-    invoke-virtual {p0, v5, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
+    invoke-virtual {p0, v4, p2}, Lcom/mediatek/ims/plugin/impl/ImsSSOemPluginBase;->getXCAPErrorMessageFromSysProp(Lcom/android/internal/telephony/CommandException$Error;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v2, v4, v3, v5}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    const v5, 0xf013
+
+    invoke-direct {v2, v5, v3, v4}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     move-object v1, v2
 

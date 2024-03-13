@@ -44,15 +44,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 346
-    const/4 v0, 0x2
+    filled-new-array {p2, p3}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    aput p3, v0, v1
+    move-result-object v0
 
     .line 349
     .local v0, "ret":[I
@@ -88,7 +82,7 @@
 .end method
 
 .method public callInfoIndication(I[Ljava/lang/String;)V
-    .locals 4
+    .locals 3
     .param p1, "type"    # I
     .param p2, "result"    # [Ljava/lang/String;
 
@@ -112,33 +106,33 @@
     :cond_0
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
-    const/16 v1, 0xbd7
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, ""
 
-    const-string v3, ""
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
+    move-result-object v1
 
     .line 816
-    invoke-static {v2}, Lcom/mediatek/ims/ImsServiceCallTracker;->sensitiveEncode(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/mediatek/ims/ImsServiceCallTracker;->sensitiveEncode(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 815
-    invoke-virtual {v0, v1, v2}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
+    const/16 v2, 0xbd7
+
+    invoke-virtual {v0, v2, v1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
 
     .line 819
     iget-object v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
@@ -185,15 +179,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 1120
-    const/4 v0, 0x2
+    filled-new-array {p2, p3}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    aput p3, v0, v1
+    move-result-object v0
 
     .line 1123
     .local v0, "ret":[I
@@ -246,27 +234,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 839
-    const/4 v0, 0x5
+    filled-new-array {p2, p3, p4, p5, p6}, [Ljava/lang/String;
 
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v0, v2
-
-    aput-object p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v0, v1
-
-    const/4 v1, 0x3
-
-    aput-object p5, v0, v1
-
-    const/4 v1, 0x4
-
-    aput-object p6, v0, v1
+    move-result-object v0
 
     .line 843
     .local v0, "ret":[Ljava/lang/String;
@@ -381,7 +351,7 @@
 .end method
 
 .method public econfResultIndication(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 5
+    .locals 4
     .param p1, "type"    # I
     .param p2, "confCallId"    # Ljava/lang/String;
     .param p3, "op"    # Ljava/lang/String;
@@ -398,95 +368,75 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 868
-    const/4 v0, 0x6
+    filled-new-array/range {p2 .. p7}, [Ljava/lang/String;
 
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v0, v2
-
-    aput-object p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v0, v1
-
-    const/4 v1, 0x3
-
-    aput-object p5, v0, v1
-
-    const/4 v2, 0x4
-
-    aput-object p6, v0, v2
-
-    const/4 v2, 0x5
-
-    aput-object p7, v0, v2
+    move-result-object v0
 
     .line 871
     .local v0, "ret":[Ljava/lang/String;
-    iget-object v2, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
+    iget-object v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, ""
+    const-string v3, ""
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 872
-    invoke-static {v3}, Lcom/mediatek/ims/ImsServiceCallTracker;->sensitiveEncode(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/mediatek/ims/ImsServiceCallTracker;->sensitiveEncode(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 871
-    const/16 v4, 0xbd8
+    const/16 v3, 0xbd8
 
-    invoke-virtual {v2, v4, v3}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
 
     .line 875
-    iget-object v2, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
+    iget-object v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
-    iget-object v2, v2, Lcom/mediatek/ims/ril/ImsRILAdapter;->mEconfResultRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->mEconfResultRegistrants:Landroid/os/RegistrantList;
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     .line 876
-    iget-object v2, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
+    iget-object v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "ECONF result = "
+    const-string v3, "ECONF result = "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    aget-object v1, v0, v1
+    const/4 v3, 0x3
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aget-object v3, v0, v3
 
-    move-result-object v1
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v1
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2, v1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->riljLog(Ljava/lang/String;)V
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/mediatek/ims/ril/ImsRILAdapter;->riljLog(Ljava/lang/String;)V
 
     .line 877
     iget-object v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
@@ -521,19 +471,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 787
-    const/4 v0, 0x3
+    filled-new-array {p2, p3, p4}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    aput p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput p4, v0, v1
+    move-result-object v0
 
     .line 790
     .local v0, "ret":[I
@@ -728,13 +668,11 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 103
-    new-array v0, v1, [I
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+    filled-new-array {v0}, [I
 
-    const/4 v2, 0x0
-
-    aput v1, v0, v2
+    move-result-object v0
 
     .line 106
     .local v0, "ret":[I
@@ -794,43 +732,27 @@
     .local v0, "phoneId":Ljava/lang/String;
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 83
-    .local v2, "strAid":Ljava/lang/String;
+    .local v1, "strAid":Ljava/lang/String;
     invoke-static {p3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 84
+    .local v2, "strAction":Ljava/lang/String;
+    filled-new-array {v0, v1, v2, p4}, [Ljava/lang/String;
 
     move-result-object v3
 
-    .line 84
-    .local v3, "strAction":Ljava/lang/String;
-    const/4 v4, 0x4
-
-    new-array v4, v4, [Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    aput-object v0, v4, v5
-
-    aput-object v2, v4, v1
-
-    const/4 v1, 0x2
-
-    aput-object v3, v4, v1
-
-    const/4 v1, 0x3
-
-    aput-object p4, v4, v1
-
-    move-object v1, v4
-
     .line 87
-    .local v1, "ret":[Ljava/lang/String;
+    .local v3, "ret":[Ljava/lang/String;
     iget-object v4, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
     const/16 v5, 0xbe9
 
-    invoke-virtual {v4, v5, v1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
+    invoke-virtual {v4, v5, v3}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
 
     .line 90
     iget-object v4, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
@@ -848,7 +770,7 @@
 
     const/4 v6, 0x0
 
-    invoke-direct {v5, v6, v1, v6}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+    invoke-direct {v5, v6, v3, v6}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     invoke-virtual {v4, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
@@ -872,25 +794,15 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 1165
-    const/4 v0, 0x3
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    new-array v0, v0, [Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    iget v2, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+    move-result-object v0
 
-    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    filled-new-array {v0, p3, p4}, [Ljava/lang/String;
 
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    aput-object v2, v0, v3
-
-    aput-object p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v0, v1
+    move-result-object v0
 
     .line 1168
     .local v0, "ret":[Ljava/lang/String;
@@ -937,17 +849,15 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 1207
-    new-array v0, v1, [Ljava/lang/String;
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    filled-new-array {v0}, [Ljava/lang/String;
 
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 1210
     .local v0, "ret":[Ljava/lang/String;
@@ -994,13 +904,11 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 1142
-    new-array v0, v1, [I
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+    filled-new-array {v0}, [I
 
-    const/4 v2, 0x0
-
-    aput v1, v0, v2
+    move-result-object v0
 
     .line 1145
     .local v0, "ret":[I
@@ -1050,21 +958,11 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 1188
-    const/4 v0, 0x3
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    new-array v0, v0, [I
+    filled-new-array {v0, p3, p4}, [I
 
-    iget v2, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
-
-    const/4 v3, 0x0
-
-    aput v2, v0, v3
-
-    aput p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput p4, v0, v1
+    move-result-object v0
 
     .line 1191
     .local v0, "ret":[I
@@ -1100,7 +998,7 @@
 .end method
 
 .method public imsConferenceInfoIndication(I[Lvendor/mediatek/hardware/mtkradioex/ims/ImsConfParticipant;)V
-    .locals 5
+    .locals 4
     .param p1, "type"    # I
     .param p2, "participants"    # [Lvendor/mediatek/hardware/mtkradioex/ims/ImsConfParticipant;
 
@@ -1191,33 +1089,33 @@
     :cond_1
     iget-object v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
-    const/16 v2, 0xc11
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, ""
 
-    const-string v4, ""
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
+    move-result-object v2
 
     .line 935
-    invoke-static {v3}, Lcom/mediatek/ims/ImsServiceCallTracker;->sensitiveEncode(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/mediatek/ims/ImsServiceCallTracker;->sensitiveEncode(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 934
-    invoke-virtual {v1, v2, v3}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
+    const/16 v3, 0xc11
+
+    invoke-virtual {v1, v3, v2}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
 
     .line 938
     iget-object v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
@@ -1274,25 +1172,9 @@
 
     .line 127
     .local v0, "phoneId":Ljava/lang/String;
-    const/4 v2, 0x4
+    filled-new-array {v0, p2, p3, p4}, [Ljava/lang/String;
 
-    new-array v2, v2, [Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    aput-object v0, v2, v3
-
-    aput-object p2, v2, v1
-
-    const/4 v1, 0x2
-
-    aput-object p3, v2, v1
-
-    const/4 v1, 0x3
-
-    aput-object p4, v2, v1
-
-    move-object v1, v2
+    move-result-object v1
 
     .line 130
     .local v1, "ret":[Ljava/lang/String;
@@ -1462,7 +1344,7 @@
 .end method
 
 .method public imsEventPackageIndication(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 4
+    .locals 7
     .param p1, "type"    # I
     .param p2, "callId"    # Ljava/lang/String;
     .param p3, "ptype"    # Ljava/lang/String;
@@ -1478,38 +1360,26 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 1071
-    const/4 v0, 0x6
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v0, v2
-
-    aput-object p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v0, v1
-
-    const/4 v1, 0x3
-
-    aput-object p5, v0, v1
-
-    const/4 v1, 0x4
-
-    aput-object p6, v0, v1
-
-    iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
     .line 1072
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v6
 
-    const/4 v2, 0x5
+    move-object v1, p2
 
-    aput-object v1, v0, v2
+    move-object v2, p3
+
+    move-object v3, p4
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
+
+    move-result-object v0
 
     .line 1075
     .local v0, "ret":[Ljava/lang/String;
@@ -1582,21 +1452,15 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 1025
-    const/4 v0, 0x2
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    new-array v0, v0, [Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    aput-object p2, v0, v2
+    filled-new-array {p2, v0}, [Ljava/lang/String;
 
-    iget v2, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
+    move-result-object v0
 
     .line 1028
     .local v0, "ret":[Ljava/lang/String;
@@ -1672,17 +1536,11 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 575
-    const/4 v0, 0x2
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    new-array v0, v0, [I
+    filled-new-array {p2, v0}, [I
 
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    iget v2, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
-
-    aput v2, v0, v1
+    move-result-object v0
 
     .line 578
     .local v0, "ret":[I
@@ -1928,21 +1786,11 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 414
-    const/4 v0, 0x3
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    new-array v0, v0, [I
+    filled-new-array {p2, p3, v0}, [I
 
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    aput p3, v0, v1
-
-    iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
-
-    const/4 v2, 0x2
-
-    aput v1, v0, v2
+    move-result-object v0
 
     .line 416
     .local v0, "ret":[I
@@ -1997,35 +1845,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 602
-    const/4 v0, 0x7
+    filled-new-array/range {p2 .. p8}, [Ljava/lang/String;
 
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v0, v2
-
-    aput-object p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v0, v1
-
-    const/4 v1, 0x3
-
-    aput-object p5, v0, v1
-
-    const/4 v1, 0x4
-
-    aput-object p6, v0, v1
-
-    const/4 v1, 0x5
-
-    aput-object p7, v0, v1
-
-    const/4 v1, 0x6
-
-    aput-object p8, v0, v1
+    move-result-object v0
 
     .line 605
     .local v0, "ret":[Ljava/lang/String;
@@ -2074,17 +1896,11 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 434
-    const/4 v0, 0x2
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    new-array v0, v0, [I
+    filled-new-array {p2, v0}, [I
 
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    iget v2, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
-
-    aput v2, v0, v1
+    move-result-object v0
 
     .line 437
     .local v0, "ret":[I
@@ -2148,7 +1964,7 @@
 .end method
 
 .method public lteMessageWaitingIndication(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 4
+    .locals 7
     .param p1, "type"    # I
     .param p2, "callId"    # Ljava/lang/String;
     .param p3, "ptype"    # Ljava/lang/String;
@@ -2164,38 +1980,26 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 958
-    const/4 v0, 0x6
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v0, v2
-
-    aput-object p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v0, v1
-
-    const/4 v1, 0x3
-
-    aput-object p5, v0, v1
-
-    const/4 v1, 0x4
-
-    aput-object p6, v0, v1
-
-    iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
     .line 959
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v6
 
-    const/4 v2, 0x5
+    move-object v1, p2
 
-    aput-object v1, v0, v2
+    move-object v2, p3
+
+    move-object v3, p4
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
+
+    move-result-object v0
 
     .line 962
     .local v0, "ret":[Ljava/lang/String;
@@ -2268,17 +2072,15 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 210
-    new-array v0, v1, [Ljava/lang/String;
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    filled-new-array {v0}, [Ljava/lang/String;
 
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 214
     .local v0, "ret":[Ljava/lang/String;
@@ -2326,17 +2128,15 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 182
-    new-array v0, v1, [Ljava/lang/String;
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    filled-new-array {v0}, [Ljava/lang/String;
 
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 186
     .local v0, "ret":[Ljava/lang/String;
@@ -2681,19 +2481,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 653
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Ljava/lang/String;
-
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    aput-object v2, v0, v3
-
-    aput-object p3, v0, v1
+    move-result-object v0
 
     iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
@@ -2702,9 +2492,9 @@
 
     move-result-object v1
 
-    const/4 v2, 0x2
+    filled-new-array {v0, p3, v1}, [Ljava/lang/String;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 658
     .local v0, "ret":[Ljava/lang/String;
@@ -2752,17 +2542,11 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 674
-    const/4 v0, 0x2
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
-    new-array v0, v0, [I
+    filled-new-array {p2, v0}, [I
 
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    iget v2, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
-
-    aput v2, v0, v1
+    move-result-object v0
 
     .line 677
     .local v0, "ret":[I
@@ -2812,30 +2596,16 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 625
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v0, v2
-
-    aput-object p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v0, v1
-
-    iget v1, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
+    iget v0, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mPhoneId:I
 
     .line 626
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x3
+    filled-new-array {p2, p3, p4, v0}, [Ljava/lang/String;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 629
     .local v0, "ret":[Ljava/lang/String;
@@ -2895,27 +2665,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 295
-    const/4 v0, 0x5
+    filled-new-array {p2, p3, p4, p5, p6}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    aput p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput p4, v0, v1
-
-    const/4 v1, 0x3
-
-    aput p5, v0, v1
-
-    const/4 v1, 0x4
-
-    aput p6, v0, v1
+    move-result-object v0
 
     .line 298
     .local v0, "ret":[I
@@ -2964,15 +2716,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 322
-    const/4 v0, 0x2
+    filled-new-array {p2, p3}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    aput p3, v0, v1
+    move-result-object v0
 
     .line 325
     .local v0, "ret":[I
@@ -3021,15 +2767,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 237
-    const/4 v0, 0x2
+    filled-new-array {p2, p3}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v2, 0x0
-
-    aput p2, v0, v2
-
-    aput p3, v0, v1
+    move-result-object v0
 
     .line 240
     .local v0, "ret":[I
@@ -3087,33 +2827,21 @@
     .local v0, "strCallId":Ljava/lang/String;
     invoke-static {p3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 266
-    .local v2, "strLength":Ljava/lang/String;
-    const/4 v3, 0x3
+    .local v1, "strLength":Ljava/lang/String;
+    filled-new-array {v0, v1, p4}, [Ljava/lang/String;
 
-    new-array v3, v3, [Ljava/lang/String;
-
-    const/4 v4, 0x0
-
-    aput-object v0, v3, v4
-
-    aput-object v2, v3, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v3, v1
-
-    move-object v1, v3
+    move-result-object v2
 
     .line 269
-    .local v1, "ret":[Ljava/lang/String;
+    .local v2, "ret":[Ljava/lang/String;
     iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
 
     const/16 v4, 0xc2f
 
-    invoke-virtual {v3, v4, v1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
+    invoke-virtual {v3, v4, v2}, Lcom/mediatek/ims/ril/ImsRILAdapter;->unsljLogRet(ILjava/lang/Object;)V
 
     .line 272
     iget-object v3, p0, Lcom/mediatek/ims/ril/MtkRadioExImsIndication;->mRil:Lcom/mediatek/ims/ril/ImsRILAdapter;
@@ -3131,7 +2859,7 @@
 
     const/4 v5, 0x0
 
-    invoke-direct {v4, v5, v1, v5}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
+    invoke-direct {v4, v5, v2, v5}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     invoke-virtual {v3, v4}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
@@ -3153,11 +2881,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 371
-    new-array v0, v1, [I
+    filled-new-array {p2}, [I
 
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     .line 374
     .local v0, "ret":[I
@@ -3248,31 +2974,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 897
-    const/4 v0, 0x6
+    filled-new-array/range {p2 .. p7}, [Ljava/lang/String;
 
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v0, v2
-
-    aput-object p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v0, v1
-
-    const/4 v1, 0x3
-
-    aput-object p5, v0, v1
-
-    const/4 v1, 0x4
-
-    aput-object p6, v0, v1
-
-    const/4 v1, 0x5
-
-    aput-object p7, v0, v1
+    move-result-object v0
 
     .line 900
     .local v0, "ret":[Ljava/lang/String;
@@ -3457,11 +3161,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 1046
-    new-array v0, v1, [I
+    filled-new-array {p2}, [I
 
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     .line 1049
     .local v0, "ret":[I
@@ -3539,19 +3241,9 @@
     invoke-virtual {v0, v1, p1}, Lcom/mediatek/ims/ril/ImsRILAdapter;->processMtkIndication(II)V
 
     .line 700
-    const/4 v0, 0x3
+    filled-new-array {p2, p3, p4}, [Ljava/lang/String;
 
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v0, v2
-
-    aput-object p3, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object p4, v0, v1
+    move-result-object v0
 
     .line 703
     .local v0, "ret":[Ljava/lang/String;

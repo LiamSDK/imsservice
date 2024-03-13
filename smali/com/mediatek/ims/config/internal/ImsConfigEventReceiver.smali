@@ -56,25 +56,33 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     .line 36
     const-string v0, "persist.vendor.log.tel_dbg"
 
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    if-ne v0, v2, :cond_1
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
 
     :cond_0
     move v1, v2
 
+    goto :goto_1
+
     :cond_1
+    :goto_0
+    nop
+
+    :goto_1
     sput-boolean v1, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->DEBUG:Z
 
     .line 35
@@ -142,7 +150,7 @@
     iput-object v1, p0, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->mLogTag:Ljava/lang/String;
 
     .line 66
-    invoke-static {p2}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
+    invoke-static {p2}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
 
     move-result v1
 
@@ -236,7 +244,7 @@
 
     .line 268
     :cond_0
-    invoke-static {v1}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
+    invoke-static {v1}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
 
     move-result v1
 
@@ -887,7 +895,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+    .locals 7
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
@@ -1074,7 +1082,7 @@
     .line 161
     :cond_4
     :goto_2
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
     .line 162
     const-string v3, "ACTION_SET_RADIO_CAPABILITY_DONE"
@@ -1157,7 +1165,7 @@
     .line 120
     iget v1, p0, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->mPhoneId:I
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_d
 
     .line 121
     const-string v1, "ACTION_MTK_MMTEL_READY"
@@ -1167,7 +1175,7 @@
     .line 122
     iget v1, p0, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->mPhoneId:I
 
-    invoke-static {v1}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
+    invoke-static {v1}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
 
     move-result v1
 
@@ -1288,45 +1296,12 @@
 
     move-result v0
 
-    .line 81
-    iget-object v2, p0, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->mLogTag:Ljava/lang/String;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "ACTION_SIM_STATE_CHANGED, state:"
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v7, ", phoneId:"
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v2, v5}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 82
     iget v2, p0, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->mPhoneId:I
 
-    if-ne v0, v2, :cond_c
+    if-ne v0, v2, :cond_d
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
     .line 83
     const-string v2, "READY"
@@ -1344,7 +1319,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_d
 
     iget v2, p0, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->mPhoneId:I
 
@@ -1353,7 +1328,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_d
 
     .line 87
     iget v2, p0, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->mPhoneId:I
@@ -1386,7 +1361,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_d
 
     .line 93
     :cond_a
@@ -1482,14 +1457,16 @@
     .line 106
     invoke-direct {p0, p1, v0}, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->updateImsServiceConfig(Landroid/content/Context;I)V
 
-    .line 194
-    .end local v1    # "state":Ljava/lang/String;
+    .line 108
     .end local v2    # "defaultSupportVolte":Z
     :cond_c
+    nop
+
+    .line 194
+    .end local v1    # "state":Ljava/lang/String;
+    :cond_d
     :goto_7
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

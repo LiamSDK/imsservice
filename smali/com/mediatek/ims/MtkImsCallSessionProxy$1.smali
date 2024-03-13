@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
-    .line 69
+    .line 71
     iput-object p1, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-direct {p0}, Lcom/mediatek/ims/internal/IMtkImsCallSession$Stub;-><init>()V
@@ -37,43 +37,43 @@
     .locals 1
     .param p1, "isAprroved"    # Z
 
-    .line 108
+    .line 110
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->approveEccRedial(Z)V
 
-    .line 109
+    .line 111
     return-void
 .end method
 
 .method public callTerminated()V
     .locals 1
 
-    .line 118
+    .line 120
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->callTerminated()V
 
-    .line 119
+    .line 121
     return-void
 .end method
 
 .method public close()V
     .locals 1
 
-    .line 73
+    .line 75
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->close()V
 
-    .line 74
+    .line 76
     return-void
 .end method
 
 .method public getCallId()Ljava/lang/String;
     .locals 1
 
-    .line 78
+    .line 80
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->getCallId()Ljava/lang/String;
@@ -86,7 +86,7 @@
 .method public getCallProfile()Landroid/telephony/ims/ImsCallProfile;
     .locals 1
 
-    .line 83
+    .line 85
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->getCallProfile()Landroid/telephony/ims/ImsCallProfile;
@@ -99,7 +99,7 @@
 .method public getHeaderCallId()Ljava/lang/String;
     .locals 1
 
-    .line 133
+    .line 135
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->getHeaderCallId()Ljava/lang/String;
@@ -112,7 +112,7 @@
 .method public getIImsCallSession()Lcom/android/ims/internal/IImsCallSession;
     .locals 1
 
-    .line 93
+    .line 95
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->getIImsCallSession()Lcom/android/ims/internal/IImsCallSession;
@@ -125,7 +125,7 @@
 .method public isIncomingCallMultiparty()Z
     .locals 1
 
-    .line 103
+    .line 105
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->isIncomingCallMultiparty()Z
@@ -138,24 +138,24 @@
 .method public removeLastParticipant()V
     .locals 1
 
-    .line 128
+    .line 130
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->removeLastParticipant()V
 
-    .line 129
+    .line 131
     return-void
 .end method
 
 .method public resume()V
     .locals 1
 
-    .line 113
+    .line 115
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->resume()V
 
-    .line 114
+    .line 116
     return-void
 .end method
 
@@ -163,12 +163,12 @@
     .locals 1
     .param p1, "iSession"    # Lcom/android/ims/internal/IImsCallSession;
 
-    .line 98
+    .line 100
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->setIImsCallSession(Lcom/android/ims/internal/IImsCallSession;)V
 
-    .line 99
+    .line 101
     return-void
 .end method
 
@@ -176,12 +176,12 @@
     .locals 1
     .param p1, "mode"    # I
 
-    .line 123
+    .line 125
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->setImsCallMode(I)V
 
-    .line 124
+    .line 126
     return-void
 .end method
 
@@ -189,12 +189,12 @@
     .locals 1
     .param p1, "listener"    # Lcom/mediatek/ims/internal/IMtkImsCallSessionListener;
 
-    .line 88
+    .line 90
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0, p1}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->setListener(Lcom/mediatek/ims/internal/IMtkImsCallSessionListener;)V
 
-    .line 89
+    .line 91
     return-void
 .end method
 
@@ -204,11 +204,11 @@
     .param p2, "operation"    # Ljava/lang/String;
     .param p3, "duration"    # Ljava/lang/String;
 
-    .line 138
+    .line 140
     iget-object v0, p0, Lcom/mediatek/ims/MtkImsCallSessionProxy$1;->this$0:Lcom/mediatek/ims/MtkImsCallSessionProxy;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/mediatek/ims/MtkImsCallSessionProxy;->videoScreenOperation(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 139
+    .line 141
     return-void
 .end method

@@ -42,7 +42,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -159,7 +159,7 @@
     move-object v0, p1
 
     .line 154
-    .local v0, "$this$entryHashCode_u24lambda_u2d0":Ljava/util/Map$Entry;
+    .local v0, "$this$entryHashCode_u24lambda_u240":Ljava/util/Map$Entry;
     const/4 v1, 0x0
 
     .line 145
@@ -170,35 +170,32 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
-    move v2, v3
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
+    move v2, v3
 
     :goto_0
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
 
-    if-nez v4, :cond_1
+    if-eqz v4, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v4}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    :goto_1
+    :cond_1
     xor-int v0, v2, v3
 
-    .end local v0    # "$this$entryHashCode_u24lambda_u2d0":Ljava/util/Map$Entry;
+    .end local v0    # "$this$entryHashCode_u24lambda_u240":Ljava/util/Map$Entry;
     .end local v1    # "$i$a$-with-AbstractMap$Companion$entryHashCode$1":I
     return v0
 .end method
@@ -223,7 +220,7 @@
     move-object v0, p1
 
     .line 154
-    .local v0, "$this$entryToString_u24lambda_u2d1":Ljava/util/Map$Entry;
+    .local v0, "$this$entryToString_u24lambda_u241":Ljava/util/Map$Entry;
     const/4 v1, 0x0
 
     .line 146
@@ -258,7 +255,7 @@
 
     move-result-object v0
 
-    .end local v0    # "$this$entryToString_u24lambda_u2d1":Ljava/util/Map$Entry;
+    .end local v0    # "$this$entryToString_u24lambda_u241":Ljava/util/Map$Entry;
     .end local v1    # "$i$a$-with-AbstractMap$Companion$entryToString$1":I
     return-object v0
 .end method

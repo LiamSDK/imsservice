@@ -31,7 +31,7 @@
     .locals 0
     .param p1, "this$0"    # Landroidx/collection/ArrayMap;
 
-    .line 194
+    .line 253
     .local p0, "this":Landroidx/collection/ArrayMap$EntrySet;, "Landroidx/collection/ArrayMap<TK;TV;>.EntrySet;"
     iput-object p1, p0, Landroidx/collection/ArrayMap$EntrySet;->this$0:Landroidx/collection/ArrayMap;
 
@@ -53,7 +53,7 @@
         }
     .end annotation
 
-    .line 197
+    .line 257
     .local p0, "this":Landroidx/collection/ArrayMap$EntrySet;, "Landroidx/collection/ArrayMap<TK;TV;>.EntrySet;"
     new-instance v0, Landroidx/collection/ArrayMap$MapIterator;
 
@@ -67,11 +67,13 @@
 .method public size()I
     .locals 1
 
-    .line 202
+    .line 262
     .local p0, "this":Landroidx/collection/ArrayMap$EntrySet;, "Landroidx/collection/ArrayMap<TK;TV;>.EntrySet;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$EntrySet;->this$0:Landroidx/collection/ArrayMap;
 
-    iget v0, v0, Landroidx/collection/ArrayMap;->mSize:I
+    invoke-virtual {v0}, Landroidx/collection/ArrayMap;->size()I
+
+    move-result v0
 
     return v0
 .end method

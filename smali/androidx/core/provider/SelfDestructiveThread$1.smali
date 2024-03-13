@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Landroidx/core/provider/SelfDestructiveThread;
 
-    .line 62
+    .line 61
     iput-object p1, p0, Landroidx/core/provider/SelfDestructiveThread$1;->this$0:Landroidx/core/provider/SelfDestructiveThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,17 +40,17 @@
     .locals 3
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 65
+    .line 64
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     packed-switch v0, :pswitch_data_0
 
-    .line 73
+    .line 72
     return v1
 
-    .line 67
+    .line 66
     :pswitch_0
     iget-object v0, p0, Landroidx/core/provider/SelfDestructiveThread$1;->this$0:Landroidx/core/provider/SelfDestructiveThread;
 
@@ -60,16 +60,16 @@
 
     invoke-virtual {v0, v2}, Landroidx/core/provider/SelfDestructiveThread;->onInvokeRunnable(Ljava/lang/Runnable;)V
 
-    .line 68
+    .line 67
     return v1
 
-    .line 70
+    .line 69
     :pswitch_1
     iget-object v0, p0, Landroidx/core/provider/SelfDestructiveThread$1;->this$0:Landroidx/core/provider/SelfDestructiveThread;
 
     invoke-virtual {v0}, Landroidx/core/provider/SelfDestructiveThread;->onDestruction()V
 
-    .line 71
+    .line 70
     return v1
 
     nop

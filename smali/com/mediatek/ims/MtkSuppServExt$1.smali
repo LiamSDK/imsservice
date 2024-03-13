@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/mediatek/ims/MtkSuppServExt;
     .param p2, "arg0"    # Landroid/os/Looper;
 
-    .line 438
+    .line 439
     iput-object p1, p0, Lcom/mediatek/ims/MtkSuppServExt$1;->this$0:Lcom/mediatek/ims/MtkSuppServExt;
 
     invoke-direct {p0, p2}, Landroid/telephony/PhoneStateListener;-><init>(Landroid/os/Looper;)V
@@ -38,7 +38,7 @@
     .locals 4
     .param p1, "serviceState"    # Landroid/telephony/ServiceState;
 
-    .line 441
+    .line 442
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getDataRegState()I
 
     move-result v0
@@ -47,19 +47,19 @@
 
     goto :goto_0
 
-    .line 443
+    .line 444
     :pswitch_0
     new-instance v0, Lcom/mediatek/ims/MtkSuppServExt$Task;
 
     iget-object v1, p0, Lcom/mediatek/ims/MtkSuppServExt$1;->this$0:Lcom/mediatek/ims/MtkSuppServExt;
 
-    const/4 v2, 0x0
+    const-string v2, "Data reg state in service."
 
-    const-string v3, "Data reg state in service."
+    const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v2, v3}, Lcom/mediatek/ims/MtkSuppServExt$Task;-><init>(Lcom/mediatek/ims/MtkSuppServExt;IZLjava/lang/String;)V
+    invoke-direct {v0, v1, v3, v3, v2}, Lcom/mediatek/ims/MtkSuppServExt$Task;-><init>(Lcom/mediatek/ims/MtkSuppServExt;IZLjava/lang/String;)V
 
-    .line 444
+    .line 445
     .local v0, "task":Lcom/mediatek/ims/MtkSuppServExt$Task;
     iget-object v1, p0, Lcom/mediatek/ims/MtkSuppServExt$1;->this$0:Lcom/mediatek/ims/MtkSuppServExt;
 
@@ -69,10 +69,10 @@
 
     invoke-virtual {v1, v0}, Lcom/mediatek/ims/MtkSuppServExt$SuppServTaskDriven;->appendTask(Lcom/mediatek/ims/MtkSuppServExt$Task;)V
 
-    .line 445
+    .line 446
     nop
 
-    .line 449
+    .line 450
     .end local v0    # "task":Lcom/mediatek/ims/MtkSuppServExt$Task;
     :goto_0
     return-void

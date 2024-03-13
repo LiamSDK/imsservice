@@ -33,7 +33,7 @@
     .locals 0
     .param p1, "this$1"    # Lcom/mediatek/ims/internal/ImsVTProvider$ConnectionEx;
 
-    .line 367
+    .line 379
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProvider$ConnectionEx$VideoProvider;->this$1:Lcom/mediatek/ims/internal/ImsVTProvider$ConnectionEx;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

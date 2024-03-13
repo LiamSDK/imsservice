@@ -21,14 +21,14 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 40
+    .line 38
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroidx/core/util/TimeUtils;->sFormatSync:Ljava/lang/Object;
 
-    .line 41
+    .line 39
     const/16 v0, 0x18
 
     new-array v0, v0, [C
@@ -41,7 +41,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 185
+    .line 179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,7 +54,7 @@
     .param p2, "always"    # Z
     .param p3, "zeropad"    # I
 
-    .line 44
+    .line 42
     const/16 v0, 0x63
 
     if-gt p0, v0, :cond_5
@@ -67,7 +67,7 @@
 
     goto :goto_2
 
-    .line 47
+    .line 45
     :cond_0
     const/16 v0, 0x9
 
@@ -81,7 +81,7 @@
 
     goto :goto_1
 
-    .line 50
+    .line 48
     :cond_1
     if-nez p2, :cond_3
 
@@ -89,27 +89,27 @@
 
     goto :goto_0
 
-    .line 53
+    .line 51
     :cond_2
     const/4 v0, 0x0
 
     return v0
 
-    .line 51
+    .line 49
     :cond_3
     :goto_0
     add-int/lit8 v0, p1, 0x1
 
     return v0
 
-    .line 48
+    .line 46
     :cond_4
     :goto_1
     add-int/lit8 v0, p1, 0x2
 
     return v0
 
-    .line 45
+    .line 43
     :cond_5
     :goto_2
     add-int/lit8 v0, p1, 0x3
@@ -123,22 +123,22 @@
     .param p2, "now"    # J
     .param p4, "pw"    # Ljava/io/PrintWriter;
 
-    .line 178
+    .line 172
     const-wide/16 v0, 0x0
 
     cmp-long v0, p0, v0
 
     if-nez v0, :cond_0
 
-    .line 179
+    .line 173
     const-string v0, "--"
 
     invoke-virtual {p4, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 180
+    .line 174
     return-void
 
-    .line 182
+    .line 176
     :cond_0
     sub-long v0, p0, p2
 
@@ -146,7 +146,7 @@
 
     invoke-static {v0, v1, p4, v2}, Landroidx/core/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;I)V
 
-    .line 183
+    .line 177
     return-void
 .end method
 
@@ -155,12 +155,12 @@
     .param p0, "duration"    # J
     .param p2, "pw"    # Ljava/io/PrintWriter;
 
-    .line 172
+    .line 167
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Landroidx/core/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;I)V
 
-    .line 173
+    .line 168
     return-void
 .end method
 
@@ -170,18 +170,18 @@
     .param p2, "pw"    # Ljava/io/PrintWriter;
     .param p3, "fieldLen"    # I
 
-    .line 163
+    .line 159
     sget-object v0, Landroidx/core/util/TimeUtils;->sFormatSync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 164
+    .line 160
     :try_start_0
     invoke-static {p0, p1, p3}, Landroidx/core/util/TimeUtils;->formatDurationLocked(JI)I
 
     move-result v1
 
-    .line 165
+    .line 161
     .local v1, "len":I
     new-instance v2, Ljava/lang/String;
 
@@ -193,14 +193,14 @@
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 166
+    .line 162
     .end local v1    # "len":I
     monitor-exit v0
 
-    .line 167
+    .line 163
     return-void
 
-    .line 166
+    .line 162
     :catchall_0
     move-exception v1
 
@@ -216,12 +216,12 @@
     .param p0, "duration"    # J
     .param p2, "builder"    # Ljava/lang/StringBuilder;
 
-    .line 154
+    .line 151
     sget-object v0, Landroidx/core/util/TimeUtils;->sFormatSync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 155
+    .line 152
     const/4 v1, 0x0
 
     :try_start_0
@@ -229,22 +229,22 @@
 
     move-result v2
 
-    .line 156
+    .line 153
     .local v2, "len":I
     sget-object v3, Landroidx/core/util/TimeUtils;->sFormatStr:[C
 
     invoke-virtual {p2, v3, v1, v2}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
-    .line 157
+    .line 154
     nop
 
     .end local v2    # "len":I
     monitor-exit v0
 
-    .line 158
+    .line 155
     return-void
 
-    .line 157
+    .line 154
     :catchall_0
     move-exception v1
 
@@ -260,7 +260,7 @@
     .param p0, "duration"    # J
     .param p2, "fieldLen"    # I
 
-    .line 81
+    .line 79
     move-wide/from16 v0, p0
 
     move/from16 v2, p2
@@ -271,16 +271,16 @@
 
     if-ge v3, v2, :cond_0
 
-    .line 82
+    .line 80
     new-array v3, v2, [C
 
     sput-object v3, Landroidx/core/util/TimeUtils;->sFormatStr:[C
 
-    .line 85
+    .line 83
     :cond_0
     sget-object v3, Landroidx/core/util/TimeUtils;->sFormatStr:[C
 
-    .line 87
+    .line 85
     .local v3, "formatStr":[C
     const-wide/16 v4, 0x0
 
@@ -290,36 +290,36 @@
 
     if-nez v6, :cond_2
 
-    .line 88
+    .line 86
     const/4 v4, 0x0
 
-    .line 89
+    .line 87
     .local v4, "pos":I
     add-int/lit8 v2, v2, -0x1
 
-    .line 90
+    .line 88
     .end local p2    # "fieldLen":I
     .local v2, "fieldLen":I
     :goto_0
     if-ge v4, v2, :cond_1
 
-    .line 91
+    .line 89
     aput-char v7, v3, v4
 
     goto :goto_0
 
-    .line 93
+    .line 91
     :cond_1
     const/16 v5, 0x30
 
     aput-char v5, v3, v4
 
-    .line 94
+    .line 92
     add-int/lit8 v5, v4, 0x1
 
     return v5
 
-    .line 98
+    .line 96
     .end local v2    # "fieldLen":I
     .end local v4    # "pos":I
     .restart local p2    # "fieldLen":I
@@ -328,7 +328,7 @@
 
     if-lez v4, :cond_3
 
-    .line 99
+    .line 97
     const/16 v4, 0x2b
 
     move v10, v4
@@ -336,18 +336,18 @@
     .local v4, "prefix":C
     goto :goto_1
 
-    .line 101
+    .line 99
     .end local v4    # "prefix":C
     :cond_3
     const/16 v4, 0x2d
 
-    .line 102
+    .line 100
     .restart local v4    # "prefix":C
     neg-long v0, v0
 
     move v10, v4
 
-    .line 105
+    .line 103
     .end local v4    # "prefix":C
     .end local p0    # "duration":J
     .local v0, "duration":J
@@ -359,7 +359,7 @@
 
     long-to-int v11, v8
 
-    .line 106
+    .line 104
     .local v11, "millis":I
     div-long v4, v0, v4
 
@@ -371,7 +371,7 @@
 
     double-to-int v4, v4
 
-    .line 107
+    .line 105
     .local v4, "seconds":I
     const/4 v5, 0x0
 
@@ -381,16 +381,16 @@
     .local v6, "hours":I
     const/4 v8, 0x0
 
-    .line 109
+    .line 107
     .local v8, "minutes":I
     const v9, 0x15180
 
     if-le v4, v9, :cond_4
 
-    .line 110
+    .line 108
     div-int v5, v4, v9
 
-    .line 111
+    .line 109
     mul-int/2addr v9, v5
 
     sub-int/2addr v4, v9
@@ -399,11 +399,11 @@
 
     goto :goto_2
 
-    .line 109
+    .line 107
     :cond_4
     move v12, v5
 
-    .line 113
+    .line 111
     .end local v5    # "days":I
     .local v12, "days":I
     :goto_2
@@ -411,10 +411,10 @@
 
     if-le v4, v5, :cond_5
 
-    .line 114
+    .line 112
     div-int/lit16 v6, v4, 0xe10
 
-    .line 115
+    .line 113
     mul-int/lit16 v5, v6, 0xe10
 
     sub-int/2addr v4, v5
@@ -423,11 +423,11 @@
 
     goto :goto_3
 
-    .line 113
+    .line 111
     :cond_5
     move v13, v6
 
-    .line 117
+    .line 115
     .end local v6    # "hours":I
     .local v13, "hours":I
     :goto_3
@@ -435,10 +435,10 @@
 
     if-le v4, v5, :cond_6
 
-    .line 118
+    .line 116
     div-int/lit8 v8, v4, 0x3c
 
-    .line 119
+    .line 117
     mul-int/lit8 v5, v8, 0x3c
 
     sub-int/2addr v4, v5
@@ -449,13 +449,13 @@
 
     goto :goto_4
 
-    .line 117
+    .line 115
     :cond_6
     move v14, v4
 
     move v15, v8
 
-    .line 122
+    .line 120
     .end local v4    # "seconds":I
     .end local v8    # "minutes":I
     .local v14, "seconds":I
@@ -463,7 +463,7 @@
     :goto_4
     const/4 v4, 0x0
 
-    .line 124
+    .line 122
     .local v4, "pos":I
     const/16 v16, 0x3
 
@@ -475,12 +475,12 @@
 
     if-eqz v2, :cond_b
 
-    .line 125
+    .line 123
     invoke-static {v12, v6, v8, v8}, Landroidx/core/util/TimeUtils;->accumField(IIZI)I
 
     move-result v5
 
-    .line 126
+    .line 124
     .local v5, "myLen":I
     if-lez v5, :cond_7
 
@@ -493,7 +493,7 @@
 
     add-int/2addr v5, v8
 
-    .line 127
+    .line 125
     if-lez v5, :cond_8
 
     move v8, v6
@@ -510,7 +510,7 @@
 
     add-int/2addr v5, v8
 
-    .line 128
+    .line 126
     if-lez v5, :cond_9
 
     move v8, v6
@@ -527,7 +527,7 @@
 
     add-int/2addr v5, v8
 
-    .line 129
+    .line 127
     if-lez v5, :cond_a
 
     move/from16 v8, v16
@@ -546,35 +546,35 @@
 
     add-int/2addr v5, v8
 
-    .line 130
+    .line 128
     :goto_8
     if-ge v5, v2, :cond_b
 
-    .line 131
+    .line 129
     aput-char v7, v3, v4
 
-    .line 132
+    .line 130
     add-int/lit8 v4, v4, 0x1
 
-    .line 133
+    .line 131
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_8
 
-    .line 137
+    .line 135
     .end local v5    # "myLen":I
     :cond_b
     aput-char v10, v3, v4
 
-    .line 138
+    .line 136
     add-int/lit8 v17, v4, 0x1
 
-    .line 140
+    .line 138
     .end local v4    # "pos":I
     .local v17, "pos":I
     move/from16 v8, v17
 
-    .line 141
+    .line 139
     .local v8, "start":I
     if-eqz v2, :cond_c
 
@@ -588,7 +588,7 @@
     :goto_9
     move/from16 v18, v4
 
-    .line 142
+    .line 140
     .local v18, "zeropad":Z
     const/16 v7, 0x64
 
@@ -622,7 +622,7 @@
 
     move-result v9
 
-    .line 143
+    .line 141
     .end local v17    # "pos":I
     .local v9, "pos":I
     const/16 v6, 0x68
@@ -673,7 +673,7 @@
 
     move-result v9
 
-    .line 144
+    .line 142
     .end local v17    # "pos":I
     .restart local v9    # "pos":I
     const/16 v6, 0x6d
@@ -724,7 +724,7 @@
 
     move-result v9
 
-    .line 145
+    .line 143
     .end local v17    # "pos":I
     .restart local v9    # "pos":I
     const/16 v6, 0x73
@@ -771,7 +771,7 @@
 
     move-result v9
 
-    .line 146
+    .line 144
     .end local v17    # "pos":I
     .restart local v9    # "pos":I
     const/16 v6, 0x6d
@@ -819,14 +819,14 @@
 
     move-result v4
 
-    .line 147
+    .line 145
     .end local v19    # "pos":I
     .restart local v4    # "pos":I
     const/16 v5, 0x73
 
     aput-char v5, v3, v4
 
-    .line 148
+    .line 146
     add-int/lit8 v5, v4, 0x1
 
     return v5
@@ -841,16 +841,16 @@
     .param p4, "always"    # Z
     .param p5, "zeropad"    # I
 
-    .line 58
+    .line 56
     if-nez p4, :cond_0
 
     if-lez p1, :cond_7
 
-    .line 59
+    .line 57
     :cond_0
     move v0, p3
 
-    .line 60
+    .line 58
     .local v0, "startPos":I
     if-eqz p4, :cond_1
 
@@ -863,11 +863,11 @@
 
     if-le p1, v1, :cond_3
 
-    .line 61
+    .line 59
     :cond_2
     div-int/lit8 v1, p1, 0x64
 
-    .line 62
+    .line 60
     .local v1, "dig":I
     add-int/lit8 v2, v1, 0x30
 
@@ -875,15 +875,15 @@
 
     aput-char v2, p0, p3
 
-    .line 63
+    .line 61
     add-int/lit8 p3, p3, 0x1
 
-    .line 64
+    .line 62
     mul-int/lit8 v2, v1, 0x64
 
     sub-int/2addr p1, v2
 
-    .line 66
+    .line 64
     .end local v1    # "dig":I
     :cond_3
     if-eqz p4, :cond_4
@@ -899,11 +899,11 @@
 
     if-eq v0, p3, :cond_6
 
-    .line 67
+    .line 65
     :cond_5
     div-int/lit8 v1, p1, 0xa
 
-    .line 68
+    .line 66
     .restart local v1    # "dig":I
     add-int/lit8 v2, v1, 0x30
 
@@ -911,15 +911,15 @@
 
     aput-char v2, p0, p3
 
-    .line 69
+    .line 67
     add-int/lit8 p3, p3, 0x1
 
-    .line 70
+    .line 68
     mul-int/lit8 v2, v1, 0xa
 
     sub-int/2addr p1, v2
 
-    .line 72
+    .line 70
     .end local v1    # "dig":I
     :cond_6
     add-int/lit8 v1, p1, 0x30
@@ -928,16 +928,16 @@
 
     aput-char v1, p0, p3
 
+    .line 71
+    add-int/lit8 p3, p3, 0x1
+
+    .line 72
+    aput-char p2, p0, p3
+
     .line 73
     add-int/lit8 p3, p3, 0x1
 
-    .line 74
-    aput-char p2, p0, p3
-
     .line 75
-    add-int/lit8 p3, p3, 0x1
-
-    .line 77
     .end local v0    # "startPos":I
     :cond_7
     return p3

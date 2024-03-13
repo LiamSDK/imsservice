@@ -28,7 +28,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -40,7 +40,7 @@
     .locals 1
     .param p0, "$this$toUInt"    # B
 
-    .line 380
+    .line 390
     invoke-static {p0}, Lkotlin/UInt;->constructor-impl(I)I
 
     move-result v0
@@ -52,7 +52,7 @@
     .locals 1
     .param p0, "$this$toUInt"    # D
 
-    .line 436
+    .line 446
     invoke-static {p0, p1}, Lkotlin/UnsignedKt;->doubleToUInt(D)I
 
     move-result v0
@@ -64,7 +64,7 @@
     .locals 2
     .param p0, "$this$toUInt"    # F
 
-    .line 426
+    .line 436
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Lkotlin/UnsignedKt;->doubleToUInt(D)I
@@ -78,7 +78,7 @@
     .locals 1
     .param p0, "$this$toUInt"    # I
 
-    .line 403
+    .line 413
     invoke-static {p0}, Lkotlin/UInt;->constructor-impl(I)I
 
     move-result v0
@@ -90,7 +90,7 @@
     .locals 1
     .param p0, "$this$toUInt"    # J
 
-    .line 415
+    .line 425
     long-to-int v0, p0
 
     invoke-static {v0}, Lkotlin/UInt;->constructor-impl(I)I
@@ -104,7 +104,7 @@
     .locals 1
     .param p0, "$this$toUInt"    # S
 
-    .line 392
+    .line 402
     invoke-static {p0}, Lkotlin/UInt;->constructor-impl(I)I
 
     move-result v0

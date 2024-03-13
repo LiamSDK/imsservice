@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/text/BidiFormatter$DirectionalityEstimator;,
-        Landroidx/core/text/BidiFormatter$Builder;
+        Landroidx/core/text/BidiFormatter$Builder;,
+        Landroidx/core/text/BidiFormatter$DirectionalityEstimator;
     }
 .end annotation
 
@@ -237,13 +237,13 @@
     .param p2, "heuristic"    # Landroidx/core/text/TextDirectionHeuristicCompat;
 
     .line 300
+    const/4 v0, 0x0
+
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x0
-
-    invoke-interface {p2, p1, v1, v0}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
+    invoke-interface {p2, p1, v0, v1}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
 
     move-result v0
 
@@ -304,13 +304,13 @@
     .param p2, "heuristic"    # Landroidx/core/text/TextDirectionHeuristicCompat;
 
     .line 328
+    const/4 v0, 0x0
+
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x0
-
-    invoke-interface {p2, p1, v1, v0}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
+    invoke-interface {p2, p1, v0, v1}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
 
     move-result v0
 
@@ -395,13 +395,13 @@
     .line 358
     iget-object v0, p0, Landroidx/core/text/BidiFormatter;->mDefaultTextDirectionHeuristicCompat:Landroidx/core/text/TextDirectionHeuristicCompat;
 
+    const/4 v1, 0x0
+
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x0
-
-    invoke-interface {v0, p1, v2, v1}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
+    invoke-interface {v0, p1, v1, v2}, Landroidx/core/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
 
     move-result v0
 

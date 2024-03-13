@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 452
+    .line 479
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 454
+    .line 481
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "accessibilityEvent"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 463
+    .line 490
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityEvent;->getContentChangeTypes()I
 
     move-result v0
@@ -42,9 +42,9 @@
     .param p0, "accessibilityEvent"    # Landroid/view/accessibility/AccessibilityEvent;
     .param p1, "changeTypes"    # I
 
-    .line 458
+    .line 485
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setContentChangeTypes(I)V
 
-    .line 459
+    .line 486
     return-void
 .end method

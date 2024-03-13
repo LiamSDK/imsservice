@@ -85,7 +85,7 @@
 .end method
 
 .method public final getHashChain()Ljava/util/ArrayList;
-    .locals 5
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -97,67 +97,39 @@
     .line 3692
     new-instance v0, Ljava/util/ArrayList;
 
-    const/4 v1, 0x7
+    const/16 v1, 0x20
 
-    new-array v1, v1, [[B
+    new-array v2, v1, [B
 
-    const/16 v2, 0x20
+    fill-array-data v2, :array_0
 
-    new-array v3, v2, [B
-
-    fill-array-data v3, :array_0
-
-    const/4 v4, 0x0
-
-    aput-object v3, v1, v4
-
-    new-array v3, v2, [B
+    new-array v3, v1, [B
 
     fill-array-data v3, :array_1
 
-    const/4 v4, 0x1
+    new-array v4, v1, [B
 
-    aput-object v3, v1, v4
+    fill-array-data v4, :array_2
 
-    new-array v3, v2, [B
+    new-array v5, v1, [B
 
-    fill-array-data v3, :array_2
+    fill-array-data v5, :array_3
 
-    const/4 v4, 0x2
+    new-array v6, v1, [B
 
-    aput-object v3, v1, v4
+    fill-array-data v6, :array_4
 
-    new-array v3, v2, [B
+    new-array v7, v1, [B
 
-    fill-array-data v3, :array_3
+    fill-array-data v7, :array_5
 
-    const/4 v4, 0x3
+    new-array v8, v1, [B
 
-    aput-object v3, v1, v4
+    fill-array-data v8, :array_6
 
-    new-array v3, v2, [B
+    filled-new-array/range {v2 .. v8}, [[B
 
-    fill-array-data v3, :array_4
-
-    const/4 v4, 0x4
-
-    aput-object v3, v1, v4
-
-    new-array v3, v2, [B
-
-    fill-array-data v3, :array_5
-
-    const/4 v4, 0x5
-
-    aput-object v3, v1, v4
-
-    new-array v2, v2, [B
-
-    fill-array-data v2, :array_6
-
-    const/4 v3, 0x6
-
-    aput-object v2, v1, v3
+    move-result-object v1
 
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 

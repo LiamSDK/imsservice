@@ -28,7 +28,7 @@
     .locals 2
     .param p0, "handler"    # Landroid/os/Handler;
 
-    .line 497
+    .line 494
     if-nez p0, :cond_0
 
     new-instance v0, Landroid/os/Handler;
@@ -55,7 +55,7 @@
     .param p1, "reason"    # I
     .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 490
+    .line 488
     invoke-static {p2}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->getHandler(Landroid/os/Handler;)Landroid/os/Handler;
 
     move-result-object v0
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 491
+    .line 489
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .param p1, "typeface"    # Landroid/graphics/Typeface;
     .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 478
+    .line 477
     invoke-static {p2}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->getHandler(Landroid/os/Handler;)Landroid/os/Handler;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 479
+    .line 478
     return-void
 .end method
 
@@ -94,7 +94,7 @@
     .locals 0
     .param p1, "reason"    # I
 
-    .line 490
+    .line 488
     invoke-virtual {p0, p1}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->onFontRetrievalFailed(I)V
 
     return-void
@@ -104,7 +104,7 @@
     .locals 0
     .param p1, "typeface"    # Landroid/graphics/Typeface;
 
-    .line 478
+    .line 477
     invoke-virtual {p0, p1}, Landroidx/core/content/res/ResourcesCompat$FontCallback;->onFontRetrieved(Landroid/graphics/Typeface;)V
 
     return-void

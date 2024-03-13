@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lvendor/mediatek/hardware/mtkradioex/V3_0/ISmartRatSwitchRadioResponse$Stub;,
-        Lvendor/mediatek/hardware/mtkradioex/V3_0/ISmartRatSwitchRadioResponse$Proxy;
+        Lvendor/mediatek/hardware/mtkradioex/V3_0/ISmartRatSwitchRadioResponse$Proxy;,
+        Lvendor/mediatek/hardware/mtkradioex/V3_0/ISmartRatSwitchRadioResponse$Stub;
     }
 .end annotation
 

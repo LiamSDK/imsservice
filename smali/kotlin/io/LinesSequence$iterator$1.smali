@@ -45,7 +45,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -67,7 +67,7 @@
 
     iput-object p1, p0, Lkotlin/io/LinesSequence$iterator$1;->this$0:Lkotlin/io/LinesSequence;
 
-    .line 74
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -78,7 +78,7 @@
 .method public hasNext()Z
     .locals 2
 
-    .line 79
+    .line 78
     iget-object v0, p0, Lkotlin/io/LinesSequence$iterator$1;->nextValue:Ljava/lang/String;
 
     const/4 v1, 0x1
@@ -89,7 +89,7 @@
 
     if-nez v0, :cond_0
 
-    .line 80
+    .line 79
     iget-object v0, p0, Lkotlin/io/LinesSequence$iterator$1;->this$0:Lkotlin/io/LinesSequence;
 
     invoke-static {v0}, Lkotlin/io/LinesSequence;->access$getReader$p(Lkotlin/io/LinesSequence;)Ljava/io/BufferedReader;
@@ -102,12 +102,12 @@
 
     iput-object v0, p0, Lkotlin/io/LinesSequence$iterator$1;->nextValue:Ljava/lang/String;
 
-    .line 81
+    .line 80
     if-nez v0, :cond_0
 
     iput-boolean v1, p0, Lkotlin/io/LinesSequence$iterator$1;->done:Z
 
-    .line 83
+    .line 82
     :cond_0
     iget-object v0, p0, Lkotlin/io/LinesSequence$iterator$1;->nextValue:Ljava/lang/String;
 
@@ -125,7 +125,7 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 74
+    .line 73
     invoke-virtual {p0}, Lkotlin/io/LinesSequence$iterator$1;->next()Ljava/lang/String;
 
     move-result-object v0
@@ -136,28 +136,28 @@
 .method public next()Ljava/lang/String;
     .locals 2
 
-    .line 87
+    .line 86
     invoke-virtual {p0}, Lkotlin/io/LinesSequence$iterator$1;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 90
+    .line 89
     iget-object v0, p0, Lkotlin/io/LinesSequence$iterator$1;->nextValue:Ljava/lang/String;
 
-    .line 91
+    .line 90
     .local v0, "answer":Ljava/lang/String;
     const/4 v1, 0x0
 
     iput-object v1, p0, Lkotlin/io/LinesSequence$iterator$1;->nextValue:Ljava/lang/String;
 
-    .line 92
+    .line 91
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     return-object v0
 
-    .line 88
+    .line 87
     .end local v0    # "answer":Ljava/lang/String;
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;

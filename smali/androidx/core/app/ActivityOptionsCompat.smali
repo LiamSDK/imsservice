@@ -6,11 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/app/ActivityOptionsCompat$Api24Impl;,
-        Landroidx/core/app/ActivityOptionsCompat$Api21Impl;,
-        Landroidx/core/app/ActivityOptionsCompat$Api23Impl;,
+        Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;,
         Landroidx/core/app/ActivityOptionsCompat$Api16Impl;,
-        Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
+        Landroidx/core/app/ActivityOptionsCompat$Api23Impl;,
+        Landroidx/core/app/ActivityOptionsCompat$Api21Impl;,
+        Landroidx/core/app/ActivityOptionsCompat$Api24Impl;
     }
 .end annotation
 
@@ -36,11 +36,7 @@
     .locals 2
 
     .line 248
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 249
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -50,14 +46,6 @@
     move-result-object v1
 
     invoke-direct {v0, v1}, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;-><init>(Landroid/app/ActivityOptions;)V
-
-    return-object v0
-
-    .line 251
-    :cond_0
-    new-instance v0, Landroidx/core/app/ActivityOptionsCompat;
-
-    invoke-direct {v0}, Landroidx/core/app/ActivityOptionsCompat;-><init>()V
 
     return-object v0
 .end method
@@ -71,11 +59,7 @@
     .param p4, "height"    # I
 
     .line 123
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 124
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -89,14 +73,6 @@
 
     .line 124
     return-object v0
-
-    .line 127
-    :cond_0
-    new-instance v0, Landroidx/core/app/ActivityOptionsCompat;
-
-    invoke-direct {v0}, Landroidx/core/app/ActivityOptionsCompat;-><init>()V
-
-    return-object v0
 .end method
 
 .method public static makeCustomAnimation(Landroid/content/Context;II)Landroidx/core/app/ActivityOptionsCompat;
@@ -106,11 +82,7 @@
     .param p2, "exitResId"    # I
 
     .line 69
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 70
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -124,14 +96,6 @@
 
     .line 70
     return-object v0
-
-    .line 73
-    :cond_0
-    new-instance v0, Landroidx/core/app/ActivityOptionsCompat;
-
-    invoke-direct {v0}, Landroidx/core/app/ActivityOptionsCompat;-><init>()V
-
-    return-object v0
 .end method
 
 .method public static makeScaleUpAnimation(Landroid/view/View;IIII)Landroidx/core/app/ActivityOptionsCompat;
@@ -143,11 +107,7 @@
     .param p4, "startHeight"    # I
 
     .line 99
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 100
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -159,14 +119,6 @@
     invoke-direct {v0, v1}, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;-><init>(Landroid/app/ActivityOptions;)V
 
     return-object v0
-
-    .line 103
-    :cond_0
-    new-instance v0, Landroidx/core/app/ActivityOptionsCompat;
-
-    invoke-direct {v0}, Landroidx/core/app/ActivityOptionsCompat;-><init>()V
-
-    return-object v0
 .end method
 
 .method public static makeSceneTransitionAnimation(Landroid/app/Activity;Landroid/view/View;Ljava/lang/String;)Landroidx/core/app/ActivityOptionsCompat;
@@ -176,11 +128,7 @@
     .param p2, "sharedElementName"    # Ljava/lang/String;
 
     .line 180
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 181
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -193,14 +141,6 @@
     invoke-direct {v0, v1}, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;-><init>(Landroid/app/ActivityOptions;)V
 
     .line 181
-    return-object v0
-
-    .line 185
-    :cond_0
-    new-instance v0, Landroidx/core/app/ActivityOptionsCompat;
-
-    invoke-direct {v0}, Landroidx/core/app/ActivityOptionsCompat;-><init>()V
-
     return-object v0
 .end method
 
@@ -222,11 +162,7 @@
 
     .line 209
     .local p1, "sharedElements":[Landroidx/core/util/Pair;, "[Landroidx/core/util/Pair<Landroid/view/View;Ljava/lang/String;>;"
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 210
     const/4 v0, 0x0
@@ -287,26 +223,13 @@
 
     .line 218
     return-object v1
-
-    .line 221
-    .end local v0    # "pairs":[Landroid/util/Pair;, "[Landroid/util/Pair<Landroid/view/View;Ljava/lang/String;>;"
-    :cond_1
-    new-instance v0, Landroidx/core/app/ActivityOptionsCompat;
-
-    invoke-direct {v0}, Landroidx/core/app/ActivityOptionsCompat;-><init>()V
-
-    return-object v0
 .end method
 
 .method public static makeTaskLaunchBehind()Landroidx/core/app/ActivityOptionsCompat;
     .locals 2
 
     .line 236
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 237
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -316,14 +239,6 @@
     move-result-object v1
 
     invoke-direct {v0, v1}, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;-><init>(Landroid/app/ActivityOptions;)V
-
-    return-object v0
-
-    .line 239
-    :cond_0
-    new-instance v0, Landroidx/core/app/ActivityOptionsCompat;
-
-    invoke-direct {v0}, Landroidx/core/app/ActivityOptionsCompat;-><init>()V
 
     return-object v0
 .end method
@@ -336,11 +251,7 @@
     .param p3, "startY"    # I
 
     .line 152
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 153
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
@@ -353,14 +264,6 @@
     invoke-direct {v0, v1}, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;-><init>(Landroid/app/ActivityOptions;)V
 
     .line 153
-    return-object v0
-
-    .line 156
-    :cond_0
-    new-instance v0, Landroidx/core/app/ActivityOptionsCompat;
-
-    invoke-direct {v0}, Landroidx/core/app/ActivityOptionsCompat;-><init>()V
-
     return-object v0
 .end method
 

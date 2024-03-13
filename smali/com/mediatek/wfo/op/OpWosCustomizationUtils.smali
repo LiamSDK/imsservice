@@ -38,30 +38,30 @@
     .line 57
     new-instance v1, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;
 
-    const-string v2, "OP07Wos.apk"
+    const-string v2, "com.mediatek.op07.wfo"
 
-    const-string v3, "com.mediatek.op07.wfo.Op07WosCustomizationFactory"
+    const-string v3, "OP07"
 
-    const-string v4, "com.mediatek.op07.wfo"
+    const-string v4, "OP07Wos.apk"
 
-    const-string v5, "OP07"
+    const-string v5, "com.mediatek.op07.wfo.Op07WosCustomizationFactory"
 
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v4, v5, v2, v3}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 63
     new-instance v1, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;
 
-    const-string v2, "OP08Wos.apk"
+    const-string v2, "com.mediatek.op08.wfo"
 
-    const-string v3, "com.mediatek.op08.wfo.Op08WosCustomizationFactory"
+    const-string v3, "OP08"
 
-    const-string v4, "com.mediatek.op08.wfo"
+    const-string v4, "OP08Wos.apk"
 
-    const-string v5, "OP08"
+    const-string v5, "com.mediatek.op08.wfo.Op08WosCustomizationFactory"
 
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v4, v5, v2, v3}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 

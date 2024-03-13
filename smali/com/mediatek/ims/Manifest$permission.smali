@@ -19,8 +19,6 @@
 
 .field public static final IMS_ERR_NOTIFICATION:Ljava/lang/String; = "com.mediatek.permission.IMS_ERR_NOTIFICATION"
 
-.field public static final PRESENCE:Ljava/lang/String; = "com.mediatek.presence.permission.PRESENCE"
-
 .field public static final READ:Ljava/lang/String; = "com.mediatek.ims.config.provider.PERMISSION.READ"
 
 .field public static final READ_LTE_MESSAGE_WAITING_INDICATION:Ljava/lang/String; = "com.mediatek.permission.READ_LTE_MESSAGE_WAITING_INDICATION"

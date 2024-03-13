@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 7220
+    .line 9064
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7221
+    .line 9065
     return-void
 .end method
 
@@ -29,15 +29,15 @@
     .locals 3
     .param p0, "platformMetadata"    # Landroid/app/Notification$BubbleMetadata;
 
-    .line 7273
+    .line 9117
     const/4 v0, 0x0
 
     if-nez p0, :cond_0
 
-    .line 7274
+    .line 9118
     return-object v0
 
-    .line 7276
+    .line 9120
     :cond_0
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->getIntent()Landroid/app/PendingIntent;
 
@@ -45,19 +45,19 @@
 
     if-nez v1, :cond_1
 
-    .line 7278
+    .line 9122
     return-object v0
 
-    .line 7280
+    .line 9124
     :cond_1
     new-instance v0, Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;
 
-    .line 7281
+    .line 9125
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->getIntent()Landroid/app/PendingIntent;
 
     move-result-object v1
 
-    .line 7282
+    .line 9126
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->getIcon()Landroid/graphics/drawable/Icon;
 
     move-result-object v2
@@ -68,7 +68,7 @@
 
     invoke-direct {v0, v1, v2}, Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;-><init>(Landroid/app/PendingIntent;Landroidx/core/graphics/drawable/IconCompat;)V
 
-    .line 7283
+    .line 9127
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->getAutoExpandBubble()Z
 
     move-result v1
@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    .line 7284
+    .line 9128
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->getDeleteIntent()Landroid/app/PendingIntent;
 
     move-result-object v1
@@ -86,17 +86,17 @@
 
     move-result-object v0
 
-    .line 7286
+    .line 9130
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->isNotificationSuppressed()Z
 
     move-result v1
 
-    .line 7285
+    .line 9129
     invoke-virtual {v0, v1}, Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;->setSuppressNotification(Z)Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;
 
     move-result-object v0
 
-    .line 7288
+    .line 9132
     .local v0, "compatBuilder":Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->getDesiredHeight()I
 
@@ -104,14 +104,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 7289
+    .line 9133
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->getDesiredHeight()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;->setDesiredHeight(I)Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;
 
-    .line 7292
+    .line 9136
     :cond_2
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->getDesiredHeightResId()I
 
@@ -119,14 +119,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 7293
+    .line 9137
     invoke-virtual {p0}, Landroid/app/Notification$BubbleMetadata;->getDesiredHeightResId()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;->setDesiredHeightResId(I)Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;
 
-    .line 7296
+    .line 9140
     :cond_3
     invoke-virtual {v0}, Landroidx/core/app/NotificationCompat$BubbleMetadata$Builder;->build()Landroidx/core/app/NotificationCompat$BubbleMetadata;
 
@@ -139,15 +139,15 @@
     .locals 2
     .param p0, "compatMetadata"    # Landroidx/core/app/NotificationCompat$BubbleMetadata;
 
-    .line 7234
+    .line 9078
     const/4 v0, 0x0
 
     if-nez p0, :cond_0
 
-    .line 7235
+    .line 9079
     return-object v0
 
-    .line 7237
+    .line 9081
     :cond_0
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->getIntent()Landroid/app/PendingIntent;
 
@@ -155,16 +155,16 @@
 
     if-nez v1, :cond_1
 
-    .line 7239
+    .line 9083
     return-object v0
 
-    .line 7242
+    .line 9086
     :cond_1
     new-instance v0, Landroid/app/Notification$BubbleMetadata$Builder;
 
     invoke-direct {v0}, Landroid/app/Notification$BubbleMetadata$Builder;-><init>()V
 
-    .line 7244
+    .line 9088
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->getIcon()Landroidx/core/graphics/drawable/IconCompat;
 
     move-result-object v1
@@ -177,7 +177,7 @@
 
     move-result-object v0
 
-    .line 7245
+    .line 9089
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->getIntent()Landroid/app/PendingIntent;
 
     move-result-object v1
@@ -186,7 +186,7 @@
 
     move-result-object v0
 
-    .line 7246
+    .line 9090
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->getDeleteIntent()Landroid/app/PendingIntent;
 
     move-result-object v1
@@ -195,7 +195,7 @@
 
     move-result-object v0
 
-    .line 7247
+    .line 9091
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->getAutoExpandBubble()Z
 
     move-result v1
@@ -204,7 +204,7 @@
 
     move-result-object v0
 
-    .line 7248
+    .line 9092
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->isNotificationSuppressed()Z
 
     move-result v1
@@ -213,7 +213,7 @@
 
     move-result-object v0
 
-    .line 7250
+    .line 9094
     .local v0, "platformMetadataBuilder":Landroid/app/Notification$BubbleMetadata$Builder;
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->getDesiredHeight()I
 
@@ -221,14 +221,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 7251
+    .line 9095
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->getDesiredHeight()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$BubbleMetadata$Builder;->setDesiredHeight(I)Landroid/app/Notification$BubbleMetadata$Builder;
 
-    .line 7254
+    .line 9098
     :cond_2
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->getDesiredHeightResId()I
 
@@ -236,18 +236,18 @@
 
     if-eqz v1, :cond_3
 
-    .line 7255
+    .line 9099
     nop
 
-    .line 7256
+    .line 9100
     invoke-virtual {p0}, Landroidx/core/app/NotificationCompat$BubbleMetadata;->getDesiredHeightResId()I
 
     move-result v1
 
-    .line 7255
+    .line 9099
     invoke-virtual {v0, v1}, Landroid/app/Notification$BubbleMetadata$Builder;->setDesiredHeightResId(I)Landroid/app/Notification$BubbleMetadata$Builder;
 
-    .line 7259
+    .line 9103
     :cond_3
     invoke-virtual {v0}, Landroid/app/Notification$BubbleMetadata$Builder;->build()Landroid/app/Notification$BubbleMetadata;
 

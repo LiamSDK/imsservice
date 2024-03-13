@@ -19,7 +19,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -45,7 +45,7 @@
     .line 255
     sget-object v0, Lkotlin/text/ScreenFloatValueRegEx;->INSTANCE:Lkotlin/text/ScreenFloatValueRegEx;
 
-    .local v0, "$this$value_u24lambda_u2d0":Lkotlin/text/ScreenFloatValueRegEx;
+    .local v0, "$this$value_u24lambda_u240":Lkotlin/text/ScreenFloatValueRegEx;
     const/4 v1, 0x0
 
     .line 256
@@ -58,9 +58,21 @@
 
     .line 258
     .local v3, "HexDigits":Ljava/lang/String;
-    const-string v4, "[eE][+-]?"
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "[eE][+-]?"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -267,7 +279,7 @@
     invoke-direct {v8, v7}, Lkotlin/text/Regex;-><init>(Ljava/lang/String;)V
 
     .line 255
-    .end local v0    # "$this$value_u24lambda_u2d0":Lkotlin/text/ScreenFloatValueRegEx;
+    .end local v0    # "$this$value_u24lambda_u240":Lkotlin/text/ScreenFloatValueRegEx;
     .end local v1    # "$i$a$-run-ScreenFloatValueRegEx$value$1":I
     .end local v2    # "Digits":Ljava/lang/String;
     .end local v3    # "HexDigits":Ljava/lang/String;

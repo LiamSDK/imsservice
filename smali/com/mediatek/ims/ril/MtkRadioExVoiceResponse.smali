@@ -224,6 +224,9 @@
     .line 190
     const/4 v5, 0x0
 
+    .line 191
+    nop
+
     .line 194
     .end local v7    # "j":I
     .end local v8    # "dateFormat":Ljava/text/SimpleDateFormat;
@@ -501,23 +504,15 @@
 .end method
 
 .method public getColpResponse(Landroid/hardware/radio/RadioResponseInfo;II)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "n"    # I
     .param p3, "m"    # I
 
     .line 142
-    const/4 v0, 0x2
+    filled-new-array {p2, p3}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
-
-    const/4 v1, 0x1
-
-    aput p3, v0, v1
+    move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceResponse;->responseInts(Landroid/hardware/radio/RadioResponseInfo;[I)V
 
@@ -526,18 +521,14 @@
 .end method
 
 .method public getColrResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "n"    # I
 
     .line 153
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/mediatek/ims/ril/MtkRadioExVoiceResponse;->responseInts(Landroid/hardware/radio/RadioResponseInfo;[I)V
 

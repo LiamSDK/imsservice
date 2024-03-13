@@ -161,6 +161,9 @@
     :cond_1
     if-ne v1, v2, :cond_0
 
+    .line 951
+    nop
+
     .line 954
     :cond_2
     iput v0, p0, Landroidx/core/text/BidiFormatter$DirectionalityEstimator;->charIndex:I

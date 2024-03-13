@@ -151,11 +151,11 @@
 
     move-result-wide v7
 
-    .line 157
     const-wide/16 v9, 0x0
 
     const/4 v11, 0x1
 
+    .line 157
     move-object v4, p0
 
     invoke-virtual/range {v4 .. v11}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;
@@ -524,14 +524,12 @@
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 18
 
     .line 87
-    const/16 v0, 0x10
+    move-object/from16 v0, p0
 
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->id:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->id:I
 
     .line 88
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -544,13 +542,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->precedence:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->precedence:I
 
     .line 89
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -563,13 +557,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->direction:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->direction:I
 
     .line 90
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -582,13 +572,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v4
 
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->networkPfIdentifier:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->networkPfIdentifier:I
 
     .line 91
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -601,13 +587,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v5
 
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->bitmap:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->bitmap:I
 
     .line 92
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -620,13 +602,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v6
 
-    const/4 v2, 0x4
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->address:Ljava/lang/String;
+    iget-object v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->address:Ljava/lang/String;
 
     .line 93
     invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
@@ -635,13 +613,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v7
 
-    const/4 v2, 0x5
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->mask:Ljava/lang/String;
+    iget-object v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->mask:Ljava/lang/String;
 
     .line 94
     invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
@@ -650,13 +624,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v8
 
-    const/4 v2, 0x6
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->protocolNextHeader:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->protocolNextHeader:I
 
     .line 95
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -669,13 +639,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v9
 
-    const/4 v2, 0x7
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->localPortLow:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->localPortLow:I
 
     .line 96
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -688,13 +654,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v10
 
-    const/16 v2, 0x8
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->localPortHigh:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->localPortHigh:I
 
     .line 97
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -707,13 +669,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v11
 
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->remotePortLow:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->remotePortLow:I
 
     .line 98
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -726,13 +684,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v12
 
-    const/16 v2, 0xa
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->remotePortHigh:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->remotePortHigh:I
 
     .line 99
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -745,13 +699,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v13
 
-    const/16 v2, 0xb
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->spi:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->spi:I
 
     .line 100
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -764,13 +714,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v14
 
-    const/16 v2, 0xc
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->tos:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->tos:I
 
     .line 101
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -783,13 +729,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v15
 
-    const/16 v2, 0xd
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->tosMask:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->tosMask:I
 
     .line 102
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -802,13 +744,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v16
 
-    const/16 v2, 0xe
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->flowLabel:I
+    iget v1, v0, Lvendor/mediatek/hardware/mtkradioex/V3_0/PktFilter;->flowLabel:I
 
     .line 103
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -821,18 +759,18 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    move-result-object v17
+
+    filled-new-array/range {v2 .. v17}, [Ljava/lang/Object;
+
     move-result-object v1
 
-    const/16 v2, 0xf
-
-    aput-object v1, v0, v2
-
     .line 87
-    invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    invoke-static {v1}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
-    move-result v0
+    move-result v1
 
-    return v0
+    return v1
 .end method
 
 .method public final readEmbeddedFromParcel(Landroid/os/HwParcel;Landroid/os/HwBlob;J)V
@@ -934,9 +872,9 @@
 
     add-long v12, v4, v2
 
-    .line 181
     const/4 v14, 0x0
 
+    .line 181
     move-object/from16 v7, p1
 
     invoke-virtual/range {v7 .. v14}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;

@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1117
+    .line 1120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1119
+    .line 1122
     return-void
 .end method
 
@@ -34,7 +34,7 @@
     .param p4, "scheduler"    # Landroid/os/Handler;
     .param p5, "flags"    # I
 
-    .line 1124
+    .line 1127
     invoke-virtual/range {p0 .. p5}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;I)Landroid/content/Intent;
 
     move-result-object v0

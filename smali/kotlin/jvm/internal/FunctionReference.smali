@@ -152,20 +152,6 @@
 
     .line 108
     .local v1, "other":Lkotlin/jvm/internal/FunctionReference;
-    invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
-
-    move-result-object v3
-
-    invoke-virtual {v1}, Lkotlin/jvm/internal/FunctionReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -180,6 +166,7 @@
 
     if-eqz v3, :cond_1
 
+    .line 109
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getSignature()Ljava/lang/String;
 
     move-result-object v3
@@ -206,6 +193,7 @@
 
     if-ne v3, v4, :cond_1
 
+    .line 112
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getBoundReceiver()Ljava/lang/Object;
 
     move-result-object v3
@@ -220,11 +208,27 @@
 
     if-eqz v3, :cond_1
 
+    .line 113
+    invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lkotlin/jvm/internal/FunctionReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
     goto :goto_0
 
     :cond_1
     move v0, v2
 
+    .line 108
     :goto_0
     return v0
 
@@ -431,13 +435,13 @@
 
     .line 134
     :cond_0
+    const-string v1, "<init>"
+
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "<init>"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -458,6 +462,7 @@
 
     move-result-object v1
 
+    .line 136
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -476,6 +481,7 @@
 
     move-result-object v1
 
+    .line 134
     :goto_0
     return-object v1
 .end method

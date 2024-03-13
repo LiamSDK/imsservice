@@ -36,7 +36,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -56,23 +56,12 @@
     .end annotation
 .end field
 
-.field final synthetic $completion:Lkotlin/coroutines/Continuation;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlin/coroutines/Continuation<",
-            "TT;>;"
-        }
-    .end annotation
-.end field
-
-.field final synthetic $context:Lkotlin/coroutines/CoroutineContext;
-
 .field private label:I
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function1;)V
-    .locals 0
+    .locals 1
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .param p2, "$context"    # Lkotlin/coroutines/CoroutineContext;
     .param p3, "$block"    # Lkotlin/jvm/functions/Function1;
@@ -91,13 +80,13 @@
         }
     .end annotation
 
-    iput-object p1, p0, Lkotlin/coroutines/intrinsics/IntrinsicsKt__IntrinsicsJvmKt$createCoroutineFromSuspendFunction$2;->$completion:Lkotlin/coroutines/Continuation;
-
-    iput-object p2, p0, Lkotlin/coroutines/intrinsics/IntrinsicsKt__IntrinsicsJvmKt$createCoroutineFromSuspendFunction$2;->$context:Lkotlin/coroutines/CoroutineContext;
-
     iput-object p3, p0, Lkotlin/coroutines/intrinsics/IntrinsicsKt__IntrinsicsJvmKt$createCoroutineFromSuspendFunction$2;->$block:Lkotlin/jvm/functions/Function1;
 
     .line 186
+    const-string v0, "null cannot be cast to non-null type kotlin.coroutines.Continuation<kotlin.Any?>"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0, p1, p2}, Lkotlin/coroutines/jvm/internal/ContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;Lkotlin/coroutines/CoroutineContext;)V
 
     return-void

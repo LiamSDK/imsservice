@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    .line 4398
+    .line 4458
     iput-object p1, p0, Lcom/mediatek/ims/ImsCallSessionProxy$ConferenceEventListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     invoke-direct {p0}, Lcom/mediatek/ims/DefaultConferenceHandler$Listener;-><init>()V
@@ -36,7 +36,7 @@
 .method public onAutoTerminate()V
     .locals 3
 
-    .line 4415
+    .line 4475
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$ConferenceEventListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     const-string v1, "onAutoTerminate()"
@@ -45,14 +45,14 @@
 
     invoke-static {v0, v1, v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$100(Lcom/mediatek/ims/ImsCallSessionProxy;Ljava/lang/String;I)V
 
-    .line 4416
+    .line 4476
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$ConferenceEventListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/mediatek/ims/ImsCallSessionProxy;->terminate(I)V
 
-    .line 4417
+    .line 4477
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .locals 4
     .param p1, "confState"    # Landroid/telephony/ims/ImsConferenceState;
 
-    .line 4402
+    .line 4462
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$ConferenceEventListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     const-string v1, "onParticipantsUpdate()"
@@ -69,24 +69,24 @@
 
     invoke-static {v0, v1, v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$100(Lcom/mediatek/ims/ImsCallSessionProxy;Ljava/lang/String;I)V
 
-    .line 4403
+    .line 4463
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$ConferenceEventListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    invoke-static {v0}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5700(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
+    invoke-static {v0}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5800(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 4404
+    .line 4464
     return-void
 
-    .line 4407
+    .line 4467
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$ConferenceEventListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    invoke-static {v0}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5700(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
+    invoke-static {v0}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$5800(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallSessionListener;
 
     move-result-object v0
 
@@ -94,24 +94,24 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4410
+    .line 4470
     goto :goto_0
 
-    .line 4408
+    .line 4468
     :catch_0
     move-exception v0
 
-    .line 4409
+    .line 4469
     .local v0, "e":Ljava/lang/RuntimeException;
     iget-object v1, p0, Lcom/mediatek/ims/ImsCallSessionProxy$ConferenceEventListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
-    const/4 v2, 0x5
+    const-string v2, "RuntimeException callSessionConferenceStateUpdated()"
 
-    const-string v3, "RuntimeException callSessionConferenceStateUpdated()"
+    const/4 v3, 0x5
 
-    invoke-static {v1, v3, v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$100(Lcom/mediatek/ims/ImsCallSessionProxy;Ljava/lang/String;I)V
+    invoke-static {v1, v2, v3}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$100(Lcom/mediatek/ims/ImsCallSessionProxy;Ljava/lang/String;I)V
 
-    .line 4411
+    .line 4471
     .end local v0    # "e":Ljava/lang/RuntimeException;
     :goto_0
     return-void

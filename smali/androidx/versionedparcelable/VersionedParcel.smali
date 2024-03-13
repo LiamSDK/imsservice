@@ -248,7 +248,7 @@
 .end method
 
 .method private findParcelClass(Ljava/lang/Class;)Ljava/lang/Class;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -294,30 +294,24 @@
 
     .line 1674
     .local v1, "pkg":Ljava/lang/String;
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object v1, v2, v3
-
-    const/4 v4, 0x1
-
     invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    aput-object v5, v2, v4
+    filled-new-array {v1, v2}, [Ljava/lang/Object;
 
-    const-string v4, "%s.%sParcelizer"
+    move-result-object v2
 
-    invoke-static {v4, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string v3, "%s.%sParcelizer"
+
+    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     .line 1675
     .local v2, "c":Ljava/lang/String;
+    const/4 v3, 0x0
+
     invoke-virtual {p1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v4
@@ -343,7 +337,7 @@
 .end method
 
 .method private getReadMethod(Ljava/lang/String;)Ljava/lang/reflect/Method;
-    .locals 5
+    .locals 4
     .param p1, "parcelCls"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -354,54 +348,52 @@
     .end annotation
 
     .line 1647
-    const-class v0, Landroidx/versionedparcelable/VersionedParcel;
-
-    iget-object v1, p0, Landroidx/versionedparcelable/VersionedParcel;->mReadCache:Landroidx/collection/SimpleArrayMap;
-
-    invoke-virtual {v1, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/reflect/Method;
-
-    .line 1648
-    .local v1, "m":Ljava/lang/reflect/Method;
-    if-nez v1, :cond_0
-
-    .line 1649
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
-
-    invoke-static {p1, v3, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
-
-    move-result-object v2
-
-    .line 1650
-    .local v2, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    new-array v3, v3, [Ljava/lang/Class;
-
-    const/4 v4, 0x0
-
-    aput-object v0, v3, v4
-
-    const-string v0, "read"
-
-    invoke-virtual {v2, v0, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    .line 1651
     iget-object v0, p0, Landroidx/versionedparcelable/VersionedParcel;->mReadCache:Landroidx/collection/SimpleArrayMap;
 
-    invoke-virtual {v0, p1, v1}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/reflect/Method;
+
+    .line 1648
+    .local v0, "m":Ljava/lang/reflect/Method;
+    if-nez v0, :cond_0
+
+    .line 1649
+    const/4 v1, 0x1
+
+    const-class v2, Landroidx/versionedparcelable/VersionedParcel;
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v3
+
+    invoke-static {p1, v1, v3}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    .line 1650
+    .local v1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    const-string v3, "read"
+
+    filled-new-array {v2}, [Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v3, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    .line 1651
+    iget-object v2, p0, Landroidx/versionedparcelable/VersionedParcel;->mReadCache:Landroidx/collection/SimpleArrayMap;
+
+    invoke-virtual {v2, p1, v0}, Landroidx/collection/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1653
-    .end local v2    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    .end local v1    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_0
-    return-object v1
+    return-object v0
 .end method
 
 .method protected static getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
@@ -409,6 +401,8 @@
     .param p0, "t"    # Ljava/lang/Throwable;
 
     .line 1228
+    nop
+
     :goto_0
     invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
@@ -550,7 +544,7 @@
 .end method
 
 .method private getWriteMethod(Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -593,19 +587,11 @@
 
     .line 1662
     .local v1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const/4 v2, 0x2
+    const-class v2, Landroidx/versionedparcelable/VersionedParcel;
 
-    new-array v2, v2, [Ljava/lang/Class;
+    filled-new-array {p1, v2}, [Ljava/lang/Class;
 
-    const/4 v3, 0x0
-
-    aput-object p1, v2, v3
-
-    const/4 v3, 0x1
-
-    const-class v4, Landroidx/versionedparcelable/VersionedParcel;
-
-    aput-object v4, v2, v3
+    move-result-object v2
 
     const-string v3, "write"
 
@@ -826,7 +812,7 @@
     invoke-virtual {p0, v0}, Landroidx/versionedparcelable/VersionedParcel;->writeInt(I)V
 
     .line 912
-    if-lez v0, :cond_6
+    if-lez v0, :cond_7
 
     .line 913
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -862,7 +848,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1082,11 +1068,17 @@
     .end local v3    # "v":Ljava/lang/Object;, "TT;"
     goto :goto_6
 
+    .line 930
+    :cond_6
+    nop
+
     .line 953
     .end local v1    # "type":I
-    :cond_6
+    :cond_7
     :goto_7
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -2027,7 +2019,7 @@
 .end method
 
 .method protected readFromParcel(Ljava/lang/String;Landroidx/versionedparcelable/VersionedParcel;)Landroidx/versionedparcelable/VersionedParcelable;
-    .locals 4
+    .locals 3
     .param p1, "parcelCls"    # Ljava/lang/String;
     .param p2, "versionedParcel"    # Landroidx/versionedparcelable/VersionedParcel;
     .annotation system Ldalvik/annotation/Signature;
@@ -2049,17 +2041,13 @@
 
     .line 1598
     .local v0, "m":Ljava/lang/reflect/Method;
-    const/4 v1, 0x0
+    filled-new-array {p2}, [Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    move-result-object v1
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    aput-object p2, v2, v3
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -4204,7 +4192,7 @@
 .end method
 
 .method protected writeToParcel(Landroidx/versionedparcelable/VersionedParcelable;Landroidx/versionedparcelable/VersionedParcel;)V
-    .locals 4
+    .locals 3
     .param p2, "versionedParcel"    # Landroidx/versionedparcelable/VersionedParcel;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -4229,21 +4217,13 @@
 
     .line 1625
     .local v0, "m":Ljava/lang/reflect/Method;
-    const/4 v1, 0x0
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
+    move-result-object v1
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    aput-object p1, v2, v3
-
-    const/4 v3, 0x1
-
-    aput-object p2, v2, v3
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2

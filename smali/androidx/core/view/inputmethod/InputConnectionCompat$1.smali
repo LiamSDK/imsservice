@@ -24,7 +24,7 @@
     .param p1, "target"    # Landroid/view/inputmethod/InputConnection;
     .param p2, "mutable"    # Z
 
-    .line 279
+    .line 280
     iput-object p3, p0, Landroidx/core/view/inputmethod/InputConnectionCompat$1;->val$listener:Landroidx/core/view/inputmethod/InputConnectionCompat$OnCommitContentListener;
 
     invoke-direct {p0, p1, p2}, Landroid/view/inputmethod/InputConnectionWrapper;-><init>(Landroid/view/inputmethod/InputConnection;Z)V
@@ -40,7 +40,7 @@
     .param p2, "flags"    # I
     .param p3, "opts"    # Landroid/os/Bundle;
 
-    .line 284
+    .line 285
     iget-object v0, p0, Landroidx/core/view/inputmethod/InputConnectionCompat$1;->val$listener:Landroidx/core/view/inputmethod/InputConnectionCompat$OnCommitContentListener;
 
     invoke-static {p1}, Landroidx/core/view/inputmethod/InputContentInfoCompat;->wrap(Ljava/lang/Object;)Landroidx/core/view/inputmethod/InputContentInfoCompat;
@@ -53,12 +53,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 286
+    .line 287
     const/4 v0, 0x1
 
     return v0
 
-    .line 288
+    .line 289
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/view/inputmethod/InputConnectionWrapper;->commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z
 

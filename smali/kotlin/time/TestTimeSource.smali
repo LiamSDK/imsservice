@@ -28,7 +28,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -43,7 +43,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 72
+    .line 146
     sget-object v0, Lkotlin/time/DurationUnit;->NANOSECONDS:Lkotlin/time/DurationUnit;
 
     invoke-direct {p0, v0}, Lkotlin/time/AbstractLongTimeSource;-><init>(Lkotlin/time/DurationUnit;)V
@@ -55,7 +55,7 @@
     .locals 4
     .param p1, "duration"    # J
 
-    .line 103
+    .line 177
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -74,7 +74,19 @@
 
     move-result-object v1
 
-    const-string v2, "ns is advanced by "
+    invoke-virtual {p0}, Lkotlin/time/TestTimeSource;->getUnit()Lkotlin/time/DurationUnit;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lkotlin/time/DurationUnitKt;->shortName(Lkotlin/time/DurationUnit;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " is advanced by "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -109,7 +121,7 @@
     .locals 10
     .param p1, "duration"    # J
 
-    .line 87
+    .line 161
     invoke-virtual {p0}, Lkotlin/time/TestTimeSource;->getUnit()Lkotlin/time/DurationUnit;
 
     move-result-object v0
@@ -118,7 +130,7 @@
 
     move-result-wide v0
 
-    .line 88
+    .line 162
     .local v0, "longDelta":J
     const-wide/high16 v2, -0x8000000000000000L
 
@@ -132,12 +144,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 90
+    .line 164
     iget-wide v2, p0, Lkotlin/time/TestTimeSource;->reading:J
 
     add-long v4, v2, v0
 
-    .line 91
+    .line 165
     .local v4, "newReading":J
     xor-long v6, v2, v0
 
@@ -155,14 +167,14 @@
 
     invoke-direct {p0, p1, p2}, Lkotlin/time/TestTimeSource;->overflow-LRDsOJo(J)V
 
-    .line 92
+    .line 166
     :cond_0
     nop
 
     .end local v4    # "newReading":J
     goto :goto_0
 
-    .line 94
+    .line 168
     :cond_1
     invoke-virtual {p0}, Lkotlin/time/TestTimeSource;->getUnit()Lkotlin/time/DurationUnit;
 
@@ -172,7 +184,7 @@
 
     move-result-wide v2
 
-    .line 96
+    .line 170
     .local v2, "delta":D
     iget-wide v4, p0, Lkotlin/time/TestTimeSource;->reading:J
 
@@ -180,7 +192,7 @@
 
     add-double/2addr v4, v2
 
-    .line 97
+    .line 171
     .local v4, "newReading":D
     const-wide/high16 v6, 0x43e0000000000000L    # 9.223372036854776E18
 
@@ -197,26 +209,26 @@
     :cond_2
     invoke-direct {p0, p1, p2}, Lkotlin/time/TestTimeSource;->overflow-LRDsOJo(J)V
 
-    .line 98
+    .line 172
     :cond_3
     double-to-long v6, v4
 
     move-wide v4, v6
 
-    .line 88
+    .line 162
     .end local v2    # "delta":D
     .end local v4    # "newReading":D
     :goto_0
     iput-wide v4, p0, Lkotlin/time/TestTimeSource;->reading:J
 
-    .line 100
+    .line 174
     return-void
 .end method
 
 .method protected read()J
     .locals 2
 
-    .line 75
+    .line 149
     iget-wide v0, p0, Lkotlin/time/TestTimeSource;->reading:J
 
     return-wide v0

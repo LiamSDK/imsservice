@@ -17,7 +17,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -27,7 +27,7 @@
 # direct methods
 .method public static contains(Lkotlin/ranges/ClosedRange;Ljava/lang/Comparable;)Z
     .locals 1
-    .param p0, "this"    # Lkotlin/ranges/ClosedRange;
+    .param p0, "$this"    # Lkotlin/ranges/ClosedRange;
     .param p1, "value"    # Ljava/lang/Comparable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -39,15 +39,11 @@
         }
     .end annotation
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "value"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 28
     invoke-interface {p0}, Lkotlin/ranges/ClosedRange;->getStart()Ljava/lang/Comparable;
 
     move-result-object v0
@@ -81,7 +77,7 @@
 
 .method public static isEmpty(Lkotlin/ranges/ClosedRange;)Z
     .locals 2
-    .param p0, "this"    # Lkotlin/ranges/ClosedRange;
+    .param p0, "$this"    # Lkotlin/ranges/ClosedRange;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -92,11 +88,7 @@
         }
     .end annotation
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 33
+    .line 35
     invoke-interface {p0}, Lkotlin/ranges/ClosedRange;->getStart()Ljava/lang/Comparable;
 
     move-result-object v0

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStringsJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StringsJVM.kt\nkotlin/text/StringsKt__StringsJVMKt\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,825:1\n1169#2,2:826\n1#3:828\n1720#4,3:829\n*S KotlinDebug\n*F\n+ 1 StringsJVM.kt\nkotlin/text/StringsKt__StringsJVMKt\n*L\n73#1:826,2\n621#1:829,3\n*E\n"
+    value = "SMAP\nStringsJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StringsJVM.kt\nkotlin/text/StringsKt__StringsJVMKt\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,825:1\n1174#2,2:826\n1#3:828\n1726#4,3:829\n*S KotlinDebug\n*F\n+ 1 StringsJVM.kt\nkotlin/text/StringsKt__StringsJVMKt\n*L\n73#1:826,2\n621#1:829,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -114,7 +114,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -403,7 +403,7 @@
 
     move-object v4, v3
 
-    .local v4, "$this$capitalize_u24lambda_u2d5":Ljava/lang/StringBuilder;
+    .local v4, "$this$capitalize_u24lambda_u245":Ljava/lang/StringBuilder;
     const/4 v5, 0x0
 
     .line 750
@@ -435,6 +435,10 @@
 
     invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v7, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-virtual {v2, p1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v2
@@ -461,7 +465,7 @@
     nop
 
     .line 749
-    .end local v4    # "$this$capitalize_u24lambda_u2d5":Ljava/lang/StringBuilder;
+    .end local v4    # "$this$capitalize_u24lambda_u245":Ljava/lang/StringBuilder;
     .end local v5    # "$i$a$-buildString-StringsKt__StringsJVMKt$capitalize$1":I
     .end local v6    # "titleChar":C
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -616,14 +620,14 @@
 
     invoke-virtual {v0, p1, p2, v1}, Lkotlin/collections/AbstractList$Companion;->checkBoundsIndexes$kotlin_stdlib(III)V
 
+    new-instance v0, Ljava/lang/String;
+
     .line 193
-    sub-int v0, p2, p1
+    sub-int v1, p2, p1
 
-    new-instance v1, Ljava/lang/String;
+    invoke-direct {v0, p0, p1, v1}, Ljava/lang/String;-><init>([CII)V
 
-    invoke-direct {v1, p0, p1, v0}, Ljava/lang/String;-><init>([CII)V
-
-    return-object v1
+    return-object v0
 .end method
 
 .method public static synthetic concatToString$default([CIIILjava/lang/Object;)Ljava/lang/String;
@@ -755,7 +759,7 @@
 .end method
 
 .method public static final decapitalize(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+    .locals 4
     .param p0, "$this$decapitalize"    # Ljava/lang/String;
     .annotation runtime Lkotlin/Deprecated;
         message = "Use replaceFirstChar instead."
@@ -810,21 +814,33 @@
 
     if-nez v0, :cond_1
 
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual {p0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
+    move-result-object v2
+
+    const-string v3, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v3, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "this as java.lang.String).toLowerCase()"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v0
-
-    const-string v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "this as java.lang.String).toLowerCase()"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -834,7 +850,11 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -848,7 +868,7 @@
 .end method
 
 .method public static final decapitalize(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;
-    .locals 3
+    .locals 4
     .param p0, "$this$decapitalize"    # Ljava/lang/String;
     .param p1, "locale"    # Ljava/util/Locale;
     .annotation runtime Lkotlin/Deprecated;
@@ -906,21 +926,33 @@
 
     if-nez v0, :cond_1
 
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual {p0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
+    move-result-object v2
+
+    const-string v3, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v3, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "this as java.lang.String).toLowerCase(locale)"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v0
-
-    const-string v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "this as java.lang.String).toLowerCase(locale)"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -930,7 +962,11 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -982,16 +1018,16 @@
     .line 245
     if-nez p3, :cond_0
 
-    .line 246
-    sub-int v0, p2, p1
+    new-instance v0, Ljava/lang/String;
 
-    new-instance v1, Ljava/lang/String;
+    .line 246
+    sub-int v1, p2, p1
 
     sget-object v2, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v1, p0, p1, v0, v2}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v0, p0, p1, v1, v2}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    return-object v1
+    return-object v0
 
     .line 249
     :cond_0
@@ -1059,12 +1095,6 @@
     and-int/lit8 p5, p4, 0x2
 
     if-eqz p5, :cond_1
-
-    .line 240
-    nop
-
-    .line 238
-    nop
 
     .line 240
     array-length p2, p0
@@ -1142,6 +1172,10 @@
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v1, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    const-string v2, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
@@ -1275,12 +1309,6 @@
     and-int/lit8 p5, p4, 0x2
 
     if-eqz p5, :cond_1
-
-    .line 283
-    nop
-
-    .line 281
-    nop
 
     .line 283
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -1728,11 +1756,9 @@
 
     move-result v0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     invoke-static {p0}, Lkotlin/text/StringsKt;->getIndices(Ljava/lang/CharSequence;)Lkotlin/ranges/IntRange;
 
@@ -1741,25 +1767,27 @@
     check-cast v0, Ljava/lang/Iterable;
 
     .local v0, "$this$all$iv":Ljava/lang/Iterable;
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 829
-    .local v3, "$i$f$all":I
-    instance-of v4, v0, Ljava/util/Collection;
+    .local v2, "$i$f$all":I
+    instance-of v3, v0, Ljava/util/Collection;
 
-    if-eqz v4, :cond_0
+    const/4 v4, 0x0
 
-    move-object v4, v0
+    if-eqz v3, :cond_0
 
-    check-cast v4, Ljava/util/Collection;
+    move-object v3, v0
 
-    invoke-interface {v4}, Ljava/util/Collection;->isEmpty()Z
+    check-cast v3, Ljava/util/Collection;
 
-    move-result v4
+    invoke-interface {v3}, Ljava/util/Collection;->isEmpty()Z
 
-    if-eqz v4, :cond_0
+    move-result v3
 
-    move v0, v2
+    if-eqz v3, :cond_0
+
+    move v0, v1
 
     goto :goto_0
 
@@ -1767,16 +1795,16 @@
     :cond_0
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v3
 
     :cond_1
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    move-object v5, v4
+    move-object v5, v3
 
     check-cast v5, Lkotlin/collections/IntIterator;
 
@@ -1800,29 +1828,38 @@
 
     move-result v6
 
+    .line 830
     .end local v6    # "it":I
     .end local v7    # "$i$a$-all-StringsKt__StringsJVMKt$isBlank$1":I
     if-nez v6, :cond_1
 
-    move v0, v1
+    move v0, v4
 
     goto :goto_0
 
     .line 831
     .end local v5    # "element$iv":I
     :cond_2
-    move v0, v2
+    move v0, v1
 
     .end local v0    # "$this$all$iv":Ljava/lang/Iterable;
-    .end local v3    # "$i$f$all":I
+    .end local v2    # "$i$f$all":I
     :goto_0
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
+
+    goto :goto_1
 
     :cond_3
-    move v1, v2
+    move v1, v4
+
+    goto :goto_2
+
+    :cond_4
+    :goto_1
+    nop
 
     .line 621
-    :cond_4
+    :goto_2
     return v1
 .end method
 
@@ -2148,21 +2185,21 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 795
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     if-ltz p1, :cond_0
 
-    move v2, v1
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    move v2, v0
+    move v2, v1
 
     :goto_0
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_3
 
     .line 797
     const-string v2, ""
@@ -2177,7 +2214,7 @@
     packed-switch v3, :pswitch_data_1
 
     .line 805
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -2185,18 +2222,22 @@
 
     mul-int/2addr v2, p1
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 806
-    .local v0, "sb":Ljava/lang/StringBuilder;
-    if-gt v1, p1, :cond_3
+    .local v1, "sb":Ljava/lang/StringBuilder;
+    new-instance v2, Lkotlin/ranges/IntRange;
 
-    move v2, v1
+    invoke-direct {v2, v0, p1}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    invoke-virtual {v2}, Lkotlin/ranges/IntRange;->iterator()Lkotlin/collections/IntIterator;
+
+    move-result-object v0
 
     goto :goto_2
 
     .line 799
-    .end local v0    # "sb":Ljava/lang/StringBuilder;
+    .end local v1    # "sb":Ljava/lang/StringBuilder;
     :pswitch_0
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -2210,12 +2251,12 @@
 
     .line 803
     :pswitch_2
-    invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
-    move-result v1
+    move-result v0
 
     .line 828
-    .local v1, "char":C
+    .local v0, "char":C
     const/4 v2, 0x0
 
     .line 803
@@ -2223,22 +2264,22 @@
     new-array v3, p1, [C
 
     :goto_1
-    if-ge v0, p1, :cond_1
+    if-ge v1, p1, :cond_1
 
-    aput-char v1, v3, v0
+    aput-char v0, v3, v1
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
     :cond_1
-    new-instance v0, Ljava/lang/String;
+    new-instance v1, Ljava/lang/String;
 
-    invoke-direct {v0, v3}, Ljava/lang/String;-><init>([C)V
+    invoke-direct {v1, v3}, Ljava/lang/String;-><init>([C)V
 
-    move-object v2, v0
+    move-object v2, v1
 
-    .end local v1    # "char":C
+    .end local v0    # "char":C
     .end local v2    # "$i$a$-let-StringsKt__StringsJVMKt$repeat$2":I
     goto :goto_3
 
@@ -2247,29 +2288,33 @@
     goto :goto_3
 
     .line 806
-    .restart local v0    # "sb":Ljava/lang/StringBuilder;
-    :cond_2
+    .restart local v1    # "sb":Ljava/lang/StringBuilder;
     :goto_2
-    move v3, v2
+    invoke-virtual {v0}, Lkotlin/collections/IntIterator;->hasNext()Z
 
-    .local v3, "i":I
-    add-int/2addr v2, v1
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v0}, Lkotlin/collections/IntIterator;->nextInt()I
+
+    move-result v2
 
     .line 807
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+    .local v2, "i":I
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 806
-    if-ne v3, p1, :cond_2
+    goto :goto_2
 
     .line 809
-    .end local v3    # "i":I
-    :cond_3
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .end local v2    # "i":I
+    :cond_2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     .line 804
-    .end local v0    # "sb":Ljava/lang/StringBuilder;
+    .end local v1    # "sb":Ljava/lang/StringBuilder;
     nop
 
     .line 807
@@ -2282,7 +2327,7 @@
     return-object v2
 
     .line 828
-    :cond_4
+    :cond_3
     const/4 v0, 0x0
 
     .line 795
@@ -2321,6 +2366,8 @@
     invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -2371,7 +2418,7 @@
 
     move-object v0, v1
 
-    .local v0, "$this$replace_u24lambda_u2d1":Ljava/lang/StringBuilder;
+    .local v0, "$this$replace_u24lambda_u241":Ljava/lang/StringBuilder;
     const/4 v2, 0x0
 
     .line 73
@@ -2399,8 +2446,6 @@
     move-result v6
 
     .local v6, "element$iv":C
-    add-int/lit8 v5, v5, 0x1
-
     move v7, v6
 
     .local v7, "c":C
@@ -2427,12 +2472,17 @@
     .line 75
     nop
 
+    .line 826
     .end local v7    # "c":C
     .end local v8    # "$i$a$-forEach-StringsKt__StringsJVMKt$replace$1$1":I
+    nop
+
+    .end local v6    # "element$iv":C
+    add-int/lit8 v5, v5, 0x1
+
     goto :goto_0
 
     .line 827
-    .end local v6    # "element$iv":C
     :cond_2
     nop
 
@@ -2442,7 +2492,7 @@
     nop
 
     .line 72
-    .end local v0    # "$this$replace_u24lambda_u2d1":Ljava/lang/StringBuilder;
+    .end local v0    # "$this$replace_u24lambda_u241":Ljava/lang/StringBuilder;
     .end local v2    # "$i$a$-buildString-StringsKt__StringsJVMKt$replace$1":I
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2477,7 +2527,7 @@
     .line 87
     move-object v0, p0
 
-    .local v0, "$this$replace_u24lambda_u2d2":Ljava/lang/String;
+    .local v0, "$this$replace_u24lambda_u242":Ljava/lang/String;
     const/4 v1, 0x0
 
     .line 88
@@ -2560,12 +2610,9 @@
 
     move-result v8
 
-    if-lt v2, v8, :cond_2
-
-    goto :goto_0
+    if-ge v2, v8, :cond_2
 
     .line 103
-    :cond_2
     move-object v8, v0
 
     check-cast v8, Ljava/lang/CharSequence;
@@ -2580,7 +2627,7 @@
     if-gtz v2, :cond_1
 
     .line 105
-    :goto_0
+    :cond_2
     move-object v8, v0
 
     check-cast v8, Ljava/lang/CharSequence;
@@ -3258,12 +3305,6 @@
     and-int/lit8 p5, p5, 0x8
 
     if-eqz p5, :cond_2
-
-    .line 323
-    nop
-
-    .line 319
-    nop
 
     .line 323
     invoke-virtual {p0}, Ljava/lang/String;->length()I

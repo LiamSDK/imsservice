@@ -1,5 +1,5 @@
 .class Lcom/mediatek/ims/ImsService$3;
-.super Landroid/content/BroadcastReceiver;
+.super Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 .source "ImsService.java"
 
 
@@ -23,65 +23,23 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/ImsService;
 
-    .line 4039
+    .line 4137
     iput-object p1, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onSubscriptionsChanged()V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 4041
-    iget-object v0, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "volte_setting mSubInfoReceiver action: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/mediatek/ims/ImsService;->access$100(Lcom/mediatek/ims/ImsService;Ljava/lang/String;)V
-
-    .line 4042
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "android.intent.action.ACTION_SUBINFO_RECORD_UPDATED"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 4043
+    .line 4140
     const/4 v0, 0x1
 
-    .line 4044
+    .line 4141
     .local v0, "needDereg":Z
     const/4 v1, 0x0
 
@@ -97,7 +55,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 4045
+    .line 4142
     iget-object v2, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
     invoke-static {v2}, Lcom/mediatek/ims/ImsService;->access$4500(Lcom/mediatek/ims/ImsService;)[Z
@@ -110,7 +68,7 @@
 
     iget-object v2, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
-    .line 4046
+    .line 4143
     invoke-virtual {v2, v1}, Lcom/mediatek/ims/ImsService;->getSubIdUsingPhoneId(I)I
 
     move-result v2
@@ -119,7 +77,7 @@
 
     if-le v2, v4, :cond_0
 
-    .line 4048
+    .line 4145
     iget-object v2, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
     invoke-static {v2}, Lcom/mediatek/ims/ImsService;->access$4600(Lcom/mediatek/ims/ImsService;)[Z
@@ -130,7 +88,7 @@
 
     invoke-static {v2, v1, v4}, Lcom/mediatek/ims/ImsService;->access$4900(Lcom/mediatek/ims/ImsService;IZ)V
 
-    .line 4049
+    .line 4146
     iget-object v2, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
     invoke-static {v2}, Lcom/mediatek/ims/ImsService;->access$4500(Lcom/mediatek/ims/ImsService;)[Z
@@ -139,7 +97,7 @@
 
     aput-boolean v3, v2, v1
 
-    .line 4051
+    .line 4148
     :cond_0
     iget-object v2, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
@@ -151,49 +109,53 @@
 
     if-eqz v2, :cond_1
 
-    .line 4052
+    .line 4149
     const/4 v0, 0x0
 
-    .line 4044
+    .line 4141
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 4055
+    .line 4152
     .end local v1    # "phoneId":I
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 4056
+    .line 4153
     iget-object v1, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
     invoke-static {v1}, Lcom/mediatek/ims/ImsService;->access$800(Lcom/mediatek/ims/ImsService;)Landroid/content/Context;
 
     move-result-object v1
 
+    invoke-static {v1}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
+
+    move-result-object v1
+
     iget-object v2, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
-    invoke-static {v2}, Lcom/mediatek/ims/ImsService;->access$4400(Lcom/mediatek/ims/ImsService;)Landroid/content/BroadcastReceiver;
+    .line 4154
+    invoke-static {v2}, Lcom/mediatek/ims/ImsService;->access$4400(Lcom/mediatek/ims/ImsService;)Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {v1, v2}, Landroid/telephony/SubscriptionManager;->removeOnSubscriptionsChangedListener(Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;)V
 
-    .line 4057
+    .line 4155
     iget-object v1, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
     invoke-static {v1, v3}, Lcom/mediatek/ims/ImsService;->access$4302(Lcom/mediatek/ims/ImsService;Z)Z
 
-    .line 4060
-    .end local v0    # "needDereg":Z
+    .line 4157
     :cond_3
-    iget-object v0, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
+    iget-object v1, p0, Lcom/mediatek/ims/ImsService$3;->this$0:Lcom/mediatek/ims/ImsService;
 
-    const-string v1, "volte_setting mSubInfoReceiver finished"
+    const-string v2, "volte_setting onSubscriptionsChanged finished"
 
-    invoke-static {v0, v1}, Lcom/mediatek/ims/ImsService;->access$100(Lcom/mediatek/ims/ImsService;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/mediatek/ims/ImsService;->access$100(Lcom/mediatek/ims/ImsService;Ljava/lang/String;)V
 
-    .line 4061
+    .line 4158
     return-void
 .end method

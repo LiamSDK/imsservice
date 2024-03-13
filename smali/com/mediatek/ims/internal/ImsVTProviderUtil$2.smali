@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/mediatek/ims/internal/ImsVTProviderUtil;
     .param p2, "arg0"    # Landroid/os/Looper;
 
-    .line 548
+    .line 552
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -38,21 +38,21 @@
     .locals 5
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 551
+    .line 555
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto/16 :goto_0
 
-    .line 626
+    .line 631
     :pswitch_0
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProvider;->nTriggerGetOperatorId()I
 
-    .line 627
+    .line 632
     goto/16 :goto_0
 
-    .line 618
+    .line 622
     :pswitch_1
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->isVideoCallOnByPlatform()Z
 
@@ -60,37 +60,42 @@
 
     if-eqz v0, :cond_0
 
-    .line 619
+    .line 623
     const-string v0, "ImsVT Util"
 
     const-string v1, "reInitRefVTP, ViLTE on, do natvie ReInit"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 620
+    .line 624
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProvider;->nInitRefVTP()I
 
-    .line 621
+    .line 625
     const/16 v0, 0x3e9
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/ImsVTProvider;->nTagSocketWithUid(I)I
 
+    .line 626
+    iget-object v0, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
+
+    invoke-virtual {v0}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->reRegisterNetworkCallback()V
+
     goto/16 :goto_0
 
-    .line 607
+    .line 611
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 609
+    .line 613
     .local v0, "args":Lcom/android/internal/os/SomeArgs;
     :try_start_0
     iget-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v1, Lcom/mediatek/ims/internal/ImsVTProvider;
 
-    .line 611
+    .line 615
     .local v1, "vtp":Lcom/mediatek/ims/internal/ImsVTProvider;
     iget-object v2, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
@@ -98,33 +103,33 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 613
+    .line 617
     .end local v1    # "vtp":Lcom/mediatek/ims/internal/ImsVTProvider;
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 614
+    .line 618
     nop
 
-    .line 615
+    .line 619
     goto/16 :goto_0
 
-    .line 613
+    .line 617
     :catchall_0
     move-exception v1
 
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 614
+    .line 618
     throw v1
 
-    .line 595
+    .line 599
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_3
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 597
+    .line 601
     .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_1
     iget-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
@@ -135,7 +140,7 @@
 
     move-result v1
 
-    .line 598
+    .line 602
     .local v1, "phoneId":I
     iget-object v2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
@@ -145,7 +150,7 @@
 
     move-result v2
 
-    .line 600
+    .line 604
     .local v2, "isRoaming":Z
     iget-object v3, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
@@ -153,34 +158,34 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 602
+    .line 606
     .end local v1    # "phoneId":I
     .end local v2    # "isRoaming":Z
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 603
+    .line 607
     nop
 
-    .line 604
+    .line 608
     goto/16 :goto_0
 
-    .line 602
+    .line 606
     :catchall_1
     move-exception v1
 
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 603
+    .line 607
     throw v1
 
-    .line 582
+    .line 586
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_4
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 584
+    .line 588
     .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_2
     iget-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
@@ -191,7 +196,7 @@
 
     move-result v1
 
-    .line 585
+    .line 589
     .restart local v1    # "phoneId":I
     iget-object v2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
@@ -201,7 +206,7 @@
 
     move-result v2
 
-    .line 586
+    .line 590
     .local v2, "feature":I
     iget-object v3, v0, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
@@ -211,7 +216,7 @@
 
     move-result v3
 
-    .line 588
+    .line 592
     .local v3, "isOn":Z
     iget-object v4, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
@@ -219,42 +224,42 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    .line 590
+    .line 594
     .end local v1    # "phoneId":I
     .end local v2    # "feature":I
     .end local v3    # "isOn":Z
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 591
+    .line 595
     nop
 
-    .line 592
+    .line 596
     goto :goto_0
 
-    .line 590
+    .line 594
     :catchall_2
     move-exception v1
 
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 591
+    .line 595
     throw v1
 
-    .line 570
+    .line 574
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_5
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 572
+    .line 576
     .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_3
     iget-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v1, Lcom/mediatek/ims/internal/ImsVTProvider;
 
-    .line 573
+    .line 577
     .local v1, "vtp":Lcom/mediatek/ims/internal/ImsVTProvider;
     iget-object v2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
@@ -264,7 +269,7 @@
 
     move-result v2
 
-    .line 575
+    .line 579
     .local v2, "mode":I
     iget-object v3, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
@@ -272,41 +277,41 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    .line 577
+    .line 581
     .end local v1    # "vtp":Lcom/mediatek/ims/internal/ImsVTProvider;
     .end local v2    # "mode":I
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 578
+    .line 582
     nop
 
-    .line 579
+    .line 583
     goto :goto_0
 
-    .line 577
+    .line 581
     :catchall_3
     move-exception v1
 
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 578
+    .line 582
     throw v1
 
-    .line 557
+    .line 561
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_6
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 559
+    .line 563
     .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :try_start_4
     iget-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v1, Lcom/mediatek/ims/internal/ImsVTProvider;
 
-    .line 560
+    .line 564
     .restart local v1    # "vtp":Lcom/mediatek/ims/internal/ImsVTProvider;
     iget-object v2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
@@ -316,7 +321,7 @@
 
     move-result v2
 
-    .line 561
+    .line 565
     .local v2, "cid":I
     iget-object v3, v0, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
@@ -326,7 +331,7 @@
 
     move-result v3
 
-    .line 563
+    .line 567
     .local v3, "pid":I
     iget-object v4, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
 
@@ -334,28 +339,28 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_4
 
-    .line 565
+    .line 569
     .end local v1    # "vtp":Lcom/mediatek/ims/internal/ImsVTProvider;
     .end local v2    # "cid":I
     .end local v3    # "pid":I
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 566
+    .line 570
     nop
 
-    .line 567
+    .line 571
     goto :goto_0
 
-    .line 565
+    .line 569
     :catchall_4
     move-exception v1
 
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 566
+    .line 570
     throw v1
 
-    .line 553
+    .line 557
     .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_7
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsVTProviderUtil$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProviderUtil;
@@ -366,15 +371,13 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->setContextAndInitRefVTPInternal(Landroid/content/Context;)V
 
-    .line 554
+    .line 558
     nop
 
-    .line 631
+    .line 636
     :cond_0
     :goto_0
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

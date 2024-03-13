@@ -35,7 +35,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -46,7 +46,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 97
+    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -68,7 +68,7 @@
     .param p2, "rangeEnd"    # I
     .param p3, "step"    # I
 
-    .line 106
+    .line 115
     new-instance v0, Lkotlin/ranges/UIntProgression;
 
     const/4 v1, 0x0

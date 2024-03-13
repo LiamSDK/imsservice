@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .locals 2
+    .locals 1
     .param p1, "id"    # Ljava/lang/String;
 
     .line 80
@@ -37,11 +37,7 @@
     iput-object v0, p0, Landroidx/core/content/LocusIdCompat;->mId:Ljava/lang/String;
 
     .line 82
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1d
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 83
     invoke-static {p1}, Landroidx/core/content/LocusIdCompat$Api29Impl;->create(Ljava/lang/String;)Landroid/content/LocusId;
@@ -50,16 +46,7 @@
 
     iput-object v0, p0, Landroidx/core/content/LocusIdCompat;->mWrapped:Landroid/content/LocusId;
 
-    goto :goto_0
-
-    .line 85
-    :cond_0
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroidx/core/content/LocusIdCompat;->mWrapped:Landroid/content/LocusId;
-
     .line 87
-    :goto_0
     return-void
 .end method
 

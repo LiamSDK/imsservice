@@ -38,7 +38,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -114,18 +114,18 @@
     aget-byte v3, p1, v2
 
     .local v3, "e":B
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
     int-to-byte v0, v4
 
+    .end local v3    # "e":B
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 172
-    .end local v3    # "e":B
     :cond_0
     return v0
 .end method
@@ -185,16 +185,16 @@
     aget-wide v4, p2, v3
 
     .local v4, "e":D
-    add-int/lit8 v3, v3, 0x1
-
     invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->max(DD)D
 
     move-result-wide v0
 
+    .end local v4    # "e":D
+    add-int/lit8 v3, v3, 0x1
+
     goto :goto_0
 
     .line 226
-    .end local v4    # "e":D
     :cond_0
     return-wide v0
 .end method
@@ -254,16 +254,16 @@
     aget v3, p1, v2
 
     .local v3, "e":F
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
+    .end local v3    # "e":F
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 214
-    .end local v3    # "e":F
     :cond_0
     return v0
 .end method
@@ -323,16 +323,16 @@
     aget v3, p1, v2
 
     .local v3, "e":I
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
+    .end local v3    # "e":I
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 192
-    .end local v3    # "e":I
     :cond_0
     return v0
 .end method
@@ -392,16 +392,16 @@
     aget-wide v4, p2, v3
 
     .local v4, "e":J
-    add-int/lit8 v3, v3, 0x1
-
     invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v0
 
+    .end local v4    # "e":J
+    add-int/lit8 v3, v3, 0x1
+
     goto :goto_0
 
     .line 202
-    .end local v4    # "e":J
     :cond_0
     return-wide v0
 .end method
@@ -516,16 +516,16 @@
     aget-object v3, p1, v2
 
     .local v3, "e":Ljava/lang/Comparable;
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Lkotlin/comparisons/ComparisonsKt;->maxOf(Ljava/lang/Comparable;Ljava/lang/Comparable;)Ljava/lang/Comparable;
 
     move-result-object v0
 
+    .end local v3    # "e":Ljava/lang/Comparable;
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 162
-    .end local v3    # "e":Ljava/lang/Comparable;
     :cond_0
     return-object v0
 .end method
@@ -589,18 +589,18 @@
     aget-short v3, p1, v2
 
     .local v3, "e":S
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
     int-to-short v0, v4
 
+    .end local v3    # "e":S
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 182
-    .end local v3    # "e":S
     :cond_0
     return v0
 .end method
@@ -664,18 +664,18 @@
     aget-byte v3, p1, v2
 
     .local v3, "e":B
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v4
 
     int-to-byte v0, v4
 
+    .end local v3    # "e":B
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 384
-    .end local v3    # "e":B
     :cond_0
     return v0
 .end method
@@ -735,16 +735,16 @@
     aget-wide v4, p2, v3
 
     .local v4, "e":D
-    add-int/lit8 v3, v3, 0x1
-
     invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->min(DD)D
 
     move-result-wide v0
 
+    .end local v4    # "e":D
+    add-int/lit8 v3, v3, 0x1
+
     goto :goto_0
 
     .line 438
-    .end local v4    # "e":D
     :cond_0
     return-wide v0
 .end method
@@ -804,16 +804,16 @@
     aget v3, p1, v2
 
     .local v3, "e":F
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
+    .end local v3    # "e":F
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 426
-    .end local v3    # "e":F
     :cond_0
     return v0
 .end method
@@ -873,16 +873,16 @@
     aget v3, p1, v2
 
     .local v3, "e":I
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
+    .end local v3    # "e":I
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 404
-    .end local v3    # "e":I
     :cond_0
     return v0
 .end method
@@ -942,16 +942,16 @@
     aget-wide v4, p2, v3
 
     .local v4, "e":J
-    add-int/lit8 v3, v3, 0x1
-
     invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
+    .end local v4    # "e":J
+    add-int/lit8 v3, v3, 0x1
+
     goto :goto_0
 
     .line 414
-    .end local v4    # "e":J
     :cond_0
     return-wide v0
 .end method
@@ -1066,16 +1066,16 @@
     aget-object v3, p1, v2
 
     .local v3, "e":Ljava/lang/Comparable;
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Lkotlin/comparisons/ComparisonsKt;->minOf(Ljava/lang/Comparable;Ljava/lang/Comparable;)Ljava/lang/Comparable;
 
     move-result-object v0
 
+    .end local v3    # "e":Ljava/lang/Comparable;
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 374
-    .end local v3    # "e":Ljava/lang/Comparable;
     :cond_0
     return-object v0
 .end method
@@ -1139,18 +1139,18 @@
     aget-short v3, p1, v2
 
     .local v3, "e":S
-    add-int/lit8 v2, v2, 0x1
-
     invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v4
 
     int-to-short v0, v4
 
+    .end local v3    # "e":S
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 394
-    .end local v3    # "e":S
     :cond_0
     return v0
 .end method

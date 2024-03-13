@@ -36,7 +36,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -78,7 +78,7 @@
 
     move-object v1, v0
 
-    .local v1, "$this$toString_u24lambda_u2d0":Ljava/lang/StringBuilder;
+    .local v1, "$this$toString_u24lambda_u240":Ljava/lang/StringBuilder;
     const/4 v2, 0x0
 
     .line 47
@@ -126,7 +126,7 @@
     nop
 
     .line 46
-    .end local v1    # "$this$toString_u24lambda_u2d0":Ljava/lang/StringBuilder;
+    .end local v1    # "$this$toString_u24lambda_u240":Ljava/lang/StringBuilder;
     .end local v2    # "$i$a$-buildString-TypeParameterReference$Companion$toString$1":I
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

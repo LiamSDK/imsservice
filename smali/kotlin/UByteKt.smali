@@ -24,7 +24,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -36,7 +36,7 @@
     .locals 1
     .param p0, "$this$toUByte"    # B
 
-    .line 357
+    .line 367
     invoke-static {p0}, Lkotlin/UByte;->constructor-impl(B)B
 
     move-result v0
@@ -48,7 +48,7 @@
     .locals 1
     .param p0, "$this$toUByte"    # I
 
-    .line 381
+    .line 391
     int-to-byte v0, p0
 
     invoke-static {v0}, Lkotlin/UByte;->constructor-impl(B)B
@@ -62,7 +62,7 @@
     .locals 1
     .param p0, "$this$toUByte"    # J
 
-    .line 393
+    .line 403
     long-to-int v0, p0
 
     int-to-byte v0, v0
@@ -78,7 +78,7 @@
     .locals 1
     .param p0, "$this$toUByte"    # S
 
-    .line 369
+    .line 379
     int-to-byte v0, p0
 
     invoke-static {v0}, Lkotlin/UByte;->constructor-impl(B)B

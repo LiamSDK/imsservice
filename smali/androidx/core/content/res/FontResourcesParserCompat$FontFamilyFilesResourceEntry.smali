@@ -26,13 +26,13 @@
     .locals 0
     .param p1, "entries"    # [Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
 
-    .line 171
+    .line 168
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 172
+    .line 169
     iput-object p1, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;->mEntries:[Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
 
-    .line 173
+    .line 170
     return-void
 .end method
 
@@ -41,7 +41,7 @@
 .method public getEntries()[Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
     .locals 1
 
-    .line 176
+    .line 173
     iget-object v0, p0, Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;->mEntries:[Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
 
     return-object v0

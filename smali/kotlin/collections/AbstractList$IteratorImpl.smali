@@ -49,7 +49,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -71,17 +71,13 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/collections/AbstractList;)V
-    .locals 1
+    .locals 0
     .param p1, "this$0"    # Lkotlin/collections/AbstractList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 71
     iput-object p1, p0, Lkotlin/collections/AbstractList$IteratorImpl;->this$0:Lkotlin/collections/AbstractList;

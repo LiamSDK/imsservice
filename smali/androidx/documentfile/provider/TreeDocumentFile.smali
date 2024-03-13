@@ -397,14 +397,16 @@
 
     .line 146
     .local v9, "c":Landroid/database/Cursor;
+    const/4 v1, 0x1
+
     const/4 v10, 0x0
 
     :try_start_0
+    new-array v3, v1, [Ljava/lang/String;
+
     const-string v1, "document_id"
 
-    filled-new-array {v1}, [Ljava/lang/String;
-
-    move-result-object v3
+    aput-object v1, v3, v10
 
     const/4 v4, 0x0
 

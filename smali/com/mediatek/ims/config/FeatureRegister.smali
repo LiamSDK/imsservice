@@ -145,12 +145,12 @@
 
     move-result-object v3
 
-    const/4 v4, 0x0
-
-    iget-object v5, p0, Lcom/mediatek/ims/config/FeatureRegister;->mArgsObserver:Lcom/mediatek/ims/config/Register$ArgsObserver;
+    iget-object v4, p0, Lcom/mediatek/ims/config/FeatureRegister;->mArgsObserver:Lcom/mediatek/ims/config/Register$ArgsObserver;
 
     .line 33
-    invoke-virtual {v2, v3, v4, v5}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+    const/4 v5, 0x0
+
+    invoke-virtual {v2, v3, v5, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     .line 37
     .end local v1    # "argId":Ljava/lang/Integer;

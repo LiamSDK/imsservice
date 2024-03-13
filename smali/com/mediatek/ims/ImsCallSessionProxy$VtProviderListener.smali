@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/mediatek/ims/ImsCallSessionProxy;)V
     .locals 0
 
-    .line 520
+    .line 534
     iput-object p1, p0, Lcom/mediatek/ims/ImsCallSessionProxy$VtProviderListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "x0"    # Lcom/mediatek/ims/ImsCallSessionProxy;
     .param p2, "x1"    # Lcom/mediatek/ims/ImsCallSessionProxy$1;
 
-    .line 520
+    .line 534
     invoke-direct {p0, p1}, Lcom/mediatek/ims/ImsCallSessionProxy$VtProviderListener;-><init>(Lcom/mediatek/ims/ImsCallSessionProxy;)V
 
     return-void
@@ -50,7 +50,7 @@
     .locals 3
     .param p1, "isPause"    # Z
 
-    .line 522
+    .line 536
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$VtProviderListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     invoke-static {v0}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$000(Lcom/mediatek/ims/ImsCallSessionProxy;)Landroid/telephony/ims/ImsCallProfile;
@@ -59,10 +59,10 @@
 
     if-nez v0, :cond_0
 
-    .line 523
+    .line 537
     return-void
 
-    .line 525
+    .line 539
     :cond_0
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$VtProviderListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
@@ -88,22 +88,22 @@
 
     invoke-static {v0, v1, v2}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$100(Lcom/mediatek/ims/ImsCallSessionProxy;Ljava/lang/String;I)V
 
-    .line 527
+    .line 541
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$VtProviderListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     invoke-static {v0, p1}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$202(Lcom/mediatek/ims/ImsCallSessionProxy;Z)Z
 
-    .line 528
+    .line 542
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$VtProviderListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     invoke-static {v0}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$300(Lcom/mediatek/ims/ImsCallSessionProxy;)V
 
-    .line 530
+    .line 544
     iget-object v0, p0, Lcom/mediatek/ims/ImsCallSessionProxy$VtProviderListener;->this$0:Lcom/mediatek/ims/ImsCallSessionProxy;
 
     invoke-static {v0}, Lcom/mediatek/ims/ImsCallSessionProxy;->access$400(Lcom/mediatek/ims/ImsCallSessionProxy;)V
 
-    .line 531
+    .line 545
     return-void
 .end method
 
@@ -111,6 +111,6 @@
     .locals 0
     .param p1, "usage"    # J
 
-    .line 534
+    .line 548
     return-void
 .end method

@@ -269,18 +269,14 @@
 .end method
 
 .method public getFacilityLockForAppResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "response"    # I
 
     .line 157
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/mediatek/ims/ril/SimResponse;->responseInts(Landroid/hardware/radio/RadioResponseInfo;[I)V
 
@@ -309,8 +305,8 @@
 .method public getInterfaceHash()Ljava/lang/String;
     .locals 1
 
-    .line 360
-    const-string v0, "01cea196fdf8f5e41fda8dc41125f1cc2b96f757"
+    .line 366
+    const-string v0, "4f348cc7aca716cc41c09ea95895c4b261231035"
 
     return-object v0
 .end method
@@ -318,8 +314,8 @@
 .method public getInterfaceVersion()I
     .locals 1
 
-    .line 365
-    const/4 v0, 0x1
+    .line 371
+    const/4 v0, 0x2
 
     return v0
 .end method
@@ -349,12 +345,20 @@
     return-void
 .end method
 
+.method public iccCloseLogicalChannelWithSessionInfoResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .locals 0
+    .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
+
+    .line 199
+    return-void
+.end method
+
 .method public iccIoForAppResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/sim/IccIoResult;)V
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "iccIo"    # Landroid/hardware/radio/sim/IccIoResult;
 
-    .line 201
+    .line 207
     return-void
 .end method
 
@@ -364,7 +368,7 @@
     .param p2, "channelId"    # I
     .param p3, "selectResponse"    # [B
 
-    .line 211
+    .line 217
     return-void
 .end method
 
@@ -373,7 +377,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "iccIo"    # Landroid/hardware/radio/sim/IccIoResult;
 
-    .line 219
+    .line 225
     return-void
 .end method
 
@@ -382,7 +386,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "iccIo"    # Landroid/hardware/radio/sim/IccIoResult;
 
-    .line 227
+    .line 233
     return-void
 .end method
 
@@ -390,7 +394,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 233
+    .line 239
     return-void
 .end method
 
@@ -399,7 +403,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "iccIo"    # Landroid/hardware/radio/sim/IccIoResult;
 
-    .line 241
+    .line 247
     return-void
 .end method
 
@@ -408,7 +412,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "response"    # Ljava/lang/String;
 
-    .line 250
+    .line 256
     return-void
 .end method
 
@@ -417,7 +421,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "commandResponse"    # Ljava/lang/String;
 
-    .line 258
+    .line 264
     return-void
 .end method
 
@@ -426,7 +430,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "iccIo"    # Landroid/hardware/radio/sim/IccIoResult;
 
-    .line 266
+    .line 272
     return-void
 .end method
 
@@ -434,7 +438,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 272
+    .line 278
     return-void
 .end method
 
@@ -442,7 +446,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 278
+    .line 284
     return-void
 .end method
 
@@ -450,7 +454,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 284
+    .line 290
     return-void
 .end method
 
@@ -458,27 +462,23 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 290
+    .line 296
     return-void
 .end method
 
 .method public setFacilityLockForAppResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "retry"    # I
 
-    .line 297
-    const/4 v0, 0x1
+    .line 303
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/mediatek/ims/ril/SimResponse;->responseInts(Landroid/hardware/radio/RadioResponseInfo;[I)V
 
-    .line 298
+    .line 304
     return-void
 .end method
 
@@ -486,7 +486,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 304
+    .line 310
     return-void
 .end method
 
@@ -494,7 +494,7 @@
     .locals 0
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 310
+    .line 316
     return-void
 .end method
 
@@ -503,7 +503,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "remainingAttempts"    # I
 
-    .line 317
+    .line 323
     return-void
 .end method
 
@@ -512,7 +512,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "remainingAttempts"    # I
 
-    .line 324
+    .line 330
     return-void
 .end method
 
@@ -521,7 +521,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "remainingAttempts"    # I
 
-    .line 331
+    .line 337
     return-void
 .end method
 
@@ -530,7 +530,7 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "remainingAttempts"    # I
 
-    .line 338
+    .line 344
     return-void
 .end method
 
@@ -540,7 +540,7 @@
     .param p2, "persoType"    # I
     .param p3, "remainingRetries"    # I
 
-    .line 348
+    .line 354
     return-void
 .end method
 
@@ -549,6 +549,6 @@
     .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "updatedRecordIndex"    # I
 
-    .line 356
+    .line 362
     return-void
 .end method

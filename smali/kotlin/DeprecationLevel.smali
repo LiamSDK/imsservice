@@ -28,7 +28,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -49,27 +49,15 @@
 .method private static final synthetic $values()[Lkotlin/DeprecationLevel;
     .locals 3
 
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Lkotlin/DeprecationLevel;
-
-    sget-object v1, Lkotlin/DeprecationLevel;->WARNING:Lkotlin/DeprecationLevel;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/DeprecationLevel;->WARNING:Lkotlin/DeprecationLevel;
 
     sget-object v1, Lkotlin/DeprecationLevel;->ERROR:Lkotlin/DeprecationLevel;
 
-    const/4 v2, 0x1
+    sget-object v2, Lkotlin/DeprecationLevel;->HIDDEN:Lkotlin/DeprecationLevel;
 
-    aput-object v1, v0, v2
+    filled-new-array {v0, v1, v2}, [Lkotlin/DeprecationLevel;
 
-    sget-object v1, Lkotlin/DeprecationLevel;->HIDDEN:Lkotlin/DeprecationLevel;
-
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method

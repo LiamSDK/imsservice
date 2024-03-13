@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lvendor/mediatek/hardware/netdagent/V1_0/INetdagent$Stub;,
-        Lvendor/mediatek/hardware/netdagent/V1_0/INetdagent$Proxy;
+        Lvendor/mediatek/hardware/netdagent/V1_0/INetdagent$Proxy;,
+        Lvendor/mediatek/hardware/netdagent/V1_0/INetdagent$Stub;
     }
 .end annotation
 

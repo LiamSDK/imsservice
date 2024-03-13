@@ -55,7 +55,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -239,12 +239,14 @@
     :cond_0
     iget v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 601
     iget-object v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
-    if-eqz v0, :cond_1
+    const-string v1, "null cannot be cast to non-null type T of kotlin.sequences.GeneratorSequence"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 603
     .local v0, "result":Ljava/lang/Object;
@@ -255,19 +257,9 @@
     .line 604
     return-object v0
 
-    .line 601
+    .line 600
     .end local v0    # "result":Ljava/lang/Object;
     :cond_1
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "null cannot be cast to non-null type T of kotlin.sequences.GeneratorSequence"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 600
-    :cond_2
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V

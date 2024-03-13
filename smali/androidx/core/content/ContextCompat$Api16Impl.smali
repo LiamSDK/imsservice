@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 963
+    .line 966
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 965
+    .line 968
     return-void
 .end method
 
@@ -31,10 +31,10 @@
     .param p1, "intents"    # [Landroid/content/Intent;
     .param p2, "options"    # Landroid/os/Bundle;
 
-    .line 969
+    .line 972
     invoke-virtual {p0, p1, p2}, Landroid/content/Context;->startActivities([Landroid/content/Intent;Landroid/os/Bundle;)V
 
-    .line 970
+    .line 973
     return-void
 .end method
 
@@ -44,9 +44,9 @@
     .param p1, "intent"    # Landroid/content/Intent;
     .param p2, "options"    # Landroid/os/Bundle;
 
-    .line 974
+    .line 977
     invoke-virtual {p0, p1, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
 
-    .line 975
+    .line 978
     return-void
 .end method

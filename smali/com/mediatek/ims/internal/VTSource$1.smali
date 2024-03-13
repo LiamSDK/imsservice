@@ -27,8 +27,13 @@
 .method constructor <init>(Lcom/mediatek/ims/internal/VTSource;Landroid/os/ConditionVariable;)V
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/internal/VTSource;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
-    .line 1875
+    .line 1715
     iput-object p1, p0, Lcom/mediatek/ims/internal/VTSource$1;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     iput-object p2, p0, Lcom/mediatek/ims/internal/VTSource$1;->val$waitDoneCondition:Landroid/os/ConditionVariable;
@@ -43,24 +48,24 @@
 .method public run()V
     .locals 2
 
-    .line 1878
+    .line 1718
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$1;->val$waitDoneCondition:Landroid/os/ConditionVariable;
 
     monitor-enter v0
 
-    .line 1879
+    .line 1719
     :try_start_0
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$1;->val$waitDoneCondition:Landroid/os/ConditionVariable;
 
     invoke-virtual {v1}, Landroid/os/ConditionVariable;->open()V
 
-    .line 1880
+    .line 1720
     monitor-exit v0
 
-    .line 1881
+    .line 1721
     return-void
 
-    .line 1880
+    .line 1720
     :catchall_0
     move-exception v1
 

@@ -50,7 +50,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -154,15 +154,10 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 1487
     .local v0, "it":Lkotlin/Pair;
-    :cond_0
     const/4 v1, 0x0
 
     .line 1266
@@ -191,6 +186,11 @@
 
     .end local v0    # "it":Lkotlin/Pair;
     .end local v1    # "$i$a$-let-StringsKt__StringsKt$rangesDelimitedBy$2$1":I
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
     :goto_0
     return-object v0
 .end method

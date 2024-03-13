@@ -45,7 +45,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -60,7 +60,7 @@
         0x0
     }
     l = {
-        0xa85
+        0xb27
     }
     m = "invokeSuspend"
     n = {
@@ -214,12 +214,11 @@
 
     move-result-object v0
 
-    .line 2687
+    .line 2849
     iget v1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$zipWithNext$2;->label:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 2696
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -228,7 +227,6 @@
 
     throw p1
 
-    .line 2687
     :pswitch_0
     move-object v1, p0
 
@@ -267,7 +265,7 @@
 
     check-cast v2, Lkotlin/sequences/SequenceScope;
 
-    .line 2688
+    .line 2850
     .local v2, "$this$result":Lkotlin/sequences/SequenceScope;
     iget-object v3, v1, Lkotlin/sequences/SequencesKt___SequencesKt$zipWithNext$2;->$this_zipWithNext:Lkotlin/sequences/Sequence;
 
@@ -275,7 +273,7 @@
 
     move-result-object v3
 
-    .line 2689
+    .line 2851
     .restart local v3    # "iterator":Ljava/util/Iterator;
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -287,7 +285,7 @@
 
     return-object v0
 
-    .line 2690
+    .line 2852
     :cond_0
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -299,7 +297,7 @@
 
     move-object v2, v9
 
-    .line 2691
+    .line 2853
     .local v2, "current":Ljava/lang/Object;
     .restart local v4    # "$this$result":Lkotlin/sequences/SequenceScope;
     :goto_0
@@ -309,12 +307,12 @@
 
     if-eqz v5, :cond_2
 
-    .line 2692
+    .line 2854
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 2693
+    .line 2855
     .local v5, "next":Ljava/lang/Object;
     iget-object v6, v1, Lkotlin/sequences/SequencesKt___SequencesKt$zipWithNext$2;->$transform:Lkotlin/jvm/functions/Function2;
 
@@ -343,14 +341,14 @@
     .end local v2    # "current":Ljava/lang/Object;
     if-ne v2, v0, :cond_1
 
-    .line 2687
+    .line 2849
     return-object v0
 
-    .line 2693
+    .line 2855
     :cond_1
     move-object v2, v5
 
-    .line 2694
+    .line 2856
     .end local v5    # "next":Ljava/lang/Object;
     .local v2, "next":Ljava/lang/Object;
     :goto_1
@@ -359,7 +357,7 @@
     .local v2, "current":Ljava/lang/Object;
     goto :goto_0
 
-    .line 2696
+    .line 2858
     :cond_2
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

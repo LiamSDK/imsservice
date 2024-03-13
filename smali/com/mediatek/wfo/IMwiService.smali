@@ -27,3 +27,11 @@
         }
     .end annotation
 .end method
+
+.method public abstract getWfcState(I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method

@@ -20,10 +20,10 @@
     .param p1, "window"    # Landroid/view/Window;
     .param p2, "view"    # Landroid/view/View;
 
-    .line 579
+    .line 599
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsControllerCompat$Impl23;-><init>(Landroid/view/Window;Landroid/view/View;)V
 
-    .line 580
+    .line 600
     return-void
 .end method
 
@@ -32,7 +32,7 @@
 .method public isAppearanceLightNavigationBars()Z
     .locals 1
 
-    .line 584
+    .line 604
     iget-object v0, p0, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
@@ -62,31 +62,31 @@
     .locals 2
     .param p1, "isLight"    # Z
 
-    .line 590
+    .line 610
     const/16 v0, 0x10
 
     if-eqz p1, :cond_0
 
-    .line 591
+    .line 611
     const/high16 v1, 0x8000000
 
     invoke-virtual {p0, v1}, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->unsetWindowFlag(I)V
 
-    .line 592
+    .line 612
     const/high16 v1, -0x80000000
 
     invoke-virtual {p0, v1}, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->setWindowFlag(I)V
 
-    .line 593
+    .line 613
     invoke-virtual {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->setSystemUiFlag(I)V
 
     goto :goto_0
 
-    .line 595
+    .line 615
     :cond_0
     invoke-virtual {p0, v0}, Landroidx/core/view/WindowInsetsControllerCompat$Impl26;->unsetSystemUiFlag(I)V
 
-    .line 597
+    .line 617
     :goto_0
     return-void
 .end method

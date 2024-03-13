@@ -17,7 +17,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -27,12 +27,8 @@
 # direct methods
 .method public static plus(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p0, "this"    # Lkotlin/coroutines/CoroutineContext;
+    .param p0, "$this"    # Lkotlin/coroutines/CoroutineContext;
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "context"
 

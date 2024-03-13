@@ -28,7 +28,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -68,16 +68,16 @@
     .line 21
     new-instance v0, Ljava/util/concurrent/CancellationException;
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    const/4 v1, 0x0
+    invoke-virtual {p0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    const/4 v1, 0x0
 
     :goto_0
     invoke-direct {v0, v1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V

@@ -48,7 +48,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -204,7 +204,7 @@
 .end method
 
 .method public static final resetRange([Ljava/lang/Object;II)V
-    .locals 2
+    .locals 1
     .param p0, "$this$resetRange"    # [Ljava/lang/Object;
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
@@ -223,20 +223,18 @@
     .line 383
     move v0, p1
 
+    .local v0, "index":I
     :goto_0
     if-ge v0, p2, :cond_0
 
-    move v1, v0
+    invoke-static {p0, v0}, Lkotlin/collections/builders/ListBuilderKt;->resetAt([Ljava/lang/Object;I)V
 
-    .local v1, "index":I
     add-int/lit8 v0, v0, 0x1
-
-    invoke-static {p0, v1}, Lkotlin/collections/builders/ListBuilderKt;->resetAt([Ljava/lang/Object;I)V
 
     goto :goto_0
 
     .line 384
-    .end local v1    # "index":I
+    .end local v0    # "index":I
     :cond_0
     return-void
 .end method
@@ -341,24 +339,26 @@
     .local v2, "nextElement":Ljava/lang/Object;
     mul-int/lit8 v3, v0, 0x1f
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v4, 0x0
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v4
 
     goto :goto_1
 
     :cond_0
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v4
+    const/4 v4, 0x0
 
     :goto_1
     add-int v0, v3, v4
 
     .line 357
-    add-int/lit8 v1, v1, 0x1
+    nop
 
     .end local v2    # "nextElement":Ljava/lang/Object;
+    add-int/lit8 v1, v1, 0x1
+
     goto :goto_0
 
     .line 359

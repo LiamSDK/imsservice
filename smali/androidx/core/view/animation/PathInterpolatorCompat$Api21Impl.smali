@@ -25,7 +25,7 @@
     return-void
 .end method
 
-.method static createPathInterpolator(FF)Landroid/view/animation/PathInterpolator;
+.method static createPathInterpolator(FF)Landroid/view/animation/Interpolator;
     .locals 1
     .param p0, "controlX"    # F
     .param p1, "controlY"    # F
@@ -38,7 +38,7 @@
     return-object v0
 .end method
 
-.method static createPathInterpolator(FFFF)Landroid/view/animation/PathInterpolator;
+.method static createPathInterpolator(FFFF)Landroid/view/animation/Interpolator;
     .locals 1
     .param p0, "controlX1"    # F
     .param p1, "controlY1"    # F
@@ -53,7 +53,7 @@
     return-object v0
 .end method
 
-.method static createPathInterpolator(Landroid/graphics/Path;)Landroid/view/animation/PathInterpolator;
+.method static createPathInterpolator(Landroid/graphics/Path;)Landroid/view/animation/Interpolator;
     .locals 1
     .param p0, "path"    # Landroid/graphics/Path;
 

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/os/CancellationSignal$Api16Impl;,
-        Landroidx/core/os/CancellationSignal$OnCancelListener;
+        Landroidx/core/os/CancellationSignal$OnCancelListener;,
+        Landroidx/core/os/CancellationSignal$Api16Impl;
     }
 .end annotation
 
@@ -37,6 +37,8 @@
     .locals 1
 
     .line 155
+    nop
+
     :goto_0
     iget-boolean v0, p0, Landroidx/core/os/CancellationSignal;->mCancelInProgress:Z
 
@@ -66,7 +68,7 @@
 
 # virtual methods
 .method public cancel()V
-    .locals 5
+    .locals 4
 
     .line 71
     monitor-enter p0
@@ -125,12 +127,6 @@
     :cond_1
     :goto_0
     if-eqz v1, :cond_2
-
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v4, 0x10
-
-    if-lt v3, v4, :cond_2
 
     .line 86
     invoke-static {v1}, Landroidx/core/os/CancellationSignal$Api16Impl;->cancel(Ljava/lang/Object;)V
@@ -218,26 +214,16 @@
     .locals 2
 
     .line 140
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-ge v0, v1, :cond_0
-
-    .line 141
-    const/4 v0, 0x0
-
-    return-object v0
+    nop
 
     .line 143
-    :cond_0
     monitor-enter p0
 
     .line 144
     :try_start_0
     iget-object v0, p0, Landroidx/core/os/CancellationSignal;->mCancellationSignalObj:Ljava/lang/Object;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     .line 145
     invoke-static {}, Landroidx/core/os/CancellationSignal$Api16Impl;->createCancellationSignal()Landroid/os/CancellationSignal;
@@ -249,13 +235,13 @@
     .line 146
     iget-boolean v1, p0, Landroidx/core/os/CancellationSignal;->mIsCanceled:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 147
     invoke-static {v0}, Landroidx/core/os/CancellationSignal$Api16Impl;->cancel(Ljava/lang/Object;)V
 
     .line 150
-    :cond_1
+    :cond_0
     iget-object v0, p0, Landroidx/core/os/CancellationSignal;->mCancellationSignalObj:Ljava/lang/Object;
 
     monitor-exit p0

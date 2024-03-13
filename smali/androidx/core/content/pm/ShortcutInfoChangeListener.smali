@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 34
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,7 +18,7 @@
 .method public onAllShortcutsRemoved()V
     .locals 0
 
-    .line 45
+    .line 44
     return-void
 .end method
 
@@ -33,7 +33,7 @@
         }
     .end annotation
 
-    .line 36
+    .line 35
     .local p1, "shortcuts":Ljava/util/List;, "Ljava/util/List<Landroidx/core/content/pm/ShortcutInfoCompat;>;"
     return-void
 .end method
@@ -49,7 +49,7 @@
         }
     .end annotation
 
-    .line 42
+    .line 41
     .local p1, "shortcutIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method
@@ -65,7 +65,7 @@
         }
     .end annotation
 
-    .line 39
+    .line 38
     .local p1, "shortcuts":Ljava/util/List;, "Ljava/util/List<Landroidx/core/content/pm/ShortcutInfoCompat;>;"
     return-void
 .end method
@@ -81,7 +81,7 @@
         }
     .end annotation
 
-    .line 48
+    .line 47
     .local p1, "shortcutIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method

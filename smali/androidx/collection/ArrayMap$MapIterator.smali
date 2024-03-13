@@ -44,25 +44,27 @@
     .locals 1
     .param p1, "this$0"    # Landroidx/collection/ArrayMap;
 
-    .line 439
+    .line 532
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     iput-object p1, p0, Landroidx/collection/ArrayMap$MapIterator;->this$0:Landroidx/collection/ArrayMap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 440
-    iget v0, p1, Landroidx/collection/ArrayMap;->mSize:I
+    .line 533
+    invoke-virtual {p1}, Landroidx/collection/ArrayMap;->size()I
+
+    move-result v0
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEnd:I
 
-    .line 441
+    .line 534
     const/4 v0, -0x1
 
     iput v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
 
-    .line 442
+    .line 535
     return-void
 .end method
 
@@ -72,29 +74,29 @@
     .locals 5
     .param p1, "o"    # Ljava/lang/Object;
 
-    .line 497
+    .line 590
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_2
 
-    .line 501
+    .line 594
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 502
+    .line 595
     return v1
 
-    .line 504
+    .line 597
     :cond_0
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 505
+    .line 598
     .local v0, "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -108,13 +110,13 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Landroidx/collection/ContainerHelpers;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Landroidx/collection/internal/ContainerHelpersKt;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 506
+    .line 599
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -127,7 +129,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Landroidx/collection/ContainerHelpers;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Landroidx/collection/internal/ContainerHelpersKt;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -140,11 +142,11 @@
     :cond_1
     nop
 
-    .line 505
+    .line 598
     :goto_0
     return v1
 
-    .line 498
+    .line 591
     .end local v0    # "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -164,13 +166,13 @@
         }
     .end annotation
 
-    .line 470
+    .line 563
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_0
 
-    .line 474
+    .line 567
     iget-object v0, p0, Landroidx/collection/ArrayMap$MapIterator;->this$0:Landroidx/collection/ArrayMap;
 
     iget v1, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
@@ -181,7 +183,7 @@
 
     return-object v0
 
-    .line 471
+    .line 564
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -200,13 +202,13 @@
         }
     .end annotation
 
-    .line 479
+    .line 572
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_0
 
-    .line 483
+    .line 576
     iget-object v0, p0, Landroidx/collection/ArrayMap$MapIterator;->this$0:Landroidx/collection/ArrayMap;
 
     iget v1, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
@@ -217,7 +219,7 @@
 
     return-object v0
 
-    .line 480
+    .line 573
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -231,7 +233,7 @@
 .method public hasNext()Z
     .locals 2
 
-    .line 446
+    .line 539
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     iget v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
 
@@ -253,13 +255,13 @@
 .method public hashCode()I
     .locals 4
 
-    .line 511
+    .line 604
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_2
 
-    .line 515
+    .line 608
     iget-object v0, p0, Landroidx/collection/ArrayMap$MapIterator;->this$0:Landroidx/collection/ArrayMap;
 
     iget v1, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
@@ -268,7 +270,7 @@
 
     move-result-object v0
 
-    .line 516
+    .line 609
     .local v0, "key":Ljava/lang/Object;, "TK;"
     iget-object v1, p0, Landroidx/collection/ArrayMap$MapIterator;->this$0:Landroidx/collection/ArrayMap;
 
@@ -278,7 +280,7 @@
 
     move-result-object v1
 
-    .line 517
+    .line 610
     .local v1, "value":Ljava/lang/Object;, "TV;"
     const/4 v2, 0x0
 
@@ -293,7 +295,7 @@
 
     move-result v3
 
-    .line 518
+    .line 611
     :goto_0
     if-nez v1, :cond_1
 
@@ -307,10 +309,10 @@
     :goto_1
     xor-int/2addr v2, v3
 
-    .line 517
+    .line 610
     return v2
 
-    .line 512
+    .line 605
     .end local v0    # "key":Ljava/lang/Object;, "TK;"
     .end local v1    # "value":Ljava/lang/Object;, "TV;"
     :cond_2
@@ -326,7 +328,7 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 434
+    .line 527
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     invoke-virtual {p0}, Landroidx/collection/ArrayMap$MapIterator;->next()Ljava/util/Map$Entry;
 
@@ -345,7 +347,7 @@
         }
     .end annotation
 
-    .line 451
+    .line 544
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     invoke-virtual {p0}, Landroidx/collection/ArrayMap$MapIterator;->hasNext()Z
 
@@ -353,7 +355,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 452
+    .line 545
     iget v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
 
     const/4 v1, 0x1
@@ -362,13 +364,13 @@
 
     iput v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
 
-    .line 453
+    .line 546
     iput-boolean v1, p0, Landroidx/collection/ArrayMap$MapIterator;->mEntryValid:Z
 
-    .line 454
+    .line 547
     return-object p0
 
-    .line 451
+    .line 544
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -380,42 +382,42 @@
 .method public remove()V
     .locals 2
 
-    .line 459
+    .line 552
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_0
 
-    .line 462
+    .line 555
     iget-object v0, p0, Landroidx/collection/ArrayMap$MapIterator;->this$0:Landroidx/collection/ArrayMap;
 
     iget v1, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
 
     invoke-virtual {v0, v1}, Landroidx/collection/ArrayMap;->removeAt(I)Ljava/lang/Object;
 
-    .line 463
+    .line 556
     iget v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
 
-    .line 464
+    .line 557
     iget v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEnd:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEnd:I
 
-    .line 465
+    .line 558
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEntryValid:Z
 
-    .line 466
+    .line 559
     return-void
 
-    .line 460
+    .line 553
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -432,14 +434,14 @@
         }
     .end annotation
 
-    .line 488
+    .line 581
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     .local p1, "object":Ljava/lang/Object;, "TV;"
     iget-boolean v0, p0, Landroidx/collection/ArrayMap$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_0
 
-    .line 492
+    .line 585
     iget-object v0, p0, Landroidx/collection/ArrayMap$MapIterator;->this$0:Landroidx/collection/ArrayMap;
 
     iget v1, p0, Landroidx/collection/ArrayMap$MapIterator;->mIndex:I
@@ -450,7 +452,7 @@
 
     return-object v0
 
-    .line 489
+    .line 582
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -464,7 +466,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 523
+    .line 616
     .local p0, "this":Landroidx/collection/ArrayMap$MapIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.MapIterator;"
     new-instance v0, Ljava/lang/StringBuilder;
 

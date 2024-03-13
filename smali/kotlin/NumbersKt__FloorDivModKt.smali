@@ -23,7 +23,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -45,7 +45,7 @@
     .param p0, "$this$floorDiv"    # B
     .param p1, "other"    # B
 
-    .line 18
+    .line 19
     div-int v0, p0, p1
 
     xor-int v1, p0, p1
@@ -67,7 +67,7 @@
     .param p0, "$this$floorDiv"    # B
     .param p1, "other"    # I
 
-    .line 50
+    .line 55
     div-int v0, p0, p1
 
     xor-int v1, p0, p1
@@ -89,7 +89,7 @@
     .param p0, "$this$floorDiv"    # B
     .param p1, "other"    # S
 
-    .line 34
+    .line 37
     div-int v0, p0, p1
 
     xor-int v1, p0, p1
@@ -111,7 +111,7 @@
     .param p0, "$this$floorDiv"    # I
     .param p1, "other"    # B
 
-    .line 146
+    .line 163
     div-int v0, p0, p1
 
     xor-int v1, p0, p1
@@ -133,10 +133,10 @@
     .param p0, "$this$floorDiv"    # I
     .param p1, "other"    # I
 
-    .line 178
+    .line 199
     div-int v0, p0, p1
 
-    .line 179
+    .line 200
     .local v0, "q":I
     xor-int v1, p0, p1
 
@@ -148,7 +148,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 180
+    .line 201
     :cond_0
     return v0
 .end method
@@ -158,7 +158,7 @@
     .param p0, "$this$floorDiv"    # I
     .param p1, "other"    # S
 
-    .line 162
+    .line 181
     div-int v0, p0, p1
 
     xor-int v1, p0, p1
@@ -180,7 +180,7 @@
     .param p0, "$this$floorDiv"    # S
     .param p1, "other"    # B
 
-    .line 82
+    .line 91
     div-int v0, p0, p1
 
     xor-int v1, p0, p1
@@ -202,7 +202,7 @@
     .param p0, "$this$floorDiv"    # S
     .param p1, "other"    # I
 
-    .line 114
+    .line 127
     div-int v0, p0, p1
 
     xor-int v1, p0, p1
@@ -224,7 +224,7 @@
     .param p0, "$this$floorDiv"    # S
     .param p1, "other"    # S
 
-    .line 98
+    .line 109
     div-int v0, p0, p1
 
     xor-int v1, p0, p1
@@ -246,7 +246,7 @@
     .param p0, "$this$floorDiv"    # B
     .param p1, "other"    # J
 
-    .line 66
+    .line 73
     int-to-long v0, p0
 
     div-long v2, v0, p1
@@ -278,7 +278,7 @@
     .param p0, "$this$floorDiv"    # I
     .param p1, "other"    # J
 
-    .line 199
+    .line 222
     int-to-long v0, p0
 
     div-long v2, v0, p1
@@ -310,7 +310,7 @@
     .param p0, "$this$floorDiv"    # J
     .param p2, "other"    # B
 
-    .line 215
+    .line 240
     int-to-long v0, p2
 
     div-long v2, p0, v0
@@ -342,7 +342,7 @@
     .param p0, "$this$floorDiv"    # J
     .param p2, "other"    # I
 
-    .line 247
+    .line 276
     int-to-long v0, p2
 
     div-long v2, p0, v0
@@ -374,10 +374,10 @@
     .param p0, "$this$floorDiv"    # J
     .param p2, "other"    # J
 
-    .line 263
+    .line 294
     div-long v0, p0, p2
 
-    .line 264
+    .line 295
     .local v0, "q":J
     xor-long v2, p0, p2
 
@@ -397,7 +397,7 @@
 
     add-long/2addr v0, v2
 
-    .line 265
+    .line 296
     :cond_0
     return-wide v0
 .end method
@@ -407,7 +407,7 @@
     .param p0, "$this$floorDiv"    # J
     .param p2, "other"    # S
 
-    .line 231
+    .line 258
     int-to-long v0, p2
 
     div-long v2, p0, v0
@@ -439,7 +439,7 @@
     .param p0, "$this$floorDiv"    # S
     .param p1, "other"    # J
 
-    .line 130
+    .line 145
     int-to-long v0, p0
 
     div-long v2, v0, p1
@@ -471,7 +471,7 @@
     .param p0, "$this$mod"    # B
     .param p1, "other"    # B
 
-    .line 28
+    .line 30
     rem-int v0, p0, p1
 
     xor-int v1, v0, p1
@@ -498,7 +498,7 @@
     .param p0, "$this$mod"    # I
     .param p1, "other"    # B
 
-    .line 156
+    .line 174
     rem-int v0, p0, p1
 
     xor-int v1, v0, p1
@@ -525,7 +525,7 @@
     .param p0, "$this$mod"    # J
     .param p2, "other"    # B
 
-    .line 225
+    .line 251
     int-to-long v0, p2
 
     rem-long v2, p0, v0
@@ -558,7 +558,7 @@
     .param p0, "$this$mod"    # S
     .param p1, "other"    # B
 
-    .line 92
+    .line 102
     rem-int v0, p0, p1
 
     xor-int v1, v0, p1
@@ -585,10 +585,10 @@
     .param p0, "$this$mod"    # D
     .param p2, "other"    # D
 
-    .line 328
+    .line 364
     rem-double v0, p0, p2
 
-    .line 329
+    .line 365
     .local v0, "r":D
     const-wide/16 v2, 0x0
 
@@ -646,7 +646,7 @@
     .param p0, "$this$mod"    # D
     .param p2, "other"    # F
 
-    .line 316
+    .line 351
     float-to-double v0, p2
 
     rem-double v2, p0, v0
@@ -702,7 +702,7 @@
     .param p0, "$this$mod"    # F
     .param p1, "other"    # D
 
-    .line 304
+    .line 338
     float-to-double v0, p0
 
     rem-double/2addr v0, p1
@@ -758,10 +758,10 @@
     .param p0, "$this$mod"    # F
     .param p1, "other"    # F
 
-    .line 290
+    .line 323
     rem-float v0, p0, p1
 
-    .line 291
+    .line 324
     .local v0, "r":F
     const/4 v1, 0x0
 
@@ -819,7 +819,7 @@
     .param p0, "$this$mod"    # B
     .param p1, "other"    # I
 
-    .line 60
+    .line 66
     rem-int v0, p0, p1
 
     xor-int v1, v0, p1
@@ -844,10 +844,10 @@
     .param p0, "$this$mod"    # I
     .param p1, "other"    # I
 
-    .line 191
+    .line 213
     rem-int v0, p0, p1
 
-    .line 192
+    .line 214
     .local v0, "r":I
     xor-int v1, v0, p1
 
@@ -871,7 +871,7 @@
     .param p0, "$this$mod"    # J
     .param p2, "other"    # I
 
-    .line 257
+    .line 287
     int-to-long v0, p2
 
     rem-long v2, p0, v0
@@ -902,7 +902,7 @@
     .param p0, "$this$mod"    # S
     .param p1, "other"    # I
 
-    .line 124
+    .line 138
     rem-int v0, p0, p1
 
     xor-int v1, v0, p1
@@ -927,7 +927,7 @@
     .param p0, "$this$mod"    # B
     .param p1, "other"    # J
 
-    .line 76
+    .line 84
     int-to-long v0, p0
 
     rem-long/2addr v0, p1
@@ -956,7 +956,7 @@
     .param p0, "$this$mod"    # I
     .param p1, "other"    # J
 
-    .line 209
+    .line 233
     int-to-long v0, p0
 
     rem-long/2addr v0, p1
@@ -985,10 +985,10 @@
     .param p0, "$this$mod"    # J
     .param p2, "other"    # J
 
-    .line 276
+    .line 308
     rem-long v0, p0, p2
 
-    .line 277
+    .line 309
     .local v0, "r":J
     xor-long v2, v0, p2
 
@@ -1014,7 +1014,7 @@
     .param p0, "$this$mod"    # S
     .param p1, "other"    # J
 
-    .line 140
+    .line 156
     int-to-long v0, p0
 
     rem-long/2addr v0, p1
@@ -1043,7 +1043,7 @@
     .param p0, "$this$mod"    # B
     .param p1, "other"    # S
 
-    .line 44
+    .line 48
     rem-int v0, p0, p1
 
     xor-int v1, v0, p1
@@ -1070,7 +1070,7 @@
     .param p0, "$this$mod"    # I
     .param p1, "other"    # S
 
-    .line 172
+    .line 192
     rem-int v0, p0, p1
 
     xor-int v1, v0, p1
@@ -1097,7 +1097,7 @@
     .param p0, "$this$mod"    # J
     .param p2, "other"    # S
 
-    .line 241
+    .line 269
     int-to-long v0, p2
 
     rem-long v2, p0, v0
@@ -1130,7 +1130,7 @@
     .param p0, "$this$mod"    # S
     .param p1, "other"    # S
 
-    .line 108
+    .line 120
     rem-int v0, p0, p1
 
     xor-int v1, v0, p1

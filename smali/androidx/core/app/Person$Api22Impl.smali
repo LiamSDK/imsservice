@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 334
+    .line 329
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 336
+    .line 331
     return-void
 .end method
 
@@ -29,12 +29,12 @@
     .locals 2
     .param p0, "bundle"    # Landroid/os/PersistableBundle;
 
-    .line 340
+    .line 335
     new-instance v0, Landroidx/core/app/Person$Builder;
 
     invoke-direct {v0}, Landroidx/core/app/Person$Builder;-><init>()V
 
-    .line 341
+    .line 336
     const-string v1, "name"
 
     invoke-virtual {p0, v1}, Landroid/os/PersistableBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    .line 342
+    .line 337
     const-string v1, "uri"
 
     invoke-virtual {p0, v1}, Landroid/os/PersistableBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    .line 343
+    .line 338
     const-string v1, "key"
 
     invoke-virtual {p0, v1}, Landroid/os/PersistableBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -67,7 +67,7 @@
 
     move-result-object v0
 
-    .line 344
+    .line 339
     const-string v1, "isBot"
 
     invoke-virtual {p0, v1}, Landroid/os/PersistableBundle;->getBoolean(Ljava/lang/String;)Z
@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    .line 345
+    .line 340
     const-string v1, "isImportant"
 
     invoke-virtual {p0, v1}, Landroid/os/PersistableBundle;->getBoolean(Ljava/lang/String;)Z
@@ -89,12 +89,12 @@
 
     move-result-object v0
 
-    .line 346
+    .line 341
     invoke-virtual {v0}, Landroidx/core/app/Person$Builder;->build()Landroidx/core/app/Person;
 
     move-result-object v0
 
-    .line 340
+    .line 335
     return-object v0
 .end method
 
@@ -102,12 +102,12 @@
     .locals 3
     .param p0, "person"    # Landroidx/core/app/Person;
 
-    .line 351
+    .line 346
     new-instance v0, Landroid/os/PersistableBundle;
 
     invoke-direct {v0}, Landroid/os/PersistableBundle;-><init>()V
 
-    .line 352
+    .line 347
     .local v0, "result":Landroid/os/PersistableBundle;
     iget-object v1, p0, Landroidx/core/app/Person;->mName:Ljava/lang/CharSequence;
 
@@ -129,34 +129,34 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/os/PersistableBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 353
-    iget-object v1, p0, Landroidx/core/app/Person;->mUri:Ljava/lang/String;
+    .line 348
+    const-string v1, "uri"
 
-    const-string v2, "uri"
+    iget-object v2, p0, Landroidx/core/app/Person;->mUri:Ljava/lang/String;
 
-    invoke-virtual {v0, v2, v1}, Landroid/os/PersistableBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/PersistableBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 354
-    iget-object v1, p0, Landroidx/core/app/Person;->mKey:Ljava/lang/String;
+    .line 349
+    const-string v1, "key"
 
-    const-string v2, "key"
+    iget-object v2, p0, Landroidx/core/app/Person;->mKey:Ljava/lang/String;
 
-    invoke-virtual {v0, v2, v1}, Landroid/os/PersistableBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/PersistableBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 355
-    iget-boolean v1, p0, Landroidx/core/app/Person;->mIsBot:Z
+    .line 350
+    const-string v1, "isBot"
 
-    const-string v2, "isBot"
+    iget-boolean v2, p0, Landroidx/core/app/Person;->mIsBot:Z
 
-    invoke-virtual {v0, v2, v1}, Landroid/os/PersistableBundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/PersistableBundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 356
-    iget-boolean v1, p0, Landroidx/core/app/Person;->mIsImportant:Z
+    .line 351
+    const-string v1, "isImportant"
 
-    const-string v2, "isImportant"
+    iget-boolean v2, p0, Landroidx/core/app/Person;->mIsImportant:Z
 
-    invoke-virtual {v0, v2, v1}, Landroid/os/PersistableBundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/PersistableBundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 357
+    .line 352
     return-object v0
 .end method

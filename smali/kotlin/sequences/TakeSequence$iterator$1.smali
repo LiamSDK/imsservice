@@ -51,7 +51,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -70,15 +70,6 @@
 
 .field private left:I
 
-.field final synthetic this$0:Lkotlin/sequences/TakeSequence;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlin/sequences/TakeSequence<",
-            "TT;>;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
 .method constructor <init>(Lkotlin/sequences/TakeSequence;)V
@@ -91,8 +82,6 @@
             "TT;>;)V"
         }
     .end annotation
-
-    iput-object p1, p0, Lkotlin/sequences/TakeSequence$iterator$1;->this$0:Lkotlin/sequences/TakeSequence;
 
     .line 409
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

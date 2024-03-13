@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/internal/ImsVTProvider;
 
-    .line 1549
+    .line 1612
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProvider$3;->this$0:Lcom/mediatek/ims/internal/ImsVTProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 
     monitor-enter p0
 
-    .line 1551
+    .line 1614
     :try_start_0
     const-string v0, "ImsVT"
 
@@ -77,13 +77,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1555
+    .line 1618
     const-wide/16 v0, 0x258
 
     :try_start_1
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
 
-    .line 1556
+    .line 1619
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsVTProvider$3;->this$0:Lcom/mediatek/ims/internal/ImsVTProvider;
 
     const/4 v1, 0x0
@@ -93,15 +93,15 @@
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1558
+    .line 1621
     goto :goto_0
 
-    .line 1557
+    .line 1620
     .end local p0    # "this":Lcom/mediatek/ims/internal/ImsVTProvider$3;
     :catch_0
     move-exception v0
 
-    .line 1559
+    .line 1622
     :goto_0
     :try_start_2
     const-string v0, "ImsVT"
@@ -138,12 +138,12 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1560
+    .line 1623
     monitor-exit p0
 
     return-void
 
-    .line 1550
+    .line 1613
     :catchall_0
     move-exception v0
 

@@ -38,7 +38,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -65,23 +65,23 @@
 
 
 # direct methods
-.method constructor <init>([Ljava/lang/Object;Lkotlin/sequences/Sequence;)V
+.method constructor <init>(Lkotlin/sequences/Sequence;[Ljava/lang/Object;)V
     .locals 0
-    .param p1, "$elements"    # [Ljava/lang/Object;
-    .param p2, "$receiver"    # Lkotlin/sequences/Sequence;
+    .param p1, "$receiver"    # Lkotlin/sequences/Sequence;
+    .param p2, "$elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "([TT;",
+            "(",
             "Lkotlin/sequences/Sequence<",
-            "+TT;>;)V"
+            "+TT;>;[TT;)V"
         }
     .end annotation
 
-    iput-object p1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2;->$elements:[Ljava/lang/Object;
+    iput-object p1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2;->$this_minus:Lkotlin/sequences/Sequence;
 
-    iput-object p2, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2;->$this_minus:Lkotlin/sequences/Sequence;
+    iput-object p2, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2;->$elements:[Ljava/lang/Object;
 
-    .line 2451
+    .line 2622
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -99,30 +99,24 @@
         }
     .end annotation
 
-    .line 2453
-    iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2;->$elements:[Ljava/lang/Object;
+    .line 2624
+    iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2;->$this_minus:Lkotlin/sequences/Sequence;
 
-    invoke-static {v0}, Lkotlin/collections/BrittleContainsOptimizationKt;->convertToSetForSetOperation([Ljava/lang/Object;)Ljava/util/Collection;
+    new-instance v1, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2$iterator$1;
+
+    iget-object v2, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2;->$elements:[Ljava/lang/Object;
+
+    invoke-direct {v1, v2}, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2$iterator$1;-><init>([Ljava/lang/Object;)V
+
+    check-cast v1, Lkotlin/jvm/functions/Function1;
+
+    invoke-static {v0, v1}, Lkotlin/sequences/SequencesKt;->filterNot(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object v0
 
-    .line 2454
-    .local v0, "other":Ljava/util/Collection;
-    iget-object v1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2;->$this_minus:Lkotlin/sequences/Sequence;
+    invoke-interface {v0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
-    new-instance v2, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2$iterator$1;
+    move-result-object v0
 
-    invoke-direct {v2, v0}, Lkotlin/sequences/SequencesKt___SequencesKt$minus$2$iterator$1;-><init>(Ljava/util/Collection;)V
-
-    check-cast v2, Lkotlin/jvm/functions/Function1;
-
-    invoke-static {v1, v2}, Lkotlin/sequences/SequencesKt;->filterNot(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    return-object v1
+    return-object v0
 .end method

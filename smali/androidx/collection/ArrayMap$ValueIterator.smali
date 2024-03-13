@@ -30,16 +30,18 @@
     .locals 1
     .param p1, "this$0"    # Landroidx/collection/ArrayMap;
 
-    .line 419
+    .line 512
     .local p0, "this":Landroidx/collection/ArrayMap$ValueIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueIterator;"
     iput-object p1, p0, Landroidx/collection/ArrayMap$ValueIterator;->this$0:Landroidx/collection/ArrayMap;
 
-    .line 420
-    iget v0, p1, Landroidx/collection/ArrayMap;->mSize:I
+    .line 513
+    invoke-virtual {p1}, Landroidx/collection/ArrayMap;->size()I
+
+    move-result v0
 
     invoke-direct {p0, v0}, Landroidx/collection/IndexBasedArrayIterator;-><init>(I)V
 
-    .line 421
+    .line 514
     return-void
 .end method
 
@@ -54,7 +56,7 @@
         }
     .end annotation
 
-    .line 425
+    .line 518
     .local p0, "this":Landroidx/collection/ArrayMap$ValueIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueIterator;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueIterator;->this$0:Landroidx/collection/ArrayMap;
 
@@ -69,12 +71,12 @@
     .locals 1
     .param p1, "index"    # I
 
-    .line 430
+    .line 523
     .local p0, "this":Landroidx/collection/ArrayMap$ValueIterator;, "Landroidx/collection/ArrayMap<TK;TV;>.ValueIterator;"
     iget-object v0, p0, Landroidx/collection/ArrayMap$ValueIterator;->this$0:Landroidx/collection/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroidx/collection/ArrayMap;->removeAt(I)Ljava/lang/Object;
 
-    .line 431
+    .line 524
     return-void
 .end method

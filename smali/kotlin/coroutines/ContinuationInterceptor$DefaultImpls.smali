@@ -17,7 +17,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -27,7 +27,7 @@
 # direct methods
 .method public static fold(Lkotlin/coroutines/ContinuationInterceptor;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
     .locals 1
-    .param p0, "this"    # Lkotlin/coroutines/ContinuationInterceptor;
+    .param p0, "$this"    # Lkotlin/coroutines/ContinuationInterceptor;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -43,10 +43,6 @@
             "+TR;>;)TR;"
         }
     .end annotation
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "operation"
 
@@ -67,7 +63,7 @@
 
 .method public static get(Lkotlin/coroutines/ContinuationInterceptor;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
     .locals 3
-    .param p0, "this"    # Lkotlin/coroutines/ContinuationInterceptor;
+    .param p0, "$this"    # Lkotlin/coroutines/ContinuationInterceptor;
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -79,10 +75,6 @@
             "TE;>;)TE;"
         }
     .end annotation
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "key"
 
@@ -137,6 +129,10 @@
 
     if-ne v0, p1, :cond_2
 
+    const-string v0, "null cannot be cast to non-null type E of kotlin.coroutines.ContinuationInterceptor.get"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     move-object v1, p0
 
     check-cast v1, Lkotlin/coroutines/CoroutineContext$Element;
@@ -147,7 +143,7 @@
 
 .method public static minusKey(Lkotlin/coroutines/ContinuationInterceptor;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
     .locals 2
-    .param p0, "this"    # Lkotlin/coroutines/ContinuationInterceptor;
+    .param p0, "$this"    # Lkotlin/coroutines/ContinuationInterceptor;
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -158,10 +154,6 @@
             "Lkotlin/coroutines/CoroutineContext;"
         }
     .end annotation
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "key"
 
@@ -238,12 +230,8 @@
 
 .method public static plus(Lkotlin/coroutines/ContinuationInterceptor;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p0, "this"    # Lkotlin/coroutines/ContinuationInterceptor;
+    .param p0, "$this"    # Lkotlin/coroutines/ContinuationInterceptor;
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "context"
 
@@ -264,7 +252,7 @@
 
 .method public static releaseInterceptedContinuation(Lkotlin/coroutines/ContinuationInterceptor;Lkotlin/coroutines/Continuation;)V
     .locals 1
-    .param p0, "this"    # Lkotlin/coroutines/ContinuationInterceptor;
+    .param p0, "$this"    # Lkotlin/coroutines/ContinuationInterceptor;
     .param p1, "continuation"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -274,10 +262,6 @@
             "*>;)V"
         }
     .end annotation
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "continuation"
 

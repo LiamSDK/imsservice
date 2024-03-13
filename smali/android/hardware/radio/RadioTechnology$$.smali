@@ -19,20 +19,20 @@
     .locals 8
     .param p0, "_aidl_v"    # Ljava/lang/Object;
 
-    .line 53
+    .line 55
     if-nez p0, :cond_0
 
     const-string v0, "null"
 
     return-object v0
 
-    .line 54
+    .line 56
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 55
+    .line 57
     .local v0, "_aidl_cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {v0}, Ljava/lang/Class;->isArray()Z
 
@@ -40,24 +40,24 @@
 
     if-eqz v1, :cond_5
 
-    .line 56
+    .line 58
     invoke-virtual {v0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
     move-result-object v1
 
-    .line 57
+    .line 59
     .local v1, "comp":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     new-instance v2, Ljava/util/StringJoiner;
 
-    const-string v3, ", "
+    const-string v3, "["
 
-    const-string v4, "["
+    const-string v4, "]"
 
-    const-string v5, "]"
+    const-string v5, ", "
 
-    invoke-direct {v2, v3, v4, v5}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
+    invoke-direct {v2, v5, v3, v4}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    .line 58
+    .line 60
     .local v2, "_aidl_sj":Ljava/util/StringJoiner;
     invoke-virtual {v1}, Ljava/lang/Class;->isArray()Z
 
@@ -65,7 +65,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 59
+    .line 61
     const/4 v3, 0x0
 
     .local v3, "_aidl_i":I
@@ -76,7 +76,7 @@
 
     if-ge v3, v4, :cond_1
 
-    .line 60
+    .line 62
     invoke-static {p0, v3}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object v4
@@ -87,7 +87,7 @@
 
     invoke-virtual {v2, v4}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 59
+    .line 61
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
@@ -96,13 +96,13 @@
     :cond_1
     goto :goto_2
 
-    .line 63
+    .line 65
     :cond_2
     const-class v3, [I
 
     if-ne v0, v3, :cond_4
 
-    .line 64
+    .line 66
     move-object v3, p0
 
     check-cast v3, [I
@@ -116,7 +116,7 @@
 
     aget v6, v3, v5
 
-    .line 65
+    .line 67
     .local v6, "e":I
     invoke-static {v6}, Landroid/hardware/radio/RadioTechnology$$;->toString(I)Ljava/lang/String;
 
@@ -124,13 +124,13 @@
 
     invoke-virtual {v2, v7}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 64
+    .line 66
     .end local v6    # "e":I
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 68
+    .line 70
     :cond_3
     :goto_2
     invoke-virtual {v2}, Ljava/util/StringJoiner;->toString()Ljava/lang/String;
@@ -139,7 +139,7 @@
 
     return-object v3
 
-    .line 63
+    .line 65
     :cond_4
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -165,7 +165,7 @@
 
     throw v3
 
-    .line 55
+    .line 57
     .end local v1    # "comp":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     .end local v2    # "_aidl_sj":Ljava/util/StringJoiner;
     :cond_5
@@ -198,14 +198,14 @@
     .locals 1
     .param p0, "_aidl_v"    # I
 
-    .line 29
+    .line 31
     if-nez p0, :cond_0
 
     const-string v0, "UNKNOWN"
 
     return-object v0
 
-    .line 30
+    .line 32
     :cond_0
     const/4 v0, 0x1
 
@@ -215,7 +215,7 @@
 
     return-object v0
 
-    .line 31
+    .line 33
     :cond_1
     const/4 v0, 0x2
 
@@ -225,7 +225,7 @@
 
     return-object v0
 
-    .line 32
+    .line 34
     :cond_2
     const/4 v0, 0x3
 
@@ -235,7 +235,7 @@
 
     return-object v0
 
-    .line 33
+    .line 35
     :cond_3
     const/4 v0, 0x4
 
@@ -245,7 +245,7 @@
 
     return-object v0
 
-    .line 34
+    .line 36
     :cond_4
     const/4 v0, 0x5
 
@@ -255,7 +255,7 @@
 
     return-object v0
 
-    .line 35
+    .line 37
     :cond_5
     const/4 v0, 0x6
 
@@ -265,7 +265,7 @@
 
     return-object v0
 
-    .line 36
+    .line 38
     :cond_6
     const/4 v0, 0x7
 
@@ -275,7 +275,7 @@
 
     return-object v0
 
-    .line 37
+    .line 39
     :cond_7
     const/16 v0, 0x8
 
@@ -285,7 +285,7 @@
 
     return-object v0
 
-    .line 38
+    .line 40
     :cond_8
     const/16 v0, 0x9
 
@@ -295,7 +295,7 @@
 
     return-object v0
 
-    .line 39
+    .line 41
     :cond_9
     const/16 v0, 0xa
 
@@ -305,7 +305,7 @@
 
     return-object v0
 
-    .line 40
+    .line 42
     :cond_a
     const/16 v0, 0xb
 
@@ -315,7 +315,7 @@
 
     return-object v0
 
-    .line 41
+    .line 43
     :cond_b
     const/16 v0, 0xc
 
@@ -325,7 +325,7 @@
 
     return-object v0
 
-    .line 42
+    .line 44
     :cond_c
     const/16 v0, 0xd
 
@@ -335,7 +335,7 @@
 
     return-object v0
 
-    .line 43
+    .line 45
     :cond_d
     const/16 v0, 0xe
 
@@ -345,7 +345,7 @@
 
     return-object v0
 
-    .line 44
+    .line 46
     :cond_e
     const/16 v0, 0xf
 
@@ -355,7 +355,7 @@
 
     return-object v0
 
-    .line 45
+    .line 47
     :cond_f
     const/16 v0, 0x10
 
@@ -365,7 +365,7 @@
 
     return-object v0
 
-    .line 46
+    .line 48
     :cond_10
     const/16 v0, 0x11
 
@@ -375,7 +375,7 @@
 
     return-object v0
 
-    .line 47
+    .line 49
     :cond_11
     const/16 v0, 0x12
 
@@ -385,7 +385,7 @@
 
     return-object v0
 
-    .line 48
+    .line 50
     :cond_12
     const/16 v0, 0x13
 
@@ -395,7 +395,7 @@
 
     return-object v0
 
-    .line 49
+    .line 51
     :cond_13
     const/16 v0, 0x14
 
@@ -405,7 +405,7 @@
 
     return-object v0
 
-    .line 50
+    .line 52
     :cond_14
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 

@@ -37,10 +37,10 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 292
+    .line 290
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 293
+    .line 291
     invoke-static {p1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -49,19 +49,19 @@
 
     iput-object v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mUri:Landroid/net/Uri;
 
-    .line 294
+    .line 292
     iput p2, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mTtcIndex:I
 
-    .line 295
+    .line 293
     iput p3, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mWeight:I
 
-    .line 296
+    .line 294
     iput-boolean p4, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mItalic:Z
 
-    .line 297
+    .line 295
     iput p5, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mResultCode:I
 
-    .line 298
+    .line 296
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .param p3, "italic"    # Z
     .param p4, "resultCode"    # I
 
-    .line 308
+    .line 306
     new-instance v6, Landroidx/core/provider/FontsContractCompat$FontInfo;
 
     move-object v0, v6
@@ -98,7 +98,7 @@
 .method public getResultCode()I
     .locals 1
 
-    .line 345
+    .line 343
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mResultCode:I
 
     return v0
@@ -107,7 +107,7 @@
 .method public getTtcIndex()I
     .locals 1
 
-    .line 322
+    .line 320
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mTtcIndex:I
 
     return v0
@@ -116,7 +116,7 @@
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 315
+    .line 313
     iget-object v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mUri:Landroid/net/Uri;
 
     return-object v0
@@ -125,7 +125,7 @@
 .method public getWeight()I
     .locals 1
 
-    .line 329
+    .line 327
     iget v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mWeight:I
 
     return v0
@@ -134,7 +134,7 @@
 .method public isItalic()Z
     .locals 1
 
-    .line 336
+    .line 334
     iget-boolean v0, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mItalic:Z
 
     return v0

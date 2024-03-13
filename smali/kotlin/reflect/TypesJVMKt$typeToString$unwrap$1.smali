@@ -31,7 +31,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -58,9 +58,9 @@
 .method constructor <init>()V
     .locals 6
 
-    const-class v2, Ljava/lang/Class;
-
     const/4 v1, 0x1
+
+    const-class v2, Ljava/lang/Class;
 
     const-string v3, "getComponentType"
 
@@ -94,7 +94,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 225
+    .line 226
     invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
     move-result-object v0
@@ -106,7 +106,7 @@
     .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
-    .line 225
+    .line 226
     move-object v0, p1
 
     check-cast v0, Ljava/lang/Class;

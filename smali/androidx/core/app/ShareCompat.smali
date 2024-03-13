@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroidx/core/app/ShareCompat$IntentBuilder;,
         Landroidx/core/app/ShareCompat$Api16Impl;,
-        Landroidx/core/app/ShareCompat$IntentReader;,
-        Landroidx/core/app/ShareCompat$IntentBuilder;
+        Landroidx/core/app/ShareCompat$IntentReader;
     }
 .end annotation
 
@@ -176,28 +176,9 @@
     invoke-interface {p0, v1}, Landroid/view/MenuItem;->setActionProvider(Landroid/view/ActionProvider;)Landroid/view/MenuItem;
 
     .line 252
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x10
-
-    if-ge v2, v3, :cond_1
-
-    .line 253
-    invoke-interface {p0}, Landroid/view/MenuItem;->hasSubMenu()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 254
-    invoke-virtual {p1}, Landroidx/core/app/ShareCompat$IntentBuilder;->createChooserIntent()Landroid/content/Intent;
-
-    move-result-object v2
-
-    invoke-interface {p0, v2}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
+    nop
 
     .line 257
-    :cond_1
     return-void
 .end method
 

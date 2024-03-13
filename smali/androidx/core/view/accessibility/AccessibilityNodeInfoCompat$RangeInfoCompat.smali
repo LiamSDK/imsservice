@@ -31,13 +31,13 @@
     .locals 0
     .param p1, "info"    # Ljava/lang/Object;
 
-    .line 1101
+    .line 1164
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1102
+    .line 1165
     iput-object p1, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
-    .line 1103
+    .line 1166
     return-void
 .end method
 
@@ -48,50 +48,32 @@
     .param p2, "max"    # F
     .param p3, "current"    # F
 
-    .line 1091
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1154
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 1092
+    .line 1155
     new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;
 
-    .line 1093
+    .line 1156
     invoke-static {p0, p1, p2, p3}, Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;->obtain(IFFF)Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;-><init>(Ljava/lang/Object;)V
 
-    .line 1092
-    return-object v0
-
-    .line 1095
-    :cond_0
-    new-instance v0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;-><init>(Ljava/lang/Object;)V
-
+    .line 1155
     return-object v0
 .end method
 
 
 # virtual methods
 .method public getCurrent()F
-    .locals 2
+    .locals 1
 
-    .line 1111
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1174
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 1112
+    .line 1175
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;
@@ -101,25 +83,15 @@
     move-result v0
 
     return v0
-
-    .line 1114
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public getMax()F
-    .locals 2
+    .locals 1
 
-    .line 1124
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1187
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 1125
+    .line 1188
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;
@@ -129,25 +101,15 @@
     move-result v0
 
     return v0
-
-    .line 1127
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public getMin()F
-    .locals 2
+    .locals 1
 
-    .line 1137
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1200
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 1138
+    .line 1201
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;
@@ -157,25 +119,15 @@
     move-result v0
 
     return v0
-
-    .line 1140
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public getType()I
-    .locals 2
+    .locals 1
 
-    .line 1154
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 1217
+    nop
 
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    .line 1155
+    .line 1218
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$RangeInfoCompat;->mInfo:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;
@@ -183,12 +135,6 @@
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;->getType()I
 
     move-result v0
-
-    return v0
-
-    .line 1157
-    :cond_0
-    const/4 v0, 0x0
 
     return v0
 .end method

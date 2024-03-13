@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/hidl/base/V1_0/IBase$Stub;,
-        Landroid/hidl/base/V1_0/IBase$Proxy;
+        Landroid/hidl/base/V1_0/IBase$Proxy;,
+        Landroid/hidl/base/V1_0/IBase$Stub;
     }
 .end annotation
 

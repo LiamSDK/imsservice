@@ -39,8 +39,31 @@
 
 
 # direct methods
+.method private static synthetic $values()[Lcom/mediatek/ims/ImsCallInfo$State;
+    .locals 6
+
+    .line 45
+    sget-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->ACTIVE:Lcom/mediatek/ims/ImsCallInfo$State;
+
+    sget-object v1, Lcom/mediatek/ims/ImsCallInfo$State;->HOLDING:Lcom/mediatek/ims/ImsCallInfo$State;
+
+    sget-object v2, Lcom/mediatek/ims/ImsCallInfo$State;->ALERTING:Lcom/mediatek/ims/ImsCallInfo$State;
+
+    sget-object v3, Lcom/mediatek/ims/ImsCallInfo$State;->INCOMING:Lcom/mediatek/ims/ImsCallInfo$State;
+
+    sget-object v4, Lcom/mediatek/ims/ImsCallInfo$State;->DISCONNECTED:Lcom/mediatek/ims/ImsCallInfo$State;
+
+    sget-object v5, Lcom/mediatek/ims/ImsCallInfo$State;->INVALID:Lcom/mediatek/ims/ImsCallInfo$State;
+
+    filled-new-array/range {v0 .. v5}, [Lcom/mediatek/ims/ImsCallInfo$State;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
-    .locals 13
+    .locals 3
 
     .line 46
     new-instance v0, Lcom/mediatek/ims/ImsCallInfo$State;
@@ -54,78 +77,66 @@
     sput-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->ACTIVE:Lcom/mediatek/ims/ImsCallInfo$State;
 
     .line 47
-    new-instance v1, Lcom/mediatek/ims/ImsCallInfo$State;
+    new-instance v0, Lcom/mediatek/ims/ImsCallInfo$State;
 
-    const-string v3, "HOLDING"
+    const-string v1, "HOLDING"
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v1, v3, v4}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/mediatek/ims/ImsCallInfo$State;->HOLDING:Lcom/mediatek/ims/ImsCallInfo$State;
+    sput-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->HOLDING:Lcom/mediatek/ims/ImsCallInfo$State;
 
     .line 48
-    new-instance v3, Lcom/mediatek/ims/ImsCallInfo$State;
+    new-instance v0, Lcom/mediatek/ims/ImsCallInfo$State;
 
-    const-string v5, "ALERTING"
+    const-string v1, "ALERTING"
 
-    const/4 v6, 0x2
+    const/4 v2, 0x2
 
-    invoke-direct {v3, v5, v6}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v3, Lcom/mediatek/ims/ImsCallInfo$State;->ALERTING:Lcom/mediatek/ims/ImsCallInfo$State;
+    sput-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->ALERTING:Lcom/mediatek/ims/ImsCallInfo$State;
 
     .line 49
-    new-instance v5, Lcom/mediatek/ims/ImsCallInfo$State;
+    new-instance v0, Lcom/mediatek/ims/ImsCallInfo$State;
 
-    const-string v7, "INCOMING"
+    const-string v1, "INCOMING"
 
-    const/4 v8, 0x3
+    const/4 v2, 0x3
 
-    invoke-direct {v5, v7, v8}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v5, Lcom/mediatek/ims/ImsCallInfo$State;->INCOMING:Lcom/mediatek/ims/ImsCallInfo$State;
+    sput-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->INCOMING:Lcom/mediatek/ims/ImsCallInfo$State;
 
     .line 50
-    new-instance v7, Lcom/mediatek/ims/ImsCallInfo$State;
+    new-instance v0, Lcom/mediatek/ims/ImsCallInfo$State;
 
-    const-string v9, "DISCONNECTED"
+    const-string v1, "DISCONNECTED"
 
-    const/4 v10, 0x4
+    const/4 v2, 0x4
 
-    invoke-direct {v7, v9, v10}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v7, Lcom/mediatek/ims/ImsCallInfo$State;->DISCONNECTED:Lcom/mediatek/ims/ImsCallInfo$State;
+    sput-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->DISCONNECTED:Lcom/mediatek/ims/ImsCallInfo$State;
 
     .line 51
-    new-instance v9, Lcom/mediatek/ims/ImsCallInfo$State;
+    new-instance v0, Lcom/mediatek/ims/ImsCallInfo$State;
 
-    const-string v11, "INVALID"
+    const-string v1, "INVALID"
 
-    const/4 v12, 0x5
+    const/4 v2, 0x5
 
-    invoke-direct {v9, v11, v12}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/ImsCallInfo$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v9, Lcom/mediatek/ims/ImsCallInfo$State;->INVALID:Lcom/mediatek/ims/ImsCallInfo$State;
+    sput-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->INVALID:Lcom/mediatek/ims/ImsCallInfo$State;
 
     .line 45
-    const/4 v11, 0x6
+    invoke-static {}, Lcom/mediatek/ims/ImsCallInfo$State;->$values()[Lcom/mediatek/ims/ImsCallInfo$State;
 
-    new-array v11, v11, [Lcom/mediatek/ims/ImsCallInfo$State;
+    move-result-object v0
 
-    aput-object v0, v11, v2
-
-    aput-object v1, v11, v4
-
-    aput-object v3, v11, v6
-
-    aput-object v5, v11, v8
-
-    aput-object v7, v11, v10
-
-    aput-object v9, v11, v12
-
-    sput-object v11, Lcom/mediatek/ims/ImsCallInfo$State;->$VALUES:[Lcom/mediatek/ims/ImsCallInfo$State;
+    sput-object v0, Lcom/mediatek/ims/ImsCallInfo$State;->$VALUES:[Lcom/mediatek/ims/ImsCallInfo$State;
 
     return-void
 .end method

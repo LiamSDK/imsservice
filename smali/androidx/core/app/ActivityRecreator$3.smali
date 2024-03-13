@@ -26,8 +26,13 @@
 # direct methods
 .method constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
-    .line 269
+    .line 268
     iput-object p1, p0, Landroidx/core/app/ActivityRecreator$3;->val$activityThread:Ljava/lang/Object;
 
     iput-object p2, p0, Landroidx/core/app/ActivityRecreator$3;->val$token:Ljava/lang/Object;
@@ -42,7 +47,7 @@
 .method public run()V
     .locals 7
 
-    .line 273
+    .line 272
     :try_start_0
     sget-object v0, Landroidx/core/app/ActivityRecreator;->performStopActivity3ParamsMethod:Ljava/lang/reflect/Method;
 
@@ -54,7 +59,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 274
+    .line 273
     sget-object v0, Landroidx/core/app/ActivityRecreator;->performStopActivity3ParamsMethod:Ljava/lang/reflect/Method;
 
     iget-object v4, p0, Landroidx/core/app/ActivityRecreator$3;->val$activityThread:Ljava/lang/Object;
@@ -67,7 +72,7 @@
 
     aput-object v6, v5, v3
 
-    .line 275
+    .line 274
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
@@ -78,12 +83,12 @@
 
     aput-object v1, v5, v2
 
-    .line 274
+    .line 273
     invoke-virtual {v0, v4, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 277
+    .line 276
     :cond_0
     sget-object v0, Landroidx/core/app/ActivityRecreator;->performStopActivity2ParamsMethod:Ljava/lang/reflect/Method;
 
@@ -95,14 +100,14 @@
 
     aput-object v5, v2, v3
 
-    .line 278
+    .line 277
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     aput-object v3, v2, v1
 
-    .line 277
+    .line 276
     invoke-virtual {v0, v4, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
@@ -110,11 +115,11 @@
 
     goto :goto_0
 
-    .line 289
+    .line 288
     :catchall_0
     move-exception v0
 
-    .line 290
+    .line 289
     .local v0, "t":Ljava/lang/Throwable;
     const-string v1, "ActivityRecreator"
 
@@ -124,12 +129,12 @@
 
     goto :goto_1
 
-    .line 280
+    .line 279
     .end local v0    # "t":Ljava/lang/Throwable;
     :catch_0
     move-exception v0
 
-    .line 282
+    .line 281
     .local v0, "e":Ljava/lang/RuntimeException;
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -139,14 +144,14 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 283
+    .line 282
     invoke-virtual {v0}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
     if-eqz v1, :cond_2
 
-    .line 284
+    .line 283
     invoke-virtual {v0}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
 
     move-result-object v1
@@ -161,17 +166,17 @@
 
     goto :goto_0
 
-    .line 285
+    .line 284
     :cond_1
     throw v0
 
-    .line 291
+    .line 290
     .end local v0    # "e":Ljava/lang/RuntimeException;
     :cond_2
     :goto_0
     nop
 
-    .line 292
+    .line 291
     :goto_1
     return-void
 .end method

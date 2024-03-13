@@ -18,18 +18,30 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 5077
+    .line 5359
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5079
+    .line 5361
     return-void
+.end method
+
+.method static getImportantForContentCapture(Landroid/view/View;)I
+    .locals 1
+    .param p0, "view"    # Landroid/view/View;
+
+    .line 5393
+    invoke-virtual {p0}, Landroid/view/View;->getImportantForContentCapture()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method static getStateDescription(Landroid/view/View;)Ljava/lang/CharSequence;
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5096
+    .line 5378
     invoke-virtual {p0}, Landroid/view/View;->getStateDescription()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -41,29 +53,53 @@
     .locals 2
     .param p0, "view"    # Landroid/view/View;
 
-    .line 5083
+    .line 5365
     invoke-virtual {p0}, Landroid/view/View;->getWindowInsetsController()Landroid/view/WindowInsetsController;
 
     move-result-object v0
 
-    .line 5084
+    .line 5366
     .local v0, "windowInsetsController":Landroid/view/WindowInsetsController;
     if-eqz v0, :cond_0
 
-    .line 5085
+    .line 5367
     invoke-static {v0}, Landroidx/core/view/WindowInsetsControllerCompat;->toWindowInsetsControllerCompat(Landroid/view/WindowInsetsController;)Landroidx/core/view/WindowInsetsControllerCompat;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 5086
+    .line 5368
     :cond_0
     const/4 v1, 0x0
 
-    .line 5084
+    .line 5366
     :goto_0
     return-object v1
+.end method
+
+.method static isImportantForContentCapture(Landroid/view/View;)Z
+    .locals 1
+    .param p0, "view"    # Landroid/view/View;
+
+    .line 5388
+    invoke-virtual {p0}, Landroid/view/View;->isImportantForContentCapture()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static setImportantForContentCapture(Landroid/view/View;I)V
+    .locals 0
+    .param p0, "view"    # Landroid/view/View;
+    .param p1, "mode"    # I
+
+    .line 5383
+    invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForContentCapture(I)V
+
+    .line 5384
+    return-void
 .end method
 
 .method static setStateDescription(Landroid/view/View;Ljava/lang/CharSequence;)V
@@ -71,9 +107,9 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "stateDescription"    # Ljava/lang/CharSequence;
 
-    .line 5091
+    .line 5373
     invoke-virtual {p0, p1}, Landroid/view/View;->setStateDescription(Ljava/lang/CharSequence;)V
 
-    .line 5092
+    .line 5374
     return-void
 .end method

@@ -19,7 +19,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -27,26 +27,6 @@
 
 
 # direct methods
-.method public static final synthetic access$monitorEnter(Ljava/lang/Object;)V
-    .locals 0
-    .param p0, "monitor"    # Ljava/lang/Object;
-
-    .line 1
-    invoke-static {p0}, Lkotlin/jvm/internal/unsafe/MonitorKt;->monitorEnter(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public static final synthetic access$monitorExit(Ljava/lang/Object;)V
-    .locals 0
-    .param p0, "monitor"    # Ljava/lang/Object;
-
-    .line 1
-    invoke-static {p0}, Lkotlin/jvm/internal/unsafe/MonitorKt;->monitorExit(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
 .method private static final monitorEnter(Ljava/lang/Object;)V
     .locals 2
     .param p0, "monitor"    # Ljava/lang/Object;

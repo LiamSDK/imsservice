@@ -26,20 +26,20 @@
     .param p1, "observer"    # Landroidx/lifecycle/LifecycleObserver;
     .param p2, "initialState"    # Landroidx/lifecycle/Lifecycle$State;
 
-    .line 346
+    .line 353
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 347
+    .line 354
     invoke-static {p1}, Landroidx/lifecycle/Lifecycling;->lifecycleEventObserver(Ljava/lang/Object;)Landroidx/lifecycle/LifecycleEventObserver;
 
     move-result-object v0
 
     iput-object v0, p0, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->mLifecycleObserver:Landroidx/lifecycle/LifecycleEventObserver;
 
-    .line 348
+    .line 355
     iput-object p2, p0, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->mState:Landroidx/lifecycle/Lifecycle$State;
 
-    .line 349
+    .line 356
     return-void
 .end method
 
@@ -50,12 +50,12 @@
     .param p1, "owner"    # Landroidx/lifecycle/LifecycleOwner;
     .param p2, "event"    # Landroidx/lifecycle/Lifecycle$Event;
 
-    .line 352
+    .line 359
     invoke-virtual {p2}, Landroidx/lifecycle/Lifecycle$Event;->getTargetState()Landroidx/lifecycle/Lifecycle$State;
 
     move-result-object v0
 
-    .line 353
+    .line 360
     .local v0, "newState":Landroidx/lifecycle/Lifecycle$State;
     iget-object v1, p0, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->mState:Landroidx/lifecycle/Lifecycle$State;
 
@@ -65,14 +65,14 @@
 
     iput-object v1, p0, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->mState:Landroidx/lifecycle/Lifecycle$State;
 
-    .line 354
+    .line 361
     iget-object v1, p0, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->mLifecycleObserver:Landroidx/lifecycle/LifecycleEventObserver;
 
     invoke-interface {v1, p1, p2}, Landroidx/lifecycle/LifecycleEventObserver;->onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
 
-    .line 355
+    .line 362
     iput-object v0, p0, Landroidx/lifecycle/LifecycleRegistry$ObserverWithState;->mState:Landroidx/lifecycle/Lifecycle$State;
 
-    .line 356
+    .line 363
     return-void
 .end method

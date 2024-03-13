@@ -18,9 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 387
+    .line 566
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 567
     return-void
 .end method
 
@@ -28,7 +29,7 @@
     .locals 1
     .param p0, "location"    # Landroid/location/Location;
 
-    .line 426
+    .line 606
     invoke-virtual {p0}, Landroid/location/Location;->getBearingAccuracyDegrees()F
 
     move-result v0
@@ -40,7 +41,7 @@
     .locals 1
     .param p0, "location"    # Landroid/location/Location;
 
-    .line 411
+    .line 591
     invoke-virtual {p0}, Landroid/location/Location;->getSpeedAccuracyMetersPerSecond()F
 
     move-result v0
@@ -52,7 +53,7 @@
     .locals 1
     .param p0, "location"    # Landroid/location/Location;
 
-    .line 396
+    .line 576
     invoke-virtual {p0}, Landroid/location/Location;->getVerticalAccuracyMeters()F
 
     move-result v0
@@ -64,7 +65,7 @@
     .locals 1
     .param p0, "location"    # Landroid/location/Location;
 
-    .line 421
+    .line 601
     invoke-virtual {p0}, Landroid/location/Location;->hasBearingAccuracy()Z
 
     move-result v0
@@ -76,7 +77,7 @@
     .locals 1
     .param p0, "location"    # Landroid/location/Location;
 
-    .line 406
+    .line 586
     invoke-virtual {p0}, Landroid/location/Location;->hasSpeedAccuracy()Z
 
     move-result v0
@@ -88,7 +89,7 @@
     .locals 1
     .param p0, "location"    # Landroid/location/Location;
 
-    .line 391
+    .line 571
     invoke-virtual {p0}, Landroid/location/Location;->hasVerticalAccuracy()Z
 
     move-result v0
@@ -101,10 +102,10 @@
     .param p0, "location"    # Landroid/location/Location;
     .param p1, "bearingAccuracyD"    # F
 
-    .line 431
+    .line 611
     invoke-virtual {p0, p1}, Landroid/location/Location;->setBearingAccuracyDegrees(F)V
 
-    .line 432
+    .line 612
     return-void
 .end method
 
@@ -113,10 +114,10 @@
     .param p0, "location"    # Landroid/location/Location;
     .param p1, "speedAccuracyMps"    # F
 
-    .line 416
+    .line 596
     invoke-virtual {p0, p1}, Landroid/location/Location;->setSpeedAccuracyMetersPerSecond(F)V
 
-    .line 417
+    .line 597
     return-void
 .end method
 
@@ -125,9 +126,9 @@
     .param p0, "location"    # Landroid/location/Location;
     .param p1, "verticalAccuracyM"    # F
 
-    .line 401
+    .line 581
     invoke-virtual {p0, p1}, Landroid/location/Location;->setVerticalAccuracyMeters(F)V
 
-    .line 402
+    .line 582
     return-void
 .end method

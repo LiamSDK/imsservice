@@ -24,7 +24,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -36,7 +36,7 @@
     .locals 1
     .param p0, "$this$toUShort"    # B
 
-    .line 359
+    .line 369
     int-to-short v0, p0
 
     invoke-static {v0}, Lkotlin/UShort;->constructor-impl(S)S
@@ -50,7 +50,7 @@
     .locals 1
     .param p0, "$this$toUShort"    # I
 
-    .line 382
+    .line 392
     int-to-short v0, p0
 
     invoke-static {v0}, Lkotlin/UShort;->constructor-impl(S)S
@@ -64,7 +64,7 @@
     .locals 1
     .param p0, "$this$toUShort"    # J
 
-    .line 394
+    .line 404
     long-to-int v0, p0
 
     int-to-short v0, v0
@@ -80,7 +80,7 @@
     .locals 1
     .param p0, "$this$toUShort"    # S
 
-    .line 370
+    .line 380
     invoke-static {p0}, Lkotlin/UShort;->constructor-impl(S)S
 
     move-result v0

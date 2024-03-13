@@ -78,11 +78,11 @@
 
     move-result-wide v7
 
-    .line 52
     const-wide/16 v9, 0x0
 
     const/4 v11, 0x1
 
+    .line 52
     move-object v4, p0
 
     invoke-virtual/range {v4 .. v11}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;
@@ -282,27 +282,23 @@
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 1
 
     .line 27
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget-object v1, p0, Landroid/hardware/radio/V1_0/CfData;->cfInfo:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/hardware/radio/V1_0/CfData;->cfInfo:Ljava/util/ArrayList;
 
     .line 28
-    invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x0
+    filled-new-array {v0}, [Ljava/lang/Object;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 27
     invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
@@ -350,9 +346,9 @@
 
     add-long/2addr v11, v1
 
-    .line 71
     const/4 v13, 0x1
 
+    .line 71
     move-object v6, p1
 
     invoke-virtual/range {v6 .. v13}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;

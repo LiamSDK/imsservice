@@ -17,7 +17,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -28,7 +28,7 @@
 .method public static synthetic callsInPlace$default(Lkotlin/contracts/ContractBuilder;Lkotlin/Function;Lkotlin/contracts/InvocationKind;ILjava/lang/Object;)Lkotlin/contracts/CallsInPlace;
     .locals 0
 
-    .line 87
+    .line 85
     if-nez p4, :cond_1
 
     and-int/lit8 p3, p3, 0x2

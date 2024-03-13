@@ -24,13 +24,13 @@
     .param p1, "this$0"    # Lcom/mediatek/wfo/ril/MwiRIL;
     .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 348
+    .line 349
     iput-object p1, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
-    .line 349
+    .line 350
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 350
+    .line 351
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .locals 7
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 357
+    .line 358
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x0
@@ -50,20 +50,20 @@
     :pswitch_0
     goto/16 :goto_0
 
-    .line 427
+    .line 428
     :pswitch_1
     const/4 v0, 0x7
 
     invoke-virtual {p0, v0}, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->removeMessages(I)V
 
-    .line 428
+    .line 429
     iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     invoke-static {v0, v1}, Lcom/mediatek/wfo/ril/MwiRIL;->-$$Nest$mgetRadioProxy(Lcom/mediatek/wfo/ril/MwiRIL;Landroid/os/Message;)Z
 
     goto/16 :goto_0
 
-    .line 415
+    .line 416
     :pswitch_2
     iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
@@ -93,7 +93,7 @@
 
     iget-object v3, v3, Lcom/mediatek/wfo/ril/MwiRIL;->mRadioProxyCookie:Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 416
+    .line 417
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v3
@@ -106,10 +106,10 @@
 
     move-result-object v2
 
-    .line 415
+    .line 416
     invoke-virtual {v0, v2}, Lcom/mediatek/wfo/ril/MwiRIL;->riljLog(Ljava/lang/String;)V
 
-    .line 417
+    .line 418
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Long;
@@ -130,23 +130,23 @@
 
     if-nez v0, :cond_3
 
-    .line 418
+    .line 419
     iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     invoke-static {v0}, Lcom/mediatek/wfo/ril/MwiRIL;->-$$Nest$mresetProxyAndRequestList(Lcom/mediatek/wfo/ril/MwiRIL;)V
 
-    .line 422
+    .line 423
     iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     invoke-static {v0, v1}, Lcom/mediatek/wfo/ril/MwiRIL;->-$$Nest$mgetRadioProxy(Lcom/mediatek/wfo/ril/MwiRIL;Landroid/os/Message;)Z
 
     goto/16 :goto_0
 
-    .line 395
+    .line 396
     :pswitch_3
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 396
+    .line 397
     .local v0, "serial":I
     iget-object v2, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
@@ -154,36 +154,36 @@
 
     move-result-object v2
 
-    .line 398
+    .line 399
     .local v2, "rr":Lcom/mediatek/wfo/ril/RILRequest;
     if-nez v2, :cond_0
 
-    .line 399
+    .line 400
     goto/16 :goto_0
 
-    .line 403
+    .line 404
     :cond_0
     iget-object v3, v2, Lcom/mediatek/wfo/ril/RILRequest;->mResult:Landroid/os/Message;
 
     if-eqz v3, :cond_1
 
-    .line 404
+    .line 405
     invoke-static {v2}, Lcom/mediatek/wfo/ril/MwiRIL;->-$$Nest$smgetResponseForTimedOutRILRequest(Lcom/mediatek/wfo/ril/RILRequest;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 405
+    .line 406
     .local v3, "timeoutResponse":Ljava/lang/Object;
     iget-object v4, v2, Lcom/mediatek/wfo/ril/RILRequest;->mResult:Landroid/os/Message;
 
     invoke-static {v4, v3, v1}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 406
+    .line 407
     iget-object v1, v2, Lcom/mediatek/wfo/ril/RILRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 407
+    .line 408
     iget-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     invoke-static {v1}, Lcom/mediatek/wfo/ril/MwiRIL;->-$$Nest$fgetmMetrics(Lcom/mediatek/wfo/ril/MwiRIL;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
@@ -204,20 +204,20 @@
 
     invoke-virtual {v1, v4, v5, v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilTimeoutResponse(III)V
 
-    .line 410
+    .line 411
     .end local v3    # "timeoutResponse":Ljava/lang/Object;
     :cond_1
     iget-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     invoke-static {v1, v2}, Lcom/mediatek/wfo/ril/MwiRIL;->-$$Nest$mdecrementWakeLock(Lcom/mediatek/wfo/ril/MwiRIL;Lcom/mediatek/wfo/ril/RILRequest;)V
 
-    .line 411
+    .line 412
     invoke-virtual {v2}, Lcom/mediatek/wfo/ril/RILRequest;->release()V
 
-    .line 412
+    .line 413
     goto :goto_0
 
-    .line 387
+    .line 388
     .end local v0    # "serial":I
     .end local v2    # "rr":Lcom/mediatek/wfo/ril/RILRequest;
     :pswitch_4
@@ -237,7 +237,7 @@
 
     goto :goto_0
 
-    .line 370
+    .line 371
     :pswitch_5
     iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
@@ -245,7 +245,7 @@
 
     monitor-enter v0
 
-    .line 371
+    .line 372
     :try_start_0
     iget v1, p1, Landroid/os/Message;->arg1:I
 
@@ -265,7 +265,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 373
+    .line 374
     iget-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     iget-object v1, v1, Lcom/mediatek/wfo/ril/MwiRIL;->mRequestList:Landroid/util/SparseArray;
@@ -274,7 +274,7 @@
 
     move-result v1
 
-    .line 374
+    .line 375
     .local v1, "count":I
     const-string v2, "MwiRIL"
 
@@ -298,15 +298,15 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 383
+    .line 384
     .end local v1    # "count":I
     :cond_2
     monitor-exit v0
 
-    .line 384
+    .line 385
     goto :goto_0
 
-    .line 383
+    .line 384
     :catchall_0
     move-exception v1
 
@@ -316,7 +316,7 @@
 
     throw v1
 
-    .line 431
+    .line 432
     :cond_3
     :goto_0
     return-void

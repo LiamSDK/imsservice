@@ -94,24 +94,12 @@
 
     iget-object v1, v1, Landroidx/print/PrintHelper;->mDecodeOptions:Landroid/graphics/BitmapFactory$Options;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 506
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x18
-
-    if-ge v1, v2, :cond_0
-
-    .line 508
-    iget-object v1, p0, Landroidx/print/PrintHelper$PrintUriAdapter;->this$0:Landroidx/print/PrintHelper;
-
-    iget-object v1, v1, Landroidx/print/PrintHelper;->mDecodeOptions:Landroid/graphics/BitmapFactory$Options;
-
-    invoke-virtual {v1}, Landroid/graphics/BitmapFactory$Options;->requestCancelDecode()V
+    nop
 
     .line 510
-    :cond_0
     iget-object v1, p0, Landroidx/print/PrintHelper$PrintUriAdapter;->this$0:Landroidx/print/PrintHelper;
 
     const/4 v2, 0x0
@@ -119,7 +107,7 @@
     iput-object v2, v1, Landroidx/print/PrintHelper;->mDecodeOptions:Landroid/graphics/BitmapFactory$Options;
 
     .line 512
-    :cond_1
+    :cond_0
     monitor-exit v0
 
     .line 513

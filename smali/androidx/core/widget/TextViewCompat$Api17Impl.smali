@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1082
+    .line 1079
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1084
+    .line 1081
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "textView"    # Landroid/widget/TextView;
 
-    .line 1111
+    .line 1108
     invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawablesRelative()[Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -41,7 +41,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 1094
+    .line 1091
     invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v0
@@ -53,7 +53,7 @@
     .locals 1
     .param p0, "view"    # Landroid/view/View;
 
-    .line 1126
+    .line 1123
     invoke-virtual {p0}, Landroid/view/View;->getTextDirection()I
 
     move-result v0
@@ -65,7 +65,7 @@
     .locals 1
     .param p0, "textView"    # Landroid/widget/TextView;
 
-    .line 1121
+    .line 1118
     invoke-virtual {p0}, Landroid/widget/TextView;->getTextLocale()Ljava/util/Locale;
 
     move-result-object v0
@@ -81,10 +81,10 @@
     .param p3, "end"    # Landroid/graphics/drawable/Drawable;
     .param p4, "bottom"    # Landroid/graphics/drawable/Drawable;
 
-    .line 1089
+    .line 1086
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1090
+    .line 1087
     return-void
 .end method
 
@@ -96,10 +96,10 @@
     .param p3, "end"    # I
     .param p4, "bottom"    # I
 
-    .line 1106
+    .line 1103
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
 
-    .line 1107
+    .line 1104
     return-void
 .end method
 
@@ -111,10 +111,10 @@
     .param p3, "end"    # Landroid/graphics/drawable/Drawable;
     .param p4, "bottom"    # Landroid/graphics/drawable/Drawable;
 
-    .line 1100
+    .line 1097
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1101
+    .line 1098
     return-void
 .end method
 
@@ -123,9 +123,9 @@
     .param p0, "view"    # Landroid/view/View;
     .param p1, "textDirection"    # I
 
-    .line 1116
+    .line 1113
     invoke-virtual {p0, p1}, Landroid/view/View;->setTextDirection(I)V
 
-    .line 1117
+    .line 1114
     return-void
 .end method

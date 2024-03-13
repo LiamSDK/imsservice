@@ -188,7 +188,7 @@
 .end method
 
 .method public static exists(Landroid/content/Context;Landroid/net/Uri;)Z
-    .locals 9
+    .locals 10
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "self"    # Landroid/net/Uri;
 
@@ -203,14 +203,16 @@
 
     .line 144
     .local v7, "c":Landroid/database/Cursor;
-    const/4 v8, 0x0
+    const/4 v8, 0x1
+
+    const/4 v9, 0x0
 
     :try_start_0
+    new-array v2, v8, [Ljava/lang/String;
+
     const-string v0, "document_id"
 
-    filled-new-array {v0}, [Ljava/lang/String;
-
-    move-result-object v2
+    aput-object v0, v2, v9
 
     const/4 v3, 0x0
 
@@ -238,10 +240,13 @@
 
     if-lez v0, :cond_0
 
-    const/4 v8, 0x1
+    goto :goto_0
+
+    :cond_0
+    move v8, v9
 
     .line 151
-    :cond_0
+    :goto_0
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     .line 146
@@ -251,7 +256,7 @@
     :catchall_0
     move-exception v0
 
-    goto :goto_0
+    goto :goto_1
 
     .line 147
     :catch_0
@@ -291,11 +296,11 @@
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     .line 149
-    return v8
+    return v9
 
     .line 151
     .end local v0    # "e":Ljava/lang/Exception;
-    :goto_0
+    :goto_1
     invoke-static {v7}, Landroidx/documentfile/provider/DocumentsContractApi19;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     .line 152
@@ -389,13 +394,13 @@
     .param p1, "self"    # Landroid/net/Uri;
 
     .line 71
+    const-string v0, "vnd.android.document/directory"
+
     invoke-static {p0, p1}, Landroidx/documentfile/provider/DocumentsContractApi19;->getRawType(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "vnd.android.document/directory"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -537,7 +542,7 @@
 .end method
 
 .method private static queryForLong(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;J)J
-    .locals 9
+    .locals 8
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "self"    # Landroid/net/Uri;
     .param p2, "column"    # Ljava/lang/String;
@@ -554,14 +559,10 @@
 
     .line 187
     .local v7, "c":Landroid/database/Cursor;
-    const/4 v0, 0x1
-
     :try_start_0
-    new-array v2, v0, [Ljava/lang/String;
+    filled-new-array {p2}, [Ljava/lang/String;
 
-    const/4 v8, 0x0
-
-    aput-object p2, v2, v8
+    move-result-object v2
 
     const/4 v3, 0x0
 
@@ -586,14 +587,16 @@
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v7, v8}, Landroid/database/Cursor;->isNull(I)Z
+    const/4 v0, 0x0
 
-    move-result v0
+    invoke-interface {v7, v0}, Landroid/database/Cursor;->isNull(I)Z
 
-    if-nez v0, :cond_0
+    move-result v1
+
+    if-nez v1, :cond_0
 
     .line 189
-    invoke-interface {v7, v8}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v7, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v0
     :try_end_0
@@ -672,7 +675,7 @@
 .end method
 
 .method private static queryForString(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 9
+    .locals 8
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "self"    # Landroid/net/Uri;
     .param p2, "column"    # Ljava/lang/String;
@@ -689,14 +692,10 @@
 
     .line 162
     .local v7, "c":Landroid/database/Cursor;
-    const/4 v0, 0x1
-
     :try_start_0
-    new-array v2, v0, [Ljava/lang/String;
+    filled-new-array {p2}, [Ljava/lang/String;
 
-    const/4 v8, 0x0
-
-    aput-object p2, v2, v8
+    move-result-object v2
 
     const/4 v3, 0x0
 
@@ -721,14 +720,16 @@
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v7, v8}, Landroid/database/Cursor;->isNull(I)Z
+    const/4 v0, 0x0
 
-    move-result v0
+    invoke-interface {v7, v0}, Landroid/database/Cursor;->isNull(I)Z
 
-    if-nez v0, :cond_0
+    move-result v1
+
+    if-nez v1, :cond_0
 
     .line 164
-    invoke-interface {v7, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v7, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v0
     :try_end_0

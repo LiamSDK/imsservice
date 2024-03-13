@@ -512,18 +512,16 @@
 .end method
 
 .method public getImsCfgFeatureValueResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
-    .locals 3
+    .locals 2
     .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "value"    # I
 
     .line 706
     const/4 v0, 0x1
 
-    new-array v1, v0, [I
+    filled-new-array {p2}, [I
 
-    const/4 v2, 0x0
-
-    aput p2, v1, v2
+    move-result-object v1
 
     invoke-direct {p0, v0, p1, v1}, Lcom/mediatek/ims/ril/MtkRadioExImsResponse;->responseInts(ILandroid/hardware/radio/RadioResponseInfo;[I)V
 
@@ -546,18 +544,16 @@
 .end method
 
 .method public getImsCfgResourceCapValueResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
-    .locals 3
+    .locals 2
     .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "value"    # I
 
     .line 750
     const/4 v0, 0x1
 
-    new-array v1, v0, [I
+    filled-new-array {p2}, [I
 
-    const/4 v2, 0x0
-
-    aput p2, v1, v2
+    move-result-object v1
 
     invoke-direct {p0, v0, p1, v1}, Lcom/mediatek/ims/ril/MtkRadioExImsResponse;->responseInts(ILandroid/hardware/radio/RadioResponseInfo;[I)V
 
@@ -584,18 +580,16 @@
 .end method
 
 .method public getVoiceDomainPreferenceResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
-    .locals 3
+    .locals 2
     .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "vdp"    # I
 
     .line 787
     const/4 v0, 0x1
 
-    new-array v1, v0, [I
+    filled-new-array {p2}, [I
 
-    const/4 v2, 0x0
-
-    aput p2, v1, v2
+    move-result-object v1
 
     invoke-direct {p0, v0, p1, v1}, Lcom/mediatek/ims/ril/MtkRadioExImsResponse;->responseInts(ILandroid/hardware/radio/RadioResponseInfo;[I)V
 
@@ -661,31 +655,29 @@
     .param p2, "status"    # [I
 
     .line 803
+    const/4 v0, 0x1
+
     invoke-static {p2}, Lcom/android/internal/telephony/RILUtils;->primitiveArrayToArrayList([I)Ljava/util/ArrayList;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v1, p1, v0}, Lcom/mediatek/ims/ril/MtkRadioExImsResponse;->responseIntArrayList(ILandroid/hardware/radio/RadioResponseInfo;Ljava/util/ArrayList;)V
+    invoke-direct {p0, v0, p1, v1}, Lcom/mediatek/ims/ril/MtkRadioExImsResponse;->responseIntArrayList(ILandroid/hardware/radio/RadioResponseInfo;Ljava/util/ArrayList;)V
 
     .line 804
     return-void
 .end method
 
 .method public queryVopsStatusResponse(Landroid/hardware/radio/RadioResponseInfo;I)V
-    .locals 3
+    .locals 2
     .param p1, "info"    # Landroid/hardware/radio/RadioResponseInfo;
     .param p2, "vops"    # I
 
     .line 327
     const/4 v0, 0x1
 
-    new-array v1, v0, [I
+    filled-new-array {p2}, [I
 
-    const/4 v2, 0x0
-
-    aput p2, v1, v2
+    move-result-object v1
 
     invoke-direct {p0, v0, p1, v1}, Lcom/mediatek/ims/ril/MtkRadioExImsResponse;->responseInts(ILandroid/hardware/radio/RadioResponseInfo;[I)V
 

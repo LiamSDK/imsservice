@@ -41,14 +41,14 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 162
+    .line 165
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
     sput-object v0, Lcom/mediatek/ims/ril/RILRequest;->sRandom:Ljava/util/Random;
 
-    .line 163
+    .line 166
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -57,19 +57,19 @@
 
     sput-object v0, Lcom/mediatek/ims/ril/RILRequest;->sNextSerial:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 164
+    .line 167
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/mediatek/ims/ril/RILRequest;->sPoolSync:Ljava/lang/Object;
 
-    .line 165
+    .line 168
     const/4 v0, 0x0
 
     sput-object v0, Lcom/mediatek/ims/ril/RILRequest;->sPool:Lcom/mediatek/ims/ril/RILRequest;
 
-    .line 166
+    .line 169
     sput v1, Lcom/mediatek/ims/ril/RILRequest;->sPoolSize:I
 
     return-void
@@ -78,10 +78,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 261
+    .line 264
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 262
+    .line 265
     return-void
 .end method
 
@@ -90,16 +90,16 @@
     .param p0, "request"    # I
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 188
+    .line 191
     const/4 v0, 0x0
 
-    .line 190
+    .line 193
     .local v0, "rr":Lcom/mediatek/ims/ril/RILRequest;
     sget-object v1, Lcom/mediatek/ims/ril/RILRequest;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 191
+    .line 194
     :try_start_0
     sget-object v2, Lcom/mediatek/ims/ril/RILRequest;->sPool:Lcom/mediatek/ims/ril/RILRequest;
 
@@ -107,41 +107,41 @@
 
     if-eqz v2, :cond_0
 
-    .line 192
+    .line 195
     move-object v0, v2
 
-    .line 193
+    .line 196
     iget-object v2, v0, Lcom/mediatek/ims/ril/RILRequest;->mNext:Lcom/mediatek/ims/ril/RILRequest;
 
     sput-object v2, Lcom/mediatek/ims/ril/RILRequest;->sPool:Lcom/mediatek/ims/ril/RILRequest;
 
-    .line 194
+    .line 197
     iput-object v3, v0, Lcom/mediatek/ims/ril/RILRequest;->mNext:Lcom/mediatek/ims/ril/RILRequest;
 
-    .line 195
+    .line 198
     sget v2, Lcom/mediatek/ims/ril/RILRequest;->sPoolSize:I
 
     add-int/lit8 v2, v2, -0x1
 
     sput v2, Lcom/mediatek/ims/ril/RILRequest;->sPoolSize:I
 
-    .line 197
+    .line 200
     :cond_0
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 199
+    .line 202
     if-nez v0, :cond_1
 
-    .line 200
+    .line 203
     new-instance v1, Lcom/mediatek/ims/ril/RILRequest;
 
     invoke-direct {v1}, Lcom/mediatek/ims/ril/RILRequest;-><init>()V
 
     move-object v0, v1
 
-    .line 203
+    .line 206
     :cond_1
     sget-object v1, Lcom/mediatek/ims/ril/RILRequest;->sNextSerial:Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -151,28 +151,28 @@
 
     iput v1, v0, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
 
-    .line 205
+    .line 208
     iput p0, v0, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
 
-    .line 206
+    .line 209
     iput-object p1, v0, Lcom/mediatek/ims/ril/RILRequest;->mResult:Landroid/os/Message;
 
-    .line 209
+    .line 212
     const/4 v1, -0x1
 
     iput v1, v0, Lcom/mediatek/ims/ril/RILRequest;->mWakeLockType:I
 
-    .line 210
+    .line 213
     iput-object v3, v0, Lcom/mediatek/ims/ril/RILRequest;->mWorkSource:Landroid/os/WorkSource;
 
-    .line 211
+    .line 214
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Lcom/mediatek/ims/ril/RILRequest;->mStartTimeMs:J
 
-    .line 212
+    .line 215
     if-eqz p1, :cond_3
 
     invoke-virtual {p1}, Landroid/os/Message;->getTarget()Landroid/os/Handler;
@@ -183,7 +183,7 @@
 
     goto :goto_0
 
-    .line 213
+    .line 216
     :cond_2
     new-instance v1, Ljava/lang/NullPointerException;
 
@@ -193,12 +193,12 @@
 
     throw v1
 
-    .line 215
+    .line 218
     :cond_3
     :goto_0
     return-object v0
 
-    .line 197
+    .line 200
     :catchall_0
     move-exception v2
 
@@ -216,22 +216,22 @@
     .param p1, "result"    # Landroid/os/Message;
     .param p2, "workSource"    # Landroid/os/WorkSource;
 
-    .line 226
+    .line 229
     const/4 v0, 0x0
 
-    .line 228
+    .line 231
     .local v0, "rr":Lcom/mediatek/ims/ril/RILRequest;
     invoke-static {p0, p1}, Lcom/mediatek/ims/ril/RILRequest;->obtain(ILandroid/os/Message;)Lcom/mediatek/ims/ril/RILRequest;
 
     move-result-object v0
 
-    .line 229
+    .line 232
     if-eqz p2, :cond_0
 
-    .line 230
+    .line 233
     iput-object p2, v0, Lcom/mediatek/ims/ril/RILRequest;->mWorkSource:Landroid/os/WorkSource;
 
-    .line 231
+    .line 234
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -272,7 +272,7 @@
 
     goto :goto_0
 
-    .line 233
+    .line 236
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -296,7 +296,7 @@
 
     invoke-static {v2, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 236
+    .line 239
     :goto_0
     return-object v0
 .end method
@@ -304,7 +304,7 @@
 .method static resetSerial()V
     .locals 2
 
-    .line 268
+    .line 271
     sget-object v0, Lcom/mediatek/ims/ril/RILRequest;->sNextSerial:Ljava/util/concurrent/atomic/AtomicInteger;
 
     sget-object v1, Lcom/mediatek/ims/ril/RILRequest;->sRandom:Ljava/util/Random;
@@ -315,7 +315,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 269
+    .line 272
     return-void
 .end method
 
@@ -326,12 +326,12 @@
     .param p1, "error"    # I
     .param p2, "ret"    # Ljava/lang/Object;
 
-    .line 296
+    .line 299
     invoke-static {p1}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v0
 
-    .line 298
+    .line 301
     .local v0, "ex":Lcom/android/internal/telephony/CommandException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -353,7 +353,7 @@
 
     iget v2, p0, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
 
-    .line 299
+    .line 302
     invoke-static {v2}, Lcom/mediatek/ims/ril/ImsRILAdapter;->requestToString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -380,7 +380,7 @@
 
     iget v2, p0, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
 
-    .line 300
+    .line 303
     invoke-static {v2, p2}, Lcom/mediatek/ims/ril/ImsRILAdapter;->retToString(ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
@@ -393,25 +393,25 @@
 
     move-result-object v1
 
-    .line 298
+    .line 301
     const-string v2, "IMS-RilRequest"
 
     invoke-static {v2, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 302
+    .line 305
     iget-object v1, p0, Lcom/mediatek/ims/ril/RILRequest;->mResult:Landroid/os/Message;
 
     if-eqz v1, :cond_0
 
-    .line 303
+    .line 306
     invoke-static {v1, p2, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 304
+    .line 307
     iget-object v1, p0, Lcom/mediatek/ims/ril/RILRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 306
+    .line 309
     :cond_0
     return-void
 .end method
@@ -419,12 +419,12 @@
 .method release()V
     .locals 4
 
-    .line 245
+    .line 248
     sget-object v0, Lcom/mediatek/ims/ril/RILRequest;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 246
+    .line 249
     :try_start_0
     sget v1, Lcom/mediatek/ims/ril/RILRequest;->sPoolSize:I
 
@@ -432,35 +432,35 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 247
+    .line 250
     sget-object v2, Lcom/mediatek/ims/ril/RILRequest;->sPool:Lcom/mediatek/ims/ril/RILRequest;
 
     iput-object v2, p0, Lcom/mediatek/ims/ril/RILRequest;->mNext:Lcom/mediatek/ims/ril/RILRequest;
 
-    .line 248
+    .line 251
     sput-object p0, Lcom/mediatek/ims/ril/RILRequest;->sPool:Lcom/mediatek/ims/ril/RILRequest;
 
-    .line 249
+    .line 252
     add-int/lit8 v1, v1, 0x1
 
     sput v1, Lcom/mediatek/ims/ril/RILRequest;->sPoolSize:I
 
-    .line 250
+    .line 253
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/mediatek/ims/ril/RILRequest;->mResult:Landroid/os/Message;
 
-    .line 251
+    .line 254
     iget v1, p0, Lcom/mediatek/ims/ril/RILRequest;->mWakeLockType:I
 
     const/4 v2, -0x1
 
     if-eq v1, v2, :cond_0
 
-    .line 252
+    .line 255
     if-nez v1, :cond_0
 
-    .line 253
+    .line 256
     const-string v1, "IMS-RilRequest"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -473,7 +473,7 @@
 
     move-result-object v2
 
-    .line 254
+    .line 257
     invoke-virtual {p0}, Lcom/mediatek/ims/ril/RILRequest;->serialString()Ljava/lang/String;
 
     move-result-object v3
@@ -486,17 +486,17 @@
 
     move-result-object v2
 
-    .line 253
+    .line 256
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 258
+    .line 261
     :cond_0
     monitor-exit v0
 
-    .line 259
+    .line 262
     return-void
 
-    .line 258
+    .line 261
     :catchall_0
     move-exception v1
 
@@ -510,14 +510,14 @@
 .method serialString()Ljava/lang/String;
     .locals 7
 
-    .line 274
+    .line 277
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x8
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 277
+    .line 280
     .local v0, "sb":Ljava/lang/StringBuilder;
     iget v1, p0, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
 
@@ -531,19 +531,19 @@
 
     rem-long/2addr v1, v3
 
-    .line 279
+    .line 282
     .local v1, "adjustedSerial":J
     invoke-static {v1, v2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 282
+    .line 285
     .local v3, "sn":Ljava/lang/String;
     const/16 v4, 0x5b
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 283
+    .line 286
     const/4 v4, 0x0
 
     .local v4, "i":I
@@ -557,28 +557,28 @@
 
     if-ge v4, v6, :cond_0
 
-    .line 284
+    .line 287
     const/16 v6, 0x30
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 283
+    .line 286
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 287
+    .line 290
     .end local v4    # "i":I
     .end local v5    # "s":I
     :cond_0
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 288
+    .line 291
     const/16 v4, 0x5d
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 289
+    .line 292
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4

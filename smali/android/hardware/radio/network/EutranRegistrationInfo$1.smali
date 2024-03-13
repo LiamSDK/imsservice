@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 11
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,23 +42,23 @@
     .locals 1
     .param p1, "_aidl_source"    # Landroid/os/Parcel;
 
-    .line 14
+    .line 16
     new-instance v0, Landroid/hardware/radio/network/EutranRegistrationInfo;
 
     invoke-direct {v0}, Landroid/hardware/radio/network/EutranRegistrationInfo;-><init>()V
 
-    .line 15
+    .line 17
     .local v0, "_aidl_out":Landroid/hardware/radio/network/EutranRegistrationInfo;
     invoke-virtual {v0, p1}, Landroid/hardware/radio/network/EutranRegistrationInfo;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 16
+    .line 18
     return-object v0
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 11
+    .line 13
     invoke-virtual {p0, p1}, Landroid/hardware/radio/network/EutranRegistrationInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/hardware/radio/network/EutranRegistrationInfo;
 
     move-result-object p1
@@ -70,7 +70,7 @@
     .locals 1
     .param p1, "_aidl_size"    # I
 
-    .line 20
+    .line 22
     new-array v0, p1, [Landroid/hardware/radio/network/EutranRegistrationInfo;
 
     return-object v0
@@ -79,7 +79,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 11
+    .line 13
     invoke-virtual {p0, p1}, Landroid/hardware/radio/network/EutranRegistrationInfo$1;->newArray(I)[Landroid/hardware/radio/network/EutranRegistrationInfo;
 
     move-result-object p1

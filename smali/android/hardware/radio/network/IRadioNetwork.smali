@@ -18,23 +18,23 @@
 # static fields
 .field public static final DESCRIPTOR:Ljava/lang/String;
 
-.field public static final HASH:Ljava/lang/String; = "57e8e923513d80a26102e450d335e89b4346be66"
+.field public static final HASH:Ljava/lang/String; = "1b6608f238bd0b1c642df315621a7b605eafc883"
 
-.field public static final VERSION:I = 0x1
+.field public static final VERSION:I = 0x2
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 1195
-    const-string v0, "android$hardware$radio$network$IRadioNetwork"
+    .line 1428
+    const/16 v0, 0x24
 
-    const/16 v1, 0x24
+    const/16 v1, 0x2e
 
-    const/16 v2, 0x2e
+    const-string v2, "android$hardware$radio$network$IRadioNetwork"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v0
 
@@ -45,6 +45,22 @@
 
 
 # virtual methods
+.method public abstract cancelEmergencyNetworkScan(IZ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract exitEmergencyMode(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getAllowedNetworkTypesBitmap(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -106,6 +122,9 @@
         value = {
             Landroid/os/RemoteException;
         }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
@@ -181,7 +200,23 @@
     .end annotation
 .end method
 
+.method public abstract isN1ModeEnabled(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract isNrDualConnectivityEnabled(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract isNullCipherAndIntegrityEnabled(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -237,6 +272,14 @@
     .end annotation
 .end method
 
+.method public abstract setEmergencyMode(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setIndicationFilter(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -261,6 +304,14 @@
     .end annotation
 .end method
 
+.method public abstract setN1ModeEnabled(IZ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setNetworkSelectionModeAutomatic(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -278,6 +329,14 @@
 .end method
 
 .method public abstract setNrDualConnectivityState(IB)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setNullCipherAndIntegrityEnabled(IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -342,6 +401,14 @@
 .end method
 
 .method public abstract supplyNetworkDepersonalization(ILjava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract triggerEmergencyNetworkScan(ILandroid/hardware/radio/network/EmergencyNetworkScanTrigger;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

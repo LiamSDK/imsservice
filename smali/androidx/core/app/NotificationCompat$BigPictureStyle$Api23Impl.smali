@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 3240
+    .line 3500
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3241
+    .line 3501
     return-void
 .end method
 
@@ -30,9 +30,9 @@
     .param p0, "style"    # Landroid/app/Notification$BigPictureStyle;
     .param p1, "icon"    # Landroid/graphics/drawable/Icon;
 
-    .line 3248
+    .line 3508
     invoke-virtual {p0, p1}, Landroid/app/Notification$BigPictureStyle;->bigLargeIcon(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$BigPictureStyle;
 
-    .line 3249
+    .line 3509
     return-void
 .end method

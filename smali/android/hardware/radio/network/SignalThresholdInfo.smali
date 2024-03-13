@@ -17,6 +17,8 @@
     .end annotation
 .end field
 
+.field public static final SIGNAL_MEASUREMENT_TYPE_ECNO:I = 0x9
+
 .field public static final SIGNAL_MEASUREMENT_TYPE_RSCP:I = 0x2
 
 .field public static final SIGNAL_MEASUREMENT_TYPE_RSRP:I = 0x3
@@ -90,10 +92,10 @@
 .method public describeContents()I
     .locals 1
 
-    .line 88
+    .line 89
     const/4 v0, 0x0
 
-    .line 89
+    .line 90
     .local v0, "_mask":I
     return v0
 .end method
@@ -458,18 +460,18 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 77
+    .line 78
     new-instance v0, Ljava/util/StringJoiner;
 
-    const-string v1, ", "
+    const-string v1, "{"
 
-    const-string v2, "{"
+    const-string v2, "}"
 
-    const-string v3, "}"
+    const-string v3, ", "
 
-    invoke-direct {v0, v1, v2, v3}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
+    invoke-direct {v0, v3, v1, v2}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    .line 78
+    .line 79
     .local v0, "_aidl_sj":Ljava/util/StringJoiner;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -493,7 +495,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 79
+    .line 80
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -516,7 +518,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 80
+    .line 81
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -539,7 +541,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 81
+    .line 82
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -566,7 +568,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 82
+    .line 83
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -589,7 +591,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 83
+    .line 84
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -616,7 +618,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 84
+    .line 85
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V

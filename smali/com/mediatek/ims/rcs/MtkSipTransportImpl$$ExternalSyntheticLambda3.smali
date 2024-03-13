@@ -3,34 +3,28 @@
 .source "D8$$SyntheticClass"
 
 # interfaces
-.implements Ljava/util/function/Consumer;
-
-
-# instance fields
-.field public final synthetic f$0:Lcom/mediatek/ims/rcsua/Capability;
+.implements Ljava/util/function/Predicate;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/mediatek/ims/rcsua/Capability;)V
+.method public synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$$ExternalSyntheticLambda3;->f$0:Lcom/mediatek/ims/rcsua/Capability;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkSipTransportImpl$$ExternalSyntheticLambda3;->f$0:Lcom/mediatek/ims/rcsua/Capability;
+.method public final test(Ljava/lang/Object;)Z
+    .locals 0
 
     check-cast p1, Lcom/mediatek/ims/rcsua/Capability;
 
-    invoke-static {v0, p1}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->lambda$updateSipDelegateRegistration$1(Lcom/mediatek/ims/rcsua/Capability;Lcom/mediatek/ims/rcsua/Capability;)V
+    invoke-static {p1}, Lcom/mediatek/ims/rcs/MtkSipTransportImpl;->lambda$updateSipDelegateRegistration$0(Lcom/mediatek/ims/rcsua/Capability;)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

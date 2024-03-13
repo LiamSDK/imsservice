@@ -41,6 +41,8 @@
 
     move-result v3
 
+    const-string v4, ""
+
     new-instance v5, Landroidx/collection/SimpleArrayMap;
 
     invoke-direct {v5}, Landroidx/collection/SimpleArrayMap;-><init>()V
@@ -52,8 +54,6 @@
     new-instance v7, Landroidx/collection/SimpleArrayMap;
 
     invoke-direct {v7}, Landroidx/collection/SimpleArrayMap;-><init>()V
-
-    const-string v4, ""
 
     move-object v0, p0
 
@@ -360,6 +360,8 @@
     .param p1, "fieldId"    # I
 
     .line 80
+    nop
+
     :goto_0
     iget v0, p0, Landroidx/versionedparcelable/VersionedParcelParcel;->mNextRead:I
 

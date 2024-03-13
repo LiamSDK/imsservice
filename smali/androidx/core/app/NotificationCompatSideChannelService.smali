@@ -111,7 +111,7 @@
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .locals 3
+    .locals 2
     .param p1, "intent"    # Landroid/content/Intent;
 
     .line 48
@@ -123,31 +123,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
     .line 51
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x13
-
-    if-le v0, v2, :cond_0
+    nop
 
     .line 52
-    return-object v1
-
-    .line 54
-    :cond_0
-    new-instance v0, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;
-
-    invoke-direct {v0, p0}, Landroidx/core/app/NotificationCompatSideChannelService$NotificationSideChannelStub;-><init>(Landroidx/core/app/NotificationCompatSideChannelService;)V
+    const/4 v0, 0x0
 
     return-object v0
-
-    .line 56
-    :cond_1
-    return-object v1
 .end method

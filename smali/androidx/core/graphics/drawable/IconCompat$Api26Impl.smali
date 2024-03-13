@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1091
+    .line 1074
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1093
+    .line 1076
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .param p0, "backgroundDrawable"    # Landroid/graphics/drawable/Drawable;
     .param p1, "foregroundDrawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 1098
+    .line 1081
     new-instance v0, Landroid/graphics/drawable/AdaptiveIconDrawable;
 
     invoke-direct {v0, p0, p1}, Landroid/graphics/drawable/AdaptiveIconDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
@@ -42,7 +42,7 @@
     .locals 1
     .param p0, "bits"    # Landroid/graphics/Bitmap;
 
-    .line 1103
+    .line 1086
     invoke-static {p0}, Landroid/graphics/drawable/Icon;->createWithAdaptiveBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
 
     move-result-object v0

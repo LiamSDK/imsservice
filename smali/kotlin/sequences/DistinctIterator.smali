@@ -40,7 +40,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -123,6 +123,8 @@
     .locals 3
 
     .line 570
+    nop
+
     :cond_0
     iget-object v0, p0, Lkotlin/sequences/DistinctIterator;->source:Ljava/util/Iterator;
 

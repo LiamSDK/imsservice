@@ -20,18 +20,18 @@
 
 .field private mIsRttEmcGuardTimerSupported:Z
 
+.field private mPhoneId:I
+
 .field private mRttEmcIntent:Landroid/app/PendingIntent;
 
 .field private mRttReceiver:Landroid/content/BroadcastReceiver;
-
-.field private mSubId:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 2
     .param p1, "context"    # Landroid/content/Context;
-    .param p2, "subId"    # I
+    .param p2, "phoneId"    # I
 
     .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
     .line 61
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mSubId:I
+    iput v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mPhoneId:I
 
     .line 86
     new-instance v0, Lcom/mediatek/ims/RttEmcGuardTimerUtil$1;
@@ -68,7 +68,7 @@
     iput-object p1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mContext:Landroid/content/Context;
 
     .line 64
-    iput p2, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mSubId:I
+    iput p2, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mPhoneId:I
 
     .line 65
     return-void
@@ -99,7 +99,7 @@
 .method private getReceiver()Z
     .locals 1
 
-    .line 196
+    .line 197
     iget-boolean v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRegisteredReceiver:Z
 
     return v0
@@ -108,82 +108,88 @@
 .method private isDuringGuardTimer()Z
     .locals 1
 
-    .line 204
+    .line 205
     iget-boolean v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mDuringRttGuardDuration:Z
 
     return v0
 .end method
 
 .method private isRttEmcCarrierSupport()Z
-    .locals 5
+    .locals 6
 
-    .line 178
-    iget-object v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mContext:Landroid/content/Context;
+    .line 177
+    iget v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mPhoneId:I
+
+    invoke-virtual {p0, v0}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->getSubIdUsingPhoneId(I)I
+
+    move-result v0
 
     .line 179
-    const-string v1, "carrier_config"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/telephony/CarrierConfigManager;
+    .local v0, "subId":I
+    iget-object v1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mContext:Landroid/content/Context;
 
     .line 180
-    .local v0, "carrierConfigManager":Landroid/telephony/CarrierConfigManager;
-    const/4 v1, 0x0
+    const-string v2, "carrier_config"
 
-    const-string v2, "RttEmcGuardTimerUtil"
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    move-result-object v1
+
+    check-cast v1, Landroid/telephony/CarrierConfigManager;
 
     .line 181
-    const-string v3, "cacheCarrierConfiguration: No carrier config service found."
+    .local v1, "carrierConfigManager":Landroid/telephony/CarrierConfigManager;
+    const/4 v2, 0x0
 
-    invoke-static {v2, v3}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v3, "RttEmcGuardTimerUtil"
+
+    if-nez v1, :cond_0
 
     .line 182
-    return v1
+    const-string v4, "cacheCarrierConfiguration: No carrier config service found."
 
-    .line 185
-    :cond_0
-    iget v3, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mSubId:I
+    invoke-static {v3, v4}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v0, v3}, Landroid/telephony/CarrierConfigManager;->getConfigForSubId(I)Landroid/os/PersistableBundle;
-
-    move-result-object v3
+    .line 183
+    return v2
 
     .line 186
-    .local v3, "carrierConfig":Landroid/os/PersistableBundle;
-    if-nez v3, :cond_1
+    :cond_0
+    invoke-virtual {v1, v0}, Landroid/telephony/CarrierConfigManager;->getConfigForSubId(I)Landroid/os/PersistableBundle;
+
+    move-result-object v4
 
     .line 187
-    const-string v4, "cacheCarrierConfiguration: Empty carrier config."
-
-    invoke-static {v2, v4}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    .local v4, "carrierConfig":Landroid/os/PersistableBundle;
+    if-nez v4, :cond_1
 
     .line 188
-    return v1
+    const-string v5, "cacheCarrierConfiguration: Empty carrier config."
 
-    .line 191
+    invoke-static {v3, v5}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 189
+    return v2
+
+    .line 192
     :cond_1
     nop
 
-    .line 192
-    const-string v1, "mtk_emc_rtt_guard_timer_bool"
-
-    invoke-virtual {v3, v1}, Landroid/os/PersistableBundle;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v1
-
-    iput-boolean v1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRttEmcGuardTimerSupported:Z
-
     .line 193
-    return v1
+    const-string v2, "mtk_emc_rtt_guard_timer_bool"
+
+    invoke-virtual {v4, v2}, Landroid/os/PersistableBundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v2
+
+    iput-boolean v2, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRttEmcGuardTimerSupported:Z
+
+    .line 194
+    return v2
 .end method
 
 .method private registerRttReceiver()V
-    .locals 3
+    .locals 4
 
     .line 103
     const-string v0, "RttEmcGuardTimerUtil"
@@ -208,7 +214,9 @@
 
     iget-object v2, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mRttReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    const/4 v3, 0x2
+
+    invoke-virtual {v1, v2, v0, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
 
     .line 107
     return-void
@@ -218,10 +226,10 @@
     .locals 0
     .param p1, "value"    # Z
 
-    .line 207
+    .line 208
     iput-boolean p1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mDuringRttGuardDuration:Z
 
-    .line 208
+    .line 209
     return-void
 .end method
 
@@ -229,10 +237,10 @@
     .locals 0
     .param p1, "value"    # Z
 
-    .line 199
+    .line 200
     iput-boolean p1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRegisteredReceiver:Z
 
-    .line 200
+    .line 201
     return-void
 .end method
 
@@ -333,25 +341,81 @@
     return-void
 .end method
 
+.method public getSubIdUsingPhoneId(I)I
+    .locals 4
+    .param p1, "phoneId"    # I
+
+    .line 212
+    invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getSubId(I)[I
+
+    move-result-object v0
+
+    .line 213
+    .local v0, "subIds":[I
+    const/4 v1, -0x1
+
+    .line 214
+    .local v1, "subId":I
+    if-eqz v0, :cond_0
+
+    array-length v2, v0
+
+    const/4 v3, 0x1
+
+    if-lt v2, v3, :cond_0
+
+    .line 215
+    const/4 v2, 0x0
+
+    aget v1, v0, v2
+
+    .line 217
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "[getSubIdUsingPhoneId]  subId: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "RttEmcGuardTimerUtil"
+
+    invoke-static {v3, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 218
+    return v1
+.end method
+
 .method public initRttEmcGuardTimer()V
     .locals 2
 
     .line 67
-    const-string v0, "RttEmcGuardTimerUtil"
+    const-string v0, "initRttEmcGuardTimer"
 
-    const-string v1, "initRttEmcGuardTimer"
+    const-string v1, "RttEmcGuardTimerUtil"
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 68
-    iget-object v1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mContext:Landroid/content/Context;
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     .line 69
-    const-string v1, "initRttEmcGuardTimer mContext == null"
+    const-string v0, "initRttEmcGuardTimer mContext == null"
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 71
     :cond_0
@@ -370,24 +434,24 @@
 .end method
 
 .method public startRttEmcGuardTimer()V
-    .locals 9
+    .locals 8
 
     .line 135
-    const-string v0, "RttEmcGuardTimerUtil"
+    const-string v0, "startRttEmcGuardTimer"
 
-    const-string v1, "startRttEmcGuardTimer"
+    const-string v1, "RttEmcGuardTimerUtil"
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 136
-    iget-object v1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mContext:Landroid/content/Context;
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     .line 137
-    const-string v1, "startRttEmcGuardTimer: mContext == null"
+    const-string v0, "startRttEmcGuardTimer: mContext == null"
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 138
     return-void
@@ -396,17 +460,17 @@
     :cond_0
     invoke-direct {p0}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->isRttEmcCarrierSupport()Z
 
-    move-result v1
+    move-result v0
 
-    iput-boolean v1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRttEmcGuardTimerSupported:Z
+    iput-boolean v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRttEmcGuardTimerSupported:Z
 
     .line 141
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     .line 142
-    const-string v1, "startRttEmcGuardTimer: Current carrier doesn\'t support RTT EMC guard timer, just return"
+    const-string v0, "startRttEmcGuardTimer: Current carrier doesn\'t support RTT EMC guard timer, just return"
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 144
     return-void
@@ -416,98 +480,98 @@
     invoke-virtual {p0}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->stopRttEmcGuardTimer()V
 
     .line 149
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "startRttEmcGuardTimer , mIsRegisteredReceiver :"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-direct {p0}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->getReceiver()Z
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     const-string v3, " mIsRttEmcGuardTimerSupported : "
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     iget-boolean v3, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRttEmcGuardTimerSupported:Z
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 151
-    iget-boolean v1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRttEmcGuardTimerSupported:Z
+    iget-boolean v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRttEmcGuardTimerSupported:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     invoke-direct {p0}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->getReceiver()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
     .line 152
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "initRttEmcGuardTimer , mIsRegisteredReceiver :"
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-direct {p0}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->getReceiver()Z
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 153
-    iget-object v1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mContext:Landroid/content/Context;
 
     const-string v3, "alarm"
 
-    invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/app/AlarmManager;
+    check-cast v0, Landroid/app/AlarmManager;
 
-    iput-object v1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mAlarmManager:Landroid/app/AlarmManager;
+    iput-object v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mAlarmManager:Landroid/app/AlarmManager;
 
     .line 154
     invoke-direct {p0}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->registerRttReceiver()V
 
     .line 155
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-direct {p0, v1}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->setReceiver(Z)V
+    invoke-direct {p0, v0}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->setReceiver(Z)V
 
     .line 156
     new-instance v3, Ljava/lang/StringBuilder;
@@ -536,7 +600,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 163
     new-instance v2, Landroid/content/Intent;
@@ -582,56 +646,56 @@
 
     move-result-object v4
 
-    invoke-static {v0, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 168
-    invoke-direct {p0, v1}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->setDuringGuardTimer(Z)V
+    invoke-direct {p0, v0}, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->setDuringGuardTimer(Z)V
 
     .line 169
-    iget-object v1, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mAlarmManager:Landroid/app/AlarmManager;
-
-    const/4 v4, 0x2
+    iget-object v0, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mAlarmManager:Landroid/app/AlarmManager;
 
     .line 170
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v5
+    move-result-wide v4
 
-    int-to-long v7, v3
+    int-to-long v6, v3
 
-    add-long/2addr v5, v7
+    add-long/2addr v4, v6
 
-    iget-object v7, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mRttEmcIntent:Landroid/app/PendingIntent;
+    iget-object v6, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mRttEmcIntent:Landroid/app/PendingIntent;
 
     .line 169
-    invoke-virtual {v1, v4, v5, v6, v7}, Landroid/app/AlarmManager;->setExact(IJLandroid/app/PendingIntent;)V
+    const/4 v7, 0x2
+
+    invoke-virtual {v0, v7, v4, v5, v6}, Landroid/app/AlarmManager;->setExact(IJLandroid/app/PendingIntent;)V
 
     .line 171
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v4, "startRttEmcGuardTimer: delay = "
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     const-string v4, " started"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 172
     return-void
@@ -640,27 +704,27 @@
     .end local v2    # "intent":Landroid/content/Intent;
     .end local v3    # "delay":I
     :cond_2
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "startRttEmcGuardTimer , mIsRttEmcGuardTimerSupported :"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     iget-boolean v2, p0, Lcom/mediatek/ims/RttEmcGuardTimerUtil;->mIsRttEmcGuardTimerSupported:Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 161
     return-void

@@ -96,20 +96,20 @@
     .param p2, "type"    # I
 
     .line 114
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    if-ne p2, v1, :cond_0
+    if-ne p2, v0, :cond_0
 
     .line 115
-    iput v0, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesNonTouch:I
+    iput v1, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesNonTouch:I
 
     goto :goto_0
 
     .line 117
     :cond_0
-    iput v0, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesTouch:I
+    iput v1, p0, Landroidx/core/view/NestedScrollingParentHelper;->mNestedScrollAxesTouch:I
 
     .line 119
     :goto_0

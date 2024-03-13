@@ -34,7 +34,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -56,11 +56,11 @@
 
 .field public static final UTF_8:Ljava/nio/charset/Charset;
 
-.field private static utf_32:Ljava/nio/charset/Charset;
+.field private static volatile utf_32:Ljava/nio/charset/Charset;
 
-.field private static utf_32be:Ljava/nio/charset/Charset;
+.field private static volatile utf_32be:Ljava/nio/charset/Charset;
 
-.field private static utf_32le:Ljava/nio/charset/Charset;
+.field private static volatile utf_32le:Ljava/nio/charset/Charset;
 
 
 # direct methods
@@ -177,7 +177,7 @@
 
     check-cast v0, Lkotlin/text/Charsets;
 
-    .local v0, "$this$_get_UTF_32__u24lambda_u2d0":Lkotlin/text/Charsets;
+    .local v0, "$this$_get_UTF_32__u24lambda_u240":Lkotlin/text/Charsets;
     const/4 v1, 0x0
 
     .line 69
@@ -200,7 +200,7 @@
     nop
 
     .line 68
-    .end local v0    # "$this$_get_UTF_32__u24lambda_u2d0":Lkotlin/text/Charsets;
+    .end local v0    # "$this$_get_UTF_32__u24lambda_u240":Lkotlin/text/Charsets;
     .end local v1    # "$i$a$-run-Charsets$UTF_32$1":I
     .end local v2    # "charset":Ljava/nio/charset/Charset;
     move-object v0, v2
@@ -213,7 +213,7 @@
 .method public final UTF32_BE()Ljava/nio/charset/Charset;
     .locals 4
 
-    .line 92
+    .line 96
     sget-object v0, Lkotlin/text/Charsets;->utf_32be:Ljava/nio/charset/Charset;
 
     if-nez v0, :cond_0
@@ -222,10 +222,10 @@
 
     check-cast v0, Lkotlin/text/Charsets;
 
-    .local v0, "$this$_get_UTF_32BE__u24lambda_u2d2":Lkotlin/text/Charsets;
+    .local v0, "$this$_get_UTF_32BE__u24lambda_u242":Lkotlin/text/Charsets;
     const/4 v1, 0x0
 
-    .line 93
+    .line 97
     .local v1, "$i$a$-run-Charsets$UTF_32BE$1":I
     const-string v2, "UTF-32BE"
 
@@ -237,20 +237,20 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 94
+    .line 98
     .local v2, "charset":Ljava/nio/charset/Charset;
     sput-object v2, Lkotlin/text/Charsets;->utf_32be:Ljava/nio/charset/Charset;
 
-    .line 95
+    .line 99
     nop
 
-    .line 92
-    .end local v0    # "$this$_get_UTF_32BE__u24lambda_u2d2":Lkotlin/text/Charsets;
+    .line 96
+    .end local v0    # "$this$_get_UTF_32BE__u24lambda_u242":Lkotlin/text/Charsets;
     .end local v1    # "$i$a$-run-Charsets$UTF_32BE$1":I
     .end local v2    # "charset":Ljava/nio/charset/Charset;
     move-object v0, v2
 
-    .line 96
+    .line 100
     :cond_0
     return-object v0
 .end method
@@ -258,7 +258,7 @@
 .method public final UTF32_LE()Ljava/nio/charset/Charset;
     .locals 4
 
-    .line 80
+    .line 82
     sget-object v0, Lkotlin/text/Charsets;->utf_32le:Ljava/nio/charset/Charset;
 
     if-nez v0, :cond_0
@@ -267,10 +267,10 @@
 
     check-cast v0, Lkotlin/text/Charsets;
 
-    .local v0, "$this$_get_UTF_32LE__u24lambda_u2d1":Lkotlin/text/Charsets;
+    .local v0, "$this$_get_UTF_32LE__u24lambda_u241":Lkotlin/text/Charsets;
     const/4 v1, 0x0
 
-    .line 81
+    .line 83
     .local v1, "$i$a$-run-Charsets$UTF_32LE$1":I
     const-string v2, "UTF-32LE"
 
@@ -282,20 +282,20 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 82
+    .line 84
     .local v2, "charset":Ljava/nio/charset/Charset;
     sput-object v2, Lkotlin/text/Charsets;->utf_32le:Ljava/nio/charset/Charset;
 
-    .line 83
+    .line 85
     nop
 
-    .line 80
-    .end local v0    # "$this$_get_UTF_32LE__u24lambda_u2d1":Lkotlin/text/Charsets;
+    .line 82
+    .end local v0    # "$this$_get_UTF_32LE__u24lambda_u241":Lkotlin/text/Charsets;
     .end local v1    # "$i$a$-run-Charsets$UTF_32LE$1":I
     .end local v2    # "charset":Ljava/nio/charset/Charset;
     move-object v0, v2
 
-    .line 84
+    .line 86
     :cond_0
     return-object v0
 .end method

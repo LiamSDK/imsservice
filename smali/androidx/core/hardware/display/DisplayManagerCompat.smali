@@ -114,11 +114,7 @@
     .param p1, "displayId"    # I
 
     .line 87
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 88
     iget-object v0, p0, Landroidx/core/hardware/display/DisplayManagerCompat;->mContext:Landroid/content/Context;
@@ -138,51 +134,13 @@
     move-result-object v0
 
     return-object v0
-
-    .line 92
-    :cond_0
-    iget-object v0, p0, Landroidx/core/hardware/display/DisplayManagerCompat;->mContext:Landroid/content/Context;
-
-    const-string v1, "window"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/WindowManager;
-
-    .line 93
-    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v0
-
-    .line 94
-    .local v0, "display":Landroid/view/Display;
-    invoke-virtual {v0}, Landroid/view/Display;->getDisplayId()I
-
-    move-result v1
-
-    if-ne v1, p1, :cond_1
-
-    .line 95
-    return-object v0
-
-    .line 97
-    :cond_1
-    const/4 v1, 0x0
-
-    return-object v1
 .end method
 
 .method public getDisplays()[Landroid/view/Display;
-    .locals 3
+    .locals 2
 
     .line 108
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 109
     iget-object v0, p0, Landroidx/core/hardware/display/DisplayManagerCompat;->mContext:Landroid/content/Context;
@@ -202,47 +160,14 @@
     move-result-object v0
 
     return-object v0
-
-    .line 113
-    :cond_0
-    iget-object v0, p0, Landroidx/core/hardware/display/DisplayManagerCompat;->mContext:Landroid/content/Context;
-
-    const-string v1, "window"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/WindowManager;
-
-    .line 114
-    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v0
-
-    .line 115
-    .local v0, "display":Landroid/view/Display;
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Landroid/view/Display;
-
-    const/4 v2, 0x0
-
-    aput-object v0, v1, v2
-
-    return-object v1
 .end method
 
 .method public getDisplays(Ljava/lang/String;)[Landroid/view/Display;
-    .locals 3
+    .locals 2
     .param p1, "category"    # Ljava/lang/String;
 
     .line 137
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 138
     iget-object v0, p0, Landroidx/core/hardware/display/DisplayManagerCompat;->mContext:Landroid/content/Context;
@@ -262,42 +187,4 @@
     move-result-object v0
 
     return-object v0
-
-    .line 141
-    :cond_0
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_1
-
-    .line 142
-    new-array v0, v0, [Landroid/view/Display;
-
-    return-object v0
-
-    .line 145
-    :cond_1
-    iget-object v1, p0, Landroidx/core/hardware/display/DisplayManagerCompat;->mContext:Landroid/content/Context;
-
-    const-string v2, "window"
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/WindowManager;
-
-    .line 146
-    invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v1
-
-    .line 147
-    .local v1, "display":Landroid/view/Display;
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Landroid/view/Display;
-
-    aput-object v1, v2, v0
-
-    return-object v2
 .end method

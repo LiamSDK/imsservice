@@ -87,13 +87,13 @@
 
     .line 79
     :cond_1
+    const-string v3, "android.intent.action.MAIN"
+
     invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "android.intent.action.MAIN"
-
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 

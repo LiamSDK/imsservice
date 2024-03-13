@@ -35,7 +35,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -84,16 +84,17 @@
 
     aget-object v2, p1, v1
 
-    .local v2, "item":Ljava/lang/CharSequence;
-    add-int/lit8 v1, v1, 0x1
-
     .line 63
+    .local v2, "item":Ljava/lang/CharSequence;
     invoke-interface {p0, v2}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+
+    .line 62
+    .end local v2    # "item":Ljava/lang/CharSequence;
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     .line 64
-    .end local v2    # "item":Ljava/lang/CharSequence;
     :cond_0
     return-object p0
 .end method
@@ -305,16 +306,9 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
     const-string v1, "null cannot be cast to non-null type T of kotlin.text.StringsKt__AppendableKt.appendRange"
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    throw v0
+    return-object v0
 .end method

@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 505
+    .line 504
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 507
+    .line 506
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 3
     .param p0, "obj"    # Landroidx/core/location/LocationRequestCompat;
 
-    .line 511
+    .line 510
     new-instance v0, Landroid/location/LocationRequest$Builder;
 
     invoke-virtual {p0}, Landroidx/core/location/LocationRequestCompat;->getIntervalMillis()J
@@ -38,7 +38,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/location/LocationRequest$Builder;-><init>(J)V
 
-    .line 512
+    .line 511
     invoke-virtual {p0}, Landroidx/core/location/LocationRequestCompat;->getQuality()I
 
     move-result v1
@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    .line 513
+    .line 512
     invoke-virtual {p0}, Landroidx/core/location/LocationRequestCompat;->getMinUpdateIntervalMillis()J
 
     move-result-wide v1
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    .line 514
+    .line 513
     invoke-virtual {p0}, Landroidx/core/location/LocationRequestCompat;->getDurationMillis()J
 
     move-result-wide v1
@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    .line 515
+    .line 514
     invoke-virtual {p0}, Landroidx/core/location/LocationRequestCompat;->getMaxUpdates()I
 
     move-result v1
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    .line 516
+    .line 515
     invoke-virtual {p0}, Landroidx/core/location/LocationRequestCompat;->getMinUpdateDistanceMeters()F
 
     move-result v1
@@ -83,7 +83,7 @@
 
     move-result-object v0
 
-    .line 517
+    .line 516
     invoke-virtual {p0}, Landroidx/core/location/LocationRequestCompat;->getMaxUpdateDelayMillis()J
 
     move-result-wide v1
@@ -92,11 +92,11 @@
 
     move-result-object v0
 
-    .line 518
+    .line 517
     invoke-virtual {v0}, Landroid/location/LocationRequest$Builder;->build()Landroid/location/LocationRequest;
 
     move-result-object v0
 
-    .line 511
+    .line 510
     return-object v0
 .end method

@@ -31,10 +31,25 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method private static synthetic $values()[Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
+    .locals 2
 
-    .line 237
+    .line 239
+    sget-object v0, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->WIFI_STATE_CHANGE:Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
+
+    sget-object v1, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->MODEM_STATE_CHANGE:Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
+
+    filled-new-array {v0, v1}, [Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static constructor <clinit>()V
+    .locals 3
+
+    .line 240
     new-instance v0, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
 
     const-string v1, "WIFI_STATE_CHANGE"
@@ -45,27 +60,23 @@
 
     sput-object v0, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->WIFI_STATE_CHANGE:Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
 
-    .line 238
-    new-instance v1, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
+    .line 241
+    new-instance v0, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
 
-    const-string v3, "MODEM_STATE_CHANGE"
+    const-string v1, "MODEM_STATE_CHANGE"
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v1, v3, v4}, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->MODEM_STATE_CHANGE:Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
+    sput-object v0, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->MODEM_STATE_CHANGE:Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
 
-    .line 236
-    const/4 v3, 0x2
+    .line 239
+    invoke-static {}, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->$values()[Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
 
-    new-array v3, v3, [Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
+    move-result-object v0
 
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->$VALUES:[Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
+    sput-object v0, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->$VALUES:[Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
 
     return-void
 .end method
@@ -78,7 +89,7 @@
         }
     .end annotation
 
-    .line 236
+    .line 239
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -88,7 +99,7 @@
     .locals 1
     .param p0, "name"    # Ljava/lang/String;
 
-    .line 236
+    .line 239
     const-class v0, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -103,7 +114,7 @@
 .method public static values()[Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
     .locals 1
 
-    .line 236
+    .line 239
     sget-object v0, Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->$VALUES:[Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;
 
     invoke-virtual {v0}, [Lcom/mediatek/wfo/impl/WifiPdnHandler$WifiLockSource;->clone()Ljava/lang/Object;

@@ -287,13 +287,13 @@
     .line 83
     new-instance v0, Landroid/hardware/radio/network/PhysicalChannelConfigBand;
 
+    const/4 v1, 0x3
+
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x3
-
-    invoke-direct {v0, v2, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, v2}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
 
     return-object v0
 .end method
@@ -305,13 +305,13 @@
     .line 53
     new-instance v0, Landroid/hardware/radio/network/PhysicalChannelConfigBand;
 
+    const/4 v1, 0x1
+
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x1
-
-    invoke-direct {v0, v2, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, v2}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
 
     return-object v0
 .end method
@@ -323,13 +323,13 @@
     .line 98
     new-instance v0, Landroid/hardware/radio/network/PhysicalChannelConfigBand;
 
+    const/4 v1, 0x4
+
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x4
-
-    invoke-direct {v0, v2, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, v2}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
 
     return-object v0
 .end method
@@ -341,13 +341,13 @@
     .line 38
     new-instance v0, Landroid/hardware/radio/network/PhysicalChannelConfigBand;
 
+    const/4 v1, 0x0
+
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v2, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, v2}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
 
     return-object v0
 .end method
@@ -359,13 +359,13 @@
     .line 68
     new-instance v0, Landroid/hardware/radio/network/PhysicalChannelConfigBand;
 
+    const/4 v1, 0x2
+
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x2
-
-    invoke-direct {v0, v2, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, v2}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;-><init>(ILjava/lang/Object;)V
 
     return-object v0
 .end method
@@ -646,13 +646,13 @@
     .param p1, "_value"    # I
 
     .line 92
+    const/4 v0, 0x3
+
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x3
-
-    invoke-direct {p0, v1, v0}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
+    invoke-direct {p0, v0, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
 
     .line 93
     return-void
@@ -663,13 +663,13 @@
     .param p1, "_value"    # I
 
     .line 62
+    const/4 v0, 0x1
+
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v1, v0}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
+    invoke-direct {p0, v0, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
 
     .line 63
     return-void
@@ -680,13 +680,13 @@
     .param p1, "_value"    # I
 
     .line 107
+    const/4 v0, 0x4
+
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x4
-
-    invoke-direct {p0, v1, v0}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
+    invoke-direct {p0, v0, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
 
     .line 108
     return-void
@@ -697,13 +697,13 @@
     .param p1, "_value"    # Z
 
     .line 47
+    const/4 v0, 0x0
+
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v1, v0}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
+    invoke-direct {p0, v0, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
 
     .line 48
     return-void
@@ -714,13 +714,13 @@
     .param p1, "_value"    # I
 
     .line 77
+    const/4 v0, 0x2
+
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x2
-
-    invoke-direct {p0, v1, v0}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
+    invoke-direct {p0, v0, v1}, Landroid/hardware/radio/network/PhysicalChannelConfigBand;->_set(ILjava/lang/Object;)V
 
     .line 78
     return-void

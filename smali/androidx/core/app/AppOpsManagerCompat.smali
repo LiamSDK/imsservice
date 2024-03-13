@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/core/app/AppOpsManagerCompat$Api19Impl;,
         Landroidx/core/app/AppOpsManagerCompat$Api23Impl;,
+        Landroidx/core/app/AppOpsManagerCompat$Api19Impl;,
         Landroidx/core/app/AppOpsManagerCompat$Api29Impl;
     }
 .end annotation
@@ -41,11 +41,7 @@
     .param p3, "proxiedPackageName"    # Ljava/lang/String;
 
     .line 201
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1d
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 202
     invoke-static {p0}, Landroidx/core/app/AppOpsManagerCompat$Api29Impl;->getSystemService(Landroid/content/Context;)Landroid/app/AppOpsManager;
@@ -84,18 +80,6 @@
     move-result v4
 
     return v4
-
-    .line 216
-    .end local v0    # "appOpsManager":Landroid/app/AppOpsManager;
-    .end local v1    # "proxiedUid":I
-    .end local v2    # "checkProxiedOpResult":I
-    .end local v3    # "proxyPackageName":Ljava/lang/String;
-    :cond_1
-    invoke-static {p0, p2, p3}, Landroidx/core/app/AppOpsManagerCompat;->noteProxyOpNoThrow(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public static noteOp(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)I
@@ -106,11 +90,7 @@
     .param p3, "packageName"    # Ljava/lang/String;
 
     .line 107
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 108
     nop
@@ -131,13 +111,6 @@
     move-result v1
 
     return v1
-
-    .line 112
-    .end local v0    # "appOpsManager":Landroid/app/AppOpsManager;
-    :cond_0
-    const/4 v0, 0x1
-
-    return v0
 .end method
 
 .method public static noteOpNoThrow(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)I
@@ -148,11 +121,7 @@
     .param p3, "packageName"    # Ljava/lang/String;
 
     .line 127
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 128
     nop
@@ -173,13 +142,6 @@
     move-result v1
 
     return v1
-
-    .line 132
-    .end local v0    # "appOpsManager":Landroid/app/AppOpsManager;
-    :cond_0
-    const/4 v0, 0x1
-
-    return v0
 .end method
 
 .method public static noteProxyOp(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
@@ -189,11 +151,7 @@
     .param p2, "proxiedPackageName"    # Ljava/lang/String;
 
     .line 159
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 160
     const-class v0, Landroid/app/AppOpsManager;
@@ -211,13 +169,6 @@
     move-result v1
 
     return v1
-
-    .line 163
-    .end local v0    # "appOpsManager":Landroid/app/AppOpsManager;
-    :cond_0
-    const/4 v0, 0x1
-
-    return v0
 .end method
 
 .method public static noteProxyOpNoThrow(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
@@ -227,11 +178,7 @@
     .param p2, "proxiedPackageName"    # Ljava/lang/String;
 
     .line 178
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 179
     const-class v0, Landroid/app/AppOpsManager;
@@ -249,36 +196,19 @@
     move-result v1
 
     return v1
-
-    .line 182
-    .end local v0    # "appOpsManager":Landroid/app/AppOpsManager;
-    :cond_0
-    const/4 v0, 0x1
-
-    return v0
 .end method
 
 .method public static permissionToOp(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 1
     .param p0, "permission"    # Ljava/lang/String;
 
     .line 78
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 79
     invoke-static {p0}, Landroidx/core/app/AppOpsManagerCompat$Api23Impl;->permissionToOp(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
-
-    return-object v0
-
-    .line 81
-    :cond_0
-    const/4 v0, 0x0
 
     return-object v0
 .end method

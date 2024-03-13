@@ -43,7 +43,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -118,6 +118,7 @@
 
     move-result-object v0
 
+    .line 22
     .end local v0    # "$i$a$-Sequence-SlidingWindowKt$windowedSequence$1":I
     return-object v0
 .end method

@@ -71,8 +71,6 @@
 
 .field private mHasAddTarget:Z
 
-.field private mNeedPortraitBuffer:Z
-
 .field private mOutputConfigurations:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -107,74 +105,70 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/mediatek/ims/internal/VTSource;Landroid/os/Looper;ZLcom/mediatek/ims/internal/VTSource$EventCallback;)V
+.method constructor <init>(Lcom/mediatek/ims/internal/VTSource;Landroid/os/Looper;Lcom/mediatek/ims/internal/VTSource$EventCallback;)V
     .locals 2
     .param p2, "looper"    # Landroid/os/Looper;
-    .param p3, "needPortraitBuffer"    # Z
-    .param p4, "cb"    # Lcom/mediatek/ims/internal/VTSource$EventCallback;
+    .param p3, "cb"    # Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
-    .line 806
+    .line 744
     iput-object p1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 807
+    .line 745
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 794
+    .line 733
     new-instance p1, Landroid/os/ConditionVariable;
 
     invoke-direct {p1}, Landroid/os/ConditionVariable;-><init>()V
 
     iput-object p1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceConditionVariable:Landroid/os/ConditionVariable;
 
-    .line 799
+    .line 737
     const/high16 p1, 0x3f800000    # 1.0f
 
     iput p1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mZoomValue:F
 
-    .line 800
+    .line 738
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mHasAddTarget:Z
 
-    .line 802
+    .line 740
     new-instance v0, Landroid/os/ConditionVariable;
 
     invoke-direct {v0}, Landroid/os/ConditionVariable;-><init>()V
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionConditionVariable:Landroid/os/ConditionVariable;
 
-    .line 803
+    .line 741
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionUsedSurfaceList:Ljava/util/List;
 
-    .line 804
+    .line 742
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mOutputConfigurations:Ljava/util/List;
 
-    .line 1783
+    .line 1623
     new-instance v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler$1;
 
     invoke-direct {v0, p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler$1;-><init>(Lcom/mediatek/ims/internal/VTSource$DeviceHandler;)V
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceCallback:Landroid/hardware/camera2/CameraDevice$StateCallback;
 
-    .line 1842
+    .line 1682
     new-instance v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler$2;
 
     invoke-direct {v0, p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler$2;-><init>(Lcom/mediatek/ims/internal/VTSource$DeviceHandler;)V
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
 
-    .line 808
-    iput-boolean p3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mNeedPortraitBuffer:Z
-
-    .line 809
+    .line 746
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "VTSource-Respond"
@@ -183,16 +177,16 @@
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRespondThread:Landroid/os/HandlerThread;
 
-    .line 810
+    .line 747
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 811
+    .line 748
     iput p1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceDegree:I
 
-    .line 812
-    iput-object p4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
+    .line 749
+    iput-object p3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
-    .line 813
+    .line 750
     return-void
 .end method
 
@@ -200,7 +194,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
 
-    .line 768
+    .line 707
     iget v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRetryCount:I
 
     return v0
@@ -210,7 +204,7 @@
     .locals 2
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
 
-    .line 768
+    .line 707
     iget v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRetryCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -224,7 +218,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
 
-    .line 768
+    .line 707
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraId:Ljava/lang/String;
 
     return-object v0
@@ -235,7 +229,7 @@
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
     .param p1, "x1"    # Ljava/lang/String;
 
-    .line 768
+    .line 707
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doOpenCamera(Ljava/lang/String;)V
 
     return-void
@@ -245,7 +239,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
 
-    .line 768
+    .line 707
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceConditionVariable:Landroid/os/ConditionVariable;
 
     return-object v0
@@ -255,7 +249,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
 
-    .line 768
+    .line 707
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     return-object v0
@@ -265,7 +259,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
 
-    .line 768
+    .line 707
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     return-object v0
@@ -276,7 +270,7 @@
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
     .param p1, "x1"    # Landroid/hardware/camera2/CameraDevice;
 
-    .line 768
+    .line 707
     iput-object p1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     return-object p1
@@ -287,7 +281,7 @@
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
     .param p1, "x1"    # Landroid/hardware/camera2/CameraCaptureSession;
 
-    .line 768
+    .line 707
     iput-object p1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCaptureSession:Landroid/hardware/camera2/CameraCaptureSession;
 
     return-object p1
@@ -297,7 +291,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/ims/internal/VTSource$DeviceHandler;
 
-    .line 768
+    .line 707
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionConditionVariable:Landroid/os/ConditionVariable;
 
     return-object v0
@@ -306,7 +300,7 @@
 .method private calculateAeFpsRange()Landroid/util/Range;
     .locals 8
 
-    .line 1147
+    .line 1090
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -317,7 +311,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1149
+    .line 1092
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->isVideoQualityTestMode()Z
 
     move-result v0
@@ -328,7 +322,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1150
+    .line 1093
     new-instance v0, Landroid/util/Range;
 
     const/16 v3, 0x1e
@@ -343,7 +337,7 @@
 
     invoke-direct {v0, v4, v3}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
 
-    .line 1151
+    .line 1094
     .local v0, "preSetFps":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Integer;>;"
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -361,7 +355,7 @@
 
     move-result-object v4
 
-    .line 1152
+    .line 1095
     invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
     move-result-object v5
@@ -390,24 +384,24 @@
 
     move-result-object v1
 
-    .line 1151
+    .line 1094
     invoke-static {v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1153
+    .line 1096
     return-object v0
 
-    .line 1155
+    .line 1098
     .end local v0    # "preSetFps":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Integer;>;"
     :cond_0
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->getPreConfigureFPS()I
 
     move-result v0
 
-    .line 1156
+    .line 1099
     .local v0, "FpsInEM":I
     if-lez v0, :cond_1
 
-    .line 1157
+    .line 1100
     new-instance v3, Landroid/util/Range;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -420,7 +414,7 @@
 
     invoke-direct {v3, v4, v5}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
 
-    .line 1158
+    .line 1101
     .local v3, "preSetFps":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Integer;>;"
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -438,7 +432,7 @@
 
     move-result-object v5
 
-    .line 1159
+    .line 1102
     invoke-virtual {v3}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
     move-result-object v6
@@ -467,13 +461,13 @@
 
     move-result-object v1
 
-    .line 1158
+    .line 1101
     invoke-static {v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1160
+    .line 1103
     return-object v3
 
-    .line 1164
+    .line 1107
     .end local v0    # "FpsInEM":I
     .end local v3    # "preSetFps":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Integer;>;"
     :cond_1
@@ -487,13 +481,13 @@
 
     check-cast v0, [Landroid/util/Range;
 
-    .line 1169
+    .line 1112
     .local v0, "availableFpsRange":[Landroid/util/Range;, "[Landroid/util/Range<Ljava/lang/Integer;>;"
     const/4 v1, 0x0
 
     aget-object v3, v0, v1
 
-    .line 1170
+    .line 1113
     .local v3, "bestRange":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Integer;>;"
     array-length v4, v0
 
@@ -502,7 +496,7 @@
 
     aget-object v5, v0, v1
 
-    .line 1171
+    .line 1114
     .local v5, "r":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Integer;>;"
     invoke-virtual {v3}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
 
@@ -526,12 +520,12 @@
 
     if-ge v6, v7, :cond_2
 
-    .line 1172
+    .line 1115
     move-object v3, v5
 
     goto :goto_1
 
-    .line 1173
+    .line 1116
     :cond_2
     invoke-virtual {v3}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
 
@@ -543,7 +537,7 @@
 
     if-ne v6, v7, :cond_3
 
-    .line 1174
+    .line 1117
     invoke-virtual {v3}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
     move-result-object v6
@@ -566,10 +560,10 @@
 
     if-le v6, v7, :cond_3
 
-    .line 1175
+    .line 1118
     move-object v3, v5
 
-    .line 1170
+    .line 1113
     .end local v5    # "r":Landroid/util/Range;, "Landroid/util/Range<Ljava/lang/Integer;>;"
     :cond_3
     :goto_1
@@ -577,7 +571,7 @@
 
     goto :goto_0
 
-    .line 1179
+    .line 1122
     :cond_4
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -595,7 +589,7 @@
 
     move-result-object v4
 
-    .line 1180
+    .line 1123
     invoke-virtual {v3}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
     move-result-object v5
@@ -626,10 +620,10 @@
 
     move-result-object v2
 
-    .line 1179
+    .line 1122
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1182
+    .line 1125
     return-object v3
 .end method
 
@@ -637,7 +631,7 @@
     .locals 5
     .param p1, "zoomValue"    # F
 
-    .line 1128
+    .line 1071
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -664,14 +658,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1130
+    .line 1073
     new-instance v0, Landroid/graphics/PointF;
 
     const/high16 v1, 0x3f000000    # 0.5f
 
     invoke-direct {v0, v1, v1}, Landroid/graphics/PointF;-><init>(FF)V
 
-    .line 1131
+    .line 1074
     .local v0, "center":Landroid/graphics/PointF;
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCharacteristics:Landroid/hardware/camera2/CameraCharacteristics;
 
@@ -687,7 +681,7 @@
 
     move-result v1
 
-    .line 1133
+    .line 1076
     .local v1, "maxZoom":F
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCharacteristics:Landroid/hardware/camera2/CameraCharacteristics;
 
@@ -699,7 +693,7 @@
 
     check-cast v2, Landroid/graphics/Rect;
 
-    .line 1136
+    .line 1079
     .local v2, "sensorArraySize":Landroid/graphics/Rect;
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -711,7 +705,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1138
+    .line 1081
     invoke-direct {p0, p1, v0, v1, v2}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->getCropRegionForZoom(FLandroid/graphics/PointF;FLandroid/graphics/Rect;)Landroid/graphics/Rect;
 
     move-result-object v3
@@ -722,7 +716,7 @@
 .method private closeSession()V
     .locals 4
 
-    .line 1105
+    .line 1048
     const-string v0, "[HDR] [closeSession] exception"
 
     const-string v1, "VT SRC"
@@ -737,21 +731,21 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1107
+    .line 1050
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCaptureSession:Landroid/hardware/camera2/CameraCaptureSession;
 
     if-eqz v2, :cond_0
 
-    .line 1109
+    .line 1052
     :try_start_0
     invoke-virtual {v2}, Landroid/hardware/camera2/CameraCaptureSession;->abortCaptures()V
 
-    .line 1110
+    .line 1053
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCaptureSession:Landroid/hardware/camera2/CameraCaptureSession;
 
     invoke-virtual {v2}, Landroid/hardware/camera2/CameraCaptureSession;->close()V
 
-    .line 1111
+    .line 1054
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCaptureSession:Landroid/hardware/camera2/CameraCaptureSession;
@@ -761,34 +755,34 @@
 
     goto :goto_0
 
-    .line 1114
+    .line 1057
     :catch_0
     move-exception v2
 
-    .line 1115
+    .line 1058
     .local v2, "e":Ljava/lang/IllegalStateException;
     invoke-static {v1, v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1116
+    .line 1059
     invoke-virtual {v2}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
     .end local v2    # "e":Ljava/lang/IllegalStateException;
     goto :goto_0
 
-    .line 1112
+    .line 1055
     :catch_1
     move-exception v2
 
-    .line 1113
+    .line 1056
     .local v2, "e":Landroid/hardware/camera2/CameraAccessException;
     invoke-static {v1, v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1117
+    .line 1060
     .end local v2    # "e":Landroid/hardware/camera2/CameraAccessException;
     :goto_0
     goto :goto_1
 
-    .line 1120
+    .line 1063
     :cond_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -800,7 +794,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1123
+    .line 1066
     :goto_1
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -812,14 +806,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1124
+    .line 1067
     return-void
 .end method
 
 .method private createSession()V
     .locals 7
 
-    .line 1037
+    .line 980
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -830,12 +824,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1039
+    .line 982
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     if-nez v0, :cond_0
 
-    .line 1040
+    .line 983
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -846,16 +840,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1041
+    .line 984
     return-void
 
-    .line 1043
+    .line 986
     :cond_0
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->prepareOutputConfiguration()Z
 
     move-result v0
 
-    .line 1044
+    .line 987
     .local v0, "ret":Z
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionUsedSurfaceList:Ljava/util/List;
 
@@ -869,34 +863,34 @@
 
     goto/16 :goto_1
 
-    .line 1050
+    .line 993
     :cond_1
     new-instance v1, Landroid/hardware/camera2/params/SessionConfiguration;
 
-    const/4 v2, 0x0
+    iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mOutputConfigurations:Ljava/util/List;
 
-    iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mOutputConfigurations:Ljava/util/List;
+    new-instance v3, Lcom/mediatek/ims/internal/VTSource$HandlerExecutor;
 
-    new-instance v4, Lcom/mediatek/ims/internal/VTSource$HandlerExecutor;
+    new-instance v4, Landroid/os/Handler;
 
-    new-instance v5, Landroid/os/Handler;
+    iget-object v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRespondThread:Landroid/os/HandlerThread;
 
-    iget-object v6, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRespondThread:Landroid/os/HandlerThread;
+    .line 996
+    invoke-virtual {v5}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
-    .line 1053
-    invoke-virtual {v6}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+    move-result-object v5
 
-    move-result-object v6
+    invoke-direct {v4, v5}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-direct {v5, v6}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v3, v4}, Lcom/mediatek/ims/internal/VTSource$HandlerExecutor;-><init>(Landroid/os/Handler;)V
 
-    invoke-direct {v4, v5}, Lcom/mediatek/ims/internal/VTSource$HandlerExecutor;-><init>(Landroid/os/Handler;)V
+    iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
 
-    iget-object v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionCallback:Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
+    const/4 v5, 0x0
 
-    invoke-direct {v1, v2, v3, v4, v5}, Landroid/hardware/camera2/params/SessionConfiguration;-><init>(ILjava/util/List;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)V
+    invoke-direct {v1, v5, v2, v3, v4}, Landroid/hardware/camera2/params/SessionConfiguration;-><init>(ILjava/util/List;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)V
 
-    .line 1055
+    .line 998
     .local v1, "sessionConfigByOutput":Landroid/hardware/camera2/params/SessionConfiguration;
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -908,16 +902,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1057
+    .line 1000
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->makeRequestBuilder()Landroid/hardware/camera2/CaptureRequest$Builder;
 
     move-result-object v2
 
-    .line 1058
+    .line 1001
     .local v2, "requestBuilder":Landroid/hardware/camera2/CaptureRequest$Builder;
     if-nez v2, :cond_2
 
-    .line 1059
+    .line 1002
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v3}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -928,15 +922,15 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1060
+    .line 1003
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     invoke-interface {v3}, Lcom/mediatek/ims/internal/VTSource$EventCallback;->onError()V
 
-    .line 1061
+    .line 1004
     return-void
 
-    .line 1063
+    .line 1006
     :cond_2
     invoke-virtual {v2}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
 
@@ -944,12 +938,12 @@
 
     invoke-virtual {v1, v3}, Landroid/hardware/camera2/params/SessionConfiguration;->setSessionParameters(Landroid/hardware/camera2/CaptureRequest;)V
 
-    .line 1065
+    .line 1008
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionConditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v3}, Landroid/os/ConditionVariable;->close()V
 
-    .line 1067
+    .line 1010
     :try_start_0
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
@@ -957,15 +951,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1078
+    .line 1021
     nop
 
-    .line 1079
+    .line 1022
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionConditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v3}, Landroid/os/ConditionVariable;->block()V
 
-    .line 1081
+    .line 1024
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v3}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -976,14 +970,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1083
+    .line 1026
     return-void
 
-    .line 1068
+    .line 1011
     :catch_0
     move-exception v3
 
-    .line 1070
+    .line 1013
     .local v3, "e":Ljava/lang/Exception;
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1011,7 +1005,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1072
+    .line 1015
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v4}, Lcom/mediatek/ims/internal/VTSource;->access$400(Lcom/mediatek/ims/internal/VTSource;)Z
@@ -1020,14 +1014,14 @@
 
     if-nez v4, :cond_3
 
-    .line 1073
+    .line 1016
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     invoke-interface {v4}, Lcom/mediatek/ims/internal/VTSource$EventCallback;->onError()V
 
     goto :goto_0
 
-    .line 1075
+    .line 1018
     :cond_3
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1039,11 +1033,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1077
+    .line 1020
     :goto_0
     return-void
 
-    .line 1045
+    .line 988
     .end local v1    # "sessionConfigByOutput":Landroid/hardware/camera2/params/SessionConfiguration;
     .end local v2    # "requestBuilder":Landroid/hardware/camera2/CaptureRequest$Builder;
     .end local v3    # "e":Ljava/lang/Exception;
@@ -1059,7 +1053,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1047
+    .line 990
     return-void
 .end method
 
@@ -1067,7 +1061,7 @@
     .locals 2
     .param p1, "needWaitComplete"    # Z
 
-    .line 1316
+    .line 1259
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -1078,41 +1072,41 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1318
+    .line 1261
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     if-eqz v0, :cond_1
 
-    .line 1320
+    .line 1263
     if-eqz p1, :cond_0
 
-    .line 1321
+    .line 1264
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceConditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->close()V
 
-    .line 1324
+    .line 1267
     :cond_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     invoke-virtual {v0}, Landroid/hardware/camera2/CameraDevice;->close()V
 
-    .line 1325
+    .line 1268
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
-    .line 1327
+    .line 1270
     if-eqz p1, :cond_2
 
-    .line 1328
+    .line 1271
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceConditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->block()V
 
     goto :goto_0
 
-    .line 1332
+    .line 1275
     :cond_1
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1124,7 +1118,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1335
+    .line 1278
     :cond_2
     :goto_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -1137,7 +1131,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1336
+    .line 1279
     return-void
 .end method
 
@@ -1145,7 +1139,7 @@
     .locals 4
     .param p1, "cameraId"    # Ljava/lang/String;
 
-    .line 1428
+    .line 1357
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -1156,7 +1150,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1431
+    .line 1360
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1170,26 +1164,26 @@
 
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRespondThread:Landroid/os/HandlerThread;
 
-    .line 1433
+    .line 1362
     invoke-virtual {v3}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v3
 
     invoke-direct {v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1431
+    .line 1360
     invoke-virtual {v0, p1, v1, v2}, Landroid/hardware/camera2/CameraManager;->openCamera(Ljava/lang/String;Landroid/hardware/camera2/CameraDevice$StateCallback;Landroid/os/Handler;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1438
+    .line 1367
     goto :goto_0
 
-    .line 1434
+    .line 1363
     :catch_0
     move-exception v0
 
-    .line 1435
+    .line 1364
     .local v0, "e":Ljava/lang/Exception;
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1217,17 +1211,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1436
+    .line 1365
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceConditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v1}, Landroid/os/ConditionVariable;->open()V
 
-    .line 1437
+    .line 1366
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     invoke-interface {v1}, Lcom/mediatek/ims/internal/VTSource$EventCallback;->onError()V
 
-    .line 1440
+    .line 1369
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -1240,7 +1234,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1441
+    .line 1370
     return-void
 .end method
 
@@ -1248,7 +1242,7 @@
     .locals 11
     .param p1, "uri"    # Landroid/net/Uri;
 
-    .line 1569
+    .line 1498
     const-string v0, "can not close imageStream"
 
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -1261,7 +1255,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1571
+    .line 1500
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$700(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
@@ -1270,7 +1264,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1572
+    .line 1501
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -1281,15 +1275,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1574
+    .line 1503
     :cond_0
     const/4 v1, 0x0
 
-    .line 1575
+    .line 1504
     .local v1, "bitmap":Landroid/graphics/Bitmap;
     const/4 v2, 0x0
 
-    .line 1578
+    .line 1507
     .local v2, "imageStream":Ljava/io/InputStream;
     :try_start_0
     sget-object v3, Lcom/mediatek/ims/internal/VTSource;->sContext:Landroid/content/Context;
@@ -1304,10 +1298,10 @@
 
     move-object v2, v3
 
-    .line 1579
+    .line 1508
     if-eqz v2, :cond_3
 
-    .line 1580
+    .line 1509
     invoke-static {v2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
 
     move-result-object v3
@@ -1317,24 +1311,24 @@
 
     move-object v1, v3
 
-    .line 1589
+    .line 1518
     if-eqz v2, :cond_1
 
-    .line 1591
+    .line 1520
     :try_start_1
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1594
+    .line 1523
     :goto_0
     goto :goto_1
 
-    .line 1592
+    .line 1521
     :catch_0
     move-exception v3
 
-    .line 1593
+    .line 1522
     .local v3, "e":Ljava/io/IOException;
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1347,7 +1341,7 @@
     .end local v3    # "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 1597
+    .line 1526
     :cond_1
     :goto_1
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -1358,7 +1352,7 @@
 
     if-nez v0, :cond_2
 
-    .line 1598
+    .line 1527
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -1369,10 +1363,10 @@
 
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1599
+    .line 1528
     return-void
 
-    .line 1603
+    .line 1532
     :cond_2
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1386,19 +1380,19 @@
 
     move-result-object v0
 
-    .line 1604
+    .line 1533
     .local v0, "canvas":Landroid/graphics/Canvas;
     invoke-virtual {v0}, Landroid/graphics/Canvas;->getWidth()I
 
     move-result v4
 
-    .line 1605
+    .line 1534
     .local v4, "cavasWidth":I
     invoke-virtual {v0}, Landroid/graphics/Canvas;->getHeight()I
 
     move-result v5
 
-    .line 1606
+    .line 1535
     .local v5, "cavasHeight":I
     iget-object v6, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1446,7 +1440,7 @@
 
     iget-object v8, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 1607
+    .line 1536
     invoke-static {v8}, Lcom/mediatek/ims/internal/VTSource;->access$800(Lcom/mediatek/ims/internal/VTSource;)I
 
     move-result v8
@@ -1495,10 +1489,10 @@
 
     move-result-object v7
 
-    .line 1606
+    .line 1535
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1609
+    .line 1538
     new-instance v6, Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -1513,7 +1507,7 @@
 
     invoke-direct {v6, v9, v9, v7, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1610
+    .line 1539
     .local v6, "srcRect":Landroid/graphics/Rect;
     new-instance v7, Landroid/graphics/Rect;
 
@@ -1531,11 +1525,11 @@
 
     invoke-direct {v7, v9, v9, v8, v10}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1611
+    .line 1540
     .local v7, "dstRect":Landroid/graphics/Rect;
     invoke-virtual {v0, v1, v6, v7, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 1612
+    .line 1541
     iget-object v8, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v8}, Lcom/mediatek/ims/internal/VTSource;->access$700(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
@@ -1544,7 +1538,7 @@
 
     invoke-virtual {v8, v0}, Landroid/view/Surface;->unlockCanvasAndPost(Landroid/graphics/Canvas;)V
 
-    .line 1613
+    .line 1542
     iget-object v8, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v8}, Lcom/mediatek/ims/internal/VTSource;->access$700(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
@@ -1553,12 +1547,12 @@
 
     invoke-virtual {v8}, Landroid/view/Surface;->release()V
 
-    .line 1614
+    .line 1543
     iget-object v8, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v8, v3}, Lcom/mediatek/ims/internal/VTSource;->access$702(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 1615
+    .line 1544
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v3}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -1569,10 +1563,10 @@
 
     invoke-static {v3, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1617
+    .line 1546
     return-void
 
-    .line 1582
+    .line 1511
     .end local v0    # "canvas":Landroid/graphics/Canvas;
     .end local v4    # "cavasWidth":I
     .end local v5    # "cavasHeight":I
@@ -1593,23 +1587,23 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1589
+    .line 1518
     if-eqz v2, :cond_4
 
-    .line 1591
+    .line 1520
     :try_start_3
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 1594
+    .line 1523
     goto :goto_2
 
-    .line 1592
+    .line 1521
     :catch_1
     move-exception v3
 
-    .line 1593
+    .line 1522
     .restart local v3    # "e":Ljava/io/IOException;
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1619,23 +1613,23 @@
 
     invoke-static {v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1583
+    .line 1512
     .end local v3    # "e":Ljava/io/IOException;
     :cond_4
     :goto_2
     return-void
 
-    .line 1589
+    .line 1518
     :catchall_0
     move-exception v3
 
     goto :goto_4
 
-    .line 1585
+    .line 1514
     :catch_2
     move-exception v3
 
-    .line 1586
+    .line 1515
     .local v3, "e":Ljava/io/FileNotFoundException;
     :try_start_4
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -1650,23 +1644,23 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 1589
+    .line 1518
     if-eqz v2, :cond_5
 
-    .line 1591
+    .line 1520
     :try_start_5
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 1594
+    .line 1523
     goto :goto_3
 
-    .line 1592
+    .line 1521
     :catch_3
     move-exception v4
 
-    .line 1593
+    .line 1522
     .local v4, "e":Ljava/io/IOException;
     iget-object v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1676,31 +1670,31 @@
 
     invoke-static {v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1587
+    .line 1516
     .end local v4    # "e":Ljava/io/IOException;
     :cond_5
     :goto_3
     return-void
 
-    .line 1589
+    .line 1518
     .end local v3    # "e":Ljava/io/FileNotFoundException;
     :goto_4
     if-eqz v2, :cond_6
 
-    .line 1591
+    .line 1520
     :try_start_6
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
 
-    .line 1594
+    .line 1523
     goto :goto_5
 
-    .line 1592
+    .line 1521
     :catch_4
     move-exception v4
 
-    .line 1593
+    .line 1522
     .restart local v4    # "e":Ljava/io/IOException;
     iget-object v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1710,7 +1704,7 @@
 
     invoke-static {v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1596
+    .line 1525
     .end local v4    # "e":Ljava/io/IOException;
     :cond_6
     :goto_5
@@ -1720,7 +1714,7 @@
 .method private doStartShareScreen()V
     .locals 2
 
-    .line 1620
+    .line 1549
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -1731,40 +1725,40 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1622
+    .line 1551
     :try_start_0
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->prepareShareScreen()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1627
+    .line 1556
     :goto_0
     goto :goto_1
 
-    .line 1625
+    .line 1554
     :catch_0
     move-exception v0
 
-    .line 1626
+    .line 1555
     .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 1623
+    .line 1552
     .end local v0    # "e":Landroid/os/RemoteException;
     :catch_1
     move-exception v0
 
-    .line 1624
+    .line 1553
     .local v0, "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     .end local v0    # "e":Ljava/io/IOException;
     goto :goto_0
 
-    .line 1628
+    .line 1557
     :goto_1
     return-void
 .end method
@@ -1772,7 +1766,7 @@
 .method private doStopShareScreen()V
     .locals 3
 
-    .line 1768
+    .line 1604
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -1783,7 +1777,31 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1771
+    .line 1606
+    iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
+
+    invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$1100(Lcom/mediatek/ims/internal/VTSource;)Landroid/media/projection/MediaProjection;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 1607
+    iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
+
+    invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "not shared before, no need stop sharing"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1608
+    return-void
+
+    .line 1611
+    :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1793,7 +1811,7 @@
 
     invoke-virtual {v0}, Landroid/hardware/display/VirtualDisplay;->release()V
 
-    .line 1772
+    .line 1612
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$1100(Lcom/mediatek/ims/internal/VTSource;)Landroid/media/projection/MediaProjection;
@@ -1802,28 +1820,28 @@
 
     invoke-virtual {v0}, Landroid/media/projection/MediaProjection;->stop()V
 
-    .line 1773
+    .line 1613
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/mediatek/ims/internal/VTSource;->access$1102(Lcom/mediatek/ims/internal/VTSource;Landroid/media/projection/MediaProjection;)Landroid/media/projection/MediaProjection;
 
-    .line 1774
+    .line 1614
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0, v1}, Lcom/mediatek/ims/internal/VTSource;->access$1002(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1778
+    .line 1618
     goto :goto_0
 
-    .line 1775
+    .line 1615
     :catch_0
     move-exception v0
 
-    .line 1776
+    .line 1616
     .local v0, "e":Ljava/lang/RuntimeException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1851,10 +1869,10 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1777
+    .line 1617
     invoke-virtual {v0}, Ljava/lang/RuntimeException;->printStackTrace()V
 
-    .line 1779
+    .line 1619
     .end local v0    # "e":Ljava/lang/RuntimeException;
     :goto_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -1867,7 +1885,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1781
+    .line 1621
     return-void
 .end method
 
@@ -1876,7 +1894,7 @@
     .param p1, "degrees"    # I
     .param p2, "characteristics"    # Landroid/hardware/camera2/CameraCharacteristics;
 
-    .line 1445
+    .line 1374
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -1887,7 +1905,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1447
+    .line 1376
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-virtual {p2, v0}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -1900,7 +1918,7 @@
 
     move-result v0
 
-    .line 1448
+    .line 1377
     .local v0, "facing":I
     sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
@@ -1914,7 +1932,7 @@
 
     move-result v1
 
-    .line 1449
+    .line 1378
     .local v1, "orientation":I
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -1962,103 +1980,103 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1453
+    .line 1382
     if-nez v0, :cond_0
 
-    .line 1454
+    .line 1383
     sparse-switch p1, :sswitch_data_0
 
-    .line 1468
+    .line 1397
     const/4 v2, 0x0
 
-    .line 1469
+    .line 1398
     .local v2, "result":I
     goto :goto_0
 
-    .line 1465
+    .line 1394
     .end local v2    # "result":I
     :sswitch_0
     const/16 v2, 0x5a
 
-    .line 1466
+    .line 1395
     .restart local v2    # "result":I
     goto :goto_0
 
-    .line 1462
+    .line 1391
     .end local v2    # "result":I
     :sswitch_1
     const/16 v2, 0xb4
 
-    .line 1463
+    .line 1392
     .restart local v2    # "result":I
     goto :goto_0
 
-    .line 1459
+    .line 1388
     .end local v2    # "result":I
     :sswitch_2
     const/16 v2, 0x10e
 
-    .line 1460
+    .line 1389
     .restart local v2    # "result":I
     goto :goto_0
 
-    .line 1456
+    .line 1385
     .end local v2    # "result":I
     :sswitch_3
     const/4 v2, 0x0
 
-    .line 1457
+    .line 1386
     .restart local v2    # "result":I
     goto :goto_0
 
-    .line 1478
+    .line 1407
     .end local v2    # "result":I
     :cond_0
     sparse-switch p1, :sswitch_data_1
 
-    .line 1492
+    .line 1421
     const/4 v2, 0x0
 
     .restart local v2    # "result":I
     goto :goto_0
 
-    .line 1489
+    .line 1418
     .end local v2    # "result":I
     :sswitch_4
     const/16 v2, 0x10e
 
-    .line 1490
+    .line 1419
     .restart local v2    # "result":I
     goto :goto_0
 
-    .line 1486
+    .line 1415
     .end local v2    # "result":I
     :sswitch_5
     const/16 v2, 0xb4
 
-    .line 1487
+    .line 1416
     .restart local v2    # "result":I
     goto :goto_0
 
-    .line 1483
+    .line 1412
     .end local v2    # "result":I
     :sswitch_6
     const/16 v2, 0x5a
 
-    .line 1484
+    .line 1413
     .restart local v2    # "result":I
     goto :goto_0
 
-    .line 1480
+    .line 1409
     .end local v2    # "result":I
     :sswitch_7
     const/4 v2, 0x0
 
-    .line 1481
+    .line 1410
     .restart local v2    # "result":I
     nop
 
-    .line 1506
+    .line 1435
     :goto_0
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -2086,7 +2104,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1508
+    .line 1437
     return v2
 
     :sswitch_data_0
@@ -2113,7 +2131,7 @@
     .param p3, "maxZoom"    # F
     .param p4, "activeArray"    # Landroid/graphics/Rect;
 
-    .line 1514
+    .line 1443
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -2170,7 +2188,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1519
+    .line 1448
     float-to-double v0, p1
 
     const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
@@ -2181,7 +2199,7 @@
 
     if-ltz v0, :cond_6
 
-    .line 1523
+    .line 1452
     iget v0, p2, Landroid/graphics/PointF;->x:F
 
     float-to-double v4, v0
@@ -2200,7 +2218,7 @@
 
     if-ltz v0, :cond_5
 
-    .line 1527
+    .line 1456
     iget v0, p2, Landroid/graphics/PointF;->y:F
 
     float-to-double v6, v0
@@ -2215,17 +2233,17 @@
 
     if-ltz v0, :cond_4
 
-    .line 1531
+    .line 1460
     float-to-double v4, p3
 
     cmpg-double v0, v4, v2
 
     if-ltz v0, :cond_3
 
-    .line 1535
+    .line 1464
     if-eqz p4, :cond_2
 
-    .line 1539
+    .line 1468
     iget v0, p2, Landroid/graphics/PointF;->x:F
 
     iget v1, p2, Landroid/graphics/PointF;->x:F
@@ -2244,34 +2262,34 @@
 
     sub-float/2addr v2, v3
 
-    .line 1540
+    .line 1469
     invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
 
     move-result v1
 
-    .line 1539
+    .line 1468
     invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
-    .line 1541
+    .line 1470
     .local v0, "minCenterLength":F
     const/high16 v1, 0x3f000000    # 0.5f
 
     div-float/2addr v1, v0
 
-    .line 1542
+    .line 1471
     .local v1, "minEffectiveZoom":F
     cmpl-float v2, v1, p3
 
     if-gtz v2, :cond_1
 
-    .line 1548
+    .line 1477
     cmpg-float v2, p1, v1
 
     if-gez v2, :cond_0
 
-    .line 1549
+    .line 1478
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v2}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -2318,10 +2336,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1551
+    .line 1480
     move p1, v1
 
-    .line 1554
+    .line 1483
     :cond_0
     invoke-virtual {p4}, Landroid/graphics/Rect;->width()I
 
@@ -2335,7 +2353,7 @@
 
     float-to-int v2, v2
 
-    .line 1555
+    .line 1484
     .local v2, "cropCenterX":I
     invoke-virtual {p4}, Landroid/graphics/Rect;->height()I
 
@@ -2349,7 +2367,7 @@
 
     float-to-int v3, v3
 
-    .line 1556
+    .line 1485
     .local v3, "cropCenterY":I
     invoke-virtual {p4}, Landroid/graphics/Rect;->width()I
 
@@ -2361,7 +2379,7 @@
 
     float-to-int v4, v4
 
-    .line 1557
+    .line 1486
     .local v4, "cropWidth":I
     invoke-virtual {p4}, Landroid/graphics/Rect;->height()I
 
@@ -2373,7 +2391,7 @@
 
     float-to-int v5, v5
 
-    .line 1559
+    .line 1488
     .local v5, "cropHeight":I
     iget-object v6, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -2385,7 +2403,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1561
+    .line 1490
     new-instance v6, Landroid/graphics/Rect;
 
     div-int/lit8 v7, v4, 0x2
@@ -2412,7 +2430,7 @@
 
     return-object v6
 
-    .line 1543
+    .line 1472
     .end local v2    # "cropCenterX":I
     .end local v3    # "cropCenterY":I
     .end local v4    # "cropWidth":I
@@ -2466,7 +2484,7 @@
 
     throw v2
 
-    .line 1536
+    .line 1465
     .end local v0    # "minCenterLength":F
     .end local v1    # "minEffectiveZoom":F
     :cond_2
@@ -2478,7 +2496,7 @@
 
     throw v0
 
-    .line 1532
+    .line 1461
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2508,7 +2526,7 @@
 
     throw v0
 
-    .line 1528
+    .line 1457
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2540,7 +2558,7 @@
 
     throw v0
 
-    .line 1524
+    .line 1453
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2572,7 +2590,7 @@
 
     throw v0
 
-    .line 1520
+    .line 1449
     :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2607,7 +2625,7 @@
     .locals 3
     .param p1, "rotation"    # I
 
-    .line 1087
+    .line 1030
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -2634,33 +2652,33 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1089
+    .line 1032
     const/4 v0, 0x0
 
     sparse-switch p1, :sswitch_data_0
 
-    .line 1099
+    .line 1042
     return v0
 
-    .line 1097
+    .line 1040
     :sswitch_0
     const/4 v0, 0x3
 
     return v0
 
-    .line 1095
+    .line 1038
     :sswitch_1
     const/4 v0, 0x2
 
     return v0
 
-    .line 1093
+    .line 1036
     :sswitch_2
     const/4 v0, 0x1
 
     return v0
 
-    .line 1091
+    .line 1034
     :sswitch_3
     return v0
 
@@ -2673,644 +2691,10 @@
     .end sparse-switch
 .end method
 
-.method private getSupportedSize(III)[I
-    .locals 29
-    .param p1, "screenWidth"    # I
-    .param p2, "screenHeight"    # I
-    .param p3, "refreshRate"    # I
-
-    .line 1694
-    move/from16 v0, p1
-
-    move/from16 v1, p2
-
-    move/from16 v2, p3
-
-    const-wide/16 v3, 0x0
-
-    .line 1696
-    .local v3, "maxScale":D
-    new-instance v5, Landroid/media/MediaCodecList;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v5, v6}, Landroid/media/MediaCodecList;-><init>(I)V
-
-    .line 1697
-    .local v5, "codecList":Landroid/media/MediaCodecList;
-    const/4 v7, 0x0
-
-    .line 1698
-    .local v7, "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    invoke-virtual {v5}, Landroid/media/MediaCodecList;->getCodecInfos()[Landroid/media/MediaCodecInfo;
-
-    move-result-object v8
-
-    array-length v9, v8
-
-    move v10, v6
-
-    :goto_0
-    const-string v13, "VT SRC"
-
-    if-ge v10, v9, :cond_8
-
-    aget-object v15, v8, v10
-
-    .line 1699
-    .local v15, "codec":Landroid/media/MediaCodecInfo;
-    const-string v11, "video/avc"
-
-    .line 1700
-    .local v11, "videoType":Ljava/lang/String;
-    invoke-virtual {v15}, Landroid/media/MediaCodecInfo;->getSupportedTypes()[Ljava/lang/String;
-
-    move-result-object v14
-
-    .line 1701
-    .local v14, "types":[Ljava/lang/String;
-    array-length v6, v14
-
-    const/4 v12, 0x0
-
-    :goto_1
-    if-ge v12, v6, :cond_7
-
-    move-object/from16 v16, v5
-
-    .end local v5    # "codecList":Landroid/media/MediaCodecList;
-    .local v16, "codecList":Landroid/media/MediaCodecList;
-    aget-object v5, v14, v12
-
-    .line 1702
-    .local v5, "t":Ljava/lang/String;
-    invoke-virtual {v5, v11}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v17
-
-    if-nez v17, :cond_0
-
-    .line 1703
-    move/from16 v20, v6
-
-    move-object/from16 v21, v7
-
-    move-object/from16 v22, v8
-
-    move/from16 v23, v9
-
-    move-object/from16 v26, v14
-
-    move-object/from16 v25, v15
-
-    goto/16 :goto_4
-
-    .line 1705
-    :cond_0
-    nop
-
-    .line 1706
-    invoke-virtual {v15, v11}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
-
-    move-result-object v17
-
-    .line 1707
-    .local v17, "capabilities":Landroid/media/MediaCodecInfo$CodecCapabilities;
-    if-eqz v17, :cond_5
-
-    invoke-virtual/range {v17 .. v17}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    move-result-object v18
-
-    if-eqz v18, :cond_5
-
-    .line 1708
-    move-object/from16 v18, v5
-
-    .end local v5    # "t":Ljava/lang/String;
-    .local v18, "t":Ljava/lang/String;
-    invoke-virtual/range {v17 .. v17}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    move-result-object v5
-
-    .line 1710
-    .local v5, "vc":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    invoke-virtual {v5}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedWidths()Landroid/util/Range;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
-
-    move-result-object v19
-
-    check-cast v19, Ljava/lang/Integer;
-
-    move/from16 v20, v6
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/Integer;->intValue()I
-
-    move-result v6
-
-    .line 1711
-    .local v6, "width":I
-    invoke-virtual {v5}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedHeights()Landroid/util/Range;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
-
-    move-result-object v19
-
-    check-cast v19, Ljava/lang/Integer;
-
-    move-object/from16 v21, v7
-
-    .end local v7    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    .local v21, "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/Integer;->intValue()I
-
-    move-result v7
-
-    .line 1713
-    .local v7, "height":I
-    move/from16 v19, p1
-
-    .line 1714
-    .local v19, "screenWidthAligned":I
-    invoke-virtual {v5}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getWidthAlignment()I
-
-    move-result v22
-
-    rem-int v22, v19, v22
-
-    if-eqz v22, :cond_1
-
-    .line 1715
-    invoke-virtual {v5}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getWidthAlignment()I
-
-    move-result v22
-
-    rem-int v22, v19, v22
-
-    sub-int v19, v19, v22
-
-    move-object/from16 v22, v8
-
-    move/from16 v8, v19
-
-    goto :goto_2
-
-    .line 1714
-    :cond_1
-    move-object/from16 v22, v8
-
-    move/from16 v8, v19
-
-    .line 1717
-    .end local v19    # "screenWidthAligned":I
-    .local v8, "screenWidthAligned":I
-    :goto_2
-    move/from16 v19, p2
-
-    .line 1718
-    .local v19, "screenHeightAligned":I
-    invoke-virtual {v5}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getHeightAlignment()I
-
-    move-result v23
-
-    rem-int v23, v19, v23
-
-    if-eqz v23, :cond_2
-
-    .line 1719
-    invoke-virtual {v5}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getHeightAlignment()I
-
-    move-result v23
-
-    rem-int v23, v19, v23
-
-    sub-int v19, v19, v23
-
-    move/from16 v23, v9
-
-    move/from16 v9, v19
-
-    goto :goto_3
-
-    .line 1718
-    :cond_2
-    move/from16 v23, v9
-
-    move/from16 v9, v19
-
-    .line 1722
-    .end local v19    # "screenHeightAligned":I
-    .local v9, "screenHeightAligned":I
-    :goto_3
-    if-lt v6, v8, :cond_4
-
-    if-lt v7, v9, :cond_4
-
-    .line 1723
-    invoke-virtual {v5, v8, v9}, Landroid/media/MediaCodecInfo$VideoCapabilities;->isSizeSupported(II)Z
-
-    move-result v19
-
-    if-eqz v19, :cond_4
-
-    .line 1725
-    invoke-virtual {v5, v8, v9}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedFrameRatesFor(II)Landroid/util/Range;
-
-    move-result-object v10
-
-    .line 1726
-    invoke-virtual {v10}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
-
-    move-result-object v10
-
-    check-cast v10, Ljava/lang/Double;
-
-    invoke-virtual {v10}, Ljava/lang/Double;->intValue()I
-
-    move-result v10
-
-    .line 1728
-    .local v10, "maxRate":I
-    if-ge v10, v2, :cond_3
-
-    .line 1729
-    move v2, v10
-
-    .line 1731
-    .end local p3    # "refreshRate":I
-    .local v2, "refreshRate":I
-    :cond_3
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    move/from16 v19, v10
-
-    .end local v10    # "maxRate":I
-    .local v19, "maxRate":I
-    const-string v10, "Screen size supported at rate "
-
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v13, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1732
-    const/4 v10, 0x3
-
-    new-array v10, v10, [I
-
-    const/4 v12, 0x0
-
-    aput v8, v10, v12
-
-    const/4 v12, 0x1
-
-    aput v9, v10, v12
-
-    const/4 v12, 0x2
-
-    aput v2, v10, v12
-
-    return-object v10
-
-    .line 1736
-    .end local v2    # "refreshRate":I
-    .end local v19    # "maxRate":I
-    .restart local p3    # "refreshRate":I
-    :cond_4
-    move/from16 v19, v8
-
-    move/from16 v24, v9
-
-    .end local v8    # "screenWidthAligned":I
-    .end local v9    # "screenHeightAligned":I
-    .local v19, "screenWidthAligned":I
-    .local v24, "screenHeightAligned":I
-    int-to-double v8, v6
-
-    move-object/from16 v26, v14
-
-    move-object/from16 v25, v15
-
-    .end local v14    # "types":[Ljava/lang/String;
-    .end local v15    # "codec":Landroid/media/MediaCodecInfo;
-    .local v25, "codec":Landroid/media/MediaCodecInfo;
-    .local v26, "types":[Ljava/lang/String;
-    int-to-double v14, v0
-
-    div-double/2addr v8, v14
-
-    int-to-double v14, v7
-
-    move/from16 v27, v6
-
-    move/from16 v28, v7
-
-    .end local v6    # "width":I
-    .end local v7    # "height":I
-    .local v27, "width":I
-    .local v28, "height":I
-    int-to-double v6, v1
-
-    div-double/2addr v14, v6
-
-    invoke-static {v8, v9, v14, v15}, Ljava/lang/Math;->min(DD)D
-
-    move-result-wide v6
-
-    .line 1738
-    .local v6, "scale":D
-    cmpl-double v8, v6, v3
-
-    if-lez v8, :cond_6
-
-    .line 1739
-    const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
-
-    invoke-static {v8, v9, v6, v7}, Ljava/lang/Math;->min(DD)D
-
-    move-result-wide v3
-
-    .line 1740
-    move-object v8, v5
-
-    move-object v7, v8
-
-    .end local v21    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    .local v8, "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    goto :goto_5
-
-    .line 1707
-    .end local v6    # "scale":D
-    .end local v8    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    .end local v18    # "t":Ljava/lang/String;
-    .end local v19    # "screenWidthAligned":I
-    .end local v24    # "screenHeightAligned":I
-    .end local v25    # "codec":Landroid/media/MediaCodecInfo;
-    .end local v26    # "types":[Ljava/lang/String;
-    .end local v27    # "width":I
-    .end local v28    # "height":I
-    .local v5, "t":Ljava/lang/String;
-    .local v7, "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    .restart local v14    # "types":[Ljava/lang/String;
-    .restart local v15    # "codec":Landroid/media/MediaCodecInfo;
-    :cond_5
-    move-object/from16 v18, v5
-
-    move/from16 v20, v6
-
-    move-object/from16 v21, v7
-
-    move-object/from16 v22, v8
-
-    move/from16 v23, v9
-
-    move-object/from16 v26, v14
-
-    move-object/from16 v25, v15
-
-    .line 1701
-    .end local v5    # "t":Ljava/lang/String;
-    .end local v7    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    .end local v14    # "types":[Ljava/lang/String;
-    .end local v15    # "codec":Landroid/media/MediaCodecInfo;
-    .end local v17    # "capabilities":Landroid/media/MediaCodecInfo$CodecCapabilities;
-    .restart local v21    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    .restart local v25    # "codec":Landroid/media/MediaCodecInfo;
-    .restart local v26    # "types":[Ljava/lang/String;
-    :cond_6
-    :goto_4
-    move-object/from16 v7, v21
-
-    .end local v21    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    .restart local v7    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    :goto_5
-    add-int/lit8 v12, v12, 0x1
-
-    move-object/from16 v5, v16
-
-    move/from16 v6, v20
-
-    move-object/from16 v8, v22
-
-    move/from16 v9, v23
-
-    move-object/from16 v15, v25
-
-    move-object/from16 v14, v26
-
-    goto/16 :goto_1
-
-    .end local v16    # "codecList":Landroid/media/MediaCodecList;
-    .end local v25    # "codec":Landroid/media/MediaCodecInfo;
-    .end local v26    # "types":[Ljava/lang/String;
-    .local v5, "codecList":Landroid/media/MediaCodecList;
-    .restart local v14    # "types":[Ljava/lang/String;
-    .restart local v15    # "codec":Landroid/media/MediaCodecInfo;
-    :cond_7
-    move-object/from16 v16, v5
-
-    move-object/from16 v21, v7
-
-    move-object/from16 v22, v8
-
-    move/from16 v23, v9
-
-    move-object/from16 v26, v14
-
-    move-object/from16 v25, v15
-
-    .line 1698
-    .end local v5    # "codecList":Landroid/media/MediaCodecList;
-    .end local v7    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    .end local v11    # "videoType":Ljava/lang/String;
-    .end local v14    # "types":[Ljava/lang/String;
-    .end local v15    # "codec":Landroid/media/MediaCodecInfo;
-    .restart local v16    # "codecList":Landroid/media/MediaCodecList;
-    .restart local v21    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    add-int/lit8 v10, v10, 0x1
-
-    const/4 v6, 0x0
-
-    goto/16 :goto_0
-
-    .line 1746
-    .end local v16    # "codecList":Landroid/media/MediaCodecList;
-    .end local v21    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    .restart local v5    # "codecList":Landroid/media/MediaCodecList;
-    .restart local v7    # "maxInfo":Landroid/media/MediaCodecInfo$VideoCapabilities;
-    :cond_8
-    move-object/from16 v16, v5
-
-    .end local v5    # "codecList":Landroid/media/MediaCodecList;
-    .restart local v16    # "codecList":Landroid/media/MediaCodecList;
-    int-to-double v5, v0
-
-    mul-double/2addr v5, v3
-
-    double-to-int v5, v5
-
-    .line 1747
-    .local v5, "scaledWidth":I
-    int-to-double v8, v1
-
-    mul-double/2addr v8, v3
-
-    double-to-int v6, v8
-
-    .line 1748
-    .local v6, "scaledHeight":I
-    invoke-virtual {v7}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getWidthAlignment()I
-
-    move-result v8
-
-    rem-int v8, v5, v8
-
-    if-eqz v8, :cond_9
-
-    .line 1749
-    invoke-virtual {v7}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getWidthAlignment()I
-
-    move-result v8
-
-    rem-int v8, v5, v8
-
-    sub-int/2addr v5, v8
-
-    .line 1751
-    :cond_9
-    invoke-virtual {v7}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getHeightAlignment()I
-
-    move-result v8
-
-    rem-int v8, v6, v8
-
-    if-eqz v8, :cond_a
-
-    .line 1752
-    invoke-virtual {v7}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getHeightAlignment()I
-
-    move-result v8
-
-    rem-int v8, v6, v8
-
-    sub-int/2addr v6, v8
-
-    .line 1756
-    :cond_a
-    invoke-virtual {v7, v5, v6}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedFrameRatesFor(II)Landroid/util/Range;
-
-    move-result-object v8
-
-    .line 1757
-    invoke-virtual {v8}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
-
-    move-result-object v8
-
-    check-cast v8, Ljava/lang/Double;
-
-    invoke-virtual {v8}, Ljava/lang/Double;->intValue()I
-
-    move-result v8
-
-    .line 1758
-    .local v8, "maxRate":I
-    if-ge v8, v2, :cond_b
-
-    .line 1759
-    move v2, v8
-
-    .line 1762
-    .end local p3    # "refreshRate":I
-    .restart local v2    # "refreshRate":I
-    :cond_b
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "Resized by "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v10, ": "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string v10, ", "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v13, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1764
-    const/4 v9, 0x3
-
-    new-array v9, v9, [I
-
-    const/4 v10, 0x0
-
-    aput v5, v9, v10
-
-    const/4 v10, 0x1
-
-    aput v6, v9, v10
-
-    const/4 v10, 0x2
-
-    aput v2, v9, v10
-
-    return-object v9
-.end method
-
 .method private makeRequestBuilder()Landroid/hardware/camera2/CaptureRequest$Builder;
     .locals 8
 
-    .line 1187
+    .line 1130
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -3321,15 +2705,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1189
+    .line 1132
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mHasAddTarget:Z
 
-    .line 1190
+    .line 1133
     const/4 v1, 0x0
 
-    .line 1193
+    .line 1136
     .local v1, "builder":Landroid/hardware/camera2/CaptureRequest$Builder;
     :try_start_0
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
@@ -3342,31 +2726,31 @@
 
     move-object v1, v2
 
-    .line 1195
+    .line 1138
     iget v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mZoomValue:F
 
     invoke-direct {p0, v2}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->calculateCropRegionByZoomValue(F)Landroid/graphics/Rect;
 
     move-result-object v2
 
-    .line 1196
+    .line 1139
     .local v2, "cropRegion":Landroid/graphics/Rect;
     sget-object v3, Landroid/hardware/camera2/CaptureRequest;->SCALER_CROP_REGION:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {v1, v3, v2}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1198
+    .line 1141
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->calculateAeFpsRange()Landroid/util/Range;
 
     move-result-object v3
 
-    .line 1199
+    .line 1142
     .local v3, "aeFps":Landroid/util/Range;
     sget-object v4, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_TARGET_FPS_RANGE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {v1, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1201
+    .line 1144
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->is512mbProject()Z
 
     move-result v4
@@ -3383,7 +2767,7 @@
 
     goto :goto_0
 
-    .line 1205
+    .line 1148
     :cond_0
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -3395,7 +2779,7 @@
 
     invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1206
+    .line 1149
     sget-object v4, Landroid/hardware/camera2/CaptureRequest;->CONTROL_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v6, 0x2
@@ -3406,7 +2790,7 @@
 
     invoke-virtual {v1, v4, v6}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1207
+    .line 1150
     sget-object v4, Landroid/hardware/camera2/CaptureRequest;->CONTROL_SCENE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3417,7 +2801,7 @@
 
     goto :goto_1
 
-    .line 1202
+    .line 1145
     :cond_1
     :goto_0
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -3430,7 +2814,7 @@
 
     invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1210
+    .line 1153
     :goto_1
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -3450,7 +2834,7 @@
 
     iget-object v7, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 1211
+    .line 1154
     invoke-static {v7}, Lcom/mediatek/ims/internal/VTSource;->access$300(Lcom/mediatek/ims/internal/VTSource;)Z
 
     move-result v7
@@ -3467,7 +2851,7 @@
 
     iget-object v7, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 1212
+    .line 1155
     invoke-static {v7}, Lcom/mediatek/ims/internal/VTSource;->access$200(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
 
     move-result-object v7
@@ -3484,7 +2868,7 @@
 
     iget-object v7, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 1213
+    .line 1156
     invoke-static {v7}, Lcom/mediatek/ims/internal/VTSource;->access$100(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
 
     move-result-object v7
@@ -3497,10 +2881,10 @@
 
     move-result-object v6
 
-    .line 1210
+    .line 1153
     invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1215
+    .line 1158
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v4}, Lcom/mediatek/ims/internal/VTSource;->access$300(Lcom/mediatek/ims/internal/VTSource;)Z
@@ -3521,7 +2905,7 @@
 
     iget-object v6, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 1216
+    .line 1159
     invoke-static {v6}, Lcom/mediatek/ims/internal/VTSource;->access$200(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
 
     move-result-object v6
@@ -3532,7 +2916,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 1217
+    .line 1160
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v4}, Lcom/mediatek/ims/internal/VTSource;->access$200(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
@@ -3541,10 +2925,10 @@
 
     invoke-virtual {v1, v4}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
-    .line 1218
+    .line 1161
     iput-boolean v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mHasAddTarget:Z
 
-    .line 1221
+    .line 1164
     :cond_2
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -3558,7 +2942,7 @@
 
     iget-object v6, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 1222
+    .line 1165
     invoke-static {v6}, Lcom/mediatek/ims/internal/VTSource;->access$100(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
 
     move-result-object v6
@@ -3569,7 +2953,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 1223
+    .line 1166
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v4}, Lcom/mediatek/ims/internal/VTSource;->access$100(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
@@ -3578,10 +2962,10 @@
 
     invoke-virtual {v1, v4}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
-    .line 1224
+    .line 1167
     iput-boolean v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mHasAddTarget:Z
 
-    .line 1228
+    .line 1171
     :cond_3
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->isVideoQualityTestMode()Z
 
@@ -3589,7 +2973,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 1229
+    .line 1172
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v4}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -3600,43 +2984,43 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1231
+    .line 1174
     sget-object v4, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
+    .line 1175
     const/4 v5, 0x4
 
-    .line 1232
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
-    .line 1231
+    .line 1174
     invoke-virtual {v1, v4, v5}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1235
+    .line 1178
     :cond_4
     sget-object v4, Landroid/hardware/camera2/CaptureRequest;->CONTROL_VIDEO_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    .line 1236
+    .line 1179
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 1235
+    .line 1178
     invoke-virtual {v1, v4, v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1243
+    .line 1186
     .end local v2    # "cropRegion":Landroid/graphics/Rect;
     .end local v3    # "aeFps":Landroid/util/Range;
     goto :goto_2
 
-    .line 1238
+    .line 1181
     :catch_0
     move-exception v0
 
-    .line 1240
+    .line 1183
     .local v0, "e":Ljava/lang/Exception;
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -3664,15 +3048,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1241
+    .line 1184
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1242
+    .line 1185
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     invoke-interface {v2}, Lcom/mediatek/ims/internal/VTSource$EventCallback;->onError()V
 
-    .line 1245
+    .line 1188
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_2
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -3685,7 +3069,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1247
+    .line 1190
     return-object v1
 .end method
 
@@ -3693,7 +3077,7 @@
     .locals 2
     .param p1, "cameraId"    # Ljava/lang/String;
 
-    .line 1408
+    .line 1337
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -3704,7 +3088,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1410
+    .line 1339
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     if-eqz v0, :cond_0
@@ -3719,7 +3103,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1411
+    .line 1340
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -3730,39 +3114,39 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1412
+    .line 1341
     return-void
 
-    .line 1416
+    .line 1345
     :cond_0
     invoke-direct {p0, p1}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->prepareForOpenCamera(Ljava/lang/String;)V
 
-    .line 1417
+    .line 1346
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRetryCount:I
 
-    .line 1418
+    .line 1347
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1, v0}, Lcom/mediatek/ims/internal/VTSource;->access$602(Lcom/mediatek/ims/internal/VTSource;Z)Z
 
-    .line 1419
+    .line 1348
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceConditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->close()V
 
-    .line 1420
+    .line 1349
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraId:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doOpenCamera(Ljava/lang/String;)V
 
-    .line 1421
+    .line 1350
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceConditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->block()V
 
-    .line 1423
+    .line 1352
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -3773,7 +3157,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1424
+    .line 1353
     return-void
 .end method
 
@@ -3781,7 +3165,7 @@
     .locals 4
     .param p1, "cameraId"    # Ljava/lang/String;
 
-    .line 1296
+    .line 1239
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -3808,7 +3192,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1298
+    .line 1241
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     if-eqz v0, :cond_0
@@ -3823,19 +3207,19 @@
 
     if-nez v0, :cond_0
 
-    .line 1299
+    .line 1242
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->closeSession()V
 
-    .line 1300
+    .line 1243
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doCloseCamera(Z)V
 
-    .line 1302
+    .line 1245
     :cond_0
     iput-object p1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraId:Ljava/lang/String;
 
-    .line 1304
+    .line 1247
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -3853,14 +3237,14 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1309
+    .line 1252
     goto :goto_0
 
-    .line 1305
+    .line 1248
     :catch_0
     move-exception v0
 
-    .line 1306
+    .line 1249
     .local v0, "e":Ljava/lang/Exception;
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -3888,12 +3272,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1308
+    .line 1251
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     invoke-interface {v1}, Lcom/mediatek/ims/internal/VTSource$EventCallback;->onError()V
 
-    .line 1311
+    .line 1254
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -3906,14 +3290,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1312
+    .line 1255
     return-void
 .end method
 
 .method private prepareOutputConfiguration()Z
     .locals 7
 
-    .line 1340
+    .line 1283
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -3924,17 +3308,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1342
+    .line 1285
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionUsedSurfaceList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 1343
+    .line 1286
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mOutputConfigurations:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 1345
+    .line 1288
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$100(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
@@ -3949,7 +3333,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1347
+    .line 1290
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -3960,7 +3344,7 @@
 
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1349
+    .line 1292
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionUsedSurfaceList:Ljava/util/List;
 
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -3971,7 +3355,7 @@
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1366
+    .line 1295
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mOutputConfigurations:Ljava/util/List;
 
@@ -3989,14 +3373,14 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1378
+    .line 1307
     goto :goto_0
 
-    .line 1368
+    .line 1297
     :catch_0
     move-exception v0
 
-    .line 1369
+    .line 1298
     .local v0, "ex":Ljava/lang/Exception;
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -4024,7 +3408,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1371
+    .line 1300
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionUsedSurfaceList:Ljava/util/List;
 
     iget-object v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -4035,17 +3419,17 @@
 
     invoke-interface {v4, v5}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 1372
+    .line 1301
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v4, v2}, Lcom/mediatek/ims/internal/VTSource;->access$102(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 1373
+    .line 1302
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     invoke-interface {v2}, Lcom/mediatek/ims/internal/VTSource$EventCallback;->onError()V
 
-    .line 1375
+    .line 1304
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v2}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -4054,10 +3438,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1377
+    .line 1306
     return v1
 
-    .line 1381
+    .line 1310
     .end local v0    # "ex":Ljava/lang/Exception;
     :cond_0
     :goto_0
@@ -4069,7 +3453,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1383
+    .line 1312
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -4080,7 +3464,7 @@
 
     invoke-static {v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1385
+    .line 1314
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionUsedSurfaceList:Ljava/util/List;
 
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -4091,7 +3475,7 @@
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1387
+    .line 1316
     :try_start_1
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mOutputConfigurations:Ljava/util/List;
 
@@ -4109,14 +3493,14 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1399
+    .line 1328
     goto :goto_1
 
-    .line 1389
+    .line 1318
     :catch_1
     move-exception v0
 
-    .line 1390
+    .line 1319
     .restart local v0    # "ex":Ljava/lang/Exception;
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -4144,7 +3528,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1392
+    .line 1321
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionUsedSurfaceList:Ljava/util/List;
 
     iget-object v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -4155,17 +3539,17 @@
 
     invoke-interface {v4, v5}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 1393
+    .line 1322
     iget-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v4, v2}, Lcom/mediatek/ims/internal/VTSource;->access$202(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 1394
+    .line 1323
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     invoke-interface {v2}, Lcom/mediatek/ims/internal/VTSource$EventCallback;->onError()V
 
-    .line 1396
+    .line 1325
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v2}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -4174,10 +3558,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1398
+    .line 1327
     return v1
 
-    .line 1402
+    .line 1331
     .end local v0    # "ex":Ljava/lang/Exception;
     :cond_1
     :goto_1
@@ -4189,14 +3573,14 @@
 
     invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1404
+    .line 1333
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method private prepareShareScreen()V
-    .locals 24
+    .locals 18
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -4204,7 +3588,7 @@
         }
     .end annotation
 
-    .line 1633
+    .line 1562
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -4217,7 +3601,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1635
+    .line 1564
     iget-object v1, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$1000(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
@@ -4226,7 +3610,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1636
+    .line 1565
     iget-object v1, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -4237,10 +3621,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1637
+    .line 1566
     return-void
 
-    .line 1640
+    .line 1569
     :cond_0
     const-string v1, "media_projection"
 
@@ -4248,20 +3632,20 @@
 
     move-result-object v1
 
-    .line 1641
+    .line 1570
     .local v1, "b":Landroid/os/IBinder;
     nop
 
-    .line 1642
+    .line 1571
     invoke-static {v1}, Landroid/media/projection/IMediaProjectionManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/projection/IMediaProjectionManager;
 
     move-result-object v2
 
-    .line 1643
+    .line 1572
     .local v2, "mediaService":Landroid/media/projection/IMediaProjectionManager;
     const/4 v3, 0x0
 
-    .line 1645
+    .line 1574
     .local v3, "proj":Landroid/media/projection/IMediaProjection;
     sget-object v4, Lcom/mediatek/ims/internal/VTSource;->sContext:Landroid/content/Context;
 
@@ -4269,7 +3653,7 @@
 
     move-result v4
 
-    .line 1646
+    .line 1575
     .local v4, "currentUserId":I
     sget-object v5, Lcom/mediatek/ims/internal/VTSource;->sContext:Landroid/content/Context;
 
@@ -4283,280 +3667,194 @@
 
     move-result-object v3
 
-    .line 1648
+    .line 1577
     invoke-interface {v3}, Landroid/media/projection/IMediaProjection;->asBinder()Landroid/os/IBinder;
 
     move-result-object v5
 
-    .line 1649
+    .line 1578
     .local v5, "projection":Landroid/os/IBinder;
-    iget-object v7, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
+    iget-object v6, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    new-instance v8, Landroid/media/projection/MediaProjection;
+    new-instance v7, Landroid/media/projection/MediaProjection;
 
-    sget-object v9, Lcom/mediatek/ims/internal/VTSource;->sContext:Landroid/content/Context;
-
-    .line 1650
-    invoke-static {v5}, Landroid/media/projection/IMediaProjection$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/projection/IMediaProjection;
-
-    move-result-object v10
-
-    invoke-direct {v8, v9, v10}, Landroid/media/projection/MediaProjection;-><init>(Landroid/content/Context;Landroid/media/projection/IMediaProjection;)V
-
-    .line 1649
-    invoke-static {v7, v8}, Lcom/mediatek/ims/internal/VTSource;->access$1102(Lcom/mediatek/ims/internal/VTSource;Landroid/media/projection/MediaProjection;)Landroid/media/projection/MediaProjection;
-
-    .line 1653
-    new-instance v7, Landroid/util/DisplayMetrics;
-
-    invoke-direct {v7}, Landroid/util/DisplayMetrics;-><init>()V
-
-    .line 1654
-    .local v7, "metrics":Landroid/util/DisplayMetrics;
     sget-object v8, Lcom/mediatek/ims/internal/VTSource;->sContext:Landroid/content/Context;
 
-    const-string v9, "window"
+    .line 1579
+    invoke-static {v5}, Landroid/media/projection/IMediaProjection$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/projection/IMediaProjection;
 
-    invoke-virtual {v8, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v9
+
+    invoke-direct {v7, v8, v9}, Landroid/media/projection/MediaProjection;-><init>(Landroid/content/Context;Landroid/media/projection/IMediaProjection;)V
+
+    .line 1578
+    invoke-static {v6, v7}, Lcom/mediatek/ims/internal/VTSource;->access$1102(Lcom/mediatek/ims/internal/VTSource;Landroid/media/projection/MediaProjection;)Landroid/media/projection/MediaProjection;
+
+    .line 1582
+    new-instance v6, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v6}, Landroid/util/DisplayMetrics;-><init>()V
+
+    .line 1583
+    .local v6, "metrics":Landroid/util/DisplayMetrics;
+    sget-object v7, Lcom/mediatek/ims/internal/VTSource;->sContext:Landroid/content/Context;
+
+    const-string v8, "window"
+
+    invoke-virtual {v7, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/view/WindowManager;
+
+    .line 1584
+    .local v7, "wm":Landroid/view/WindowManager;
+    invoke-interface {v7}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v8
 
-    check-cast v8, Landroid/view/WindowManager;
+    invoke-virtual {v8, v6}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 1655
-    .local v8, "wm":Landroid/view/WindowManager;
-    invoke-interface {v8}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    .line 1587
+    iget-object v8, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
+
+    invoke-static {v8}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
+
+    move-result-object v8
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "width="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    invoke-virtual {v9, v7}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
+    iget v10, v6, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 1657
-    invoke-interface {v8}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v9
 
-    invoke-virtual {v9}, Landroid/view/Display;->getRefreshRate()F
+    const-string v10, " height="
 
-    move-result v9
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    float-to-int v9, v9
+    move-result-object v9
 
-    .line 1658
-    .local v9, "refreshRate":I
-    iget v10, v7, Landroid/util/DisplayMetrics;->widthPixels:I
+    iget v10, v6, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    iget v11, v7, Landroid/util/DisplayMetrics;->heightPixels:I
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v10, v11, v9}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->getSupportedSize(III)[I
+    move-result-object v9
 
-    move-result-object v10
+    const-string v10, " densityDpi"
 
-    .line 1659
-    .local v10, "dimens":[I
-    aget v6, v10, v6
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1660
-    .local v6, "width":I
-    const/4 v11, 0x1
+    move-result-object v9
 
-    aget v11, v10, v11
+    iget v10, v6, Landroid/util/DisplayMetrics;->densityDpi:I
 
-    .line 1661
-    .local v11, "height":I
-    const/4 v12, 0x2
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    aget v9, v10, v12
+    move-result-object v9
 
-    .line 1663
-    mul-int v12, v6, v11
+    const-string v10, "mScreenShareWidth="
 
-    mul-int/2addr v12, v9
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    div-int/lit8 v12, v12, 0x1e
+    move-result-object v9
 
-    mul-int/lit8 v12, v12, 0x6
+    iget-object v10, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 1666
-    .local v12, "vidBitRate":I
-    iget-object v13, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
+    .line 1589
+    invoke-static {v10}, Lcom/mediatek/ims/internal/VTSource;->access$1200(Lcom/mediatek/ims/internal/VTSource;)I
 
-    invoke-static {v13}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
+    move-result v10
 
-    move-result-object v13
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    move-result-object v9
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v10, " mScreenShareHeight="
 
-    const-string v15, "width="
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v9
 
-    move-result-object v14
+    iget-object v10, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v10}, Lcom/mediatek/ims/internal/VTSource;->access$1300(Lcom/mediatek/ims/internal/VTSource;)I
 
-    move-result-object v14
+    move-result v10
 
-    const-string v15, " height="
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v9
 
-    move-result-object v14
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v14, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v9
 
-    move-result-object v14
+    .line 1587
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v15, " refreshRate="
+    .line 1591
+    iget-object v8, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v8}, Lcom/mediatek/ims/internal/VTSource;->access$1100(Lcom/mediatek/ims/internal/VTSource;)Landroid/media/projection/MediaProjection;
 
-    move-result-object v14
+    move-result-object v9
 
-    invoke-virtual {v14, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v10, "Screen Share"
 
-    move-result-object v14
+    iget-object v11, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    const-string v15, " vidBitRate="
+    .line 1593
+    invoke-static {v11}, Lcom/mediatek/ims/internal/VTSource;->access$1200(Lcom/mediatek/ims/internal/VTSource;)I
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v11
 
-    move-result-object v14
+    iget-object v12, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .line 1594
+    invoke-static {v12}, Lcom/mediatek/ims/internal/VTSource;->access$1300(Lcom/mediatek/ims/internal/VTSource;)I
 
-    move-result-object v14
+    move-result v12
 
-    const-string v15, " densityDpi"
+    iget v13, v6, Landroid/util/DisplayMetrics;->densityDpi:I
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    iget v15, v7, Landroid/util/DisplayMetrics;->densityDpi:I
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1669
-    iget-object v13, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
-
-    invoke-static {v13}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
-
-    move-result-object v13
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v15, "mScreenShareWidth="
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v14
+    const/16 v14, 0x90
 
     iget-object v15, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    invoke-static {v15}, Lcom/mediatek/ims/internal/VTSource;->access$1200(Lcom/mediatek/ims/internal/VTSource;)I
+    .line 1597
+    invoke-static {v15}, Lcom/mediatek/ims/internal/VTSource;->access$1000(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
 
-    move-result v15
+    move-result-object v15
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/16 v16, 0x0
 
-    move-result-object v14
+    const/16 v17, 0x0
 
-    const-string v15, " mScreenShareHeight="
+    .line 1591
+    invoke-virtual/range {v9 .. v17}, Landroid/media/projection/MediaProjection;->createVirtualDisplay(Ljava/lang/String;IIIILandroid/view/Surface;Landroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)Landroid/hardware/display/VirtualDisplay;
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v9
 
-    move-result-object v14
+    invoke-static {v8, v9}, Lcom/mediatek/ims/internal/VTSource;->access$1402(Lcom/mediatek/ims/internal/VTSource;Landroid/hardware/display/VirtualDisplay;)Landroid/hardware/display/VirtualDisplay;
 
-    iget-object v15, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
-
-    invoke-static {v15}, Lcom/mediatek/ims/internal/VTSource;->access$1300(Lcom/mediatek/ims/internal/VTSource;)I
-
-    move-result v15
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1671
-    iget-object v13, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
-
-    invoke-static {v13}, Lcom/mediatek/ims/internal/VTSource;->access$1100(Lcom/mediatek/ims/internal/VTSource;)Landroid/media/projection/MediaProjection;
-
-    move-result-object v14
-
-    iget-object v15, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
-
-    .line 1673
-    invoke-static {v15}, Lcom/mediatek/ims/internal/VTSource;->access$1200(Lcom/mediatek/ims/internal/VTSource;)I
-
-    move-result v16
-
-    iget-object v15, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
-
-    .line 1674
-    invoke-static {v15}, Lcom/mediatek/ims/internal/VTSource;->access$1300(Lcom/mediatek/ims/internal/VTSource;)I
-
-    move-result v17
-
-    iget v15, v7, Landroid/util/DisplayMetrics;->densityDpi:I
-
-    const/16 v19, 0x90
-
-    move-object/from16 v23, v1
-
-    .end local v1    # "b":Landroid/os/IBinder;
-    .local v23, "b":Landroid/os/IBinder;
-    iget-object v1, v0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
-
-    .line 1677
-    invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$1000(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
-
-    move-result-object v20
-
-    const/16 v21, 0x0
-
-    const/16 v22, 0x0
-
-    .line 1671
-    const-string v1, "Screen Share"
-
-    move/from16 v18, v15
-
-    move-object v15, v1
-
-    invoke-virtual/range {v14 .. v22}, Landroid/media/projection/MediaProjection;->createVirtualDisplay(Ljava/lang/String;IIIILandroid/view/Surface;Landroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)Landroid/hardware/display/VirtualDisplay;
-
-    move-result-object v1
-
-    invoke-static {v13, v1}, Lcom/mediatek/ims/internal/VTSource;->access$1402(Lcom/mediatek/ims/internal/VTSource;Landroid/hardware/display/VirtualDisplay;)Landroid/hardware/display/VirtualDisplay;
-
-    .line 1680
+    .line 1600
     return-void
 .end method
 
 .method private submitRepeatingRequest()V
     .locals 6
 
-    .line 1252
+    .line 1195
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -4567,7 +3865,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1254
+    .line 1197
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     if-eqz v0, :cond_4
@@ -4578,17 +3876,17 @@
 
     goto/16 :goto_1
 
-    .line 1259
+    .line 1202
     :cond_0
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->makeRequestBuilder()Landroid/hardware/camera2/CaptureRequest$Builder;
 
     move-result-object v0
 
-    .line 1260
+    .line 1203
     .local v0, "requestBuilder":Landroid/hardware/camera2/CaptureRequest$Builder;
     if-nez v0, :cond_1
 
-    .line 1261
+    .line 1204
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -4599,15 +3897,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1262
+    .line 1205
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     invoke-interface {v1}, Lcom/mediatek/ims/internal/VTSource$EventCallback;->onError()V
 
-    .line 1263
+    .line 1206
     return-void
 
-    .line 1267
+    .line 1210
     :cond_1
     :try_start_0
     iget-boolean v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mHasAddTarget:Z
@@ -4616,10 +3914,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 1268
+    .line 1211
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCaptureSession:Landroid/hardware/camera2/CameraCaptureSession;
 
-    .line 1269
+    .line 1212
     invoke-virtual {v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
 
     move-result-object v3
@@ -4628,17 +3926,17 @@
 
     iget-object v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRespondThread:Landroid/os/HandlerThread;
 
-    .line 1271
+    .line 1214
     invoke-virtual {v5}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v5
 
     invoke-direct {v4, v5}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1268
+    .line 1211
     invoke-virtual {v1, v3, v2, v4}, Landroid/hardware/camera2/CameraCaptureSession;->setRepeatingRequest(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroid/os/Handler;)I
 
-    .line 1275
+    .line 1218
     :cond_2
     invoke-static {}, Lcom/mediatek/ims/internal/ImsVTProviderUtil;->isVideoQualityTestMode()Z
 
@@ -4646,7 +3944,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1276
+    .line 1219
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -4657,23 +3955,23 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1277
+    .line 1220
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
 
+    .line 1221
     const/4 v3, 0x1
 
-    .line 1278
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 1277
+    .line 1220
     invoke-virtual {v0, v1, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1279
+    .line 1222
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCaptureSession:Landroid/hardware/camera2/CameraCaptureSession;
 
-    .line 1280
+    .line 1223
     invoke-virtual {v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
 
     move-result-object v3
@@ -4682,27 +3980,27 @@
 
     iget-object v5, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRespondThread:Landroid/os/HandlerThread;
 
-    .line 1282
+    .line 1225
     invoke-virtual {v5}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v5
 
     invoke-direct {v4, v5}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1279
+    .line 1222
     invoke-virtual {v1, v3, v2, v4}, Landroid/hardware/camera2/CameraCaptureSession;->capture(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroid/os/Handler;)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1289
+    .line 1232
     :cond_3
     goto :goto_0
 
-    .line 1284
+    .line 1227
     :catch_0
     move-exception v1
 
-    .line 1286
+    .line 1229
     .local v1, "e":Ljava/lang/Exception;
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -4730,15 +4028,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1287
+    .line 1230
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1288
+    .line 1231
     iget-object v2, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mEventCallBack:Lcom/mediatek/ims/internal/VTSource$EventCallback;
 
     invoke-interface {v2}, Lcom/mediatek/ims/internal/VTSource$EventCallback;->onError()V
 
-    .line 1291
+    .line 1234
     .end local v1    # "e":Ljava/lang/Exception;
     :goto_0
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -4751,10 +4049,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1292
+    .line 1235
     return-void
 
-    .line 1255
+    .line 1198
     .end local v0    # "requestBuilder":Landroid/hardware/camera2/CaptureRequest$Builder;
     :cond_4
     :goto_1
@@ -4768,7 +4066,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1256
+    .line 1199
     return-void
 .end method
 
@@ -4778,12 +4076,12 @@
     .locals 7
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 818
+    .line 755
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRespondThread:Landroid/os/HandlerThread;
 
     if-nez v0, :cond_0
 
-    .line 819
+    .line 756
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -4794,10 +4092,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 820
+    .line 757
     return-void
 
-    .line 823
+    .line 760
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -4813,7 +4111,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1030
+    .line 973
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -4860,7 +4158,7 @@
 
     goto/16 :goto_4
 
-    .line 1025
+    .line 968
     :pswitch_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -4894,13 +4192,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1026
+    .line 969
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doStopShareScreen()V
 
-    .line 1027
+    .line 970
     goto/16 :goto_4
 
-    .line 1020
+    .line 963
     :pswitch_1
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -4934,13 +4232,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1021
+    .line 964
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doStartShareScreen()V
 
-    .line 1022
+    .line 965
     goto/16 :goto_4
 
-    .line 1014
+    .line 957
     :pswitch_2
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -4974,19 +4272,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1015
+    .line 958
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/net/Uri;
 
-    .line 1016
+    .line 959
     .local v0, "uri":Landroid/net/Uri;
     invoke-direct {p0, v0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doSetPauseImage(Landroid/net/Uri;)V
 
-    .line 1017
+    .line 960
     goto/16 :goto_4
 
-    .line 934
+    .line 877
     .end local v0    # "uri":Landroid/net/Uri;
     :pswitch_3
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -5021,26 +4319,26 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 937
+    .line 880
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$300(Lcom/mediatek/ims/internal/VTSource;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
-    .line 938
+    .line 881
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0, v3}, Lcom/mediatek/ims/internal/VTSource;->access$302(Lcom/mediatek/ims/internal/VTSource;Z)Z
 
-    .line 939
+    .line 882
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->closeSession()V
 
     goto/16 :goto_4
 
-    .line 1006
+    .line 949
     :pswitch_4
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5074,21 +4372,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1008
+    .line 951
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->closeSession()V
 
-    .line 1009
+    .line 952
     invoke-direct {p0, v2}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doCloseCamera(Z)V
 
-    .line 1010
+    .line 953
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraId:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->openCamera(Ljava/lang/String;)V
 
-    .line 1011
+    .line 954
     goto/16 :goto_4
 
-    .line 994
+    .line 937
     :pswitch_5
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5122,7 +4420,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 997
+    .line 940
     iget v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mDeviceDegree:I
 
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -5133,9 +4431,9 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_d
+    if-eq v0, v1, :cond_e
 
-    .line 998
+    .line 941
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -5168,7 +4466,7 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 999
+    .line 942
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -5181,10 +4479,10 @@
 
     move-result-object v1
 
-    .line 998
+    .line 941
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1000
+    .line 943
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Integer;
@@ -5197,7 +4495,7 @@
 
     goto/16 :goto_4
 
-    .line 978
+    .line 921
     :pswitch_6
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5231,47 +4529,47 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 981
+    .line 924
     iput-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCaptureSession:Landroid/hardware/camera2/CameraCaptureSession;
 
-    .line 982
+    .line 925
     iput v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mZoomValue:F
 
-    .line 983
+    .line 926
     invoke-direct {p0, v3}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doCloseCamera(Z)V
 
-    .line 984
+    .line 927
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doStopShareScreen()V
 
-    .line 985
+    .line 928
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mSessionUsedSurfaceList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 986
+    .line 929
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mOutputConfigurations:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 987
+    .line 930
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0, v4}, Lcom/mediatek/ims/internal/VTSource;->access$202(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 988
+    .line 931
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0, v4}, Lcom/mediatek/ims/internal/VTSource;->access$102(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 989
+    .line 932
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mRespondThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quitSafely()Z
 
-    .line 990
+    .line 933
     goto/16 :goto_4
 
-    .line 968
+    .line 911
     :pswitch_7
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5305,19 +4603,19 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 971
+    .line 914
     iput-object v4, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCaptureSession:Landroid/hardware/camera2/CameraCaptureSession;
 
-    .line 972
+    .line 915
     iput v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mZoomValue:F
 
-    .line 973
+    .line 916
     invoke-direct {p0, v3}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->doCloseCamera(Z)V
 
-    .line 974
+    .line 917
     goto/16 :goto_4
 
-    .line 959
+    .line 902
     :pswitch_8
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5351,21 +4649,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 962
+    .line 905
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, [Landroid/hardware/camera2/CameraCharacteristics;
 
-    .line 963
+    .line 906
     .local v0, "characteristicses":[Landroid/hardware/camera2/CameraCharacteristics;
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCharacteristics:Landroid/hardware/camera2/CameraCharacteristics;
 
     aput-object v1, v0, v3
 
-    .line 964
+    .line 907
     goto/16 :goto_4
 
-    .line 945
+    .line 888
     .end local v0    # "characteristicses":[Landroid/hardware/camera2/CameraCharacteristics;
     :pswitch_9
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -5400,7 +4698,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 947
+    .line 890
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     if-eqz v0, :cond_2
@@ -5411,7 +4709,7 @@
 
     goto :goto_0
 
-    .line 953
+    .line 896
     :cond_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -5423,13 +4721,13 @@
 
     iput v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mZoomValue:F
 
-    .line 954
+    .line 897
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->submitRepeatingRequest()V
 
-    .line 955
+    .line 898
     goto/16 :goto_4
 
-    .line 948
+    .line 891
     :cond_2
     :goto_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -5442,10 +4740,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 951
+    .line 894
     return-void
 
-    .line 857
+    .line 794
     :pswitch_a
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5479,7 +4777,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 859
+    .line 796
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     if-eqz v0, :cond_4
@@ -5490,14 +4788,14 @@
 
     goto :goto_1
 
-    .line 864
+    .line 801
     :cond_3
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->submitRepeatingRequest()V
 
-    .line 865
+    .line 802
     goto/16 :goto_4
 
-    .line 860
+    .line 797
     :cond_4
     :goto_1
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -5510,10 +4808,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 862
+    .line 799
     return-void
 
-    .line 921
+    .line 858
     :pswitch_b
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5547,38 +4845,66 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 923
-    iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
+    .line 860
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$300(Lcom/mediatek/ims/internal/VTSource;)Z
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    .line 862
+    .local v0, "keepSession":Z
+    iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 924
-    iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
+    invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$300(Lcom/mediatek/ims/internal/VTSource;)Z
 
-    invoke-static {v0, v3}, Lcom/mediatek/ims/internal/VTSource;->access$302(Lcom/mediatek/ims/internal/VTSource;Z)Z
+    move-result v1
 
-    .line 925
-    iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
+    if-eqz v1, :cond_e
 
-    invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$200(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
+    .line 863
+    iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    move-result-object v0
+    invoke-static {v1, v3}, Lcom/mediatek/ims/internal/VTSource;->access$302(Lcom/mediatek/ims/internal/VTSource;Z)Z
 
-    if-eqz v0, :cond_d
+    .line 864
+    iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 926
+    invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$200(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_e
+
+    .line 865
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->closeSession()V
 
-    .line 927
+    .line 866
+    if-eqz v0, :cond_5
+
+    .line 867
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->createSession()V
 
     goto/16 :goto_4
 
-    .line 902
+    .line 869
+    :cond_5
+    iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
+
+    invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "no need keep session, skip create sessoin"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_4
+
+    .line 839
+    .end local v0    # "keepSession":Z
     :pswitch_c
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5612,40 +4938,40 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 905
+    .line 842
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraCaptureSession:Landroid/hardware/camera2/CameraCaptureSession;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 906
+    .line 843
     invoke-static {v0}, Lcom/mediatek/ims/internal/VTSource;->access$300(Lcom/mediatek/ims/internal/VTSource;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     goto :goto_2
 
-    .line 915
-    :cond_5
+    .line 852
+    :cond_6
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0, v2}, Lcom/mediatek/ims/internal/VTSource;->access$302(Lcom/mediatek/ims/internal/VTSource;Z)Z
 
-    .line 916
+    .line 853
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->submitRepeatingRequest()V
 
-    .line 917
+    .line 854
     goto/16 :goto_4
 
-    .line 907
-    :cond_6
+    .line 844
+    :cond_7
     :goto_2
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5689,7 +5015,7 @@
 
     iget-object v3, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
-    .line 910
+    .line 847
     invoke-static {v3}, Lcom/mediatek/ims/internal/VTSource;->access$300(Lcom/mediatek/ims/internal/VTSource;)Z
 
     move-result v3
@@ -5702,18 +5028,18 @@
 
     move-result-object v1
 
-    .line 907
+    .line 844
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 912
+    .line 849
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0, v2}, Lcom/mediatek/ims/internal/VTSource;->access$302(Lcom/mediatek/ims/internal/VTSource;Z)Z
 
-    .line 913
+    .line 850
     return-void
 
-    .line 878
+    .line 815
     :pswitch_d
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5747,14 +5073,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 881
+    .line 818
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/Surface;
 
-    .line 882
+    .line 819
     .local v0, "newSurface":Landroid/view/Surface;
-    if-nez v0, :cond_7
+    if-nez v0, :cond_8
 
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5762,21 +5088,21 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_7
+    if-nez v1, :cond_8
 
-    .line 883
+    .line 820
     return-void
 
-    .line 886
-    :cond_7
+    .line 823
+    :cond_8
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1, v0}, Lcom/mediatek/ims/internal/VTSource;->access$202(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 888
-    if-nez v0, :cond_8
+    .line 825
+    if-nez v0, :cond_9
 
-    .line 891
+    .line 828
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -5787,20 +5113,20 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 893
+    .line 830
     return-void
 
-    .line 895
-    :cond_8
+    .line 832
+    :cond_9
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->closeSession()V
 
-    .line 896
+    .line 833
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->createSession()V
 
-    .line 897
+    .line 834
     goto/16 :goto_4
 
-    .line 869
+    .line 806
     .end local v0    # "newSurface":Landroid/view/Surface;
     :pswitch_e
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -5835,21 +5161,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 871
+    .line 808
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v0, v4}, Lcom/mediatek/ims/internal/VTSource;->access$102(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 872
+    .line 809
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->closeSession()V
 
-    .line 873
+    .line 810
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->createSession()V
 
-    .line 874
+    .line 811
     goto/16 :goto_4
 
-    .line 834
+    .line 771
     :pswitch_f
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5883,29 +5209,29 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 836
+    .line 773
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/Surface;
 
-    .line 837
+    .line 774
     .restart local v0    # "newSurface":Landroid/view/Surface;
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
     invoke-virtual {v0}, Landroid/view/Surface;->isValid()Z
 
     move-result v1
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_a
 
     goto :goto_3
 
-    .line 847
-    :cond_9
+    .line 784
+    :cond_a
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$100(Lcom/mediatek/ims/internal/VTSource;)Landroid/view/Surface;
@@ -5916,25 +5242,25 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_b
 
-    .line 848
+    .line 785
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->closeSession()V
 
-    .line 850
-    :cond_a
+    .line 787
+    :cond_b
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1, v0}, Lcom/mediatek/ims/internal/VTSource;->access$102(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 851
+    .line 788
     invoke-direct {p0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->createSession()V
 
-    .line 852
+    .line 789
     goto :goto_4
 
-    .line 838
-    :cond_b
+    .line 775
+    :cond_c
     :goto_3
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
@@ -5974,16 +5300,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 840
-    if-eqz v0, :cond_c
+    .line 777
+    if-eqz v0, :cond_d
 
     invoke-virtual {v0}, Landroid/view/Surface;->isValid()Z
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
-    .line 841
+    .line 778
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1}, Lcom/mediatek/ims/internal/VTSource;->access$000(Lcom/mediatek/ims/internal/VTSource;)Ljava/lang/String;
@@ -5994,16 +5320,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 843
+    .line 780
     iget-object v1, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
 
     invoke-static {v1, v0}, Lcom/mediatek/ims/internal/VTSource;->access$102(Lcom/mediatek/ims/internal/VTSource;Landroid/view/Surface;)Landroid/view/Surface;
 
-    .line 845
-    :cond_c
+    .line 782
+    :cond_d
     return-void
 
-    .line 826
+    .line 763
     .end local v0    # "newSurface":Landroid/view/Surface;
     :pswitch_10
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->this$0:Lcom/mediatek/ims/internal/VTSource;
@@ -6038,23 +5364,25 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 828
+    .line 765
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
-    .line 829
+    .line 766
     .local v0, "cameraId":Ljava/lang/String;
     invoke-direct {p0, v0}, Lcom/mediatek/ims/internal/VTSource$DeviceHandler;->openCamera(Ljava/lang/String;)V
 
-    .line 830
+    .line 767
     nop
 
-    .line 1033
+    .line 976
     .end local v0    # "cameraId":Ljava/lang/String;
-    :cond_d
+    :cond_e
     :goto_4
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

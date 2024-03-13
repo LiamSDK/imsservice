@@ -289,7 +289,7 @@
     .locals 4
     .param p0, "insets"    # Landroid/graphics/Insets;
 
-    .line 192
+    .line 191
     iget v0, p0, Landroid/graphics/Insets;->left:I
 
     iget v1, p0, Landroid/graphics/Insets;->top:I
@@ -311,7 +311,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 182
+    .line 181
     invoke-static {p0}, Landroidx/core/graphics/Insets;->toCompatInsets(Landroid/graphics/Insets;)Landroidx/core/graphics/Insets;
 
     move-result-object v0
@@ -448,7 +448,7 @@
 .method public toPlatformInsets()Landroid/graphics/Insets;
     .locals 4
 
-    .line 202
+    .line 201
     iget v0, p0, Landroidx/core/graphics/Insets;->left:I
 
     iget v1, p0, Landroidx/core/graphics/Insets;->top:I

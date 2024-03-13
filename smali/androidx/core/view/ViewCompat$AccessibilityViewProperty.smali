@@ -53,14 +53,14 @@
         }
     .end annotation
 
-    .line 4416
+    .line 4687
     .local p0, "this":Landroidx/core/view/ViewCompat$AccessibilityViewProperty;, "Landroidx/core/view/ViewCompat$AccessibilityViewProperty<TT;>;"
     .local p2, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0, p3}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;-><init>(ILjava/lang/Class;II)V
 
-    .line 4418
+    .line 4689
     return-void
 .end method
 
@@ -77,53 +77,41 @@
         }
     .end annotation
 
-    .line 4421
+    .line 4692
     .local p0, "this":Landroidx/core/view/ViewCompat$AccessibilityViewProperty;, "Landroidx/core/view/ViewCompat$AccessibilityViewProperty<TT;>;"
     .local p2, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4422
+    .line 4693
     iput p1, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mTagKey:I
 
-    .line 4423
+    .line 4694
     iput-object p2, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mType:Ljava/lang/Class;
 
-    .line 4424
+    .line 4695
     iput p3, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mContentChangeType:I
 
-    .line 4425
+    .line 4696
     iput p4, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mFrameworkMinimumSdk:I
 
-    .line 4427
+    .line 4698
     return-void
 .end method
 
 .method private extrasAvailable()Z
-    .locals 2
+    .locals 1
 
-    .line 4460
+    .line 4731
     .local p0, "this":Landroidx/core/view/ViewCompat$AccessibilityViewProperty;, "Landroidx/core/view/ViewCompat$AccessibilityViewProperty<TT;>;"
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
     const/4 v0, 0x1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
     return v0
 .end method
 
 .method private frameworkAvailable()Z
     .locals 2
 
-    .line 4456
+    .line 4727
     .local p0, "this":Landroidx/core/view/ViewCompat$AccessibilityViewProperty;, "Landroidx/core/view/ViewCompat$AccessibilityViewProperty<TT;>;"
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -149,7 +137,7 @@
     .param p1, "a"    # Ljava/lang/Boolean;
     .param p2, "b"    # Ljava/lang/Boolean;
 
-    .line 4473
+    .line 4744
     .local p0, "this":Landroidx/core/view/ViewCompat$AccessibilityViewProperty;, "Landroidx/core/view/ViewCompat$AccessibilityViewProperty<TT;>;"
     const/4 v0, 0x1
 
@@ -170,7 +158,7 @@
     :cond_0
     move v2, v1
 
-    .line 4474
+    .line 4745
     .local v2, "aBool":Z
     :goto_0
     if-eqz p2, :cond_1
@@ -188,7 +176,7 @@
     :cond_1
     move v3, v1
 
-    .line 4475
+    .line 4746
     .local v3, "bBool":Z
     :goto_1
     if-ne v2, v3, :cond_2
@@ -233,7 +221,7 @@
         }
     .end annotation
 
-    .line 4444
+    .line 4715
     .local p0, "this":Landroidx/core/view/ViewCompat$AccessibilityViewProperty;, "Landroidx/core/view/ViewCompat$AccessibilityViewProperty<TT;>;"
     invoke-direct {p0}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->frameworkAvailable()Z
 
@@ -241,14 +229,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 4445
+    .line 4716
     invoke-virtual {p0, p1}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->frameworkGet(Landroid/view/View;)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 
-    .line 4446
+    .line 4717
     :cond_0
     invoke-direct {p0}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->extrasAvailable()Z
 
@@ -256,14 +244,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 4447
+    .line 4718
     iget v0, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mTagKey:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 4448
+    .line 4719
     .local v0, "value":Ljava/lang/Object;
     iget-object v1, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mType:Ljava/lang/Class;
 
@@ -273,10 +261,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 4449
+    .line 4720
     return-object v0
 
-    .line 4452
+    .line 4723
     .end local v0    # "value":Ljava/lang/Object;
     :cond_1
     const/4 v0, 0x0
@@ -295,7 +283,7 @@
         }
     .end annotation
 
-    .line 4430
+    .line 4701
     .local p0, "this":Landroidx/core/view/ViewCompat$AccessibilityViewProperty;, "Landroidx/core/view/ViewCompat$AccessibilityViewProperty<TT;>;"
     .local p2, "value":Ljava/lang/Object;, "TT;"
     invoke-direct {p0}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->frameworkAvailable()Z
@@ -304,12 +292,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 4431
+    .line 4702
     invoke-virtual {p0, p1, p2}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->frameworkSet(Landroid/view/View;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 4432
+    .line 4703
     :cond_0
     invoke-direct {p0}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->extrasAvailable()Z
 
@@ -327,20 +315,20 @@
 
     if-eqz v0, :cond_1
 
-    .line 4433
+    .line 4704
     invoke-static {p1}, Landroidx/core/view/ViewCompat;->ensureAccessibilityDelegateCompat(Landroid/view/View;)V
 
-    .line 4434
+    .line 4705
     iget v0, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mTagKey:I
 
     invoke-virtual {p1, v0, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 4438
+    .line 4709
     iget v0, p0, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->mContentChangeType:I
 
     invoke-static {p1, v0}, Landroidx/core/view/ViewCompat;->notifyViewAccessibilityStateChangedIfNeeded(Landroid/view/View;I)V
 
-    .line 4440
+    .line 4711
     :cond_1
     :goto_0
     return-void
@@ -354,7 +342,7 @@
         }
     .end annotation
 
-    .line 4464
+    .line 4735
     .local p0, "this":Landroidx/core/view/ViewCompat$AccessibilityViewProperty;, "Landroidx/core/view/ViewCompat$AccessibilityViewProperty<TT;>;"
     .local p1, "oldValue":Ljava/lang/Object;, "TT;"
     .local p2, "newValue":Ljava/lang/Object;, "TT;"

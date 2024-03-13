@@ -36,58 +36,58 @@
     .line 22
     new-instance v2, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;
 
-    const-string v3, "OP08Ims.apk"
+    const-string v3, "com.mediatek.op08.ims"
 
-    const-string v4, "com.mediatek.op08.ims.Op08ImsServiceCustomizationFactory"
+    const-string v4, "OP08"
 
-    const-string v5, "com.mediatek.op08.ims"
+    const-string v5, "OP08Ims.apk"
 
-    const-string v6, "OP08"
+    const-string v6, "com.mediatek.op08.ims.Op08ImsServiceCustomizationFactory"
 
-    invoke-direct {v2, v3, v4, v5, v6}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v5, v6, v3, v4}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 27
     new-instance v2, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;
 
-    const-string v3, "OP18Ims.jar"
+    const-string v3, "com.mediatek.op18.ims.Op18ImsServiceCustomizationFactory"
 
-    const-string v4, "com.mediatek.op18.ims.Op18ImsServiceCustomizationFactory"
+    const-string v4, "OP18"
 
-    const-string v5, "OP18"
+    const-string v5, "OP18Ims.jar"
 
-    invoke-direct {v2, v3, v4, v1, v5}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v5, v3, v1, v4}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 33
     new-instance v1, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;
 
-    const-string v2, "OP12Ims.apk"
+    const-string v2, "com.mediatek.op12.ims"
 
-    const-string v3, "com.mediatek.op12.ims.Op12ImsServiceCustomizationFactory"
+    const-string v3, "OP12"
 
-    const-string v4, "com.mediatek.op12.ims"
+    const-string v4, "OP12Ims.apk"
 
-    const-string v5, "OP12"
+    const-string v5, "com.mediatek.op12.ims.Op12ImsServiceCustomizationFactory"
 
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v4, v5, v2, v3}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 39
     new-instance v1, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;
 
-    const-string v2, "OP112Ims.apk"
+    const-string v2, "com.mediatek.op112.ims"
 
-    const-string v3, "com.mediatek.op112.ims.Op112ImsServiceCustomizationFactory"
+    const-string v3, "OP112"
 
-    const-string v4, "com.mediatek.op112.ims"
+    const-string v4, "OP112Ims.apk"
 
-    const-string v5, "OP112"
+    const-string v5, "com.mediatek.op112.ims.Op112ImsServiceCustomizationFactory"
 
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v4, v5, v2, v3}, Lcom/mediatek/common/util/OperatorCustomizationFactoryLoader$OperatorFactoryInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 

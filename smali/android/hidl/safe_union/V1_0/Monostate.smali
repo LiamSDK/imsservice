@@ -59,11 +59,11 @@
 
     move-result-wide v7
 
-    .line 46
     const-wide/16 v9, 0x0
 
     const/4 v11, 0x1
 
+    .line 46
     move-object v4, p0
 
     invoke-virtual/range {v4 .. v11}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;

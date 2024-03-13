@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 261
+    .line 257
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
     .locals 1
     .param p0, "context"    # Landroid/content/Context;
 
-    .line 265
+    .line 261
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0

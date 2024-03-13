@@ -41,7 +41,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 65
+    .line 64
     const/4 v0, 0x0
 
     sput-boolean v0, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sHasInitBeenCalled:Z
@@ -52,7 +52,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 54
+    .line 53
     invoke-direct {p0}, Landroidx/core/graphics/TypefaceCompatBaseImpl;-><init>()V
 
     return-void
@@ -65,10 +65,10 @@
     .param p2, "weight"    # I
     .param p3, "style"    # Z
 
-    .line 136
+    .line 135
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi21Impl;->init()V
 
-    .line 138
+    .line 137
     :try_start_0
     sget-object v0, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sAddFontWeightStyle:Ljava/lang/reflect/Method;
 
@@ -80,31 +80,31 @@
 
     aput-object p1, v1, v2
 
-    const/4 v2, 0x1
-
-    .line 139
+    .line 138
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v1, v2
+    const/4 v3, 0x1
 
-    const/4 v2, 0x2
+    aput-object v2, v1, v3
 
     invoke-static {p3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v1, v2
+    const/4 v3, 0x2
 
-    .line 138
+    aput-object v2, v1, v3
+
+    .line 137
     invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Boolean;
 
-    .line 140
+    .line 139
     .local v0, "result":Ljava/lang/Boolean;
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -115,12 +115,12 @@
 
     return v1
 
-    .line 141
+    .line 140
     .end local v0    # "result":Ljava/lang/Boolean;
     :catch_0
     move-exception v0
 
-    .line 142
+    .line 141
     .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -130,13 +130,13 @@
 .end method
 
 .method private static createFromFamiliesWithDefault(Ljava/lang/Object;)Landroid/graphics/Typeface;
-    .locals 5
+    .locals 4
     .param p0, "family"    # Ljava/lang/Object;
 
-    .line 123
+    .line 122
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi21Impl;->init()V
 
-    .line 125
+    .line 124
     :try_start_0
     sget-object v0, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sFontFamily:Ljava/lang/Class;
 
@@ -146,22 +146,22 @@
 
     move-result-object v0
 
-    .line 126
+    .line 125
     .local v0, "familyArray":Ljava/lang/Object;
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-static {v0, v2, p0}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-static {v0, v1, p0}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    .line 127
-    sget-object v3, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sCreateFromFamiliesWithDefault:Ljava/lang/reflect/Method;
+    .line 126
+    sget-object v1, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sCreateFromFamiliesWithDefault:Ljava/lang/reflect/Method;
 
-    const/4 v4, 0x0
+    filled-new-array {v0}, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    move-result-object v2
 
-    aput-object v0, v1, v2
+    const/4 v3, 0x0
 
-    invoke-virtual {v3, v4, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -172,12 +172,12 @@
 
     return-object v1
 
-    .line 129
+    .line 128
     .end local v0    # "familyArray":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 130
+    .line 129
     .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -190,7 +190,7 @@
     .locals 3
     .param p1, "fd"    # Landroid/os/ParcelFileDescriptor;
 
-    .line 101
+    .line 100
     const/4 v0, 0x0
 
     :try_start_0
@@ -220,7 +220,7 @@
 
     move-result-object v1
 
-    .line 103
+    .line 102
     .local v1, "path":Ljava/lang/String;
     invoke-static {v1}, Landroid/system/Os;->stat(Ljava/lang/String;)Landroid/system/StructStat;
 
@@ -234,7 +234,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 104
+    .line 103
     new-instance v2, Ljava/io/File;
 
     invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -243,16 +243,16 @@
 
     return-object v2
 
-    .line 106
+    .line 105
     :cond_0
     return-object v0
 
-    .line 108
+    .line 107
     .end local v1    # "path":Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 109
+    .line 108
     .local v1, "e":Landroid/system/ErrnoException;
     return-object v0
 .end method
@@ -260,21 +260,21 @@
 .method private static init()V
     .locals 9
 
-    .line 68
+    .line 67
     sget-boolean v0, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sHasInitBeenCalled:Z
 
     if-eqz v0, :cond_0
 
-    .line 69
+    .line 68
     return-void
 
-    .line 71
+    .line 70
     :cond_0
     const/4 v0, 0x1
 
     sput-boolean v0, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sHasInitBeenCalled:Z
 
-    .line 78
+    .line 77
     :try_start_0
     const-string v1, "android.graphics.FontFamily"
 
@@ -282,7 +282,7 @@
 
     move-result-object v1
 
-    .line 79
+    .line 78
     .local v1, "fontFamilyClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v2, 0x0
 
@@ -292,7 +292,7 @@
 
     move-result-object v3
 
-    .line 80
+    .line 79
     .local v3, "fontFamilyCtor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     const-string v4, "addFontWeightStyle"
 
@@ -308,23 +308,23 @@
 
     aput-object v6, v5, v0
 
-    const/4 v6, 0x2
+    sget-object v6, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    sget-object v7, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    const/4 v7, 0x2
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v7
 
     invoke-virtual {v1, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v4
 
-    .line 82
+    .line 81
     .local v4, "addFontMethod":Ljava/lang/reflect/Method;
     invoke-static {v1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 83
+    .line 82
     .local v5, "familyArray":Ljava/lang/Object;
     const-class v6, Landroid/graphics/Typeface;
 
@@ -332,14 +332,14 @@
 
     new-array v0, v0, [Ljava/lang/Class;
 
-    .line 85
+    .line 84
     invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v8
 
     aput-object v8, v0, v2
 
-    .line 84
+    .line 83
     invoke-virtual {v6, v7, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
@@ -347,12 +347,12 @@
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 92
+    .line 91
     .end local v5    # "familyArray":Ljava/lang/Object;
     .local v0, "createFromFamiliesWithDefaultMethod":Ljava/lang/reflect/Method;
     goto :goto_0
 
-    .line 86
+    .line 85
     .end local v0    # "createFromFamiliesWithDefaultMethod":Ljava/lang/reflect/Method;
     .end local v1    # "fontFamilyClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     .end local v3    # "fontFamilyCtor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
@@ -360,7 +360,7 @@
     :catch_0
     move-exception v0
 
-    .line 87
+    .line 86
     .local v0, "e":Ljava/lang/ReflectiveOperationException;
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -374,48 +374,48 @@
 
     invoke-static {v2, v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 88
+    .line 87
     const/4 v1, 0x0
 
-    .line 89
+    .line 88
     .restart local v1    # "fontFamilyClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v3, 0x0
 
-    .line 90
+    .line 89
     .restart local v3    # "fontFamilyCtor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     const/4 v4, 0x0
 
-    .line 91
+    .line 90
     .restart local v4    # "addFontMethod":Ljava/lang/reflect/Method;
     const/4 v2, 0x0
 
     move-object v0, v2
 
-    .line 93
+    .line 92
     .local v0, "createFromFamiliesWithDefaultMethod":Ljava/lang/reflect/Method;
     :goto_0
     sput-object v3, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sFontFamilyCtor:Ljava/lang/reflect/Constructor;
 
-    .line 94
+    .line 93
     sput-object v1, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sFontFamily:Ljava/lang/Class;
 
-    .line 95
+    .line 94
     sput-object v4, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sAddFontWeightStyle:Ljava/lang/reflect/Method;
 
-    .line 96
+    .line 95
     sput-object v0, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sCreateFromFamiliesWithDefault:Ljava/lang/reflect/Method;
 
-    .line 97
+    .line 96
     return-void
 .end method
 
 .method private static newFamily()Ljava/lang/Object;
     .locals 2
 
-    .line 114
+    .line 113
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi21Impl;->init()V
 
-    .line 116
+    .line 115
     :try_start_0
     sget-object v0, Landroidx/core/graphics/TypefaceCompatApi21Impl;->sFontFamilyCtor:Ljava/lang/reflect/Constructor;
 
@@ -433,11 +433,11 @@
 
     return-object v0
 
-    .line 117
+    .line 116
     :catch_0
     move-exception v0
 
-    .line 118
+    .line 117
     .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -455,12 +455,12 @@
     .param p3, "resources"    # Landroid/content/res/Resources;
     .param p4, "style"    # I
 
-    .line 176
+    .line 175
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi21Impl;->newFamily()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 177
+    .line 176
     .local v0, "family":Ljava/lang/Object;
     invoke-virtual {p2}, Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;->getEntries()[Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
 
@@ -475,22 +475,22 @@
 
     aget-object v4, v1, v3
 
-    .line 178
+    .line 177
     .local v4, "e":Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
     invoke-static {p1}, Landroidx/core/graphics/TypefaceCompatUtil;->getTempFile(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v5
 
-    .line 179
+    .line 178
     .local v5, "tmpFile":Ljava/io/File;
     const/4 v6, 0x0
 
     if-nez v5, :cond_0
 
-    .line 180
+    .line 179
     return-object v6
 
-    .line 183
+    .line 182
     :cond_0
     :try_start_0
     invoke-virtual {v4}, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->getResourceId()I
@@ -506,16 +506,16 @@
 
     if-nez v7, :cond_1
 
-    .line 184
+    .line 183
     nop
 
-    .line 196
+    .line 195
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
-    .line 184
+    .line 183
     return-object v6
 
-    .line 187
+    .line 186
     :cond_1
     :try_start_1
     invoke-virtual {v5}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -539,30 +539,30 @@
 
     if-nez v7, :cond_2
 
-    .line 188
+    .line 187
     nop
 
-    .line 196
+    .line 195
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
-    .line 188
+    .line 187
     return-object v6
 
-    .line 196
+    .line 195
     :cond_2
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
-    .line 197
+    .line 196
     nop
 
-    .line 177
+    .line 176
     .end local v4    # "e":Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
     .end local v5    # "tmpFile":Ljava/io/File;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 196
+    .line 195
     .restart local v4    # "e":Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
     .restart local v5    # "tmpFile":Ljava/io/File;
     :catchall_0
@@ -570,24 +570,24 @@
 
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
-    .line 197
+    .line 196
     throw v1
 
-    .line 190
+    .line 189
     :catch_0
     move-exception v1
 
-    .line 194
+    .line 193
     .local v1, "exception":Ljava/lang/RuntimeException;
     nop
 
-    .line 196
+    .line 195
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
-    .line 194
+    .line 193
     return-object v6
 
-    .line 199
+    .line 198
     .end local v1    # "exception":Ljava/lang/RuntimeException;
     .end local v4    # "e":Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;
     .end local v5    # "tmpFile":Ljava/io/File;
@@ -606,35 +606,35 @@
     .param p3, "fonts"    # [Landroidx/core/provider/FontsContractCompat$FontInfo;
     .param p4, "style"    # I
 
-    .line 149
+    .line 148
     array-length v0, p3
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    if-ge v0, v2, :cond_0
+    if-ge v0, v1, :cond_0
 
-    .line 150
-    return-object v1
+    .line 149
+    return-object v2
 
-    .line 152
+    .line 151
     :cond_0
     invoke-virtual {p0, p3, p4}, Landroidx/core/graphics/TypefaceCompatApi21Impl;->findBestInfo([Landroidx/core/provider/FontsContractCompat$FontInfo;I)Landroidx/core/provider/FontsContractCompat$FontInfo;
 
     move-result-object v0
 
-    .line 153
+    .line 152
     .local v0, "bestFont":Landroidx/core/provider/FontsContractCompat$FontInfo;
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v2
+    move-result-object v1
 
-    .line 154
-    .local v2, "resolver":Landroid/content/ContentResolver;
+    .line 153
+    .local v1, "resolver":Landroid/content/ContentResolver;
     nop
 
-    .line 155
+    .line 154
     :try_start_0
     invoke-virtual {v0}, Landroidx/core/provider/FontsContractCompat$FontInfo;->getUri()Landroid/net/Uri;
 
@@ -642,36 +642,36 @@
 
     const-string v4, "r"
 
-    invoke-virtual {v2, v3, v4, p2}, Landroid/content/ContentResolver;->openFileDescriptor(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;
+    invoke-virtual {v1, v3, v4, p2}, Landroid/content/ContentResolver;->openFileDescriptor(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v3
 
-    .line 156
+    .line 155
     .local v3, "pfd":Landroid/os/ParcelFileDescriptor;
     if-nez v3, :cond_2
 
-    .line 157
+    .line 156
     nop
 
-    .line 168
+    .line 167
     if-eqz v3, :cond_1
 
     invoke-virtual {v3}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 157
+    .line 156
     :cond_1
-    return-object v1
+    return-object v2
 
-    .line 159
+    .line 158
     :cond_2
     :try_start_1
     invoke-direct {p0, v3}, Landroidx/core/graphics/TypefaceCompatApi21Impl;->getFile(Landroid/os/ParcelFileDescriptor;)Ljava/io/File;
 
     move-result-object v4
 
-    .line 160
+    .line 159
     .local v4, "file":Ljava/io/File;
     if-eqz v4, :cond_5
 
@@ -683,7 +683,7 @@
 
     goto :goto_0
 
-    .line 167
+    .line 166
     :cond_3
     invoke-static {v4}, Landroid/graphics/Typeface;->createFromFile(Ljava/io/File;)Landroid/graphics/Typeface;
 
@@ -691,7 +691,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    .line 168
+    .line 167
     if-eqz v3, :cond_4
 
     :try_start_2
@@ -699,11 +699,11 @@
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 167
+    .line 166
     :cond_4
     return-object v5
 
-    .line 163
+    .line 162
     :cond_5
     :goto_0
     :try_start_3
@@ -717,7 +717,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    .line 164
+    .line 163
     .local v5, "fis":Ljava/io/FileInputStream;
     :try_start_4
     invoke-super {p0, p1, v5}, Landroidx/core/graphics/TypefaceCompatBaseImpl;->createFromInputStream(Landroid/content/Context;Ljava/io/InputStream;)Landroid/graphics/Typeface;
@@ -726,13 +726,13 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 165
+    .line 164
     :try_start_5
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    .line 168
+    .line 167
     if-eqz v3, :cond_6
 
     :try_start_6
@@ -740,11 +740,11 @@
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
 
-    .line 164
+    .line 163
     :cond_6
     return-object v6
 
-    .line 163
+    .line 162
     :catchall_0
     move-exception v6
 
@@ -762,7 +762,7 @@
     invoke-virtual {v6, v7}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
     .end local v0    # "bestFont":Landroidx/core/provider/FontsContractCompat$FontInfo;
-    .end local v2    # "resolver":Landroid/content/ContentResolver;
+    .end local v1    # "resolver":Landroid/content/ContentResolver;
     .end local v3    # "pfd":Landroid/os/ParcelFileDescriptor;
     .end local p0    # "this":Landroidx/core/graphics/TypefaceCompatApi21Impl;
     .end local p1    # "context":Landroid/content/Context;
@@ -774,11 +774,11 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
-    .line 154
+    .line 153
     .end local v4    # "file":Ljava/io/File;
     .end local v5    # "fis":Ljava/io/FileInputStream;
     .restart local v0    # "bestFont":Landroidx/core/provider/FontsContractCompat$FontInfo;
-    .restart local v2    # "resolver":Landroid/content/ContentResolver;
+    .restart local v1    # "resolver":Landroid/content/ContentResolver;
     .restart local v3    # "pfd":Landroid/os/ParcelFileDescriptor;
     .restart local p0    # "this":Landroidx/core/graphics/TypefaceCompatApi21Impl;
     .restart local p1    # "context":Landroid/content/Context;
@@ -804,7 +804,7 @@
     invoke-virtual {v4, v5}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
     .end local v0    # "bestFont":Landroidx/core/provider/FontsContractCompat$FontInfo;
-    .end local v2    # "resolver":Landroid/content/ContentResolver;
+    .end local v1    # "resolver":Landroid/content/ContentResolver;
     .end local p0    # "this":Landroidx/core/graphics/TypefaceCompatApi21Impl;
     .end local p1    # "context":Landroid/content/Context;
     .end local p2    # "cancellationSignal":Landroid/os/CancellationSignal;
@@ -816,10 +816,10 @@
     :try_end_a
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_0
 
-    .line 168
+    .line 167
     .end local v3    # "pfd":Landroid/os/ParcelFileDescriptor;
     .restart local v0    # "bestFont":Landroidx/core/provider/FontsContractCompat$FontInfo;
-    .restart local v2    # "resolver":Landroid/content/ContentResolver;
+    .restart local v1    # "resolver":Landroid/content/ContentResolver;
     .restart local p0    # "this":Landroidx/core/graphics/TypefaceCompatApi21Impl;
     .restart local p1    # "context":Landroid/content/Context;
     .restart local p2    # "cancellationSignal":Landroid/os/CancellationSignal;
@@ -828,7 +828,49 @@
     :catch_0
     move-exception v3
 
-    .line 169
+    .line 168
     .local v3, "e":Ljava/io/IOException;
-    return-object v1
+    return-object v2
+.end method
+
+.method createWeightStyle(Landroid/content/Context;Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+    .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "base"    # Landroid/graphics/Typeface;
+    .param p3, "weight"    # I
+    .param p4, "italic"    # Z
+
+    .line 205
+    const/4 v0, 0x0
+
+    .line 207
+    .local v0, "out":Landroid/graphics/Typeface;
+    :try_start_0
+    invoke-static {p2, p3, p4}, Landroidx/core/graphics/WeightTypefaceApi21;->createWeightStyle(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+
+    move-result-object v1
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object v0, v1
+
+    .line 210
+    goto :goto_0
+
+    .line 208
+    :catch_0
+    move-exception v1
+
+    .line 211
+    :goto_0
+    if-nez v0, :cond_0
+
+    .line 212
+    invoke-super {p0, p1, p2, p3, p4}, Landroidx/core/graphics/TypefaceCompatBaseImpl;->createWeightStyle(Landroid/content/Context;Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+
+    move-result-object v0
+
+    .line 214
+    :cond_0
+    return-object v0
 .end method

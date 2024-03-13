@@ -21,7 +21,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -39,7 +39,7 @@
 .end method
 
 .method private static final synchronized(Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .locals 2
+    .locals 3
     .param p0, "lock"    # Ljava/lang/Object;
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -64,42 +64,45 @@
     .line 18
     nop
 
-    .line 23
-    monitor-enter p0
+    .line 25
+    move-object v0, p0
 
-    .line 24
+    .line 28
+    .local v0, "lockLocal":Ljava/lang/Object;
+    monitor-enter v0
+
+    .line 29
     nop
 
-    .line 25
-    const/4 v0, 0x1
+    .line 30
+    const/4 v1, 0x1
 
     :try_start_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
+    invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 29
-    monitor-exit p0
+    .line 34
+    monitor-exit v0
 
-    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
+    invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
 
-    .line 25
-    return-object v1
+    .line 30
+    return-object v2
 
-    .line 27
+    .line 34
     :catchall_0
-    move-exception v1
+    move-exception v2
 
-    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
+    invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 29
-    monitor-exit p0
+    monitor-exit v0
 
-    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
+    invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
 
-    throw v1
+    throw v2
 .end method

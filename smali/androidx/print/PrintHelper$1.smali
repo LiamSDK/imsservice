@@ -470,7 +470,7 @@
 .end method
 
 .method protected onPostExecute(Ljava/lang/Throwable;)V
-    .locals 4
+    .locals 2
     .param p1, "throwable"    # Ljava/lang/Throwable;
 
     .line 723
@@ -496,15 +496,11 @@
     .line 728
     iget-object v0, p0, Landroidx/print/PrintHelper$1;->val$writeResultCallback:Landroid/print/PrintDocumentAdapter$WriteResultCallback;
 
-    const/4 v1, 0x1
+    sget-object v1, Landroid/print/PageRange;->ALL_PAGES:Landroid/print/PageRange;
 
-    new-array v1, v1, [Landroid/print/PageRange;
+    filled-new-array {v1}, [Landroid/print/PageRange;
 
-    const/4 v2, 0x0
-
-    sget-object v3, Landroid/print/PageRange;->ALL_PAGES:Landroid/print/PageRange;
-
-    aput-object v3, v1, v2
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/print/PrintDocumentAdapter$WriteResultCallback;->onWriteFinished([Landroid/print/PageRange;)V
 

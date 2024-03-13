@@ -13,6 +13,9 @@
     name = "MethodReference"
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # instance fields
 .field final mCallType:I
@@ -26,21 +29,21 @@
     .param p1, "callType"    # I
     .param p2, "method"    # Ljava/lang/reflect/Method;
 
-    .line 205
+    .line 211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 206
+    .line 212
     iput p1, p0, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mCallType:I
 
-    .line 207
+    .line 213
     iput-object p2, p0, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mMethod:Ljava/lang/reflect/Method;
 
-    .line 208
+    .line 214
     const/4 v0, 0x1
 
     invoke-virtual {p2, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    .line 209
+    .line 215
     return-void
 .end method
 
@@ -50,15 +53,15 @@
     .locals 5
     .param p1, "o"    # Ljava/lang/Object;
 
-    .line 234
+    .line 240
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    .line 235
+    .line 241
     return v0
 
-    .line 237
+    .line 243
     :cond_0
     instance-of v1, p1, Landroidx/lifecycle/ClassesInfoCache$MethodReference;
 
@@ -66,16 +69,16 @@
 
     if-nez v1, :cond_1
 
-    .line 238
+    .line 244
     return v2
 
-    .line 241
+    .line 247
     :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/lifecycle/ClassesInfoCache$MethodReference;
 
-    .line 242
+    .line 248
     .local v1, "that":Landroidx/lifecycle/ClassesInfoCache$MethodReference;
     iget v3, p0, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mCallType:I
 
@@ -113,7 +116,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 247
+    .line 253
     iget v0, p0, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mCallType:I
 
     mul-int/lit8 v0, v0, 0x1f
@@ -139,73 +142,67 @@
     .param p2, "event"    # Landroidx/lifecycle/Lifecycle$Event;
     .param p3, "target"    # Ljava/lang/Object;
 
-    .line 214
+    .line 220
     :try_start_0
     iget v0, p0, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mCallType:I
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 222
+    .line 228
     :pswitch_0
     iget-object v0, p0, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mMethod:Ljava/lang/reflect/Method;
 
-    const/4 v3, 0x2
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
 
-    new-array v3, v3, [Ljava/lang/Object;
-
-    aput-object p1, v3, v2
-
-    aput-object p2, v3, v1
-
-    invoke-virtual {v0, p3, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    .line 219
-    :pswitch_1
-    iget-object v0, p0, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mMethod:Ljava/lang/reflect/Method;
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    aput-object p1, v1, v2
+    move-result-object v1
 
     invoke-virtual {v0, p3, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 220
     goto :goto_0
 
-    .line 216
+    .line 225
+    :pswitch_1
+    iget-object v0, p0, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mMethod:Ljava/lang/reflect/Method;
+
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p3, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 226
+    goto :goto_0
+
+    .line 222
     :pswitch_2
     iget-object v0, p0, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mMethod:Ljava/lang/reflect/Method;
 
-    new-array v1, v2, [Ljava/lang/Object;
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-virtual {v0, p3, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 217
+    .line 223
     nop
 
-    .line 229
+    .line 235
     :goto_0
     nop
 
-    .line 230
+    .line 236
     return-void
 
-    .line 227
+    .line 233
     :catch_0
     move-exception v0
 
-    .line 228
+    .line 234
     .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -213,22 +210,22 @@
 
     throw v1
 
-    .line 225
+    .line 231
     .end local v0    # "e":Ljava/lang/IllegalAccessException;
     :catch_1
     move-exception v0
 
-    .line 226
+    .line 232
     .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     new-instance v1, Ljava/lang/RuntimeException;
 
+    const-string v2, "Failed to call observer method"
+
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "Failed to call observer method"
-
-    invoke-direct {v1, v3, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v1
 

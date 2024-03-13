@@ -66,7 +66,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -76,7 +76,7 @@
 # direct methods
 .method private static final countLeadingZeroBits-7apg3OU(B)I
     .locals 1
-    .param p0, "$this$countLeadingZeroBits"    # B
+    .param p0, "$this$countLeadingZeroBits_u2d7apg3OU"    # B
 
     .line 169
     and-int/lit16 v0, p0, 0xff
@@ -92,7 +92,7 @@
 
 .method private static final countLeadingZeroBits-VKZWuLQ(J)I
     .locals 1
-    .param p0, "$this$countLeadingZeroBits"    # J
+    .param p0, "$this$countLeadingZeroBits_u2dVKZWuLQ"    # J
 
     .line 97
     invoke-static {p0, p1}, Ljava/lang/Long;->numberOfLeadingZeros(J)I
@@ -104,7 +104,7 @@
 
 .method private static final countLeadingZeroBits-WZ4Q5Ns(I)I
     .locals 1
-    .param p0, "$this$countLeadingZeroBits"    # I
+    .param p0, "$this$countLeadingZeroBits_u2dWZ4Q5Ns"    # I
 
     .line 23
     invoke-static {p0}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
@@ -116,7 +116,7 @@
 
 .method private static final countLeadingZeroBits-xj2QHRw(S)I
     .locals 1
-    .param p0, "$this$countLeadingZeroBits"    # S
+    .param p0, "$this$countLeadingZeroBits_u2dxj2QHRw"    # S
 
     .line 242
     const v0, 0xffff
@@ -134,7 +134,7 @@
 
 .method private static final countOneBits-7apg3OU(B)I
     .locals 1
-    .param p0, "$this$countOneBits"    # B
+    .param p0, "$this$countOneBits_u2d7apg3OU"    # B
 
     .line 161
     and-int/lit16 v0, p0, 0xff
@@ -152,7 +152,7 @@
 
 .method private static final countOneBits-VKZWuLQ(J)I
     .locals 1
-    .param p0, "$this$countOneBits"    # J
+    .param p0, "$this$countOneBits_u2dVKZWuLQ"    # J
 
     .line 89
     invoke-static {p0, p1}, Ljava/lang/Long;->bitCount(J)I
@@ -164,7 +164,7 @@
 
 .method private static final countOneBits-WZ4Q5Ns(I)I
     .locals 1
-    .param p0, "$this$countOneBits"    # I
+    .param p0, "$this$countOneBits_u2dWZ4Q5Ns"    # I
 
     .line 15
     invoke-static {p0}, Ljava/lang/Integer;->bitCount(I)I
@@ -176,7 +176,7 @@
 
 .method private static final countOneBits-xj2QHRw(S)I
     .locals 1
-    .param p0, "$this$countOneBits"    # S
+    .param p0, "$this$countOneBits_u2dxj2QHRw"    # S
 
     .line 234
     const v0, 0xffff
@@ -196,7 +196,7 @@
 
 .method private static final countTrailingZeroBits-7apg3OU(B)I
     .locals 1
-    .param p0, "$this$countTrailingZeroBits"    # B
+    .param p0, "$this$countTrailingZeroBits_u2d7apg3OU"    # B
 
     .line 177
     or-int/lit16 v0, p0, 0x100
@@ -210,7 +210,7 @@
 
 .method private static final countTrailingZeroBits-VKZWuLQ(J)I
     .locals 1
-    .param p0, "$this$countTrailingZeroBits"    # J
+    .param p0, "$this$countTrailingZeroBits_u2dVKZWuLQ"    # J
 
     .line 105
     invoke-static {p0, p1}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
@@ -222,7 +222,7 @@
 
 .method private static final countTrailingZeroBits-WZ4Q5Ns(I)I
     .locals 1
-    .param p0, "$this$countTrailingZeroBits"    # I
+    .param p0, "$this$countTrailingZeroBits_u2dWZ4Q5Ns"    # I
 
     .line 31
     invoke-static {p0}, Ljava/lang/Integer;->numberOfTrailingZeros(I)I
@@ -234,7 +234,7 @@
 
 .method private static final countTrailingZeroBits-xj2QHRw(S)I
     .locals 1
-    .param p0, "$this$countTrailingZeroBits"    # S
+    .param p0, "$this$countTrailingZeroBits_u2dxj2QHRw"    # S
 
     .line 250
     const/high16 v0, 0x10000
@@ -250,7 +250,7 @@
 
 .method private static final rotateLeft-JSWoG40(JI)J
     .locals 2
-    .param p0, "$this$rotateLeft"    # J
+    .param p0, "$this$rotateLeft_u2dJSWoG40"    # J
     .param p2, "bitCount"    # I
 
     .line 138
@@ -267,7 +267,7 @@
 
 .method private static final rotateLeft-LxnNnR4(BI)B
     .locals 1
-    .param p0, "$this$rotateLeft"    # B
+    .param p0, "$this$rotateLeft_u2dLxnNnR4"    # B
     .param p1, "bitCount"    # I
 
     .line 211
@@ -284,7 +284,7 @@
 
 .method private static final rotateLeft-V7xB4Y4(II)I
     .locals 1
-    .param p0, "$this$rotateLeft"    # I
+    .param p0, "$this$rotateLeft_u2dV7xB4Y4"    # I
     .param p1, "bitCount"    # I
 
     .line 64
@@ -301,7 +301,7 @@
 
 .method private static final rotateLeft-olVBNx4(SI)S
     .locals 1
-    .param p0, "$this$rotateLeft"    # S
+    .param p0, "$this$rotateLeft_u2dolVBNx4"    # S
     .param p1, "bitCount"    # I
 
     .line 284
@@ -318,7 +318,7 @@
 
 .method private static final rotateRight-JSWoG40(JI)J
     .locals 2
-    .param p0, "$this$rotateRight"    # J
+    .param p0, "$this$rotateRight_u2dJSWoG40"    # J
     .param p2, "bitCount"    # I
 
     .line 153
@@ -335,7 +335,7 @@
 
 .method private static final rotateRight-LxnNnR4(BI)B
     .locals 1
-    .param p0, "$this$rotateRight"    # B
+    .param p0, "$this$rotateRight_u2dLxnNnR4"    # B
     .param p1, "bitCount"    # I
 
     .line 226
@@ -352,7 +352,7 @@
 
 .method private static final rotateRight-V7xB4Y4(II)I
     .locals 1
-    .param p0, "$this$rotateRight"    # I
+    .param p0, "$this$rotateRight_u2dV7xB4Y4"    # I
     .param p1, "bitCount"    # I
 
     .line 80
@@ -369,7 +369,7 @@
 
 .method private static final rotateRight-olVBNx4(SI)S
     .locals 1
-    .param p0, "$this$rotateRight"    # S
+    .param p0, "$this$rotateRight_u2dolVBNx4"    # S
     .param p1, "bitCount"    # I
 
     .line 299
@@ -386,7 +386,7 @@
 
 .method private static final takeHighestOneBit-7apg3OU(B)B
     .locals 1
-    .param p0, "$this$takeHighestOneBit"    # B
+    .param p0, "$this$takeHighestOneBit_u2d7apg3OU"    # B
 
     .line 186
     and-int/lit16 v0, p0, 0xff
@@ -406,7 +406,7 @@
 
 .method private static final takeHighestOneBit-VKZWuLQ(J)J
     .locals 2
-    .param p0, "$this$takeHighestOneBit"    # J
+    .param p0, "$this$takeHighestOneBit_u2dVKZWuLQ"    # J
 
     .line 114
     invoke-static {p0, p1}, Ljava/lang/Long;->highestOneBit(J)J
@@ -422,7 +422,7 @@
 
 .method private static final takeHighestOneBit-WZ4Q5Ns(I)I
     .locals 1
-    .param p0, "$this$takeHighestOneBit"    # I
+    .param p0, "$this$takeHighestOneBit_u2dWZ4Q5Ns"    # I
 
     .line 40
     invoke-static {p0}, Ljava/lang/Integer;->highestOneBit(I)I
@@ -438,7 +438,7 @@
 
 .method private static final takeHighestOneBit-xj2QHRw(S)S
     .locals 1
-    .param p0, "$this$takeHighestOneBit"    # S
+    .param p0, "$this$takeHighestOneBit_u2dxj2QHRw"    # S
 
     .line 259
     const v0, 0xffff
@@ -460,7 +460,7 @@
 
 .method private static final takeLowestOneBit-7apg3OU(B)B
     .locals 1
-    .param p0, "$this$takeLowestOneBit"    # B
+    .param p0, "$this$takeLowestOneBit_u2d7apg3OU"    # B
 
     .line 195
     and-int/lit16 v0, p0, 0xff
@@ -480,7 +480,7 @@
 
 .method private static final takeLowestOneBit-VKZWuLQ(J)J
     .locals 2
-    .param p0, "$this$takeLowestOneBit"    # J
+    .param p0, "$this$takeLowestOneBit_u2dVKZWuLQ"    # J
 
     .line 123
     invoke-static {p0, p1}, Ljava/lang/Long;->lowestOneBit(J)J
@@ -496,7 +496,7 @@
 
 .method private static final takeLowestOneBit-WZ4Q5Ns(I)I
     .locals 1
-    .param p0, "$this$takeLowestOneBit"    # I
+    .param p0, "$this$takeLowestOneBit_u2dWZ4Q5Ns"    # I
 
     .line 49
     invoke-static {p0}, Ljava/lang/Integer;->lowestOneBit(I)I
@@ -512,7 +512,7 @@
 
 .method private static final takeLowestOneBit-xj2QHRw(S)S
     .locals 1
-    .param p0, "$this$takeLowestOneBit"    # S
+    .param p0, "$this$takeLowestOneBit_u2dxj2QHRw"    # S
 
     .line 268
     const v0, 0xffff

@@ -7,10 +7,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 49
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
+    .line 49
     return-void
 .end method
 
@@ -19,17 +19,17 @@
     .param p0, "cls"    # Ljava/lang/Object;
     .param p1, "out"    # Ljava/lang/StringBuilder;
 
-    .line 32
+    .line 31
     if-nez p0, :cond_0
 
-    .line 33
+    .line 32
     const-string v0, "null"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 35
+    .line 34
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -39,7 +39,7 @@
 
     move-result-object v0
 
-    .line 36
+    .line 35
     .local v0, "simpleName":Ljava/lang/String;
     if-eqz v0, :cond_1
 
@@ -49,7 +49,7 @@
 
     if-gtz v1, :cond_2
 
-    .line 37
+    .line 36
     :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -59,35 +59,35 @@
 
     move-result-object v0
 
-    .line 38
+    .line 37
     const/16 v1, 0x2e
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v1
 
-    .line 39
+    .line 38
     .local v1, "end":I
     if-lez v1, :cond_2
 
-    .line 40
+    .line 39
     add-int/lit8 v2, v1, 0x1
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 43
+    .line 42
     .end local v1    # "end":I
     :cond_2
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 44
+    .line 43
     const/16 v1, 0x7b
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 45
+    .line 44
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -98,7 +98,7 @@
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 47
+    .line 46
     .end local v0    # "simpleName":Ljava/lang/String;
     :goto_0
     return-void

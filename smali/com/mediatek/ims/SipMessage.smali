@@ -28,6 +28,8 @@
 
 .field public static final DIR_SEND:I = 0x0
 
+.field public static final ECC_CALL_OVER_WFC_NOT_AVAILABLE:Ljava/lang/String; = "Emergency calls over WiFi not allowed in this location"
+
 .field public static final METHOD_BYE:I = 0x7
 
 .field public static final METHOD_CANCEL:I = 0x4
@@ -41,6 +43,8 @@
 .field public static final PULLED_AWAY_HEADER:Ljava/lang/String; = "Call Has Been Pulled by Another Device"
 
 .field public static final REMOTE_DECLINE_HEADER:Ljava/lang/String; = "Another device sent All Devices Busy response"
+
+.field public static final SERVICE_NOT_ALLOW_OVER_WIFI:Ljava/lang/String; = "Service not allowed in this location"
 
 .field public static final TYPE_REQUEST:I = 0x0
 
@@ -68,15 +72,15 @@
     .locals 1
     .param p1, "msg"    # [Ljava/lang/String;
 
-    .line 81
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
+    .line 83
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/mediatek/ims/SipMessage;->mReasonHeader:Ljava/lang/String;
 
-    .line 82
+    .line 86
     const/4 v0, 0x1
 
     aget-object v0, p1, v0
@@ -87,7 +91,7 @@
 
     iput v0, p0, Lcom/mediatek/ims/SipMessage;->mDir:I
 
-    .line 83
+    .line 87
     const/4 v0, 0x2
 
     aget-object v0, p1, v0
@@ -98,7 +102,7 @@
 
     iput v0, p0, Lcom/mediatek/ims/SipMessage;->mType:I
 
-    .line 84
+    .line 88
     const/4 v0, 0x3
 
     aget-object v0, p1, v0
@@ -109,7 +113,7 @@
 
     iput v0, p0, Lcom/mediatek/ims/SipMessage;->mMethod:I
 
-    .line 85
+    .line 89
     const/4 v0, 0x4
 
     aget-object v0, p1, v0
@@ -120,14 +124,14 @@
 
     iput v0, p0, Lcom/mediatek/ims/SipMessage;->mCode:I
 
-    .line 86
+    .line 90
     const/4 v0, 0x5
 
     aget-object v0, p1, v0
 
     iput-object v0, p0, Lcom/mediatek/ims/SipMessage;->mReasonHeader:Ljava/lang/String;
 
-    .line 87
+    .line 91
     return-void
 .end method
 
@@ -136,7 +140,7 @@
 .method public getCode()I
     .locals 1
 
-    .line 102
+    .line 106
     iget v0, p0, Lcom/mediatek/ims/SipMessage;->mCode:I
 
     return v0
@@ -145,7 +149,7 @@
 .method public getDir()I
     .locals 1
 
-    .line 90
+    .line 94
     iget v0, p0, Lcom/mediatek/ims/SipMessage;->mDir:I
 
     return v0
@@ -154,7 +158,7 @@
 .method public getMethod()I
     .locals 1
 
-    .line 98
+    .line 102
     iget v0, p0, Lcom/mediatek/ims/SipMessage;->mMethod:I
 
     return v0
@@ -163,7 +167,7 @@
 .method public getReasonHeader()Ljava/lang/String;
     .locals 1
 
-    .line 106
+    .line 110
     iget-object v0, p0, Lcom/mediatek/ims/SipMessage;->mReasonHeader:Ljava/lang/String;
 
     return-object v0
@@ -172,7 +176,7 @@
 .method public getType()I
     .locals 1
 
-    .line 94
+    .line 98
     iget v0, p0, Lcom/mediatek/ims/SipMessage;->mType:I
 
     return v0
@@ -181,7 +185,7 @@
 .method public isRejectedByOthers()Z
     .locals 3
 
-    .line 110
+    .line 114
     iget v0, p0, Lcom/mediatek/ims/SipMessage;->mDir:I
 
     const/4 v1, 0x1
@@ -206,12 +210,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 111
+    .line 115
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 112
+    .line 116
     const-string v2, "call rejected by"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -220,10 +224,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 113
+    .line 117
     return v1
 
-    .line 115
+    .line 119
     :cond_0
     const/4 v0, 0x0
 

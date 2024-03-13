@@ -30,7 +30,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -65,25 +65,19 @@
     nop
 
     .line 172
-    const/4 v0, 0x1
+    new-instance v0, Lkotlin/ranges/IntRange;
 
     const/4 v1, 0x0
 
-    if-ltz p1, :cond_0
+    const/16 v2, 0x10
 
-    const/16 v2, 0x11
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    if-ge p1, v2, :cond_0
+    invoke-virtual {v0, p1}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    move v2, v0
+    move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    move v2, v1
-
-    :goto_0
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-static {}, Lkotlin/text/CharCategory;->values()[Lkotlin/text/CharCategory;
 
@@ -91,25 +85,23 @@
 
     aget-object v0, v0, p1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 173
-    :cond_1
-    const/16 v2, 0x12
+    :cond_0
+    new-instance v0, Lkotlin/ranges/IntRange;
 
-    if-gt v2, p1, :cond_2
+    const/16 v1, 0x12
 
-    const/16 v2, 0x1f
+    const/16 v2, 0x1e
 
-    if-ge p1, v2, :cond_2
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    goto :goto_1
+    invoke-virtual {v0, p1}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    :cond_2
-    move v0, v1
+    move-result v0
 
-    :goto_1
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
     invoke-static {}, Lkotlin/text/CharCategory;->values()[Lkotlin/text/CharCategory;
 
@@ -120,11 +112,11 @@
     aget-object v0, v0, v1
 
     .line 175
-    :goto_2
+    :goto_0
     return-object v0
 
     .line 174
-    :cond_3
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;

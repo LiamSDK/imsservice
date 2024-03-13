@@ -39,7 +39,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -69,7 +69,7 @@
     .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
-    .line 86
+    .line 88
     move-object v0, p1
 
     check-cast v0, Ljava/lang/String;
@@ -89,10 +89,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 87
+    .line 89
     nop
 
-    .line 88
+    .line 90
     move-object v0, p1
 
     check-cast v0, Ljava/lang/CharSequence;
@@ -103,10 +103,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 89
+    .line 91
     nop
 
-    .line 90
+    .line 92
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -123,21 +123,33 @@
 
     goto :goto_0
 
-    .line 91
+    .line 93
     :cond_0
     move-object v0, p1
 
     goto :goto_0
 
-    .line 94
+    .line 96
     :cond_1
-    iget-object v0, p0, Lkotlin/text/StringsKt__IndentKt$prependIndent$1;->$indent:Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lkotlin/text/StringsKt__IndentKt$prependIndent$1;->$indent:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 87
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 89
     :goto_0
     return-object v0
 .end method

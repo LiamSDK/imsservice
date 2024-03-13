@@ -30,7 +30,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -57,9 +57,9 @@
 .method constructor <init>()V
     .locals 6
 
-    const-class v2, Lkotlin/reflect/TypesJVMKt;
-
     const/4 v1, 0x1
+
+    const-class v2, Lkotlin/reflect/TypesJVMKt;
 
     const-string v3, "typeToString"
 
@@ -80,7 +80,7 @@
     .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
-    .line 207
+    .line 208
     move-object v0, p1
 
     check-cast v0, Ljava/lang/reflect/Type;
@@ -100,7 +100,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 207
+    .line 208
     invoke-static {p1}, Lkotlin/reflect/TypesJVMKt;->access$typeToString(Ljava/lang/reflect/Type;)Ljava/lang/String;
 
     move-result-object v0

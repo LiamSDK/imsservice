@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 99
+    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
+    .line 99
     return-void
 .end method
 
@@ -29,7 +29,7 @@
     .locals 1
     .param p0, "permissionInfo"    # Landroid/content/pm/PermissionInfo;
 
-    .line 105
+    .line 103
     invoke-virtual {p0}, Landroid/content/pm/PermissionInfo;->getProtection()I
 
     move-result v0
@@ -41,7 +41,7 @@
     .locals 1
     .param p0, "permissionInfo"    # Landroid/content/pm/PermissionInfo;
 
-    .line 110
+    .line 108
     invoke-virtual {p0}, Landroid/content/pm/PermissionInfo;->getProtectionFlags()I
 
     move-result v0

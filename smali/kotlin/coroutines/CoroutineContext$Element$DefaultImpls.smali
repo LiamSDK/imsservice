@@ -17,7 +17,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -27,7 +27,7 @@
 # direct methods
 .method public static fold(Lkotlin/coroutines/CoroutineContext$Element;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
     .locals 1
-    .param p0, "this"    # Lkotlin/coroutines/CoroutineContext$Element;
+    .param p0, "$this"    # Lkotlin/coroutines/CoroutineContext$Element;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -44,10 +44,6 @@
         }
     .end annotation
 
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "operation"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -62,7 +58,7 @@
 
 .method public static get(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
     .locals 1
-    .param p0, "this"    # Lkotlin/coroutines/CoroutineContext$Element;
+    .param p0, "$this"    # Lkotlin/coroutines/CoroutineContext$Element;
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -74,10 +70,6 @@
             "TE;>;)TE;"
         }
     .end annotation
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "key"
 
@@ -94,6 +86,10 @@
 
     if-eqz v0, :cond_0
 
+    const-string v0, "null cannot be cast to non-null type E of kotlin.coroutines.CoroutineContext.Element.get"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     move-object v0, p0
 
     goto :goto_0
@@ -107,7 +103,7 @@
 
 .method public static minusKey(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p0, "this"    # Lkotlin/coroutines/CoroutineContext$Element;
+    .param p0, "$this"    # Lkotlin/coroutines/CoroutineContext$Element;
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -118,10 +114,6 @@
             "Lkotlin/coroutines/CoroutineContext;"
         }
     .end annotation
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "key"
 
@@ -155,12 +147,8 @@
 
 .method public static plus(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
     .locals 1
-    .param p0, "this"    # Lkotlin/coroutines/CoroutineContext$Element;
+    .param p0, "$this"    # Lkotlin/coroutines/CoroutineContext$Element;
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "context"
 

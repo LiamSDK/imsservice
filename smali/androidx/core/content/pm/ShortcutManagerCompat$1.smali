@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/content/IntentSender;)V
     .locals 0
 
-    .line 213
+    .line 212
     iput-object p1, p0, Landroidx/core/content/pm/ShortcutManagerCompat$1;->val$callback:Landroid/content/IntentSender;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -37,7 +37,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 217
+    .line 216
     :try_start_0
     iget-object v0, p0, Landroidx/core/content/pm/ShortcutManagerCompat$1;->val$callback:Landroid/content/IntentSender;
 
@@ -55,14 +55,14 @@
     :try_end_0
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 220
+    .line 219
     goto :goto_0
 
-    .line 218
+    .line 217
     :catch_0
     move-exception v0
 
-    .line 221
+    .line 220
     :goto_0
     return-void
 .end method

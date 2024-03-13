@@ -49,13 +49,13 @@
     .local v1, "comp":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     new-instance v2, Ljava/util/StringJoiner;
 
-    const-string v3, ", "
+    const-string v3, "["
 
-    const-string v4, "["
+    const-string v4, "]"
 
-    const-string v5, "]"
+    const-string v5, ", "
 
-    invoke-direct {v2, v3, v4, v5}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
+    invoke-direct {v2, v5, v3, v4}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
     .line 122
     .local v2, "_aidl_sj":Ljava/util/StringJoiner;

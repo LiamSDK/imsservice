@@ -24,6 +24,11 @@
 # direct methods
 .method constructor <init>(Landroidx/core/view/MenuItemCompat$OnActionExpandListener;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
 
     .line 310
     iput-object p1, p0, Landroidx/core/view/MenuItemCompat$1;->val$listener:Landroidx/core/view/MenuItemCompat$OnActionExpandListener;

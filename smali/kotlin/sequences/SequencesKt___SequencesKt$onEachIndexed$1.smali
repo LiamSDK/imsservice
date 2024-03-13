@@ -41,7 +41,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -98,7 +98,7 @@
         }
     .end annotation
 
-    .line 1993
+    .line 2168
     iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$onEachIndexed$1;->$action:Lkotlin/jvm/functions/Function2;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -107,7 +107,7 @@
 
     invoke-interface {v0, v1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1994
+    .line 2169
     return-object p2
 .end method
 
@@ -116,7 +116,7 @@
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
-    .line 1992
+    .line 2167
     move-object v0, p1
 
     check-cast v0, Ljava/lang/Number;

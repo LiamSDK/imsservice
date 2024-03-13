@@ -195,18 +195,14 @@
 .end method
 
 .method public static setFactory(Landroid/view/LayoutInflater;Landroidx/core/view/LayoutInflaterFactory;)V
-    .locals 3
+    .locals 1
     .param p0, "inflater"    # Landroid/view/LayoutInflater;
     .param p1, "factory"    # Landroidx/core/view/LayoutInflaterFactory;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 114
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 115
     new-instance v0, Landroidx/core/view/LayoutInflaterCompat$Factory2Wrapper;
@@ -215,51 +211,12 @@
 
     invoke-virtual {p0, v0}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
 
-    goto :goto_0
-
-    .line 117
-    :cond_0
-    new-instance v0, Landroidx/core/view/LayoutInflaterCompat$Factory2Wrapper;
-
-    invoke-direct {v0, p1}, Landroidx/core/view/LayoutInflaterCompat$Factory2Wrapper;-><init>(Landroidx/core/view/LayoutInflaterFactory;)V
-
-    .line 118
-    .local v0, "factory2":Landroid/view/LayoutInflater$Factory2;
-    invoke-virtual {p0, v0}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
-
-    .line 120
-    invoke-virtual {p0}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;
-
-    move-result-object v1
-
-    .line 121
-    .local v1, "f":Landroid/view/LayoutInflater$Factory;
-    instance-of v2, v1, Landroid/view/LayoutInflater$Factory2;
-
-    if-eqz v2, :cond_1
-
-    .line 124
-    move-object v2, v1
-
-    check-cast v2, Landroid/view/LayoutInflater$Factory2;
-
-    invoke-static {p0, v2}, Landroidx/core/view/LayoutInflaterCompat;->forceSetFactory2(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-
-    goto :goto_0
-
-    .line 127
-    :cond_1
-    invoke-static {p0, v0}, Landroidx/core/view/LayoutInflaterCompat;->forceSetFactory2(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-
     .line 130
-    .end local v0    # "factory2":Landroid/view/LayoutInflater$Factory2;
-    .end local v1    # "f":Landroid/view/LayoutInflater$Factory;
-    :goto_0
     return-void
 .end method
 
 .method public static setFactory2(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-    .locals 2
+    .locals 0
     .param p0, "inflater"    # Landroid/view/LayoutInflater;
     .param p1, "factory"    # Landroid/view/LayoutInflater$Factory2;
 
@@ -267,39 +224,8 @@
     invoke-virtual {p0, p1}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
 
     .line 143
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-ge v0, v1, :cond_1
-
-    .line 144
-    invoke-virtual {p0}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;
-
-    move-result-object v0
-
-    .line 145
-    .local v0, "f":Landroid/view/LayoutInflater$Factory;
-    instance-of v1, v0, Landroid/view/LayoutInflater$Factory2;
-
-    if-eqz v1, :cond_0
-
-    .line 148
-    move-object v1, v0
-
-    check-cast v1, Landroid/view/LayoutInflater$Factory2;
-
-    invoke-static {p0, v1}, Landroidx/core/view/LayoutInflaterCompat;->forceSetFactory2(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
-
-    goto :goto_0
-
-    .line 151
-    :cond_0
-    invoke-static {p0, p1}, Landroidx/core/view/LayoutInflaterCompat;->forceSetFactory2(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+    nop
 
     .line 154
-    .end local v0    # "f":Landroid/view/LayoutInflater$Factory;
-    :cond_1
-    :goto_0
     return-void
 .end method

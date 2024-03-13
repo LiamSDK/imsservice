@@ -26,13 +26,13 @@
     .locals 0
     .param p1, "handler"    # Landroid/os/Handler;
 
-    .line 130
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 131
+    .line 120
     iput-object p1, p0, Lcom/mediatek/ims/internal/VTSource$HandlerExecutor;->mHandler:Landroid/os/Handler;
 
-    .line 132
+    .line 121
     return-void
 .end method
 
@@ -42,11 +42,11 @@
     .locals 1
     .param p1, "runCmd"    # Ljava/lang/Runnable;
 
-    .line 136
+    .line 125
     iget-object v0, p0, Lcom/mediatek/ims/internal/VTSource$HandlerExecutor;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 137
+    .line 126
     return-void
 .end method

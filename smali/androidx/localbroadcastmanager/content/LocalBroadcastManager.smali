@@ -178,6 +178,8 @@
     .locals 9
 
     .line 304
+    nop
+
     :goto_0
     iget-object v0, p0, Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->mReceivers:Ljava/util/HashMap;
 

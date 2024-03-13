@@ -154,11 +154,11 @@
 
     move-result-wide v7
 
-    .line 219
     const-wide/16 v9, 0x0
 
     const/4 v11, 0x1
 
+    .line 219
     move-object v4, p0
 
     invoke-virtual/range {v4 .. v11}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;
@@ -566,14 +566,12 @@
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 19
 
     .line 146
-    const/16 v0, 0x11
+    move-object/from16 v0, p0
 
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->profileId:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->profileId:I
 
     .line 147
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -586,13 +584,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->apn:Ljava/lang/String;
+    iget-object v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->apn:Ljava/lang/String;
 
     .line 148
     invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
@@ -601,13 +595,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->protocol:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->protocol:I
 
     .line 149
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -620,13 +610,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v4
 
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->roamingProtocol:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->roamingProtocol:I
 
     .line 150
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -639,13 +625,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v5
 
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->authType:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->authType:I
 
     .line 151
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -658,13 +640,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v6
 
-    const/4 v2, 0x4
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->user:Ljava/lang/String;
+    iget-object v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->user:Ljava/lang/String;
 
     .line 152
     invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
@@ -673,13 +651,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v7
 
-    const/4 v2, 0x5
-
-    aput-object v1, v0, v2
-
-    iget-object v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->password:Ljava/lang/String;
+    iget-object v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->password:Ljava/lang/String;
 
     .line 153
     invoke-static {v1}, Landroid/os/HidlSupport;->deepHashCode(Ljava/lang/Object;)I
@@ -688,13 +662,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v8
 
-    const/4 v2, 0x6
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->type:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->type:I
 
     .line 154
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -707,13 +677,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v9
 
-    const/4 v2, 0x7
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->maxConnsTime:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->maxConnsTime:I
 
     .line 155
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -726,13 +692,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v10
 
-    const/16 v2, 0x8
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->maxConns:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->maxConns:I
 
     .line 156
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -745,13 +707,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v11
 
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->waitTime:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->waitTime:I
 
     .line 157
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -764,13 +722,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v12
 
-    const/16 v2, 0xa
-
-    aput-object v1, v0, v2
-
-    iget-boolean v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->enabled:Z
+    iget-boolean v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->enabled:Z
 
     .line 158
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -783,13 +737,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v13
 
-    const/16 v2, 0xb
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->supportedApnTypesBitmap:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->supportedApnTypesBitmap:I
 
     .line 159
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -802,13 +752,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v14
 
-    const/16 v2, 0xc
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->bearerBitmap:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->bearerBitmap:I
 
     .line 160
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -821,13 +767,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v15
 
-    const/16 v2, 0xd
-
-    aput-object v1, v0, v2
-
-    iget v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->mtu:I
+    iget v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->mtu:I
 
     .line 161
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -840,13 +782,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v16
 
-    const/16 v2, 0xe
-
-    aput-object v1, v0, v2
-
-    iget-boolean v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->preferred:Z
+    iget-boolean v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->preferred:Z
 
     .line 162
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -859,13 +797,9 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v17
 
-    const/16 v2, 0xf
-
-    aput-object v1, v0, v2
-
-    iget-boolean v1, p0, Landroid/hardware/radio/V1_4/DataProfileInfo;->persistent:Z
+    iget-boolean v1, v0, Landroid/hardware/radio/V1_4/DataProfileInfo;->persistent:Z
 
     .line 163
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -878,18 +812,18 @@
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    move-result-object v18
+
+    filled-new-array/range {v2 .. v18}, [Ljava/lang/Object;
+
     move-result-object v1
 
-    const/16 v2, 0x10
-
-    aput-object v1, v0, v2
-
     .line 146
-    invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    invoke-static {v1}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
-    move-result v0
+    move-result v1
 
-    return v0
+    return v1
 .end method
 
 .method public final readEmbeddedFromParcel(Landroid/os/HwParcel;Landroid/os/HwBlob;J)V
@@ -947,9 +881,9 @@
 
     add-long v12, v4, v2
 
-    .line 239
     const/4 v14, 0x0
 
+    .line 239
     move-object/from16 v7, p1
 
     invoke-virtual/range {v7 .. v14}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;

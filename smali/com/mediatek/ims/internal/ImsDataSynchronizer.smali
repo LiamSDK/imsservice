@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;,
-        Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
+        Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;,
+        Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;
     }
 .end annotation
 
@@ -31,7 +31,9 @@
 
 .field public static final EVENT_MD_RESTART:I = 0x5
 
-.field public static final EVENT_RADIO_ON:I = 0x9
+.field public static final EVENT_RADIO_ON_1:I = 0x9
+
+.field public static final EVENT_RADIO_ON_2:I = 0xa
 
 .field public static final EVENT_SET_BEARER_NOTIFICATION_DONE:I = 0x6
 
@@ -63,7 +65,7 @@
     .param p2, "dataTracker"    # Lcom/mediatek/ims/internal/ImsDataTracker;
     .param p3, "phoneId"    # I
 
-    .line 51
+    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
@@ -75,23 +77,23 @@
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->TAG:Ljava/lang/String;
 
-    .line 52
+    .line 53
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mContext:Landroid/content/Context;
 
-    .line 53
+    .line 54
     iput-object p2, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mDataTracker:Lcom/mediatek/ims/internal/ImsDataTracker;
 
-    .line 54
+    .line 55
     iput p3, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mPhoneId:I
 
-    .line 55
+    .line 56
     invoke-static {p3}, Lcom/mediatek/ims/common/SubscriptionManagerHelper;->getSubIdUsingPhoneId(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mSubId:I
 
-    .line 56
+    .line 57
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "ImsDcHandlerThread"
@@ -100,54 +102,54 @@
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mImsDcHandlerThread:Landroid/os/HandlerThread;
 
-    .line 57
+    .line 58
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 58
+    .line 59
     new-instance v0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     new-instance v1, Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mImsDcHandlerThread:Landroid/os/HandlerThread;
 
-    .line 59
+    .line 60
     invoke-virtual {v2}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v2
 
     invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    const-string v2, "ims"
+    const/4 v2, 0x4
 
-    const/4 v3, 0x4
+    const-string v3, "ims"
 
-    invoke-direct {v0, p0, v2, v1, v3}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;-><init>(Lcom/mediatek/ims/internal/ImsDataSynchronizer;Ljava/lang/String;Landroid/os/Handler;I)V
+    invoke-direct {v0, p0, v3, v1, v2}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;-><init>(Lcom/mediatek/ims/internal/ImsDataSynchronizer;Ljava/lang/String;Landroid/os/Handler;I)V
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mImsDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
-    .line 61
+    .line 62
     new-instance v0, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     new-instance v1, Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mImsDcHandlerThread:Landroid/os/HandlerThread;
 
-    .line 62
+    .line 63
     invoke-virtual {v2}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v2
 
     invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    const-string v2, "emergency"
+    const/16 v2, 0xa
 
-    const/16 v3, 0xa
+    const-string v3, "emergency"
 
-    invoke-direct {v0, p0, v2, v1, v3}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;-><init>(Lcom/mediatek/ims/internal/ImsDataSynchronizer;Ljava/lang/String;Landroid/os/Handler;I)V
+    invoke-direct {v0, p0, v3, v1, v2}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;-><init>(Lcom/mediatek/ims/internal/ImsDataSynchronizer;Ljava/lang/String;Landroid/os/Handler;I)V
 
     iput-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mEmcDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
-    .line 64
+    .line 65
     return-void
 .end method
 
@@ -206,7 +208,7 @@
 .method private earlyConfirmReqNetworkToMd()Z
     .locals 2
 
-    .line 121
+    .line 122
     const-string v0, "persist.vendor.operator.optr"
 
     const-string v1, ""
@@ -223,12 +225,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 122
+    .line 123
     const/4 v0, 0x0
 
     return v0
 
-    .line 127
+    .line 128
     :cond_0
     const/4 v0, 0x1
 
@@ -241,12 +243,12 @@
     .locals 1
     .param p1, "s"    # Ljava/lang/String;
 
-    .line 131
+    .line 132
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->TAG:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 132
+    .line 133
     return-void
 .end method
 
@@ -254,12 +256,12 @@
     .locals 1
     .param p1, "s"    # Ljava/lang/String;
 
-    .line 139
+    .line 140
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->TAG:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 140
+    .line 141
     return-void
 .end method
 
@@ -267,12 +269,12 @@
     .locals 1
     .param p1, "s"    # Ljava/lang/String;
 
-    .line 135
+    .line 136
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->TAG:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 136
+    .line 137
     return-void
 .end method
 
@@ -281,7 +283,7 @@
     .param p1, "cause"    # I
     .param p2, "capability"    # I
 
-    .line 102
+    .line 103
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -312,7 +314,7 @@
 
     invoke-virtual {p0, v0}, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->logd(Ljava/lang/String;)V
 
-    .line 103
+    .line 104
     return-void
 .end method
 
@@ -320,7 +322,7 @@
     .locals 2
     .param p1, "request"    # Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;
 
-    .line 67
+    .line 68
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -341,7 +343,7 @@
 
     invoke-virtual {p0, v0}, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->logd(Ljava/lang/String;)V
 
-    .line 68
+    .line 69
     invoke-virtual {p1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->getCapability()Ljava/lang/String;
 
     move-result-object v0
@@ -387,7 +389,7 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
-    .line 80
+    .line 81
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -414,7 +416,7 @@
 
     goto :goto_2
 
-    .line 75
+    .line 76
     :pswitch_0
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mEmcDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
@@ -422,13 +424,13 @@
 
     move-result-object v0
 
-    .line 76
+    .line 77
     .local v0, "emcHandle":Landroid/os/Handler;
     iget-object v1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mEmcDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     invoke-virtual {v1, p1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->putRequest(Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;)V
 
-    .line 77
+    .line 78
     invoke-virtual {p1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->getRequest()I
 
     move-result v1
@@ -439,10 +441,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 78
+    .line 79
     goto :goto_2
 
-    .line 70
+    .line 71
     .end local v0    # "emcHandle":Landroid/os/Handler;
     :pswitch_1
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mImsDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
@@ -451,13 +453,13 @@
 
     move-result-object v0
 
-    .line 71
+    .line 72
     .local v0, "imsHandle":Landroid/os/Handler;
     iget-object v1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mImsDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     invoke-virtual {v1, p1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->putRequest(Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;)V
 
-    .line 72
+    .line 73
     invoke-virtual {p1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$ImsBearerRequest;->getRequest()I
 
     move-result v1
@@ -468,10 +470,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 73
+    .line 74
     nop
 
-    .line 83
+    .line 84
     .end local v0    # "imsHandle":Landroid/os/Handler;
     :goto_2
     return-void
@@ -492,19 +494,19 @@
 .method public notifyMdRestart()V
     .locals 3
 
-    .line 86
+    .line 87
     const-string v0, "notifyMdRestart"
 
     invoke-virtual {p0, v0}, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->logd(Ljava/lang/String;)V
 
-    .line 87
+    .line 88
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mImsDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     invoke-virtual {v0}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
-    .line 88
+    .line 89
     .local v0, "imsHandle":Landroid/os/Handler;
     const/4 v1, 0x5
 
@@ -514,14 +516,14 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 89
+    .line 90
     iget-object v2, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mEmcDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     invoke-virtual {v2}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->getHandler()Landroid/os/Handler;
 
     move-result-object v2
 
-    .line 90
+    .line 91
     .local v2, "emcHandle":Landroid/os/Handler;
     invoke-virtual {v2, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
@@ -529,30 +531,30 @@
 
     invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 91
+    .line 92
     return-void
 .end method
 
 .method public onSubscriptionsChanged()V
     .locals 3
 
-    .line 107
+    .line 108
     iget v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mPhoneId:I
 
     invoke-static {v0}, Lcom/mediatek/ims/common/SubscriptionManagerHelper;->getSubIdUsingPhoneId(I)I
 
     move-result v0
 
-    .line 108
+    .line 109
     .local v0, "newSubId":I
     iget v1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mSubId:I
 
     if-ne v1, v0, :cond_0
 
-    .line 109
+    .line 110
     return-void
 
-    .line 111
+    .line 112
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -586,19 +588,19 @@
 
     invoke-virtual {p0, v1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->logd(Ljava/lang/String;)V
 
-    .line 112
+    .line 113
     iput v0, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mSubId:I
 
-    .line 114
+    .line 115
     iget-object v1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mImsDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     invoke-virtual {v1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->onSubscriptionsChanged()V
 
-    .line 115
+    .line 116
     iget-object v1, p0, Lcom/mediatek/ims/internal/ImsDataSynchronizer;->mEmcDataConnection:Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;
 
     invoke-virtual {v1}, Lcom/mediatek/ims/internal/ImsDataSynchronizer$DataConnection;->onSubscriptionsChanged()V
 
-    .line 116
+    .line 117
     return-void
 .end method

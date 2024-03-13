@@ -22,19 +22,19 @@
     .param p2, "colorStateList"    # Landroid/content/res/ColorStateList;
     .param p3, "color"    # I
 
-    .line 61
+    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
+    .line 61
     iput-object p1, p0, Landroidx/core/content/res/ComplexColorCompat;->mShader:Landroid/graphics/Shader;
 
-    .line 63
+    .line 62
     iput-object p2, p0, Landroidx/core/content/res/ComplexColorCompat;->mColorStateList:Landroid/content/res/ColorStateList;
 
-    .line 64
+    .line 63
     iput p3, p0, Landroidx/core/content/res/ComplexColorCompat;->mColor:I
 
-    .line 65
+    .line 64
     return-void
 .end method
 
@@ -50,18 +50,18 @@
         }
     .end annotation
 
-    .line 152
+    .line 151
     invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
     move-result-object v0
 
-    .line 153
+    .line 152
     .local v0, "parser":Lorg/xmlpull/v1/XmlPullParser;
     invoke-static {v0}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v1
 
-    .line 155
+    .line 154
     .local v1, "attrs":Landroid/util/AttributeSet;
     :goto_0
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -81,24 +81,22 @@
 
     goto :goto_0
 
-    .line 159
+    .line 158
     :cond_0
     if-ne v3, v5, :cond_2
 
-    .line 162
+    .line 161
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 163
+    .line 162
     .local v2, "name":Ljava/lang/String;
-    const/4 v5, -0x1
-
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
-    move-result v6
+    move-result v5
 
-    sparse-switch v6, :sswitch_data_0
+    sparse-switch v5, :sswitch_data_0
 
     :cond_1
     goto :goto_1
@@ -117,23 +115,23 @@
     goto :goto_2
 
     :sswitch_1
-    const-string v6, "gradient"
+    const-string v5, "gradient"
 
-    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_1
+    if-eqz v5, :cond_1
 
     goto :goto_2
 
     :goto_1
-    move v4, v5
+    const/4 v4, -0x1
 
     :goto_2
     packed-switch v4, :pswitch_data_0
 
-    .line 171
+    .line 170
     new-instance v4, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -166,7 +164,7 @@
 
     throw v4
 
-    .line 168
+    .line 167
     :pswitch_0
     invoke-static {p0, v0, v1, p2}, Landroidx/core/content/res/GradientColorInflaterCompat;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/graphics/Shader;
 
@@ -178,7 +176,7 @@
 
     return-object v4
 
-    .line 165
+    .line 164
     :pswitch_1
     invoke-static {p0, v0, v1, p2}, Landroidx/core/content/res/ColorStateListInflaterCompat;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
@@ -190,7 +188,7 @@
 
     return-object v4
 
-    .line 160
+    .line 159
     .end local v2    # "name":Ljava/lang/String;
     :cond_2
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
@@ -200,8 +198,6 @@
     invoke-direct {v2, v4}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
 
     throw v2
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -220,7 +216,7 @@
     .locals 2
     .param p0, "color"    # I
 
-    .line 76
+    .line 75
     new-instance v0, Landroidx/core/content/res/ComplexColorCompat;
 
     const/4 v1, 0x0
@@ -234,16 +230,16 @@
     .locals 3
     .param p0, "colorStateList"    # Landroid/content/res/ColorStateList;
 
-    .line 72
+    .line 71
     new-instance v0, Landroidx/core/content/res/ComplexColorCompat;
+
+    const/4 v1, 0x0
 
     invoke-virtual {p0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v2, p0, v1}, Landroidx/core/content/res/ComplexColorCompat;-><init>(Landroid/graphics/Shader;Landroid/content/res/ColorStateList;I)V
+    invoke-direct {v0, v1, p0, v2}, Landroidx/core/content/res/ComplexColorCompat;-><init>(Landroid/graphics/Shader;Landroid/content/res/ColorStateList;I)V
 
     return-object v0
 .end method
@@ -252,7 +248,7 @@
     .locals 3
     .param p0, "shader"    # Landroid/graphics/Shader;
 
-    .line 68
+    .line 67
     new-instance v0, Landroidx/core/content/res/ComplexColorCompat;
 
     const/4 v1, 0x0
@@ -270,7 +266,7 @@
     .param p1, "resId"    # I
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
 
-    .line 140
+    .line 139
     :try_start_0
     invoke-static {p0, p1, p2}, Landroidx/core/content/res/ComplexColorCompat;->createFromXml(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroidx/core/content/res/ComplexColorCompat;
 
@@ -280,11 +276,11 @@
 
     return-object v0
 
-    .line 141
+    .line 140
     :catch_0
     move-exception v0
 
-    .line 142
+    .line 141
     .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ComplexColorCompat"
 
@@ -292,7 +288,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 144
+    .line 143
     .end local v0    # "e":Ljava/lang/Exception;
     const/4 v0, 0x0
 
@@ -304,7 +300,7 @@
 .method public getColor()I
     .locals 1
 
-    .line 86
+    .line 85
     iget v0, p0, Landroidx/core/content/res/ComplexColorCompat;->mColor:I
 
     return v0
@@ -313,7 +309,7 @@
 .method public getShader()Landroid/graphics/Shader;
     .locals 1
 
-    .line 81
+    .line 80
     iget-object v0, p0, Landroidx/core/content/res/ComplexColorCompat;->mShader:Landroid/graphics/Shader;
 
     return-object v0
@@ -322,7 +318,7 @@
 .method public isGradient()Z
     .locals 1
 
-    .line 94
+    .line 93
     iget-object v0, p0, Landroidx/core/content/res/ComplexColorCompat;->mShader:Landroid/graphics/Shader;
 
     if-eqz v0, :cond_0
@@ -341,7 +337,7 @@
 .method public isStateful()Z
     .locals 1
 
-    .line 98
+    .line 97
     iget-object v0, p0, Landroidx/core/content/res/ComplexColorCompat;->mShader:Landroid/graphics/Shader;
 
     if-nez v0, :cond_0
@@ -371,10 +367,10 @@
     .locals 3
     .param p1, "stateSet"    # [I
 
-    .line 108
+    .line 107
     const/4 v0, 0x0
 
-    .line 109
+    .line 108
     .local v0, "changed":Z
     invoke-virtual {p0}, Landroidx/core/content/res/ComplexColorCompat;->isStateful()Z
 
@@ -382,32 +378,32 @@
 
     if-eqz v1, :cond_0
 
-    .line 110
+    .line 109
     iget-object v1, p0, Landroidx/core/content/res/ComplexColorCompat;->mColorStateList:Landroid/content/res/ColorStateList;
 
-    .line 111
+    .line 110
     invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getDefaultColor()I
 
     move-result v2
 
-    .line 110
+    .line 109
     invoke-virtual {v1, p1, v2}, Landroid/content/res/ColorStateList;->getColorForState([II)I
 
     move-result v1
 
-    .line 112
+    .line 111
     .local v1, "colorForState":I
     iget v2, p0, Landroidx/core/content/res/ComplexColorCompat;->mColor:I
 
     if-eq v1, v2, :cond_0
 
-    .line 113
+    .line 112
     const/4 v0, 0x1
 
-    .line 114
+    .line 113
     iput v1, p0, Landroidx/core/content/res/ComplexColorCompat;->mColor:I
 
-    .line 117
+    .line 116
     .end local v1    # "colorForState":I
     :cond_0
     return v0
@@ -417,17 +413,17 @@
     .locals 0
     .param p1, "color"    # I
 
-    .line 90
+    .line 89
     iput p1, p0, Landroidx/core/content/res/ComplexColorCompat;->mColor:I
 
-    .line 91
+    .line 90
     return-void
 .end method
 
 .method public willDraw()Z
     .locals 1
 
-    .line 124
+    .line 123
     invoke-virtual {p0}, Landroidx/core/content/res/ComplexColorCompat;->isGradient()Z
 
     move-result v0

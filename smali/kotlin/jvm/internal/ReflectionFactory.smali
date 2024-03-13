@@ -103,6 +103,7 @@
     .local v0, "typeRef":Lkotlin/jvm/internal/TypeReference;
     new-instance v1, Lkotlin/jvm/internal/TypeReference;
 
+    .line 109
     invoke-interface {p1}, Lkotlin/reflect/KType;->getClassifier()Lkotlin/reflect/KClassifier;
 
     move-result-object v2
@@ -115,6 +116,7 @@
 
     move-result-object v4
 
+    .line 110
     invoke-virtual {v0}, Lkotlin/jvm/internal/TypeReference;->getFlags$kotlin_stdlib()I
 
     move-result v5
@@ -123,6 +125,7 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Lkotlin/jvm/internal/TypeReference;-><init>(Lkotlin/reflect/KClassifier;Ljava/util/List;Lkotlin/reflect/KType;I)V
 
+    .line 108
     return-object v1
 .end method
 
@@ -163,6 +166,7 @@
     .local v0, "typeRef":Lkotlin/jvm/internal/TypeReference;
     new-instance v1, Lkotlin/jvm/internal/TypeReference;
 
+    .line 118
     invoke-interface {p1}, Lkotlin/reflect/KType;->getClassifier()Lkotlin/reflect/KClassifier;
 
     move-result-object v2
@@ -175,6 +179,7 @@
 
     move-result-object v4
 
+    .line 119
     invoke-virtual {v0}, Lkotlin/jvm/internal/TypeReference;->getFlags$kotlin_stdlib()I
 
     move-result v5
@@ -183,6 +188,7 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Lkotlin/jvm/internal/TypeReference;-><init>(Lkotlin/reflect/KClassifier;Ljava/util/List;Lkotlin/reflect/KType;I)V
 
+    .line 117
     return-object v1
 .end method
 
@@ -194,6 +200,7 @@
     .line 99
     new-instance v0, Lkotlin/jvm/internal/TypeReference;
 
+    .line 100
     invoke-interface {p1}, Lkotlin/reflect/KType;->getClassifier()Lkotlin/reflect/KClassifier;
 
     move-result-object v1
@@ -206,12 +213,14 @@
 
     check-cast v3, Lkotlin/jvm/internal/TypeReference;
 
+    .line 101
     invoke-virtual {v3}, Lkotlin/jvm/internal/TypeReference;->getFlags$kotlin_stdlib()I
 
     move-result v3
 
     invoke-direct {v0, v1, v2, p2, v3}, Lkotlin/jvm/internal/TypeReference;-><init>(Lkotlin/reflect/KClassifier;Ljava/util/List;Lkotlin/reflect/KType;I)V
 
+    .line 99
     return-object v0
 .end method
 

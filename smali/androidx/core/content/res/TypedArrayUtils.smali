@@ -11,10 +11,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 362
+    .line 361
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 363
+    .line 362
     return-void
 .end method
 
@@ -24,12 +24,12 @@
     .param p1, "attr"    # I
     .param p2, "fallbackAttr"    # I
 
-    .line 354
+    .line 353
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 355
+    .line 354
     .local v0, "value":Landroid/util/TypedValue;
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
@@ -39,15 +39,15 @@
 
     invoke-virtual {v1, p1, v0, v2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 356
+    .line 355
     iget v1, v0, Landroid/util/TypedValue;->resourceId:I
 
     if-eqz v1, :cond_0
 
-    .line 357
+    .line 356
     return p1
 
-    .line 359
+    .line 358
     :cond_0
     return p2
 .end method
@@ -59,12 +59,12 @@
     .param p2, "fallbackIndex"    # I
     .param p3, "defaultValue"    # Z
 
-    .line 264
+    .line 263
     invoke-virtual {p0, p2, p3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v0
 
-    .line 265
+    .line 264
     .local v0, "val":Z
     invoke-virtual {p0, p1, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -79,21 +79,21 @@
     .param p1, "index"    # I
     .param p2, "fallbackIndex"    # I
 
-    .line 275
+    .line 274
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 276
+    .line 275
     .local v0, "val":Landroid/graphics/drawable/Drawable;
     if-nez v0, :cond_0
 
-    .line 277
+    .line 276
     invoke-virtual {p0, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 279
+    .line 278
     :cond_0
     return-object v0
 .end method
@@ -105,12 +105,12 @@
     .param p2, "fallbackIndex"    # I
     .param p3, "defaultValue"    # I
 
-    .line 288
+    .line 287
     invoke-virtual {p0, p2, p3}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v0
 
-    .line 289
+    .line 288
     .local v0, "val":I
     invoke-virtual {p0, p1, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -127,19 +127,19 @@
     .param p3, "resId"    # I
     .param p4, "defaultValue"    # Z
 
-    .line 87
+    .line 86
     invoke-static {p1, p2}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 88
+    .line 87
     .local v0, "hasAttr":Z
     if-nez v0, :cond_0
 
-    .line 89
+    .line 88
     return p4
 
-    .line 91
+    .line 90
     :cond_0
     invoke-virtual {p0, p3, p4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -156,19 +156,19 @@
     .param p3, "resId"    # I
     .param p4, "defaultValue"    # I
 
-    .line 122
+    .line 121
     invoke-static {p1, p2}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 123
+    .line 122
     .local v0, "hasAttr":Z
     if-nez v0, :cond_0
 
-    .line 124
+    .line 123
     return p4
 
-    .line 126
+    .line 125
     :cond_0
     invoke-virtual {p0, p3, p4}, Landroid/content/res/TypedArray;->getColor(II)I
 
@@ -185,30 +185,30 @@
     .param p3, "attrName"    # Ljava/lang/String;
     .param p4, "resId"    # I
 
-    .line 168
+    .line 167
     invoke-static {p1, p3}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 169
+    .line 168
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 170
+    .line 169
     .local v0, "value":Landroid/util/TypedValue;
     invoke-virtual {p0, p4, v0}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
-    .line 171
+    .line 170
     iget v1, v0, Landroid/util/TypedValue;->type:I
 
     const/4 v2, 0x2
 
     if-eq v1, v2, :cond_1
 
-    .line 174
+    .line 173
     iget v1, v0, Landroid/util/TypedValue;->type:I
 
     const/16 v2, 0x1c
@@ -221,34 +221,34 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 177
+    .line 176
     invoke-static {v0}, Landroidx/core/content/res/TypedArrayUtils;->getNamedColorStateListFromInt(Landroid/util/TypedValue;)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
     return-object v1
 
-    .line 179
+    .line 178
     :cond_0
     invoke-virtual {p0}, Landroid/content/res/TypedArray;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
+    .line 179
     const/4 v2, 0x0
 
-    .line 180
     invoke-virtual {p0, p4, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
-    .line 179
+    .line 178
     invoke-static {v1, v2, p2}, Landroidx/core/content/res/ColorStateListInflaterCompat;->inflate(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
     return-object v1
 
-    .line 172
+    .line 171
     :cond_1
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
@@ -284,7 +284,7 @@
 
     throw v1
 
-    .line 182
+    .line 181
     .end local v0    # "value":Landroid/util/TypedValue;
     :cond_2
     const/4 v0, 0x0
@@ -296,7 +296,7 @@
     .locals 1
     .param p0, "value"    # Landroid/util/TypedValue;
 
-    .line 190
+    .line 189
     iget v0, p0, Landroid/util/TypedValue;->data:I
 
     invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
@@ -315,23 +315,23 @@
     .param p4, "resId"    # I
     .param p5, "defaultValue"    # I
 
-    .line 140
+    .line 139
     invoke-static {p1, p3}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 142
+    .line 141
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 143
+    .line 142
     .local v0, "value":Landroid/util/TypedValue;
     invoke-virtual {p0, p4, v0}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
-    .line 144
+    .line 143
     iget v1, v0, Landroid/util/TypedValue;->type:I
 
     const/16 v2, 0x1c
@@ -344,7 +344,7 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 146
+    .line 145
     iget v1, v0, Landroid/util/TypedValue;->data:I
 
     invoke-static {v1}, Landroidx/core/content/res/ComplexColorCompat;->from(I)Landroidx/core/content/res/ComplexColorCompat;
@@ -353,31 +353,31 @@
 
     return-object v1
 
-    .line 150
+    .line 149
     :cond_0
     invoke-virtual {p0}, Landroid/content/res/TypedArray;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
+    .line 150
     const/4 v2, 0x0
 
-    .line 151
     invoke-virtual {p0, p4, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
-    .line 150
+    .line 149
     invoke-static {v1, v2, p2}, Landroidx/core/content/res/ComplexColorCompat;->inflate(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroidx/core/content/res/ComplexColorCompat;
 
     move-result-object v1
 
-    .line 152
+    .line 151
     .local v1, "complexColor":Landroidx/core/content/res/ComplexColorCompat;
     if-eqz v1, :cond_1
 
     return-object v1
 
-    .line 154
+    .line 153
     .end local v0    # "value":Landroid/util/TypedValue;
     .end local v1    # "complexColor":Landroidx/core/content/res/ComplexColorCompat;
     :cond_1
@@ -396,19 +396,19 @@
     .param p3, "resId"    # I
     .param p4, "defaultValue"    # F
 
-    .line 70
+    .line 69
     invoke-static {p1, p2}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 71
+    .line 70
     .local v0, "hasAttr":Z
     if-nez v0, :cond_0
 
-    .line 72
+    .line 71
     return p4
 
-    .line 74
+    .line 73
     :cond_0
     invoke-virtual {p0, p3, p4}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
@@ -425,19 +425,19 @@
     .param p3, "resId"    # I
     .param p4, "defaultValue"    # I
 
-    .line 104
+    .line 103
     invoke-static {p1, p2}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 105
+    .line 104
     .local v0, "hasAttr":Z
     if-nez v0, :cond_0
 
-    .line 106
+    .line 105
     return p4
 
-    .line 108
+    .line 107
     :cond_0
     invoke-virtual {p0, p3, p4}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -454,19 +454,19 @@
     .param p3, "resId"    # I
     .param p4, "defaultValue"    # I
 
-    .line 203
+    .line 202
     invoke-static {p1, p2}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 204
+    .line 203
     .local v0, "hasAttr":Z
     if-nez v0, :cond_0
 
-    .line 205
+    .line 204
     return p4
 
-    .line 207
+    .line 206
     :cond_0
     invoke-virtual {p0, p3, p4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -482,21 +482,21 @@
     .param p2, "attrName"    # Ljava/lang/String;
     .param p3, "resId"    # I
 
-    .line 221
+    .line 220
     invoke-static {p1, p2}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 222
+    .line 221
     .local v0, "hasAttr":Z
     if-nez v0, :cond_0
 
-    .line 223
+    .line 222
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 225
+    .line 224
     :cond_0
     invoke-virtual {p0, p3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -512,12 +512,12 @@
     .param p2, "fallbackIndex"    # I
     .param p3, "defaultValue"    # I
 
-    .line 299
+    .line 298
     invoke-virtual {p0, p2, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v0
 
-    .line 300
+    .line 299
     .local v0, "val":I
     invoke-virtual {p0, p1, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -532,21 +532,21 @@
     .param p1, "index"    # I
     .param p2, "fallbackIndex"    # I
 
-    .line 310
+    .line 309
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 311
+    .line 310
     .local v0, "val":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 312
+    .line 311
     invoke-virtual {p0, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 314
+    .line 313
     :cond_0
     return-object v0
 .end method
@@ -557,21 +557,21 @@
     .param p1, "index"    # I
     .param p2, "fallbackIndex"    # I
 
-    .line 326
+    .line 325
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 327
+    .line 326
     .local v0, "val":Ljava/lang/CharSequence;
     if-nez v0, :cond_0
 
-    .line 328
+    .line 327
     invoke-virtual {p0, p2}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 330
+    .line 329
     :cond_0
     return-object v0
 .end method
@@ -582,21 +582,21 @@
     .param p1, "index"    # I
     .param p2, "fallbackIndex"    # I
 
-    .line 342
+    .line 341
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 343
+    .line 342
     .local v0, "val":[Ljava/lang/CharSequence;
     if-nez v0, :cond_0
 
-    .line 344
+    .line 343
     invoke-virtual {p0, p2}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 346
+    .line 345
     :cond_0
     return-object v0
 .end method
@@ -606,7 +606,7 @@
     .param p0, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
     .param p1, "attrName"    # Ljava/lang/String;
 
-    .line 58
+    .line 57
     const-string v0, "http://schemas.android.com/apk/res/android"
 
     invoke-interface {p0, v0, p1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -633,17 +633,17 @@
     .param p2, "set"    # Landroid/util/AttributeSet;
     .param p3, "attrs"    # [I
 
-    .line 252
+    .line 251
     if-nez p1, :cond_0
 
-    .line 253
+    .line 252
     invoke-virtual {p0, p2, p3}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     return-object v0
 
-    .line 255
+    .line 254
     :cond_0
     const/4 v0, 0x0
 
@@ -661,21 +661,21 @@
     .param p2, "attrName"    # Ljava/lang/String;
     .param p3, "resId"    # I
 
-    .line 237
+    .line 236
     invoke-static {p1, p2}, Landroidx/core/content/res/TypedArrayUtils;->hasAttribute(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 238
+    .line 237
     .local v0, "hasAttr":Z
     if-nez v0, :cond_0
 
-    .line 239
+    .line 238
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 241
+    .line 240
     :cond_0
     invoke-virtual {p0, p3}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 

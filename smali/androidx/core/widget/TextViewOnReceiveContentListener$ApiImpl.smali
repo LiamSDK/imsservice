@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 127
+    .line 126
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,12 +30,12 @@
     .param p1, "item"    # Landroid/content/ClipData$Item;
     .param p2, "flags"    # I
 
-    .line 131
+    .line 130
     invoke-virtual {p1, p0}, Landroid/content/ClipData$Item;->coerceToText(Landroid/content/Context;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 132
+    .line 131
     .local v0, "text":Ljava/lang/CharSequence;
     and-int/lit8 v1, p2, 0x1
 
@@ -45,12 +45,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 133
+    .line 132
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 135
+    .line 134
     :cond_0
     return-object v0
 .end method

@@ -45,7 +45,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    .line 76
+    .line 83
     const/4 v0, 0x0
 
     return-object v0
@@ -91,7 +91,7 @@
         }
     .end annotation
 
-    .line 29
+    .line 30
     return-void
 .end method
 
@@ -105,14 +105,28 @@
         }
     .end annotation
 
-    .line 32
+    .line 33
+    return-void
+.end method
+
+.method public getImeiResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/modem/ImeiInfo;)V
+    .locals 0
+    .param p1, "responseInfo"    # Landroid/hardware/radio/RadioResponseInfo;
+    .param p2, "imeiInfo"    # Landroid/hardware/radio/modem/ImeiInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 72
     return-void
 .end method
 
 .method public getInterfaceHash()Ljava/lang/String;
     .locals 1
 
-    .line 72
+    .line 79
     const-string v0, ""
 
     return-object v0
@@ -121,7 +135,7 @@
 .method public getInterfaceVersion()I
     .locals 1
 
-    .line 68
+    .line 75
     const/4 v0, 0x0
 
     return v0
@@ -137,7 +151,7 @@
         }
     .end annotation
 
-    .line 35
+    .line 36
     return-void
 .end method
 
@@ -151,7 +165,7 @@
         }
     .end annotation
 
-    .line 38
+    .line 39
     return-void
 .end method
 
@@ -165,7 +179,7 @@
         }
     .end annotation
 
-    .line 41
+    .line 42
     return-void
 .end method
 
@@ -179,7 +193,7 @@
         }
     .end annotation
 
-    .line 44
+    .line 46
     return-void
 .end method
 
@@ -192,7 +206,7 @@
         }
     .end annotation
 
-    .line 47
+    .line 49
     return-void
 .end method
 
@@ -205,7 +219,7 @@
         }
     .end annotation
 
-    .line 50
+    .line 53
     return-void
 .end method
 
@@ -218,7 +232,7 @@
         }
     .end annotation
 
-    .line 53
+    .line 57
     return-void
 .end method
 
@@ -231,7 +245,7 @@
         }
     .end annotation
 
-    .line 56
+    .line 60
     return-void
 .end method
 
@@ -244,7 +258,7 @@
         }
     .end annotation
 
-    .line 59
+    .line 63
     return-void
 .end method
 
@@ -258,7 +272,7 @@
         }
     .end annotation
 
-    .line 62
+    .line 66
     return-void
 .end method
 
@@ -271,6 +285,6 @@
         }
     .end annotation
 
-    .line 65
+    .line 69
     return-void
 .end method

@@ -35,7 +35,7 @@
     .locals 0
     .param p1, "this$0"    # Landroidx/core/graphics/TypefaceCompatBaseImpl;
 
-    .line 100
+    .line 103
     iput-object p1, p0, Landroidx/core/graphics/TypefaceCompatBaseImpl$1;->this$0:Landroidx/core/graphics/TypefaceCompatBaseImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
     .locals 1
     .param p1, "info"    # Landroidx/core/provider/FontsContractCompat$FontInfo;
 
-    .line 103
+    .line 106
     invoke-virtual {p1}, Landroidx/core/provider/FontsContractCompat$FontInfo;->getWeight()I
 
     move-result v0
@@ -60,7 +60,7 @@
 .method public bridge synthetic getWeight(Ljava/lang/Object;)I
     .locals 0
 
-    .line 100
+    .line 103
     check-cast p1, Landroidx/core/provider/FontsContractCompat$FontInfo;
 
     invoke-virtual {p0, p1}, Landroidx/core/graphics/TypefaceCompatBaseImpl$1;->getWeight(Landroidx/core/provider/FontsContractCompat$FontInfo;)I
@@ -74,7 +74,7 @@
     .locals 1
     .param p1, "info"    # Landroidx/core/provider/FontsContractCompat$FontInfo;
 
-    .line 108
+    .line 111
     invoke-virtual {p1}, Landroidx/core/provider/FontsContractCompat$FontInfo;->isItalic()Z
 
     move-result v0
@@ -85,7 +85,7 @@
 .method public bridge synthetic isItalic(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 100
+    .line 103
     check-cast p1, Landroidx/core/provider/FontsContractCompat$FontInfo;
 
     invoke-virtual {p0, p1}, Landroidx/core/graphics/TypefaceCompatBaseImpl$1;->isItalic(Landroidx/core/provider/FontsContractCompat$FontInfo;)Z

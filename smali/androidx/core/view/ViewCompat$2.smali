@@ -29,7 +29,7 @@
     .param p3, "contentChangeType"    # I
     .param p4, "frameworkMinimumSdk"    # I
 
-    .line 4307
+    .line 4578
     .local p2, "type":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/CharSequence;>;"
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;-><init>(ILjava/lang/Class;II)V
 
@@ -42,7 +42,7 @@
     .locals 1
     .param p1, "view"    # Landroid/view/View;
 
-    .line 4312
+    .line 4583
     invoke-static {p1}, Landroidx/core/view/ViewCompat$Api28Impl;->getAccessibilityPaneTitle(Landroid/view/View;)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -53,7 +53,7 @@
 .method bridge synthetic frameworkGet(Landroid/view/View;)Ljava/lang/Object;
     .locals 0
 
-    .line 4307
+    .line 4578
     invoke-virtual {p0, p1}, Landroidx/core/view/ViewCompat$2;->frameworkGet(Landroid/view/View;)Ljava/lang/CharSequence;
 
     move-result-object p1
@@ -66,17 +66,17 @@
     .param p1, "view"    # Landroid/view/View;
     .param p2, "value"    # Ljava/lang/CharSequence;
 
-    .line 4318
+    .line 4589
     invoke-static {p1, p2}, Landroidx/core/view/ViewCompat$Api28Impl;->setAccessibilityPaneTitle(Landroid/view/View;Ljava/lang/CharSequence;)V
 
-    .line 4319
+    .line 4590
     return-void
 .end method
 
 .method bridge synthetic frameworkSet(Landroid/view/View;Ljava/lang/Object;)V
     .locals 0
 
-    .line 4307
+    .line 4578
     check-cast p2, Ljava/lang/CharSequence;
 
     invoke-virtual {p0, p1, p2}, Landroidx/core/view/ViewCompat$2;->frameworkSet(Landroid/view/View;Ljava/lang/CharSequence;)V
@@ -89,7 +89,7 @@
     .param p1, "oldValue"    # Ljava/lang/CharSequence;
     .param p2, "newValue"    # Ljava/lang/CharSequence;
 
-    .line 4323
+    .line 4594
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -102,7 +102,7 @@
 .method bridge synthetic shouldUpdate(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
 
-    .line 4307
+    .line 4578
     check-cast p1, Ljava/lang/CharSequence;
 
     check-cast p2, Ljava/lang/CharSequence;

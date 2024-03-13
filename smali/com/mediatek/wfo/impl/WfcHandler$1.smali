@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/wfo/impl/WfcHandler;
 
-    .line 325
+    .line 392
     iput-object p1, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     invoke-direct {p0}, Lcom/mediatek/wfo/IWifiOffloadService$Stub;-><init>()V
@@ -36,21 +36,21 @@
 .method public factoryReset()V
     .locals 2
 
-    .line 389
+    .line 456
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     const-string v1, "factoryReset()"
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 391
+    .line 458
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     iget-object v0, v0, Lcom/mediatek/wfo/impl/WfcHandler;->mWosExt:Lcom/mediatek/wfo/op/IWosExt;
 
     invoke-interface {v0}, Lcom/mediatek/wfo/op/IWosExt;->factoryReset()V
 
-    .line 392
+    .line 459
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .locals 2
     .param p1, "simIdx"    # I
 
-    .line 346
+    .line 413
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     const-string v1, "getDisconnectCause()"
@@ -69,12 +69,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 347
+    .line 414
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 349
+    .line 416
     :cond_0
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
@@ -91,14 +91,14 @@
     .locals 2
     .param p1, "mode"    # I
 
-    .line 383
+    .line 450
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     const-string v1, "getMccMncAllowList() not supported"
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 384
+    .line 451
     const/4 v0, 0x0
 
     return-object v0
@@ -108,14 +108,14 @@
     .locals 2
     .param p1, "simIdx"    # I
 
-    .line 340
+    .line 407
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     const-string v1, "getRatType() not supported"
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 341
+    .line 408
     const/4 v0, 0x0
 
     return v0
@@ -124,7 +124,7 @@
 .method public isWifiConnected()Z
     .locals 1
 
-    .line 364
+    .line 431
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fgetmWifiPdnHandler(Lcom/mediatek/wfo/impl/WfcHandler;)Lcom/mediatek/wfo/impl/WifiPdnHandler;
@@ -142,7 +142,7 @@
     .locals 3
     .param p1, "listener"    # Lcom/mediatek/wfo/IWifiOffloadListener;
 
-    .line 328
+    .line 395
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -169,7 +169,7 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 329
+    .line 396
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fgetmListeners(Lcom/mediatek/wfo/impl/WfcHandler;)Landroid/os/RemoteCallbackList;
@@ -178,7 +178,7 @@
 
     invoke-virtual {v0, p1}, Landroid/os/RemoteCallbackList;->register(Landroid/os/IInterface;)Z
 
-    .line 330
+    .line 397
     return-void
 .end method
 
@@ -188,14 +188,14 @@
     .param p2, "fqdn"    # Ljava/lang/String;
     .param p3, "wfcEnabled"    # Z
 
-    .line 354
+    .line 421
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     const-string v1, "setEpdgFqdn() not supported"
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 355
+    .line 422
     return-void
 .end method
 
@@ -203,14 +203,14 @@
     .locals 2
     .param p1, "allowList"    # [Ljava/lang/String;
 
-    .line 377
+    .line 444
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     const-string v1, "setMccMncAllowList() not supported"
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 378
+    .line 445
     const/4 v0, 0x0
 
     return v0
@@ -219,7 +219,7 @@
 .method public setWifiOff()Z
     .locals 3
 
-    .line 396
+    .line 463
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fgetmWifiPdnHandler(Lcom/mediatek/wfo/impl/WfcHandler;)Lcom/mediatek/wfo/impl/WifiPdnHandler;
@@ -232,14 +232,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 397
+    .line 464
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fputmHasWiFiDisabledPending(Lcom/mediatek/wfo/impl/WfcHandler;Z)V
 
-    .line 398
+    .line 465
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fgetmWifiPdnHandler(Lcom/mediatek/wfo/impl/WfcHandler;)Lcom/mediatek/wfo/impl/WifiPdnHandler;
@@ -250,7 +250,7 @@
 
     goto :goto_0
 
-    .line 401
+    .line 468
     :cond_0
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
@@ -258,7 +258,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fputmHasWiFiDisabledPending(Lcom/mediatek/wfo/impl/WfcHandler;Z)V
 
-    .line 403
+    .line 470
     :goto_0
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
@@ -288,7 +288,7 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 404
+    .line 471
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fgetmHasWiFiDisabledPending(Lcom/mediatek/wfo/impl/WfcHandler;)Z
@@ -302,7 +302,7 @@
     .locals 3
     .param p1, "listener"    # Lcom/mediatek/wfo/IWifiOffloadListener;
 
-    .line 334
+    .line 401
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -329,7 +329,7 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 335
+    .line 402
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fgetmListeners(Lcom/mediatek/wfo/impl/WfcHandler;)Landroid/os/RemoteCallbackList;
@@ -338,7 +338,7 @@
 
     invoke-virtual {v0, p1}, Landroid/os/RemoteCallbackList;->unregister(Landroid/os/IInterface;)Z
 
-    .line 336
+    .line 403
     return-void
 .end method
 
@@ -349,14 +349,14 @@
     .param p3, "callType"    # I
     .param p4, "callState"    # I
 
-    .line 359
+    .line 426
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     const-string v1, "updateCallState() not supported"
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 360
+    .line 427
     return-void
 .end method
 
@@ -365,7 +365,7 @@
     .param p1, "simIdx"    # I
     .param p2, "radioState"    # I
 
-    .line 369
+    .line 436
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -398,7 +398,7 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/impl/WfcHandler;->log(Ljava/lang/String;)V
 
-    .line 370
+    .line 437
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fgetmWifiPdnHandler(Lcom/mediatek/wfo/impl/WfcHandler;)Lcom/mediatek/wfo/impl/WifiPdnHandler;
@@ -407,7 +407,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 371
+    .line 438
     iget-object v0, p0, Lcom/mediatek/wfo/impl/WfcHandler$1;->this$0:Lcom/mediatek/wfo/impl/WfcHandler;
 
     invoke-static {v0}, Lcom/mediatek/wfo/impl/WfcHandler;->-$$Nest$fgetmWifiPdnHandler(Lcom/mediatek/wfo/impl/WfcHandler;)Lcom/mediatek/wfo/impl/WifiPdnHandler;
@@ -416,7 +416,7 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/mediatek/wfo/impl/WifiPdnHandler;->handleRadioStateChanged(II)V
 
-    .line 373
+    .line 440
     :cond_0
     return-void
 .end method

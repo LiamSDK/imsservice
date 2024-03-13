@@ -34,6 +34,8 @@
 
 .field static final TRANSACTION_getHardwareConfigResponse:I = 0x5
 
+.field static final TRANSACTION_getImeiResponse:I = 0x11
+
 .field static final TRANSACTION_getInterfaceHash:I = 0xfffffe
 
 .field static final TRANSACTION_getInterfaceVersion:I = 0xffffff
@@ -65,18 +67,18 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 84
+    .line 91
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 85
+    .line 92
     invoke-virtual {p0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->markVintfStability()V
 
-    .line 86
+    .line 93
     sget-object v0, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->DESCRIPTOR:Ljava/lang/String;
 
     invoke-virtual {p0, p0, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 87
+    .line 94
     return-void
 .end method
 
@@ -84,15 +86,15 @@
     .locals 2
     .param p0, "obj"    # Landroid/os/IBinder;
 
-    .line 94
+    .line 101
     if-nez p0, :cond_0
 
-    .line 95
+    .line 102
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 97
+    .line 104
     :cond_0
     sget-object v0, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->DESCRIPTOR:Ljava/lang/String;
 
@@ -100,7 +102,7 @@
 
     move-result-object v0
 
-    .line 98
+    .line 105
     .local v0, "iin":Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
@@ -108,14 +110,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 99
+    .line 106
     move-object v1, v0
 
     check-cast v1, Landroid/hardware/radio/modem/IRadioModemResponse;
 
     return-object v1
 
-    .line 101
+    .line 108
     :cond_1
     new-instance v1, Landroid/hardware/radio/modem/IRadioModemResponse$Stub$Proxy;
 
@@ -129,7 +131,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 0
 
-    .line 105
+    .line 112
     return-object p0
 .end method
 
@@ -145,7 +147,7 @@
         }
     .end annotation
 
-    .line 109
+    .line 116
     move-object/from16 v6, p0
 
     move/from16 v7, p1
@@ -156,7 +158,7 @@
 
     sget-object v10, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->DESCRIPTOR:Ljava/lang/String;
 
-    .line 110
+    .line 117
     .local v10, "descriptor":Ljava/lang/String;
     const/4 v11, 0x1
 
@@ -166,59 +168,59 @@
 
     if-gt v7, v0, :cond_0
 
-    .line 111
+    .line 118
     invoke-virtual {v8, v10}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 113
+    .line 120
     :cond_0
     sparse-switch v7, :sswitch_data_0
 
-    .line 133
+    .line 140
     packed-switch v7, :pswitch_data_0
 
-    .line 287
+    .line 304
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
 
     return v0
 
-    .line 117
+    .line 124
     :sswitch_0
     invoke-virtual {v9, v10}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 118
+    .line 125
     return v11
 
-    .line 122
+    .line 129
     :sswitch_1
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 123
+    .line 130
     invoke-virtual/range {p0 .. p0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getInterfaceVersion()I
 
     move-result v0
 
     invoke-virtual {v9, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 124
+    .line 131
     return v11
 
-    .line 128
+    .line 135
     :sswitch_2
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 129
+    .line 136
     invoke-virtual/range {p0 .. p0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getInterfaceHash()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v9, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 130
+    .line 137
     return v11
 
-    .line 280
+    .line 295
     :pswitch_0
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -228,18 +230,29 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 281
+    .line 297
     .local v0, "_arg0":Landroid/hardware/radio/RadioResponseInfo;
+    sget-object v1, Landroid/hardware/radio/modem/ImeiInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {v8, v1}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/radio/modem/ImeiInfo;
+
+    .line 298
+    .local v1, "_arg1":Landroid/hardware/radio/modem/ImeiInfo;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 282
-    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->setRadioPowerResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .line 299
+    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getImeiResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/modem/ImeiInfo;)V
 
-    .line 283
+    .line 300
     goto/16 :goto_0
 
-    .line 270
+    .line 287
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
+    .end local v1    # "_arg1":Landroid/hardware/radio/modem/ImeiInfo;
     :pswitch_1
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -249,29 +262,18 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 272
+    .line 288
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    sget-object v1, Landroid/hardware/radio/modem/RadioCapability;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-virtual {v8, v1}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/hardware/radio/modem/RadioCapability;
-
-    .line 273
-    .local v1, "_arg1":Landroid/hardware/radio/modem/RadioCapability;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 274
-    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->setRadioCapabilityResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/modem/RadioCapability;)V
+    .line 289
+    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->setRadioPowerResponse(Landroid/hardware/radio/RadioResponseInfo;)V
 
-    .line 275
+    .line 290
     goto/16 :goto_0
 
-    .line 262
+    .line 277
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    .end local v1    # "_arg1":Landroid/hardware/radio/modem/RadioCapability;
     :pswitch_2
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -281,18 +283,29 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 263
+    .line 279
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
+    sget-object v1, Landroid/hardware/radio/modem/RadioCapability;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {v8, v1}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/radio/modem/RadioCapability;
+
+    .line 280
+    .local v1, "_arg1":Landroid/hardware/radio/modem/RadioCapability;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 264
-    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->sendDeviceStateResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .line 281
+    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->setRadioCapabilityResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/modem/RadioCapability;)V
 
-    .line 265
+    .line 282
     goto/16 :goto_0
 
-    .line 254
+    .line 269
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
+    .end local v1    # "_arg1":Landroid/hardware/radio/modem/RadioCapability;
     :pswitch_3
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -302,17 +315,17 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 255
+    .line 270
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 256
-    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->requestShutdownResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .line 271
+    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->sendDeviceStateResponse(Landroid/hardware/radio/RadioResponseInfo;)V
 
-    .line 257
+    .line 272
     goto/16 :goto_0
 
-    .line 246
+    .line 261
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     :pswitch_4
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -323,17 +336,17 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 247
+    .line 262
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 248
-    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->nvWriteItemResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .line 263
+    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->requestShutdownResponse(Landroid/hardware/radio/RadioResponseInfo;)V
 
-    .line 249
+    .line 264
     goto/16 :goto_0
 
-    .line 238
+    .line 253
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     :pswitch_5
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -344,17 +357,17 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 239
+    .line 254
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 240
-    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->nvWriteCdmaPrlResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .line 255
+    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->nvWriteItemResponse(Landroid/hardware/radio/RadioResponseInfo;)V
 
-    .line 241
+    .line 256
     goto/16 :goto_0
 
-    .line 230
+    .line 245
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     :pswitch_6
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -365,17 +378,17 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 231
+    .line 246
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 232
-    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->nvResetConfigResponse(Landroid/hardware/radio/RadioResponseInfo;)V
+    .line 247
+    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->nvWriteCdmaPrlResponse(Landroid/hardware/radio/RadioResponseInfo;)V
 
-    .line 233
+    .line 248
     goto/16 :goto_0
 
-    .line 220
+    .line 237
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     :pswitch_7
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -386,25 +399,18 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 222
+    .line 238
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 223
-    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 224
-    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->nvReadItemResponse(Landroid/hardware/radio/RadioResponseInfo;Ljava/lang/String;)V
+    .line 239
+    invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->nvResetConfigResponse(Landroid/hardware/radio/RadioResponseInfo;)V
 
-    .line 225
+    .line 240
     goto/16 :goto_0
 
-    .line 210
+    .line 227
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    .end local v1    # "_arg1":Ljava/lang/String;
     :pswitch_8
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -414,29 +420,25 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 212
+    .line 229
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    sget-object v1, Landroid/hardware/radio/modem/RadioCapability;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-virtual {v8, v1}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Landroid/hardware/radio/modem/RadioCapability;
-
-    .line 213
-    .local v1, "_arg1":Landroid/hardware/radio/modem/RadioCapability;
+    .line 230
+    .local v1, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 214
-    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getRadioCapabilityResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/modem/RadioCapability;)V
+    .line 231
+    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->nvReadItemResponse(Landroid/hardware/radio/RadioResponseInfo;Ljava/lang/String;)V
 
-    .line 215
+    .line 232
     goto/16 :goto_0
 
-    .line 200
+    .line 217
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    .end local v1    # "_arg1":Landroid/hardware/radio/modem/RadioCapability;
+    .end local v1    # "_arg1":Ljava/lang/String;
     :pswitch_9
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -446,25 +448,29 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 202
+    .line 219
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readBoolean()Z
+    sget-object v1, Landroid/hardware/radio/modem/RadioCapability;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    move-result v1
+    invoke-virtual {v8, v1}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
 
-    .line 203
-    .local v1, "_arg1":Z
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/radio/modem/RadioCapability;
+
+    .line 220
+    .local v1, "_arg1":Landroid/hardware/radio/modem/RadioCapability;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 204
-    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getModemStackStatusResponse(Landroid/hardware/radio/RadioResponseInfo;Z)V
+    .line 221
+    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getRadioCapabilityResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/modem/RadioCapability;)V
 
-    .line 205
+    .line 222
     goto/16 :goto_0
 
-    .line 190
+    .line 207
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    .end local v1    # "_arg1":Z
+    .end local v1    # "_arg1":Landroid/hardware/radio/modem/RadioCapability;
     :pswitch_a
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -474,29 +480,25 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 192
+    .line 209
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    sget-object v1, Landroid/hardware/radio/modem/ActivityStatsInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readBoolean()Z
 
-    invoke-virtual {v8, v1}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v1
-
-    check-cast v1, Landroid/hardware/radio/modem/ActivityStatsInfo;
-
-    .line 193
-    .local v1, "_arg1":Landroid/hardware/radio/modem/ActivityStatsInfo;
+    .line 210
+    .local v1, "_arg1":Z
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 194
-    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getModemActivityInfoResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/modem/ActivityStatsInfo;)V
+    .line 211
+    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getModemStackStatusResponse(Landroid/hardware/radio/RadioResponseInfo;Z)V
 
-    .line 195
+    .line 212
     goto/16 :goto_0
 
-    .line 180
+    .line 197
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    .end local v1    # "_arg1":Landroid/hardware/radio/modem/ActivityStatsInfo;
+    .end local v1    # "_arg1":Z
     :pswitch_b
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -506,7 +508,39 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 182
+    .line 199
+    .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
+    sget-object v1, Landroid/hardware/radio/modem/ActivityStatsInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {v8, v1}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/radio/modem/ActivityStatsInfo;
+
+    .line 200
+    .local v1, "_arg1":Landroid/hardware/radio/modem/ActivityStatsInfo;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
+
+    .line 201
+    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getModemActivityInfoResponse(Landroid/hardware/radio/RadioResponseInfo;Landroid/hardware/radio/modem/ActivityStatsInfo;)V
+
+    .line 202
+    goto/16 :goto_0
+
+    .line 187
+    .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
+    .end local v1    # "_arg1":Landroid/hardware/radio/modem/ActivityStatsInfo;
+    :pswitch_c
+    sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {v8, v0}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
+
+    .line 189
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     sget-object v1, Landroid/hardware/radio/modem/HardwareConfig;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -516,20 +550,20 @@
 
     check-cast v1, [Landroid/hardware/radio/modem/HardwareConfig;
 
-    .line 183
+    .line 190
     .local v1, "_arg1":[Landroid/hardware/radio/modem/HardwareConfig;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 184
+    .line 191
     invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getHardwareConfigResponse(Landroid/hardware/radio/RadioResponseInfo;[Landroid/hardware/radio/modem/HardwareConfig;)V
 
-    .line 185
+    .line 192
     goto :goto_0
 
-    .line 164
+    .line 171
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     .end local v1    # "_arg1":[Landroid/hardware/radio/modem/HardwareConfig;
-    :pswitch_c
+    :pswitch_d
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {v8, v0}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
@@ -540,35 +574,35 @@
 
     check-cast v12, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 166
+    .line 173
     .local v12, "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v13
 
-    .line 168
+    .line 175
     .local v13, "_arg1":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v14
 
-    .line 170
+    .line 177
     .local v14, "_arg2":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v15
 
-    .line 172
+    .line 179
     .local v15, "_arg3":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v16
 
-    .line 173
+    .line 180
     .local v16, "_arg4":Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 174
+    .line 181
     move-object/from16 v0, p0
 
     move-object v1, v12
@@ -583,43 +617,15 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getDeviceIdentityResponse(Landroid/hardware/radio/RadioResponseInfo;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 175
+    .line 182
     goto :goto_0
 
-    .line 154
+    .line 161
     .end local v12    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     .end local v13    # "_arg1":Ljava/lang/String;
     .end local v14    # "_arg2":Ljava/lang/String;
     .end local v15    # "_arg3":Ljava/lang/String;
     .end local v16    # "_arg4":Ljava/lang/String;
-    :pswitch_d
-    sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-virtual {v8, v0}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
-
-    .line 156
-    .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 157
-    .local v1, "_arg1":Ljava/lang/String;
-    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
-
-    .line 158
-    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getBasebandVersionResponse(Landroid/hardware/radio/RadioResponseInfo;Ljava/lang/String;)V
-
-    .line 159
-    goto :goto_0
-
-    .line 146
-    .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    .end local v1    # "_arg1":Ljava/lang/String;
     :pswitch_e
     sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -629,34 +635,62 @@
 
     check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
 
-    .line 147
+    .line 163
+    .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 164
+    .local v1, "_arg1":Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
+
+    .line 165
+    invoke-virtual {v6, v0, v1}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->getBasebandVersionResponse(Landroid/hardware/radio/RadioResponseInfo;Ljava/lang/String;)V
+
+    .line 166
+    goto :goto_0
+
+    .line 153
+    .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
+    .end local v1    # "_arg1":Ljava/lang/String;
+    :pswitch_f
+    sget-object v0, Landroid/hardware/radio/RadioResponseInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {v8, v0}, Landroid/os/Parcel;->readTypedObject(Landroid/os/Parcelable$Creator;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/radio/RadioResponseInfo;
+
+    .line 154
     .restart local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 148
+    .line 155
     invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->enableModemResponse(Landroid/hardware/radio/RadioResponseInfo;)V
 
-    .line 149
+    .line 156
     goto :goto_0
 
-    .line 138
+    .line 145
     .end local v0    # "_arg0":Landroid/hardware/radio/RadioResponseInfo;
-    :pswitch_f
+    :pswitch_10
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 139
+    .line 146
     .local v0, "_arg0":I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->enforceNoDataAvail()V
 
-    .line 140
+    .line 147
     invoke-virtual {v6, v0}, Landroid/hardware/radio/modem/IRadioModemResponse$Stub;->acknowledgeRequest(I)V
 
-    .line 141
+    .line 148
     nop
 
-    .line 290
+    .line 307
     .end local v0    # "_arg0":I
     :goto_0
     return v11
@@ -672,6 +706,7 @@
 
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_10
         :pswitch_f
         :pswitch_e
         :pswitch_d

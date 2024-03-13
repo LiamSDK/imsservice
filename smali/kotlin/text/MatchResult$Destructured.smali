@@ -43,7 +43,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -63,7 +63,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 96
+    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/text/MatchResult$Destructured;->match:Lkotlin/text/MatchResult;
@@ -74,7 +74,7 @@
 .method private final component1()Ljava/lang/String;
     .locals 2
 
-    .line 98
+    .line 99
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -97,7 +97,7 @@
 .method private final component10()Ljava/lang/String;
     .locals 2
 
-    .line 116
+    .line 117
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -120,7 +120,7 @@
 .method private final component2()Ljava/lang/String;
     .locals 2
 
-    .line 100
+    .line 101
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -143,7 +143,7 @@
 .method private final component3()Ljava/lang/String;
     .locals 2
 
-    .line 102
+    .line 103
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -166,7 +166,7 @@
 .method private final component4()Ljava/lang/String;
     .locals 2
 
-    .line 104
+    .line 105
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -189,7 +189,7 @@
 .method private final component5()Ljava/lang/String;
     .locals 2
 
-    .line 106
+    .line 107
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -212,7 +212,7 @@
 .method private final component6()Ljava/lang/String;
     .locals 2
 
-    .line 108
+    .line 109
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -235,7 +235,7 @@
 .method private final component7()Ljava/lang/String;
     .locals 2
 
-    .line 110
+    .line 111
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -258,7 +258,7 @@
 .method private final component8()Ljava/lang/String;
     .locals 2
 
-    .line 112
+    .line 113
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -281,7 +281,7 @@
 .method private final component9()Ljava/lang/String;
     .locals 2
 
-    .line 114
+    .line 115
     invoke-virtual {p0}, Lkotlin/text/MatchResult$Destructured;->getMatch()Lkotlin/text/MatchResult;
 
     move-result-object v0
@@ -306,7 +306,7 @@
 .method public final getMatch()Lkotlin/text/MatchResult;
     .locals 1
 
-    .line 96
+    .line 97
     iget-object v0, p0, Lkotlin/text/MatchResult$Destructured;->match:Lkotlin/text/MatchResult;
 
     return-object v0
@@ -323,7 +323,7 @@
         }
     .end annotation
 
-    .line 124
+    .line 125
     iget-object v0, p0, Lkotlin/text/MatchResult$Destructured;->match:Lkotlin/text/MatchResult;
 
     invoke-interface {v0}, Lkotlin/text/MatchResult;->getGroupValues()Ljava/util/List;

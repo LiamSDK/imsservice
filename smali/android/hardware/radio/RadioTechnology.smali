@@ -46,6 +46,9 @@
 .field public static final LTE:I = 0xe
 
 .field public static final LTE_CA:I = 0x13
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final NR:I = 0x14
 

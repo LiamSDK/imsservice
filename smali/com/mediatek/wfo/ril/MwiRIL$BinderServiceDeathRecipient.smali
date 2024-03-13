@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/wfo/ril/MwiRIL;
 
-    .line 472
+    .line 473
     iput-object p1, p0, Lcom/mediatek/wfo/ril/MwiRIL$BinderServiceDeathRecipient;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .method public binderDied()V
     .locals 4
 
-    .line 490
+    .line 491
     iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$BinderServiceDeathRecipient;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/wfo/ril/MwiRIL;->riljLoge(Ljava/lang/String;)V
 
-    .line 491
+    .line 492
     iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$BinderServiceDeathRecipient;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     iget-object v0, v0, Lcom/mediatek/wfo/ril/MwiRIL;->mRilHandler:Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;
@@ -85,7 +85,7 @@
 
     iget-object v2, v2, Lcom/mediatek/wfo/ril/MwiRIL;->mRadioProxyCookie:Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 492
+    .line 493
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v2
@@ -94,7 +94,7 @@
 
     move-result-object v2
 
-    .line 491
+    .line 492
     const/4 v3, 0x6
 
     invoke-virtual {v1, v3, v2}, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -105,10 +105,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/mediatek/wfo/ril/MwiRIL$RilHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 493
+    .line 494
     invoke-virtual {p0}, Lcom/mediatek/wfo/ril/MwiRIL$BinderServiceDeathRecipient;->unlinkToDeath()V
 
-    .line 494
+    .line 495
     return-void
 .end method
 
@@ -121,13 +121,13 @@
         }
     .end annotation
 
-    .line 475
+    .line 476
     if-eqz p1, :cond_0
 
-    .line 476
+    .line 477
     iput-object p1, p0, Lcom/mediatek/wfo/ril/MwiRIL$BinderServiceDeathRecipient;->mBinder:Landroid/os/IBinder;
 
-    .line 477
+    .line 478
     iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$BinderServiceDeathRecipient;->this$0:Lcom/mediatek/wfo/ril/MwiRIL;
 
     iget-object v0, v0, Lcom/mediatek/wfo/ril/MwiRIL;->mRadioProxyCookie:Ljava/util/concurrent/atomic/AtomicLong;
@@ -140,7 +140,7 @@
 
     invoke-interface {p1, p0, v0}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
-    .line 479
+    .line 480
     :cond_0
     return-void
 .end method
@@ -150,32 +150,32 @@
 
     monitor-enter p0
 
-    .line 482
+    .line 483
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$BinderServiceDeathRecipient;->mBinder:Landroid/os/IBinder;
 
     if-eqz v0, :cond_0
 
-    .line 483
+    .line 484
     const/4 v1, 0x0
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 484
+    .line 485
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL$BinderServiceDeathRecipient;->mBinder:Landroid/os/IBinder;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 486
+    .line 487
     .end local p0    # "this":Lcom/mediatek/wfo/ril/MwiRIL$BinderServiceDeathRecipient;
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 481
+    .line 482
     :catchall_0
     move-exception v0
 

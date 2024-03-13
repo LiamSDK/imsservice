@@ -639,16 +639,16 @@
 
     .line 301
     .local v8, "simState":Ljava/lang/String;
-    const-string v9, "phone"
+    const/4 v9, -0x1
 
-    const/4 v10, -0x1
+    const-string v10, "phone"
 
-    invoke-virtual {v3, v9, v10}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v3, v10, v9}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v10
+    move-result v9
 
     .line 303
-    .local v10, "phoneId":I
+    .local v9, "phoneId":I
     const-string v11, "persist.vendor.mtk_dynamic_ims_switch"
 
     invoke-static {v11}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -689,13 +689,13 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "updateImsServiceConfig after SIM event, phoneId:"
+    const-string v10, "updateImsServiceConfig after SIM event, phoneId:"
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -706,7 +706,7 @@
     invoke-static {v14, v7}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 308
-    invoke-direct {v1, v2, v10}, Lcom/mediatek/ims/ImsConfigManager;->updateImsServiceConfig(Landroid/content/Context;I)V
+    invoke-direct {v1, v2, v9}, Lcom/mediatek/ims/ImsConfigManager;->updateImsServiceConfig(Landroid/content/Context;I)V
 
     .line 310
     :cond_1
@@ -724,7 +724,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v11
 
@@ -735,7 +735,7 @@
     invoke-static {v14, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 314
-    invoke-virtual {v1, v10}, Lcom/mediatek/ims/ImsConfigManager;->getEx(I)Lcom/mediatek/ims/internal/IMtkImsConfig;
+    invoke-virtual {v1, v9}, Lcom/mediatek/ims/ImsConfigManager;->getEx(I)Lcom/mediatek/ims/internal/IMtkImsConfig;
 
     move-result-object v11
 
@@ -762,7 +762,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -811,7 +811,7 @@
     if-eqz v0, :cond_f
 
     .line 339
-    invoke-static {v10}, Lcom/mediatek/ims/ImsConfigManager;->isTestSim(I)Z
+    invoke-static {v9}, Lcom/mediatek/ims/ImsConfigManager;->isTestSim(I)Z
 
     move-result v0
 
@@ -821,7 +821,7 @@
     nop
 
     .line 341
-    invoke-virtual {v2, v9}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v2, v10}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -831,7 +831,7 @@
 
     .line 343
     .local v12, "tm":Landroid/telephony/TelephonyManager;
-    invoke-static {v10}, Lcom/mediatek/ims/OperatorUtils;->getSimOperatorNumericForPhone(I)Ljava/lang/String;
+    invoke-static {v9}, Lcom/mediatek/ims/OperatorUtils;->getSimOperatorNumericForPhone(I)Ljava/lang/String;
 
     move-result-object v0
     :try_end_0
@@ -899,7 +899,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -930,7 +930,7 @@
     invoke-static {v14, v0}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 360
-    invoke-static {v10}, Lcom/mediatek/ims/common/SubscriptionManagerHelper;->getSubIdUsingPhoneId(I)I
+    invoke-static {v9}, Lcom/mediatek/ims/common/SubscriptionManagerHelper;->getSubIdUsingPhoneId(I)I
 
     move-result v0
 
@@ -1106,7 +1106,7 @@
     invoke-virtual {v0, v13, v1}, Landroid/content/res/Resources;->updateConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
 
     .line 389
-    invoke-static {v10}, Lcom/mediatek/ims/OperatorUtils;->isCTVolteDisabled(I)Z
+    invoke-static {v9}, Lcom/mediatek/ims/OperatorUtils;->isCTVolteDisabled(I)Z
 
     move-result v1
 
@@ -1131,7 +1131,7 @@
     .end local v18    # "vilteResVal":I
     .end local v19    # "wfcResVal":I
     :cond_c
-    const v1, 0x1110109
+    const v1, 0x1110117
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -1147,7 +1147,7 @@
 
     .end local v1    # "volteResVal":I
     .local v18, "volteResVal":I
-    const v1, 0x111010a
+    const v1, 0x1110118
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -1163,7 +1163,7 @@
 
     .end local v1    # "vilteResVal":I
     .local v19, "vilteResVal":I
-    const v1, 0x111010b
+    const v1, 0x1110119
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -1266,7 +1266,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1367,7 +1367,7 @@
 
     .line 426
     .local v0, "mIntent":Landroid/content/Intent;
-    invoke-virtual {v0, v9, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v0, v10, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     .line 427
     invoke-virtual {v0, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
@@ -1388,7 +1388,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

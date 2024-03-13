@@ -40,7 +40,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -80,7 +80,7 @@
     .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
-    .line 444
+    .line 445
     move-object v0, p1
 
     check-cast v0, Lkotlin/collections/IndexedValue;
@@ -107,7 +107,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 444
+    .line 445
     invoke-virtual {p1}, Lkotlin/collections/IndexedValue;->getValue()Ljava/lang/Object;
 
     move-result-object v0

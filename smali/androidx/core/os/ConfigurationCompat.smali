@@ -23,15 +23,11 @@
 .end method
 
 .method public static getLocales(Landroid/content/res/Configuration;)Landroidx/core/os/LocaleListCompat;
-    .locals 3
+    .locals 1
     .param p0, "configuration"    # Landroid/content/res/Configuration;
 
     .line 43
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 44
     invoke-static {p0}, Landroidx/core/os/ConfigurationCompat$Api24Impl;->getLocales(Landroid/content/res/Configuration;)Landroid/os/LocaleList;
@@ -39,24 +35,6 @@
     move-result-object v0
 
     invoke-static {v0}, Landroidx/core/os/LocaleListCompat;->wrap(Landroid/os/LocaleList;)Landroidx/core/os/LocaleListCompat;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 46
-    :cond_0
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/util/Locale;
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Landroidx/core/os/LocaleListCompat;->create([Ljava/util/Locale;)Landroidx/core/os/LocaleListCompat;
 
     move-result-object v0
 

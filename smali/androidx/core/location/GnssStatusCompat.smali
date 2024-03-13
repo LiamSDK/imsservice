@@ -34,7 +34,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 130
+    .line 129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
     .locals 1
     .param p0, "gnssStatus"    # Landroid/location/GnssStatus;
 
-    .line 117
+    .line 116
     new-instance v0, Landroidx/core/location/GnssStatusWrapper;
 
     invoke-direct {v0, p0}, Landroidx/core/location/GnssStatusWrapper;-><init>(Ljava/lang/Object;)V
@@ -56,7 +56,7 @@
     .locals 1
     .param p0, "gpsStatus"    # Landroid/location/GpsStatus;
 
-    .line 126
+    .line 125
     new-instance v0, Landroidx/core/location/GpsStatusWrapper;
 
     invoke-direct {v0, p0}, Landroidx/core/location/GpsStatusWrapper;-><init>(Landroid/location/GpsStatus;)V

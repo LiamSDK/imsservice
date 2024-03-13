@@ -37,7 +37,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -58,27 +58,15 @@
 .method private static final synthetic $values()[Lkotlin/reflect/KParameter$Kind;
     .locals 3
 
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Lkotlin/reflect/KParameter$Kind;
-
-    sget-object v1, Lkotlin/reflect/KParameter$Kind;->INSTANCE:Lkotlin/reflect/KParameter$Kind;
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    sget-object v0, Lkotlin/reflect/KParameter$Kind;->INSTANCE:Lkotlin/reflect/KParameter$Kind;
 
     sget-object v1, Lkotlin/reflect/KParameter$Kind;->EXTENSION_RECEIVER:Lkotlin/reflect/KParameter$Kind;
 
-    const/4 v2, 0x1
+    sget-object v2, Lkotlin/reflect/KParameter$Kind;->VALUE:Lkotlin/reflect/KParameter$Kind;
 
-    aput-object v1, v0, v2
+    filled-new-array {v0, v1, v2}, [Lkotlin/reflect/KParameter$Kind;
 
-    sget-object v1, Lkotlin/reflect/KParameter$Kind;->VALUE:Lkotlin/reflect/KParameter$Kind;
-
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     return-object v0
 .end method

@@ -34,7 +34,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -56,18 +56,19 @@
     .param p0, "$this$digitToChar"    # I
 
     .line 93
-    const/4 v0, 0x0
+    new-instance v0, Lkotlin/ranges/IntRange;
 
-    if-ltz p0, :cond_0
+    const/4 v1, 0x0
 
-    const/16 v1, 0xa
+    const/16 v2, 0x9
 
-    if-ge p0, v1, :cond_0
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    const/4 v0, 0x1
+    invoke-virtual {v0, p0}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    :cond_0
-    if-eqz v0, :cond_1
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     .line 94
     add-int/lit8 v0, p0, 0x30
@@ -77,7 +78,7 @@
     return v0
 
     .line 96
-    :cond_1
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -115,30 +116,29 @@
     .param p1, "radix"    # I
 
     .line 111
-    const/4 v0, 0x0
+    new-instance v0, Lkotlin/ranges/IntRange;
 
     const/4 v1, 0x2
 
-    if-gt v1, p1, :cond_0
+    const/16 v2, 0x24
 
-    const/16 v1, 0x25
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    if-ge p1, v1, :cond_0
+    invoke-virtual {v0, p1}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    const/4 v0, 0x1
+    move-result v0
 
-    :cond_0
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     .line 114
-    if-ltz p0, :cond_2
+    if-ltz p0, :cond_1
 
-    if-ge p0, p1, :cond_2
+    if-ge p0, p1, :cond_1
 
     .line 117
     const/16 v0, 0xa
 
-    if-ge p0, v0, :cond_1
+    if-ge p0, v0, :cond_0
 
     .line 118
     add-int/lit8 v0, p0, 0x30
@@ -148,7 +148,7 @@
     goto :goto_0
 
     .line 120
-    :cond_1
+    :cond_0
     add-int/lit8 v1, p0, 0x41
 
     int-to-char v1, v1
@@ -162,7 +162,7 @@
     return v0
 
     .line 115
-    :cond_2
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -198,7 +198,7 @@
     throw v0
 
     .line 112
-    :cond_3
+    :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -529,23 +529,22 @@
 .end method
 
 .method public static final isSurrogate(C)Z
-    .locals 2
+    .locals 3
     .param p0, "$this$isSurrogate"    # C
 
     .line 246
-    const/4 v0, 0x0
+    new-instance v0, Lkotlin/ranges/CharRange;
 
     const v1, 0xd800
 
-    if-gt v1, p0, :cond_0
+    const v2, 0xdfff
 
-    const v1, 0xe000
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/CharRange;-><init>(CC)V
 
-    if-ge p0, v1, :cond_0
+    invoke-virtual {v0, p0}, Lkotlin/ranges/CharRange;->contains(C)Z
 
-    const/4 v0, 0x1
+    move-result v0
 
-    :cond_0
     return v0
 .end method
 

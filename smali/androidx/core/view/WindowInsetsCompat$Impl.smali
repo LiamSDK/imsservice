@@ -317,24 +317,16 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 5
 
     .line 853
-    const/4 v0, 0x5
-
-    new-array v0, v0, [Ljava/lang/Object;
-
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->isRound()Z
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->isConsumed()Z
 
@@ -344,34 +336,22 @@
 
     move-result-object v1
 
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getSystemWindowInsets()Landroidx/core/graphics/Insets;
 
-    move-result-object v1
-
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
+    move-result-object v2
 
     .line 854
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getStableInsets()Landroidx/core/graphics/Insets;
 
-    move-result-object v1
-
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
+    move-result-object v3
 
     invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$Impl;->getDisplayCutout()Landroidx/core/view/DisplayCutoutCompat;
 
-    move-result-object v1
+    move-result-object v4
 
-    const/4 v2, 0x4
+    filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/Object;
 
-    aput-object v1, v0, v2
+    move-result-object v0
 
     .line 853
     invoke-static {v0}, Landroidx/core/util/ObjectsCompat;->hash([Ljava/lang/Object;)I

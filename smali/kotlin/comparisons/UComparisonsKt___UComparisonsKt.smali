@@ -64,7 +64,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -116,7 +116,7 @@
     .param p1, "b"    # I
 
     .line 24
-    invoke-static {p0, p1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p0, p1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -161,7 +161,7 @@
 .end method
 
 .method public static final varargs maxOf-Md2H83M(I[I)I
-    .locals 3
+    .locals 4
     .param p0, "a"    # I
     .param p1, "other"    # [I
 
@@ -174,33 +174,27 @@
 
     .line 101
     .local v0, "max":I
-    invoke-static {p1}, Lkotlin/UIntArray;->iterator-impl([I)Ljava/util/Iterator;
+    invoke-static {p1}, Lkotlin/UIntArray;->getSize-impl([I)I
 
-    move-result-object v1
+    move-result v1
+
+    const/4 v2, 0x0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v2, v1, :cond_0
 
-    move-result v2
+    invoke-static {p1, v2}, Lkotlin/UIntArray;->get-pVg5ArA([II)I
 
-    if-eqz v2, :cond_0
+    move-result v3
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkotlin/UInt;
-
-    invoke-virtual {v2}, Lkotlin/UInt;->unbox-impl()I
-
-    move-result v2
-
-    .local v2, "e":I
-    invoke-static {v0, v2}, Lkotlin/comparisons/UComparisonsKt;->maxOf-J1ME1BU(II)I
+    .local v3, "e":I
+    invoke-static {v0, v3}, Lkotlin/comparisons/UComparisonsKt;->maxOf-J1ME1BU(II)I
 
     move-result v0
 
-    .end local v2    # "e":I
+    .end local v3    # "e":I
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 102
@@ -209,7 +203,7 @@
 .end method
 
 .method public static final varargs maxOf-R03FKyM(J[J)J
-    .locals 5
+    .locals 6
     .param p0, "a"    # J
     .param p2, "other"    # [J
 
@@ -222,33 +216,27 @@
 
     .line 112
     .local v0, "max":J
-    invoke-static {p2}, Lkotlin/ULongArray;->iterator-impl([J)Ljava/util/Iterator;
+    invoke-static {p2}, Lkotlin/ULongArray;->getSize-impl([J)I
 
-    move-result-object v2
+    move-result v2
+
+    const/4 v3, 0x0
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v3, v2, :cond_0
 
-    move-result v3
+    invoke-static {p2, v3}, Lkotlin/ULongArray;->get-s-VKNKU([JI)J
 
-    if-eqz v3, :cond_0
+    move-result-wide v4
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkotlin/ULong;
-
-    invoke-virtual {v3}, Lkotlin/ULong;->unbox-impl()J
-
-    move-result-wide v3
-
-    .local v3, "e":J
-    invoke-static {v0, v1, v3, v4}, Lkotlin/comparisons/UComparisonsKt;->maxOf-eb3DHEI(JJ)J
+    .local v4, "e":J
+    invoke-static {v0, v1, v4, v5}, Lkotlin/comparisons/UComparisonsKt;->maxOf-eb3DHEI(JJ)J
 
     move-result-wide v0
 
-    .end local v3    # "e":J
+    .end local v4    # "e":J
+    add-int/lit8 v3, v3, 0x1
+
     goto :goto_0
 
     .line 113
@@ -293,7 +281,7 @@
 .end method
 
 .method public static final varargs maxOf-Wr6uiD8(B[B)B
-    .locals 3
+    .locals 4
     .param p0, "a"    # B
     .param p1, "other"    # [B
 
@@ -306,33 +294,27 @@
 
     .line 123
     .local v0, "max":B
-    invoke-static {p1}, Lkotlin/UByteArray;->iterator-impl([B)Ljava/util/Iterator;
+    invoke-static {p1}, Lkotlin/UByteArray;->getSize-impl([B)I
 
-    move-result-object v1
+    move-result v1
+
+    const/4 v2, 0x0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v2, v1, :cond_0
 
-    move-result v2
+    invoke-static {p1, v2}, Lkotlin/UByteArray;->get-w2LRezQ([BI)B
 
-    if-eqz v2, :cond_0
+    move-result v3
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkotlin/UByte;
-
-    invoke-virtual {v2}, Lkotlin/UByte;->unbox-impl()B
-
-    move-result v2
-
-    .local v2, "e":B
-    invoke-static {v0, v2}, Lkotlin/comparisons/UComparisonsKt;->maxOf-Kr8caGY(BB)B
+    .local v3, "e":B
+    invoke-static {v0, v3}, Lkotlin/comparisons/UComparisonsKt;->maxOf-Kr8caGY(BB)B
 
     move-result v0
 
-    .end local v2    # "e":B
+    .end local v3    # "e":B
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 124
@@ -364,7 +346,7 @@
     .param p2, "b"    # J
 
     .line 33
-    invoke-static {p0, p1, p2, p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p0, p1, p2, p3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -400,7 +382,7 @@
 .end method
 
 .method public static final varargs maxOf-t1qELG4(S[S)S
-    .locals 3
+    .locals 4
     .param p0, "a"    # S
     .param p1, "other"    # [S
 
@@ -413,33 +395,27 @@
 
     .line 134
     .local v0, "max":S
-    invoke-static {p1}, Lkotlin/UShortArray;->iterator-impl([S)Ljava/util/Iterator;
+    invoke-static {p1}, Lkotlin/UShortArray;->getSize-impl([S)I
 
-    move-result-object v1
+    move-result v1
+
+    const/4 v2, 0x0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v2, v1, :cond_0
 
-    move-result v2
+    invoke-static {p1, v2}, Lkotlin/UShortArray;->get-Mh2AYeg([SI)S
 
-    if-eqz v2, :cond_0
+    move-result v3
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkotlin/UShort;
-
-    invoke-virtual {v2}, Lkotlin/UShort;->unbox-impl()S
-
-    move-result v2
-
-    .local v2, "e":S
-    invoke-static {v0, v2}, Lkotlin/comparisons/UComparisonsKt;->maxOf-5PvTz6A(SS)S
+    .local v3, "e":S
+    invoke-static {v0, v3}, Lkotlin/comparisons/UComparisonsKt;->maxOf-5PvTz6A(SS)S
 
     move-result v0
 
-    .end local v2    # "e":S
+    .end local v3    # "e":S
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 135
@@ -482,7 +458,7 @@
     .param p1, "b"    # I
 
     .line 144
-    invoke-static {p0, p1}, Lkotlin/UnsignedKt;->uintCompare(II)I
+    invoke-static {p0, p1}, Ljava/lang/Integer;->compareUnsigned(II)I
 
     move-result v0
 
@@ -527,7 +503,7 @@
 .end method
 
 .method public static final varargs minOf-Md2H83M(I[I)I
-    .locals 3
+    .locals 4
     .param p0, "a"    # I
     .param p1, "other"    # [I
 
@@ -540,33 +516,27 @@
 
     .line 221
     .local v0, "min":I
-    invoke-static {p1}, Lkotlin/UIntArray;->iterator-impl([I)Ljava/util/Iterator;
+    invoke-static {p1}, Lkotlin/UIntArray;->getSize-impl([I)I
 
-    move-result-object v1
+    move-result v1
+
+    const/4 v2, 0x0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v2, v1, :cond_0
 
-    move-result v2
+    invoke-static {p1, v2}, Lkotlin/UIntArray;->get-pVg5ArA([II)I
 
-    if-eqz v2, :cond_0
+    move-result v3
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkotlin/UInt;
-
-    invoke-virtual {v2}, Lkotlin/UInt;->unbox-impl()I
-
-    move-result v2
-
-    .local v2, "e":I
-    invoke-static {v0, v2}, Lkotlin/comparisons/UComparisonsKt;->minOf-J1ME1BU(II)I
+    .local v3, "e":I
+    invoke-static {v0, v3}, Lkotlin/comparisons/UComparisonsKt;->minOf-J1ME1BU(II)I
 
     move-result v0
 
-    .end local v2    # "e":I
+    .end local v3    # "e":I
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 222
@@ -575,7 +545,7 @@
 .end method
 
 .method public static final varargs minOf-R03FKyM(J[J)J
-    .locals 5
+    .locals 6
     .param p0, "a"    # J
     .param p2, "other"    # [J
 
@@ -588,33 +558,27 @@
 
     .line 232
     .local v0, "min":J
-    invoke-static {p2}, Lkotlin/ULongArray;->iterator-impl([J)Ljava/util/Iterator;
+    invoke-static {p2}, Lkotlin/ULongArray;->getSize-impl([J)I
 
-    move-result-object v2
+    move-result v2
+
+    const/4 v3, 0x0
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v3, v2, :cond_0
 
-    move-result v3
+    invoke-static {p2, v3}, Lkotlin/ULongArray;->get-s-VKNKU([JI)J
 
-    if-eqz v3, :cond_0
+    move-result-wide v4
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkotlin/ULong;
-
-    invoke-virtual {v3}, Lkotlin/ULong;->unbox-impl()J
-
-    move-result-wide v3
-
-    .local v3, "e":J
-    invoke-static {v0, v1, v3, v4}, Lkotlin/comparisons/UComparisonsKt;->minOf-eb3DHEI(JJ)J
+    .local v4, "e":J
+    invoke-static {v0, v1, v4, v5}, Lkotlin/comparisons/UComparisonsKt;->minOf-eb3DHEI(JJ)J
 
     move-result-wide v0
 
-    .end local v3    # "e":J
+    .end local v4    # "e":J
+    add-int/lit8 v3, v3, 0x1
+
     goto :goto_0
 
     .line 233
@@ -659,7 +623,7 @@
 .end method
 
 .method public static final varargs minOf-Wr6uiD8(B[B)B
-    .locals 3
+    .locals 4
     .param p0, "a"    # B
     .param p1, "other"    # [B
 
@@ -672,33 +636,27 @@
 
     .line 243
     .local v0, "min":B
-    invoke-static {p1}, Lkotlin/UByteArray;->iterator-impl([B)Ljava/util/Iterator;
+    invoke-static {p1}, Lkotlin/UByteArray;->getSize-impl([B)I
 
-    move-result-object v1
+    move-result v1
+
+    const/4 v2, 0x0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v2, v1, :cond_0
 
-    move-result v2
+    invoke-static {p1, v2}, Lkotlin/UByteArray;->get-w2LRezQ([BI)B
 
-    if-eqz v2, :cond_0
+    move-result v3
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkotlin/UByte;
-
-    invoke-virtual {v2}, Lkotlin/UByte;->unbox-impl()B
-
-    move-result v2
-
-    .local v2, "e":B
-    invoke-static {v0, v2}, Lkotlin/comparisons/UComparisonsKt;->minOf-Kr8caGY(BB)B
+    .local v3, "e":B
+    invoke-static {v0, v3}, Lkotlin/comparisons/UComparisonsKt;->minOf-Kr8caGY(BB)B
 
     move-result v0
 
-    .end local v2    # "e":B
+    .end local v3    # "e":B
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 244
@@ -730,7 +688,7 @@
     .param p2, "b"    # J
 
     .line 153
-    invoke-static {p0, p1, p2, p3}, Lkotlin/UnsignedKt;->ulongCompare(JJ)I
+    invoke-static {p0, p1, p2, p3}, Ljava/lang/Long;->compareUnsigned(JJ)I
 
     move-result v0
 
@@ -766,7 +724,7 @@
 .end method
 
 .method public static final varargs minOf-t1qELG4(S[S)S
-    .locals 3
+    .locals 4
     .param p0, "a"    # S
     .param p1, "other"    # [S
 
@@ -779,33 +737,27 @@
 
     .line 254
     .local v0, "min":S
-    invoke-static {p1}, Lkotlin/UShortArray;->iterator-impl([S)Ljava/util/Iterator;
+    invoke-static {p1}, Lkotlin/UShortArray;->getSize-impl([S)I
 
-    move-result-object v1
+    move-result v1
+
+    const/4 v2, 0x0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v2, v1, :cond_0
 
-    move-result v2
+    invoke-static {p1, v2}, Lkotlin/UShortArray;->get-Mh2AYeg([SI)S
 
-    if-eqz v2, :cond_0
+    move-result v3
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkotlin/UShort;
-
-    invoke-virtual {v2}, Lkotlin/UShort;->unbox-impl()S
-
-    move-result v2
-
-    .local v2, "e":S
-    invoke-static {v0, v2}, Lkotlin/comparisons/UComparisonsKt;->minOf-5PvTz6A(SS)S
+    .local v3, "e":S
+    invoke-static {v0, v3}, Lkotlin/comparisons/UComparisonsKt;->minOf-5PvTz6A(SS)S
 
     move-result v0
 
-    .end local v2    # "e":S
+    .end local v3    # "e":S
+    add-int/lit8 v2, v2, 0x1
+
     goto :goto_0
 
     .line 255

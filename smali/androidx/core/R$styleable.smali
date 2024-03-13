@@ -106,78 +106,75 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 5
 
-    .line 290
-    const/4 v0, 0x2
+    .line 310
+    const v0, 0x7f01000e
 
-    new-array v1, v0, [I
+    const v1, 0x7f01000f
 
-    fill-array-data v1, :array_0
+    filled-new-array {v0, v1}, [I
 
-    sput-object v1, Landroidx/core/R$styleable;->Capability:[I
+    move-result-object v0
 
-    .line 334
-    const/4 v1, 0x5
+    sput-object v0, Landroidx/core/R$styleable;->Capability:[I
 
-    new-array v1, v1, [I
+    .line 354
+    const/high16 v0, 0x7f010000
 
-    fill-array-data v1, :array_1
+    const v1, 0x7f01000c
 
-    sput-object v1, Landroidx/core/R$styleable;->ColorStateListItem:[I
+    const v2, 0x10101a5
 
-    .line 408
-    const/4 v1, 0x7
+    const v3, 0x101031f
 
-    new-array v1, v1, [I
+    const v4, 0x1010647
 
-    fill-array-data v1, :array_2
+    filled-new-array {v2, v3, v4, v0, v1}, [I
 
-    sput-object v1, Landroidx/core/R$styleable;->FontFamily:[I
+    move-result-object v0
 
-    .line 536
-    const/16 v1, 0xa
+    sput-object v0, Landroidx/core/R$styleable;->ColorStateListItem:[I
 
-    new-array v1, v1, [I
+    .line 428
+    const/4 v0, 0x7
 
-    fill-array-data v1, :array_3
-
-    sput-object v1, Landroidx/core/R$styleable;->FontFamilyFont:[I
-
-    .line 688
-    const/16 v1, 0xc
-
-    new-array v1, v1, [I
-
-    fill-array-data v1, :array_4
-
-    sput-object v1, Landroidx/core/R$styleable;->GradientColor:[I
-
-    .line 856
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5
+    fill-array-data v0, :array_0
+
+    sput-object v0, Landroidx/core/R$styleable;->FontFamily:[I
+
+    .line 556
+    const/16 v0, 0xa
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Landroidx/core/R$styleable;->FontFamilyFont:[I
+
+    .line 708
+    const/16 v0, 0xc
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_2
+
+    sput-object v0, Landroidx/core/R$styleable;->GradientColor:[I
+
+    .line 876
+    const v0, 0x1010514
+
+    filled-new-array {v2, v0}, [I
+
+    move-result-object v0
 
     sput-object v0, Landroidx/core/R$styleable;->GradientColorItem:[I
 
     return-void
 
     :array_0
-    .array-data 4
-        0x7f01000e
-        0x7f01000f
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x10101a5
-        0x101031f
-        0x1010647
-        0x7f010000
-        0x7f01000c
-    .end array-data
-
-    :array_2
     .array-data 4
         0x7f010002
         0x7f010003
@@ -188,7 +185,7 @@
         0x7f010008
     .end array-data
 
-    :array_3
+    :array_1
     .array-data 4
         0x1010532
         0x1010533
@@ -202,7 +199,7 @@
         0x7f010010
     .end array-data
 
-    :array_4
+    :array_2
     .array-data 4
         0x101019d
         0x101019e
@@ -217,18 +214,12 @@
         0x1010512
         0x1010513
     .end array-data
-
-    :array_5
-    .array-data 4
-        0x10101a5
-        0x1010514
-    .end array-data
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 276
+    .line 296
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -28,7 +28,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -40,7 +40,7 @@
     .locals 2
     .param p0, "$this$toULong"    # B
 
-    .line 383
+    .line 393
     int-to-long v0, p0
 
     invoke-static {v0, v1}, Lkotlin/ULong;->constructor-impl(J)J
@@ -54,7 +54,7 @@
     .locals 2
     .param p0, "$this$toULong"    # D
 
-    .line 439
+    .line 449
     invoke-static {p0, p1}, Lkotlin/UnsignedKt;->doubleToULong(D)J
 
     move-result-wide v0
@@ -66,7 +66,7 @@
     .locals 2
     .param p0, "$this$toULong"    # F
 
-    .line 429
+    .line 439
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Lkotlin/UnsignedKt;->doubleToULong(D)J
@@ -80,7 +80,7 @@
     .locals 2
     .param p0, "$this$toULong"    # I
 
-    .line 407
+    .line 417
     int-to-long v0, p0
 
     invoke-static {v0, v1}, Lkotlin/ULong;->constructor-impl(J)J
@@ -94,7 +94,7 @@
     .locals 2
     .param p0, "$this$toULong"    # J
 
-    .line 418
+    .line 428
     invoke-static {p0, p1}, Lkotlin/ULong;->constructor-impl(J)J
 
     move-result-wide v0
@@ -106,7 +106,7 @@
     .locals 2
     .param p0, "$this$toULong"    # S
 
-    .line 395
+    .line 405
     int-to-long v0, p0
 
     invoke-static {v0, v1}, Lkotlin/ULong;->constructor-impl(J)J

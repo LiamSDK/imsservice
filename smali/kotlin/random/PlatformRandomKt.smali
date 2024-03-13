@@ -24,7 +24,7 @@
     k = 0x2
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -55,22 +55,22 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
+    invoke-virtual {v0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v0
+
+    if-nez v0, :cond_2
+
+    :cond_1
     new-instance v0, Lkotlin/random/KotlinRandom;
 
     invoke-direct {v0, p0}, Lkotlin/random/KotlinRandom;-><init>(Lkotlin/random/Random;)V
 
     check-cast v0, Ljava/util/Random;
 
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
-
-    move-result-object v0
-
-    :goto_1
+    :cond_2
     return-object v0
 .end method
 
@@ -97,22 +97,22 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
+    invoke-virtual {v0}, Lkotlin/random/KotlinRandom;->getImpl()Lkotlin/random/Random;
+
+    move-result-object v0
+
+    if-nez v0, :cond_2
+
+    :cond_1
     new-instance v0, Lkotlin/random/PlatformRandom;
 
     invoke-direct {v0, p0}, Lkotlin/random/PlatformRandom;-><init>(Ljava/util/Random;)V
 
     check-cast v0, Lkotlin/random/Random;
 
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v0}, Lkotlin/random/KotlinRandom;->getImpl()Lkotlin/random/Random;
-
-    move-result-object v0
-
-    :goto_1
+    :cond_2
     return-object v0
 .end method
 

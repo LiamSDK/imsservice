@@ -25,12 +25,12 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nUByteArray.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UByteArray.kt\nkotlin/UByteArray\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,87:1\n1720#2,3:88\n*S KotlinDebug\n*F\n+ 1 UByteArray.kt\nkotlin/UByteArray\n*L\n63#1:88,3\n*E\n"
+    value = "SMAP\nUByteArray.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UByteArray.kt\nkotlin/UByteArray\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,86:1\n1726#2,3:87\n*S KotlinDebug\n*F\n+ 1 UByteArray.kt\nkotlin/UByteArray\n*L\n62#1:87,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0003\n\u0002\u0010\u0012\n\u0002\u0008\u0006\n\u0002\u0010\u000b\n\u0002\u0008\t\n\u0002\u0010\u0000\n\u0002\u0008\u000c\n\u0002\u0010(\n\u0002\u0008\u0003\n\u0002\u0010\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u000e\n\u0002\u0008\u0004\u0008\u0087@\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00020\u0001:\u00012B\u0014\u0008\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0005\u0010\u0006B\u0014\u0008\u0001\u0012\u0006\u0010\u0007\u001a\u00020\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0005\u0010\tJ\u001b\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0002H\u0096\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0011\u0010\u0012J \u0010\u0013\u001a\u00020\u000f2\u000c\u0010\u0014\u001a\u0008\u0012\u0004\u0012\u00020\u00020\u0001H\u0016\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0015\u0010\u0016J\u001a\u0010\u0017\u001a\u00020\u000f2\u0008\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u00d6\u0003\u00a2\u0006\u0004\u0008\u001a\u0010\u001bJ\u001e\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u001d\u001a\u00020\u0004H\u0086\u0002\u00f8\u0001\u0000\u00f8\u0001\u0001\u00a2\u0006\u0004\u0008\u001e\u0010\u001fJ\u0010\u0010 \u001a\u00020\u0004H\u00d6\u0001\u00a2\u0006\u0004\u0008!\u0010\u000bJ\u000f\u0010\"\u001a\u00020\u000fH\u0016\u00a2\u0006\u0004\u0008#\u0010$J\u0019\u0010%\u001a\u0008\u0012\u0004\u0012\u00020\u00020&H\u0096\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\'\u0010(J#\u0010)\u001a\u00020*2\u0006\u0010\u001d\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u0002H\u0086\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008,\u0010-J\u0010\u0010.\u001a\u00020/H\u00d6\u0001\u00a2\u0006\u0004\u00080\u00101R\u0014\u0010\u0003\u001a\u00020\u00048VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\n\u0010\u000bR\u0016\u0010\u0007\u001a\u00020\u00088\u0000X\u0081\u0004\u00a2\u0006\u0008\n\u0000\u0012\u0004\u0008\u000c\u0010\r\u0088\u0001\u0007\u0092\u0001\u00020\u0008\u00f8\u0001\u0000\u0082\u0002\u0008\n\u0002\u0008\u0019\n\u0002\u0008!\u00a8\u00063"
+        "\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0003\n\u0002\u0010\u0012\n\u0002\u0008\u0006\n\u0002\u0010\u000b\n\u0002\u0008\t\n\u0002\u0010\u0000\n\u0002\u0008\u000c\n\u0002\u0010(\n\u0002\u0008\u0003\n\u0002\u0010\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u000e\n\u0002\u0008\u0004\u0008\u0087@\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00020\u0001:\u00012B\u0014\u0008\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0005\u0010\u0006B\u0014\u0008\u0001\u0012\u0006\u0010\u0007\u001a\u00020\u0008\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0005\u0010\tJ\u001b\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0002H\u0096\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0011\u0010\u0012J \u0010\u0013\u001a\u00020\u000f2\u000c\u0010\u0014\u001a\u0008\u0012\u0004\u0012\u00020\u00020\u0001H\u0016\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u0015\u0010\u0016J\u001a\u0010\u0017\u001a\u00020\u000f2\u0008\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u00d6\u0003\u00a2\u0006\u0004\u0008\u001a\u0010\u001bJ\u001e\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u001d\u001a\u00020\u0004H\u0086\u0002\u00f8\u0001\u0001\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\u001e\u0010\u001fJ\u0010\u0010 \u001a\u00020\u0004H\u00d6\u0001\u00a2\u0006\u0004\u0008!\u0010\u000bJ\u000f\u0010\"\u001a\u00020\u000fH\u0016\u00a2\u0006\u0004\u0008#\u0010$J\u0019\u0010%\u001a\u0008\u0012\u0004\u0012\u00020\u00020&H\u0096\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008\'\u0010(J#\u0010)\u001a\u00020*2\u0006\u0010\u001d\u001a\u00020\u00042\u0006\u0010+\u001a\u00020\u0002H\u0086\u0002\u00f8\u0001\u0000\u00a2\u0006\u0004\u0008,\u0010-J\u0010\u0010.\u001a\u00020/H\u00d6\u0001\u00a2\u0006\u0004\u00080\u00101R\u0014\u0010\u0003\u001a\u00020\u00048VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\n\u0010\u000bR\u0016\u0010\u0007\u001a\u00020\u00088\u0000X\u0081\u0004\u00a2\u0006\u0008\n\u0000\u0012\u0004\u0008\u000c\u0010\r\u0088\u0001\u0007\u0092\u0001\u00020\u0008\u00f8\u0001\u0000\u0082\u0002\u0008\n\u0002\u0008\u0019\n\u0002\u0008!\u00a8\u00063"
     }
     d2 = {
         "Lkotlin/UByteArray;",
@@ -89,7 +89,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -155,14 +155,10 @@
     .param p0, "arg0"    # [B
     .param p1, "element"    # B
 
-    const-string v0, "arg0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 57
+    .line 56
     nop
 
-    .line 59
+    .line 58
     invoke-static {p0, p1}, Lkotlin/collections/ArraysKt;->contains([BB)Z
 
     move-result v0
@@ -183,15 +179,11 @@
         }
     .end annotation
 
-    const-string v0, "arg0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "elements"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
+    .line 62
     move-object v0, p1
 
     check-cast v0, Ljava/lang/Iterable;
@@ -199,7 +191,7 @@
     .local v0, "$this$all$iv":Ljava/lang/Iterable;
     const/4 v1, 0x0
 
-    .line 88
+    .line 87
     .local v1, "$i$f$all":I
     move-object v2, v0
 
@@ -209,17 +201,13 @@
 
     move-result v2
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
     if-eqz v2, :cond_0
 
-    move v3, v4
-
     goto :goto_1
 
-    .line 89
+    .line 88
     :cond_0
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -228,60 +216,65 @@
     :cond_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_3
+    if-eqz v4, :cond_3
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v4
 
-    .local v5, "element$iv":Ljava/lang/Object;
-    move-object v6, v5
+    .local v4, "element$iv":Ljava/lang/Object;
+    move-object v5, v4
 
-    .local v6, "it":Ljava/lang/Object;
-    const/4 v7, 0x0
+    .local v5, "it":Ljava/lang/Object;
+    const/4 v6, 0x0
 
-    .line 63
-    .local v7, "$i$a$-all-UByteArray$containsAll$1":I
-    instance-of v8, v6, Lkotlin/UByte;
+    .line 62
+    .local v6, "$i$a$-all-UByteArray$containsAll$1":I
+    instance-of v7, v5, Lkotlin/UByte;
 
-    if-eqz v8, :cond_2
+    const/4 v8, 0x0
 
-    move-object v8, v6
+    if-eqz v7, :cond_2
 
-    check-cast v8, Lkotlin/UByte;
+    move-object v7, v5
 
-    invoke-virtual {v8}, Lkotlin/UByte;->unbox-impl()B
+    check-cast v7, Lkotlin/UByte;
 
-    move-result v8
+    invoke-virtual {v7}, Lkotlin/UByte;->unbox-impl()B
 
-    invoke-static {p0, v8}, Lkotlin/collections/ArraysKt;->contains([BB)Z
+    move-result v7
 
-    move-result v8
+    invoke-static {p0, v7}, Lkotlin/collections/ArraysKt;->contains([BB)Z
 
-    if-eqz v8, :cond_2
+    move-result v7
 
-    move v6, v4
+    if-eqz v7, :cond_2
+
+    move v5, v3
 
     goto :goto_0
 
     :cond_2
-    move v6, v3
+    move v5, v8
 
-    .end local v6    # "it":Ljava/lang/Object;
-    .end local v7    # "$i$a$-all-UByteArray$containsAll$1":I
+    .line 88
+    .end local v5    # "it":Ljava/lang/Object;
+    .end local v6    # "$i$a$-all-UByteArray$containsAll$1":I
     :goto_0
-    if-nez v6, :cond_1
+    if-nez v5, :cond_1
+
+    move v3, v8
 
     goto :goto_1
 
-    .line 90
-    .end local v5    # "element$iv":Ljava/lang/Object;
+    .line 89
+    .end local v4    # "element$iv":Ljava/lang/Object;
     :cond_3
-    move v3, v4
+    nop
 
-    .line 63
+    .line 62
     .end local v0    # "$this$all$iv":Ljava/lang/Iterable;
     .end local v1    # "$i$f$all":I
     :goto_1
@@ -337,10 +330,6 @@
     .param p0, "arg0"    # [B
     .param p1, "index"    # I
 
-    const-string v0, "arg0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 28
     aget-byte v0, p0, p1
 
@@ -354,10 +343,6 @@
 .method public static getSize-impl([B)I
     .locals 1
     .param p0, "arg0"    # [B
-
-    const-string v0, "arg0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 41
     array-length v0, p0
@@ -385,11 +370,7 @@
     .locals 1
     .param p0, "arg0"    # [B
 
-    const-string v0, "arg0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 66
+    .line 65
     array-length v0, p0
 
     if-nez v0, :cond_0
@@ -417,10 +398,6 @@
         }
     .end annotation
 
-    const-string v0, "arg0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 44
     new-instance v0, Lkotlin/UByteArray$Iterator;
 
@@ -432,14 +409,10 @@
 .end method
 
 .method public static final set-VurrAj0([BIB)V
-    .locals 1
+    .locals 0
     .param p0, "arg0"    # [B
     .param p1, "index"    # I
     .param p2, "value"    # B
-
-    const-string v0, "arg0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 37
     aput-byte p2, p0, p1
@@ -485,23 +458,15 @@
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)Z
-    .locals 1
-    .param p1, "element"    # Ljava/lang/Object;
+    .locals 2
 
-    .line 12
-    move-object v0, p1
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    check-cast v0, Lkotlin/UByte;
+    const-string v1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {v0}, Lkotlin/UByte;->unbox-impl()B
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lkotlin/UByteArray;->add-7apg3OU(B)Z
-
-    move-result v0
-
-    return v0
+    throw v0
 .end method
 
 .method public add-7apg3OU(B)Z
@@ -582,14 +547,14 @@
     .locals 1
     .param p1, "element"    # B
 
-    .line 53
+    .line 52
     iget-object v0, p0, Lkotlin/UByteArray;->storage:[B
 
     invoke-static {v0, p1}, Lkotlin/UByteArray;->contains-7apg3OU([BB)Z
 
     move-result v0
 
-    .line 60
+    .line 59
     return v0
 .end method
 
@@ -610,14 +575,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 62
+    .line 61
     iget-object v0, p0, Lkotlin/UByteArray;->storage:[B
 
     invoke-static {v0, p1}, Lkotlin/UByteArray;->containsAll-impl([BLjava/util/Collection;)Z
 
     move-result v0
 
-    .line 64
+    .line 63
     return v0
 .end method
 
@@ -661,7 +626,7 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 66
+    .line 65
     iget-object v0, p0, Lkotlin/UByteArray;->storage:[B
 
     invoke-static {v0}, Lkotlin/UByteArray;->isEmpty-impl([B)Z

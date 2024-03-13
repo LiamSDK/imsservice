@@ -4,4 +4,6 @@
 
 
 # static fields
+.field public static final INVALID_WFC_STATE:I = 0xff
+
 .field public static final MWI_SERVICE:Ljava/lang/String; = "mwis"

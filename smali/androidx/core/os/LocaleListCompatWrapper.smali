@@ -299,14 +299,14 @@
 
     array-length v1, v0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    if-ne v1, v3, :cond_0
+    if-ne v1, v2, :cond_0
 
     .line 227
-    return v2
+    return v3
 
     .line 229
     :cond_0
@@ -339,7 +339,7 @@
     if-nez v1, :cond_2
 
     .line 238
-    return v2
+    return v3
 
     .line 239
     :cond_2
@@ -358,19 +358,19 @@
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v2, Ljava/lang/String;
 
     .line 244
-    .local v3, "languageTag":Ljava/lang/String;
-    invoke-static {v3}, Landroidx/core/os/LocaleListCompat;->forLanguageTagCompat(Ljava/lang/String;)Ljava/util/Locale;
+    .local v2, "languageTag":Ljava/lang/String;
+    invoke-static {v2}, Landroidx/core/os/LocaleListCompat;->forLanguageTagCompat(Ljava/lang/String;)Ljava/util/Locale;
 
     move-result-object v4
 
@@ -385,7 +385,7 @@
     if-nez v5, :cond_4
 
     .line 249
-    return v2
+    return v3
 
     .line 250
     :cond_4
@@ -395,7 +395,7 @@
     move v0, v5
 
     .line 253
-    .end local v3    # "languageTag":Ljava/lang/String;
+    .end local v2    # "languageTag":Ljava/lang/String;
     .end local v4    # "supportedLocale":Ljava/util/Locale;
     .end local v5    # "idx":I
     :cond_5
@@ -408,7 +408,7 @@
     if-ne v0, v1, :cond_7
 
     .line 256
-    return v2
+    return v3
 
     .line 258
     :cond_7
@@ -460,17 +460,11 @@
 .end method
 
 .method private static getLikelyScript(Ljava/util/Locale;)Ljava/lang/String;
-    .locals 3
+    .locals 2
     .param p0, "locale"    # Ljava/util/Locale;
 
     .line 165
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const-string v1, ""
-
-    const/16 v2, 0x15
-
-    if-lt v0, v2, :cond_1
+    nop
 
     .line 166
     invoke-static {p0}, Landroidx/core/os/LocaleListCompatWrapper$Api21Impl;->getScript(Ljava/util/Locale;)Ljava/lang/String;
@@ -481,20 +475,17 @@
     .local v0, "script":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_0
 
     .line 168
     return-object v0
 
     .line 170
     :cond_0
-    return-object v1
+    const-string v1, ""
 
-    .line 173
-    .end local v0    # "script":Ljava/lang/String;
-    :cond_1
     return-object v1
 .end method
 

@@ -21,7 +21,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAbstractCollection.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractCollection.kt\nkotlin/collections/AbstractCollection\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,42:1\n1741#2,3:43\n1720#2,3:46\n*S KotlinDebug\n*F\n+ 1 AbstractCollection.kt\nkotlin/collections/AbstractCollection\n*L\n19#1:43,3\n22#1:46,3\n*E\n"
+    value = "SMAP\nAbstractCollection.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractCollection.kt\nkotlin/collections/AbstractCollection\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,42:1\n1747#2,3:43\n1726#2,3:46\n*S KotlinDebug\n*F\n+ 1 AbstractCollection.kt\nkotlin/collections/AbstractCollection\n*L\n19#1:43,3\n22#1:46,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -60,7 +60,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -194,6 +194,7 @@
 
     move-result v5
 
+    .line 44
     .end local v5    # "it":Ljava/lang/Object;
     .end local v6    # "$i$a$-any-AbstractCollection$contains$1":I
     if-eqz v5, :cond_1
@@ -284,6 +285,7 @@
 
     move-result v5
 
+    .line 47
     .end local v5    # "it":Ljava/lang/Object;
     .end local v6    # "$i$a$-all-AbstractCollection$containsAll$1":I
     if-nez v5, :cond_1
@@ -465,17 +467,15 @@
 
     check-cast v3, Ljava/lang/CharSequence;
 
-    new-instance v4, Lkotlin/collections/AbstractCollection$toString$1;
-
-    invoke-direct {v4, p0}, Lkotlin/collections/AbstractCollection$toString$1;-><init>(Lkotlin/collections/AbstractCollection;)V
-
-    move-object v6, v4
-
-    check-cast v6, Lkotlin/jvm/functions/Function1;
-
     const/4 v4, 0x0
 
     const/4 v5, 0x0
+
+    new-instance v6, Lkotlin/collections/AbstractCollection$toString$1;
+
+    invoke-direct {v6, p0}, Lkotlin/collections/AbstractCollection$toString$1;-><init>(Lkotlin/collections/AbstractCollection;)V
+
+    check-cast v6, Lkotlin/jvm/functions/Function1;
 
     const/16 v7, 0x18
 

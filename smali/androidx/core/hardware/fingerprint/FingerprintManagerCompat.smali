@@ -7,9 +7,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;,
+        Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$CryptoObject;,
         Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationCallback;,
-        Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationResult;,
-        Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$CryptoObject;
+        Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$AuthenticationResult;
     }
 .end annotation
 
@@ -107,11 +107,7 @@
     .param p5, "handler"    # Landroid/os/Handler;
 
     .line 110
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_1
+    nop
 
     .line 111
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat;->mContext:Landroid/content/Context;
@@ -175,16 +171,10 @@
 .end method
 
 .method public hasEnrolledFingerprints()Z
-    .locals 3
+    .locals 2
 
     .line 69
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0x17
-
-    if-lt v0, v2, :cond_1
+    nop
 
     .line 70
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat;->mContext:Landroid/content/Context;
@@ -199,32 +189,26 @@
 
     invoke-static {v0}, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;->hasEnrolledFingerprints(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_0
-    return v1
+    goto :goto_0
 
-    .line 73
-    .end local v0    # "fp":Landroid/hardware/fingerprint/FingerprintManager;
-    :cond_1
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
     return v1
 .end method
 
 .method public isHardwareDetected()Z
-    .locals 3
+    .locals 2
 
     .line 84
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0x17
-
-    if-lt v0, v2, :cond_1
+    nop
 
     .line 85
     iget-object v0, p0, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat;->mContext:Landroid/content/Context;
@@ -239,17 +223,17 @@
 
     invoke-static {v0}, Landroidx/core/hardware/fingerprint/FingerprintManagerCompat$Api23Impl;->isHardwareDetected(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_0
-    return v1
+    goto :goto_0
 
-    .line 88
-    .end local v0    # "fp":Landroid/hardware/fingerprint/FingerprintManager;
-    :cond_1
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
     return v1
 .end method

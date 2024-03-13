@@ -6,14 +6,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroidx/core/view/ContentInfoCompat$Compat;,
+        Landroidx/core/view/ContentInfoCompat$Compat31Impl;,
+        Landroidx/core/view/ContentInfoCompat$Builder;,
+        Landroidx/core/view/ContentInfoCompat$Api31Impl;,
         Landroidx/core/view/ContentInfoCompat$BuilderCompat31Impl;,
         Landroidx/core/view/ContentInfoCompat$BuilderCompatImpl;,
         Landroidx/core/view/ContentInfoCompat$BuilderCompat;,
-        Landroidx/core/view/ContentInfoCompat$Builder;,
-        Landroidx/core/view/ContentInfoCompat$Compat31Impl;,
         Landroidx/core/view/ContentInfoCompat$CompatImpl;,
-        Landroidx/core/view/ContentInfoCompat$Compat;,
-        Landroidx/core/view/ContentInfoCompat$Api31Impl;,
         Landroidx/core/view/ContentInfoCompat$Flags;,
         Landroidx/core/view/ContentInfoCompat$Source;
     }
@@ -45,13 +45,13 @@
     .locals 0
     .param p1, "compat"    # Landroidx/core/view/ContentInfoCompat$Compat;
 
-    .line 151
+    .line 147
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 152
+    .line 148
     iput-object p1, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
-    .line 153
+    .line 149
     return-void
 .end method
 
@@ -69,7 +69,7 @@
         }
     .end annotation
 
-    .line 301
+    .line 297
     .local p1, "items":Ljava/util/List;, "Ljava/util/List<Landroid/content/ClipData$Item;>;"
     new-instance v0, Landroid/content/ClipData;
 
@@ -87,7 +87,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ClipData;-><init>(Landroid/content/ClipDescription;Landroid/content/ClipData$Item;)V
 
-    .line 302
+    .line 298
     .local v0, "clip":Landroid/content/ClipData;
     const/4 v1, 0x1
 
@@ -99,7 +99,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 303
+    .line 299
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -108,12 +108,12 @@
 
     invoke-virtual {v0, v2}, Landroid/content/ClipData;->addItem(Landroid/content/ClipData$Item;)V
 
-    .line 302
+    .line 298
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 305
+    .line 301
     .end local v1    # "i":I
     :cond_0
     return-object v0
@@ -123,17 +123,17 @@
     .locals 1
     .param p0, "flags"    # I
 
-    .line 142
+    .line 138
     and-int/lit8 v0, p0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 143
+    .line 139
     const-string v0, "FLAG_CONVERT_TO_PLAIN_TEXT"
 
     return-object v0
 
-    .line 145
+    .line 141
     :cond_0
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -159,15 +159,15 @@
         }
     .end annotation
 
-    .line 275
+    .line 271
     .local p1, "itemPredicate":Landroidx/core/util/Predicate;, "Landroidx/core/util/Predicate<Landroid/content/ClipData$Item;>;"
     const/4 v0, 0x0
 
-    .line 276
+    .line 272
     .local v0, "acceptedItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/ClipData$Item;>;"
     const/4 v1, 0x0
 
-    .line 277
+    .line 273
     .local v1, "remainingItems":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/ClipData$Item;>;"
     const/4 v2, 0x0
 
@@ -179,12 +179,12 @@
 
     if-ge v2, v3, :cond_3
 
-    .line 278
+    .line 274
     invoke-virtual {p0, v2}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
 
     move-result-object v3
 
-    .line 279
+    .line 275
     .local v3, "item":Landroid/content/ClipData$Item;
     invoke-interface {p1, v3}, Landroidx/core/util/Predicate;->test(Ljava/lang/Object;)Z
 
@@ -192,7 +192,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 280
+    .line 276
     if-nez v0, :cond_0
 
     new-instance v4, Ljava/util/ArrayList;
@@ -207,12 +207,12 @@
     :goto_1
     move-object v0, v4
 
-    .line 281
+    .line 277
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 283
+    .line 279
     :cond_1
     if-nez v1, :cond_2
 
@@ -228,46 +228,46 @@
     :goto_2
     move-object v1, v4
 
-    .line 284
+    .line 280
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 277
+    .line 273
     .end local v3    # "item":Landroid/content/ClipData$Item;
     :goto_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 287
+    .line 283
     .end local v2    # "i":I
     :cond_3
     const/4 v2, 0x0
 
     if-nez v0, :cond_4
 
-    .line 288
+    .line 284
     invoke-static {v2, p0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v2
 
     return-object v2
 
-    .line 290
+    .line 286
     :cond_4
     if-nez v1, :cond_5
 
-    .line 291
+    .line 287
     invoke-static {p0, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v2
 
     return-object v2
 
-    .line 293
+    .line 289
     :cond_5
     nop
 
-    .line 294
+    .line 290
     invoke-virtual {p0}, Landroid/content/ClipData;->getDescription()Landroid/content/ClipDescription;
 
     move-result-object v2
@@ -276,7 +276,7 @@
 
     move-result-object v2
 
-    .line 295
+    .line 291
     invoke-virtual {p0}, Landroid/content/ClipData;->getDescription()Landroid/content/ClipDescription;
 
     move-result-object v3
@@ -285,7 +285,7 @@
 
     move-result-object v3
 
-    .line 293
+    .line 289
     invoke-static {v2, v3}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v2
@@ -310,7 +310,7 @@
         }
     .end annotation
 
-    .line 328
+    .line 324
     .local p1, "itemPredicate":Ljava/util/function/Predicate;, "Ljava/util/function/Predicate<Landroid/content/ClipData$Item;>;"
     invoke-static {p0, p1}, Landroidx/core/view/ContentInfoCompat$Api31Impl;->partition(Landroid/view/ContentInfo;Ljava/util/function/Predicate;)Landroid/util/Pair;
 
@@ -323,47 +323,47 @@
     .locals 1
     .param p0, "source"    # I
 
-    .line 106
+    .line 104
     packed-switch p0, :pswitch_data_0
 
-    .line 114
+    .line 112
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 112
+    .line 110
     :pswitch_0
     const-string v0, "SOURCE_PROCESS_TEXT"
 
     return-object v0
 
-    .line 111
+    .line 109
     :pswitch_1
     const-string v0, "SOURCE_AUTOFILL"
 
     return-object v0
 
-    .line 110
+    .line 108
     :pswitch_2
     const-string v0, "SOURCE_DRAG_AND_DROP"
 
     return-object v0
 
-    .line 109
+    .line 107
     :pswitch_3
     const-string v0, "SOURCE_INPUT_METHOD"
 
     return-object v0
 
-    .line 108
+    .line 106
     :pswitch_4
     const-string v0, "SOURCE_CLIPBOARD"
 
     return-object v0
 
-    .line 107
+    .line 105
     :pswitch_5
     const-string v0, "SOURCE_APP"
 
@@ -384,7 +384,7 @@
     .locals 2
     .param p0, "platContentInfo"    # Landroid/view/ContentInfo;
 
-    .line 167
+    .line 163
     new-instance v0, Landroidx/core/view/ContentInfoCompat;
 
     new-instance v1, Landroidx/core/view/ContentInfoCompat$Compat31Impl;
@@ -401,7 +401,7 @@
 .method public getClip()Landroid/content/ClipData;
     .locals 1
 
-    .line 196
+    .line 192
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getClip()Landroid/content/ClipData;
@@ -414,7 +414,7 @@
 .method public getExtras()Landroid/os/Bundle;
     .locals 1
 
-    .line 234
+    .line 230
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getExtras()Landroid/os/Bundle;
@@ -427,7 +427,7 @@
 .method public getFlags()I
     .locals 1
 
-    .line 213
+    .line 209
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getFlags()I
@@ -440,7 +440,7 @@
 .method public getLinkUri()Landroid/net/Uri;
     .locals 1
 
-    .line 224
+    .line 220
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getLinkUri()Landroid/net/Uri;
@@ -453,7 +453,7 @@
 .method public getSource()I
     .locals 1
 
-    .line 205
+    .line 201
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getSource()I
@@ -478,7 +478,7 @@
         }
     .end annotation
 
-    .line 256
+    .line 252
     .local p1, "itemPredicate":Landroidx/core/util/Predicate;, "Landroidx/core/util/Predicate<Landroid/content/ClipData$Item;>;"
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
@@ -486,19 +486,19 @@
 
     move-result-object v0
 
-    .line 257
+    .line 253
     .local v0, "clip":Landroid/content/ClipData;
     invoke-virtual {v0}, Landroid/content/ClipData;->getItemCount()I
 
     move-result v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    if-ne v1, v3, :cond_2
+    if-ne v1, v2, :cond_2
 
-    .line 258
+    .line 254
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
@@ -509,16 +509,16 @@
 
     move-result v1
 
-    .line 259
+    .line 255
     .local v1, "matched":Z
     if-eqz v1, :cond_0
 
-    move-object v3, p0
+    move-object v2, p0
 
     goto :goto_0
 
     :cond_0
-    move-object v3, v2
+    move-object v2, v3
 
     :goto_0
     if-eqz v1, :cond_1
@@ -526,49 +526,49 @@
     goto :goto_1
 
     :cond_1
-    move-object v2, p0
+    move-object v3, p0
 
     :goto_1
-    invoke-static {v3, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+    invoke-static {v2, v3}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v2
 
     return-object v2
 
-    .line 261
+    .line 257
     .end local v1    # "matched":Z
     :cond_2
     invoke-static {v0, p1}, Landroidx/core/view/ContentInfoCompat;->partition(Landroid/content/ClipData;Landroidx/core/util/Predicate;)Landroid/util/Pair;
 
     move-result-object v1
 
-    .line 262
+    .line 258
     .local v1, "split":Landroid/util/Pair;, "Landroid/util/Pair<Landroid/content/ClipData;Landroid/content/ClipData;>;"
-    iget-object v3, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
+    iget-object v2, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    if-nez v3, :cond_3
+    if-nez v2, :cond_3
+
+    .line 259
+    invoke-static {v3, p0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v2
+
+    return-object v2
+
+    .line 260
+    :cond_3
+    iget-object v2, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    if-nez v2, :cond_4
+
+    .line 261
+    invoke-static {p0, v3}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v2
+
+    return-object v2
 
     .line 263
-    invoke-static {v2, p0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
-
-    move-result-object v2
-
-    return-object v2
-
-    .line 264
-    :cond_3
-    iget-object v3, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    if-nez v3, :cond_4
-
-    .line 265
-    invoke-static {p0, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
-
-    move-result-object v2
-
-    return-object v2
-
-    .line 267
     :cond_4
     new-instance v2, Landroidx/core/view/ContentInfoCompat$Builder;
 
@@ -578,7 +578,7 @@
 
     check-cast v3, Landroid/content/ClipData;
 
-    .line 268
+    .line 264
     invoke-virtual {v2, v3}, Landroidx/core/view/ContentInfoCompat$Builder;->setClip(Landroid/content/ClipData;)Landroidx/core/view/ContentInfoCompat$Builder;
 
     move-result-object v2
@@ -595,7 +595,7 @@
 
     check-cast v4, Landroid/content/ClipData;
 
-    .line 269
+    .line 265
     invoke-virtual {v3, v4}, Landroidx/core/view/ContentInfoCompat$Builder;->setClip(Landroid/content/ClipData;)Landroidx/core/view/ContentInfoCompat$Builder;
 
     move-result-object v3
@@ -604,7 +604,7 @@
 
     move-result-object v3
 
-    .line 267
+    .line 263
     invoke-static {v2, v3}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v2
@@ -615,7 +615,7 @@
 .method public toContentInfo()Landroid/view/ContentInfo;
     .locals 1
 
-    .line 182
+    .line 178
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getWrapped()Landroid/view/ContentInfo;
@@ -634,7 +634,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 188
+    .line 184
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;

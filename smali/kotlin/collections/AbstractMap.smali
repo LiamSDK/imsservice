@@ -29,7 +29,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAbstractMap.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractMap.kt\nkotlin/collections/AbstractMap\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,153:1\n1741#2,3:154\n1720#2,3:157\n286#2,2:160\n*S KotlinDebug\n*F\n+ 1 AbstractMap.kt\nkotlin/collections/AbstractMap\n*L\n28#1:154,3\n60#1:157,3\n141#1:160,2\n*E\n"
+    value = "SMAP\nAbstractMap.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractMap.kt\nkotlin/collections/AbstractMap\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,153:1\n1747#2,3:154\n1726#2,3:157\n288#2,2:160\n*S KotlinDebug\n*F\n+ 1 AbstractMap.kt\nkotlin/collections/AbstractMap\n*L\n28#1:154,3\n60#1:157,3\n141#1:160,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -84,7 +84,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -209,6 +209,7 @@
 
     move-result v4
 
+    .line 160
     .end local v4    # "it":Ljava/util/Map$Entry;
     .end local v5    # "$i$a$-firstOrNull-AbstractMap$implFindEntry$1":I
     if-eqz v4, :cond_0
@@ -318,7 +319,7 @@
 .end method
 
 .method public final containsEntry$kotlin_stdlib(Ljava/util/Map$Entry;)Z
-    .locals 5
+    .locals 6
     .param p1, "entry"    # Ljava/util/Map$Entry;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -353,6 +354,10 @@
 
     check-cast v3, Ljava/util/Map;
 
+    const-string v4, "null cannot be cast to non-null type kotlin.collections.Map<K of kotlin.collections.MapsKt__MapsKt.get, V of kotlin.collections.MapsKt__MapsKt.get>"
+
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-interface {v3, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -375,6 +380,10 @@
     move-object v4, p0
 
     check-cast v4, Ljava/util/Map;
+
+    const-string v5, "null cannot be cast to non-null type kotlin.collections.Map<K of kotlin.collections.MapsKt__MapsKt.containsKey, *>"
+
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {v4, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -483,6 +492,7 @@
 
     move-result v5
 
+    .line 155
     .end local v5    # "it":Ljava/util/Map$Entry;
     .end local v6    # "$i$a$-any-AbstractMap$containsValue$1":I
     if-eqz v5, :cond_1
@@ -625,6 +635,7 @@
 
     move-result v6
 
+    .line 158
     .end local v6    # "it":Ljava/util/Map$Entry;
     .end local v7    # "$i$a$-all-AbstractMap$equals$1":I
     if-nez v6, :cond_4
@@ -661,16 +672,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     :goto_0
     return-object v0
@@ -910,6 +921,10 @@
 
     check-cast v4, Ljava/lang/CharSequence;
 
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
     new-instance v0, Lkotlin/collections/AbstractMap$toString$1;
 
     invoke-direct {v0, p0}, Lkotlin/collections/AbstractMap$toString$1;-><init>(Lkotlin/collections/AbstractMap;)V
@@ -917,10 +932,6 @@
     move-object v7, v0
 
     check-cast v7, Lkotlin/jvm/functions/Function1;
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
 
     const/16 v8, 0x18
 

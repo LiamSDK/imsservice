@@ -56,7 +56,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -249,14 +249,12 @@
 
     check-cast v2, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
 
-    .local v2, "$this$resumeWith_u24lambda_u2d0":Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
+    .local v2, "$this$resumeWith_u24lambda_u240":Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
     const/4 v3, 0x0
 
     .line 30
     .local v3, "$i$a$-with-BaseContinuationImpl$resumeWith$1":I
-    invoke-virtual {v2}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->getCompletion()Lkotlin/coroutines/Continuation;
-
-    move-result-object v4
+    iget-object v4, v2, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->completion:Lkotlin/coroutines/Continuation;
 
     invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
@@ -336,14 +334,14 @@
     nop
 
     .line 29
-    .end local v2    # "$this$resumeWith_u24lambda_u2d0":Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
+    .end local v2    # "$this$resumeWith_u24lambda_u240":Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
     .end local v3    # "$i$a$-with-BaseContinuationImpl$resumeWith$1":I
     .end local v4    # "completion":Lkotlin/coroutines/Continuation;
     .end local v5    # "outcome":Ljava/lang/Object;
     goto :goto_0
 
     .line 46
-    .restart local v2    # "$this$resumeWith_u24lambda_u2d0":Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
+    .restart local v2    # "$this$resumeWith_u24lambda_u240":Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
     .restart local v3    # "$i$a$-with-BaseContinuationImpl$resumeWith$1":I
     .restart local v4    # "completion":Lkotlin/coroutines/Continuation;
     .restart local v5    # "outcome":Ljava/lang/Object;
@@ -358,26 +356,41 @@
     .locals 2
 
     .line 68
-    invoke-virtual {p0}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->getStackTraceElement()Ljava/lang/StackTraceElement;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_0
-    check-cast v0, Ljava/io/Serializable;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "Continuation at "
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->getStackTraceElement()Ljava/lang/StackTraceElement;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    :goto_0
+    check-cast v1, Ljava/io/Serializable;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

@@ -30,94 +30,66 @@
 .end method
 
 .method public static areUnusedAppRestrictionsAvailable(Landroid/content/pm/PackageManager;)Z
-    .locals 6
+    .locals 5
     .param p0, "packageManager"    # Landroid/content/pm/PackageManager;
 
-    .line 202
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 199
+    const/4 v0, 0x1
 
-    const/16 v1, 0x1e
+    move v1, v0
 
-    const/4 v2, 0x1
+    .line 200
+    .local v1, "restrictionsBuiltIntoOs":Z
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    if-lt v0, v1, :cond_0
-
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v3
+    move v3, v2
 
     .line 203
-    .local v0, "restrictionsBuiltIntoOs":Z
-    :goto_0
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v5, 0x17
-
-    if-lt v4, v5, :cond_1
-
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-ge v4, v1, :cond_1
-
-    move v1, v2
-
-    goto :goto_1
-
-    :cond_1
-    move v1, v3
-
-    .line 206
-    .local v1, "isOsMThroughQ":Z
-    :goto_1
+    .local v3, "isOsMThroughQ":Z
     invoke-static {p0}, Landroidx/core/content/PackageManagerCompat;->getPermissionRevocationVerifierApp(Landroid/content/pm/PackageManager;)Ljava/lang/String;
 
     move-result-object v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_0
 
+    move v4, v0
+
+    goto :goto_0
+
+    :cond_0
     move v4, v2
 
-    goto :goto_2
+    .line 205
+    .local v4, "hasBackportFeature":Z
+    :goto_0
+    if-nez v1, :cond_2
+
+    if-eqz v3, :cond_1
+
+    if-eqz v4, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move v0, v2
 
     :cond_2
-    move v4, v3
-
-    .line 208
-    .local v4, "hasBackportFeature":Z
-    :goto_2
-    if-nez v0, :cond_4
-
-    if-eqz v1, :cond_3
-
-    if-eqz v4, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move v2, v3
-
-    :cond_4
-    :goto_3
-    return v2
+    :goto_1
+    return v0
 .end method
 
 .method public static getPermissionRevocationVerifierApp(Landroid/content/pm/PackageManager;)Ljava/lang/String;
     .locals 7
     .param p0, "packageManager"    # Landroid/content/pm/PackageManager;
 
-    .line 223
+    .line 219
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.AUTO_REVOKE_PERMISSIONS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 225
+    .line 221
     const-string v1, "package"
 
     const-string v2, "com.example"
@@ -132,22 +104,22 @@
 
     move-result-object v0
 
-    .line 227
+    .line 223
     .local v0, "permissionRevocationSettingsIntent":Landroid/content/Intent;
     nop
 
-    .line 228
+    .line 224
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v1
 
-    .line 231
+    .line 227
     .local v1, "intentResolvers":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     const/4 v2, 0x0
 
-    .line 233
+    .line 229
     .local v2, "verifierPackageName":Ljava/lang/String;
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -166,13 +138,13 @@
 
     check-cast v4, Landroid/content/pm/ResolveInfo;
 
-    .line 234
+    .line 230
     .local v4, "intentResolver":Landroid/content/pm/ResolveInfo;
     iget-object v5, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v5, v5, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    .line 235
+    .line 231
     .local v5, "packageName":Ljava/lang/String;
     const-string v6, "android.permission.PACKAGE_VERIFICATION_AGENT"
 
@@ -182,32 +154,32 @@
 
     if-eqz v6, :cond_0
 
-    .line 237
+    .line 233
     goto :goto_0
 
-    .line 240
+    .line 236
     :cond_0
     if-eqz v2, :cond_1
 
-    .line 244
+    .line 240
     return-object v2
 
-    .line 246
+    .line 242
     :cond_1
     move-object v2, v5
 
-    .line 247
+    .line 243
     .end local v4    # "intentResolver":Landroid/content/pm/ResolveInfo;
     .end local v5    # "packageName":Ljava/lang/String;
     goto :goto_0
 
-    .line 249
+    .line 245
     :cond_2
     return-object v2
 .end method
 
 .method public static getUnusedAppRestrictionsStatus(Landroid/content/Context;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .locals 7
+    .locals 5
     .param p0, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -220,12 +192,12 @@
         }
     .end annotation
 
-    .line 137
+    .line 135
     invoke-static {}, Landroidx/concurrent/futures/ResolvableFuture;->create()Landroidx/concurrent/futures/ResolvableFuture;
 
     move-result-object v0
 
-    .line 140
+    .line 138
     .local v0, "resultFuture":Landroidx/concurrent/futures/ResolvableFuture;, "Landroidx/concurrent/futures/ResolvableFuture<Ljava/lang/Integer;>;"
     invoke-static {p0}, Landroidx/core/os/UserManagerCompat;->isUserUnlocked(Landroid/content/Context;)Z
 
@@ -235,26 +207,26 @@
 
     const/4 v3, 0x0
 
-    .line 141
+    .line 139
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 140
+    .line 138
     if-nez v1, :cond_0
 
-    .line 141
+    .line 139
     invoke-virtual {v0, v3}, Landroidx/concurrent/futures/ResolvableFuture;->set(Ljava/lang/Object;)Z
 
-    .line 142
+    .line 140
     const-string v1, "User is in locked direct boot mode"
 
     invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 143
+    .line 141
     return-object v0
 
-    .line 146
+    .line 144
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -266,7 +238,7 @@
 
     if-nez v1, :cond_1
 
-    .line 147
+    .line 145
     const/4 v1, 0x1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -275,10 +247,10 @@
 
     invoke-virtual {v0, v1}, Landroidx/concurrent/futures/ResolvableFuture;->set(Ljava/lang/Object;)Z
 
-    .line 148
+    .line 146
     return-object v0
 
-    .line 151
+    .line 149
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
@@ -286,131 +258,66 @@
 
     iget v1, v1, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    .line 153
+    .line 151
     .local v1, "targetSdkVersion":I
     const/16 v4, 0x1e
 
     if-ge v1, v4, :cond_2
 
-    .line 154
+    .line 152
     invoke-virtual {v0, v3}, Landroidx/concurrent/futures/ResolvableFuture;->set(Ljava/lang/Object;)Z
 
-    .line 155
+    .line 153
     const-string v3, "Target SDK version below API 30"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 156
+    .line 154
     return-object v0
 
-    .line 160
+    .line 158
     :cond_2
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+    nop
 
-    const/4 v3, 0x4
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x1f
-
-    if-lt v2, v6, :cond_5
-
-    .line 161
+    .line 159
     invoke-static {p0}, Landroidx/core/content/PackageManagerCompat$Api30Impl;->areUnusedAppRestrictionsEnabled(Landroid/content/Context;)Z
 
     move-result v2
 
     if-eqz v2, :cond_4
 
-    .line 164
-    if-lt v1, v6, :cond_3
+    .line 162
+    const/16 v2, 0x1f
 
-    const/4 v3, 0x5
+    if-lt v1, v2, :cond_3
 
-    :cond_3
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroidx/concurrent/futures/ResolvableFuture;->set(Ljava/lang/Object;)Z
+    const/4 v2, 0x5
 
     goto :goto_0
 
-    .line 166
-    :cond_4
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    :cond_3
+    const/4 v2, 0x4
+
+    :goto_0
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Landroidx/concurrent/futures/ResolvableFuture;->set(Ljava/lang/Object;)Z
 
-    .line 168
-    :goto_0
-    return-object v0
-
-    .line 171
-    :cond_5
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-ne v2, v4, :cond_7
-
-    .line 172
-    nop
-
-    .line 173
-    invoke-static {p0}, Landroidx/core/content/PackageManagerCompat$Api30Impl;->areUnusedAppRestrictionsEnabled(Landroid/content/Context;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    .line 174
     goto :goto_1
 
-    .line 175
-    :cond_6
-    move v3, v5
+    .line 164
+    :cond_4
+    const/4 v2, 0x2
 
-    .line 173
-    :goto_1
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 172
     invoke-virtual {v0, v2}, Landroidx/concurrent/futures/ResolvableFuture;->set(Ljava/lang/Object;)Z
 
-    .line 176
-    return-object v0
-
-    .line 179
-    :cond_7
-    new-instance v2, Landroidx/core/content/UnusedAppRestrictionsBackportServiceConnection;
-
-    invoke-direct {v2, p0}, Landroidx/core/content/UnusedAppRestrictionsBackportServiceConnection;-><init>(Landroid/content/Context;)V
-
-    .line 184
-    .local v2, "backportServiceConnection":Landroidx/core/content/UnusedAppRestrictionsBackportServiceConnection;
-    nop
-
-    .line 185
-    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v3, Landroidx/core/content/PackageManagerCompat$$ExternalSyntheticLambda0;
-
-    invoke-direct {v3, v2}, Landroidx/core/content/PackageManagerCompat$$ExternalSyntheticLambda0;-><init>(Landroidx/core/content/UnusedAppRestrictionsBackportServiceConnection;)V
-
-    .line 186
-    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v4
-
-    .line 184
-    invoke-virtual {v0, v3, v4}, Landroidx/concurrent/futures/ResolvableFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    .line 189
-    invoke-virtual {v2, v0}, Landroidx/core/content/UnusedAppRestrictionsBackportServiceConnection;->connectAndFetchResult(Landroidx/concurrent/futures/ResolvableFuture;)V
-
-    .line 191
+    .line 166
+    :goto_1
     return-object v0
 .end method

@@ -62,7 +62,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -166,6 +166,10 @@
 
     .line 163
     :cond_1
+    const-string v2, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     move-object v2, v1
 
     check-cast v2, Lkotlin/coroutines/CoroutineContext$Element;
@@ -407,16 +411,27 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_0
+
+    .line 197
+    .local v1, "it":Lkotlin/coroutines/CoroutineContext$Element;
+    const/4 v2, 0x0
+
+    .line 120
+    .local v2, "$i$a$-let-CombinedContext$get$1":I
+    return-object v1
 
     .line 121
+    .end local v1    # "it":Lkotlin/coroutines/CoroutineContext$Element;
+    .end local v2    # "$i$a$-let-CombinedContext$get$1":I
+    :cond_0
     iget-object v1, v0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
     .line 122
     .local v1, "next":Lkotlin/coroutines/CoroutineContext;
     instance-of v2, v1, Lkotlin/coroutines/CombinedContext;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
     .line 123
     move-object v0, v1
@@ -426,21 +441,12 @@
     goto :goto_0
 
     .line 125
-    :cond_0
+    :cond_1
     invoke-interface {v1, p1}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
 
     move-result-object v2
 
     return-object v2
-
-    .line 197
-    .local v1, "it":Lkotlin/coroutines/CoroutineContext$Element;
-    :cond_1
-    const/4 v2, 0x0
-
-    .line 120
-    .local v2, "$i$a$-let-CombinedContext$get$1":I
-    return-object v1
 .end method
 
 .method public hashCode()I
@@ -487,9 +493,22 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_0
+
+    .line 197
+    .local v0, "it":Lkotlin/coroutines/CoroutineContext$Element;
+    const/4 v1, 0x0
+
+    .line 134
+    .local v1, "$i$a$-let-CombinedContext$minusKey$1":I
+    iget-object v2, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
+
+    return-object v2
 
     .line 135
+    .end local v0    # "it":Lkotlin/coroutines/CoroutineContext$Element;
+    .end local v1    # "$i$a$-let-CombinedContext$minusKey$1":I
+    :cond_0
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
     invoke-interface {v0, p1}, Lkotlin/coroutines/CoroutineContext;->minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
@@ -503,7 +522,7 @@
     .line 137
     iget-object v1, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_1
 
     move-object v1, p0
 
@@ -512,10 +531,10 @@
     goto :goto_0
 
     .line 138
-    :cond_0
+    :cond_1
     sget-object v1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_2
 
     iget-object v1, p0, Lkotlin/coroutines/CombinedContext;->element:Lkotlin/coroutines/CoroutineContext$Element;
 
@@ -524,7 +543,7 @@
     goto :goto_0
 
     .line 139
-    :cond_1
+    :cond_2
     new-instance v1, Lkotlin/coroutines/CombinedContext;
 
     iget-object v2, p0, Lkotlin/coroutines/CombinedContext;->element:Lkotlin/coroutines/CoroutineContext$Element;
@@ -536,17 +555,6 @@
     .line 136
     :goto_0
     return-object v1
-
-    .line 197
-    .local v0, "it":Lkotlin/coroutines/CoroutineContext$Element;
-    :cond_2
-    const/4 v1, 0x0
-
-    .line 134
-    .local v1, "$i$a$-let-CombinedContext$minusKey$1":I
-    iget-object v2, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
-
-    return-object v2
 .end method
 
 .method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;

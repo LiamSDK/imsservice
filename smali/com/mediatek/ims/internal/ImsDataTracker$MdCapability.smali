@@ -31,8 +31,23 @@
 
 
 # direct methods
+.method private static synthetic $values()[Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
+    .locals 2
+
+    .line 37
+    sget-object v0, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;->LEGACY:Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
+
+    sget-object v1, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;->AUTOSETUPIMS:Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
+
+    filled-new-array {v0, v1}, [Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 3
 
     .line 38
     new-instance v0, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
@@ -46,26 +61,22 @@
     sput-object v0, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;->LEGACY:Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
 
     .line 39
-    new-instance v1, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
+    new-instance v0, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
 
-    const-string v3, "AUTOSETUPIMS"
+    const-string v1, "AUTOSETUPIMS"
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v1, v3, v4}, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;->AUTOSETUPIMS:Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
+    sput-object v0, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;->AUTOSETUPIMS:Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
 
     .line 37
-    const/4 v3, 0x2
+    invoke-static {}, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;->$values()[Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
 
-    new-array v3, v3, [Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
+    move-result-object v0
 
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;->$VALUES:[Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
+    sput-object v0, Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;->$VALUES:[Lcom/mediatek/ims/internal/ImsDataTracker$MdCapability;
 
     return-void
 .end method

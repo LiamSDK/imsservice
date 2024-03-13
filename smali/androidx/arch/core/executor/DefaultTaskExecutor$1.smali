@@ -18,7 +18,7 @@
 
 
 # static fields
-.field private static final THREAD_NAME_STEM:Ljava/lang/String; = "arch_disk_io_%d"
+.field private static final THREAD_NAME_STEM:Ljava/lang/String; = "arch_disk_io_"
 
 
 # instance fields
@@ -32,12 +32,12 @@
     .locals 2
     .param p1, "this$0"    # Landroidx/arch/core/executor/DefaultTaskExecutor;
 
-    .line 41
+    .line 42
     iput-object p1, p0, Landroidx/arch/core/executor/DefaultTaskExecutor$1;->this$0:Landroidx/arch/core/executor/DefaultTaskExecutor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
+    .line 45
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -52,19 +52,25 @@
 
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 4
+    .locals 3
     .param p1, "r"    # Ljava/lang/Runnable;
 
-    .line 48
+    .line 49
     new-instance v0, Ljava/lang/Thread;
 
     invoke-direct {v0, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    .line 49
+    .line 50
     .local v0, "t":Ljava/lang/Thread;
-    const/4 v1, 0x1
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "arch_disk_io_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     iget-object v2, p0, Landroidx/arch/core/executor/DefaultTaskExecutor$1;->mThreadId:Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -72,22 +78,16 @@
 
     move-result v2
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v3, 0x0
-
-    aput-object v2, v1, v3
-
-    const-string v2, "arch_disk_io_%d"
-
-    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    .line 50
+    .line 51
     return-object v0
 .end method

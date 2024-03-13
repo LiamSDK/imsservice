@@ -30,7 +30,7 @@
     k = 0x1
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -41,7 +41,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 178
+    .line 179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +60,7 @@
 .method public final getSTAR()Lkotlin/reflect/WildcardTypeImpl;
     .locals 1
 
-    .line 179
+    .line 180
     invoke-static {}, Lkotlin/reflect/WildcardTypeImpl;->access$getSTAR$cp()Lkotlin/reflect/WildcardTypeImpl;
 
     move-result-object v0

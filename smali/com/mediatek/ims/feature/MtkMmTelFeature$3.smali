@@ -30,7 +30,7 @@
     .param p3, "tech"    # I
     .param p4, "latch"    # Ljava/util/concurrent/CountDownLatch;
 
-    .line 495
+    .line 484
     iput-object p1, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$3;->this$0:Lcom/mediatek/ims/feature/MtkMmTelFeature;
 
     iput-object p5, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$3;->val$c:Landroid/telephony/ims/feature/ImsFeature$CapabilityCallbackProxy;
@@ -48,18 +48,18 @@
     .locals 4
     .param p1, "value"    # I
 
-    .line 498
+    .line 487
     if-eqz p1, :cond_1
 
-    .line 499
+    .line 488
     iget-object v0, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$3;->val$c:Landroid/telephony/ims/feature/ImsFeature$CapabilityCallbackProxy;
 
     if-nez v0, :cond_0
 
-    .line 500
+    .line 489
     return-void
 
-    .line 502
+    .line 491
     :cond_0
     iget-object v1, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$3;->val$cap:Landroid/telephony/ims/feature/CapabilityChangeRequest$CapabilityPair;
 
@@ -69,17 +69,17 @@
 
     iget-object v2, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$3;->val$cap:Landroid/telephony/ims/feature/CapabilityChangeRequest$CapabilityPair;
 
-    .line 503
+    .line 492
     invoke-virtual {v2}, Landroid/telephony/ims/feature/CapabilityChangeRequest$CapabilityPair;->getRadioTech()I
 
     move-result v2
 
+    .line 491
     const/4 v3, -0x1
 
-    .line 502
     invoke-virtual {v0, v1, v2, v3}, Landroid/telephony/ims/feature/ImsFeature$CapabilityCallbackProxy;->onChangeCapabilityConfigurationError(III)V
 
-    .line 505
+    .line 494
     :cond_1
     invoke-static {}, Lcom/mediatek/ims/feature/MtkMmTelFeature;->access$200()Z
 
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 506
+    .line 495
     iget-object v0, p0, Lcom/mediatek/ims/feature/MtkMmTelFeature$3;->this$0:Lcom/mediatek/ims/feature/MtkMmTelFeature;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -110,7 +110,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/ims/feature/MtkMmTelFeature;->access$100(Lcom/mediatek/ims/feature/MtkMmTelFeature;Ljava/lang/String;)V
 
-    .line 509
+    .line 498
     :cond_2
     return-void
 .end method

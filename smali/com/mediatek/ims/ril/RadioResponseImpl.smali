@@ -536,18 +536,14 @@
 .end method
 
 .method public getClipResponse(Landroid/hardware/radio/V1_0/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/V1_0/RadioResponseInfo;
     .param p2, "status"    # I
 
     .line 281
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/ims/ril/RadioResponseImpl;->responseInts(Landroid/hardware/radio/V1_0/RadioResponseInfo;[I)V
 
@@ -556,23 +552,15 @@
 .end method
 
 .method public getClirResponse(Landroid/hardware/radio/V1_0/RadioResponseInfo;II)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/V1_0/RadioResponseInfo;
     .param p2, "n"    # I
     .param p3, "m"    # I
 
     .line 263
-    const/4 v0, 0x2
+    filled-new-array {p2, p3}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
-
-    const/4 v1, 0x1
-
-    aput p3, v0, v1
+    move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/ims/ril/RadioResponseImpl;->responseInts(Landroid/hardware/radio/V1_0/RadioResponseInfo;[I)V
 
@@ -581,18 +569,14 @@
 .end method
 
 .method public getFacilityLockForAppResponse(Landroid/hardware/radio/V1_0/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/V1_0/RadioResponseInfo;
     .param p2, "resp"    # I
 
     .line 201
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/ims/ril/RadioResponseImpl;->responseInts(Landroid/hardware/radio/V1_0/RadioResponseInfo;[I)V
 
@@ -812,18 +796,14 @@
 .end method
 
 .method public setFacilityLockForAppResponse(Landroid/hardware/radio/V1_0/RadioResponseInfo;I)V
-    .locals 2
+    .locals 1
     .param p1, "info"    # Landroid/hardware/radio/V1_0/RadioResponseInfo;
     .param p2, "retry"    # I
 
     .line 211
-    const/4 v0, 0x1
+    filled-new-array {p2}, [I
 
-    new-array v0, v0, [I
-
-    const/4 v1, 0x0
-
-    aput p2, v0, v1
+    move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/ims/ril/RadioResponseImpl;->responseInts(Landroid/hardware/radio/V1_0/RadioResponseInfo;[I)V
 

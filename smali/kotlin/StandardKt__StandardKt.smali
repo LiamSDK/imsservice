@@ -41,7 +41,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -74,7 +74,7 @@
 .end method
 
 .method private static final TODO(Ljava/lang/String;)Ljava/lang/Void;
-    .locals 2
+    .locals 3
     .param p0, "reason"    # Ljava/lang/String;
 
     const-string v0, "reason"
@@ -84,9 +84,21 @@
     .line 30
     new-instance v0, Lkotlin/NotImplementedError;
 
-    const-string v1, "An operation is not implemented: "
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "An operation is not implemented: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -187,7 +199,7 @@
 .end method
 
 .method private static final repeat(ILkotlin/jvm/functions/Function1;)V
-    .locals 3
+    .locals 2
     .param p0, "times"    # I
     .param p1, "action"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -211,25 +223,24 @@
     .line 154
     const/4 v0, 0x0
 
+    .local v0, "index":I
     :goto_0
     if-ge v0, p0, :cond_0
 
-    move v1, v0
-
-    .local v1, "index":I
-    add-int/lit8 v0, v0, 0x1
-
     .line 155
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {p1, v2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 154
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     .line 157
-    .end local v1    # "index":I
+    .end local v0    # "index":I
     :cond_0
     return-void
 .end method

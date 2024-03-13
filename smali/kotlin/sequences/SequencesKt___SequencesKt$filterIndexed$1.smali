@@ -43,7 +43,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -106,7 +106,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 444
+    .line 445
     iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$filterIndexed$1;->$predicate:Lkotlin/jvm/functions/Function2;
 
     invoke-virtual {p1}, Lkotlin/collections/IndexedValue;->getIndex()I
@@ -134,7 +134,7 @@
     .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
-    .line 444
+    .line 445
     move-object v0, p1
 
     check-cast v0, Lkotlin/collections/IndexedValue;

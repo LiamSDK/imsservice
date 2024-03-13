@@ -60,54 +60,54 @@
 
     .line 219
     :cond_0
-    const/high16 v2, 0x49800000    # 1048576.0f
+    mul-int v2, v0, v1
 
-    mul-int v3, v0, v1
+    int-to-float v2, v2
 
-    int-to-float v3, v3
+    const/high16 v3, 0x49800000    # 1048576.0f
 
-    div-float/2addr v2, v3
+    div-float/2addr v3, v2
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    invoke-static {v3, v2}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v2, v3}, Ljava/lang/Math;->min(FF)F
 
-    move-result v2
+    move-result v3
 
     .line 220
-    .local v2, "scale":F
+    .local v3, "scale":F
     instance-of v4, p0, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v4, :cond_1
 
-    cmpl-float v3, v2, v3
+    cmpl-float v2, v3, v2
 
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
     .line 222
-    move-object v3, p0
+    move-object v2, p0
 
-    check-cast v3, Landroid/graphics/drawable/BitmapDrawable;
+    check-cast v2, Landroid/graphics/drawable/BitmapDrawable;
 
-    invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+    invoke-virtual {v2}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
-    move-result-object v3
+    move-result-object v2
 
-    return-object v3
+    return-object v2
 
     .line 224
     :cond_1
-    int-to-float v3, v0
+    int-to-float v2, v0
 
-    mul-float/2addr v3, v2
+    mul-float/2addr v2, v3
 
-    float-to-int v3, v3
+    float-to-int v2, v2
 
     .line 225
-    .local v3, "bitmapWidth":I
+    .local v2, "bitmapWidth":I
     int-to-float v4, v1
 
-    mul-float/2addr v4, v2
+    mul-float/2addr v4, v3
 
     float-to-int v4, v4
 
@@ -115,7 +115,7 @@
     .local v4, "bitmapHeight":I
     sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v3, v4, v5}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v2, v4, v5}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
@@ -151,7 +151,7 @@
     .local v11, "bottom":I
     const/4 v12, 0x0
 
-    invoke-virtual {p0, v12, v12, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {p0, v12, v12, v2, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 234
     invoke-virtual {p0, v6}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -163,8 +163,8 @@
     return-object v5
 
     .line 217
-    .end local v2    # "scale":F
-    .end local v3    # "bitmapWidth":I
+    .end local v2    # "bitmapWidth":I
+    .end local v3    # "scale":F
     .end local v4    # "bitmapHeight":I
     .end local v5    # "bitmap":Landroid/graphics/Bitmap;
     .end local v6    # "canvas":Landroid/graphics/Canvas;
@@ -324,15 +324,15 @@
     if-lez v1, :cond_3
 
     .line 193
-    const/high16 v3, 0x3f800000    # 1.0f
+    mul-int v3, v0, v1
+
+    int-to-float v3, v3
 
     const/high16 v4, 0x49800000    # 1048576.0f
 
-    mul-int v5, v0, v1
+    div-float/2addr v4, v3
 
-    int-to-float v5, v5
-
-    div-float/2addr v4, v5
+    const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
 

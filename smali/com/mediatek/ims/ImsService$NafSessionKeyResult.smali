@@ -28,22 +28,22 @@
 .method private constructor <init>(Lcom/mediatek/ims/ImsService;)V
     .locals 0
 
-    .line 371
+    .line 369
     iput-object p1, p0, Lcom/mediatek/ims/ImsService$NafSessionKeyResult;->this$0:Lcom/mediatek/ims/ImsService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 372
+    .line 370
     const/4 p1, 0x0
 
     iput-object p1, p0, Lcom/mediatek/ims/ImsService$NafSessionKeyResult;->nafSessionKey:Lcom/mediatek/gba/NafSessionKey;
 
-    .line 373
+    .line 371
     const/4 p1, 0x1
 
     iput p1, p0, Lcom/mediatek/ims/ImsService$NafSessionKeyResult;->cmdResult:I
 
-    .line 374
+    .line 372
     new-instance p1, Ljava/lang/Object;
 
     invoke-direct {p1}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
     .param p1, "x0"    # Lcom/mediatek/ims/ImsService;
     .param p2, "x1"    # Lcom/mediatek/ims/ImsService$1;
 
-    .line 371
+    .line 369
     invoke-direct {p0, p1}, Lcom/mediatek/ims/ImsService$NafSessionKeyResult;-><init>(Lcom/mediatek/ims/ImsService;)V
 
     return-void

@@ -5,12 +5,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFileReadWrite.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FileReadWrite.kt\nkotlin/io/FilesKt__FileReadWriteKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,233:1\n232#1:235\n1#2:234\n1#2:236\n*S KotlinDebug\n*F\n+ 1 FileReadWrite.kt\nkotlin/io/FilesKt__FileReadWriteKt\n*L\n231#1:235\n231#1:236\n*E\n"
+    value = "SMAP\nFileReadWrite.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FileReadWrite.kt\nkotlin/io/FilesKt__FileReadWriteKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,232:1\n231#1:234\n1#2:233\n1#2:235\n*S KotlinDebug\n*F\n+ 1 FileReadWrite.kt\nkotlin/io/FilesKt__FileReadWriteKt\n*L\n230#1:234\n230#1:235\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000z\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010 \n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0000\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004\u001a\u001c\u0010\u0005\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t\u001a!\u0010\n\u001a\u00020\u000b*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t2\u0008\u0008\u0002\u0010\u000c\u001a\u00020\rH\u0087\u0008\u001a!\u0010\u000e\u001a\u00020\u000f*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t2\u0008\u0008\u0002\u0010\u000c\u001a\u00020\rH\u0087\u0008\u001aB\u0010\u0010\u001a\u00020\u0001*\u00020\u000226\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0004\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015\u0012\u0013\u0012\u00110\r\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0016\u0012\u0004\u0012\u00020\u00010\u0012\u001aJ\u0010\u0010\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0017\u001a\u00020\r26\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0004\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015\u0012\u0013\u0012\u00110\r\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0016\u0012\u0004\u0012\u00020\u00010\u0012\u001a7\u0010\u0018\u001a\u00020\u0001*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t2!\u0010\u0011\u001a\u001d\u0012\u0013\u0012\u00110\u0007\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u001a\u0012\u0004\u0012\u00020\u00010\u0019\u001a\r\u0010\u001b\u001a\u00020\u001c*\u00020\u0002H\u0087\u0008\u001a\r\u0010\u001d\u001a\u00020\u001e*\u00020\u0002H\u0087\u0008\u001a\u0017\u0010\u001f\u001a\u00020 *\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\tH\u0087\u0008\u001a\n\u0010!\u001a\u00020\u0004*\u00020\u0002\u001a\u001a\u0010\"\u001a\u0008\u0012\u0004\u0012\u00020\u00070#*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t\u001a\u0014\u0010$\u001a\u00020\u0007*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t\u001a\u0017\u0010%\u001a\u00020&*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\tH\u0087\u0008\u001aB\u0010\'\u001a\u0002H(\"\u0004\u0008\u0000\u0010(*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t2\u0018\u0010)\u001a\u0014\u0012\n\u0012\u0008\u0012\u0004\u0012\u00020\u00070*\u0012\u0004\u0012\u0002H(0\u0019H\u0086\u0008\u00f8\u0001\u0000\u00f8\u0001\u0001\u00a2\u0006\u0002\u0010,\u001a\u0012\u0010-\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004\u001a\u001c\u0010.\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t\u001a\u0017\u0010/\u001a\u000200*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\tH\u0087\u0008\u0082\u0002\u000f\n\u0006\u0008\u0011(+0\u0001\n\u0005\u0008\u009920\u0001\u00a8\u00061"
+        "\u0000z\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010 \n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0000\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004\u001a\u001c\u0010\u0005\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t\u001a!\u0010\n\u001a\u00020\u000b*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t2\u0008\u0008\u0002\u0010\u000c\u001a\u00020\rH\u0087\u0008\u001a!\u0010\u000e\u001a\u00020\u000f*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t2\u0008\u0008\u0002\u0010\u000c\u001a\u00020\rH\u0087\u0008\u001aB\u0010\u0010\u001a\u00020\u0001*\u00020\u000226\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0004\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015\u0012\u0013\u0012\u00110\r\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0016\u0012\u0004\u0012\u00020\u00010\u0012\u001aJ\u0010\u0010\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0017\u001a\u00020\r26\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0004\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015\u0012\u0013\u0012\u00110\r\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0016\u0012\u0004\u0012\u00020\u00010\u0012\u001a7\u0010\u0018\u001a\u00020\u0001*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t2!\u0010\u0011\u001a\u001d\u0012\u0013\u0012\u00110\u0007\u00a2\u0006\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u001a\u0012\u0004\u0012\u00020\u00010\u0019\u001a\r\u0010\u001b\u001a\u00020\u001c*\u00020\u0002H\u0087\u0008\u001a\r\u0010\u001d\u001a\u00020\u001e*\u00020\u0002H\u0087\u0008\u001a\u0017\u0010\u001f\u001a\u00020 *\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\tH\u0087\u0008\u001a\n\u0010!\u001a\u00020\u0004*\u00020\u0002\u001a\u001a\u0010\"\u001a\u0008\u0012\u0004\u0012\u00020\u00070#*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t\u001a\u0014\u0010$\u001a\u00020\u0007*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t\u001a\u0017\u0010%\u001a\u00020&*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\tH\u0087\u0008\u001a?\u0010\'\u001a\u0002H(\"\u0004\u0008\u0000\u0010(*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t2\u0018\u0010)\u001a\u0014\u0012\n\u0012\u0008\u0012\u0004\u0012\u00020\u00070*\u0012\u0004\u0012\u0002H(0\u0019H\u0086\u0008\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010+\u001a\u0012\u0010,\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004\u001a\u001c\u0010-\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u0008\u0008\u0002\u0010\u0008\u001a\u00020\t\u001a\u0017\u0010.\u001a\u00020/*\u00020\u00022\u0008\u0008\u0002\u0010\u0008\u001a\u00020\tH\u0087\u0008\u0082\u0002\u0007\n\u0005\u0008\u009920\u0001\u00a8\u00060"
     }
     d2 = {
         "appendBytes",
@@ -56,7 +56,6 @@
         "T",
         "block",
         "Lkotlin/sequences/Sequence;",
-        "Requires newer compiler version to be inlined correctly.",
         "(Ljava/io/File;Ljava/nio/charset/Charset;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;",
         "writeBytes",
         "writeText",
@@ -67,7 +66,7 @@
     k = 0x5
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x31
@@ -111,7 +110,7 @@
 
     check-cast v1, Ljava/io/FileOutputStream;
 
-    .line 234
+    .line 233
     .local v1, "it":Ljava/io/FileOutputStream;
     const/4 v2, 0x0
 
@@ -214,35 +213,35 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 31
-    new-instance v0, Ljava/io/FileInputStream;
+    new-instance v0, Ljava/io/InputStreamReader;
 
-    invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    new-instance v1, Ljava/io/FileInputStream;
 
-    check-cast v0, Ljava/io/InputStream;
+    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    new-instance v1, Ljava/io/InputStreamReader;
+    check-cast v1, Ljava/io/InputStream;
 
-    invoke-direct {v1, v0, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v0, v1, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
-    check-cast v1, Ljava/io/Reader;
+    check-cast v0, Ljava/io/Reader;
 
-    instance-of v0, v1, Ljava/io/BufferedReader;
+    instance-of v1, v0, Ljava/io/BufferedReader;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    check-cast v1, Ljava/io/BufferedReader;
+    check-cast v0, Ljava/io/BufferedReader;
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/io/BufferedReader;
+    new-instance v1, Ljava/io/BufferedReader;
 
-    invoke-direct {v0, v1, p2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+    invoke-direct {v1, v0, p2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
 
-    move-object v1, v0
+    move-object v0, v1
 
     :goto_0
-    return-object v1
+    return-object v0
 .end method
 
 .method static synthetic bufferedReader$default(Ljava/io/File;Ljava/nio/charset/Charset;IILjava/lang/Object;)Ljava/io/BufferedReader;
@@ -275,35 +274,35 @@
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 31
-    new-instance p3, Ljava/io/FileInputStream;
+    new-instance p3, Ljava/io/InputStreamReader;
 
-    invoke-direct {p3, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    new-instance p4, Ljava/io/FileInputStream;
 
-    check-cast p3, Ljava/io/InputStream;
+    invoke-direct {p4, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    new-instance p4, Ljava/io/InputStreamReader;
+    check-cast p4, Ljava/io/InputStream;
 
-    invoke-direct {p4, p3, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {p3, p4, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
-    check-cast p4, Ljava/io/Reader;
+    check-cast p3, Ljava/io/Reader;
 
-    instance-of p3, p4, Ljava/io/BufferedReader;
+    instance-of p4, p3, Ljava/io/BufferedReader;
 
-    if-eqz p3, :cond_2
+    if-eqz p4, :cond_2
 
-    check-cast p4, Ljava/io/BufferedReader;
+    check-cast p3, Ljava/io/BufferedReader;
 
     goto :goto_0
 
     :cond_2
-    new-instance p3, Ljava/io/BufferedReader;
+    new-instance p4, Ljava/io/BufferedReader;
 
-    invoke-direct {p3, p4, p2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+    invoke-direct {p4, p3, p2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
 
-    move-object p4, p3
+    move-object p3, p4
 
     :goto_0
-    return-object p4
+    return-object p3
 .end method
 
 .method private static final bufferedWriter(Ljava/io/File;Ljava/nio/charset/Charset;I)Ljava/io/BufferedWriter;
@@ -321,35 +320,35 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 47
-    new-instance v0, Ljava/io/FileOutputStream;
+    new-instance v0, Ljava/io/OutputStreamWriter;
 
-    invoke-direct {v0, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    new-instance v1, Ljava/io/FileOutputStream;
 
-    check-cast v0, Ljava/io/OutputStream;
+    invoke-direct {v1, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    new-instance v1, Ljava/io/OutputStreamWriter;
+    check-cast v1, Ljava/io/OutputStream;
 
-    invoke-direct {v1, v0, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v0, v1, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    check-cast v1, Ljava/io/Writer;
+    check-cast v0, Ljava/io/Writer;
 
-    instance-of v0, v1, Ljava/io/BufferedWriter;
+    instance-of v1, v0, Ljava/io/BufferedWriter;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    check-cast v1, Ljava/io/BufferedWriter;
+    check-cast v0, Ljava/io/BufferedWriter;
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/io/BufferedWriter;
+    new-instance v1, Ljava/io/BufferedWriter;
 
-    invoke-direct {v0, v1, p2}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+    invoke-direct {v1, v0, p2}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
 
-    move-object v1, v0
+    move-object v0, v1
 
     :goto_0
-    return-object v1
+    return-object v0
 .end method
 
 .method static synthetic bufferedWriter$default(Ljava/io/File;Ljava/nio/charset/Charset;IILjava/lang/Object;)Ljava/io/BufferedWriter;
@@ -382,35 +381,35 @@
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 47
-    new-instance p3, Ljava/io/FileOutputStream;
+    new-instance p3, Ljava/io/OutputStreamWriter;
 
-    invoke-direct {p3, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    new-instance p4, Ljava/io/FileOutputStream;
 
-    check-cast p3, Ljava/io/OutputStream;
+    invoke-direct {p4, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    new-instance p4, Ljava/io/OutputStreamWriter;
+    check-cast p4, Ljava/io/OutputStream;
 
-    invoke-direct {p4, p3, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {p3, p4, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    check-cast p4, Ljava/io/Writer;
+    check-cast p3, Ljava/io/Writer;
 
-    instance-of p3, p4, Ljava/io/BufferedWriter;
+    instance-of p4, p3, Ljava/io/BufferedWriter;
 
-    if-eqz p3, :cond_2
+    if-eqz p4, :cond_2
 
-    check-cast p4, Ljava/io/BufferedWriter;
+    check-cast p3, Ljava/io/BufferedWriter;
 
     goto :goto_0
 
     :cond_2
-    new-instance p3, Ljava/io/BufferedWriter;
+    new-instance p4, Ljava/io/BufferedWriter;
 
-    invoke-direct {p3, p4, p2}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+    invoke-direct {p4, p3, p2}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
 
-    move-object p4, p3
+    move-object p3, p4
 
     :goto_0
-    return-object p4
+    return-object p3
 .end method
 
 .method public static final forEachBlock(Ljava/io/File;ILkotlin/jvm/functions/Function2;)V
@@ -511,12 +510,14 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 175
+    nop
+
+    .end local v4    # "size":I
     goto :goto_0
 
     .line 167
     .end local v2    # "input":Ljava/io/FileInputStream;
     .end local v3    # "$i$a$-use-FilesKt__FileReadWriteKt$forEachBlock$1":I
-    .end local v4    # "size":I
     :catchall_0
     move-exception v2
 
@@ -692,39 +693,39 @@
     .line 54
     new-instance v0, Ljava/io/PrintWriter;
 
-    new-instance v1, Ljava/io/FileOutputStream;
+    new-instance v1, Ljava/io/OutputStreamWriter;
 
-    invoke-direct {v1, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    new-instance v2, Ljava/io/FileOutputStream;
 
-    check-cast v1, Ljava/io/OutputStream;
+    invoke-direct {v2, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    new-instance v2, Ljava/io/OutputStreamWriter;
+    check-cast v2, Ljava/io/OutputStream;
 
-    invoke-direct {v2, v1, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v1, v2, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    check-cast v2, Ljava/io/Writer;
+    check-cast v1, Ljava/io/Writer;
 
-    instance-of v1, v2, Ljava/io/BufferedWriter;
+    instance-of v2, v1, Ljava/io/BufferedWriter;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    check-cast v2, Ljava/io/BufferedWriter;
+    check-cast v1, Ljava/io/BufferedWriter;
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Ljava/io/BufferedWriter;
+    new-instance v2, Ljava/io/BufferedWriter;
 
     const/16 v3, 0x2000
 
-    invoke-direct {v1, v2, v3}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+    invoke-direct {v2, v1, v3}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
 
-    move-object v2, v1
+    move-object v1, v2
 
     :goto_0
-    check-cast v2, Ljava/io/Writer;
+    check-cast v1, Ljava/io/Writer;
 
-    invoke-direct {v0, v2}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+    invoke-direct {v0, v1}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
     return-object v0
 .end method
@@ -753,7 +754,7 @@
     .line 54
     new-instance p2, Ljava/io/PrintWriter;
 
-    const/16 p3, 0x2000
+    new-instance p3, Ljava/io/OutputStreamWriter;
 
     new-instance v0, Ljava/io/FileOutputStream;
 
@@ -761,31 +762,31 @@
 
     check-cast v0, Ljava/io/OutputStream;
 
-    new-instance v1, Ljava/io/OutputStreamWriter;
+    invoke-direct {p3, v0, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    invoke-direct {v1, v0, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
+    check-cast p3, Ljava/io/Writer;
 
-    check-cast v1, Ljava/io/Writer;
-
-    instance-of v0, v1, Ljava/io/BufferedWriter;
+    instance-of v0, p3, Ljava/io/BufferedWriter;
 
     if-eqz v0, :cond_1
 
-    check-cast v1, Ljava/io/BufferedWriter;
+    check-cast p3, Ljava/io/BufferedWriter;
 
     goto :goto_0
 
     :cond_1
     new-instance v0, Ljava/io/BufferedWriter;
 
-    invoke-direct {v0, v1, p3}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+    const/16 v1, 0x2000
 
-    move-object v1, v0
+    invoke-direct {v0, p3, v1}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+
+    move-object p3, v0
 
     :goto_0
-    check-cast v1, Ljava/io/Writer;
+    check-cast p3, Ljava/io/Writer;
 
-    invoke-direct {p2, v1}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+    invoke-direct {p2, p3}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
     return-object p2
 .end method
@@ -838,7 +839,7 @@
 
     const-string v10, "File "
 
-    if-gtz v9, :cond_5
+    if-gtz v9, :cond_4
 
     .line 67
     nop
@@ -862,7 +863,7 @@
     .line 69
     .local v5, "result":[B
     :goto_0
-    if-lez v4, :cond_1
+    if-lez v4, :cond_0
 
     .line 70
     invoke-virtual {v1, v5, v3, v4}, Ljava/io/FileInputStream;->read([BII)I
@@ -873,12 +874,9 @@
 
     .line 71
     .local v6, "read":I
-    if-gez v6, :cond_0
-
-    goto :goto_1
+    if-ltz v6, :cond_0
 
     .line 72
-    :cond_0
     sub-int/2addr v4, v6
 
     .line 73
@@ -888,13 +886,12 @@
     goto :goto_0
 
     .line 75
-    :cond_1
-    :goto_1
+    :cond_0
     const-string v6, "copyOf(this, newSize)"
 
     const/4 v7, 0x0
 
-    if-lez v4, :cond_2
+    if-lez v4, :cond_1
 
     :try_start_2
     invoke-static {v5, v3}, Ljava/util/Arrays;->copyOf([BI)[B
@@ -905,10 +902,10 @@
 
     move-object v5, v8
 
-    goto :goto_2
+    goto :goto_1
 
     .line 77
-    :cond_2
+    :cond_1
     invoke-virtual {v1}, Ljava/io/FileInputStream;->read()I
 
     move-result v8
@@ -917,12 +914,12 @@
     .local v8, "extraByte":I
     const/4 v9, -0x1
 
-    if-ne v8, v9, :cond_3
+    if-ne v8, v9, :cond_2
 
-    goto :goto_2
+    goto :goto_1
 
     .line 84
-    :cond_3
+    :cond_2
     new-instance v9, Lkotlin/io/ExposingBufferByteArrayOutputStream;
 
     const/16 v11, 0x2001
@@ -959,7 +956,7 @@
 
     .line 89
     .local v11, "resultingSize":I
-    if-ltz v11, :cond_4
+    if-ltz v11, :cond_3
 
     .line 91
     invoke-virtual {v9}, Lkotlin/io/ExposingBufferByteArrayOutputStream;->getBuffer()[B
@@ -999,7 +996,7 @@
     .end local v8    # "extraByte":I
     .end local v9    # "extra":Lkotlin/io/ExposingBufferByteArrayOutputStream;
     .end local v11    # "resultingSize":I
-    :goto_2
+    :goto_1
     invoke-static {v0, v7}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     .line 96
@@ -1014,7 +1011,7 @@
     .restart local v8    # "extraByte":I
     .restart local v9    # "extra":Lkotlin/io/ExposingBufferByteArrayOutputStream;
     .restart local v11    # "resultingSize":I
-    :cond_4
+    :cond_3
     :try_start_3
     new-instance v6, Ljava/lang/OutOfMemoryError;
 
@@ -1053,7 +1050,7 @@
     .local v6, "length":J
     .local v8, "$i$a$-also-FilesKt__FileReadWriteKt$readBytes$1$remaining$1":I
     .restart local p0    # "$this$readBytes":Ljava/io/File;
-    :cond_5
+    :cond_4
     new-instance v4, Ljava/lang/OutOfMemoryError;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1199,30 +1196,30 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 125
-    new-instance v0, Ljava/io/FileInputStream;
+    new-instance v0, Ljava/io/InputStreamReader;
 
-    invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    new-instance v1, Ljava/io/FileInputStream;
 
-    check-cast v0, Ljava/io/InputStream;
+    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    new-instance v1, Ljava/io/InputStreamReader;
+    check-cast v1, Ljava/io/InputStream;
 
-    invoke-direct {v1, v0, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v0, v1, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
-    check-cast v1, Ljava/io/Closeable;
+    check-cast v0, Ljava/io/Closeable;
 
     :try_start_0
-    move-object v0, v1
+    move-object v1, v0
 
-    check-cast v0, Ljava/io/InputStreamReader;
+    check-cast v1, Ljava/io/InputStreamReader;
 
-    .line 234
-    .local v0, "it":Ljava/io/InputStreamReader;
+    .line 233
+    .local v1, "it":Ljava/io/InputStreamReader;
     const/4 v2, 0x0
 
     .line 125
     .local v2, "$i$a$-use-FilesKt__FileReadWriteKt$readText$1":I
-    move-object v3, v0
+    move-object v3, v1
 
     check-cast v3, Ljava/io/Reader;
 
@@ -1232,21 +1229,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .end local v0    # "it":Ljava/io/InputStreamReader;
+    .end local v1    # "it":Ljava/io/InputStreamReader;
     .end local v2    # "$i$a$-use-FilesKt__FileReadWriteKt$readText$1":I
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    invoke-static {v1, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     return-object v3
 
     :catchall_0
-    move-exception v0
+    move-exception v1
 
     .end local p0    # "$this$readText":Ljava/io/File;
     .end local p1    # "charset":Ljava/nio/charset/Charset;
     :try_start_1
-    throw v0
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -1255,7 +1252,7 @@
     :catchall_1
     move-exception v2
 
-    invoke-static {v1, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v2
 .end method
@@ -1292,17 +1289,17 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 22
-    new-instance v0, Ljava/io/FileInputStream;
+    new-instance v0, Ljava/io/InputStreamReader;
 
-    invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    new-instance v1, Ljava/io/FileInputStream;
 
-    check-cast v0, Ljava/io/InputStream;
+    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    new-instance v1, Ljava/io/InputStreamReader;
+    check-cast v1, Ljava/io/InputStream;
 
-    invoke-direct {v1, v0, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v0, v1, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method static synthetic reader$default(Ljava/io/File;Ljava/nio/charset/Charset;ILjava/lang/Object;)Ljava/io/InputStreamReader;
@@ -1327,21 +1324,21 @@
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 22
-    new-instance p2, Ljava/io/FileInputStream;
+    new-instance p2, Ljava/io/InputStreamReader;
 
-    invoke-direct {p2, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    new-instance p3, Ljava/io/FileInputStream;
 
-    check-cast p2, Ljava/io/InputStream;
+    invoke-direct {p3, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    new-instance p3, Ljava/io/InputStreamReader;
+    check-cast p3, Ljava/io/InputStream;
 
-    invoke-direct {p3, p2, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {p2, p3, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
-    return-object p3
+    return-object p2
 .end method
 
 .method public static final useLines(Ljava/io/File;Ljava/nio/charset/Charset;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
-    .locals 7
+    .locals 6
     .param p0, "$this$useLines"    # Ljava/io/File;
     .param p1, "charset"    # Ljava/nio/charset/Charset;
     .param p2, "block"    # Lkotlin/jvm/functions/Function1;
@@ -1374,84 +1371,84 @@
 
     const/4 v0, 0x0
 
-    .line 232
+    .line 231
     .local v0, "$i$f$useLines":I
-    new-instance v1, Ljava/io/FileInputStream;
+    new-instance v1, Ljava/io/InputStreamReader;
 
-    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    new-instance v2, Ljava/io/FileInputStream;
 
-    check-cast v1, Ljava/io/InputStream;
+    invoke-direct {v2, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    new-instance v2, Ljava/io/InputStreamReader;
+    check-cast v2, Ljava/io/InputStream;
 
-    invoke-direct {v2, v1, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v1, v2, p1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
-    check-cast v2, Ljava/io/Reader;
+    check-cast v1, Ljava/io/Reader;
 
-    instance-of v1, v2, Ljava/io/BufferedReader;
+    instance-of v2, v1, Ljava/io/BufferedReader;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    check-cast v2, Ljava/io/BufferedReader;
+    check-cast v1, Ljava/io/BufferedReader;
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Ljava/io/BufferedReader;
+    new-instance v2, Ljava/io/BufferedReader;
 
     const/16 v3, 0x2000
 
-    invoke-direct {v1, v2, v3}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+    invoke-direct {v2, v1, v3}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
 
-    move-object v2, v1
+    move-object v1, v2
 
     :goto_0
-    check-cast v2, Ljava/io/Closeable;
+    check-cast v1, Ljava/io/Closeable;
 
-    const/4 v1, 0x0
-
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     :try_start_0
-    move-object v4, v2
+    move-object v3, v1
 
-    check-cast v4, Ljava/io/BufferedReader;
+    check-cast v3, Ljava/io/BufferedReader;
 
-    .line 234
-    .local v4, "it":Ljava/io/BufferedReader;
-    const/4 v5, 0x0
+    .line 233
+    .local v3, "it":Ljava/io/BufferedReader;
+    const/4 v4, 0x0
 
-    .line 232
-    .local v5, "$i$a$-use-FilesKt__FileReadWriteKt$useLines$1":I
-    invoke-static {v4}, Lkotlin/io/TextStreamsKt;->lineSequence(Ljava/io/BufferedReader;)Lkotlin/sequences/Sequence;
+    .line 231
+    .local v4, "$i$a$-use-FilesKt__FileReadWriteKt$useLines$1":I
+    invoke-static {v3}, Lkotlin/io/TextStreamsKt;->lineSequence(Ljava/io/BufferedReader;)Lkotlin/sequences/Sequence;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-interface {p2, v6}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .end local v4    # "it":Ljava/io/BufferedReader;
-    .end local v5    # "$i$a$-use-FilesKt__FileReadWriteKt$useLines$1":I
-    invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
+    .end local v3    # "it":Ljava/io/BufferedReader;
+    .end local v4    # "$i$a$-use-FilesKt__FileReadWriteKt$useLines$1":I
+    invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    invoke-static {v2, v1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    const/4 v3, 0x0
 
-    invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
+    invoke-static {v1, v3}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    return-object v6
+    invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
+
+    return-object v5
 
     :catchall_0
-    move-exception v1
+    move-exception v3
 
     .end local v0    # "$i$f$useLines":I
     .end local p0    # "$this$useLines":Ljava/io/File;
     .end local p1    # "charset":Ljava/nio/charset/Charset;
     .end local p2    # "block":Lkotlin/jvm/functions/Function1;
     :try_start_1
-    throw v1
+    throw v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -1462,22 +1459,22 @@
     :catchall_1
     move-exception v4
 
-    invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
+    invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    invoke-static {v2, v1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v1, v3}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
+    invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
 
     throw v4
 .end method
 
 .method public static synthetic useLines$default(Ljava/io/File;Ljava/nio/charset/Charset;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+    .locals 6
     .param p0, "$this$useLines_u24default"    # Ljava/io/File;
     .param p1, "charset"    # Ljava/nio/charset/Charset;
     .param p2, "block"    # Lkotlin/jvm/functions/Function1;
 
-    .line 231
+    .line 230
     const/4 p4, 0x1
 
     and-int/2addr p3, p4
@@ -1495,9 +1492,9 @@
     .local v0, "$this$useLines$iv":Ljava/io/File;
     const/4 v1, 0x0
 
-    .line 235
+    .line 234
     .local v1, "$i$f$useLines":I
-    const/16 v2, 0x2000
+    new-instance v2, Ljava/io/InputStreamReader;
 
     new-instance v3, Ljava/io/FileInputStream;
 
@@ -1505,73 +1502,73 @@
 
     check-cast v3, Ljava/io/InputStream;
 
-    new-instance v4, Ljava/io/InputStreamReader;
+    invoke-direct {v2, v3, p3}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
-    invoke-direct {v4, v3, p3}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+    check-cast v2, Ljava/io/Reader;
 
-    check-cast v4, Ljava/io/Reader;
-
-    instance-of v3, v4, Ljava/io/BufferedReader;
+    instance-of v3, v2, Ljava/io/BufferedReader;
 
     if-eqz v3, :cond_1
 
-    check-cast v4, Ljava/io/BufferedReader;
+    check-cast v2, Ljava/io/BufferedReader;
 
     goto :goto_0
 
     :cond_1
     new-instance v3, Ljava/io/BufferedReader;
 
-    invoke-direct {v3, v4, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+    const/16 v4, 0x2000
 
-    move-object v4, v3
+    invoke-direct {v3, v2, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
+
+    move-object v2, v3
 
     :goto_0
-    check-cast v4, Ljava/io/Closeable;
-
-    const/4 v2, 0x0
+    check-cast v2, Ljava/io/Closeable;
 
     :try_start_0
-    move-object v3, v4
+    move-object v3, v2
 
     check-cast v3, Ljava/io/BufferedReader;
 
-    .line 236
-    .local v3, "it$iv":Ljava/io/BufferedReader;
-    const/4 v5, 0x0
-
     .line 235
-    .local v5, "$i$a$-use-FilesKt__FileReadWriteKt$useLines$1$iv":I
+    .local v3, "it$iv":Ljava/io/BufferedReader;
+    const/4 v4, 0x0
+
+    .line 234
+    .local v4, "$i$a$-use-FilesKt__FileReadWriteKt$useLines$1$iv":I
     invoke-static {v3}, Lkotlin/io/TextStreamsKt;->lineSequence(Ljava/io/BufferedReader;)Lkotlin/sequences/Sequence;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-interface {p2, v6}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v5}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .end local v3    # "it$iv":Ljava/io/BufferedReader;
-    .end local v5    # "$i$a$-use-FilesKt__FileReadWriteKt$useLines$1$iv":I
+    .end local v4    # "$i$a$-use-FilesKt__FileReadWriteKt$useLines$1$iv":I
     invoke-static {p4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    invoke-static {v4, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    const/4 v3, 0x0
+
+    invoke-static {v2, v3}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     invoke-static {p4}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
 
-    .line 231
+    .line 230
     .end local v0    # "$this$useLines$iv":Ljava/io/File;
     .end local v1    # "$i$f$useLines":I
     .end local p3    # "charset$iv":Ljava/nio/charset/Charset;
-    return-object v6
+    return-object v5
 
-    .line 235
+    .line 234
     .restart local v0    # "$this$useLines$iv":Ljava/io/File;
     .restart local v1    # "$i$f$useLines":I
     .restart local p3    # "charset$iv":Ljava/nio/charset/Charset;
     :catchall_0
-    move-exception v2
+    move-exception v3
 
     .end local v0    # "$this$useLines$iv":Ljava/io/File;
     .end local v1    # "$i$f$useLines":I
@@ -1580,7 +1577,7 @@
     .end local p2    # "block":Lkotlin/jvm/functions/Function1;
     .end local p3    # "charset$iv":Ljava/nio/charset/Charset;
     :try_start_1
-    throw v2
+    throw v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -1591,15 +1588,15 @@
     .restart local p2    # "block":Lkotlin/jvm/functions/Function1;
     .restart local p3    # "charset$iv":Ljava/nio/charset/Charset;
     :catchall_1
-    move-exception v3
+    move-exception v4
 
     invoke-static {p4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    invoke-static {v4, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v2, v3}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     invoke-static {p4}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
 
-    throw v3
+    throw v4
 .end method
 
 .method public static final writeBytes(Ljava/io/File;[B)V
@@ -1627,7 +1624,7 @@
 
     check-cast v1, Ljava/io/FileOutputStream;
 
-    .line 234
+    .line 233
     .local v1, "it":Ljava/io/FileOutputStream;
     const/4 v2, 0x0
 
@@ -1729,17 +1726,17 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 38
-    new-instance v0, Ljava/io/FileOutputStream;
+    new-instance v0, Ljava/io/OutputStreamWriter;
 
-    invoke-direct {v0, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    new-instance v1, Ljava/io/FileOutputStream;
 
-    check-cast v0, Ljava/io/OutputStream;
+    invoke-direct {v1, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    new-instance v1, Ljava/io/OutputStreamWriter;
+    check-cast v1, Ljava/io/OutputStream;
 
-    invoke-direct {v1, v0, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v0, v1, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method static synthetic writer$default(Ljava/io/File;Ljava/nio/charset/Charset;ILjava/lang/Object;)Ljava/io/OutputStreamWriter;
@@ -1764,15 +1761,15 @@
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 38
-    new-instance p2, Ljava/io/FileOutputStream;
+    new-instance p2, Ljava/io/OutputStreamWriter;
 
-    invoke-direct {p2, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    new-instance p3, Ljava/io/FileOutputStream;
 
-    check-cast p2, Ljava/io/OutputStream;
+    invoke-direct {p3, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    new-instance p3, Ljava/io/OutputStreamWriter;
+    check-cast p3, Ljava/io/OutputStream;
 
-    invoke-direct {p3, p2, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {p2, p3, p1}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    return-object p3
+    return-object p2
 .end method

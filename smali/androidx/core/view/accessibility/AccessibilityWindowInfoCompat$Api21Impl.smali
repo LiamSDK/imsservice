@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 388
+    .line 476
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 390
+    .line 478
     return-void
 .end method
 
@@ -30,10 +30,10 @@
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
     .param p1, "outBounds"    # Landroid/graphics/Rect;
 
-    .line 394
+    .line 482
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityWindowInfo;->getBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 395
+    .line 483
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
     .param p1, "index"    # I
 
-    .line 399
+    .line 487
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityWindowInfo;->getChild(I)Landroid/view/accessibility/AccessibilityWindowInfo;
 
     move-result-object v0
@@ -54,7 +54,7 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 404
+    .line 492
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getChildCount()I
 
     move-result v0
@@ -66,7 +66,7 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 409
+    .line 497
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getId()I
 
     move-result v0
@@ -78,7 +78,7 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 414
+    .line 502
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getLayer()I
 
     move-result v0
@@ -90,7 +90,7 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 419
+    .line 507
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getParent()Landroid/view/accessibility/AccessibilityWindowInfo;
 
     move-result-object v0
@@ -102,7 +102,7 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 424
+    .line 512
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getRoot()Landroid/view/accessibility/AccessibilityNodeInfo;
 
     move-result-object v0
@@ -114,7 +114,7 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 429
+    .line 517
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->getType()I
 
     move-result v0
@@ -126,7 +126,7 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 434
+    .line 522
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->isAccessibilityFocused()Z
 
     move-result v0
@@ -138,7 +138,7 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 439
+    .line 527
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->isActive()Z
 
     move-result v0
@@ -150,7 +150,7 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 444
+    .line 532
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->isFocused()Z
 
     move-result v0
@@ -161,7 +161,7 @@
 .method static obtain()Landroid/view/accessibility/AccessibilityWindowInfo;
     .locals 1
 
-    .line 449
+    .line 537
     invoke-static {}, Landroid/view/accessibility/AccessibilityWindowInfo;->obtain()Landroid/view/accessibility/AccessibilityWindowInfo;
 
     move-result-object v0
@@ -173,21 +173,10 @@
     .locals 1
     .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
 
-    .line 454
+    .line 542
     invoke-static {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->obtain(Landroid/view/accessibility/AccessibilityWindowInfo;)Landroid/view/accessibility/AccessibilityWindowInfo;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method static recycle(Landroid/view/accessibility/AccessibilityWindowInfo;)V
-    .locals 0
-    .param p0, "info"    # Landroid/view/accessibility/AccessibilityWindowInfo;
-
-    .line 459
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityWindowInfo;->recycle()V
-
-    .line 460
-    return-void
 .end method

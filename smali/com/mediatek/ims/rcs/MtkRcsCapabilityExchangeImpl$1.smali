@@ -1,5 +1,5 @@
 .class Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;
-.super Landroid/telephony/ims/aidl/ICapabilityExchangeEventListener$Stub;
+.super Lcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener$Stub;
 .source "MtkRcsCapabilityExchangeImpl.java"
 
 
@@ -23,24 +23,35 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
-    .line 169
+    .line 175
     iput-object p1, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
-    invoke-direct {p0}, Landroid/telephony/ims/aidl/ICapabilityExchangeEventListener$Stub;-><init>()V
+    invoke-direct {p0}, Lcom/mediatek/ims/rcs/aidl/IMtkCapabilityExchangeEventListener$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPublishUpdated(ILjava/lang/String;ILjava/lang/String;)V
+.method public onPublishUpdated(Landroid/telephony/ims/SipDetails;)V
     .locals 4
-    .param p1, "reasonCode"    # I
-    .param p2, "reasonPhrase"    # Ljava/lang/String;
-    .param p3, "reasonHeaderCause"    # I
-    .param p4, "reasonHeaderText"    # Ljava/lang/String;
+    .param p1, "details"    # Landroid/telephony/ims/SipDetails;
 
-    .line 193
+    .line 197
+    if-nez p1, :cond_0
+
+    .line 198
+    iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
+
+    const-string v1, "details is null"
+
+    invoke-static {v0, v1}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$200(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;Ljava/lang/String;)V
+
+    .line 199
+    return-void
+
+    .line 203
+    :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
@@ -48,18 +59,18 @@
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2, p3, p4}, Landroid/telephony/ims/stub/CapabilityExchangeEventListener;->onPublishUpdated(ILjava/lang/String;ILjava/lang/String;)V
+    invoke-interface {v0, p1}, Landroid/telephony/ims/stub/CapabilityExchangeEventListener;->onPublishUpdated(Landroid/telephony/ims/SipDetails;)V
     :try_end_0
     .catch Landroid/telephony/ims/ImsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 196
+    .line 206
     goto :goto_0
 
-    .line 194
+    .line 204
     :catch_0
     move-exception v0
 
-    .line 195
+    .line 205
     .local v0, "e":Landroid/telephony/ims/ImsException;
     iget-object v1, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
@@ -83,7 +94,7 @@
 
     invoke-static {v1, v2}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$200(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;Ljava/lang/String;)V
 
-    .line 197
+    .line 207
     .end local v0    # "e":Landroid/telephony/ims/ImsException;
     :goto_0
     return-void
@@ -105,7 +116,7 @@
         }
     .end annotation
 
-    .line 203
+    .line 213
     .local p2, "remoteCapabilities":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method
@@ -114,7 +125,7 @@
     .locals 4
     .param p1, "type"    # I
 
-    .line 173
+    .line 179
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
@@ -144,7 +155,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$000(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;Ljava/lang/String;)V
 
-    .line 174
+    .line 180
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
     invoke-static {v0}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$100(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;)Landroid/telephony/ims/stub/CapabilityExchangeEventListener;
@@ -155,14 +166,14 @@
     :try_end_0
     .catch Landroid/telephony/ims/ImsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 177
+    .line 183
     goto :goto_0
 
-    .line 175
+    .line 181
     :catch_0
     move-exception v0
 
-    .line 176
+    .line 182
     .local v0, "e":Landroid/telephony/ims/ImsException;
     iget-object v1, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
@@ -186,7 +197,7 @@
 
     invoke-static {v1, v2}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$200(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;Ljava/lang/String;)V
 
-    .line 178
+    .line 184
     .end local v0    # "e":Landroid/telephony/ims/ImsException;
     :goto_0
     return-void
@@ -195,7 +206,7 @@
 .method public onUnpublish()V
     .locals 4
 
-    .line 183
+    .line 189
     :try_start_0
     iget-object v0, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
@@ -207,14 +218,14 @@
     :try_end_0
     .catch Landroid/telephony/ims/ImsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 186
+    .line 192
     goto :goto_0
 
-    .line 184
+    .line 190
     :catch_0
     move-exception v0
 
-    .line 185
+    .line 191
     .local v0, "e":Landroid/telephony/ims/ImsException;
     iget-object v1, p0, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl$1;->this$0:Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;
 
@@ -238,7 +249,7 @@
 
     invoke-static {v1, v2}, Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;->access$200(Lcom/mediatek/ims/rcs/MtkRcsCapabilityExchangeImpl;Ljava/lang/String;)V
 
-    .line 187
+    .line 193
     .end local v0    # "e":Landroid/telephony/ims/ImsException;
     :goto_0
     return-void

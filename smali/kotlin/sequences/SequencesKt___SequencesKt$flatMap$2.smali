@@ -31,7 +31,7 @@
     k = 0x3
     mv = {
         0x1,
-        0x6,
+        0x8,
         0x0
     }
     xi = 0x30
@@ -58,9 +58,9 @@
 .method constructor <init>()V
     .locals 6
 
-    const-class v2, Lkotlin/sequences/Sequence;
-
     const/4 v1, 0x1
+
+    const-class v2, Lkotlin/sequences/Sequence;
 
     const-string v3, "iterator"
 
@@ -81,7 +81,7 @@
     .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
-    .line 853
+    .line 854
     move-object v0, p1
 
     check-cast v0, Lkotlin/sequences/Sequence;
@@ -110,7 +110,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 853
+    .line 854
     invoke-interface {p1}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

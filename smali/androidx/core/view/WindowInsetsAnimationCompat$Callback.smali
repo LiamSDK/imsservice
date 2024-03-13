@@ -37,13 +37,13 @@
     .locals 0
     .param p1, "dispatchMode"    # I
 
-    .line 371
+    .line 372
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 372
+    .line 373
     iput p1, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Callback;->mDispatchMode:I
 
-    .line 373
+    .line 374
     return-void
 .end method
 
@@ -52,7 +52,7 @@
 .method public final getDispatchMode()I
     .locals 1
 
-    .line 396
+    .line 397
     iget v0, p0, Landroidx/core/view/WindowInsetsAnimationCompat$Callback;->mDispatchMode:I
 
     return v0
@@ -62,7 +62,7 @@
     .locals 0
     .param p1, "animation"    # Landroidx/core/view/WindowInsetsAnimationCompat;
 
-    .line 520
+    .line 521
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .locals 0
     .param p1, "animation"    # Landroidx/core/view/WindowInsetsAnimationCompat;
 
-    .line 441
+    .line 442
     return-void
 .end method
 
@@ -92,6 +92,6 @@
     .param p1, "animation"    # Landroidx/core/view/WindowInsetsAnimationCompat;
     .param p2, "bounds"    # Landroidx/core/view/WindowInsetsAnimationCompat$BoundsCompat;
 
-    .line 488
+    .line 489
     return-object p2
 .end method

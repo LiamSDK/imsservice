@@ -7,13 +7,13 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/mediatek/ims/config/ImsConfigContract$Validator;,
-        Lcom/mediatek/ims/config/ImsConfigContract$BasicConfigTable;,
-        Lcom/mediatek/ims/config/ImsConfigContract$Master;,
+        Lcom/mediatek/ims/config/ImsConfigContract$ConfigSetting;,
         Lcom/mediatek/ims/config/ImsConfigContract$Default;,
         Lcom/mediatek/ims/config/ImsConfigContract$Provision;,
+        Lcom/mediatek/ims/config/ImsConfigContract$Master;,
+        Lcom/mediatek/ims/config/ImsConfigContract$BasicConfigTable;,
         Lcom/mediatek/ims/config/ImsConfigContract$Resource;,
         Lcom/mediatek/ims/config/ImsConfigContract$Feature;,
-        Lcom/mediatek/ims/config/ImsConfigContract$ConfigSetting;,
         Lcom/mediatek/ims/config/ImsConfigContract$Unit;,
         Lcom/mediatek/ims/config/ImsConfigContract$MimeType;,
         Lcom/mediatek/ims/config/ImsConfigContract$Operator;
@@ -218,15 +218,15 @@
     sput-object v0, Lcom/mediatek/ims/config/ImsConfigContract;->sConfigNames:[Ljava/lang/String;
 
     .line 174
-    const-string v0, "EPDG_ADDRESS"
+    const-string v0, "VOICE_OVER_WIFI_MDN"
 
-    const-string v1, "PUBLISH_ERROR_RETRY_TIMER"
+    const-string v1, "VOICE_DOMAIN_PREFERENCE"
 
-    const-string v2, "VOICE_OVER_WIFI_MDN"
+    const-string v2, "EPDG_ADDRESS"
 
-    const-string v3, "VOICE_DOMAIN_PREFERENCE"
+    const-string v3, "PUBLISH_ERROR_RETRY_TIMER"
 
-    filled-new-array {v0, v1, v2, v3}, [Ljava/lang/String;
+    filled-new-array {v2, v3, v0, v1}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -418,71 +418,74 @@
     if-eqz v1, :cond_1
 
     .line 290
-    const/4 v1, -0x1
-
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
-    move-result v2
+    move-result v1
 
-    sparse-switch v2, :sswitch_data_0
+    sparse-switch v1, :sswitch_data_0
 
     :cond_0
     goto :goto_0
 
     :sswitch_0
-    const-string v2, "tb_default"
+    const-string v1, "tb_default"
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :sswitch_1
-    const-string v2, "tb_master"
+    const-string v1, "tb_master"
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x3
 
-    goto :goto_0
+    goto :goto_1
 
     :sswitch_2
-    const-string v2, "tb_provision"
+    const-string v1, "tb_provision"
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x2
 
-    goto :goto_0
+    goto :goto_1
 
     :sswitch_3
-    const-string v2, "tb_config_setting"
+    const-string v1, "tb_config_setting"
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x0
 
+    goto :goto_1
+
     :goto_0
+    const/4 v1, -0x1
+
+    :goto_1
     packed-switch v1, :pswitch_data_0
 
-    goto :goto_1
+    goto :goto_2
 
     .line 301
     :pswitch_0
@@ -491,7 +494,7 @@
     move-result-object v0
 
     .line 302
-    goto :goto_1
+    goto :goto_2
 
     .line 298
     :pswitch_1
@@ -500,7 +503,7 @@
     move-result-object v0
 
     .line 299
-    goto :goto_1
+    goto :goto_2
 
     .line 295
     :pswitch_2
@@ -509,7 +512,7 @@
     move-result-object v0
 
     .line 296
-    goto :goto_1
+    goto :goto_2
 
     .line 292
     :pswitch_3
@@ -521,7 +524,7 @@
     nop
 
     .line 307
-    :goto_1
+    :goto_2
     return-object v0
 
     .line 288
@@ -549,8 +552,6 @@
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -621,92 +622,95 @@
     if-eqz v1, :cond_1
 
     .line 265
-    const/4 v1, -0x1
-
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
-    move-result v2
+    move-result v1
 
-    sparse-switch v2, :sswitch_data_0
+    sparse-switch v1, :sswitch_data_0
 
     :cond_0
     goto :goto_0
 
     :sswitch_0
-    const-string v2, "tb_default"
+    const-string v1, "tb_default"
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :sswitch_1
-    const-string v2, "tb_master"
+    const-string v1, "tb_master"
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x3
 
-    goto :goto_0
+    goto :goto_1
 
     :sswitch_2
-    const-string v2, "tb_provision"
+    const-string v1, "tb_provision"
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x2
 
-    goto :goto_0
+    goto :goto_1
 
     :sswitch_3
-    const-string v2, "tb_config_setting"
+    const-string v1, "tb_config_setting"
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x0
 
+    goto :goto_1
+
     :goto_0
+    const/4 v1, -0x1
+
+    :goto_1
     packed-switch v1, :pswitch_data_0
 
-    goto :goto_1
+    goto :goto_2
 
     .line 276
     :pswitch_0
     sget-object v0, Lcom/mediatek/ims/config/ImsConfigContract$Master;->CONTENT_URI:Landroid/net/Uri;
 
     .line 277
-    goto :goto_1
+    goto :goto_2
 
     .line 273
     :pswitch_1
     sget-object v0, Lcom/mediatek/ims/config/ImsConfigContract$Provision;->CONTENT_URI:Landroid/net/Uri;
 
     .line 274
-    goto :goto_1
+    goto :goto_2
 
     .line 270
     :pswitch_2
     sget-object v0, Lcom/mediatek/ims/config/ImsConfigContract$Default;->CONTENT_URI:Landroid/net/Uri;
 
     .line 271
-    goto :goto_1
+    goto :goto_2
 
     .line 267
     :pswitch_3
@@ -716,7 +720,7 @@
     nop
 
     .line 282
-    :goto_1
+    :goto_2
     return-object v0
 
     .line 263
@@ -744,8 +748,6 @@
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

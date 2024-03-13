@@ -36,22 +36,12 @@
 
 # virtual methods
 .method public getLaunchBounds()Landroid/graphics/Rect;
-    .locals 2
+    .locals 1
 
     .line 295
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-ge v0, v1, :cond_0
-
-    .line 296
-    const/4 v0, 0x0
-
-    return-object v0
+    nop
 
     .line 298
-    :cond_0
     iget-object v0, p0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;->mActivityOptions:Landroid/app/ActivityOptions;
 
     invoke-static {v0}, Landroidx/core/app/ActivityOptionsCompat$Api24Impl;->getLaunchBounds(Landroid/app/ActivityOptions;)Landroid/graphics/Rect;
@@ -62,15 +52,11 @@
 .end method
 
 .method public requestUsageTimeReport(Landroid/app/PendingIntent;)V
-    .locals 2
+    .locals 1
     .param p1, "receiver"    # Landroid/app/PendingIntent;
 
     .line 278
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-lt v0, v1, :cond_0
+    nop
 
     .line 279
     iget-object v0, p0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;->mActivityOptions:Landroid/app/ActivityOptions;
@@ -78,7 +64,6 @@
     invoke-static {v0, p1}, Landroidx/core/app/ActivityOptionsCompat$Api23Impl;->requestUsageTimeReport(Landroid/app/ActivityOptions;Landroid/app/PendingIntent;)V
 
     .line 281
-    :cond_0
     return-void
 .end method
 
@@ -87,17 +72,9 @@
     .param p1, "screenSpacePixelRect"    # Landroid/graphics/Rect;
 
     .line 286
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-ge v0, v1, :cond_0
-
-    .line 287
-    return-object p0
+    nop
 
     .line 289
-    :cond_0
     new-instance v0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;
 
     iget-object v1, p0, Landroidx/core/app/ActivityOptionsCompat$ActivityOptionsCompatImpl;->mActivityOptions:Landroid/app/ActivityOptions;

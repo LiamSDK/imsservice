@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/mediatek/ims/internal/ImsVTProvider;
 
-    .line 517
+    .line 566
     iput-object p1, p0, Lcom/mediatek/ims/internal/ImsVTProvider$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 2
 
-    .line 520
+    .line 569
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -66,7 +66,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 521
+    .line 570
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsVTProvider$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProvider;
 
     iget-object v0, v0, Lcom/mediatek/ims/internal/ImsVTProvider;->mSource:Lcom/mediatek/ims/internal/VTSource;
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/ims/internal/VTSource;->setDeviceOrientation(I)V
 
-    .line 522
+    .line 571
     iget-object v0, p0, Lcom/mediatek/ims/internal/ImsVTProvider$2;->this$0:Lcom/mediatek/ims/internal/ImsVTProvider;
 
     iget v0, v0, Lcom/mediatek/ims/internal/ImsVTProvider;->mId:I
@@ -88,6 +88,6 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/ims/internal/ImsVTProvider;->nSetDeviceOrientation(II)I
 
-    .line 523
+    .line 572
     return-void
 .end method

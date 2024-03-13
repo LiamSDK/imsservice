@@ -18,10 +18,10 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 798
+    .line 851
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 800
+    .line 853
     return-void
 .end method
 
@@ -29,10 +29,10 @@
     .locals 0
     .param p0, "activity"    # Landroid/app/Activity;
 
-    .line 818
+    .line 871
     invoke-virtual {p0}, Landroid/app/Activity;->finishAffinity()V
 
-    .line 819
+    .line 872
     return-void
 .end method
 
@@ -43,10 +43,10 @@
     .param p2, "requestCode"    # I
     .param p3, "options"    # Landroid/os/Bundle;
 
-    .line 805
+    .line 858
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
 
-    .line 806
+    .line 859
     return-void
 .end method
 
@@ -66,9 +66,9 @@
         }
     .end annotation
 
-    .line 812
+    .line 865
     invoke-virtual/range {p0 .. p7}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
 
-    .line 814
+    .line 867
     return-void
 .end method
